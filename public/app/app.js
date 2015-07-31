@@ -11,7 +11,7 @@ app.config(function(RestangularProvider) {
 
 app.run(['$http', '$rootScope', function($http, $rootScope) {
   $rootScope.date = new Date();
-  $rootScope.title = 'Yachiru';
+  $rootScope.title = 'Accent Analytics';
   $rootScope.messages = [];
   $rootScope.menu = [];
 }]);

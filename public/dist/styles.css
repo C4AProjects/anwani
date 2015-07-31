@@ -1353,7 +1353,7 @@ pre {
   .row:after {
     clear: both; }
 
-.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .map, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .large.graph, .card-lg, .col-lg-12 {
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, form#login, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .map, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .large.graph, .card-lg, .col-lg-12 {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
@@ -1672,7 +1672,7 @@ pre {
   .col-sm-offset-12 {
     margin-left: 100%; } }
 @media (min-width: 992px) {
-  .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .map, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .large.graph, .card-lg {
+  .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, form#login, .col-md-6, .map, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .large.graph, .card-lg {
     float: left; }
 
   .col-md-1 {
@@ -1687,7 +1687,7 @@ pre {
   .col-md-4 {
     width: 33.33333%; }
 
-  .col-md-5 {
+  .col-md-5, form#login {
     width: 41.66667%; }
 
   .col-md-6, .map {
@@ -5696,6 +5696,12 @@ body {
   padding-top: 5rem;
   position: relative; }
 
+.full.content {
+  height: 100%;
+  padding: 10%;
+  background-size: cover;
+  background-image: url("../images/sky-clouds-blue.jpg"); }
+
 nav {
   /* font-size:0.7em; */
   border-radius: 0; }
@@ -5750,23 +5756,25 @@ nav#main {
   background: #68C3A3;
   height: 100%; }
 
+form .header {
+  padding: 10px 20px !important;
+  background: #2C3E50;
+  color: white !important;
+  margin-bottom: none; }
+
 form#login {
-  width: 30%;
-  padding-top: 15%;
-  margin: 0 auto; }
+  padding: 0;
+  background: #D2D7D3;
+  opacity: 0.7; }
+  form#login .inner {
+    padding: 10px 20px; }
   form#login h3 {
     color: #2C3E50;
     text-align: center; }
   form#login .form-control {
     height: auto !important; }
-  form#login input {
-    border: 5px transparent;
-    font-size: 1.2em;
-    box-shadow: none;
-    outline: none; }
-  form#login input:focus {
-    box-shadow: none;
-    border: 10px #2C3E50; }
+  form#login .button {
+    margin-top: 1rem; }
   form#login .btn {
     background: #2C3E50;
     color: white !important;
