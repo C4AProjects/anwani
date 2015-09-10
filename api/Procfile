@@ -1,0 +1,1 @@
+web: NODE_ENV=development MONGODB_URL="mongodb://lestoni:trash_can@ds033133.mongolab.com:33133/trash_can" node app.js
