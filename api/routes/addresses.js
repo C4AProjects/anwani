@@ -32,6 +32,7 @@ var router  = express.Router();
  * @apiParam {String} location_pic location photo
  * @apiParam {Number} latitude latitude coordinate
  * @apiParam {Number} longitude longitude coordinate
+ * @apiParam {String} virtual_code virtual code
  * @apiParam {String} street_address street address
  * @apiParam {String} city city name
  * @apiParam {String} country country name
@@ -40,6 +41,7 @@ var router  = express.Router();
  * {
  *    user: "556e1174a8952c9521286a60",
  *    location_pic: "base64 image string",
+ *    virtual_code: "MP7H+E2",
  *    latitude: 4.567889,
  *    longitude: -12.098,
  *    street_address: "",
