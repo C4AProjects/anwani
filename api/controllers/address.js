@@ -60,7 +60,7 @@ exports.create = function createAddress(req, res, next) {
   workflow.on('createAddress', function createAddress() {
     var body = req.body;
 
-    body.virtual_code = olc.encode(body.latitude, body.longitude, 12);
+    //body.virtual_code = olc.encode(body.latitude, body.longitude, 12);
 
     if(body.location_pic) {
       base64ImageToFile(body.location_pic, './media', function (err, imgPath) {
