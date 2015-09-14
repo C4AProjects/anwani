@@ -32,7 +32,8 @@ var router  = express.Router();
  * @apiParam {String} location_pic location photo
  * @apiParam {Number} latitude latitude coordinate
  * @apiParam {Number} longitude longitude coordinate
- * @apiParam {String} virtual_code virtual code
+ * @apiParam {String} long_virtual_code long virtual code
+ * @apiParam {String} short_virtual_code short virtual code
  * @apiParam {String} street_address street address
  * @apiParam {String} city city name
  * @apiParam {String} country country name
@@ -41,7 +42,8 @@ var router  = express.Router();
  * {
  *    user: "556e1174a8952c9521286a60",
  *    location_pic: "base64 image string",
- *    virtual_code: "MP7H+E2",
+ *    short_virtual_code: "MP7H+E2",
+ *    long_virtual_code: "6E9AEFMP7H+E2FH",
  *    latitude: 4.567889,
  *    longitude: -12.098,
  *    street_address: "",
@@ -51,7 +53,8 @@ var router  = express.Router();
  *
  * @apiSuccess {String} _id address id
  * @apiSuccess {String} user user id
- * @apiSuccess {String} virtual_code virtual code
+ * @apiSuccess {String} long_virtual_code long virtual code
+ * @apiSuccess {String} short_virtual_code short virtual code
  * @apiSuccess {String} location_pic location photo
  * @apiSuccess {Number} latitude latitude coordinate
  * @apiSuccess {Number} longitude longitude coordinate
@@ -63,7 +66,8 @@ var router  = express.Router();
  *  {
  *    "_id" : "556e1174a8952c9521286a60",
  *    user: "556e1174a8952c9521286a60",
- *    virtual_code: "MP7H+E2",
+ *    short_virtual_code: "MP7H+E2",
+ *    long_virtual_code: "6E9AEFMP7H+E2FH",
  *    location_pic: "/media/a8952c9521286a60.jpeg",
  *    latitude: 4.567889,
  *    longitude: -12.098,
@@ -85,7 +89,8 @@ router.post('/', addressController.create);
  *
  * @apiSuccess {String} _id address id
  * @apiSuccess {String} user user id
- * @apiSuccess {String} virtual_code virtual code
+ * @apiSuccess {String} long_virtual_code long virtual code
+ * @apiSuccess {String} short_virtual_code short virtual code
  * @apiSuccess {String} location_pic location photo
  * @apiSuccess {Number} latitude latitude coordinate
  * @apiSuccess {Number} longitude longitude coordinate
@@ -97,7 +102,8 @@ router.post('/', addressController.create);
  *  {
  *    "_id" : "556e1174a8952c9521286a60",
  *    user: "556e1174a8952c9521286a60",
- *    virtual_code: "MP7H+E2",
+ *    short_virtual_code: "MP7H+E2",
+ *    long_virtual_code: "6E9AEFMP7H+E2FH",
  *    location_pic: "/media/a8952c9521286a60.jpeg",
  *    latitude: 4.567889,
  *    longitude: -12.098,
@@ -118,7 +124,8 @@ router.get('/:id', addressController.fetchOne);
  *
  * @apiSuccess {String} _id address id
  * @apiSuccess {String} user user id
- * @apiSuccess {String} virtual_code virtual code
+ * @apiSuccess {String} long_virtual_code long virtual code
+ * @apiSuccess {String} short_virtual_code short virtual code
  * @apiSuccess {String} location_pic location photo
  * @apiSuccess {Number} latitude latitude coordinate
  * @apiSuccess {Number} longitude longitude coordinate
@@ -130,7 +137,8 @@ router.get('/:id', addressController.fetchOne);
  *  {
  *    "_id" : "556e1174a8952c9521286a60",
  *    user: "556e1174a8952c9521286a60",
- *    virtual_code: "MP7H+E2",
+ *    short_virtual_code: "MP7H+E2",
+ *    long_virtual_code: "6E9AEFMP7H+E2FH",
  *    location_pic: "/media/a8952c9521286a60.jpeg",
  *    latitude: 4.567889,
  *    longitude: -12.098,
@@ -151,7 +159,8 @@ router.put('/:id', addressController.update);
  *
  * @apiSuccess {String} _id address id
  * @apiSuccess {String} user user id
- * @apiSuccess {String} virtual_code virtual code
+ * @apiSuccess {String} long_virtual_code long virtual code
+ * @apiSuccess {String} short_virtual_code short virtual code
  * @apiSuccess {String} location_pic location photo
  * @apiSuccess {Number} latitude latitude coordinate
  * @apiSuccess {Number} longitude longitude coordinate
@@ -163,7 +172,8 @@ router.put('/:id', addressController.update);
  *  [{
  *    "_id" : "556e1174a8952c9521286a60",
  *    user: "556e1174a8952c9521286a60",
- *    virtual_code: "MP7H+E2",
+ *    short_virtual_code: "MP7H+E2",
+ *    long_virtual_code: "6E9AEFMP7H+E2FH",
  *    location_pic: "/media/a8952c9521286a60.jpeg",
  *    latitude: 4.567889,
  *    longitude: -12.098,
@@ -185,7 +195,8 @@ router.get('/', addressController.fetchAll);
  *
  * @apiSuccess {String} _id address id
  * @apiSuccess {String} user user id
- * @apiSuccess {String} virtual_code virtual code
+ * @apiSuccess {String} long_virtual_code long virtual code
+ * @apiSuccess {String} short_virtual_code short virtual code
  * @apiSuccess {String} location_pic location photo
  * @apiSuccess {Number} latitude latitude coordinate
  * @apiSuccess {Number} longitude longitude coordinate
@@ -197,7 +208,8 @@ router.get('/', addressController.fetchAll);
  *  {
  *    "_id" : "556e1174a8952c9521286a60",
  *    user: "556e1174a8952c9521286a60",
- *    virtual_code: "MP7H+E2",
+ *    short_virtual_code: "MP7H+E2",
+ *    long_virtual_code: "6E9AEFMP7H+E2FH",
  *    location_pic: "/media/a8952c9521286a60.jpeg",
  *    latitude: 4.567889,
  *    longitude: -12.098,
