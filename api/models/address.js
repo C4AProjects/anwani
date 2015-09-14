@@ -11,7 +11,8 @@ var Schema = mongoose.Schema;
 
 var AddressSchema = new Schema({
   user:           { type: Schema.Types.ObjectId, ref: 'User' },
-  virtual_code:   { type: String },
+  short_virtual_code:   { type: String },
+  long_virtual_code:    { type: String },
   location_pic:   { type: String },
   latitude:       { type: Number },
   longitude:      { type: Number },
@@ -51,7 +52,8 @@ AddressSchema.pre('save', function preSaveMiddleware(next) {
 AddressSchema.statics.whitelist = {
   _id: 1,
   user:           1,
-  virtual_code:   1,
+  short_virtual_code:   1,
+  long_virtual_code:   1,
   location_pic:   1,
   latitude:       1,
   longitude:      1,
