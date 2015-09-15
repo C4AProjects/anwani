@@ -50,7 +50,11 @@ exports.login = function loginUser(req, res, next) {
   async.waterfall([
     // Fetch user
     function getUser(next) {
-      UserModel.findOne({ username: body.username }, next);
+      if(body.phone_number) {
+        UserModel.findOne({ phone_number: body.phone_number }, next);
+      } else {
+        return next(null, null);
+      }
 
     }, function verifyPasswd(user, next) {
       if(!user) {
@@ -77,7 +81,8 @@ exports.login = function loginUser(req, res, next) {
           }));
         }
 
-        next(null, user);
+        User.get({ phone_number: body.phone_number }, next);
+
       });
 
     } , function getInfo(user, next) {
@@ -91,7 +96,7 @@ exports.login = function loginUser(req, res, next) {
           }
 
           var info = {
-            user: token.user,
+            user: user,
             token: token || {}
           };
 
