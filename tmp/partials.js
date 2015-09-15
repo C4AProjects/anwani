@@ -32,7 +32,7 @@ angular.module("../public/app/partials/account/login.html", []).run(["$templateC
 angular.module("../public/app/partials/home/about.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("../public/app/partials/home/about.html",
     "<div class=\"padded-sides\">\n" +
-    "  <div class=\"row white\">\n" +
+    "  <div class=\"row white padded-bottom\" style=\"padding-top:10%\">\n" +
     "  <div class=\"col-md-12\">\n" +
     "    <h3 style=\"color:black !important\">About Anwani</h3>\n" +
     "    <h4 class=\"gray\">Lorem ipsum dolor sit amet.</h4>\n" +
@@ -60,6 +60,22 @@ angular.module("../public/app/partials/home/about.html", []).run(["$templateCach
 
 angular.module("../public/app/partials/home/banner.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("../public/app/partials/home/banner.html",
+    "<div class=\"banner\">\n" +
+    "    <div class=\"row description\">\n" +
+    "      <div class=\"col-md-4 padded-top\">\n" +
+    "        <h3 class=\"white-text centered\">Welcome to Anwani</h3>\n" +
+    "        <p class=\"white-text centered\">The APP that allows you to create a real address in less than a minute...</p>\n" +
+    "      </div>\n" +
+    "      <div class=\"col-md-4\" style=\"width:33%\">\n" +
+    "        <img style=\"width:300px;height:570;margin:auto;margin-top:100px;margin-bottom:-150px\" src=\"images/phone_banner.jpg\" class=\"img-responsive\" alt=\"\">\n" +
+    "      </div>\n" +
+    "      <div class=\"col-md-4 padded-top\">\n" +
+    "        <h3 class=\"white-text centered\">It's simple</h3>\n" +
+    "        <p class=\"white-text centered\">Create your address or view existing ones</p>\n" +
+    "      </div>\n" +
+    "    </div>\n" +
+    "\n" +
+    "  </div>\n" +
     "");
 }]);
 

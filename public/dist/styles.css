@@ -5703,6 +5703,7 @@ body {
   background-image: url("../images/sky-clouds-blue.jpg"); }
 
 nav {
+  margin-bottom: 0;
   /* font-size:0.7em; */
   border-radius: 0; }
   nav .navbar-right {
@@ -5746,6 +5747,12 @@ div.gray, div.white {
 .padded {
   padding: 5% 10%; }
 
+.padded-top {
+  padding-top: 20%; }
+
+.padded-bottom {
+  padding-bottom: 5%; }
+
 .padded-sides {
   padding: 0 10%; }
 
@@ -5757,6 +5764,9 @@ div.gray, div.white {
 
 .black-text {
   color: black !important; }
+
+.white-text {
+  color: white !important; }
 
 .seperator {
   border-bottom: 1px solid #f5f5f5; }
@@ -5782,5 +5792,23 @@ a.rounded {
   background: #b0b0b0; }
   a.rounded i {
     color: white !important; }
+
+.mask {
+  position: relative;
+  height: 50%; }
+  .mask .layer, .mask img, .mask .description {
+    position: absolute;
+    width: 100%;
+    height: 100%; }
+  .mask .layer {
+    z-index: 10;
+    background: #29383a;
+    opacity: 0.7; }
+  .mask .description {
+    z-index: 10000; }
+
+.banner {
+  background-image: url("../images/city_banner.png");
+  background-size: cover; }
 
 /*# sourceMappingURL=styles.css.map */
