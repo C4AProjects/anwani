@@ -6,7 +6,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
    * @param  {[type]} "/account/expenditure" [description]
    * @return {[type]}                        [description]
    */
-  $urlRouterProvider.otherwise("/login");
+  $urlRouterProvider.otherwise("/home");
 
   // Now set up the states
   /**
@@ -24,6 +24,39 @@ app.config(function($stateProvider, $urlRouterProvider) {
         '': {
           controller: 'publicCtrl',
           templateUrl: 'app/partials/test/index.html',
+        }
+      }
+    })
+    .state('home', {
+      url: '/home',
+      views: {
+        '': {
+          controller: '',
+          templateUrl: 'app/partials/home/index.html',
+        },
+        'header@home': {
+          controller: '',
+          templateUrl: 'app/partials/home/header.html',
+        },
+        'features@home': {
+          controller: '',
+          templateUrl: 'app/partials/home/features.html',
+        },
+        'footer@home': {
+          controller: '',
+          templateUrl: 'app/partials/home/footer.html',
+        },
+        'banner@home': {
+          controller: '',
+          templateUrl: 'app/partials/home/banner.html',
+        },
+        'sub-header@home': {
+          controller: '',
+          templateUrl: 'app/partials/home/sub-header.html',
+        },
+        'partners@home': {
+          controller: '',
+          templateUrl: 'app/partials/home/partners.html',
         }
       }
     })

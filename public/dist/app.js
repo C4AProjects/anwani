@@ -11,7 +11,7 @@ app.config(function(RestangularProvider) {
 
 app.run(['$http', '$rootScope', function($http, $rootScope) {
   $rootScope.date = new Date();
-  $rootScope.title = 'Accent Analytics';
+  $rootScope.title = 'Anwani';
   $rootScope.messages = [];
   $rootScope.menu = [];
 }]);
@@ -64,7 +64,7 @@ app.directive('isActiveLink', ['$location', function($location) {
    * @param  {[type]} "/account/expenditure" [description]
    * @return {[type]}                        [description]
    */
-  $urlRouterProvider.otherwise("/login");
+  $urlRouterProvider.otherwise("/home");
 
   // Now set up the states
   /**
@@ -85,6 +85,39 @@ app.directive('isActiveLink', ['$location', function($location) {
         }
       }
     })
+    .state('home', {
+      url: '/home',
+      views: {
+        '': {
+          controller: '',
+          templateUrl: 'app/partials/home/index.html',
+        },
+        'header@home': {
+          controller: '',
+          templateUrl: 'app/partials/home/header.html',
+        },
+        'features@home': {
+          controller: '',
+          templateUrl: 'app/partials/home/features.html',
+        },
+        'footer@home': {
+          controller: '',
+          templateUrl: 'app/partials/home/footer.html',
+        },
+        'banner@home': {
+          controller: '',
+          templateUrl: 'app/partials/home/banner.html',
+        },
+        'sub-header@home': {
+          controller: '',
+          templateUrl: 'app/partials/home/sub-header.html',
+        },
+        'partners@home': {
+          controller: '',
+          templateUrl: 'app/partials/home/partners.html',
+        }
+      }
+    })
     .state('login', {
       url: '/login',
       views: {
@@ -95,7 +128,7 @@ app.directive('isActiveLink', ['$location', function($location) {
       }
     });
 });
-;angular.module('templates-dist', ['../public/app/partials/account/index.html', '../public/app/partials/account/login.html', '../public/app/partials/test/index.html']);
+;angular.module('templates-dist', ['../public/app/partials/account/index.html', '../public/app/partials/account/login.html', '../public/app/partials/home/about.html', '../public/app/partials/home/banner.html', '../public/app/partials/home/features.html', '../public/app/partials/home/footer.html', '../public/app/partials/home/header.html', '../public/app/partials/home/index.html', '../public/app/partials/home/partners.html', '../public/app/partials/home/sub-header.html', '../public/app/partials/test/index.html']);
 
 angular.module("../public/app/partials/account/index.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("../public/app/partials/account/index.html",
@@ -123,6 +156,131 @@ angular.module("../public/app/partials/account/login.html", []).run(["$templateC
     "\n" +
     "  </form>\n" +
     "</div>\n" +
+    "");
+}]);
+
+angular.module("../public/app/partials/home/about.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("../public/app/partials/home/about.html",
+    "");
+}]);
+
+angular.module("../public/app/partials/home/banner.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("../public/app/partials/home/banner.html",
+    "");
+}]);
+
+angular.module("../public/app/partials/home/features.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("../public/app/partials/home/features.html",
+    "<div class=\"row gray padded\">\n" +
+    "  <div class=\"col-md-12\">\n" +
+    "    <h3>Anwani Features in detail</h3>\n" +
+    "    <h4 class=\"gray\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </h4>\n" +
+    "  </div>\n" +
+    "  <div class=\"col-md-4\" style=\"padding-top:30px\">\n" +
+    "    <div class=\"col-md-12\">\n" +
+    "      <h4>Create Address</h4>\n" +
+    "      <div class=\"col-xs-2\"><i></i></div>\n" +
+    "      <div class=\"col-xs-10 gray-text\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque quis eos hic. Accusantium, asperiores, hic! Consectetur repellat quos est recusandae modi expedita obcaecati beatae enim. Error esse deleniti possimus obcaecati.</div>\n" +
+    "    </div>\n" +
+    "    <div class=\"col-md-12\">\n" +
+    "      <h4>View Existing Address</h4>\n" +
+    "      <div class=\"col-xs-2\"><i></i></div>\n" +
+    "      <div class=\"col-xs-10 gray-text\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur voluptas rerum at quaerat placeat! Officia perspiciatis sint voluptates, minima eius sunt. A  dipisci nulla ut magnam illum et soluta optio autem.</div>\n" +
+    "    </div>\n" +
+    "    <div class=\"col-md-12\">\n" +
+    "      <h4>Manage Address</h4>\n" +
+    "      <div class=\"col-xs-2\"><i ></i></div>\n" +
+    "      <div class=\"col-xs-10 gray-text\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, hic dignissimos eveniet amet quisquam ad dolorem   voluptates iste, dicta incidunt error dolore quas magnam rerum odit quis repellat cupiditate recusandae!</div>\n" +
+    "    </div>\n" +
+    "  </div>\n" +
+    "  <div class=\"col-md-4\">\n" +
+    "<img src=\"images/phone_image.png\" alt=\"\" class=\"img-responsive\" style=\"width:100%\">\n" +
+    "<p class=\"gray-text centered\">* Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>\n" +
+    "  </div>\n" +
+    "  <div class=\"col-md-4\" style=\"padding-top:30px\">\n" +
+    "    <div class=\"col-md-12\">\n" +
+    "      <h4>User & Share Address</h4>\n" +
+    "      <div class=\"col-xs-2\"><i></i></div>\n" +
+    "      <div class=\"col-xs-10 gray-text\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit deleniti odio ab sint labore asperiores, culpa maiores esse cumque, ducimus rerum et provident quasi. Sint soluta ut reprehenderit, aspernatur libero.</div>\n" +
+    "    </div>\n" +
+    "    <div class=\"col-md-12\">\n" +
+    "      <h4>Add Locational Photo</h4>\n" +
+    "      <div class=\"col-xs-2\"><i></i></div>\n" +
+    "      <div class=\"col-xs-10 gray-text\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, molestias saepe. Eum vero porro quia, facilis magnam eligendi ratione ipsa eveniet, accusantium aliquid laboriosam praesentium! Recusandae nisi necessitatibus alias voluptas.</div>\n" +
+    "    </div>\n" +
+    "    <div class=\"col-md-12\">\n" +
+    "      <h4>Address Receipt</h4>\n" +
+    "      <div class=\"col-xs-2\"><i></i></div>\n" +
+    "      <div class=\"col-xs-10 gray-text\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum beatae sint, odio dicta neque, natus labore magni, dolore, nulla incidunt ducimus. Perferendis provident minima, nam consectetur quae aspernatur beatae fugiat!</div>\n" +
+    "    </div>\n" +
+    "  </div>\n" +
+    "</div>\n" +
+    "");
+}]);
+
+angular.module("../public/app/partials/home/footer.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("../public/app/partials/home/footer.html",
+    "");
+}]);
+
+angular.module("../public/app/partials/home/header.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("../public/app/partials/home/header.html",
+    "<nav id=\"main\">\n" +
+    "  <div class=\"container-fluid\">\n" +
+    "    <div class=\"navbar-header\">\n" +
+    "      <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#bs-example-navbar-collapse-1\" aria-expanded=\"false\">\n" +
+    "        <span class=\"sr-only\">Toggle navigation</span>\n" +
+    "        <span class=\"icon-bar\"></span>\n" +
+    "        <span class=\"icon-bar\"></span>\n" +
+    "        <span class=\"icon-bar\"></span>\n" +
+    "      </button>\n" +
+    "      <a class=\"navbar-brand\" href=\"#\">\n" +
+    "        <img src=\"images/anwani_logo.png\" style=\"width:100px\" class=\"img-responsive\" alt=\"\">\n" +
+    "      </a>\n" +
+    "    </div>\n" +
+    "  <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">\n" +
+    "  <ul class=\"nav navbar-nav navbar-right\">\n" +
+    "    <li><a href=\"\">HOME</a></li>\n" +
+    "    <li><a href=\"\">ABOUT</a></li>\n" +
+    "    <li><a href=\"\">FEATURES</a></li>\n" +
+    "    <li style=\"padding:10px 15px;margin-left:100px\"><button href=\"\" class=\"btn btn-warning btn-sm\">LOGIN/SIGNUP</button></li>\n" +
+    "  </ul>\n" +
+    "</div>\n" +
+    "</div>\n" +
+    "</nav>\n" +
+    "");
+}]);
+
+angular.module("../public/app/partials/home/index.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("../public/app/partials/home/index.html",
+    "<div ui-view=\"header\"></div>\n" +
+    "<div ui-view=\"banner\"></div>\n" +
+    "<div ui-view=\"about\"></div>\n" +
+    "<div ui-view=\"features\"></div>\n" +
+    "<div ui-view=\"partners\"></div>\n" +
+    "<div ui-view=\"sub-header\"></div>\n" +
+    "<div ui-view=\"footer\"></div>\n" +
+    "");
+}]);
+
+angular.module("../public/app/partials/home/partners.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("../public/app/partials/home/partners.html",
+    "<div class=\"row padded-sides\">\n" +
+    "  <div class=\"col-md-12 white\">\n" +
+    "    <h4 class=\"gray-text\">Our Partners</h4>\n" +
+    "    <div class=\"seperator\"></div>\n" +
+    "    <div class=\"col-md-4 col-md-offset-4 images\">\n" +
+    "    <img class=\"col-md-4\" src=\"images/unhcr.png\" alt=\"\">\n" +
+    "    <img class=\"col-md-4\" src=\"images/coders.png\" alt=\"\">\n" +
+    "    <img class=\"col-md-4\" src=\"images/techmoran.png\" alt=\"\">\n" +
+    "    </div>\n" +
+    "  </div>\n" +
+    "</div>\n" +
+    "");
+}]);
+
+angular.module("../public/app/partials/home/sub-header.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("../public/app/partials/home/sub-header.html",
     "");
 }]);
 
