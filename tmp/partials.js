@@ -31,6 +31,30 @@ angular.module("../public/app/partials/account/login.html", []).run(["$templateC
 
 angular.module("../public/app/partials/home/about.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("../public/app/partials/home/about.html",
+    "<div class=\"padded-sides\">\n" +
+    "  <div class=\"row white\">\n" +
+    "  <div class=\"col-md-12\">\n" +
+    "    <h3 style=\"color:black !important\">About Anwani</h3>\n" +
+    "    <h4 class=\"gray\">Lorem ipsum dolor sit amet.</h4>\n" +
+    "  </div>\n" +
+    "  <div class=\"col-md-4\">\n" +
+    "    <div class=\"circled\"><i class=\"\"></i></div>\n" +
+    "    <h5>Physical Address for All</h5>\n" +
+    "    <p class='black-text'>For the first time, every African citizens whether they live in the city or in a hut somewhere in a village will have the oportunity to own a physical address.\n" +
+    "</p>\n" +
+    "  </div>\n" +
+    "  <div class=\"col-md-4\">\n" +
+    "    <div class=\"circled\"><i class=\"\"></i></div>\n" +
+    "    <h5>Service Delivery</h5>\n" +
+    "    <p class='black-text'>Address can be provided by user to service providers, e.g. electric company to be able to service them more efficiently because they will find the address easier and faster. </p>\n" +
+    "  </div>\n" +
+    "  <div class=\"col-md-4\">\n" +
+    "    <div class=\"circled\"><i class=\"\"></i></div>\n" +
+    "    <h5>Citizen Empowerment</h5>\n" +
+    "    <p class='black-text'>As citizens, users can utilise Anwani to partake in various responsibilities as citizens such as voting and other national registrations</p>\n" +
+    "  </div>\n" +
+    "  </div>\n" +
+    "</div>\n" +
     "");
 }]);
 

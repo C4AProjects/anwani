@@ -5755,6 +5755,9 @@ div.gray, div.white {
 .gray-text {
   color: #949494 !important; }
 
+.black-text {
+  color: black !important; }
+
 .seperator {
   border-bottom: 1px solid #f5f5f5; }
 

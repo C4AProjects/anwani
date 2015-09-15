@@ -34,6 +34,10 @@ app.config(function($stateProvider, $urlRouterProvider) {
           controller: '',
           templateUrl: 'app/partials/home/index.html',
         },
+        'about@home': {
+          controller: '',
+          templateUrl: 'app/partials/home/about.html',
+        },
         'header@home': {
           controller: '',
           templateUrl: 'app/partials/home/header.html',
