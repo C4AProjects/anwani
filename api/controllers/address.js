@@ -63,11 +63,11 @@ exports.create = function createAddress(req, res, next) {
             }));
           }
 
-          if(user) {
+          if(user && user.phone_number) {
             return done(null, user);
           }
 
-          User.create(userInfo, function(err, user) {
+          User.create(userInfo, function(err, doc) {
             if(err) {
               return done(CustomError({
                 name: 'ADDRESS_CREATION_ERROR',
@@ -76,7 +76,7 @@ exports.create = function createAddress(req, res, next) {
               }));
             }
 
-            return done(null, user);
+            return done(null, doc);
           });
         });
       },
