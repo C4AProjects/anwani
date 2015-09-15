@@ -49,18 +49,18 @@ angular.module("../public/app/partials/home/features.html", []).run(["$templateC
     "  <div class=\"col-md-4\" style=\"padding-top:30px\">\n" +
     "    <div class=\"col-md-12\">\n" +
     "      <h4>Create Address</h4>\n" +
-    "      <div class=\"col-xs-2\"><i></i></div>\n" +
-    "      <div class=\"col-xs-10 gray-text\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque quis eos hic. Accusantium, asperiores, hic! Consectetur repellat quos est recusandae modi expedita obcaecati beatae enim. Error esse deleniti possimus obcaecati.</div>\n" +
+    "      <div class=\"col-xs-2\"><i class=\"fa fa-plus-square\"></i></div>\n" +
+    "      <div class=\"col-xs-10 gray-text centered\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque quis eos hic. Accusantium, asperiores, hic! Consectetur repellat quos est recusandae modi expedita obcaecati beatae enim. Error esse deleniti possimus obcaecati.</div>\n" +
     "    </div>\n" +
     "    <div class=\"col-md-12\">\n" +
     "      <h4>View Existing Address</h4>\n" +
     "      <div class=\"col-xs-2\"><i></i></div>\n" +
-    "      <div class=\"col-xs-10 gray-text\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur voluptas rerum at quaerat placeat! Officia perspiciatis sint voluptates, minima eius sunt. A  dipisci nulla ut magnam illum et soluta optio autem.</div>\n" +
+    "      <div class=\"col-xs-10 gray-text centered\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur voluptas rerum at quaerat placeat! Officia perspiciatis sint voluptates, minima eius sunt. A  dipisci nulla ut magnam illum et soluta optio autem.</div>\n" +
     "    </div>\n" +
     "    <div class=\"col-md-12\">\n" +
     "      <h4>Manage Address</h4>\n" +
     "      <div class=\"col-xs-2\"><i ></i></div>\n" +
-    "      <div class=\"col-xs-10 gray-text\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, hic dignissimos eveniet amet quisquam ad dolorem   voluptates iste, dicta incidunt error dolore quas magnam rerum odit quis repellat cupiditate recusandae!</div>\n" +
+    "      <div class=\"col-xs-10 gray-text centered\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, hic dignissimos eveniet amet quisquam ad dolorem   voluptates iste, dicta incidunt error dolore quas magnam rerum odit quis repellat cupiditate recusandae!</div>\n" +
     "    </div>\n" +
     "  </div>\n" +
     "  <div class=\"col-md-4\">\n" +
@@ -70,18 +70,18 @@ angular.module("../public/app/partials/home/features.html", []).run(["$templateC
     "  <div class=\"col-md-4\" style=\"padding-top:30px\">\n" +
     "    <div class=\"col-md-12\">\n" +
     "      <h4>User & Share Address</h4>\n" +
-    "      <div class=\"col-xs-2\"><i></i></div>\n" +
-    "      <div class=\"col-xs-10 gray-text\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit deleniti odio ab sint labore asperiores, culpa maiores esse cumque, ducimus rerum et provident quasi. Sint soluta ut reprehenderit, aspernatur libero.</div>\n" +
+    "      <div class=\"col-xs-2\"><i class=\"fa fa-reply-all\"></i></div>\n" +
+    "      <div class=\"col-xs-10 gray-text centered\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit deleniti odio ab sint labore asperiores, culpa maiores esse cumque, ducimus rerum et provident quasi. Sint soluta ut reprehenderit, aspernatur libero.</div>\n" +
     "    </div>\n" +
     "    <div class=\"col-md-12\">\n" +
     "      <h4>Add Locational Photo</h4>\n" +
-    "      <div class=\"col-xs-2\"><i></i></div>\n" +
-    "      <div class=\"col-xs-10 gray-text\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, molestias saepe. Eum vero porro quia, facilis magnam eligendi ratione ipsa eveniet, accusantium aliquid laboriosam praesentium! Recusandae nisi necessitatibus alias voluptas.</div>\n" +
+    "      <div class=\"col-xs-2\"><i class=\"fa fa-camera\"></i></div>\n" +
+    "      <div class=\"col-xs-10 gray-text centered\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, molestias saepe. Eum vero porro quia, facilis magnam eligendi ratione ipsa eveniet, accusantium aliquid laboriosam praesentium! Recusandae nisi necessitatibus alias voluptas.</div>\n" +
     "    </div>\n" +
     "    <div class=\"col-md-12\">\n" +
     "      <h4>Address Receipt</h4>\n" +
-    "      <div class=\"col-xs-2\"><i></i></div>\n" +
-    "      <div class=\"col-xs-10 gray-text\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum beatae sint, odio dicta neque, natus labore magni, dolore, nulla incidunt ducimus. Perferendis provident minima, nam consectetur quae aspernatur beatae fugiat!</div>\n" +
+    "      <div class=\"col-xs-2\"><i class=\"fa fa-map-marker\"></i></div>\n" +
+    "      <div class=\"col-xs-10 gray-text centered\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum beatae sint, odio dicta neque, natus labore magni, dolore, nulla incidunt ducimus. Perferendis provident minima, nam consectetur quae aspernatur beatae fugiat!</div>\n" +
     "    </div>\n" +
     "  </div>\n" +
     "</div>\n" +

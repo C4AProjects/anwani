@@ -5425,7 +5425,7 @@ License URL ... https://github.com/typeplate/starter-kit/blob/master/license.txt
   font-family: "Ampersand";
   src: local("Georgia");
   unicode-range: U+270C; }
-.typl8-tera, .typl8-giga, .typl8-mega, h1, .typl8-alpha, h2, .typl8-beta, h3, .typl8-gamma, h4, .typl8-delta, h5, .typl8-epsilon, .typl8-zeta, h6, body {
+.typl8-tera, .typl8-giga, .typl8-mega, h1, .typl8-alpha, h2, .typl8-beta, h3, div.gray i, div.white i, .typl8-gamma, h4, .typl8-delta, h5, .typl8-epsilon, .typl8-zeta, h6, body {
   text-rendering: optimizeLegibility;
   line-height: 1;
   margin-top: 0;
@@ -5476,7 +5476,7 @@ body {
   margin-bottom: 8.91px;
   margin-bottom: 0.495rem; }
 
-.typl8-beta, h3 {
+.typl8-beta, h3, div.gray i, div.white i {
   font-size: 48px;
   font-size: 2.66667rem;
   margin-bottom: 11.1375px;
@@ -5739,6 +5739,8 @@ div.gray, div.white {
   div.gray h1.gray, div.gray h2.gray, div.gray h3.gray, div.gray h4.gray, div.gray h5.gray, div.gray h6.gray, div.white h1.gray, div.white h2.gray, div.white h3.gray, div.white h4.gray, div.white h5.gray, div.white h6.gray {
     text-align: center;
     font-weight: bold;
+    color: #949494 !important; }
+  div.gray i, div.white i {
     color: #949494 !important; }
 
 .padded {

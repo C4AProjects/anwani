@@ -98,6 +98,10 @@ div.gray,div.white{
     font-weight: bold;
     color:$light_grey !important;
   }
+  i{
+    color:$light_grey !important;
+    @extend .typl8-beta;
+  }
 }
 .padded{
   padding:5% 10%;
