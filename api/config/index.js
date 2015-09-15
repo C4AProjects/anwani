@@ -24,9 +24,9 @@ module.exports = {
   OPEN_ENDPOINTS: [
     /\/media\/.*/,
     /\/documentation\/.*/,
+    '/addresses/create',
     '/users/login',
     '/users/signup',
     '/',
-    '/info'
   ]
 };

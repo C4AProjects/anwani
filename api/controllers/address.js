@@ -28,12 +28,6 @@ var olc          = require('../lib/olc');
 exports.create = function createAddress(req, res, next) {
   debug('create address');
 
-  if(!req._user) {
-    return next(CustomError({
-      name: 'AUTHORIZATION_DENIAL',
-      message: 'Your are not logged in'
-    }));
-  }
 
   // Begin workflow
   var workflow = new EventEmitter();
@@ -41,10 +35,6 @@ exports.create = function createAddress(req, res, next) {
   // validating address data
   // cant trust anyone
   workflow.on('validate', function validateAddress() {
-    req.assert('user', 'userId is invalid').notEmpty().isMongoId();
-    req.assert('longitude', 'longitude cannot be empty').notEmpty();
-    req.assert('latitude', 'latitude cannot be empty').notEmpty();
-
     var errs = req.validationErrors();
 
     if(errs) {
@@ -59,83 +49,111 @@ exports.create = function createAddress(req, res, next) {
 
   workflow.on('createAddress', function createAddress() {
     var body = req.body;
+    var addressInfo = body.address;
+    var userInfo = body.user;
 
-    //body.virtual_code = olc.encode(body.latitude, body.longitude, 12);
-
-    if(body.location_pic) {
-      base64ImageToFile(body.location_pic, './media', function (err, imgPath) {
-        if(err) {
-          return next(CustomError({
-            name: 'ADDRESS_CREATION_ERROR',
-            message: err.message
-          }));
-        }
-
-        body.location_pic = imgPath.slice(imgPath.indexOf('/'));
-
-        Address.create(body, function (err, data) {
+    async.waterfall([
+      function createOrRetrieveUser(done) {
+        User.get({ phone_number: userInfo.phone_number }, function (err, user) {
           if(err) {
-            return next(CustomError({
+            return done(CustomError({
               name: 'ADDRESS_CREATION_ERROR',
-              message: err.message
+              message: err.message,
+              status: 500
             }));
           }
+
+          if(user && user.phone_number) {
+            return done(null, user);
+          }
+
+          User.create(userInfo, function(err, doc) {
+            if(err) {
+              return done(CustomError({
+                name: 'ADDRESS_CREATION_ERROR',
+                message: err.message,
+                status: 500
+              }));
+            }
+
+            return done(null, doc);
+          });
+        });
+      },
+      function maxAddressesReached(user, done) {
+        if(user.addresses.length > config.MAX_ADDRESSES_NUMBER) {
+          return done(CustomError({
+            name: 'ADDRESS_CREATION_ERROR',
+            message: 'Max Number of addresses reached'
+          }));
+        } else {
+          return done(null, user);
+        }
+      },
+      function createLocationPic(user, done) {
+        addressInfo.user = user._id;
+
+        if(!addressInfo.location_pic) {
+          return done(null);
+        } else {
+          base64ImageToFile(addressInfo.location_pic, './media', function (err, imgPath) {
+            if(err) {
+              return done(CustomError({
+                name: 'ADDRESS_CREATION_ERROR',
+                message: err.message,
+                status: 500
+              }));
+            }
+
+            addressInfo.location_pic = imgPath.slice(imgPath.indexOf('/'));
+
+            return done(null);
+          });
+
+        }
+      },
+      function createAddress(done) {
+
+        Address.create(addressInfo, function (err, data) {
+          if(err) {
+            return done(CustomError({
+              name: 'ADDRESS_CREATION_ERROR',
+              message: err.message,
+              status: 500
+            }));
+          }
+
           var address = data.address;
 
           if(!data.isNew) {
-            return res.status(201).json(address);
+            return done(null, address);
 
           } else {
             var update = { $push: { addresses: address._id } };
 
             User.update({ _id: address.user }, update, function (err) {
               if(err) {
-                return next(CustomError({
+                return done(CustomError({
                   name: 'ADDRESS_CREATION_ERROR',
-                  message: err.message
+                  message: err.message,
+                  status: 500
                 }));
               }
 
-              res.status(201).json(address);
+              return done(null, address);
 
             });
           }
 
         });
-      });
+      }
+    ], function (err, address) {
+      if(err) {
+        return next(err);
+      }
 
-    } else {
-      Address.create(body, function (err, data) {
-        if(err) {
-          return next(CustomError({
-            name: 'ADDRESS_CREATION_ERROR',
-            message: err.message
-          }));
-        }
-        var address = data.address;
-
-        if(!data.isNew) {
-          return res.status(201).json(address);
-
-        } else {
-          var update = { $push: { addresses: address._id } };
-
-          User.update({ _id: address.user }, update, function (err) {
-            if(err) {
-              return next(CustomError({
-                name: 'ADDRESS_CREATION_ERROR',
-                message: err.message
-              }));
-            }
-
-            res.status(201).json(address);
-
-          });
-        }
-
-      });
-    }
-
+      res.status(201).json(address);
+    });
 
   });
 

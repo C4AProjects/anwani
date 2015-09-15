@@ -19,16 +19,15 @@ var addressController  = require('../controllers/address');
 
 var router  = express.Router();
 
-
 /**
- * @api {post} /addresss Create Address
+ * @api {post} /addresses/create Create Address
  * @apiVersion 1.0.0
  * @apiName Create
  * @apiGroup address
  *
  * @apiDescription Create an Address and get back the Open Location Code
  *
- * @apiParam {String} user user id
+ * @apiParam {Object} user user data
  * @apiParam {String} location_pic location photo
  * @apiParam {Number} latitude latitude coordinate
  * @apiParam {Number} longitude longitude coordinate
@@ -40,15 +39,23 @@ var router  = express.Router();
  *
  * @apiParamExample Request Example:
  * {
- *    user: "556e1174a8952c9521286a60",
- *    location_pic: "base64 image string",
- *    short_virtual_code: "MP7H+E2",
- *    long_virtual_code: "6E9AEFMP7H+E2FH",
- *    latitude: 4.567889,
- *    longitude: -12.098,
- *    street_address: "",
- *    city: "nairobi",
- *    country: "kenya"
+ *    user: {
+ *      phone_number: "254787898989",
+ *      first_name: "Mary",
+ *      last_name: "Jane",
+ *      other_name: "Doe",
+ *      password: "mypin" // Send once when the user is new
+ *    },
+ *    address: {
+ *      location_pic: "base64 image string",
+ *      short_virtual_code: "MP7H+E2",
+ *      long_virtual_code: "6E9AEFMP7H+E2FH",
+ *      latitude: 4.567889,
+ *      longitude: -12.098,
+ *      street_address: "",
+ *      city: "nairobi",
+ *      country: "kenya"
+ *    }
  * }
  *
  * @apiSuccess {String} _id address id
@@ -77,10 +84,10 @@ var router  = express.Router();
  *  }
  *
  */
-router.post('/', addressController.create);
+router.post('/create', addressController.create);
 
 /**
- * @api {get} /addresss/:id Get address
+ * @api {get} /addresses/:id Get address
  * @apiVersion 1.0.0
  * @apiName Get
  * @apiGroup address
@@ -115,7 +122,7 @@ router.post('/', addressController.create);
 router.get('/:id', addressController.fetchOne);
 
 /**
- * @api {put} /addresss/:id Update address
+ * @api {put} /addresses/:id Update address
  * @apiVersion 1.0.0
  * @apiName Update
  * @apiGroup address
@@ -150,12 +157,12 @@ router.get('/:id', addressController.fetchOne);
 router.put('/:id', addressController.update);
 
 /**
- * @api {get} /addresss Get addresss collection
+ * @api {get} /addresses Get addresses collection
  * @apiVersion 1.0.0
  * @apiName FetchAll
  * @apiGroup address
  *
- * @apiDescription Get a collection of addresss
+ * @apiDescription Get a collection of addresses
  *
  * @apiSuccess {String} _id address id
  * @apiSuccess {String} user user id
@@ -186,7 +193,7 @@ router.put('/:id', addressController.update);
 router.get('/', addressController.fetchAll);
 
 /**
- * @api {delete} /addresss/:id Delete address
+ * @api {delete} /addresses/:id Delete address
  * @apiVersion 1.0.0
  * @apiName Delete
  * @apiGroup address

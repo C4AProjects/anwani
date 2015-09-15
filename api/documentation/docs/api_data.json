@@ -61,13 +61,6 @@
             "group": "Success 200",
             "type": "<p>String</p> ",
             "optional": false,
-            "field": "username",
-            "description": "<p>username</p> "
-          },
-          {
-            "group": "Success 200",
-            "type": "<p>String</p> ",
-            "optional": false,
             "field": "first_name",
             "description": "<p>first name</p> "
           },
@@ -96,13 +89,6 @@
             "group": "Success 200",
             "type": "<p>String</p> ",
             "optional": false,
-            "field": "email",
-            "description": "<p>email</p> "
-          },
-          {
-            "group": "Success 200",
-            "type": "<p>String</p> ",
-            "optional": false,
             "field": "phone_number",
             "description": "<p>phone number</p> "
           }
@@ -111,7 +97,7 @@
       "examples": [
         {
           "title": "Response Example:",
-          "content": "{\n  \"_id\" : \"556e1174a8952c9521286a60\",\n  \"username\": \"john_smthi\",\n  \"last_name\": \"smith\",\n  \"first_name\": \"john\",\n  \"other_name\": \"cole\",\n  \"email\": \"john_smith@mail.com\",\n  \"phone_number\": \"254711223344\",\n  \"addresses\" : []\n}",
+          "content": "{\n  \"_id\" : \"556e1174a8952c9521286a60\",\n  \"last_name\": \"smith\",\n  \"first_name\": \"john\",\n  \"other_name\": \"cole\",\n  \"phone_number\": \"254711223344\",\n  \"addresses\" : []\n}",
           "type": "json"
         }
       ]
@@ -141,13 +127,6 @@
             "group": "Success 200",
             "type": "<p>String</p> ",
             "optional": false,
-            "field": "username",
-            "description": "<p>username</p> "
-          },
-          {
-            "group": "Success 200",
-            "type": "<p>String</p> ",
-            "optional": false,
             "field": "first_name",
             "description": "<p>first name</p> "
           },
@@ -176,13 +155,6 @@
             "group": "Success 200",
             "type": "<p>String</p> ",
             "optional": false,
-            "field": "email",
-            "description": "<p>email</p> "
-          },
-          {
-            "group": "Success 200",
-            "type": "<p>String</p> ",
-            "optional": false,
             "field": "phone_number",
             "description": "<p>phone number</p> "
           }
@@ -191,7 +163,7 @@
       "examples": [
         {
           "title": "Response Example:",
-          "content": "[{\n  \"_id\" : \"556e1174a8952c9521286a60\",\n  \"username\": \"john_smthi\",\n  \"last_name\": \"smith\",\n  \"first_name\": \"john\",\n  \"other_name\": \"cole\",\n  \"email\": \"john_smith@mail.com\",\n  \"phone_number\": \"254711223344\",\n  \"addresses\" : []\n}]",
+          "content": "[{\n  \"_id\" : \"556e1174a8952c9521286a60\",\n  \"last_name\": \"smith\",\n  \"first_name\": \"john\",\n  \"other_name\": \"cole\",\n  \"phone_number\": \"254711223344\",\n  \"addresses\" : []\n}]",
           "type": "json"
         }
       ]
@@ -216,13 +188,6 @@
             "optional": false,
             "field": "_id",
             "description": "<p>address id</p> "
-          },
-          {
-            "group": "Success 200",
-            "type": "<p>String</p> ",
-            "optional": false,
-            "field": "user",
-            "description": "<p>user id</p> "
           },
           {
             "group": "Success 200",
@@ -278,7 +243,7 @@
       "examples": [
         {
           "title": "Response Example:",
-          "content": "[{\n  \"_id\" : \"556e1174a8952c9521286a60\",\n  user: \"556e1174a8952c9521286a60\",\n  virtual_code: \"MP7H+E2\",\n  location_pic: \"/media/a8952c9521286a60.jpeg\",\n  latitude: 4.567889,\n  longitude: -12.098,\n  street_address: \"\",\n  city: \"nairobi\",\n  country: \"kenya\"\n}]",
+          "content": "[{\n  \"_id\" : \"556e1174a8952c9521286a60\",\n  user: \"556e1174a8952c9521286a60\",\n  short_virtual_code: \"MP7H+E2\",\n  long_virtual_code: \"6EAEMMP7H+E2\",\n  location_pic: \"/media/a8952c9521286a60.jpeg\",\n  latitude: 4.567889,\n  longitude: -12.098,\n  street_address: \"\",\n  city: \"nairobi\",\n  country: \"kenya\"\n}]",
           "type": "json"
         }
       ]
@@ -303,13 +268,6 @@
             "optional": false,
             "field": "_id",
             "description": "<p>user id</p> "
-          },
-          {
-            "group": "Success 200",
-            "type": "<p>String</p> ",
-            "optional": false,
-            "field": "username",
-            "description": "<p>username</p> "
           },
           {
             "group": "Success 200",
@@ -343,13 +301,6 @@
             "group": "Success 200",
             "type": "<p>String</p> ",
             "optional": false,
-            "field": "email",
-            "description": "<p>email</p> "
-          },
-          {
-            "group": "Success 200",
-            "type": "<p>String</p> ",
-            "optional": false,
             "field": "phone_number",
             "description": "<p>phone number</p> "
           }
@@ -358,7 +309,7 @@
       "examples": [
         {
           "title": "Response Example:",
-          "content": "{\n  \"_id\" : \"556e1174a8952c9521286a60\",\n  \"username\": \"john_smthi\",\n  \"last_name\": \"smith\",\n  \"first_name\": \"john\",\n  \"other_name\": \"cole\",\n  \"email\": \"john_smith@mail.com\",\n  \"phone_number\": \"254711223344\",\n  \"addresses\" : []\n}",
+          "content": "{\n  \"_id\" : \"556e1174a8952c9521286a60\",\n  \"last_name\": \"smith\",\n  \"first_name\": \"john\",\n  \"other_name\": \"cole\",\n  \"phone_number\": \"254711223344\",\n  \"addresses\" : []\n}",
           "type": "json"
         }
       ]
@@ -373,7 +324,7 @@
     "version": "1.0.0",
     "name": "Login",
     "group": "User",
-    "description": "<p>Log in a  user</p> ",
+    "description": "<p>Log in a user. The request returns a token used to authentication of the user on subsequent requests. The token is placed as an HTTP header ie <code>Authorization: Bearer &lt;Token-here&gt;</code> otherwise requests are rejected.</p> ",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -382,21 +333,21 @@
             "type": "<p>String</p> ",
             "optional": false,
             "field": "username",
-            "description": "<p>username</p> "
+            "description": "<p>user phoner number</p> "
           },
           {
             "group": "Parameter",
             "type": "<p>String</p> ",
             "optional": false,
             "field": "password",
-            "description": "<p>Password</p> "
+            "description": "<p>Password/Pin</p> "
           }
         ]
       },
       "examples": [
         {
           "title": "Request Example:",
-          "content": "{\n  \"username\": \"john_smthi\",\n  \"password\": \"password\"\n}",
+          "content": "{\n  \"phone_number\": \"245757565\",\n  \"password\": \"mypin\"\n}",
           "type": "json"
         }
       ]
@@ -429,13 +380,6 @@
             "group": "Success 200",
             "type": "<p>String</p> ",
             "optional": false,
-            "field": "user.username",
-            "description": "<p>username</p> "
-          },
-          {
-            "group": "Success 200",
-            "type": "<p>String</p> ",
-            "optional": false,
             "field": "user.first_name",
             "description": "<p>first name</p> "
           },
@@ -457,13 +401,6 @@
             "group": "Success 200",
             "type": "<p>String</p> ",
             "optional": false,
-            "field": "user.email",
-            "description": "<p>email</p> "
-          },
-          {
-            "group": "Success 200",
-            "type": "<p>String</p> ",
-            "optional": false,
             "field": "user.phone_number",
             "description": "<p>phone number</p> "
           },
@@ -479,7 +416,7 @@
       "examples": [
         {
           "title": "Response Example:",
-          "content": "{\n  \"token\" : \"ylHUMaVrS0dpcO/+nT+6aAVVGcRJzu=\",\n  \"user\": {\n    \"_id\" : \"556e1174a8952c9521286a60\",\n    \"username\": \"john_smthi\",\n    \"last_name\": \"smith\",\n    \"first_name\": \"john\",\n    \"other_name\": \"cole\",\n    \"email\": \"john_smith@mail.com\",\n    \"phone_number\": \"254711223344\",\n    \"addresses\" : []\n  }\n}",
+          "content": "{\n  \"token\" : \"ylHUMaVrS0dpcO/+nT+6aAVVGcRJzu=\",\n  \"user\": {\n    \"_id\" : \"556e1174a8952c9521286a60\",\n    \"last_name\": \"smith\",\n    \"first_name\": \"john\",\n    \"other_name\": \"cole\",\n    \"phone_number\": \"254711223344\",\n    \"addresses\" : []\n  }\n}",
           "type": "json"
         }
       ]
@@ -597,7 +534,7 @@
       "examples": [
         {
           "title": "Response Example:",
-          "content": "{\n  \"_id\" : \"556e1174a8952c9521286a60\",\n  user: \"556e1174a8952c9521286a60\",\n  virtual_code: \"MP7H+E2\",\n  location_pic: \"/media/a8952c9521286a60.jpeg\",\n  latitude: 4.567889,\n  longitude: -12.098,\n  street_address: \"\",\n  city: \"nairobi\",\n  country: \"kenya\"\n}",
+          "content": "{\n  \"_id\" : \"556e1174a8952c9521286a60\",\n  user: \"556e1174a8952c9521286a60\",\n  short_virtual_code: \"MP7H+E2\",\n  long_virtual_code: \"6EAEMMP7H+E2\",\n  location_pic: \"/media/a8952c9521286a60.jpeg\",\n  latitude: 4.567889,\n  longitude: -12.098,\n  street_address: \"\",\n  city: \"nairobi\",\n  country: \"kenya\"\n}",
           "type": "json"
         }
       ]
@@ -627,22 +564,8 @@
             "group": "Parameter",
             "type": "<p>String</p> ",
             "optional": false,
-            "field": "email",
-            "description": "<p>Email address</p> "
-          },
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "optional": false,
             "field": "password",
             "description": "<p>Password</p> "
-          },
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "optional": false,
-            "field": "username",
-            "description": "<p>username</p> "
           },
           {
             "group": "Parameter",
@@ -670,7 +593,7 @@
       "examples": [
         {
           "title": "Request Example:",
-          "content": "{\n  \"phone_number\": \"254711223344\",\n  \"password\": \"password\",\n  \"username\": \"john_smthi\",\n  \"email\" : \"john_smith@email.com\",\n  \"last_name\": \"smith\",\n  \"first_name\": \"john\",\n  \"other_name\": \"cole\"\n}",
+          "content": "{\n  \"phone_number\": \"254711223344\",\n  \"password\": \"password\",\n  \"last_name\": \"smith\",\n  \"first_name\": \"john\",\n  \"other_name\": \"cole\"\n}",
           "type": "json"
         }
       ]
@@ -684,13 +607,6 @@
             "optional": false,
             "field": "_id",
             "description": "<p>user id</p> "
-          },
-          {
-            "group": "Success 200",
-            "type": "<p>String</p> ",
-            "optional": false,
-            "field": "username",
-            "description": "<p>username</p> "
           },
           {
             "group": "Success 200",
@@ -725,7 +641,7 @@
       "examples": [
         {
           "title": "Response Example:",
-          "content": "{\n  \"_id\" : \"556e1174a8952c9521286a60\",\n  \"username\": \"john_smthi\",\n  \"last_name\": \"smith\",\n  \"first_name\": \"john\",\n  \"other_name\": \"cole\",\n  \"addresses\" : []\n}",
+          "content": "{\n  \"_id\" : \"556e1174a8952c9521286a60\",\n  \"last_name\": \"smith\",\n  \"first_name\": \"john\",\n  \"other_name\": \"cole\",\n  \"addresses\" : []\n}",
           "type": "json"
         }
       ]
@@ -755,13 +671,6 @@
             "group": "Success 200",
             "type": "<p>String</p> ",
             "optional": false,
-            "field": "username",
-            "description": "<p>username</p> "
-          },
-          {
-            "group": "Success 200",
-            "type": "<p>String</p> ",
-            "optional": false,
             "field": "first_name",
             "description": "<p>first name</p> "
           },
@@ -790,13 +699,6 @@
             "group": "Success 200",
             "type": "<p>String</p> ",
             "optional": false,
-            "field": "email",
-            "description": "<p>email</p> "
-          },
-          {
-            "group": "Success 200",
-            "type": "<p>String</p> ",
-            "optional": false,
             "field": "phone_number",
             "description": "<p>phone number</p> "
           }
@@ -805,7 +707,7 @@
       "examples": [
         {
           "title": "Response Example:",
-          "content": "{\n  \"_id\" : \"556e1174a8952c9521286a60\",\n  \"username\": \"john_smthi\",\n  \"last_name\": \"smith\",\n  \"first_name\": \"john\",\n  \"other_name\": \"cole\",\n  \"email\": \"john_smith@mail.com\",\n  \"phone_number\": \"254711223344\",\n  \"addresses\" : []\n}",
+          "content": "{\n  \"_id\" : \"556e1174a8952c9521286a60\",\n  \"last_name\": \"smith\",\n  \"first_name\": \"john\",\n  \"other_name\": \"cole\",\n  \"phone_number\": \"254711223344\",\n  \"addresses\" : []\n}",
           "type": "json"
         }
       ]
@@ -815,7 +717,7 @@
   },
   {
     "type": "post",
-    "url": "/addresss",
+    "url": "/addresses/create",
     "title": "Create Address",
     "version": "1.0.0",
     "name": "Create",
@@ -826,10 +728,10 @@
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>String</p> ",
+            "type": "<p>Object</p> ",
             "optional": false,
             "field": "user",
-            "description": "<p>user id</p> "
+            "description": "<p>user data</p> "
           },
           {
             "group": "Parameter",
@@ -892,7 +794,7 @@
       "examples": [
         {
           "title": "Request Example:",
-          "content": "{\n   user: \"556e1174a8952c9521286a60\",\n   location_pic: \"base64 image string\",\n   short_virtual_code: \"MP7H+E2\",\n   long_virtual_code: \"6E9AEFMP7H+E2FH\",\n   latitude: 4.567889,\n   longitude: -12.098,\n   street_address: \"\",\n   city: \"nairobi\",\n   country: \"kenya\"\n}",
+          "content": "{\n   user: {\n     phone_number: \"254787898989\",\n     first_name: \"Mary\",\n     last_name: \"Jane\",\n     other_name: \"Doe\",\n     password: \"mypin\" // Send once when the user is new\n   },\n   address: {\n     location_pic: \"base64 image string\",\n     short_virtual_code: \"MP7H+E2\",\n     long_virtual_code: \"6E9AEFMP7H+E2FH\",\n     latitude: 4.567889,\n     longitude: -12.098,\n     street_address: \"\",\n     city: \"nairobi\",\n     country: \"kenya\"\n   }\n}",
           "type": "json"
         }
       ]
@@ -985,7 +887,7 @@
   },
   {
     "type": "delete",
-    "url": "/addresss/:id",
+    "url": "/addresses/:id",
     "title": "Delete address",
     "version": "1.0.0",
     "name": "Delete",
@@ -1079,12 +981,12 @@
   },
   {
     "type": "get",
-    "url": "/addresss",
-    "title": "Get addresss collection",
+    "url": "/addresses",
+    "title": "Get addresses collection",
     "version": "1.0.0",
     "name": "FetchAll",
     "group": "address",
-    "description": "<p>Get a collection of addresss</p> ",
+    "description": "<p>Get a collection of addresses</p> ",
     "success": {
       "fields": {
         "Success 200": [
@@ -1173,7 +1075,7 @@
   },
   {
     "type": "get",
-    "url": "/addresss/:id",
+    "url": "/addresses/:id",
     "title": "Get address",
     "version": "1.0.0",
     "name": "Get",
@@ -1267,7 +1169,7 @@
   },
   {
     "type": "put",
-    "url": "/addresss/:id",
+    "url": "/addresses/:id",
     "title": "Update address",
     "version": "1.0.0",
     "name": "Update",
