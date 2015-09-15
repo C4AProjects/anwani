@@ -1,6 +1,6 @@
 var app = angular.module("buymore", ['ui.router', 'restangular', 'smart-table',
   'chart.js', 'textAngular', 'angularMoment', 'ui.bootstrap',
-  'highcharts-ng', 'leaflet-directive'
+  'highcharts-ng'
 ]);
 
 app.config(function(RestangularProvider) {
@@ -220,6 +220,21 @@ angular.module("../public/app/partials/home/features.html", []).run(["$templateC
 
 angular.module("../public/app/partials/home/footer.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("../public/app/partials/home/footer.html",
+    "<footer class=\"row white\">\n" +
+    "  <div class=\"col-md-4 centered\">Connect with Anwani\n" +
+    "    <a href=\"\" class=\"rounded\">\n" +
+    "      <i class=\"fa fa-facebook\"></i>\n" +
+    "    </a>\n" +
+    "    <a href=\"\" class=\"rounded\">\n" +
+    "      <i class=\"fa fa-twitter\"></i>\n" +
+    "    </a>\n" +
+    "    <a href=\"\" class=\"rounded\">\n" +
+    "      <i class=\"fa fa-google-plus\"></i>\n" +
+    "    </a>\n" +
+    "  </div>\n" +
+    "  <div class=\"col-md-4 centered\">Copyright &copy 2015 Anwani App </div>\n" +
+    "  <div class=\"col-md-4 centered\">Get the Anwani App</div>\n" +
+    "</footer>\n" +
     "");
 }]);
 
@@ -281,6 +296,15 @@ angular.module("../public/app/partials/home/partners.html", []).run(["$templateC
 
 angular.module("../public/app/partials/home/sub-header.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("../public/app/partials/home/sub-header.html",
+    "<div class=\"row\">\n" +
+    "  <nav id=\"sub\" class=\"col-md-4 col-md-offset-4\">\n" +
+    "    <ul class=\"nav navbar-nav\" style=\"width:100%\">\n" +
+    "      <li style=\"width:33%\"><a href=\"\">Home</a></li>\n" +
+    "      <li style=\"width:33%\"><a href=\"\">About</a></li>\n" +
+    "      <li style=\"width:33%\"><a href=\"\">Features</a></li>\n" +
+    "    </ul>\n" +
+    "  </nav>\n" +
+    "</div>\n" +
     "");
 }]);
 

@@ -80,6 +80,10 @@ nav#main{
   padding-right:10%;
   background:white !important;
 }
+nav#sub{
+  background:$grey !important;
+  border:none;
+}
 div.gray,div.white{
   background:$dark_gray;
   color:white;
@@ -121,6 +125,19 @@ div.white{
 .images{
   img{
     vertical-align: middle !important;
-    padding:5px;
+    padding:10px;
+  }
+}
+footer{
+  background: white !important;
+  padding:2.5% 10%;
+}
+a.rounded{
+  padding:10px;
+  margin-left:10px;
+  border-radius:50%;
+  background:#b0b0b0;
+  i{
+    color:white !important;
   }
 }
