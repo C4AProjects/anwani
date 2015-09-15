@@ -61,7 +61,7 @@ exports.create = function create(addressData, cb) {
         if(err) {
           return cb(err);
         }
-        return cb(null, { isNew: false, address: address });
+        return cb(null, { isNew: true , address: address });
       });
 
     });
