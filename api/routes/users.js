@@ -72,12 +72,12 @@ router.post('/signup', userController.create);
  * ```Authorization: Bearer <Token-here>``` otherwise requests are rejected.
  *
  * @apiParam {String} username user phoner number
- * @apiParam {String} password Password
+ * @apiParam {String} password Password/Pin
  *
  * @apiParamExample Request Example:
  *  {
  *    "phone_number": "245757565",
- *    "password": "password"
+ *    "password": "mypin"
  *  }
  *
  * @apiSuccess {String} token auth token
