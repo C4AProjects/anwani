@@ -18,13 +18,11 @@ var UserSchema = new Schema({
   first_name:   { type: String },
   last_name:    { type: String },
   other_name:   { type: String },
-  username:     { type: String },
   password:     { type: String },
   last_login:   { type: Date },
   realm:        { type: String, default: 'user' },
   archived:     { type: Boolean, default: false },
   phone_number: { type: String, unique: true },
-  email:        { type: String, unique: true },
   addresses:    [{ type: Schema.Types.ObjectId, ref: 'Address' }],
   date_created: Date,
   last_modified:Date
@@ -35,9 +33,7 @@ var UserSchema = new Schema({
  */
 UserSchema.statics.whitelist = {
   _id: 1,
-  email: 1,
   phone_number: 1,
-  username: 1,
   first_name: 1,
   last_name: 1,
   other_name: 1,
