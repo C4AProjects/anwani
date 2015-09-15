@@ -20,7 +20,7 @@ var addressController  = require('../controllers/address');
 var router  = express.Router();
 
 /**
- * @api {post} /addresses Create Address
+ * @api {post} /addresses/create Create Address
  * @apiVersion 1.0.0
  * @apiName Create
  * @apiGroup address
@@ -84,7 +84,7 @@ var router  = express.Router();
  *  }
  *
  */
-router.post('/', addressController.create);
+router.post('/create', addressController.create);
 
 /**
  * @api {get} /addresses/:id Get address
