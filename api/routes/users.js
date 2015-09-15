@@ -29,9 +29,7 @@ var router  = express.Router();
  * @apiDescription Create a new user
  *
  * @apiParam {String} phone_number Phone number
- * @apiParam {String} email   Email address
  * @apiParam {String} password Password
- * @apiParam {String} username username
  * @apiParam {String} first_name first name
  * @apiParam {String} last_name last name
  * @apiParam {String} other_name other names
@@ -40,15 +38,12 @@ var router  = express.Router();
  *  {
  *    "phone_number": "254711223344",
  *    "password": "password",
- *    "username": "john_smthi",
- *    "email" : "john_smith@email.com",
  *    "last_name": "smith",
  *    "first_name": "john",
  *    "other_name": "cole"
  *  }
  *
  * @apiSuccess {String} _id user id
- * @apiSuccess {String} username username
  * @apiSuccess {String} first_name first name
  * @apiSuccess {String} last_name last name
  * @apiSuccess {String} other_name other names
@@ -57,7 +52,6 @@ var router  = express.Router();
  * @apiSuccessExample Response Example:
  *  {
  *    "_id" : "556e1174a8952c9521286a60",
- *    "username": "john_smthi",
  *    "last_name": "smith",
  *    "first_name": "john",
  *    "other_name": "cole",
@@ -73,25 +67,25 @@ router.post('/signup', userController.create);
  * @apiName Login
  * @apiGroup User
  *
- * @apiDescription Log in a  user
+ * @apiDescription Log in a user. The request returns a token used to authentication
+ * of the user on subsequent requests. The token is placed as an HTTP header ie
+ * ```Authorization: Bearer <Token-here>``` otherwise requests are rejected.
  *
- * @apiParam {String} username username
+ * @apiParam {String} username user phoner number
  * @apiParam {String} password Password
  *
  * @apiParamExample Request Example:
  *  {
- *    "username": "john_smthi",
+ *    "phone_number": "245757565",
  *    "password": "password"
  *  }
  *
  * @apiSuccess {String} token auth token
  * @apiSuccess {Object} user user info
  * @apiSuccess {String} user._id user id
- * @apiSuccess {String} user.username username
  * @apiSuccess {String} user.first_name first name
  * @apiSuccess {String} user.last_name last name
  * @apiSuccess {String} user.other_name other names
- * @apiSuccess {String} user.email email
  * @apiSuccess {String} user.phone_number phone number
  * @apiSuccess {Array} user.addresses addresses
  *
@@ -100,11 +94,9 @@ router.post('/signup', userController.create);
  *    "token" : "ylHUMaVrS0dpcO/+nT+6aAVVGcRJzu=",
  *    "user": {
  *      "_id" : "556e1174a8952c9521286a60",
- *      "username": "john_smthi",
  *      "last_name": "smith",
  *      "first_name": "john",
  *      "other_name": "cole",
- *      "email": "john_smith@mail.com",
  *      "phone_number": "254711223344",
  *      "addresses" : []
  *    }
@@ -141,22 +133,18 @@ router.post('/logout', authController.logout);
  * @apiDescription Get a user with the given id
  *
  * @apiSuccess {String} _id user id
- * @apiSuccess {String} username username
  * @apiSuccess {String} first_name first name
  * @apiSuccess {String} last_name last name
  * @apiSuccess {String} other_name other names
  * @apiSuccess {Array} addresses addresses
- * @apiSuccess {String} email email
  * @apiSuccess {String} phone_number phone number
  *
  * @apiSuccessExample Response Example:
  *  {
  *    "_id" : "556e1174a8952c9521286a60",
- *    "username": "john_smthi",
  *    "last_name": "smith",
  *    "first_name": "john",
  *    "other_name": "cole",
- *    "email": "john_smith@mail.com",
  *    "phone_number": "254711223344",
  *    "addresses" : []
  *  }
@@ -172,22 +160,18 @@ router.get('/:id', userController.fetchOne);
  * @apiDescription Update a user with the given id
  *
  * @apiSuccess {String} _id user id
- * @apiSuccess {String} username username
  * @apiSuccess {String} first_name first name
  * @apiSuccess {String} last_name last name
  * @apiSuccess {String} other_name other names
  * @apiSuccess {Array} addresses addresses
- * @apiSuccess {String} email email
  * @apiSuccess {String} phone_number phone number
  *
  * @apiSuccessExample Response Example:
  *  {
  *    "_id" : "556e1174a8952c9521286a60",
- *    "username": "john_smthi",
  *    "last_name": "smith",
  *    "first_name": "john",
  *    "other_name": "cole",
- *    "email": "john_smith@mail.com",
  *    "phone_number": "254711223344",
  *    "addresses" : []
  *  }
@@ -204,22 +188,18 @@ router.put('/:id', userController.update);
  *
  *
  * @apiSuccess {String} _id user id
- * @apiSuccess {String} username username
  * @apiSuccess {String} first_name first name
  * @apiSuccess {String} last_name last name
  * @apiSuccess {String} other_name other names
  * @apiSuccess {Array} addresses addresses
- * @apiSuccess {String} email email
  * @apiSuccess {String} phone_number phone number
  *
  * @apiSuccessExample Response Example:
  *  [{
  *    "_id" : "556e1174a8952c9521286a60",
- *    "username": "john_smthi",
  *    "last_name": "smith",
  *    "first_name": "john",
  *    "other_name": "cole",
- *    "email": "john_smith@mail.com",
  *    "phone_number": "254711223344",
  *    "addresses" : []
  *  }]
@@ -236,22 +216,18 @@ router.get('/', userController.fetchAll);
  * @apiDescription Delete a user with the given id
  *
  * @apiSuccess {String} _id user id
- * @apiSuccess {String} username username
  * @apiSuccess {String} first_name first name
  * @apiSuccess {String} last_name last name
  * @apiSuccess {String} other_name other names
  * @apiSuccess {Array} addresses addresses
- * @apiSuccess {String} email email
  * @apiSuccess {String} phone_number phone number
  *
  * @apiSuccessExample Response Example:
  *  {
  *    "_id" : "556e1174a8952c9521286a60",
- *    "username": "john_smthi",
  *    "last_name": "smith",
  *    "first_name": "john",
  *    "other_name": "cole",
- *    "email": "john_smith@mail.com",
  *    "phone_number": "254711223344",
  *    "addresses" : []
  *  }
@@ -268,7 +244,6 @@ router.delete('/:id', userController.delete);
  * @apiDescription Get a collection of user's addresses
  *
  * @apiSuccess {String} _id address id
- * @apiSuccess {String} user user id
  * @apiSuccess {String} virtual_code virtual code
  * @apiSuccess {String} location_pic location photo
  * @apiSuccess {Number} latitude latitude coordinate
@@ -281,7 +256,8 @@ router.delete('/:id', userController.delete);
  *  [{
  *    "_id" : "556e1174a8952c9521286a60",
  *    user: "556e1174a8952c9521286a60",
- *    virtual_code: "MP7H+E2",
+ *    short_virtual_code: "MP7H+E2",
+ *    long_virtual_code: "6EAEMMP7H+E2",
  *    location_pic: "/media/a8952c9521286a60.jpeg",
  *    latitude: 4.567889,
  *    longitude: -12.098,
@@ -315,7 +291,8 @@ router.get('/:id/addresses', userController.fetchUserAddresses);
  *  {
  *    "_id" : "556e1174a8952c9521286a60",
  *    user: "556e1174a8952c9521286a60",
- *    virtual_code: "MP7H+E2",
+ *    short_virtual_code: "MP7H+E2",
+ *    long_virtual_code: "6EAEMMP7H+E2",
  *    location_pic: "/media/a8952c9521286a60.jpeg",
  *    latitude: 4.567889,
  *    longitude: -12.098,
