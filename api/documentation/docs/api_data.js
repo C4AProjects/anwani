@@ -717,7 +717,7 @@ define({ "api": [
   },
   {
     "type": "post",
-    "url": "/addresses",
+    "url": "/addresses/create",
     "title": "Create Address",
     "version": "1.0.0",
     "name": "Create",
