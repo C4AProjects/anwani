@@ -20,9 +20,9 @@ var addressController  = require('../controllers/address');
 var router  = express.Router();
 
 /**
- * @api {post} /addresses/create Create Address
+ * @api {post} /addresses/create Create Address(Mobile Endpoint)
  * @apiVersion 1.0.0
- * @apiName Create
+ * @apiName CreateNew
  * @apiGroup address
  *
  * @apiDescription Create an Address and get back the Open Location Code
@@ -85,6 +85,65 @@ var router  = express.Router();
  *
  */
 router.post('/create', addressController.create);
+
+/**
+ * @api {post} /addresses Create Address(Web Endpoint)
+ * @apiVersion 1.0.0
+ * @apiName Create
+ * @apiGroup address
+ *
+ * @apiDescription Create an Address and get back the Open Location Code
+ *
+ * @apiParam {String} location_pic location photo
+ * @apiParam {String} user user id
+ * @apiParam {Number} latitude latitude coordinate
+ * @apiParam {Number} longitude longitude coordinate
+ * @apiParam {String} long_virtual_code long virtual code
+ * @apiParam {String} short_virtual_code short virtual code
+ * @apiParam {String} street_address street address
+ * @apiParam {String} city city name
+ * @apiParam {String} country country name
+ *
+ * @apiParamExample Request Example:
+ * {
+ *      user: "556e1174a8952c9521286a60",
+ *      location_pic: "base64 image string",
+ *      short_virtual_code: "MP7H+E2",
+ *      long_virtual_code: "6E9AEFMP7H+E2FH",
+ *      latitude: 4.567889,
+ *      longitude: -12.098,
+ *      street_address: "",
+ *      city: "nairobi",
+ *      country: "kenya"
+ * }
+ *
+ * @apiSuccess {String} _id address id
+ * @apiSuccess {String} user user id
+ * @apiSuccess {String} long_virtual_code long virtual code
+ * @apiSuccess {String} short_virtual_code short virtual code
+ * @apiSuccess {String} location_pic location photo
+ * @apiSuccess {Number} latitude latitude coordinate
+ * @apiSuccess {Number} longitude longitude coordinate
+ * @apiSuccess {String} street_address street address
+ * @apiSuccess {String} city city name
+ * @apiSuccess {String} country country name
+ *
+ * @apiSuccessExample Response Example:
+ *  {
+ *    "_id" : "556e1174a8952c9521286a60",
+ *    user: "556e1174a8952c9521286a60",
+ *    short_virtual_code: "MP7H+E2",
+ *    long_virtual_code: "6E9AEFMP7H+E2FH",
+ *    location_pic: "/media/a8952c9521286a60.jpeg",
+ *    latitude: 4.567889,
+ *    longitude: -12.098,
+ *    street_address: "",
+ *    city: "nairobi",
+ *    country: "kenya"
+ *  }
+ *
+ */
+router.post('/', addressController.createNew);
 
 /**
  * @api {get} /addresses/:id Get address

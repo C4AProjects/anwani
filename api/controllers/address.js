@@ -312,3 +312,128 @@ exports.fetchAll = function fetchAllAddresss(req, res, next) {
     res.json(addresss);
   });
 };
+
+exports.createNew = function createAddress(req, res, next) {
+  debug('create address');
+
+  if(!req._user) {
+    return next(CustomError({
+      name: 'AUTHORIZATION_ERROR',
+      message: 'Your are not logged in'
+    }));
+  }
+
+  // Begin workflow
+  var workflow = new EventEmitter();
+
+  // validating address data
+  // cant trust anyone
+  workflow.on('validate', function validateAddress() {
+    var errs = req.validationErrors();
+
+    if(errs) {
+      return next(CustomError({
+        name: 'ADDRESS_CREATION_ERROR',
+        message: errs.message
+      }));
+    }
+
+    workflow.emit('createAddress');
+  });
+
+  workflow.on('createAddress', function createAddress() {
+    var body = req.body;
+
+    async.waterfall([
+      function retrieveUser(done) {
+        User.get({ _id: body.user }, function (err, user) {
+          if(err) {
+            return done(CustomError({
+              name: 'ADDRESS_CREATION_ERROR',
+              message: err.message,
+              status: 500
+            }));
+          }
+
+          return done(null, user);
+
+        });
+      },
+      function maxAddressesReached(user, done) {
+        if(user.addresses.length > config.MAX_ADDRESSES_NUMBER) {
+          return done(CustomError({
+            name: 'ADDRESS_CREATION_ERROR',
+            message: 'Max Number of addresses reached'
+          }));
+        } else {
+          return done(null, user);
+        }
+      },
+      function createLocationPic(user, done) {
+
+        if(!body.location_pic) {
+          return done(null);
+        } else {
+          base64ImageToFile(body.location_pic, './media', function (err, imgPath) {
+            if(err) {
+              return done(CustomError({
+                name: 'ADDRESS_CREATION_ERROR',
+                message: err.message,
+                status: 500
+              }));
+            }
+
+            body.location_pic = imgPath.slice(imgPath.indexOf('/'));
+
+            return done(null);
+          });
+
+        }
+      },
+      function createAddress(done) {
+
+        Address.create(body, function (err, data) {
+          if(err) {
+            return done(CustomError({
+              name: 'ADDRESS_CREATION_ERROR',
+              message: err.message,
+              status: 500
+            }));
+          }
+
+          var address = data.address;
+
+          if(!data.isNew) {
+            return done(null, address);
+
+          } else {
+            var update = { $push: { addresses: address._id } };
+
+            User.update({ _id: address.user }, update, function (err) {
+              if(err) {
+                return done(CustomError({
+                  name: 'ADDRESS_CREATION_ERROR',
+                  message: err.message,
+                  status: 500
+                }));
+              }
+
+              return done(null, address);
+
+            });
+          }
+
+        });
+      }
+    ], function (err, address) {
+      if(err) {
+        return next(err);
+      }
+
+      res.status(201).json(address);
+    });
+
+  });
+
+  workflow.emit('validate');
+};
