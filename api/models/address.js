@@ -58,7 +58,8 @@ AddressSchema.statics.whitelist = {
   longitude:      1,
   street_address: 1,
   city:           1,
-  country:        1
+  country:        1,
+  user:           1
 };
 
 

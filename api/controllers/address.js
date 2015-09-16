@@ -51,7 +51,6 @@ exports.create = function createAddress(req, res, next) {
     var body = req.body;
     var addressInfo = body.address;
     var userInfo = body.user;
-    console.log(body);
 
     async.waterfall([
       function createOrRetrieveUser(done) {
@@ -125,7 +124,6 @@ exports.create = function createAddress(req, res, next) {
           }
 
           var address = data.address;
-          console.log(data);
 
           if(!data.isNew) {
             return done(null, address);
@@ -153,7 +151,6 @@ exports.create = function createAddress(req, res, next) {
       if(err) {
         return next(err);
       }
-      console.log(address);
 
       res.status(201).json(address);
     });
