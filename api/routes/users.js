@@ -236,7 +236,7 @@ router.get('/', userController.fetchAll);
 router.delete('/:id', userController.delete);
 
 /**
- * @api {get} /users Get user's address collection
+ * @api {get} /users/:id/addresses Get user's address collection
  * @apiVersion 1.0.0
  * @apiName FetchUserAddresses
  * @apiGroup User
@@ -270,7 +270,7 @@ router.delete('/:id', userController.delete);
 router.get('/:id/addresses', userController.fetchUserAddresses);
 
 /**
- * @api {delete} /users/:id Delete User Address
+ * @api {delete} /users/:id/addresses/:addrId Delete User Address
  * @apiVersion 1.0.0
  * @apiName RemoveUserAddress
  * @apiGroup User
