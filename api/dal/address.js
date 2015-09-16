@@ -84,7 +84,6 @@ exports.delete = function deleteItem(query, cb) {
 
   Address
     .findOne(query, returnFields)
-    .populate(population)
     .exec(function deleteAddress(err, address) {
       if (err) {
         return cb(err);
@@ -127,7 +126,6 @@ exports.update = function update(query, updates,  cb) {
 
   Address
     .findOneAndUpdate(query, updates, opts)
-    .populate(population)
     .exec(function updateAddress(err, address) {
       if(err) {
         return cb(err);
@@ -150,7 +148,6 @@ exports.get = function get(query, cb) {
 
   Address
     .findOne(query, returnFields)
-    .populate(population)
     .exec(function getAddress(err, address) {
       if(err) {
         return cb(err);
