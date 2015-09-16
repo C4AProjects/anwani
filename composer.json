@@ -6,21 +6,7 @@
   "type": "project",
   "require": {
     "php": ">=5.5.9",
-    "laravel/framework": "5.1.*",
-    "maatwebsite/excel": "^2.0",
-    "league/fractal": "^0.12.0",
-    "doctrine/dbal": "^2.5",
-    "nesbot/carbon": "^1.20",
-    "Illuminate/Container": "^5.1",
-    "league/flysystem-ziparchive": "^1.0",
-    "league/flysystem-dropbox": "^1.0",
-    "dropbox/dropbox-sdk": "^1.1",
-    "graham-campbell/flysystem": "^3.0",
-    "illuminate/container": "^5.1",
-    "vsmoraes/laravel-pdf": "^1.0",
-    "phpunit/phpunit": "^4.7",
-    "laracasts/Integrated": "^0.15.6",
-    "predis/predis": "^1.0"
+    "laravel/framework": "5.1.*"
   },
   "require-dev": {
     "fzaninotto/faker": "~1.4",
