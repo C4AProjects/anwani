@@ -290,7 +290,7 @@ exports.delete = function deleteAddress(req, res, next) {
 exports.fetchAll = function fetchAllAddresss(req, res, next) {
   debug('get a collection of addresss');
 
-  if(!req._user || (req._user.realm !== 'admin') {
+  if(!req._user || (req._user.realm !== 'admin')) {
     return next(CustomError({
       name: 'AUTHORIZATION_ERROR',
       message: 'Your are not logged in or you are not an administrator'
