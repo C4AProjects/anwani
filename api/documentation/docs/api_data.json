@@ -717,10 +717,180 @@
   },
   {
     "type": "post",
-    "url": "/addresses/create",
-    "title": "Create Address",
+    "url": "/addresses",
+    "title": "Create Address(Web Endpoint)",
     "version": "1.0.0",
     "name": "Create",
+    "group": "address",
+    "description": "<p>Create an Address and get back the Open Location Code</p> ",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "location_pic",
+            "description": "<p>location photo</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "user",
+            "description": "<p>user id</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>Number</p> ",
+            "optional": false,
+            "field": "latitude",
+            "description": "<p>latitude coordinate</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>Number</p> ",
+            "optional": false,
+            "field": "longitude",
+            "description": "<p>longitude coordinate</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "long_virtual_code",
+            "description": "<p>long virtual code</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "short_virtual_code",
+            "description": "<p>short virtual code</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "street_address",
+            "description": "<p>street address</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "city",
+            "description": "<p>city name</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "country",
+            "description": "<p>country name</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request Example:",
+          "content": "{\n     user: \"556e1174a8952c9521286a60\",\n     location_pic: \"base64 image string\",\n     short_virtual_code: \"MP7H+E2\",\n     long_virtual_code: \"6E9AEFMP7H+E2FH\",\n     latitude: 4.567889,\n     longitude: -12.098,\n     street_address: \"\",\n     city: \"nairobi\",\n     country: \"kenya\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "_id",
+            "description": "<p>address id</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "user",
+            "description": "<p>user id</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "long_virtual_code",
+            "description": "<p>long virtual code</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "short_virtual_code",
+            "description": "<p>short virtual code</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "location_pic",
+            "description": "<p>location photo</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>Number</p> ",
+            "optional": false,
+            "field": "latitude",
+            "description": "<p>latitude coordinate</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>Number</p> ",
+            "optional": false,
+            "field": "longitude",
+            "description": "<p>longitude coordinate</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "street_address",
+            "description": "<p>street address</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "city",
+            "description": "<p>city name</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "country",
+            "description": "<p>country name</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Response Example:",
+          "content": "{\n  \"_id\" : \"556e1174a8952c9521286a60\",\n  user: \"556e1174a8952c9521286a60\",\n  short_virtual_code: \"MP7H+E2\",\n  long_virtual_code: \"6E9AEFMP7H+E2FH\",\n  location_pic: \"/media/a8952c9521286a60.jpeg\",\n  latitude: 4.567889,\n  longitude: -12.098,\n  street_address: \"\",\n  city: \"nairobi\",\n  country: \"kenya\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "routes/addresses.js",
+    "groupTitle": "address"
+  },
+  {
+    "type": "post",
+    "url": "/addresses/create",
+    "title": "Create Address(Mobile Endpoint)",
+    "version": "1.0.0",
+    "name": "CreateNew",
     "group": "address",
     "description": "<p>Create an Address and get back the Open Location Code</p> ",
     "parameter": {
