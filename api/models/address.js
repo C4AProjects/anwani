@@ -8,12 +8,13 @@ var moment    = require('moment');
 var paginator = require('mongoose-paginate');
 
 var Schema = mongoose.Schema;
+var tempLocationPic = 'http://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/map-marker-icon.png';
 
 var AddressSchema = new Schema({
   user:           { type: Schema.Types.ObjectId, ref: 'User' },
   short_virtual_code:   { type: String },
   long_virtual_code:    { type: String },
-  location_pic:   { type: String },
+  location_pic:   { type: String , default: tempLocationPic },
   latitude:       { type: Number },
   longitude:      { type: Number },
   street_address: { type: String },
