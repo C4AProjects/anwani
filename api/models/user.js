@@ -38,7 +38,8 @@ UserSchema.statics.whitelist = {
   last_name: 1,
   other_name: 1,
   last_login: 1,
-  addresses: 1
+  addresses: 1,
+  realm: 1
 };
 
 // add mongoose-troop middleware to support pagination
