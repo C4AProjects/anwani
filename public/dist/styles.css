@@ -1,4 +1,10 @@
 @charset "UTF-8";
+@font-face {
+  font-family: "Swiss721";
+  src: url("../fonts/Swiss721.ttf"); }
+@font-face {
+  font-family: "Swiss721Bold";
+  src: url("../fonts/Swiss721Bold.ttf"); }
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;
@@ -5477,10 +5483,10 @@ body {
   margin-bottom: 0.495rem; }
 
 .typl8-beta, h3, div.gray i, div.white i {
-  font-size: 48px;
-  font-size: 2.66667rem;
-  margin-bottom: 11.1375px;
-  margin-bottom: 0.61875rem; }
+  font-size: 32px;
+  font-size: 1.77778rem;
+  margin-bottom: 16.70625px;
+  margin-bottom: 0.92813rem; }
 
 .typl8-gamma, h4 {
   font-size: 26px;
@@ -5689,7 +5695,7 @@ p + .typl8-drop-cap {
  */
 body {
   overflow-x: hidden;
-  font-family: Lato;
+  font-family: "Swiss721";
   background: #F2F1EF; }
 
 .content {
@@ -5701,6 +5707,9 @@ body {
   padding: 10%;
   background-size: cover;
   background-image: url("../images/sky-clouds-blue.jpg"); }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Swiss721Bold"; }
 
 nav {
   margin-bottom: 0;

@@ -3,13 +3,21 @@ typl8-tera: 117,
 typl8-giga: 90,
 typl8-mega: 72,
 typl8-alpha: 60,
-typl8-beta: 48,
+typl8-beta: 32,
 typl8-gamma: 26,
 typl8-delta: 21,
 typl8-epsilon: 18,
 typl8-zeta: 14,
 ) !default;
 
+@font-face {
+    font-family: "Swiss721";
+    src: url("../fonts/Swiss721.ttf");
+}
+@font-face {
+    font-family: "Swiss721Bold";
+    src: url("../fonts/Swiss721Bold.ttf");
+}
 @import "bootstrap";
 @import "typeplate/styles";
 
@@ -31,7 +39,7 @@ $iron:#DADFE1;
 
 body{
   overflow-x: hidden;
-  font-family:Lato;
+  font-family:"Swiss721";
   background:$grey;
   @extend .typl8-zeta;
 }
@@ -47,7 +55,9 @@ body{
   background-image: url('../images/sky-clouds-blue.jpg');
 }
 
-
+h1,h2,h3,h4,h5,h6{
+  font-family: "Swiss721Bold";
+}
 nav{
   @extend .navbar;
   @extend .navbar-default;
