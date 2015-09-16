@@ -51,7 +51,6 @@ AddressSchema.pre('save', function preSaveMiddleware(next) {
  */
 AddressSchema.statics.whitelist = {
   _id: 1,
-  user:           1,
   short_virtual_code:   1,
   long_virtual_code:   1,
   location_pic:   1,
