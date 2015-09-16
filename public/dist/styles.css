@@ -5743,7 +5743,7 @@ div.gray, div.white {
   color: white; }
   div.gray h1, div.gray h2, div.gray h3, div.gray h4, div.gray h5, div.gray h6, div.white h1, div.white h2, div.white h3, div.white h4, div.white h5, div.white h6 {
     color: white !important;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.2em;
     margin-top: 1em; }
   div.gray h1.gray, div.gray h2.gray, div.gray h3.gray, div.gray h4.gray, div.gray h5.gray, div.gray h6.gray, div.white h1.gray, div.white h2.gray, div.white h3.gray, div.white h4.gray, div.white h5.gray, div.white h6.gray {
     text-align: center;

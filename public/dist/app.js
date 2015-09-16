@@ -183,7 +183,7 @@ angular.module("../public/app/partials/home/about.html", []).run(["$templateCach
     "      </div>\n" +
     "      <div class=\"col-md-offset-4 col-md-4\">\n" +
     "        <h3 style=\"color:black !important\" class=\"centered\">About Anwani</h3>\n" +
-    "        <h4 class=\"gray\">Lorem ipsum dolor sit amet.</h4>\n" +
+    "        <p class=\"centered gray-text\">Lorem ipsum dolor sit amet.</p>\n" +
     "      </div>\n" +
     "      <div class=\"col-md-4\" style=\"margin-top:-100px\">\n" +
     "        <span class='black-text'>Featured on</span>\n" +
@@ -194,18 +194,18 @@ angular.module("../public/app/partials/home/about.html", []).run(["$templateCach
     "    </div>\n" +
     "    <div class=\"col-md-4\">\n" +
     "      <div class=\"circled\"><i class=\"\"></i></div>\n" +
-    "      <h5>Physical Address for All</h5>\n" +
+    "      <h5 class=\"centered black-text\">Physical Address for All</h5>\n" +
     "      <p class='black-text'>For the first time, every African citizens whether they live in the city or in a hut somewhere in a village will have the oportunity to own a physical address.\n" +
     "      </p>\n" +
     "    </div>\n" +
     "    <div class=\"col-md-4\">\n" +
     "      <div class=\"circled\"><i class=\"\"></i></div>\n" +
-    "      <h5>Service Delivery</h5>\n" +
+    "      <h5 class=\"centered black-text\">Service Delivery</h5>\n" +
     "      <p class='black-text'>Address can be provided by user to service providers, e.g. electric company to be able to service them more efficiently because they will find the address easier and faster. </p>\n" +
     "    </div>\n" +
     "    <div class=\"col-md-4\">\n" +
     "      <div class=\"circled\"><i class=\"\"></i></div>\n" +
-    "      <h5>Citizen Empowerment</h5>\n" +
+    "      <h5 class=\"centered black-text\">Citizen Empowerment</h5>\n" +
     "      <p class='black-text'>As citizens, users can utilise Anwani to partake in various responsibilities as citizens such as voting and other national registrations</p>\n" +
     "    </div>\n" +
     "  </div>\n" +
@@ -222,10 +222,10 @@ angular.module("../public/app/partials/home/banner.html", []).run(["$templateCac
     "        <p class=\"white-text\">The APP that allows you to create a real address in less than a minute...</p>\n" +
     "      </div>\n" +
     "      <div class=\"col-md-4\" style=\"width:33%\">\n" +
-    "        <img style=\"width:300px;height:570;margin:auto;margin-top:100px;margin-bottom:-150px\" src=\"images/phone_banner.jpg\" class=\"img-responsive\" alt=\"\">\n" +
+    "        <img style=\"margin:auto;margin-top:100px;margin-bottom:-150px\" src=\"images/phone_banner.jpg\" class=\"img-responsive\" alt=\"\">\n" +
     "      </div>\n" +
     "      <div class=\"col-md-4 padded-top\">\n" +
-    "        <h4 class=\"white-text\">It's simple</h4>\n" +
+    "        <h5 class=\"white-text\" style=\"margin-bottom:0.2em\">It's simple</h5>\n" +
     "        <p class=\"white-text\">Create your address or view existing ones</p>\n" +
     "      </div>\n" +
     "    </div>\n" +
