@@ -166,27 +166,48 @@ angular.module("../public/app/partials/account/login.html", []).run(["$templateC
 angular.module("../public/app/partials/home/about.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("../public/app/partials/home/about.html",
     "<div class=\"padded-sides\">\n" +
-    "  <div class=\"row white padded-bottom\" style=\"padding-top:10%\">\n" +
-    "  <div class=\"col-md-12\">\n" +
-    "    <h3 style=\"color:black !important\">About Anwani</h3>\n" +
-    "    <h4 class=\"gray\">Lorem ipsum dolor sit amet.</h4>\n" +
-    "  </div>\n" +
-    "  <div class=\"col-md-4\">\n" +
-    "    <div class=\"circled\"><i class=\"\"></i></div>\n" +
-    "    <h5>Physical Address for All</h5>\n" +
-    "    <p class='black-text'>For the first time, every African citizens whether they live in the city or in a hut somewhere in a village will have the oportunity to own a physical address.\n" +
-    "</p>\n" +
-    "  </div>\n" +
-    "  <div class=\"col-md-4\">\n" +
-    "    <div class=\"circled\"><i class=\"\"></i></div>\n" +
-    "    <h5>Service Delivery</h5>\n" +
-    "    <p class='black-text'>Address can be provided by user to service providers, e.g. electric company to be able to service them more efficiently because they will find the address easier and faster. </p>\n" +
-    "  </div>\n" +
-    "  <div class=\"col-md-4\">\n" +
-    "    <div class=\"circled\"><i class=\"\"></i></div>\n" +
-    "    <h5>Citizen Empowerment</h5>\n" +
-    "    <p class='black-text'>As citizens, users can utilise Anwani to partake in various responsibilities as citizens such as voting and other national registrations</p>\n" +
-    "  </div>\n" +
+    "  <div class=\"row white padded-bottom\" style=\"padding-top:12%\">\n" +
+    "\n" +
+    "    <div class=\"col-md-12\">\n" +
+    "      <div class=\"col-md-4\" style=\"margin-top:-100px\">\n" +
+    "        <span class=\"black-text\">Share on</span>\n" +
+    "        <a href=\"\" class=\"rounded\">\n" +
+    "          <i class=\"fa fa-facebook\"></i>\n" +
+    "        </a>\n" +
+    "        <a href=\"\" class=\"rounded\">\n" +
+    "          <i class=\"fa fa-twitter\"></i>\n" +
+    "        </a>\n" +
+    "        <a href=\"\" class=\"rounded\">\n" +
+    "          <i class=\"fa fa-google-plus\"></i>\n" +
+    "        </a>\n" +
+    "      </div>\n" +
+    "      <div class=\"col-md-offset-4 col-md-4\">\n" +
+    "        <h3 style=\"color:black !important\" class=\"centered\">About Anwani</h3>\n" +
+    "        <h4 class=\"gray\">Lorem ipsum dolor sit amet.</h4>\n" +
+    "      </div>\n" +
+    "      <div class=\"col-md-4\" style=\"margin-top:-100px\">\n" +
+    "        <span class='black-text'>Featured on</span>\n" +
+    "        <img src=\"images/techcrunch.png\" alt=\"\">\n" +
+    "        <img src=\"images/techmoran.png\" alt=\"\">\n" +
+    "      </div>\n" +
+    "\n" +
+    "    </div>\n" +
+    "    <div class=\"col-md-4\">\n" +
+    "      <div class=\"circled\"><i class=\"\"></i></div>\n" +
+    "      <h5>Physical Address for All</h5>\n" +
+    "      <p class='black-text'>For the first time, every African citizens whether they live in the city or in a hut somewhere in a village will have the oportunity to own a physical address.\n" +
+    "      </p>\n" +
+    "    </div>\n" +
+    "    <div class=\"col-md-4\">\n" +
+    "      <div class=\"circled\"><i class=\"\"></i></div>\n" +
+    "      <h5>Service Delivery</h5>\n" +
+    "      <p class='black-text'>Address can be provided by user to service providers, e.g. electric company to be able to service them more efficiently because they will find the address easier and faster. </p>\n" +
+    "    </div>\n" +
+    "    <div class=\"col-md-4\">\n" +
+    "      <div class=\"circled\"><i class=\"\"></i></div>\n" +
+    "      <h5>Citizen Empowerment</h5>\n" +
+    "      <p class='black-text'>As citizens, users can utilise Anwani to partake in various responsibilities as citizens such as voting and other national registrations</p>\n" +
+    "    </div>\n" +
     "  </div>\n" +
     "</div>\n" +
     "");
@@ -217,24 +238,24 @@ angular.module("../public/app/partials/home/features.html", []).run(["$templateC
   $templateCache.put("../public/app/partials/home/features.html",
     "<div class=\"row gray padded\">\n" +
     "  <div class=\"col-md-12\">\n" +
-    "    <h3>Anwani Features in detail</h3>\n" +
+    "    <h3 class=\"centered\">Anwani Features in detail</h3>\n" +
     "    <h4 class=\"gray\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </h4>\n" +
     "  </div>\n" +
     "  <div class=\"col-md-4\" style=\"padding-top:30px\">\n" +
     "    <div class=\"col-md-12\">\n" +
-    "      <h4>Create Address</h4>\n" +
-    "      <div class=\"col-xs-2\"><i class=\"fa fa-plus-square\"></i></div>\n" +
-    "      <div class=\"col-xs-10 gray-text centered\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque quis eos hic. Accusantium, asperiores, hic! Consectetur repellat quos est recusandae modi expedita obcaecati beatae enim. Error esse deleniti possimus obcaecati.</div>\n" +
+    "      <h4 class=\"col-md-10 col-xs-offset-2\">Create Address</h4>\n" +
+    "      <div class=\"col-xs-2\"><i class=\"fa large fa-plus-square\"></i></div>\n" +
+    "      <div class=\"col-xs-10 gray-text\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque quis eos hic. Accusantium, asperiores, hic! Consectetur repellat quos est recusandae modi expedita obcaecati beatae enim. Error esse deleniti possimus obcaecati.</div>\n" +
     "    </div>\n" +
     "    <div class=\"col-md-12\">\n" +
-    "      <h4>View Existing Address</h4>\n" +
+    "      <h4 class=\"col-md-10 col-xs-offset-2\">View Existing Address</h4>\n" +
     "      <div class=\"col-xs-2\"><i></i></div>\n" +
-    "      <div class=\"col-xs-10 gray-text centered\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur voluptas rerum at quaerat placeat! Officia perspiciatis sint voluptates, minima eius sunt. A  dipisci nulla ut magnam illum et soluta optio autem.</div>\n" +
+    "      <div class=\"col-xs-10 gray-text\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur voluptas rerum at quaerat placeat! Officia perspiciatis sint voluptates, minima eius sunt. A  dipisci nulla ut magnam illum et soluta optio autem.</div>\n" +
     "    </div>\n" +
     "    <div class=\"col-md-12\">\n" +
-    "      <h4>Manage Address</h4>\n" +
+    "      <h4 class=\"col-md-10 col-xs-offset-2\">Manage Address</h4>\n" +
     "      <div class=\"col-xs-2\"><i ></i></div>\n" +
-    "      <div class=\"col-xs-10 gray-text centered\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, hic dignissimos eveniet amet quisquam ad dolorem   voluptates iste, dicta incidunt error dolore quas magnam rerum odit quis repellat cupiditate recusandae!</div>\n" +
+    "      <div class=\"col-xs-10 gray-text\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, hic dignissimos eveniet amet quisquam ad dolorem   voluptates iste, dicta incidunt error dolore quas magnam rerum odit quis repellat cupiditate recusandae!</div>\n" +
     "    </div>\n" +
     "  </div>\n" +
     "  <div class=\"col-md-4\">\n" +
@@ -243,19 +264,19 @@ angular.module("../public/app/partials/home/features.html", []).run(["$templateC
     "  </div>\n" +
     "  <div class=\"col-md-4\" style=\"padding-top:30px\">\n" +
     "    <div class=\"col-md-12\">\n" +
-    "      <h4>User & Share Address</h4>\n" +
-    "      <div class=\"col-xs-2\"><i class=\"fa fa-reply-all\"></i></div>\n" +
-    "      <div class=\"col-xs-10 gray-text centered\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit deleniti odio ab sint labore asperiores, culpa maiores esse cumque, ducimus rerum et provident quasi. Sint soluta ut reprehenderit, aspernatur libero.</div>\n" +
+    "      <h4 class=\"col-md-10 col-xs-offset-2\">User & Share Address</h4>\n" +
+    "      <div class=\"col-xs-2\"><i class=\"fa large fa-reply-all\"></i></div>\n" +
+    "      <div class=\"col-xs-10 gray-text\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit deleniti odio ab sint labore asperiores, culpa maiores esse cumque, ducimus rerum et provident quasi. Sint soluta ut reprehenderit, aspernatur libero.</div>\n" +
     "    </div>\n" +
     "    <div class=\"col-md-12\">\n" +
-    "      <h4>Add Locational Photo</h4>\n" +
-    "      <div class=\"col-xs-2\"><i class=\"fa fa-camera\"></i></div>\n" +
-    "      <div class=\"col-xs-10 gray-text centered\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, molestias saepe. Eum vero porro quia, facilis magnam eligendi ratione ipsa eveniet, accusantium aliquid laboriosam praesentium! Recusandae nisi necessitatibus alias voluptas.</div>\n" +
+    "      <h4 class=\"col-md-10 col-xs-offset-2\">Add Locational Photo</h4>\n" +
+    "      <div class=\"col-xs-2\"><i class=\"fa large fa-camera\"></i></div>\n" +
+    "      <div class=\"col-xs-10 gray-text\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, molestias saepe. Eum vero porro quia, facilis magnam eligendi ratione ipsa eveniet, accusantium aliquid laboriosam praesentium! Recusandae nisi necessitatibus alias voluptas.</div>\n" +
     "    </div>\n" +
     "    <div class=\"col-md-12\">\n" +
-    "      <h4>Address Receipt</h4>\n" +
-    "      <div class=\"col-xs-2\"><i class=\"fa fa-map-marker\"></i></div>\n" +
-    "      <div class=\"col-xs-10 gray-text centered\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum beatae sint, odio dicta neque, natus labore magni, dolore, nulla incidunt ducimus. Perferendis provident minima, nam consectetur quae aspernatur beatae fugiat!</div>\n" +
+    "      <h4 class=\"col-md-10 col-xs-offset-2\">Address Receipt</h4>\n" +
+    "      <div class=\"col-xs-2\"><i class=\"fa large fa-map-marker\"></i></div>\n" +
+    "      <div class=\"col-xs-10 gray-text\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum beatae sint, odio dicta neque, natus labore magni, dolore, nulla incidunt ducimus. Perferendis provident minima, nam consectetur quae aspernatur beatae fugiat!</div>\n" +
     "    </div>\n" +
     "  </div>\n" +
     "</div>\n" +
@@ -326,7 +347,7 @@ angular.module("../public/app/partials/home/partners.html", []).run(["$templateC
   $templateCache.put("../public/app/partials/home/partners.html",
     "<div class=\"row padded-sides\">\n" +
     "  <div class=\"col-md-12 white\">\n" +
-    "    <h4 class=\"gray-text\">Our Partners</h4>\n" +
+    "    <h4 class=\"gray-text centered\">Our Partners</h4>\n" +
     "    <div class=\"seperator\"></div>\n" +
     "    <div class=\"col-md-4 col-md-offset-4 images\">\n" +
     "    <img class=\"col-md-4\" src=\"images/unhcr.png\" alt=\"\">\n" +

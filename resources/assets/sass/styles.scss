@@ -99,7 +99,7 @@ div.gray,div.white{
   background:$dark_gray;
   color:white;
   h1,h2,h3,h4,h5,h6{
-    text-align: center;
+    // text-align: left;
     color:white !important;
     margin-bottom:0.5em;
     margin-top:1em;
@@ -111,8 +111,11 @@ div.gray,div.white{
   }
   i{
     color:$light_grey !important;
-    @extend .typl8-beta;
+
   }
+}
+i.large{
+  @extend .typl8-beta;
 }
 .padded{
   padding:5% 10%;
