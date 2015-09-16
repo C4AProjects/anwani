@@ -173,7 +173,7 @@ define({ "api": [
   },
   {
     "type": "get",
-    "url": "/users",
+    "url": "/users/:id/addresses",
     "title": "Get user's address collection",
     "version": "1.0.0",
     "name": "FetchUserAddresses",
@@ -457,7 +457,7 @@ define({ "api": [
   },
   {
     "type": "delete",
-    "url": "/users/:id",
+    "url": "/users/:id/addresses/:addrId",
     "title": "Delete User Address",
     "version": "1.0.0",
     "name": "RemoveUserAddress",
