@@ -274,9 +274,17 @@ a.rounded{
     .row.white{
       padding-top:12em !important;
     }
+    .col-md-4.centered{
+      margin:2em 0 !important;
+    }
     .slighted-above{
       margin:0;
       min-height:3em;
+      img{
+        padding:0 2%;
+        width:40%;
+        margin:auto;
+      }
     }
     span.black-text{
       display: block;
@@ -298,6 +306,14 @@ footer{
   span.block{
     display: block;
     text-align: center;
+  }
+  img{
+    width:40%;
+    margin:auto;
+    margin-top:0.5em;
+  }
+  .centered{
+    margin:1em 0;
   }
 }
 }

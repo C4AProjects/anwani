@@ -175,7 +175,7 @@ angular.module("../public/app/partials/home/about.html", []).run(["$templateCach
     "        <a href='#' class='symbol' title='circletwitterbird'></a>\n" +
     "        <a href='#' class='symbol' title='circlegoogleplus'></a>\n" +
     "      </div>\n" +
-    "      <div class=\"col-md-offset-8 col-md-4 slighted-above\">\n" +
+    "      <div class=\"col-md-offset-8 centered col-md-4 slighted-above\">\n" +
     "        <span class='black-text'>Featured on</span>\n" +
     "        <img src=\"images/techcrunch.png\" alt=\"\">\n" +
     "        <img src=\"images/techmoran.png\" alt=\"\">\n" +
@@ -287,7 +287,10 @@ angular.module("../public/app/partials/home/footer.html", []).run(["$templateCac
     "    <a href='#' class='symbol' title='circletwitterbird'></a>\n" +
     "    <a href='#' class='symbol' title='circlegoogleplus'></a>\n" +
     "  </div>\n" +
-    "  <div class=\"col-md-4 centered right\"><span class=\"gray-text\">Get the Anwani App</span></div>\n" +
+    "  <div class=\"col-md-4 centered right\">\n" +
+    "    <span class=\"gray-text\">Get the Anwani App</span>\n" +
+    "<img src=\"images/google.png\" class=\"img-responsive\" alt=\"\">\n" +
+    "  </div>\n" +
     "  <div class=\"col-md-4 centered right\"><span class=\"gray-text\">Copyright &copy 2015 Anwani App</span> </div>\n" +
     "\n" +
     "</footer>\n" +

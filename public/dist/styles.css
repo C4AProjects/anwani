@@ -5880,9 +5880,15 @@ a.rounded {
 
   .about .row.white {
     padding-top: 12em !important; }
+  .about .col-md-4.centered {
+    margin: 2em 0 !important; }
   .about .slighted-above {
     margin: 0;
     min-height: 3em; }
+    .about .slighted-above img {
+      padding: 0 2%;
+      width: 40%;
+      margin: auto; }
   .about span.black-text {
     display: block;
     text-align: center; }
@@ -5897,7 +5903,13 @@ a.rounded {
 
   footer span.block {
     display: block;
-    text-align: center; } }
+    text-align: center; }
+  footer img {
+    width: 40%;
+    margin: auto;
+    margin-top: 0.5em; }
+  footer .centered {
+    margin: 1em 0; } }
 @media (min-width: 768px) and (max-width: 991px) {
   .right, .left {
     width: 100%; } }
