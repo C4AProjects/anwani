@@ -222,7 +222,7 @@ angular.module("../public/app/partials/home/banner.html", []).run(["$templateCac
     "        <img src=\"images/google.png\" class=\"img-responsive play\" alt=\"\">\n" +
     "      </div>\n" +
     "      <div class=\"col-md-4 right\">\n" +
-    "        <img style=\"margin:auto;margin-top:100px;margin-bottom:-150px\" src=\"images/phone_banner.jpg\" class=\"img-responsive\" alt=\"\">\n" +
+    "        <img class=\"phone img-responsive\" src=\"images/phone_banner.jpg\" alt=\"\">\n" +
     "      </div>\n" +
     "    </div>\n" +
     "\n" +

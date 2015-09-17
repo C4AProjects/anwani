@@ -72,7 +72,7 @@ $dark_gray:#29383a;
 $light_grey:#949494;
 $pumice:#D2D7D3;
 $iron:#DADFE1;
-
+$light_blue:#3cbed5;
 
 body{
   overflow-x: hidden;
@@ -131,7 +131,7 @@ nav#main{
   padding-left:10%;
   padding-right:10%;
   background:white !important;
-  border-bottom: 2px solid #3cbed5;
+  border-bottom: 2px solid $light_blue;
 }
 nav#sub{
   background:$grey !important;
@@ -231,6 +231,11 @@ a.rounded{
     z-index:10000;
   }
 }
+.phone{
+  margin:auto;
+  margin-top:100px;
+  margin-bottom:-150px;
+}
 .banner{
   background-image: url('../images/city_banner.png');
   background-size:cover;
@@ -248,6 +253,10 @@ img.play{
   margin-top: 0 !important;
   display:inline-block;
 }
+// Button Styles
+.btn-blue{
+  color:$light_blue;
+}
 // Media Queries
 /* Extra small devices (phones, less than 768px) */
 /* No media query since this is the default in Bootstrap */
@@ -258,16 +267,16 @@ img.play{
   }
   .navbar-brand{
     width:70%;
-      img{
-        margin:auto;
-      }
+    img{
+      margin:auto;
     }
+  }
   // Banner View
   .banner{
     text-align:center !important;
     padding-top: 2em;
-    img{
-      margin-top: 2em !important;
+    .phone{
+      margin-top: 2em;
     }
 
     .padded-top{
@@ -301,26 +310,26 @@ img.play{
       text-align: center;
     }
   }
-.features{
-  img{
-    padding:5% 20%;
-    margin:auto;
+  .features{
+    img{
+      padding:5% 20%;
+      margin:auto;
+    }
   }
-}
-footer{
-  span.block{
-    display: block;
-    text-align: center;
+  footer{
+    span.block{
+      display: block;
+      text-align: center;
+    }
+    img{
+      width:40%;
+      margin:auto;
+      margin-top:0.5em;
+    }
+    .centered{
+      margin:1em 0;
+    }
   }
-  img{
-    width:40%;
-    margin:auto;
-    margin-top:0.5em;
-  }
-  .centered{
-    margin:1em 0;
-  }
-}
 }
 @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
   .right,.left{
@@ -330,6 +339,6 @@ footer{
 @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
 
 }
-  @media (min-width: $screen-lg-min) {
+@media (min-width: $screen-lg-min) {
 
-  }
+}

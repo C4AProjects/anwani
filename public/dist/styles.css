@@ -5846,6 +5846,11 @@ a.rounded {
   .mask .description {
     z-index: 10000; }
 
+.phone {
+  margin: auto;
+  margin-top: 100px;
+  margin-bottom: -150px; }
+
 .banner {
   background-image: url("../images/city_banner.png");
   background-size: cover; }
@@ -5863,6 +5868,9 @@ img.play {
   margin-top: 0 !important;
   display: inline-block; }
 
+.btn-blue {
+  color: #3cbed5; }
+
 /* Extra small devices (phones, less than 768px) */
 /* No media query since this is the default in Bootstrap */
 @media (max-width: 767px) {
@@ -5877,8 +5885,8 @@ img.play {
   .banner {
     text-align: center !important;
     padding-top: 2em; }
-    .banner img {
-      margin-top: 2em !important; }
+    .banner .phone {
+      margin-top: 2em; }
     .banner .padded-top {
       padding-top: 1em; }
 
