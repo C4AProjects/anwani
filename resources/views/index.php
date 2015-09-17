@@ -46,6 +46,7 @@
 <script src="libs/js/smart-table.min.js"></script>
 <script src="libs/js/Chart.js"></script>
 <script src="libs/js/angular-chart.js"></script>
+<script src="libs/js/bootstrap.js"></script>
 <script src="libs/js/angular-aside.js"></script>
 <script src='libs/js/textAngularSetup.js'></script>
 <script src='libs/js/textAngular-sanitize.js'></script>

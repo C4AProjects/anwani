@@ -5869,7 +5869,8 @@ a.rounded {
 
 img.play {
   margin-top: 0 !important;
-  display: inline-block; }
+  display: inline-block;
+  width: 105px; }
 
 .btn-blue {
   color: #3cbed5; }
@@ -5927,6 +5928,55 @@ img.play {
     margin: 1em 0; } }
 @media (min-width: 768px) and (max-width: 991px) {
   .right, .left {
-    width: 100%; } }
+    width: 100%; }
+
+  .right, .left {
+    width: 100%; }
+
+  .navbar-brand {
+    width: 70%; }
+    .navbar-brand img {
+      margin: auto; }
+
+  .banner {
+    text-align: center !important;
+    padding-top: 2em; }
+    .banner .phone {
+      margin-top: 2em; }
+    .banner .padded-top {
+      padding-top: 1em; }
+
+  .about .row.white {
+    padding-top: 12em !important; }
+  .about .col-md-4.centered {
+    margin: 2em 0 !important; }
+  .about .slighted-above {
+    margin: 0;
+    min-height: 3em; }
+    .about .slighted-above img {
+      padding: 0 2%;
+      width: 40%;
+      margin: auto; }
+  .about span.black-text {
+    display: block;
+    text-align: center; }
+  .about .symbol {
+    margin: auto;
+    width: 33%;
+    text-align: center; }
+
+  .features img {
+    padding: 5% 20%;
+    margin: auto; }
+
+  footer span.block {
+    display: block;
+    text-align: center; }
+  footer img {
+    width: 40%;
+    margin: auto;
+    margin-top: 0.5em; }
+  footer .centered {
+    margin: 1em 0; } }
 
 /*# sourceMappingURL=styles.css.map */

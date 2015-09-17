@@ -255,6 +255,7 @@ a.rounded{
 img.play{
   margin-top: 0 !important;
   display:inline-block;
+  width:105px;
 }
 // Button Styles
 .btn-blue{
@@ -337,6 +338,74 @@ img.play{
 @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
   .right,.left{
     width:100%;
+  }
+  .right,.left{
+    width:100%;
+  }
+  .navbar-brand{
+    width:70%;
+    img{
+      margin:auto;
+    }
+  }
+  // Banner View
+  .banner{
+    text-align:center !important;
+    padding-top: 2em;
+    .phone{
+      margin-top: 2em;
+    }
+
+    .padded-top{
+      padding-top:1em;
+    }
+  }
+  // About View
+  .about{
+    .row.white{
+      padding-top:12em !important;
+    }
+    .col-md-4.centered{
+      margin:2em 0 !important;
+    }
+    .slighted-above{
+      margin:0;
+      min-height:3em;
+      img{
+        padding:0 2%;
+        width:40%;
+        margin:auto;
+      }
+    }
+    span.black-text{
+      display: block;
+      text-align: center;
+    }
+    .symbol{
+      margin:auto;
+      width:33%;
+      text-align: center;
+    }
+  }
+  .features{
+    img{
+      padding:5% 20%;
+      margin:auto;
+    }
+  }
+  footer{
+    span.block{
+      display: block;
+      text-align: center;
+    }
+    img{
+      width:40%;
+      margin:auto;
+      margin-top:0.5em;
+    }
+    .centered{
+      margin:1em 0;
+    }
   }
 }
 @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
