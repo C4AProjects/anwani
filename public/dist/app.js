@@ -165,30 +165,24 @@ angular.module("../public/app/partials/account/login.html", []).run(["$templateC
 
 angular.module("../public/app/partials/home/about.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("../public/app/partials/home/about.html",
-    "<div class=\"padded-sides\">\n" +
+    "<div class=\"padded-sides about\">\n" +
     "  <div class=\"row white padded-bottom\" style=\"padding-top:12%\">\n" +
     "\n" +
     "    <div class=\"col-md-12\">\n" +
-    "      <div class=\"col-md-4\" style=\"margin-top:-100px\">\n" +
+    "      <div class=\"col-md-4 slighted-above centered\">\n" +
     "        <span class=\"black-text\">Share on</span>\n" +
-    "        <a href=\"\" class=\"rounded\">\n" +
-    "          <i class=\"fa fa-facebook\"></i>\n" +
-    "        </a>\n" +
-    "        <a href=\"\" class=\"rounded\">\n" +
-    "          <i class=\"fa fa-twitter\"></i>\n" +
-    "        </a>\n" +
-    "        <a href=\"\" class=\"rounded\">\n" +
-    "          <i class=\"fa fa-google-plus\"></i>\n" +
-    "        </a>\n" +
+    "        <a href='#' class='symbol' title='circlefacebook'></a>\n" +
+    "        <a href='#' class='symbol' title='circletwitterbird'></a>\n" +
+    "        <a href='#' class='symbol' title='circlegoogleplus'></a>\n" +
+    "      </div>\n" +
+    "      <div class=\"col-md-offset-8 col-md-4 slighted-above\">\n" +
+    "        <span class='black-text'>Featured on</span>\n" +
+    "        <img src=\"images/techcrunch.png\" alt=\"\">\n" +
+    "        <img src=\"images/techmoran.png\" alt=\"\">\n" +
     "      </div>\n" +
     "      <div class=\"col-md-offset-4 col-md-4\">\n" +
     "        <h3 style=\"color:black !important\" class=\"centered\">About Anwani</h3>\n" +
     "        <p class=\"centered gray-text\">Lorem ipsum dolor sit amet.</p>\n" +
-    "      </div>\n" +
-    "      <div class=\"col-md-4\" style=\"margin-top:-100px\">\n" +
-    "        <span class='black-text'>Featured on</span>\n" +
-    "        <img src=\"images/techcrunch.png\" alt=\"\">\n" +
-    "        <img src=\"images/techmoran.png\" alt=\"\">\n" +
     "      </div>\n" +
     "\n" +
     "    </div>\n" +
@@ -221,12 +215,12 @@ angular.module("../public/app/partials/home/banner.html", []).run(["$templateCac
     "        <h3 class=\"white-text\">Welcome to Anwani</h3>\n" +
     "        <p class=\"white-text\">The APP that allows you to create a real address in less than a minute...</p>\n" +
     "      </div>\n" +
-    "      <div class=\"col-md-4\" style=\"width:33%\">\n" +
-    "        <img style=\"margin:auto;margin-top:100px;margin-bottom:-150px\" src=\"images/phone_banner.jpg\" class=\"img-responsive\" alt=\"\">\n" +
-    "      </div>\n" +
-    "      <div class=\"col-md-4 padded-top\">\n" +
+    "      <div class=\"col-md-4 padded-top right\">\n" +
     "        <h5 class=\"white-text\" style=\"margin-bottom:0.2em\">It's simple</h5>\n" +
     "        <p class=\"white-text\">Create your address or view existing ones</p>\n" +
+    "      </div>\n" +
+    "      <div class=\"col-md-4 right\">\n" +
+    "        <img style=\"margin:auto;margin-top:100px;margin-bottom:-150px\" src=\"images/phone_banner.jpg\" class=\"img-responsive\" alt=\"\">\n" +
     "      </div>\n" +
     "    </div>\n" +
     "\n" +
@@ -236,12 +230,12 @@ angular.module("../public/app/partials/home/banner.html", []).run(["$templateCac
 
 angular.module("../public/app/partials/home/features.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("../public/app/partials/home/features.html",
-    "<div class=\"row gray padded\">\n" +
+    "<div class=\"row gray padded features\">\n" +
     "  <div class=\"col-md-12\">\n" +
     "    <h3 class=\"centered\">Anwani Features in detail</h3>\n" +
     "    <h4 class=\"gray\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </h4>\n" +
     "  </div>\n" +
-    "  <div class=\"col-md-4\" style=\"padding-top:30px\">\n" +
+    "  <div class=\"col-md-4 \" style=\"padding-top:30px\">\n" +
     "    <div class=\"col-md-12\">\n" +
     "      <h4 class=\"col-md-10 col-xs-offset-2\">Create Address</h4>\n" +
     "      <div class=\"col-xs-2\"><i class=\"fa large fa-plus-square\"></i></div>\n" +
@@ -258,11 +252,7 @@ angular.module("../public/app/partials/home/features.html", []).run(["$templateC
     "      <div class=\"col-xs-10 gray-text\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, hic dignissimos eveniet amet quisquam ad dolorem   voluptates iste, dicta incidunt error dolore quas magnam rerum odit quis repellat cupiditate recusandae!</div>\n" +
     "    </div>\n" +
     "  </div>\n" +
-    "  <div class=\"col-md-4\">\n" +
-    "<img src=\"images/phone_image.png\" alt=\"\" class=\"img-responsive\" style=\"width:100%\">\n" +
-    "<p class=\"gray-text centered\">* Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>\n" +
-    "  </div>\n" +
-    "  <div class=\"col-md-4\" style=\"padding-top:30px\">\n" +
+    "  <div class=\"col-md-4 right\" style=\"padding-top:30px\">\n" +
     "    <div class=\"col-md-12\">\n" +
     "      <h4 class=\"col-md-10 col-xs-offset-2\">User & Share Address</h4>\n" +
     "      <div class=\"col-xs-2\"><i class=\"fa large fa-reply-all\"></i></div>\n" +
@@ -279,6 +269,11 @@ angular.module("../public/app/partials/home/features.html", []).run(["$templateC
     "      <div class=\"col-xs-10 gray-text\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum beatae sint, odio dicta neque, natus labore magni, dolore, nulla incidunt ducimus. Perferendis provident minima, nam consectetur quae aspernatur beatae fugiat!</div>\n" +
     "    </div>\n" +
     "  </div>\n" +
+    "  <div class=\"col-md-4 right\">\n" +
+    "<img src=\"images/phone_image.png\" alt=\"\" class=\"img-responsive\" style=\"width:100%\">\n" +
+    "<p class=\"gray-text centered\">* Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>\n" +
+    "  </div>\n" +
+    "\n" +
     "</div>\n" +
     "");
 }]);
@@ -286,19 +281,15 @@ angular.module("../public/app/partials/home/features.html", []).run(["$templateC
 angular.module("../public/app/partials/home/footer.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("../public/app/partials/home/footer.html",
     "<footer class=\"row white\">\n" +
-    "  <div class=\"col-md-4 centered\">Connect with Anwani\n" +
-    "    <a href=\"\" class=\"rounded\">\n" +
-    "      <i class=\"fa fa-facebook\"></i>\n" +
-    "    </a>\n" +
-    "    <a href=\"\" class=\"rounded\">\n" +
-    "      <i class=\"fa fa-twitter\"></i>\n" +
-    "    </a>\n" +
-    "    <a href=\"\" class=\"rounded\">\n" +
-    "      <i class=\"fa fa-google-plus\"></i>\n" +
-    "    </a>\n" +
+    "  <div class=\"col-md-4 centered\">\n" +
+    "    <span class=\"block gray-text\">Connect with Anwani</span>\n" +
+    "    <a href='#' class='symbol' title='circlefacebook'></a>\n" +
+    "    <a href='#' class='symbol' title='circletwitterbird'></a>\n" +
+    "    <a href='#' class='symbol' title='circlegoogleplus'></a>\n" +
     "  </div>\n" +
-    "  <div class=\"col-md-4 centered\">Copyright &copy 2015 Anwani App </div>\n" +
-    "  <div class=\"col-md-4 centered\">Get the Anwani App</div>\n" +
+    "  <div class=\"col-md-4 centered right\"><span class=\"gray-text\">Get the Anwani App</span></div>\n" +
+    "  <div class=\"col-md-4 centered right\"><span class=\"gray-text\">Copyright &copy 2015 Anwani App</span> </div>\n" +
+    "\n" +
     "</footer>\n" +
     "");
 }]);
@@ -347,12 +338,12 @@ angular.module("../public/app/partials/home/partners.html", []).run(["$templateC
   $templateCache.put("../public/app/partials/home/partners.html",
     "<div class=\"row padded-sides\">\n" +
     "  <div class=\"col-md-12 white\">\n" +
-    "    <h4 class=\"gray-text centered\">Our Partners</h4>\n" +
+    "    <h4 class=\"gray-text centered\">Official Partners</h4>\n" +
     "    <div class=\"seperator\"></div>\n" +
-    "    <div class=\"col-md-4 col-md-offset-4 images\">\n" +
-    "    <img class=\"col-md-4\" src=\"images/unhcr.png\" alt=\"\">\n" +
-    "    <img class=\"col-md-4\" src=\"images/coders.png\" alt=\"\">\n" +
-    "    <img class=\"col-md-4\" src=\"images/techmoran.png\" alt=\"\">\n" +
+    "    <div class=\"col-md-4 col-md-offset-4 row images\">\n" +
+    "    <img class=\"col-xs-4\" src=\"images/unhcr.png\" alt=\"\">\n" +
+    "    <img class=\"col-xs-4\" src=\"images/coders.png\" alt=\"\">\n" +
+    "    <img class=\"col-xs-4\" src=\"images/techmoran.png\" alt=\"\">\n" +
     "    </div>\n" +
     "  </div>\n" +
     "</div>\n" +
@@ -363,10 +354,10 @@ angular.module("../public/app/partials/home/sub-header.html", []).run(["$templat
   $templateCache.put("../public/app/partials/home/sub-header.html",
     "<div class=\"row\">\n" +
     "  <nav id=\"sub\" class=\"col-md-4 col-md-offset-4\">\n" +
-    "    <ul class=\"nav navbar-nav\" style=\"width:100%\">\n" +
-    "      <li style=\"width:33%\"><a href=\"\">Home</a></li>\n" +
-    "      <li style=\"width:33%\"><a href=\"\">About</a></li>\n" +
-    "      <li style=\"width:33%\"><a href=\"\">Features</a></li>\n" +
+    "    <ul class=\"nav navbar-nav row\" style=\"width:100%\">\n" +
+    "      <li class=\"col-xs-4\"><a href=\"\" class=\"centered\">Home</a></li>\n" +
+    "      <li class=\"col-xs-4\"><a href=\"\" class=\"centered\">About</a></li>\n" +
+    "      <li class=\"col-xs-4\"><a href=\"\" class=\"centered\">Features</a></li>\n" +
     "    </ul>\n" +
     "  </nav>\n" +
     "</div>\n" +

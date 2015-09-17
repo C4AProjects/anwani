@@ -1,5 +1,32 @@
 @charset "UTF-8";
 @font-face {
+  font-family: 'Mono Social Icons Font';
+  src: url("../fonts/MonoSocialIconsFont-1.10.eot");
+  src: url("../fonts/MonoSocialIconsFont-1.10.eot?#iefix") format("embedded-opentype"), url("../fonts/MonoSocialIconsFont-1.10.woff") format("woff"), url("../fonts/MonoSocialIconsFont-1.10.ttf") format("truetype"), url("../fonts/MonoSocialIconsFont-1.10.svg#MonoSocialIconsFont") format("svg");
+  src: url("../fonts/MonoSocialIconsFont-1.10.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+.symbol, a.symbol:before {
+  font-family: 'Mono Social Icons Font';
+  -webkit-text-rendering: optimizeLegibility;
+  -moz-text-rendering: optimizeLegibility;
+  -ms-text-rendering: optimizeLegibility;
+  -o-text-rendering: optimizeLegibility;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -ms-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+  font-smoothing: antialiased; }
+
+a.symbol:before {
+  content: attr(title);
+  margin-right: 0.3em; }
+
+a.symbol:hover {
+  text-decoration: none; }
+
+@font-face {
   font-family: "Swiss721";
   src: url("../fonts/Swiss721.ttf"); }
 @font-face {
@@ -5431,7 +5458,7 @@ License URL ... https://github.com/typeplate/starter-kit/blob/master/license.txt
   font-family: "Ampersand";
   src: local("Georgia");
   unicode-range: U+270C; }
-.typl8-tera, .typl8-giga, .typl8-mega, h1, .typl8-alpha, h2, .typl8-beta, h3, i.large, .typl8-gamma, h4, .typl8-delta, h5, .typl8-epsilon, .typl8-zeta, h6, body {
+.typl8-tera, .typl8-giga, .typl8-mega, h1, .typl8-alpha, h2, .typl8-beta, a.symbol:before, h3, i.large, .typl8-gamma, h4, .typl8-delta, h5, .typl8-epsilon, .typl8-zeta, h6, body {
   text-rendering: optimizeLegibility;
   line-height: 1;
   margin-top: 0;
@@ -5482,7 +5509,7 @@ body {
   margin-bottom: 8.91px;
   margin-bottom: 0.495rem; }
 
-.typl8-beta, h3, i.large {
+.typl8-beta, a.symbol:before, h3, i.large {
   font-size: 32px;
   font-size: 1.77778rem;
   margin-bottom: 16.70625px;
@@ -5720,10 +5747,6 @@ nav {
   nav .navbar-toggle {
     float: left;
     border: none !important; }
-  nav .navbar-brand {
-    width: 70% !important; }
-    nav .navbar-brand img {
-      margin: 0 auto; }
   nav li {
     list-style: none; }
     nav li a {
@@ -5739,7 +5762,8 @@ nav {
 nav#main {
   padding-left: 10%;
   padding-right: 10%;
-  background: white !important; }
+  background: white !important;
+  border-bottom: 2px solid #3cbed5; }
 
 nav#sub {
   background: #F2F1EF !important;
@@ -5826,10 +5850,56 @@ a.rounded {
   background-image: url("../images/city_banner.png");
   background-size: cover; }
 
+.slighted-above {
+  margin-top: -100px; }
+
+.right {
+  float: right; }
+
+.left {
+  float: left; }
+
 /* Extra small devices (phones, less than 768px) */
 /* No media query since this is the default in Bootstrap */
 @media (max-width: 767px) {
-  body {
-    background: black; } }
+  .right, .left {
+    width: 100%; }
+
+  .navbar-brand {
+    width: 70%; }
+    .navbar-brand img {
+      margin: auto; }
+
+  .banner {
+    text-align: center !important;
+    padding-top: 2em; }
+    .banner img {
+      margin-top: 2em !important; }
+    .banner .padded-top {
+      padding-top: 1em; }
+
+  .about .row.white {
+    padding-top: 12em !important; }
+  .about .slighted-above {
+    margin: 0;
+    min-height: 3em; }
+  .about span.black-text {
+    display: block;
+    text-align: center; }
+  .about .symbol {
+    margin: auto;
+    width: 33%;
+    text-align: center; }
+
+  .features img {
+    padding: 5% 20%;
+    margin: auto; }
+
+  footer span.block {
+    display: block;
+    text-align: center; } }
+@media (min-width: 768px) and (max-width: 991px) {
+  .right, .left {
+    width: 100%; } }
 
 /*# sourceMappingURL=styles.css.map */
