@@ -84,6 +84,8 @@ angular.module("../public/app/partials/home/banner.html", []).run(["$templateCac
     "      <div class=\"col-md-4 padded-top right\">\n" +
     "        <h5 class=\"white-text\" style=\"margin-bottom:0.2em\">It's simple</h5>\n" +
     "        <p class=\"white-text\">Create your address or view existing ones</p>\n" +
+    "        <button class=\"btn btn-default btn-large btn-blue\">Get Started!</button> <span class=\"white-text\">OR</span>\n" +
+    "        <img src=\"images/google.png\" class=\"img-responsive play\" alt=\"\">\n" +
     "      </div>\n" +
     "      <div class=\"col-md-4 right\">\n" +
     "        <img style=\"margin:auto;margin-top:100px;margin-bottom:-150px\" src=\"images/phone_banner.jpg\" class=\"img-responsive\" alt=\"\">\n" +
@@ -155,7 +157,7 @@ angular.module("../public/app/partials/home/footer.html", []).run(["$templateCac
     "  </div>\n" +
     "  <div class=\"col-md-4 centered right\">\n" +
     "    <span class=\"gray-text\">Get the Anwani App</span>\n" +
-    "<img src=\"images/google.png\" class=\"img-responsive\" alt=\"\">\n" +
+    "<img src=\"images/google.png\" class=\"img-responsive play\" alt=\"\">\n" +
     "  </div>\n" +
     "  <div class=\"col-md-4 centered right\"><span class=\"gray-text\">Copyright &copy 2015 Anwani App</span> </div>\n" +
     "\n" +
