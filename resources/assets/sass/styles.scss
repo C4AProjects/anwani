@@ -67,6 +67,16 @@ nav{
   .navbar-right{
     margin-right: 0 !important;
   }
+  .navbar-toggle{
+    float:left;
+    border:none !important;
+  }
+  .navbar-brand{
+    width:70% !important;
+    img{
+      margin:0 auto;
+    }
+  }
   li{
     list-style: none;
     a{
@@ -193,3 +203,22 @@ a.rounded{
   background-image: url('../images/city_banner.png');
   background-size:cover;
 }
+
+// Media Queries
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+
+@media (max-width: $screen-xs-max) {
+body{
+  background:black;
+}
+ }
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+
+ }
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+
+ }
+@media (min-width: $screen-lg-min) {
+
+ }

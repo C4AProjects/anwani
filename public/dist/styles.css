@@ -5717,6 +5717,13 @@ nav {
   border-radius: 0; }
   nav .navbar-right {
     margin-right: 0 !important; }
+  nav .navbar-toggle {
+    float: left;
+    border: none !important; }
+  nav .navbar-brand {
+    width: 70% !important; }
+    nav .navbar-brand img {
+      margin: 0 auto; }
   nav li {
     list-style: none; }
     nav li a {
@@ -5818,5 +5825,11 @@ a.rounded {
 .banner {
   background-image: url("../images/city_banner.png");
   background-size: cover; }
+
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+@media (max-width: 767px) {
+  body {
+    background: black; } }
 
 /*# sourceMappingURL=styles.css.map */
