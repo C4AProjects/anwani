@@ -7,6 +7,7 @@ var EventEmitter = require('events').EventEmitter;
 var debug  = require('debug')('anwani-api:user-controller');
 var async  = require('async');
 var moment = require('moment');
+var _     = require('lodash');
 
 var Address   = require('../dal/address');
 var User      = require('../dal/user');
@@ -230,7 +231,9 @@ exports.fetchAll = function fetchAllUsers(req, res, next) {
   }
 
   var query = {};
-  var qs = {};
+  var qs = {
+    populate: true
+  };
 
   User.getCollection(query, qs, function cb(err, users) {
     if(err) {
@@ -267,7 +270,9 @@ exports.fetchUserAddresses = function fetchAllUserAddresses(req, res, next) {
   var query = {
     user: req.params.id
   };
-  var qs = {};
+  var qs = {
+    populate: false
+  };
 
   Address.getCollection(query, qs, function cb(err, addresses) {
     if(err) {

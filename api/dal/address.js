@@ -169,9 +169,13 @@ exports.get = function get(query, cb) {
 exports.getCollection = function getCollection(query, qs, cb) {
   debug('fetching a collection of addresses ', query);
 
-  Address
-    .find(query, returnFields)
-    .populate(population)
+  var flow = Address.find(query, returnFields)
+
+  if(qs.populate) {
+    flow.populate(population)
+  }
+
+    flow
     .exec(function (err, addresses) {
       if(err) {
         return cb(err);

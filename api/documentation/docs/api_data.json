@@ -718,11 +718,11 @@
   {
     "type": "post",
     "url": "/addresses",
-    "title": "Create Address(Web Endpoint)",
+    "title": "Create Address(Logged In users);",
     "version": "1.0.0",
     "name": "Create",
     "group": "address",
-    "description": "<p>Create an Address and get back the Open Location Code</p> ",
+    "description": "<p>Create an Address. Data should be submitted as <strong>multipart/form-data</strong>.</p> ",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -793,8 +793,8 @@
       },
       "examples": [
         {
-          "title": "Request Example:",
-          "content": "{\n     user: \"556e1174a8952c9521286a60\",\n     location_pic: \"base64 image string\",\n     short_virtual_code: \"MP7H+E2\",\n     long_virtual_code: \"6E9AEFMP7H+E2FH\",\n     latitude: 4.567889,\n     longitude: -12.098,\n     street_address: \"\",\n     city: \"nairobi\",\n     country: \"kenya\"\n}",
+          "title": "Request Example(this is not json data but listing of request fields, all fields should be placed",
+          "content": "as part of the multipart/form-data data):\n{\n     user: \"556e1174a8952c9521286a60\",\n     location_pic: \"image file\",\n     short_virtual_code: \"MP7H+E2\",\n     long_virtual_code: \"6E9AEFMP7H+E2FH\",\n     latitude: 4.567889,\n     longitude: -12.098,\n     street_address: \"\",\n     city: \"nairobi\",\n     country: \"kenya\"\n}",
           "type": "json"
         }
       ]
@@ -892,16 +892,44 @@
     "version": "1.0.0",
     "name": "CreateNew",
     "group": "address",
-    "description": "<p>Create an Address and get back the Open Location Code</p> ",
+    "description": "<p>Create an Address. Data should be submitted as <strong>multipart/form-data</strong>.</p> ",
     "parameter": {
       "fields": {
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "<p>Object</p> ",
+            "type": "<p>String</p> ",
             "optional": false,
-            "field": "user",
-            "description": "<p>user data</p> "
+            "field": "phone_number",
+            "description": "<p>Phone number</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "password",
+            "description": "<p>Password</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "first_name",
+            "description": "<p>first name</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "last_name",
+            "description": "<p>last name</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "other_name",
+            "description": "<p>other names</p> "
           },
           {
             "group": "Parameter",
@@ -963,8 +991,8 @@
       },
       "examples": [
         {
-          "title": "Request Example:",
-          "content": "{\n   user: {\n     phone_number: \"254787898989\",\n     first_name: \"Mary\",\n     last_name: \"Jane\",\n     other_name: \"Doe\",\n     password: \"mypin\" // Send once when the user is new\n   },\n   address: {\n     location_pic: \"base64 image string\",\n     short_virtual_code: \"MP7H+E2\",\n     long_virtual_code: \"6E9AEFMP7H+E2FH\",\n     latitude: 4.567889,\n     longitude: -12.098,\n     street_address: \"\",\n     city: \"nairobi\",\n     country: \"kenya\"\n   }\n}",
+          "title": "Request Example",
+          "content": "(this is not json data but listing of request fields, all fields should be placed\nas part of the multipart/form-data data):\n{\n     phone_number: \"254787898989\",\n     first_name: \"Mary\",\n     last_name: \"Jane\",\n     other_name: \"Doe\",\n     password: \"mypin\" // Send once when the user is new\n     location_pic: \"image file\"\n     short_virtual_code: \"MP7H+E2\",\n     long_virtual_code: \"6E9AEFMP7H+E2FH\",\n     latitude: 4.567889,\n     longitude: -12.098,\n     street_address: \"\",\n     city: \"nairobi\",\n     country: \"kenya\"\n   }\n}",
           "type": "json"
         }
       ]
