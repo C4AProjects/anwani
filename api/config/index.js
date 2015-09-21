@@ -1,10 +1,14 @@
 /**
  * Load Module dependencies.
  */
+var path = require('path');
 
 var env = process.env;
+var API_URL = 'http://anwani-devapi.c4asolution.com/';
 
 module.exports = {
+
+  API_URL: API_URL,
 
   ENV: env.NODE_ENV || 'development',
 
@@ -28,5 +32,12 @@ module.exports = {
     '/users/login',
     '/users/signup',
     '/',
-  ]
+  ],
+  MEDIA: {
+    FILE_SIZE: 2 * 1024 * 1024, // 2MB,
+    URL: API_URL + 'media/',
+    FILES_FOLDER: path.resolve(process.cwd(), './media') + '/'
+  },
+
+  MAX_ADDRESSES: 5
 };
