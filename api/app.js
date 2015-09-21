@@ -14,6 +14,8 @@ var cors       = require('cors');
 var config = require('./config');
 var utils  = require('./lib');
 var authorize = require('./lib/authorize');
+var multipart = require('./lib/multipart');
+var storeMediaFiles = require('./lib/store-media');
 var routes = require('./routes');
 
 var app = express();
@@ -36,9 +38,11 @@ if(config.NODE_ENV === 'production'){
 //--Setup Middleware--//
 
 // Documentation resource
+
 app.use('/documentation', express.static(path.join(__dirname, 'documentation')));
 app.use('/media', express.static(path.join(__dirname, 'media')));
 
+app.use(authorize().unless( { path: config.OPEN_ENDPOINTS } ));
 app.use(cors({
   origin: '*',
   methods: 'GET,POST,PUT,DELETE,OPTIONS',
@@ -48,8 +52,15 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 app.use(bodyParser.json());
+app.use(multipart({
+  limits: {
+    files: 1,
+    fileSize: config.MEDIA.FILE_SIZE
+  },
+  immediate: true
+}));
+app.use(storeMediaFiles());
 app.use(validator());
-app.use(authorize().unless( { path: config.OPEN_ENDPOINTS } ));
 
 // Init routes
 routes(app);
@@ -65,7 +76,7 @@ app.use(function(req, res, next) {
 
 // development error handler
 // will print stacktrace
-if (config.NODE_ENV === 'development') {
+if (config.ENV === 'development') {
   app.use(function(err, req, res, next) {
     var status = err.status || 500;
 
@@ -73,6 +84,7 @@ if (config.NODE_ENV === 'development') {
       error: {
         status: status,
         type: err.name,
+        stack: err.stack,
         message: err.message
       }
     });
