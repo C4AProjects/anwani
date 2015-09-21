@@ -27,6 +27,11 @@ var router  = express.Router();
  *
  * @apiDescription Create an Address. Data should be submitted as __multipart/form-data__.
  *
+ * @apiParam {String} phone_number Phone number
+ * @apiParam {String} password Password
+ * @apiParam {String} first_name first name
+ * @apiParam {String} last_name last name
+ * @apiParam {String} other_name other names
  * @apiParam {String} location_pic location photo
  * @apiParam {Number} latitude latitude coordinate
  * @apiParam {Number} longitude longitude coordinate
@@ -36,7 +41,8 @@ var router  = express.Router();
  * @apiParam {String} city city name
  * @apiParam {String} country country name
  *
- * @apiParamExample Request Example(this is not json data but listing of request fields, all fields should be placed
+ * @apiParamExample Request Example
+ * (this is not json data but listing of request fields, all fields should be placed
  * as part of the multipart/form-data data):
  * {
  *      phone_number: "254787898989",
