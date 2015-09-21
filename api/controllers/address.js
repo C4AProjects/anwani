@@ -7,7 +7,7 @@ var EventEmitter = require('events').EventEmitter;
 var debug = require('debug')('anwani-api:address-controller');
 var async = require('async');
 var moment = require('moment');
-var base64ImageToFile = require('base64image-to-file');
+var _     = require('lodash');
 
 var Address      = require('../dal/address');
 var AddressModel = require('../models/address');
@@ -49,12 +49,27 @@ exports.create = function createAddress(req, res, next) {
 
   workflow.on('createAddress', function createAddress() {
     var body = req.body;
-    var addressInfo = body.address;
-    var userInfo = body.user;
+    var userInfo = {
+      first_name   : body.first_name || '',
+      last_name    : body.last_name || '',
+      other_name   : body.other_name || '',
+      password     : body.password || '',
+      phone_number : body.phone_number || ''
+    };
+    var addressInfo = {
+      location_pic       : body.location_pic,
+      short_virtual_code : body.short_virtual_code,
+      long_virtual_code  : body.long_virtual_code,
+      latitude           : body.latitude,
+      longitude          : body.longitude,
+      street_address     : body.street_address,
+      city               : body.city,
+      country            : body.country
+    };
 
     async.waterfall([
       function createOrRetrieveUser(done) {
-        User.get({ phone_number: userInfo.phone_number }, function (err, user) {
+        User.get({ phone_number: body.phone_number }, function (err, user) {
           if(err) {
             return done(CustomError({
               name: 'ADDRESS_CREATION_ERROR',
@@ -81,7 +96,7 @@ exports.create = function createAddress(req, res, next) {
         });
       },
       function maxAddressesReached(user, done) {
-        if(user.addresses.length > config.MAX_ADDRESSES_NUMBER) {
+        if(user.addresses.length > config.MAX_ADDRESSES) {
           return done(CustomError({
             name: 'ADDRESS_CREATION_ERROR',
             message: 'Max Number of addresses reached'
@@ -90,29 +105,8 @@ exports.create = function createAddress(req, res, next) {
           return done(null, user);
         }
       },
-      function createLocationPic(user, done) {
+      function createAddress(user, done) {
         addressInfo.user = user._id;
-
-        if(!addressInfo.location_pic) {
-          return done(null);
-        } else {
-          base64ImageToFile(addressInfo.location_pic, './media', function (err, imgPath) {
-            if(err) {
-              return done(CustomError({
-                name: 'ADDRESS_CREATION_ERROR',
-                message: err.message,
-                status: 500
-              }));
-            }
-
-            addressInfo.location_pic = imgPath.slice(imgPath.indexOf('/'));
-
-            return done(null);
-          });
-
-        }
-      },
-      function createAddress(done) {
 
         Address.create(addressInfo, function (err, data) {
           if(err) {
@@ -313,6 +307,13 @@ exports.fetchAll = function fetchAllAddresss(req, res, next) {
   });
 };
 
+/**
+ * Create a new address
+ *
+ * @param {Object} req HTTP Request Object
+ * @param {Object} res HTTP Response Object
+ * @param {Function} next Middleware dispatcher
+ */
 exports.createNew = function createAddress(req, res, next) {
   debug('create address');
 
@@ -360,34 +361,13 @@ exports.createNew = function createAddress(req, res, next) {
         });
       },
       function maxAddressesReached(user, done) {
-        if(user.addresses.length > config.MAX_ADDRESSES_NUMBER) {
+        if(user.addresses.length > config.MAX_ADDRESSES) {
           return done(CustomError({
             name: 'ADDRESS_CREATION_ERROR',
             message: 'Max Number of addresses reached'
           }));
         } else {
           return done(null, user);
-        }
-      },
-      function createLocationPic(user, done) {
-
-        if(!body.location_pic) {
-          return done(null);
-        } else {
-          base64ImageToFile(body.location_pic, './media', function (err, imgPath) {
-            if(err) {
-              return done(CustomError({
-                name: 'ADDRESS_CREATION_ERROR',
-                message: err.message,
-                status: 500
-              }));
-            }
-
-            body.location_pic = imgPath.slice(imgPath.indexOf('/'));
-
-            return done(null);
-          });
-
         }
       },
       function createAddress(done) {

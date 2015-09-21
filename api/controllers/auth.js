@@ -217,8 +217,8 @@ exports.logout = function logoutUser(req, res, next) {
       message: 'User is not logged in'
     }));
   }
-  var user  = req.user;
-  var now       = moment().toISOString();
+  var user  = req._user;
+  var now   = moment().toISOString();
   var query = {
     user: req._user._id
   };

@@ -25,9 +25,8 @@ var router  = express.Router();
  * @apiName CreateNew
  * @apiGroup address
  *
- * @apiDescription Create an Address and get back the Open Location Code
+ * @apiDescription Create an Address. Data should be submitted as __multipart/form-data__.
  *
- * @apiParam {Object} user user data
  * @apiParam {String} location_pic location photo
  * @apiParam {Number} latitude latitude coordinate
  * @apiParam {Number} longitude longitude coordinate
@@ -37,17 +36,15 @@ var router  = express.Router();
  * @apiParam {String} city city name
  * @apiParam {String} country country name
  *
- * @apiParamExample Request Example:
+ * @apiParamExample Request Example(this is not json data but listing of request fields, all fields should be placed
+ * as part of the multipart/form-data data):
  * {
- *    user: {
  *      phone_number: "254787898989",
  *      first_name: "Mary",
  *      last_name: "Jane",
  *      other_name: "Doe",
  *      password: "mypin" // Send once when the user is new
- *    },
- *    address: {
- *      location_pic: "base64 image string",
+ *      location_pic: "image file"
  *      short_virtual_code: "MP7H+E2",
  *      long_virtual_code: "6E9AEFMP7H+E2FH",
  *      latitude: 4.567889,
@@ -87,12 +84,12 @@ var router  = express.Router();
 router.post('/create', addressController.create);
 
 /**
- * @api {post} /addresses Create Address(Web Endpoint)
+ * @api {post} /addresses Create Address(Logged In users);
  * @apiVersion 1.0.0
  * @apiName Create
  * @apiGroup address
  *
- * @apiDescription Create an Address and get back the Open Location Code
+ * @apiDescription Create an Address. Data should be submitted as __multipart/form-data__.
  *
  * @apiParam {String} location_pic location photo
  * @apiParam {String} user user id
@@ -104,10 +101,11 @@ router.post('/create', addressController.create);
  * @apiParam {String} city city name
  * @apiParam {String} country country name
  *
- * @apiParamExample Request Example:
+ * @apiParamExample Request Example(this is not json data but listing of request fields, all fields should be placed
+ * as part of the multipart/form-data data):
  * {
  *      user: "556e1174a8952c9521286a60",
- *      location_pic: "base64 image string",
+ *      location_pic: "image file",
  *      short_virtual_code: "MP7H+E2",
  *      long_virtual_code: "6E9AEFMP7H+E2FH",
  *      latitude: 4.567889,
