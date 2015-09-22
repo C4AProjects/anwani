@@ -69,6 +69,13 @@ exports.create = function createAddress(req, res, next) {
 
     async.waterfall([
       function createOrRetrieveUser(done) {
+        if(!userInfo.phone_number) {
+          return done(CustomError({
+            name: 'ADDRESS_CREATION_ERROR',
+            message: 'Please provide a phone_number for your account'
+          }));
+        }
+
         User.get({ phone_number: body.phone_number }, function (err, user) {
           if(err) {
             return done(CustomError({
@@ -81,6 +88,14 @@ exports.create = function createAddress(req, res, next) {
           if(user && user.phone_number) {
             return done(null, user);
           }
+
+          if(!userInfo.password) {
+            return done(CustomError({
+              name: 'ADDRESS_CREATION_ERROR',
+              message: 'Please provide a pin for your account'
+            }));
+          }
+
 
           User.create(userInfo, function(err, doc) {
             if(err) {
