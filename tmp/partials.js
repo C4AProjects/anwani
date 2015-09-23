@@ -84,15 +84,15 @@ angular.module("../public/app/partials/home/banner.html", []).run(["$templateCac
     "      sn-skrollr\n" +
     "      data--100p-top=\"font-size:0.5em !important\"\n" +
     "      >\n" +
-    "        <h3 class=\"white-text\">Welcome to Anwani</h3>\n" +
-    "        <p class=\"white-text\">The APP that allows you to create a real address in less than a minute...</p>\n" +
+    "        <h3 class=\"white-text\" translate>Welcome</h3>\n" +
+    "        <p class=\"white-text\" translate>Welcome-Description</p>\n" +
     "      </div>\n" +
     "      <div class=\"col-md-4 padded-top right\"\n" +
     "      sn-skrollr\n" +
     "      data--100p-top=\"font-size:0.5em !important\"\n" +
     "      >\n" +
-    "        <h5 class=\"white-text\" style=\"margin-bottom:0.2em\">It's simple</h5>\n" +
-    "        <p class=\"white-text\">Create your address or view existing ones</p>\n" +
+    "        <h5 class=\"white-text\" style=\"margin-bottom:0.2em\" translate>Simple</h5>\n" +
+    "        <p class=\"white-text\" translate>Create Address</p>\n" +
     "        <button class=\"btn btn-default btn-large btn-blue\">Get Started!</button> <span class=\"white-text\">OR</span>\n" +
     "        <img src=\"images/google.png\" class=\"img-responsive play\" alt=\"\">\n" +
     "      </div>\n" +
@@ -198,12 +198,19 @@ angular.module("../public/app/partials/home/header.html", []).run(["$templateCac
     "      </a>\n" +
     "    </div>\n" +
     "  <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">\n" +
+    "    <form action=\"\"class=\"navbar-form navbar-right\">\n" +
+    "      <label for=\"\">Language</label>\n" +
+    "      <select class=\"form-control\" name=\"\" id=\"\" ng-model=\"lang\" ng-change=\"toggleLanguage(lang)\"\n" +
+    "        ng-options=\"lang.label as lang.label for lang in languages\">\n" +
+    "      </select>\n" +
+    "    </form>\n" +
     "  <ul class=\"nav navbar-nav navbar-right\">\n" +
     "    <li bs-scrollspy du-scrollspy du-smooth-scroll href=\"#home\" data-target=\"#home\"><a>HOME</a></li>\n" +
     "    <li bs-scrollspy du-scrollspy du-smooth-scroll href=\"#about\" data-target=\"#about\"><a>ABOUT</a></li>\n" +
     "    <li bs-scrollspy du-scrollspy du-smooth-scroll href=\"#features\" data-target=\"#features\"><a>FEATURES</a></li>\n" +
     "    <li style=\"padding:10px 15px;margin-left:100px\"><button href=\"\" class=\"btn btn-warning btn-sm\">LOGIN/SIGNUP</button></li>\n" +
     "  </ul>\n" +
+    "\n" +
     "</div>\n" +
     "</div>\n" +
     "</nav>\n" +

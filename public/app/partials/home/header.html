@@ -12,12 +12,19 @@
       </a>
     </div>
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <form action=""class="navbar-form navbar-right">
+      <label for="">Language</label>
+      <select class="form-control" name="" id="" ng-model="lang" ng-change="toggleLanguage(lang)"
+        ng-options="lang.label as lang.label for lang in languages">
+      </select>
+    </form>
   <ul class="nav navbar-nav navbar-right">
     <li bs-scrollspy du-scrollspy du-smooth-scroll href="#home" data-target="#home"><a>HOME</a></li>
     <li bs-scrollspy du-scrollspy du-smooth-scroll href="#about" data-target="#about"><a>ABOUT</a></li>
     <li bs-scrollspy du-scrollspy du-smooth-scroll href="#features" data-target="#features"><a>FEATURES</a></li>
     <li style="padding:10px 15px;margin-left:100px"><button href="" class="btn btn-warning btn-sm">LOGIN/SIGNUP</button></li>
   </ul>
+
 </div>
 </div>
 </nav>

@@ -31,7 +31,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
       url: '/home',
       views: {
         '': {
-          controller: '',
+          controller: 'homeCtrl',
           templateUrl: 'app/partials/home/index.html',
         },
         'about@home': {

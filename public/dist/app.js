@@ -1,22 +1,58 @@
 var app = angular.module("buymore", ['ui.router', 'restangular', 'smart-table',
   'chart.js', 'textAngular', 'angularMoment', 'ui.bootstrap',
   'highcharts-ng', 'mgcrea.ngStrap.scrollspy',
-  'mgcrea.ngStrap.helpers.dimensions', 'duScroll', 'sn.skrollr'
+  'mgcrea.ngStrap.helpers.dimensions', 'duScroll', 'sn.skrollr',
+  'pascalprecht.translate', 'ngCookies', ['$translateProvider', function(
+    $translateProvider) {
+    // register german translation table
+    $translateProvider.translations('de_DE', {
+      'Welcome': 'Willkommen in Anwani',
+      'Welcome-Description': 'The APP that allows you to create a real address in less than a minute...'
+    });
+    // register english translation table
+    $translateProvider.translations('en_EN', {
+      'Welcome': 'Welcome to Anwani',
+      'Welcome-Description': 'The APP that allows you to create a real address in less than a minute...',
+      'Simple': "It's simple",
+      'Create Address': 'Create your address or view existing ones'
+
+    });
+    $translateProvider.translations('swa_SWA', {
+      'Welcome': 'Karibu Anwani',
+      'Welcome-Description': 'APP inayoruhusu kujenga anuani ya kweli katika chini ya dakika ...',
+      'Simple': "Ni rahisi",
+      'Create Address': 'Kujenga anwani yako au mtazamo zilizopo'
+    });
+    // which language to use?
+    $translateProvider.preferredLanguage('swa_SWA');
+    // $translateProvider.useCookieStorage();
+  }]
 ]);
 
 app.config(function(RestangularProvider) {
   // RestangularProvider.setBaseUrl('http://new.buymore.co.ke');
   //  RestangularProvider.setRequestSuffix('.json');
+  //  // register german translation table
+
 });
 
 
-app.run(['$http', '$rootScope', 'snSkrollr', function($http, $rootScope,
+app.run(['$http', '$rootScope', 'snSkrollr', function(
+  $http, $rootScope,
   snSkrollr) {
   $rootScope.date = new Date();
   $rootScope.title = 'Anwani';
   $rootScope.messages = [];
   $rootScope.menu = [];
   snSkrollr.init();
+  $rootScope.languages = [{
+    'label': 'en_EN',
+    'value': 'en_EN'
+  }, {
+    'label': 'swa_SWA',
+    'value': 'swa_SWA'
+  }];
+
 }]);
 ;// I control the main demo.
 app.controller("accountCtrl", ['$scope', '$filter', '$timeout', '$state',
@@ -24,9 +60,15 @@ app.controller("accountCtrl", ['$scope', '$filter', '$timeout', '$state',
   function(scope, filter, timeout, state, Restangular, $http, rootScope) {}
 ]);
 ;// I control the main demo.
-app.controller("accountCtrl", ['$scope', '$filter', '$timeout', '$state',
-  'Restangular', '$http', '$rootScope',
-  function(scope, filter, timeout, state, Restangular, $http, rootScope) {}
+app.controller("homeCtrl", ['$scope', '$filter', '$timeout', '$state',
+  'Restangular', '$http', '$rootScope', '$translate',
+  function(scope, filter, timeout, state, Restangular, $http, rootScope,
+    translate) {
+    scope.lang = 'swa_SWA';
+    scope.toggleLanguage = function toggleLanguage(item) {
+      translate.use(item);
+    };
+  }
 ]);
 ;app.directive('isActiveNav', ['$location', function($location) {
   return {
@@ -92,7 +134,7 @@ app.directive('isActiveLink', ['$location', function($location) {
       url: '/home',
       views: {
         '': {
-          controller: '',
+          controller: 'homeCtrl',
           templateUrl: 'app/partials/home/index.html',
         },
         'about@home': {
@@ -221,15 +263,15 @@ angular.module("../public/app/partials/home/banner.html", []).run(["$templateCac
     "      sn-skrollr\n" +
     "      data--100p-top=\"font-size:0.5em !important\"\n" +
     "      >\n" +
-    "        <h3 class=\"white-text\">Welcome to Anwani</h3>\n" +
-    "        <p class=\"white-text\">The APP that allows you to create a real address in less than a minute...</p>\n" +
+    "        <h3 class=\"white-text\" translate>Welcome</h3>\n" +
+    "        <p class=\"white-text\" translate>Welcome-Description</p>\n" +
     "      </div>\n" +
     "      <div class=\"col-md-4 padded-top right\"\n" +
     "      sn-skrollr\n" +
     "      data--100p-top=\"font-size:0.5em !important\"\n" +
     "      >\n" +
-    "        <h5 class=\"white-text\" style=\"margin-bottom:0.2em\">It's simple</h5>\n" +
-    "        <p class=\"white-text\">Create your address or view existing ones</p>\n" +
+    "        <h5 class=\"white-text\" style=\"margin-bottom:0.2em\" translate>Simple</h5>\n" +
+    "        <p class=\"white-text\" translate>Create Address</p>\n" +
     "        <button class=\"btn btn-default btn-large btn-blue\">Get Started!</button> <span class=\"white-text\">OR</span>\n" +
     "        <img src=\"images/google.png\" class=\"img-responsive play\" alt=\"\">\n" +
     "      </div>\n" +
@@ -335,12 +377,19 @@ angular.module("../public/app/partials/home/header.html", []).run(["$templateCac
     "      </a>\n" +
     "    </div>\n" +
     "  <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">\n" +
+    "    <form action=\"\"class=\"navbar-form navbar-right\">\n" +
+    "      <label for=\"\">Language</label>\n" +
+    "      <select class=\"form-control\" name=\"\" id=\"\" ng-model=\"lang\" ng-change=\"toggleLanguage(lang)\"\n" +
+    "        ng-options=\"lang.label as lang.label for lang in languages\">\n" +
+    "      </select>\n" +
+    "    </form>\n" +
     "  <ul class=\"nav navbar-nav navbar-right\">\n" +
     "    <li bs-scrollspy du-scrollspy du-smooth-scroll href=\"#home\" data-target=\"#home\"><a>HOME</a></li>\n" +
     "    <li bs-scrollspy du-scrollspy du-smooth-scroll href=\"#about\" data-target=\"#about\"><a>ABOUT</a></li>\n" +
     "    <li bs-scrollspy du-scrollspy du-smooth-scroll href=\"#features\" data-target=\"#features\"><a>FEATURES</a></li>\n" +
     "    <li style=\"padding:10px 15px;margin-left:100px\"><button href=\"\" class=\"btn btn-warning btn-sm\">LOGIN/SIGNUP</button></li>\n" +
     "  </ul>\n" +
+    "\n" +
     "</div>\n" +
     "</div>\n" +
     "</nav>\n" +

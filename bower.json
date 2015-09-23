@@ -27,6 +27,8 @@
     "angular-skrollr": "~0.1.4",
     "angular-smart-table": "1.4.9",
     "angular-strap": "~2.2.0",
+    "angular-translate": "~2.8.0",
+    "angular-translate-storage-cookie": "~2.8.0",
     "angular-ui-router": "0.2.13",
     "font-awesome": "~4.4.0",
     "highcharts": "~4.1.7",
