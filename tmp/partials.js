@@ -37,7 +37,7 @@ angular.module("../public/app/partials/home/about.html", []).run(["$templateCach
     "    <div class=\"col-md-12\">\n" +
     "      <div class=\"col-md-4 slighted-above centered\">\n" +
     "        <span class=\"black-text\">Share on</span>\n" +
-    "        <a href='#' class='symbol' title='circlefacebook'></a>\n" +
+    "        <a style=href='#' class='symbol' title='circlefacebook'></a>\n" +
     "        <a href='#' class='symbol' title='circletwitterbird'></a>\n" +
     "        <a href='#' class='symbol' title='circlegoogleplus'></a>\n" +
     "      </div>\n" +

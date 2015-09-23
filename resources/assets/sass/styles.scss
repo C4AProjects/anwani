@@ -41,7 +41,15 @@ a.symbol:before {
   content: attr(title);
   margin-right: 0.3em;
   @extend .typl8-beta;
-
+}
+a.symbol[title='circlefacebook']:before{
+  color:#3b5998 !important;
+}
+a.symbol[title='circletwitterbird']:before{
+  color:#55acee !important;
+}
+a.symbol[title='circlegoogleplus']:before{
+  color:#dc4e41 !important;
 }
 a.symbol:hover{
   text-decoration: none;
