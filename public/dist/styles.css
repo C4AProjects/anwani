@@ -3462,15 +3462,15 @@ tbody.collapse.in {
         overflow: visible !important; }
       .navbar-collapse.in {
         overflow-y: visible; }
-      .navbar-fixed-top .navbar-collapse, .navbar-static-top .navbar-collapse, .navbar-fixed-bottom .navbar-collapse {
+      .navbar-fixed-top .navbar-collapse, nav#main .navbar-collapse, .navbar-static-top .navbar-collapse, .navbar-fixed-bottom .navbar-collapse {
         padding-left: 0;
         padding-right: 0; } }
 
-.navbar-fixed-top .navbar-collapse,
+.navbar-fixed-top .navbar-collapse, nav#main .navbar-collapse,
 .navbar-fixed-bottom .navbar-collapse {
   max-height: 340px; }
   @media (max-device-width: 480px) and (orientation: landscape) {
-    .navbar-fixed-top .navbar-collapse,
+    .navbar-fixed-top .navbar-collapse, nav#main .navbar-collapse,
     .navbar-fixed-bottom .navbar-collapse {
       max-height: 200px; } }
 
@@ -3495,18 +3495,18 @@ tbody.collapse.in {
     .navbar-static-top {
       border-radius: 0; } }
 
-.navbar-fixed-top,
+.navbar-fixed-top, nav#main,
 .navbar-fixed-bottom {
   position: fixed;
   right: 0;
   left: 0;
   z-index: 1030; }
   @media (min-width: 768px) {
-    .navbar-fixed-top,
+    .navbar-fixed-top, nav#main,
     .navbar-fixed-bottom {
       border-radius: 0; } }
 
-.navbar-fixed-top {
+.navbar-fixed-top, nav#main {
   top: 0;
   border-width: 0 0 1px; }
 
@@ -5750,6 +5750,7 @@ nav {
   nav li {
     list-style: none; }
     nav li a {
+      cursor: pointer;
       color: black !important;
       text-transform: capitalize;
       text-decoration: none; }
@@ -5757,6 +5758,7 @@ nav {
       text-decoration: none;
       color: #afe0eb; }
   nav li:hover a, nav li.active a {
+    cursor: hand;
     color: #afe0eb; }
 
 nav#main {

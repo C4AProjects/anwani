@@ -55,6 +55,7 @@ return array(
     'Cron\\MinutesField' => $vendorDir . '/mtdowling/cron-expression/src/Cron/MinutesField.php',
     'Cron\\MonthField' => $vendorDir . '/mtdowling/cron-expression/src/Cron/MonthField.php',
     'Cron\\YearField' => $vendorDir . '/mtdowling/cron-expression/src/Cron/YearField.php',
+    'Curl\\Curl' => $vendorDir . '/curl/curl/src/Curl/Curl.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
     'Diff' => $vendorDir . '/phpspec/php-diff/lib/Diff.php',
     'Diff_Renderer_Abstract' => $vendorDir . '/phpspec/php-diff/lib/Diff/Renderer/Abstract.php',

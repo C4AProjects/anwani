@@ -111,6 +111,7 @@ nav{
   li{
     list-style: none;
     a{
+      cursor:pointer;
       color:black !important;
       text-transform: capitalize;
       text-decoration: none;
@@ -122,6 +123,7 @@ nav{
   }
   li:hover,li.active{
     a{
+      cursor:hand;
       color:#afe0eb;
     }
   }
@@ -132,6 +134,7 @@ nav#main{
   padding-right:10%;
   background:white !important;
   border-bottom: 2px solid $light_blue;
+  @extend .navbar-fixed-top;
 }
 nav#sub{
   background:$grey !important;

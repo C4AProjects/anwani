@@ -1,6 +1,7 @@
 var app = angular.module("buymore", ['ui.router', 'restangular', 'smart-table',
   'chart.js', 'textAngular', 'angularMoment', 'ui.bootstrap',
-  'highcharts-ng'
+  'highcharts-ng', 'mgcrea.ngStrap.scrollspy',
+  'mgcrea.ngStrap.helpers.dimensions', 'duScroll'
 ]);
 
 app.config(function(RestangularProvider) {
@@ -316,9 +317,9 @@ angular.module("../public/app/partials/home/header.html", []).run(["$templateCac
     "    </div>\n" +
     "  <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">\n" +
     "  <ul class=\"nav navbar-nav navbar-right\">\n" +
-    "    <li><a href=\"\">HOME</a></li>\n" +
-    "    <li><a href=\"\">ABOUT</a></li>\n" +
-    "    <li><a href=\"\">FEATURES</a></li>\n" +
+    "    <li bs-scrollspy du-scrollspy du-smooth-scroll href=\"#home\" data-target=\"#home\"><a>HOME</a></li>\n" +
+    "    <li bs-scrollspy du-scrollspy du-smooth-scroll href=\"#about\" data-target=\"#about\"><a>ABOUT</a></li>\n" +
+    "    <li bs-scrollspy du-scrollspy du-smooth-scroll href=\"#features\" data-target=\"#features\"><a>FEATURES</a></li>\n" +
     "    <li style=\"padding:10px 15px;margin-left:100px\"><button href=\"\" class=\"btn btn-warning btn-sm\">LOGIN/SIGNUP</button></li>\n" +
     "  </ul>\n" +
     "</div>\n" +
@@ -330,9 +331,9 @@ angular.module("../public/app/partials/home/header.html", []).run(["$templateCac
 angular.module("../public/app/partials/home/index.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("../public/app/partials/home/index.html",
     "<div ui-view=\"header\"></div>\n" +
-    "<div ui-view=\"banner\"></div>\n" +
-    "<div ui-view=\"about\"></div>\n" +
-    "<div ui-view=\"features\"></div>\n" +
+    "<div id=\"home\" ui-view=\"banner\"></div>\n" +
+    "<div id=\"about\" ui-view=\"about\"></div>\n" +
+    "<div id=\"features\" ui-view=\"features\"></div>\n" +
     "<div ui-view=\"partners\"></div>\n" +
     "<div ui-view=\"sub-header\"></div>\n" +
     "<div ui-view=\"footer\"></div>\n" +

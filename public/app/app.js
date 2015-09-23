@@ -1,6 +1,7 @@
 var app = angular.module("buymore", ['ui.router', 'restangular', 'smart-table',
   'chart.js', 'textAngular', 'angularMoment', 'ui.bootstrap',
-  'highcharts-ng'
+  'highcharts-ng', 'mgcrea.ngStrap.scrollspy',
+  'mgcrea.ngStrap.helpers.dimensions', 'duScroll'
 ]);
 
 app.config(function(RestangularProvider) {
