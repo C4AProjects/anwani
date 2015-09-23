@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="libs/styles/MarkerCluster.Default.css" />
 	<title ng-bind="title"></title>
 </head>
-<body>
+<body style="height:auto !important">
 	<!-- Header -->
 	<header>
 
@@ -61,6 +61,9 @@
 <script src='libs/js/highcharts.js'></script>
 <script src='libs/js/highcharts-ng.js'></script>
 <script src='libs/js/jQuery.headroom.js'></script>
+
+<script src='libs/js/angular-skrollr.js'></script>
+<script src='libs/js/skrollr.js'></script>
 <script src='libs/js/rangy-core.js'></script>
 <script src='libs/js/rangy-selectionsaverestore.js'></script>
 <script src='libs/js/scrollReveal.js'></script>

@@ -1,7 +1,7 @@
 var app = angular.module("buymore", ['ui.router', 'restangular', 'smart-table',
   'chart.js', 'textAngular', 'angularMoment', 'ui.bootstrap',
   'highcharts-ng', 'mgcrea.ngStrap.scrollspy',
-  'mgcrea.ngStrap.helpers.dimensions', 'duScroll'
+  'mgcrea.ngStrap.helpers.dimensions', 'duScroll', 'sn.skrollr'
 ]);
 
 app.config(function(RestangularProvider) {
@@ -10,9 +10,11 @@ app.config(function(RestangularProvider) {
 });
 
 
-app.run(['$http', '$rootScope', function($http, $rootScope) {
+app.run(['$http', '$rootScope', 'snSkrollr', function($http, $rootScope,
+  snSkrollr) {
   $rootScope.date = new Date();
   $rootScope.title = 'Anwani';
   $rootScope.messages = [];
   $rootScope.menu = [];
+  snSkrollr.init();
 }]);

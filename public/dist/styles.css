@@ -5723,7 +5723,9 @@ p + .typl8-drop-cap {
 body {
   overflow-x: hidden;
   font-family: "Swiss721";
-  background: #F2F1EF; }
+  background: #F2F1EF;
+  margin-bottom: 0 !important;
+  height: auto !important; }
 
 .content {
   padding-top: 5rem;
@@ -5890,7 +5892,7 @@ img.play {
 
   .banner {
     text-align: center !important;
-    padding-top: 2em; }
+    padding-top: 5em; }
     .banner .phone {
       margin-top: 2em; }
     .banner .padded-top {
@@ -5942,7 +5944,7 @@ img.play {
 
   .banner {
     text-align: center !important;
-    padding-top: 2em; }
+    padding-top: 5em; }
     .banner .phone {
       margin-top: 2em; }
     .banner .padded-top {

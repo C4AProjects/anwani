@@ -79,6 +79,8 @@ body{
   font-family:"Swiss721";
   background:$grey;
   @extend .typl8-zeta;
+  margin-bottom:0 !important;
+  height:auto !important;
 }
 
 .content{
@@ -281,7 +283,7 @@ img.play{
   // Banner View
   .banner{
     text-align:center !important;
-    padding-top: 2em;
+    padding-top: 5em;
     .phone{
       margin-top: 2em;
     }
@@ -354,7 +356,7 @@ img.play{
   // Banner View
   .banner{
     text-align:center !important;
-    padding-top: 2em;
+    padding-top: 5em;
     .phone{
       margin-top: 2em;
     }

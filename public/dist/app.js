@@ -1,7 +1,7 @@
 var app = angular.module("buymore", ['ui.router', 'restangular', 'smart-table',
   'chart.js', 'textAngular', 'angularMoment', 'ui.bootstrap',
   'highcharts-ng', 'mgcrea.ngStrap.scrollspy',
-  'mgcrea.ngStrap.helpers.dimensions', 'duScroll'
+  'mgcrea.ngStrap.helpers.dimensions', 'duScroll', 'sn.skrollr'
 ]);
 
 app.config(function(RestangularProvider) {
@@ -10,11 +10,13 @@ app.config(function(RestangularProvider) {
 });
 
 
-app.run(['$http', '$rootScope', function($http, $rootScope) {
+app.run(['$http', '$rootScope', 'snSkrollr', function($http, $rootScope,
+  snSkrollr) {
   $rootScope.date = new Date();
   $rootScope.title = 'Anwani';
   $rootScope.messages = [];
   $rootScope.menu = [];
+  snSkrollr.init();
 }]);
 ;// I control the main demo.
 app.controller("accountCtrl", ['$scope', '$filter', '$timeout', '$state',
@@ -189,17 +191,20 @@ angular.module("../public/app/partials/home/about.html", []).run(["$templateCach
     "    </div>\n" +
     "    <div class=\"col-md-4\">\n" +
     "      <div class=\"circled\"><i class=\"\"></i></div>\n" +
+    "      <img src=\"images/physical.png\" alt=\"\" class=\"img-responsive\" style=\"margin:auto\">\n" +
     "      <h5 class=\"centered black-text\">Physical Address for All</h5>\n" +
     "      <p class='black-text'>For the first time, every African citizens whether they live in the city or in a hut somewhere in a village will have the oportunity to own a physical address.\n" +
     "      </p>\n" +
     "    </div>\n" +
     "    <div class=\"col-md-4\">\n" +
     "      <div class=\"circled\"><i class=\"\"></i></div>\n" +
+    "      <img src=\"images/service_delivery.png\" alt=\"\" class=\"img-responsive\" style=\"margin:auto\">\n" +
     "      <h5 class=\"centered black-text\">Service Delivery</h5>\n" +
     "      <p class='black-text'>Address can be provided by user to service providers, e.g. electric company to be able to service them more efficiently because they will find the address easier and faster. </p>\n" +
     "    </div>\n" +
     "    <div class=\"col-md-4\">\n" +
     "      <div class=\"circled\"><i class=\"\"></i></div>\n" +
+    "      <img src=\"images/citizen_empowerment.png\" alt=\"\" class=\"img-responsive\" style=\"margin:auto\">\n" +
     "      <h5 class=\"centered black-text\">Citizen Empowerment</h5>\n" +
     "      <p class='black-text'>As citizens, users can utilise Anwani to partake in various responsibilities as citizens such as voting and other national registrations</p>\n" +
     "    </div>\n" +
@@ -212,18 +217,28 @@ angular.module("../public/app/partials/home/banner.html", []).run(["$templateCac
   $templateCache.put("../public/app/partials/home/banner.html",
     "<div class=\"banner padded-sides\">\n" +
     "    <div class=\"row description\">\n" +
-    "      <div class=\"col-md-4 padded-top\">\n" +
+    "      <div class=\"col-md-4 padded-top\"\n" +
+    "      sn-skrollr\n" +
+    "      data--100p-top=\"font-size:0.5em !important\"\n" +
+    "      >\n" +
     "        <h3 class=\"white-text\">Welcome to Anwani</h3>\n" +
     "        <p class=\"white-text\">The APP that allows you to create a real address in less than a minute...</p>\n" +
     "      </div>\n" +
-    "      <div class=\"col-md-4 padded-top right\">\n" +
+    "      <div class=\"col-md-4 padded-top right\"\n" +
+    "      sn-skrollr\n" +
+    "      data--100p-top=\"font-size:0.5em !important\"\n" +
+    "      >\n" +
     "        <h5 class=\"white-text\" style=\"margin-bottom:0.2em\">It's simple</h5>\n" +
     "        <p class=\"white-text\">Create your address or view existing ones</p>\n" +
     "        <button class=\"btn btn-default btn-large btn-blue\">Get Started!</button> <span class=\"white-text\">OR</span>\n" +
     "        <img src=\"images/google.png\" class=\"img-responsive play\" alt=\"\">\n" +
     "      </div>\n" +
     "      <div class=\"col-md-4 right\">\n" +
-    "        <img class=\"phone img-responsive\" src=\"images/phone_banner.jpg\" alt=\"\">\n" +
+    "        <img\n" +
+    "        sn-skrollr\n" +
+    "        data-start=\"width:80%\"\n" +
+    "        data--80-top=\"width:20%\"\n" +
+    "        class=\"phone img-responsive\" src=\"images/phone_banner.jpg\" alt=\"\">\n" +
     "      </div>\n" +
     "    </div>\n" +
     "\n" +
@@ -273,7 +288,11 @@ angular.module("../public/app/partials/home/features.html", []).run(["$templateC
     "    </div>\n" +
     "  </div>\n" +
     "  <div class=\"col-md-4 right\">\n" +
-    "<img src=\"images/phone_image.png\" alt=\"\" class=\"img-responsive\" style=\"width:100%\">\n" +
+    "  <img\n" +
+    "  sn-skrollr\n" +
+    "  data-start=\"width:20%\"\n" +
+    "  data-40p-top=\"width:100%\"\n" +
+    "  src=\"images/phone_image.png\" alt=\"\" class=\"img-responsive\" style=\"margin:auto\">\n" +
     "<p class=\"gray-text centered\">* Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>\n" +
     "  </div>\n" +
     "\n" +
