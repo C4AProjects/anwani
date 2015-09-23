@@ -5467,7 +5467,7 @@ License URL ... https://github.com/typeplate/starter-kit/blob/master/license.txt
   font-family: "Ampersand";
   src: local("Georgia");
   unicode-range: U+270C; }
-.typl8-tera, .typl8-giga, .typl8-mega, h1, .typl8-alpha, h2, .typl8-beta, a.symbol:before, h3, i.large, .typl8-gamma, h4, .typl8-delta, h5, .typl8-epsilon, .typl8-zeta, h6, body {
+.typl8-tera, .typl8-giga, .typl8-mega, h1, .typl8-alpha, h2, .typl8-beta, a.symbol:before, h3, i.large, .typl8-gamma, h4, .typl8-delta, h5, .typl8-epsilon, body, .typl8-zeta, h6, nav {
   text-rendering: optimizeLegibility;
   line-height: 1;
   margin-top: 0;
@@ -5536,13 +5536,13 @@ body {
   margin-bottom: 25.45714px;
   margin-bottom: 1.41429rem; }
 
-.typl8-epsilon {
+.typl8-epsilon, body {
   font-size: 18px;
   font-size: 1rem;
   margin-bottom: 29.7px;
   margin-bottom: 1.65rem; }
 
-.typl8-zeta, h6, body {
+.typl8-zeta, h6, nav {
   font-size: 14px;
   font-size: 0.77778rem;
   margin-bottom: 38.18571px;

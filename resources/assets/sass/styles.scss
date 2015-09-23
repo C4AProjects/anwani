@@ -86,7 +86,7 @@ body{
   overflow-x: hidden;
   font-family:"Swiss721";
   background:$grey;
-  @extend .typl8-zeta;
+  @extend .typl8-epsilon;
   margin-bottom:0 !important;
   height:auto !important;
 }
@@ -106,6 +106,7 @@ h1,h2,h3,h4,h5,h6{
   font-family: "Swiss721Bold";
 }
 nav{
+  @extend .typl8-zeta;
   @extend .navbar;
   @extend .navbar-default;
   margin-bottom: 0;
