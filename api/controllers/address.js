@@ -1,5 +1,4 @@
-/**
- *
+/** *
  * Load Module Dependencies.
  */
 var EventEmitter = require('events').EventEmitter;
@@ -14,6 +13,7 @@ var AddressModel = require('../models/address');
 var config       = require('../config');
 var CustomError  = require('../lib/custom-error');
 var User         = require('../dal/user');
+var UserModel    = require('../models/user');
 var olc          = require('../lib/olc');
 
 /**
@@ -76,7 +76,7 @@ exports.create = function createAddress(req, res, next) {
           }));
         }
 
-        User.get({ phone_number: body.phone_number }, function (err, user) {
+        UserModel.findOne({ phone_number: body.phone_number }, function (err, user) {
           if(err) {
             return done(CustomError({
               name: 'ADDRESS_CREATION_ERROR',
@@ -85,9 +85,10 @@ exports.create = function createAddress(req, res, next) {
             }));
           }
 
-          if(user && user.phone_number) {
+          if(user && user.phone_number && !user.archived) {
             return done(null, user);
           }
+
 
           if(!userInfo.password) {
             return done(CustomError({
@@ -96,18 +97,54 @@ exports.create = function createAddress(req, res, next) {
             }));
           }
 
+          if(user && user.archived) {
+            UserModel.hashPasswd(userInfo.password, function (err, hash) {
+              if(err) {
+                return done(CustomError({
+                  name: 'ADDRESS_CREATION_ERROR',
+                  message: err.message,
+                  status: 500
+                }));
+              }
 
-          User.create(userInfo, function(err, doc) {
-            if(err) {
-              return done(CustomError({
-                name: 'ADDRESS_CREATION_ERROR',
-                message: err.message,
-                status: 500
-              }));
-            }
 
-            return done(null, doc);
-          });
+              var update = {
+                $set: { password: hash, archived: false }
+              };
+              var query = {
+                _id: user._id
+              };
+
+              User.update(query, update, function cb(err, user) {
+                if(err) {
+                  return next(CustomError({
+                    name: 'SERVER_ERROR',
+                    message: err.message,
+                    status: 500
+                  }));
+                }
+
+                return done(null, user);
+
+              });
+
+            });
+
+           } else {
+             User.create(userInfo, function(err, doc) {
+               if(err) {
+                 return done(CustomError({
+                   name: 'ADDRESS_CREATION_ERROR',
+                   message: err.message,
+                   status: 500
+                 }));
+               }
+
+               return done(null, doc);
+             });
+
+           }
+
         });
       },
       function maxAddressesReached(user, done) {
@@ -189,7 +226,8 @@ exports.fetchOne = function fetchOneAddress(req, res, next) {
   }
 
   var query = {
-    _id: req.params.id
+    _id: req.params.id,
+    archived: false
   };
 
   Address.get(query, function cb(err, address) {
@@ -431,4 +469,67 @@ exports.createNew = function createAddress(req, res, next) {
   });
 
   workflow.emit('validate');
+};
+
+
+/**
+ *  Archive an address.
+ */
+exports.archive = function archiveAddress(req, res, next) {
+  debug('archive address: ' + req.params.id);
+
+  if(!req._user) {
+    return next(CustomError({
+      name: 'AUTHORIZATION_ERROR',
+      message: 'Your are not logged in'
+    }));
+  }
+
+  var query = {
+    _id: req.params.id
+  };
+  var update;
+
+  update = {
+    $set: { archived: true }
+  };
+
+  Address.update(query, update, function cb(err, address) {
+    if(err) {
+      return next(CustomError({
+        name: 'SERVER_ERROR',
+        message: err.message,
+        status: 500
+      }));
+    }
+
+    if(!address._id) {
+      return next(CustomError({
+        name: 'QUERY_ERROR',
+        message: 'Address(' + req.params.id + ') could not be found'
+      }));
+    }
+
+    var findQuery = {
+      _id: req._user._id
+    };
+    var updates = {
+      $pull: { addresses: address._id }
+    };
+
+    User.update(findQuery, updates, function (err, user ) {
+      if(err) {
+        return next(CustomError({
+          name: 'SERVER_ERROR',
+          message: err.message,
+          status: 500
+        }));
+      }
+
+      res.json(address);
+    });
+
+
+  });
+
 };
