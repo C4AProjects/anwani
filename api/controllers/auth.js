@@ -57,7 +57,7 @@ exports.login = function loginUser(req, res, next) {
       }
 
     }, function verifyPasswd(user, next) {
-      if(!user) {
+      if(!user || user.archived) {
         return next(CustomError({
           name: 'AUTHENTICATION_ERROR',
           message: 'User does not exist'

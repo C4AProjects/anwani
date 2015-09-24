@@ -11,6 +11,7 @@ var _     = require('lodash');
 
 var Address   = require('../dal/address');
 var User      = require('../dal/user');
+var Token     = require('../dal/token');
 var UserModel = require('../models/user');
 var config    = require('../config');
 var CustomError = require('../lib/custom-error');
@@ -175,7 +176,7 @@ exports.update = function updateUser(req, res, next) {
 };
 
 /**
- * Delete a single user.
+ * Delete/Archive a single user.
  *
  * @desc Fetch a user with the given id from the database
  *       and delete their data
@@ -198,7 +199,22 @@ exports.delete = function deleteUser(req, res, next) {
     _id: req.params.id
   };
 
-  User.delete(query, function cb(err, user) {
+  var update = {
+    $set: { archived: true, addresses: [] }
+  };
+  var user  = req._user;
+  var now   = moment().toISOString();
+  var tokenQuery = {
+    user: user._id
+  };
+  var tokenUpdates = {
+    $set: {
+      value: 'EMPTY',
+      revoked: true
+    }
+  };
+
+  User.update(query, update, function cb(err, user) {
     if(err) {
       return next(CustomError({
         name: 'SERVER_ERROR',
@@ -207,8 +223,21 @@ exports.delete = function deleteUser(req, res, next) {
       }));
     }
 
-    res.json(user || {});
+
+    Token.update(tokenQuery, tokenUpdates, function(err, token) {
+      if(err) {
+        return next(CustomError({
+          name: 'SERVER_ERROR',
+          message: err.message,
+          status: 500
+        }));
+      }
+
+      res.json(user);
+    });
+
   });
+
 };
 
 /**
@@ -268,7 +297,8 @@ exports.fetchUserAddresses = function fetchAllUserAddresses(req, res, next) {
   }
 
   var query = {
-    user: req.params.id
+    user: req.params.id,
+    archived: false
   };
   var qs = {
     populate: false
@@ -284,47 +314,5 @@ exports.fetchUserAddresses = function fetchAllUserAddresses(req, res, next) {
     }
 
     res.json(addresses);
-  });
-};
-
-/**
- * Delete user Address
- *
- * @param {Object} req HTTP Request Object
- * @param {Object} res HTTP Response Object
- * @param {Function} next Middleware dispatcher
- */
-exports.removeUserAddress = function removeUserAddress(req, res, next) {
-  debug('deleting user address:' + req.params.addrId);
-
-  if(!req._user) {
-    return next(CustomError({
-      name: 'AUTHORIZATION_ERROR',
-      message: 'Your are not logged in'
-    }));
-  }
-
-  if(!req.params.id && !req.params.addrId) {
-    return next(CustomError({
-      name: 'MISSING_INFO_ERROR',
-      message: 'Please provide both UserId and AddressId'
-    }));
-  }
-
-  var query = {
-    user: req.params.id,
-    _id: req.params.addrId
-  };
-
-  Address.delete(query, function cb(err, user) {
-    if(err) {
-      return next(CustomError({
-        name: 'SERVER_ERROR',
-        message: err.message,
-        status: 500
-      }));
-    }
-
-    res.json(user || {});
   });
 };
