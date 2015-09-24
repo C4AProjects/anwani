@@ -20,6 +20,7 @@ var AddressSchema = new Schema({
   street_address: { type: String },
   city:           { type: String },
   country:        { type: String },
+  archived:       { type: Boolean, default: false },
   date_created:   Date,
   last_modified:  Date
 });
@@ -61,6 +62,7 @@ AddressSchema.statics.whitelist = {
   city:           1,
   country:        1,
   user:           1,
+  archived:       1,
   date_created:   1
 };
 
