@@ -269,41 +269,5 @@ router.delete('/:id', userController.delete);
  */
 router.get('/:id/addresses', userController.fetchUserAddresses);
 
-/**
- * @api {delete} /users/:id/addresses/:addrId Delete User Address
- * @apiVersion 1.0.0
- * @apiName RemoveUserAddress
- * @apiGroup User
- *
- * @apiDescription Delete a user address with the given id
- *
- * @apiSuccess {String} _id address id
- * @apiSuccess {String} user user id
- * @apiSuccess {String} virtual_code virtual code
- * @apiSuccess {String} location_pic location photo
- * @apiSuccess {Number} latitude latitude coordinate
- * @apiSuccess {Number} longitude longitude coordinate
- * @apiSuccess {String} street_address street address
- * @apiSuccess {String} city city name
- * @apiSuccess {String} country country name
- *
- * @apiSuccessExample Response Example:
- *  {
- *    "_id" : "556e1174a8952c9521286a60",
- *    user: "556e1174a8952c9521286a60",
- *    short_virtual_code: "MP7H+E2",
- *    long_virtual_code: "6EAEMMP7H+E2",
- *    location_pic: "/media/a8952c9521286a60.jpeg",
- *    latitude: 4.567889,
- *    longitude: -12.098,
- *    street_address: "",
- *    city: "nairobi",
- *    country: "kenya"
- *  }
- *
- */
-router.delete('/:id/addresses/:addrId', userController.removeUserAddress);
-
-
 // Expose User Router
 module.exports = router;
