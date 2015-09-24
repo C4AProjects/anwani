@@ -29,9 +29,9 @@ exports.create = function create(addressData, cb) {
   debug('creating a new address');
 
   var searchQuery = {
-    longitude: addressData.longitude,
-    latitude: addressData.latitude,
-    user: addressData.user
+    longitude : addressData.longitude,
+    latitude  : addressData.latitude,
+    user      : addressData.user
   };
 
   Address.findOne(searchQuery, function (err, isMatch) {
@@ -95,7 +95,8 @@ exports.delete = function deleteItem(query, cb) {
 
       address.remove(function(err) {
         if(err) { return cb(err); }
-        cb(null, address);
+
+        cb(null, address || {});
       });
 
   });
@@ -131,7 +132,7 @@ exports.update = function update(query, updates,  cb) {
         return cb(err);
       }
 
-      cb(null, address);
+      cb(null, address || {});
     });
 };
 
@@ -153,7 +154,7 @@ exports.get = function get(query, cb) {
         return cb(err);
       }
 
-      cb(null, address);
+      cb(null, address || {});
 
   });
 };
@@ -169,10 +170,10 @@ exports.get = function get(query, cb) {
 exports.getCollection = function getCollection(query, qs, cb) {
   debug('fetching a collection of addresses ', query);
 
-  var flow = Address.find(query, returnFields)
+  var flow = Address.find(query, returnFields);
 
   if(qs.populate) {
-    flow.populate(population)
+    flow.populate(population);
   }
 
     flow
