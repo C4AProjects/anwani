@@ -4,27 +4,11 @@ var app = angular.module("buymore", ['ui.router', 'restangular', 'smart-table',
   'mgcrea.ngStrap.helpers.dimensions', 'duScroll', 'sn.skrollr',
   'pascalprecht.translate', 'ngCookies', ['$translateProvider', function(
     $translateProvider) {
-    // register german translation table
-    $translateProvider.translations('de_DE', {
-      'Welcome': 'Willkommen in Anwani',
-      'Welcome-Description': 'The APP that allows you to create a real address in less than a minute...'
+    $translateProvider.useStaticFilesLoader({
+      prefix: "/translations/",
+      suffix: '.json'
     });
-    // register english translation table
-    $translateProvider.translations('en_EN', {
-      'Welcome': 'Welcome to Anwani',
-      'Welcome-Description': 'The APP that allows you to create a real address in less than a minute...',
-      'Simple': "It's simple",
-      'Create Address': 'Create your address or view existing ones'
-
-    });
-    $translateProvider.translations('swa_SWA', {
-      'Welcome': 'Karibu Anwani',
-      'Welcome-Description': 'APP inayoruhusu kujenga anuani ya kweli katika chini ya dakika ...',
-      'Simple': "Ni rahisi",
-      'Create Address': 'Kujenga anwani yako au mtazamo zilizopo'
-    });
-    // which language to use?
-    $translateProvider.preferredLanguage('swa_SWA');
+    $translateProvider.preferredLanguage('en_US');
     // $translateProvider.useCookieStorage();
   }]
 ]);
@@ -46,11 +30,11 @@ app.run(['$http', '$rootScope', 'snSkrollr', function(
   $rootScope.menu = [];
   snSkrollr.init();
   $rootScope.languages = [{
-    'label': 'en_EN',
-    'value': 'en_EN'
+    'label': 'en_US',
+    'value': 'en_US'
   }, {
-    'label': 'swa_SWA',
-    'value': 'swa_SWA'
+    'label': 'fre_FRE',
+    'value': 'fre_FRE'
   }];
 
 }]);

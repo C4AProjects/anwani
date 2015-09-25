@@ -62,6 +62,7 @@
 <script src='libs/js/highcharts-ng.js'></script>
 <script src='libs/js/jQuery.headroom.js'></script>
 <script src='libs/js/angular-translate.js'></script>
+<script src='libs/js/angular-translate-loader-static-files.js'></script>
 <script src='libs/js/angular-translate-storage-cookie.js'></script>
 <script src='libs/js/angular-cookies.js'></script>
 <script src='libs/js/angular-skrollr.js'></script>
