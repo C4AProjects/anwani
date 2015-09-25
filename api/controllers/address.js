@@ -148,13 +148,14 @@ exports.create = function createAddress(req, res, next) {
         });
       },
       function maxAddressesReached(user, done) {
-        if(user.addresses.length > config.MAX_ADDRESSES) {
+        if(user.addresses.length < config.MAX_ADDRESSES) {
+          return done(null, user);
+
+        } else {
           return done(CustomError({
             name: 'ADDRESS_CREATION_ERROR',
             message: 'Max Number of addresses reached'
           }));
-        } else {
-          return done(null, user);
         }
       },
       function createAddress(user, done) {
