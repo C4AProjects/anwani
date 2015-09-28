@@ -91,9 +91,9 @@ angular.module("../public/app/partials/home/banner.html", []).run(["$templateCac
     "      sn-skrollr\n" +
     "      data--100p-top=\"font-size:0.5em !important\"\n" +
     "      >\n" +
-    "        <h5 class=\"white-text\" style=\"margin-bottom:0.2em\" translate>banner.col_2.title</h5>\n" +
-    "        <p class=\"white-text\" translate>banner.col_2.description</p>\n" +
-    "        <button class=\"btn btn-default btn-large btn-blue\" translate>banner.col_2.button</button> <span class=\"white-text\" translate>banner.col_2.option</span>\n" +
+    "        <h5 class=\"white-text hidden-xs hidden-sm\" style=\"margin-bottom:0.2em\" translate>banner.col_2.title</h5>\n" +
+    "        <p class=\"white-text hidden-xs hidden-sm\" translate>banner.col_2.description</p>\n" +
+    "        <button class=\"btn btn-default btn-large btn-blue hidden-xs hidden-sm\" translate>banner.col_2.button</button> <span class=\"white-text hidden-xs hidden-sm\" translate>banner.col_2.option</span>\n" +
     "        <img src=\"images/google.png\" class=\"img-responsive play\" alt=\"\">\n" +
     "      </div>\n" +
     "      <div class=\"col-md-4 right\">\n" +
@@ -177,7 +177,6 @@ angular.module("../public/app/partials/home/footer.html", []).run(["$templateCac
     "<img src=\"images/google.png\" class=\"img-responsive play\" alt=\"\">\n" +
     "  </div>\n" +
     "  <div class=\"col-md-4 centered right\"><span class=\"gray-text\" >Copyright &copy 2015 Anwani App</span> </div>\n" +
-    "\n" +
     "</footer>\n" +
     "");
 }]);
