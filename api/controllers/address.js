@@ -346,7 +346,9 @@ exports.fetchAll = function fetchAllAddresss(req, res, next) {
   }
 
   var query = {};
-  var qs = {};
+  var qs = {
+    populate: true
+  };
 
   Address.getCollection(query, qs, function cb(err, addresss) {
     if(err) {
