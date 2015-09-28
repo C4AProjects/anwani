@@ -30,6 +30,7 @@
 	<title ng-bind="title"></title>
 </head>
 <body style="height:auto !important">
+	<div id="skrollr-body">
 	<!-- Header -->
 	<header>
 
@@ -113,5 +114,6 @@ Highcharts.setOptions({
 });
 
 </script>
+</div>
 </body>
 </html>
