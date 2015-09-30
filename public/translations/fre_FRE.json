@@ -1,0 +1,93 @@
+{
+  "header": {
+    "nav": "Allez sur la navigation",
+    "links": {
+      "one": "Accueil",
+      "two": "A Propos",
+      "three": "Caracteristiques et fonctionnalitÈs",
+      "four": "Se Connecter/S'Inscrire"
+    },
+    "lang": "Langage"
+  },
+  "banner": {
+    "col_1": {
+      "title": "Bienvenue sur Anwani",
+      "description": "L'application qui vous permet de crÈer une adresse rÈelle en moins d'une minute..."
+    },
+    "col_2": {
+      "title": "C'est simple",
+      "description": "CrÈer votre adresse ou voir celles qui existent dÈj‡",
+      "button": "DÈmarrer!",
+      "option": "OU"
+    }
+  },
+  "about": {
+    "first": {
+      "share": "Partager sur",
+      "featured": "En premier page",
+      "title": "A propos de  Anwani",
+      "description": "Lorem ipsum dolor sit amet."
+    },
+    "second": {
+      "col_1": {
+        "title": "Addresse physique pour tous",
+        "description": "Pour la premiËre fois, tous les citoyens africains, qu'ils soient en ville ou dans une cabane quelque part dans un village auront l'opportunitÈ d'avoir une adresse physique "
+      },
+      "col_2": {
+        "title": "Service de Livraison",
+        "description": "L'Adresse peut Ítre fourni par l'utilisateur pour les fournisseurs de services,une compagnie d 'ÈlectricitÈ par exemple pour Ítre en mesure de les servir plus efficacement, car ils trouveront l'adresse facilement et rapidement."
+      },
+      "col_3": {
+        "title": "L'autonomisation des citoyens",
+        "description": "En tant que citoyens, les utilisateurs peuvent utiliser Anwani pour participer ‡ diverses activitÈs, comme le vote et d'autres activitÈs nationaux "
+      }
+    }
+  },
+  "features": {
+    "top": {
+      "title": "Caracteristiques de l'application Anwani en detail",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+    },
+    "first": {
+      "col_1": {
+        "title": "CrÈer une addresse",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque quis eos hic. Accusantium, asperiores, hic! Consectetur repellat quos est recusandae modi expedita obcaecati beatae enim. Error esse deleniti possimus obcaecati."
+      },
+      "col_2": {
+        "title": "Voir les addresses existantes",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur voluptas rerum at quaerat placeat! Officia perspiciatis sint voluptates, minima eius sunt. A  dipisci nulla ut magnam illum et soluta optio autem."
+      },
+      "col_3": {
+        "title": "Gerer les Addresses",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, hic dignissimos eveniet amet quisquam ad dolorem   voluptates iste, dicta incidunt error dolore quas magnam rerum odit quis repellat cupiditate recusandae!"
+      }
+    },
+    "second": {
+      "col_1": {
+        "title": "Utilisateur et Addresse PartagÈe",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit deleniti odio ab sint labore asperiores, culpa maiores esse cumque, ducimus rerum et provident quasi. Sint soluta ut reprehenderit, aspernatur libero."
+      },
+      "col_2": {
+        "title": "Ajouter la photo de la localitÈ",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, molestias saepe. Eum vero porro quia, facilis magnam eligendi ratione ipsa eveniet, accusantium aliquid laboriosam praesentium! Recusandae nisi necessitatibus alias voluptas."
+      },
+      "col_3": {
+        "title": "Addresse reÁu",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum beatae sint, odio dicta neque, natus labore magni, dolore, nulla incidunt ducimus. Perferendis provident minima, nam consectetur quae aspernatur beatae fugiat!"
+      }
+    },
+    "tertiary": "* Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+  },
+  "footer": {
+    "col_1": {
+      "description": "Se Connecter avec Anwani"
+    },
+    "col_2": {
+      "description": "Recevoir l'application Anwani"
+    },
+    "col_3": {
+      "description": "Tous droits reservÈs ‡ Anwani App 2015"
+    }
+  },
+  "partners": "Nos Partenaires"
+}
