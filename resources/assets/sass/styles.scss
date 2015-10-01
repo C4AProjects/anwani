@@ -1,0 +1,430 @@
+$typl8-scale: (
+typl8-tera: 117,
+typl8-giga: 90,
+typl8-mega: 73,
+typl8-alpha: 61,
+typl8-beta: 33,
+typl8-gamma: 27,
+typl8-delta: 22,
+typl8-epsilon: 19,
+typl8-zeta: 15,
+) !default;
+
+@import "bourbon/bourbon";
+@font-face {
+  font-family: 'Mono Social Icons Font';
+  src: url('../fonts/MonoSocialIconsFont-1.10.eot');
+  src: url('../fonts/MonoSocialIconsFont-1.10.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/MonoSocialIconsFont-1.10.woff') format('woff'),
+  url('../fonts/MonoSocialIconsFont-1.10.ttf') format('truetype'),
+  url('../fonts/MonoSocialIconsFont-1.10.svg#MonoSocialIconsFont') format('svg');
+  src: url('../fonts/MonoSocialIconsFont-1.10.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.symbol, a.symbol:before {
+  font-family: 'Mono Social Icons Font';
+  -webkit-text-rendering: optimizeLegibility;
+  -moz-text-rendering: optimizeLegibility;
+  -ms-text-rendering: optimizeLegibility;
+  -o-text-rendering: optimizeLegibility;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -ms-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+a.symbol:before {
+  content: attr(title);
+  margin-right: 0.3em;
+  @extend .typl8-beta;
+}
+a.symbol[title='circlefacebook']:before{
+  color:#3b5998 !important;
+}
+a.symbol[title='circletwitterbird']:before{
+  color:#55acee !important;
+}
+a.symbol[title='circlegoogleplus']:before{
+  color:#dc4e41 !important;
+}
+a.symbol:hover{
+  text-decoration: none;
+}
+
+@font-face {
+  font-family: "Swiss721";
+  src: url("../fonts/Swiss721.ttf");
+}
+@font-face {
+  font-family: "Swiss721Bold";
+  src: url("../fonts/Swiss721Bold.ttf");
+}
+@import "bootstrap";
+@import "typeplate/styles";
+
+$red:#e26a6a;
+$black: #000;
+$grey:#F2F1EF;
+$sec-grey:#34495E;
+$blue:#2C3E50;
+$green:#68C3A3;
+
+$cm:#3498DB;
+$survey:#e26a6a;
+
+$dark_gray:#29383a;
+$light_grey:#949494;
+$pumice:#D2D7D3;
+$iron:#DADFE1;
+$light_blue:#3cbed5;
+
+body{
+  overflow-x: hidden;
+  font-family:"Swiss721";
+  background:$grey;
+  @extend .typl8-epsilon;
+  margin-bottom:0 !important;
+  height:auto !important;
+}
+
+.content{
+  padding-top:5rem;
+  position: relative;
+}
+.full.content{
+  height:100%;
+  padding:10%;
+  background-size: cover;
+  background-image: url('../images/sky-clouds-blue.jpg');
+}
+
+h1,h2,h3,h4,h5,h6{
+  font-family: "Swiss721Bold";
+}
+nav{
+  @extend .typl8-zeta;
+  @extend .navbar;
+  @extend .navbar-default;
+  margin-bottom: 0;
+  /* font-size:0.7em; */
+  border-radius: 0;
+  .navbar-right{
+    margin-right: 0 !important;
+  }
+  .navbar-toggle{
+    float:left;
+    border:none !important;
+  }
+  li{
+    list-style: none;
+    a{
+      cursor:pointer;
+      color:black !important;
+      text-transform: capitalize;
+      text-decoration: none;
+    }
+    a:hover{
+      text-decoration: none;
+      color:#afe0eb;
+    }
+  }
+  li:hover,li.active{
+    a{
+      cursor:hand;
+      color:#afe0eb;
+    }
+  }
+
+}
+nav#main{
+  padding-left:10%;
+  padding-right:10%;
+  background:white !important;
+  border-bottom: 2px solid $light_blue;
+  @extend .navbar-fixed-top;
+}
+nav#sub{
+  background:$grey !important;
+  border:none;
+}
+div.gray,div.white{
+  background:$dark_gray;
+  color:white;
+  h1,h2,h3,h4,h5,h6{
+    // text-align: left;
+    color:white !important;
+    margin-bottom:0.2em;
+    margin-top:1em;
+  }
+  h1.gray,h2.gray,h3.gray,h4.gray,h5.gray,h6.gray{
+    text-align: center;
+    font-weight: bold;
+    color:$light_grey !important;
+  }
+  i{
+    color:$light_grey !important;
+
+  }
+}
+i.large{
+  @extend .typl8-beta;
+}
+.padded{
+  padding:5% 10%;
+}
+.padded-top{
+  padding-top:20%;
+}
+.padded-bottom{
+  padding-bottom: 5%;
+}
+.padded-sides{
+  padding:0 10%;
+}
+.no-padding{
+  padding: 0;
+}
+.centered{
+  text-align: center;
+}
+.gray-text{
+  color:$light_grey !important;
+}
+.black-text{
+  color:black !important;
+}
+.white-text{
+  color:white !important;
+}
+.seperator{
+  // height:5px;
+  border-bottom:1px solid #f5f5f5;
+}
+div.white{
+  background: white !important;
+  border:1px solid #dadada;
+  h1,h2,h3,h4,h5,h6{
+    color:#b0b0b0 !important;
+  }
+}
+.images{
+  img{
+    vertical-align: middle !important;
+    padding:10px;
+  }
+}
+footer{
+  background: white !important;
+  padding:2.5% 10%;
+}
+a.rounded{
+  padding:10px;
+  margin-left:10px;
+  border-radius:50%;
+  background:#b0b0b0;
+  i{
+    color:white !important;
+  }
+}
+// Mask
+.mask{
+  position: relative;
+  height:50%;
+  .layer,img,.description{
+    position: absolute;
+    width:100%;
+    height:100%;
+  }
+  .layer{
+    z-index: 10;
+    background: $dark_gray;
+    opacity:0.7;
+  }
+  .description{
+    z-index:10000;
+  }
+}
+.phone{
+  margin:auto;
+  margin-top:100px;
+  margin-bottom:-150px;
+}
+.banner{
+  background-image: url('../images/city_banner.png');
+  background-size:cover;
+}
+.slighted-above{
+  margin-top:-100px;
+}
+.right{
+  float:right;
+}
+.left{
+  float:left;
+}
+img.play{
+  margin-top: 0 !important;
+  display:inline-block;
+  width:105px;
+}
+// Button Styles
+.btn-blue{
+  color:$light_blue;
+}
+// Media Queries
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+
+@media (max-width: $screen-xs-max) {
+  .right,.left{
+    width:100%;
+  }
+  .navbar-brand{
+    width:70%;
+    img{
+      margin:auto;
+    }
+  }
+  // Banner View
+  .banner{
+    text-align:center !important;
+    padding-top: 5em;
+    .phone{
+      margin-top: 2em;
+    }
+
+    .padded-top{
+      padding-top:1em;
+    }
+  }
+  // About View
+  .about{
+    .row.white{
+      padding-top:12em !important;
+    }
+    .col-md-4.centered{
+      margin:2em 0 !important;
+    }
+    .slighted-above{
+      margin:0;
+      min-height:3em;
+      img{
+        padding:0 2%;
+        width:40%;
+        margin:auto;
+      }
+    }
+    span.black-text{
+      display: block;
+      text-align: center;
+    }
+    .symbol{
+      margin:auto;
+      width:33%;
+      text-align: center;
+    }
+  }
+  .features{
+    img{
+      padding:5% 20%;
+      margin:auto;
+    }
+  }
+  footer{
+    span.block{
+      display: block;
+      text-align: center;
+    }
+    img{
+      width:40%;
+      margin:auto;
+      margin-top:0.5em;
+    }
+    .centered{
+      margin:1em 0;
+    }
+  }
+}
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+  .right,.left{
+    width:100%;
+  }
+  .right,.left{
+    width:100%;
+  }
+  .navbar-brand{
+    width:70%;
+    img{
+      margin:auto;
+    }
+  }
+  // Banner View
+  .banner{
+    text-align:center !important;
+    padding-top: 5em;
+    .phone{
+      margin-top: 2em;
+    }
+
+    .padded-top{
+      padding-top:1em;
+    }
+  }
+  // About View
+  .about{
+    .row.white{
+      padding-top:12em !important;
+    }
+    .col-md-4.centered{
+      margin:2em 0 !important;
+    }
+    .slighted-above{
+      margin:0;
+      min-height:3em;
+      img{
+        padding:0 2%;
+        width:40%;
+        margin:auto;
+      }
+    }
+    span.black-text{
+      display: block;
+      text-align: center;
+    }
+    .symbol{
+      margin:auto;
+      width:33%;
+      text-align: center;
+    }
+  }
+  .features{
+    img{
+      padding:5% 20%;
+      margin:auto;
+    }
+  }
+  footer{
+    span.block{
+      display: block;
+      text-align: center;
+    }
+    img{
+      width:40%;
+      margin:auto;
+      margin-top:0.5em;
+    }
+    .centered{
+      margin:1em 0;
+    }
+  }
+}
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+
+}
+@media (min-width: $screen-lg-min) {
+
+}
