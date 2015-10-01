@@ -1,17 +1,23 @@
-This README.md file is displayed on your project page. You should edit this 
-file to describe your project, including instructions for building and 
-running the project, pointers to the license under which you are making the 
-project available, and anything else you think would be useful for others to
-know.
+## Laravel PHP Framework
 
-We have created an empty license.txt file for you. Well, actually, it says,
-"<Replace this text with the license you've chosen for your project.>" We 
-recommend you edit this and include text for license terms under which you're
-making your code available. A good resource for open source licenses is the 
-[Open Source Initiative](http://opensource.org/).
+[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
+[![Total Downloads](https://poser.pugx.org/laravel/framework/downloads.svg)](https://packagist.org/packages/laravel/framework)
+[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
+[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
+[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
 
-Be sure to update your project's profile with a short description and 
-eye-catching graphic.
+Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
 
-Finally, consider defining some sprints and work items in Track & Plan to give 
-interested developers a sense of your cadence and upcoming enhancements.
+Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+
+## Official Documentation
+
+Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+
+## Contributing
+
+Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+
+### License
+
+The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
