@@ -1,15 +1,15 @@
-  <!-- header --> 
-  <div data-ng-include=" 'partials/components/topbar.html' " class="page-topbar {{app.settings.menuFolded ? 'sidebar_shift' : ''}} {{app.settings.chatFolded ? '' : 'chat_shift'}}">
+  <!-- header -->
+  <div data-ng-include=" 'app/partials/admin/components/topbar.html' " class="page-topbar {{app.settings.menuFolded ? 'sidebar_shift' : ''}} {{app.settings.chatFolded ? '' : 'chat_shift'}}">
   </div>
   <!-- / header -->
 
-  
+
 <!-- START CONTAINER -->
 
 <div class="page-container row-fluid" ui-sectionbox ng-controller="ModalDemoCtrl">
 
   <!-- leftbar -->
-	  <div data-ng-include=" 'partials/components/leftbar.html' " class="page-sidebar {{app.settings.menuFolded ? 'collapseit' : 'expandit'}}  {{app.settings.chatFolded ? '' : 'chat_shift'}}">
+	  <div data-ng-include=" 'app/partials/admin/components/leftbar.html' " class="page-sidebar {{app.settings.menuFolded ? 'collapseit' : 'expandit'}}  {{app.settings.chatFolded ? '' : 'chat_shift'}}">
 	  </div>
   <!-- / leftbar -->
 
@@ -28,7 +28,7 @@
     <!-- END CONTENT -->
 
   <!-- rightsidebar start-->
-  <div data-ng-include=" 'partials/components/rightbar.html' " class="page-chatapi {{app.settings.chatFolded ? 'hideit' : 'showit'}}">
+  <div data-ng-include=" 'app/partials/admin/components/rightbar.html' " class="page-chatapi {{app.settings.chatFolded ? 'hideit' : 'showit'}}">
   </div>
 
 	<div class="chatapi-windows {{app.settings.chatFolded ? 'hideit' : 'showit'}}"></div>
@@ -39,8 +39,6 @@
     <!-- END CONTAINER -->
 
   <!-- footer -->
-  <div data-ng-include=" 'partials/components/footer.html' ">
+  <div data-ng-include=" 'app/partials/admin/components/footer.html' ">
   </div>
   <!-- / footer -->
-
-

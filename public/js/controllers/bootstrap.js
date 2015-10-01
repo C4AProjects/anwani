@@ -67,7 +67,7 @@
     var slides = $scope.slides = [];
     $scope.addSlide = function() {
       slides.push({
-        image: 'img/c' + [slides.length % 4] + '.png',
+        image: 'images/c' + [slides.length % 4] + '.png',
         text: ['Carousels require the use of an id in the slide data caption',
                 'Contrast and Similarity in Graphic Design are necessary to go',
                 'Bacon ipsum dolor sit amet nulla dolor sit amet nulla',

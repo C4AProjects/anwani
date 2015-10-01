@@ -65,12 +65,12 @@ angular.module('app')
           })
           .state('access.login', {
             url: '/login',
-            templateUrl: 'partials/ui-login.html',
+            templateUrl: 'app/partials/admin/ui-login.html',
             resolve: {
               deps: ['uiLoad',
                 function(uiLoad) {
                   return uiLoad.load(['js/controllers/login.js',
-                    '../bower_components/font-awesome/css/font-awesome.css'
+                    'libs/styles/font-awesome.css'
                   ]);
                 }
               ]

@@ -7,11 +7,11 @@
 Table of Contents:
 
 General Layout Style
-Page Title and Breadcrumb    
+Page Title and Breadcrumb
 Typography
 Page Loading Progress Bar
 Page Top Bar
-Sidebar Main Menu 
+Sidebar Main Menu
 Sidebar User Profile
 Sidebar Fixed Bottom Graphs
 Section or Content Box
@@ -32,7 +32,7 @@ Tabs
 UI Grid
 FULL UI Calendar
 Timeline Centered Style
-Pricing Tables 
+Pricing Tables
 jVector Maps
 Tables
 Data Tables
@@ -61,7 +61,7 @@ Form Wizard
 Carousel
 Visibility Animation in Elements (Viewport)
 Widget - Tile Counter
-Widget - Tile Progress widget 
+Widget - Tile Progress widget
 Navigation Bars
 Search page
 Blogs
@@ -86,7 +86,7 @@ CSS switches
 Sortable list and grid
 Bootstrap Touchspin
 Bootstrap Chosen
-Material Icons 
+Material Icons
 ------------------------------------------*/
 
 
@@ -151,7 +151,7 @@ body.boxed .page-topbar {
 }
 
 .vertical-rhythm.vertical-test-on {
-    /*    background: url("../img/vertical-30px.png");*/
+    /*    background: url("../images/vertical-30px.png");*/
     left: 0px;
     width: 100%;
     /*    height: 5000px;*/
@@ -554,7 +554,7 @@ ul {
 
 
 /*----------------------------------------
-    Page Title and Breadcrumb  
+    Page Title and Breadcrumb
 ------------------------------------------*/
 
 .page-head {
@@ -1620,7 +1620,7 @@ a:focus {
 
 #main-menu-wrapper li .sub-menu a:before {
     /*display: block;
-    
+
     width: 20px;
     height: 33px;
     background-color: transparent;
@@ -2566,7 +2566,7 @@ fieldset[disabled] .form-control {
 }
 
 .input-group.transparent .input-group-addon.input-focus {
-    background-color: #f8f8f8;  
+    background-color: #f8f8f8;
     border: 1px solid #673AB7;
     border-right: 0px;
 }
@@ -3141,7 +3141,7 @@ fieldset[disabled] .btn {
 
 
 /*------------------------------------
-     Modals 
+     Modals
  ------------------------------------*/
 
 .modalbuttons .btn {
@@ -3672,7 +3672,7 @@ fieldset[disabled] .btn {
 
 
 /*---------------------------------------------
-  General Animation Settings    
+  General Animation Settings
 ----------------------------------------------*/
 
 .animated-duration-200ms {
@@ -3873,7 +3873,7 @@ fieldset[disabled] .btn {
 
 
 /*---------------------------------------------
-    Tooltips      
+    Tooltips
 ----------------------------------------------*/
 
 .tooltip {
@@ -4051,7 +4051,7 @@ fieldset[disabled] .btn {
 
 
 /*---------------------------------------------
-    Popovers     
+    Popovers
 ----------------------------------------------*/
 
 .popover {
@@ -5087,7 +5087,7 @@ fieldset[disabled] .btn {
 
 
 /*-----------------------------------------
-    Pricing Tables 
+    Pricing Tables
 ------------------------------------------*/
 
 .pricing-tables .price-pack.recommended .head {
@@ -5883,7 +5883,7 @@ table.dataTable.no-footer {
     background-color: transparent;
     min-height: 92px;
     width: auto;
-    background-image: url("../img/login-logo.png");
+    background-image: url("../images/login-logo.png");
     background-position: center top;
     background-repeat: no-repeat;
     text-indent: -9999px;
@@ -6021,7 +6021,7 @@ table.dataTable.no-footer {
 
 body .login_page {
     background-color: #673AB7;
-    background-image: url('../img/bg3.png');
+    background-image: url('../images/bg3.png');
     background-attachment: fixed;
     background-size: cover;
     height: 100%;
@@ -6857,7 +6857,7 @@ code {
 
 /*.page-sidebar.chat_shift #main-menu-wrapper .wraplist .sub-menu li.active a .arrow,
 .page-sidebar.collapseit #main-menu-wrapper .wraplist .sub-menu li.active a .arrow{
-    display: block !important;  
+    display: block !important;
 }*/
 
 .page-sidebar.chat_shift .profile-info,
@@ -6904,7 +6904,7 @@ code {
 
 
 /*
-#main-menu-wrapper li a:hover, 
+#main-menu-wrapper li a:hover,
 #main-menu-wrapper li.active a {
 background-color: #673AB7;
 }
@@ -8379,7 +8379,7 @@ border-left: 3px solid transparent;
     position: absolute;
     height: 100%;
     width: 100%;
-    background-image: url("../img/bg3.png");
+    background-image: url("../images/bg3.png");
     background-size: cover;
 }
 
@@ -8808,7 +8808,7 @@ border-left: 3px solid transparent;
 
 
 /*------------------------------------------
-    Widget - Tile Counter 
+    Widget - Tile Counter
 ---------------------------------------------*/
 
 .tile-counter {
@@ -8882,7 +8882,7 @@ border-left: 3px solid transparent;
 
 
 /*------------------------------------------
-    Widget - Tile Progress widget 
+    Widget - Tile Progress widget
 ---------------------------------------------*/
 
 .tile-progress {
@@ -9399,18 +9399,18 @@ border-left: 3px solid transparent;
 ----------------------------------------------------------*/
 
 .page-topbar .logo-area {
-    background-image: url('../img/logo.png');
+    background-image: url('../images/logo.png');
     background-repeat: no-repeat;
 }
 
 .page-topbar.sidebar_shift .logo-area {
-    background-image: url('../img/logo-folded.png');
+    background-image: url('../images/logo-folded.png');
     background-repeat: no-repeat;
     background-position: right top;
 }
 
 .page-topbar.chat_shift .logo-area {
-    background-image: url('../img/logo-folded.png');
+    background-image: url('../images/logo-folded.png');
     background-repeat: no-repeat;
     background-position: right top;
 }
@@ -9762,7 +9762,7 @@ border-left: 3px solid transparent;
     display: inline-block;
     position: relative;
     vertical-align: top;
-    background-image: url('../img/bg3.png');
+    background-image: url('../images/bg3.png');
     background-size: cover;
 }
 
@@ -9938,7 +9938,7 @@ border-left: 3px solid transparent;
     color: #ffffff;
     min-height: 378px;
     padding: 30px;
-    background-image: url('../img/bg4.png');
+    background-image: url('../images/bg4.png');
     background-size: cover;
 }
 
@@ -10105,7 +10105,7 @@ border-left: 3px solid transparent;
 
 .wid-weather-small {
     padding: 0px 0 0px 0;
-    background-image: url('../img/bg4.png');
+    background-image: url('../images/bg4.png');
     background-size: cover;
     display: inline-block;
     width: 100%;

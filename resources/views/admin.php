@@ -8,14 +8,15 @@
   <meta name="description" content="AngularJs Bootstrap Admin Theme, Angular, Admin, Admin theme">
   <meta name="keywords" content="AngularJS" , "admin", "widgets", "admin panel", "flat ui", "ui", "web app", "app", "backend", "angular", "dashboard", "bootstrap", "charts", "ui kit", "responsive" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
+  <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="libs/styles/bootstrap.css" media="screen" title="no title" charset="utf-8">
   <!-- Favicon -->
   <!-- CSS FRAMEWORK - START -->
-  <link rel='stylesheet' href='libs/styles/loading-bar.min.css' type='text/css' media='all' />
+  <link rel='stylesheet' href='libs/styles/loading-bar.css' type='text/css' media='all' />
   <!-- Angular Loader -->
   <!--     <link href="../bower_components/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css" /> -->
   <link href="css/material-icons.css" rel="stylesheet" type="text/css" />
-  <link href="libs/styles/animate.min.css" rel="stylesheet" type="text/css" />
+  <link href="libs/styles/animate.css" rel="stylesheet" type="text/css" />
   <!-- CSS FRAMEWORK - END -->
   <link rel="stylesheet" href="css/app.css">
 </head>
@@ -62,7 +63,7 @@
   <script src="js/controllers/topbar.js"></script>
   <script src="js/controllers/chat.js"></script>
   <!-- App JS - End -->
-  <script src='../bower_components/Chart.js/Chart.min.js'></script>
+  <script src='../bower_components/Chart.js/Chart.js'></script>
 </body>
 
 </html>

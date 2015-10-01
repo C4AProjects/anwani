@@ -31,18 +31,18 @@ angular.module("../public/app/partials/account/login.html", []).run(["$templateC
 
 angular.module("../public/app/partials/admin/app.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("../public/app/partials/admin/app.html",
-    "<!-- header --> \n" +
-    "  <div data-ng-include=\" 'partials/components/topbar.html' \" class=\"page-topbar {{app.settings.menuFolded ? 'sidebar_shift' : ''}} {{app.settings.chatFolded ? '' : 'chat_shift'}}\">\n" +
+    "<!-- header -->\n" +
+    "  <div data-ng-include=\" 'app/partials/admin/components/topbar.html' \" class=\"page-topbar {{app.settings.menuFolded ? 'sidebar_shift' : ''}} {{app.settings.chatFolded ? '' : 'chat_shift'}}\">\n" +
     "  </div>\n" +
     "  <!-- / header -->\n" +
     "\n" +
-    "  \n" +
+    "\n" +
     "<!-- START CONTAINER -->\n" +
     "\n" +
     "<div class=\"page-container row-fluid\" ui-sectionbox ng-controller=\"ModalDemoCtrl\">\n" +
     "\n" +
     "  <!-- leftbar -->\n" +
-    "	  <div data-ng-include=\" 'partials/components/leftbar.html' \" class=\"page-sidebar {{app.settings.menuFolded ? 'collapseit' : 'expandit'}}  {{app.settings.chatFolded ? '' : 'chat_shift'}}\">\n" +
+    "	  <div data-ng-include=\" 'app/partials/admin/components/leftbar.html' \" class=\"page-sidebar {{app.settings.menuFolded ? 'collapseit' : 'expandit'}}  {{app.settings.chatFolded ? '' : 'chat_shift'}}\">\n" +
     "	  </div>\n" +
     "  <!-- / leftbar -->\n" +
     "\n" +
@@ -61,7 +61,7 @@ angular.module("../public/app/partials/admin/app.html", []).run(["$templateCache
     "    <!-- END CONTENT -->\n" +
     "\n" +
     "  <!-- rightsidebar start-->\n" +
-    "  <div data-ng-include=\" 'partials/components/rightbar.html' \" class=\"page-chatapi {{app.settings.chatFolded ? 'hideit' : 'showit'}}\">\n" +
+    "  <div data-ng-include=\" 'app/partials/admin/components/rightbar.html' \" class=\"page-chatapi {{app.settings.chatFolded ? 'hideit' : 'showit'}}\">\n" +
     "  </div>\n" +
     "\n" +
     "	<div class=\"chatapi-windows {{app.settings.chatFolded ? 'hideit' : 'showit'}}\"></div>\n" +
@@ -72,11 +72,9 @@ angular.module("../public/app/partials/admin/app.html", []).run(["$templateCache
     "    <!-- END CONTAINER -->\n" +
     "\n" +
     "  <!-- footer -->\n" +
-    "  <div data-ng-include=\" 'partials/components/footer.html' \">\n" +
+    "  <div data-ng-include=\" 'app/partials/admin/components/footer.html' \">\n" +
     "  </div>\n" +
     "  <!-- / footer -->\n" +
-    "\n" +
-    "\n" +
     "");
 }]);
 
@@ -1754,7 +1752,7 @@ angular.module("../public/app/partials/admin/components/leftbar.html", []).run([
     "    </div>\n" +
     "    <!-- USER INFO - END -->\n" +
     "    <!-- nav -->\n" +
-    "    <nav ui-nav ng-include=\"'partials/components/nav.html'\"></nav>\n" +
+    "    <nav ui-nav ng-include=\"'app/partials/admin/components/nav.html'\"></nav>\n" +
     "    <!-- nav -->\n" +
     "    <div class=\"sidebar-graphs col-md-12\">\n" +
     "        <h5>\n" +
@@ -13400,7 +13398,7 @@ angular.module("../public/app/partials/admin/ui-icons.html", []).run(["$template
     "                    <div class=\"col-md-4 col-sm-6 col-xs-12\">\n" +
     "                        <a ui-sref=\"app.ui.materialicons\" class='icons-set'>\n" +
     "                            <div class=\"img-overlay animated fadeIn\"><span>Load Icons</span></div>\n" +
-    "                            <img data-src=\"img/material.png\" class=\"img-responsive\" alt=\"140x140\" src=\"img/material.png\" data-holder-rendered=\"true\">\n" +
+    "                            <img data-src=\"images/material.png\" class=\"img-responsive\" alt=\"140x140\" src=\"images/material.png\" data-holder-rendered=\"true\">\n" +
     "                        </a>\n" +
     "                    </div>\n" +
     "                    <div class=\"col-md-8 col-sm-6 col-xs-12\">\n" +
@@ -13429,7 +13427,7 @@ angular.module("../public/app/partials/admin/ui-icons.html", []).run(["$template
     "                    <div class=\"col-md-4 col-sm-6 col-xs-12\">\n" +
     "                        <a ui-sref=\"app.ui.faicons\" class='icons-set'>\n" +
     "                            <div class=\"img-overlay animated fadeIn\"><span>Load Icons</span></div>\n" +
-    "                            <img data-src=\"img/fa.png\" class=\"img-responsive\" alt=\"140x140\" src=\"img/fa.png\" data-holder-rendered=\"true\">\n" +
+    "                            <img data-src=\"images/fa.png\" class=\"img-responsive\" alt=\"140x140\" src=\"images/fa.png\" data-holder-rendered=\"true\">\n" +
     "                        </a>\n" +
     "                    </div>\n" +
     "                    <div class=\"col-md-8 col-sm-6 col-xs-12\">\n" +
@@ -13458,7 +13456,7 @@ angular.module("../public/app/partials/admin/ui-icons.html", []).run(["$template
     "                    <div class=\"col-md-4 col-sm-6 col-xs-12\">\n" +
     "                        <a ui-sref=\"app.ui.glyphicons\" class='icons-set'>\n" +
     "                            <div class=\"img-overlay animated fadeIn\"><span>Load Icons</span></div>\n" +
-    "                            <img data-src=\"img/glyph.png\" class=\"img-responsive\" alt=\"140x140\" src=\"img/glyph.png\" data-holder-rendered=\"true\">\n" +
+    "                            <img data-src=\"images/glyph.png\" class=\"img-responsive\" alt=\"140x140\" src=\"images/glyph.png\" data-holder-rendered=\"true\">\n" +
     "                        </a>\n" +
     "                    </div>\n" +
     "                    <div class=\"col-md-8 col-sm-6 col-xs-12\">\n" +
@@ -15066,12 +15064,12 @@ angular.module("../public/app/partials/admin/ui-profile.html", []).run(["$templa
     "                                        <div class=\"clearfix\"></div>\n" +
     "                                        <div class=\"col-md-8 row margin-top-15 margin-bottom-15\">\n" +
     "                                            <div class=\"row\">\n" +
-    "                                                <div class=\"col-md-6\"><img src='img/c0.png' class=\"img-responsive\"></div>\n" +
-    "                                                <div class=\"col-md-6\"><img src='img/c1.png' class=\"img-responsive\"></div>\n" +
+    "                                                <div class=\"col-md-6\"><img src='images/c0.png' class=\"img-responsive\"></div>\n" +
+    "                                                <div class=\"col-md-6\"><img src='images/c1.png' class=\"img-responsive\"></div>\n" +
     "                                                <div class=\"clearfix\"></div>\n" +
     "                                                <div style=\"height:30px;width:100%;\"></div>\n" +
-    "                                                <div class=\"col-md-6\"><img src='img/c2.png' class=\"img-responsive\"></div>\n" +
-    "                                                <div class=\"col-md-6\"><img src='img/c3.png' class=\"img-responsive\"></div>\n" +
+    "                                                <div class=\"col-md-6\"><img src='images/c2.png' class=\"img-responsive\"></div>\n" +
+    "                                                <div class=\"col-md-6\"><img src='images/c3.png' class=\"img-responsive\"></div>\n" +
     "                                            </div>\n" +
     "                                        </div>\n" +
     "                                        <div class=\"clearfix\"></div>\n" +
@@ -15188,7 +15186,7 @@ angular.module("../public/app/partials/admin/ui-profile.html", []).run(["$templa
     "                                        <div class=\"row\">\n" +
     "                                        <br>    \n" +
     "                                            <div class=\"col-md-4\">\n" +
-    "                                                <img src=\"img/c4.png\" class=\"img-responsive\">\n" +
+    "                                                <img src=\"images/c4.png\" class=\"img-responsive\">\n" +
     "                                            </div>\n" +
     "                                            <div class=\"col-md-8\">\n" +
     "                                                <h4>Posted on blog</h4>\n" +
@@ -15958,7 +15956,7 @@ angular.module("../public/app/partials/admin/ui-timeline.html", []).run(["$templ
     "                                    </div>\n" +
     "                                    <div class=\"clearfix\"></div>\n" +
     "                                    <div class=\"timeline-img\">\n" +
-    "                                        <img src=\"img/c2.png\" class='img-responsive'>\n" +
+    "                                        <img src=\"images/c2.png\" class='img-responsive'>\n" +
     "                                    </div>\n" +
     "                                    <div class=\"timeline-heading\">\n" +
     "                                        <h3 class=\"timeline-title\">Graphic Design</h3>\n" +
@@ -15979,7 +15977,7 @@ angular.module("../public/app/partials/admin/ui-timeline.html", []).run(["$templ
     "                                    </div>\n" +
     "                                    <div class=\"clearfix\"></div>\n" +
     "                                    <div class=\"timeline-img\">\n" +
-    "                                        <img src=\"img/c1.png\" class='img-responsive'>\n" +
+    "                                        <img src=\"images/c1.png\" class='img-responsive'>\n" +
     "                                    </div>\n" +
     "                                    <div class=\"timeline-heading\">\n" +
     "                                        <h3 class=\"timeline-title\">Contrast concepts</h3>\n" +
@@ -16000,7 +15998,7 @@ angular.module("../public/app/partials/admin/ui-timeline.html", []).run(["$templ
     "                                    </div>\n" +
     "                                    <div class=\"clearfix\"></div>\n" +
     "                                    <div class=\"timeline-img\">\n" +
-    "                                        <img src=\"img/c3.png\" class='img-responsive'>\n" +
+    "                                        <img src=\"images/c3.png\" class='img-responsive'>\n" +
     "                                    </div>\n" +
     "                                    <div class=\"timeline-heading\">\n" +
     "                                        <h3 class=\"timeline-title\">Graphic Design</h3>\n" +
@@ -16022,7 +16020,7 @@ angular.module("../public/app/partials/admin/ui-timeline.html", []).run(["$templ
     "                                    </div>\n" +
     "                                    <div class=\"clearfix\"></div>\n" +
     "                                    <div class=\"timeline-img\">\n" +
-    "                                        <img src=\"img/c4.png\" class='img-responsive'>\n" +
+    "                                        <img src=\"images/c4.png\" class='img-responsive'>\n" +
     "                                    </div>\n" +
     "                                    <div class=\"timeline-heading\">\n" +
     "                                        <h3 class=\"timeline-title\">Graphic Design</h3>\n" +
@@ -16043,7 +16041,7 @@ angular.module("../public/app/partials/admin/ui-timeline.html", []).run(["$templ
     "                                    </div>\n" +
     "                                    <div class=\"clearfix\"></div>\n" +
     "                                    <div class=\"timeline-img\">\n" +
-    "                                        <img src=\"img/c2.png\" class='img-responsive'>\n" +
+    "                                        <img src=\"images/c2.png\" class='img-responsive'>\n" +
     "                                    </div>\n" +
     "                                    <div class=\"timeline-heading\">\n" +
     "                                        <h3 class=\"timeline-title\">Graphic Design</h3>\n" +
