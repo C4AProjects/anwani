@@ -1,0 +1,46 @@
+  <!-- header --> 
+  <div data-ng-include=" 'partials/components/topbar.html' " class="page-topbar {{app.settings.menuFolded ? 'sidebar_shift' : ''}} {{app.settings.chatFolded ? '' : 'chat_shift'}}">
+  </div>
+  <!-- / header -->
+
+  
+<!-- START CONTAINER -->
+
+<div class="page-container row-fluid" ui-sectionbox ng-controller="ModalDemoCtrl">
+
+  <!-- leftbar -->
+	  <div data-ng-include=" 'partials/components/leftbar.html' " class="page-sidebar {{app.settings.menuFolded ? 'collapseit' : 'expandit'}}  {{app.settings.chatFolded ? '' : 'chat_shift'}}">
+	  </div>
+  <!-- / leftbar -->
+
+
+	<!-- START CONTENT -->
+	<section id="main-content" class="{{app.settings.menuFolded ? 'sidebar_shift' : ''}} {{app.settings.chatFolded ? '' : 'chat_shift'}}">
+    <section class="wrapper" style='margin-top:60px;display:inline-block;width:100%;padding:0px 0px 0 0px;' ui-view>
+    <br><br><br>
+    menufolded: {{app.settings.menuFolded}}
+    <br>
+    chatfolded: {{app.settings.chatFolded}}
+
+
+    </section>
+    </section>
+    <!-- END CONTENT -->
+
+  <!-- rightsidebar start-->
+  <div data-ng-include=" 'partials/components/rightbar.html' " class="page-chatapi {{app.settings.chatFolded ? 'hideit' : 'showit'}}">
+  </div>
+
+	<div class="chatapi-windows {{app.settings.chatFolded ? 'hideit' : 'showit'}}"></div>
+  <!-- rightsidebar end -->
+
+
+    </div>
+    <!-- END CONTAINER -->
+
+  <!-- footer -->
+  <div data-ng-include=" 'partials/components/footer.html' ">
+  </div>
+  <!-- / footer -->
+
+
