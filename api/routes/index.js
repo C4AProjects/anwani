@@ -13,7 +13,6 @@ module.exports = function initRoutes(app) {
 
   app.use('/users', usersController);
   app.use('/addresses', addressesController);
-  app.use('/tokens', tokensController);
 
   app.get('/', function (req, res) {
     res.json({
