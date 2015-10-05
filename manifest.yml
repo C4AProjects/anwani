@@ -1,0 +1,10 @@
+---
+applications:
+- name: anwani
+  memory: 1024M
+  buildpack: https://github.com/cloudfoundry/php-buildpack.git
+  host: anwani
+  domain:  mybluemix.net
+  path: .
+  instances: 1
+  disk_quota: 1024M
