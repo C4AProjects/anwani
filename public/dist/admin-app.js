@@ -4629,8 +4629,6 @@ app.controller('MapCtrl', ['$scope', function ($scope) {
      * @return {[type]}              [description]
      */
     $stateProvider.state('app', {
-        abstract: true,
-        url: '/app',
         templateUrl: '../admin-app/partials/app.html'
       })
       .state('app.dashboard', {

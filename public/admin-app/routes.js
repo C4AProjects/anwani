@@ -20,8 +20,6 @@ app.config(['$stateProvider', '$urlRouterProvider', 'JQ_CONFIG',
      * @return {[type]}              [description]
      */
     $stateProvider.state('app', {
-        abstract: true,
-        url: '/app',
         templateUrl: '../admin-app/partials/app.html'
       })
       .state('app.dashboard', {
