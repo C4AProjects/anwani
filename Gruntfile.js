@@ -49,13 +49,18 @@ module.exports = function(grunt) {
     },
 
     concat: {
+      main: {
+        src: ['public/app/**/*.js', 'tmp/*.js'],
+        dest: 'public/dist/app.js'
+      },
+      admin: {
+        src: ['public/admin-app/**/*.js', 'tmp/*.js'],
+        dest: 'public/dist/admin-app.js'
+      },
       options: {
         separator: ';'
       },
-      dist: {
-        src: ['public/app/**/*.js', 'tmp/*.js'],
-        dest: 'public/dist/app.js'
-      }
+
     },
 
     jshint: {
@@ -76,7 +81,7 @@ module.exports = function(grunt) {
         files: ['Gruntfile.js', 'public/app/**/*.js', '**/*.html',
           'resources/assets/sass/*.scss'
         ],
-        tasks: ['html2js:dist', 'sass', 'concat:dist',
+        tasks: ['html2js:dist', 'sass', 'concat',
           'bower:dev'
         ],
         options: {
