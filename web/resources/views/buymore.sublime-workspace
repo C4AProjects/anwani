@@ -1,0 +1,1962 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"side",
+				"side-menu"
+			],
+			[
+				"test-r",
+				"test-requests"
+			],
+			[
+				"s",
+				"slick-carousel/"
+			],
+			[
+				"gr",
+				"graph_filter"
+			],
+			[
+				"opt",
+				"options"
+			],
+			[
+				"array_key",
+				"array_keys"
+			],
+			[
+				"categor",
+				"categoryOptions"
+			],
+			[
+				"applica",
+				"applicant"
+			],
+			[
+				"appli",
+				"applicantCounter"
+			],
+			[
+				"json",
+				"json_decode"
+			],
+			[
+				"catego",
+				"categoryOptions"
+			],
+			[
+				"ca",
+				"categoryOptions"
+			],
+			[
+				"fil",
+				"filterElement"
+			],
+			[
+				"for",
+				"foreach	foreach …"
+			],
+			[
+				"res",
+				"results"
+			],
+			[
+				"text",
+				"text-indent"
+			],
+			[
+				"an",
+				"angular-chart.js"
+			],
+			[
+				"member",
+				"memberCtrl"
+			],
+			[
+				"req",
+				"request"
+			],
+			[
+				"date",
+				"date_filter"
+			],
+			[
+				"boots",
+				"bootstrap-datepicker"
+			],
+			[
+				"show",
+				"show_more"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"non",
+				"nonFunctioningRow"
+			],
+			[
+				"questio",
+				"questionResponse_"
+			],
+			[
+				"q",
+				"questions"
+			],
+			[
+				"sta",
+				"staffTraining"
+			],
+			[
+				"colu",
+				"column_count"
+			],
+			[
+				"coumn",
+				"column_count"
+			],
+			[
+				"addB",
+				"addBemoncInfo"
+			],
+			[
+				"change",
+				"changeSection"
+			],
+			[
+				"disable",
+				"disableFields"
+			],
+			[
+				"signalFun",
+				"signalFunctionsSection"
+			],
+			[
+				"suppli",
+				"supplierOptions"
+			],
+			[
+				"indi",
+				"indicatorCode"
+			],
+			[
+				"col",
+				"colspan"
+			],
+			[
+				"strp",
+				"strpos"
+			],
+			[
+				"mon",
+				"monthlyDeliveries"
+			],
+			[
+				"data",
+				"data_model"
+			],
+			[
+				"border",
+				"borderRadius"
+			],
+			[
+				"re",
+				"results"
+			],
+			[
+				"suppl",
+				"supplierOptions"
+			],
+			[
+				"commodit",
+				"commodities"
+			],
+			[
+				"analytics",
+				"analytics_model"
+			],
+			[
+				"fac",
+				"facility_count"
+			],
+			[
+				"distr",
+				"district_count"
+			],
+			[
+				"class",
+				"classifications"
+			],
+			[
+				"curre",
+				"current_form"
+			],
+			[
+				"district",
+				"districtFacilityListSection"
+			],
+			[
+				"ana",
+				"analytics_model"
+			],
+			[
+				"survey",
+				"survey_form"
+			],
+			[
+				"QuestionS",
+				"createQuestionSection"
+			],
+			[
+				"url",
+				"urldecode"
+			],
+			[
+				"statist",
+				"statistic"
+			],
+			[
+				"strt",
+				"strtotime"
+			],
+			[
+				"treatment",
+				"treatment_number"
+			],
+			[
+				"sort",
+				"sortTreatment"
+			],
+			[
+				"diarr",
+				"diarrhea"
+			],
+			[
+				"stati",
+				"statistic"
+			],
+			[
+				"grap",
+				"graph_text"
+			],
+			[
+				"load",
+				"loadGraph"
+			],
+			[
+				"en",
+				"encodeURIComponent"
+			],
+			[
+				"tr",
+				"treatment_array"
+			],
+			[
+				"stat",
+				"statistic"
+			],
+			[
+				"indicato",
+				"indicatorHandler"
+			],
+			[
+				"unse",
+				"unset"
+			],
+			[
+				"array_re",
+				"array_merge_recursive"
+			],
+			[
+				"array_m",
+				"array_merge"
+			],
+			[
+				"county",
+				"county_data"
+			],
+			[
+				"select",
+				"select_data"
+			],
+			[
+				"sele",
+				"select_data"
+			],
+			[
+				"file",
+				"filename"
+			],
+			[
+				"generated",
+				"generated_table"
+			],
+			[
+				"gene",
+				"generateData"
+			],
+			[
+				"cho",
+				"chosenOptions"
+			],
+			[
+				"commo",
+				"commodityOptions"
+			],
+			[
+				"per",
+				"percent"
+			],
+			[
+				"getQ",
+				"getQuestionStatistics"
+			],
+			[
+				"resu",
+				"result"
+			],
+			[
+				"survey_cat",
+				"survey_category"
+			],
+			[
+				"ques",
+				"question_for"
+			],
+			[
+				"surevy",
+				"survey_category"
+			],
+			[
+				"indicator",
+				"indicator_type"
+			],
+			[
+				"array_u",
+				"array_unique"
+			],
+			[
+				"form",
+				"formArray"
+			],
+			[
+				"survey_ca",
+				"survey_category"
+			],
+			[
+				"surv",
+				"survey_categories"
+			],
+			[
+				"sc_",
+				"sc_name"
+			],
+			[
+				"retrie",
+				"retrieveData"
+			],
+			[
+				"m_ret",
+				"m_retrieve"
+			],
+			[
+				"ava",
+				"availabilityRow"
+			],
+			[
+				"quan",
+				"quantityRow"
+			],
+			[
+				"locat",
+				"locationRow"
+			],
+			[
+				"reason",
+				"reasonUnavailable"
+			],
+			[
+				"indicatorHC",
+				"indicatorHCWFindings"
+			],
+			[
+				"indicatorA",
+				"indicatorAssessorFindings"
+			],
+			[
+				"response",
+				"responseHCWRow"
+			],
+			[
+				"retr",
+				"retrieveData"
+			],
+			[
+				"print",
+				"print_r"
+			],
+			[
+				"project",
+				"project_url"
+			],
+			[
+				"survey_ty",
+				"survey_type"
+			],
+			[
+				"resul",
+				"resultArray"
+			],
+			[
+				"treat",
+				"treatment"
+			],
+			[
+				"total",
+				"totalTreatment"
+			],
+			[
+				"log_s",
+				"log_supply_stock_outs"
+			],
+			[
+				"last",
+				"last_query"
+			],
+			[
+				"wom",
+				"womenTotal"
+			],
+			[
+				"new",
+				"newMessage"
+			],
+			[
+				"send",
+				"send_email"
+			],
+			[
+				"country",
+				"country_code"
+			],
+			[
+				"coun",
+				"country_code"
+			],
+			[
+				"function",
+				"function_url"
+			],
+			[
+				"quest",
+				"questionCount"
+			],
+			[
+				"addcommu",
+				"addMnhCommunityStrategyInfo"
+			],
+			[
+				"addC",
+				"addCommodityUsageAndStockOutageInfo"
+			],
+			[
+				"hcw",
+				"hcwResponse_"
+			],
+			[
+				"questionC",
+				"questionCount_"
+			],
+			[
+				"mt",
+				"mt_rand"
+			],
+			[
+				"tota",
+				"total_response"
+			],
+			[
+				"array_k",
+				"array_key_exists"
+			],
+			[
+				"cat",
+				"categories"
+			],
+			[
+				"give",
+				"given_size"
+			],
+			[
+				"percent",
+				"percentage"
+			],
+			[
+				"stacking",
+				"chart_stacking"
+			],
+			[
+				"graph",
+				"graph_facility"
+			],
+			[
+				"funct",
+				"function_url"
+			],
+			[
+				"base",
+				"base_url"
+			],
+			[
+				"chart",
+				"chart_series"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/private/var/www/buymore_coin/public/app/controllers/expenditure.js",
+			"settings":
+			{
+				"buffer_size": 3458,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/private/var/www/buymore_coin/public/app/partials/expenditure/expenditure-spread.html",
+			"settings":
+			{
+				"buffer_size": 136,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/private/var/www/buymore_coin/public/app/partials/savings/saving-options.html",
+			"settings":
+			{
+				"buffer_size": 1883,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/private/var/www/buymore_coin/public/app/partials/expenditure/expenditure-category.html",
+			"settings":
+			{
+				"buffer_size": 135,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/private/var/www/buymore_coin/public/app/partials/expenditure/expenditure-list.html",
+			"settings":
+			{
+				"buffer_size": 171,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/private/var/www/buymore_coin/public/app/partials/expenditure/expenditure-category-time.html",
+			"settings":
+			{
+				"buffer_size": 136,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/private/var/www/buymore_coin/public/app/partials/expenditure/expenditure-pie.html",
+			"settings":
+			{
+				"buffer_size": 183,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 398.0,
+		"last_filter": "for",
+		"selected_items":
+		[
+			[
+				"for",
+				"CodeFormatter: Format Code"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"add",
+				"Package Control: Add Repository"
+			],
+			[
+				"Snippet: ",
+				"Snippet: Lorem ipsum"
+			],
+			[
+				"fo",
+				"CodeFormatter: Format Code"
+			],
+			[
+				"form",
+				"CodeFormatter: Format Code"
+			],
+			[
+				"f",
+				"CodeFormatter: Format Code"
+			],
+			[
+				"forfm",
+				"CodeFormatter: Format Code"
+			],
+			[
+				"build",
+				"Build: Build"
+			],
+			[
+				"pa",
+				"Package Control: Install Package"
+			],
+			[
+				"p",
+				"Package Control: Install Package"
+			],
+			[
+				"colo",
+				"Colorsublime: Install Theme"
+			],
+			[
+				"color",
+				"Colorsublime: Install Theme"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"foem",
+				"Format Code"
+			],
+			[
+				"forma",
+				"Format Code"
+			],
+			[
+				"i",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 581.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/private/var/www/buymore_coin",
+		"/private/var/www/buymore_coin/public",
+		"/private/var/www/buymore_coin/public/app",
+		"/private/var/www/buymore_coin/public/app/controllers",
+		"/private/var/www/buymore_coin/public/app/partials",
+		"/private/var/www/buymore_coin/public/app/partials/account",
+		"/private/var/www/buymore_coin/public/app/partials/expenditure",
+		"/private/var/www/buymore_coin/public/app/partials/public",
+		"/private/var/www/buymore_coin/public/app/partials/savings"
+	],
+	"file_history":
+	[
+		"/private/var/www/buymore_coin/public/app/partials/savings/form.html",
+		"/private/var/www/buymore_coin/public/app/routes.js",
+		"/private/var/www/buymore_coin/public/app/partials/savings/index.html",
+		"/private/var/www/buymore_coin/public/app/controllers/savings.js",
+		"/private/var/www/buymore_coin/public/app/partials/savings/saving-options.html",
+		"/private/var/www/buymore_coin/public/libs/js/jQuery.headroom.js",
+		"/private/var/www/buymore_coin/resources/views/landing.php",
+		"/private/var/www/buymore_coin/public/app/app.js",
+		"/private/var/www/buymore_coin/public/app/partials/expenditure/expenditure-pie.html",
+		"/private/var/www/buymore_coin/public/app/partials/expenditure/expenditure-category.html",
+		"/private/var/www/buymore_coin/public/app/partials/expenditure/expenditure-category-time.html",
+		"/private/var/www/buymore_coin/public/app/partials/expenditure/expenditure-spread.html",
+		"/private/var/www/buymore_coin/public/app/partials/savings/message.html",
+		"/private/var/www/buymore_coin/resources/assets/sass/styles.scss",
+		"/private/var/www/buymore_coin/public/app/partials/expenditure/index.html",
+		"/private/var/www/buymore_coin/public/app/partials/directives/footer.html",
+		"/private/var/www/buymore_coin/public/app/partials/account/index.html",
+		"/private/var/www/buymore_coin/public/app/partials/account/header.html",
+		"/private/var/www/buymore_coin/public/app/partials/account/filter.html",
+		"/private/var/www/buymore_coin/public/app/controllers/expenditure.js",
+		"/private/var/www/buymore_coin/public/app/controllers/account.js",
+		"/private/var/www/buymore_landing/app/routes.js",
+		"/private/var/www/buymore_coin/app/Http/routes.php",
+		"/private/var/www/buymore_coin/app/Http/Controllers/HomeController.php",
+		"/private/var/www/buymore_coin/app/Http/Controllers/LandingController.php",
+		"/Users/rufusmbugua/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/private/var/www/nqcl/application/views/index.php",
+		"/private/var/www/greenalert/config/database.php",
+		"/private/var/www/bpa/config.php",
+		"/private/var/www/bpa/models/db-settings.php",
+		"/private/var/www/nqcl/config.php",
+		"/private/var/www/greenalert/.env.local.php",
+		"/private/var/www/greenalert/.env.php",
+		"/private/var/www/bpa/js/script.js",
+		"/private/var/www/bpa/userCake/models/db-settings.php",
+		"/private/var/www/bpa/connect/database.class.php",
+		"/Applications/XAMPP/xamppfiles/etc/php.ini",
+		"/Applications/XAMPP/xamppfiles/htdocs/dms/app/partials/users/index.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/dms/app/partials/location/services.index.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/dms/app/routes.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/dms/app/partials/location/archdiocese.index.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/dms/app/partials/location/members.index.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/dms/app/partials/location/parish.index.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/dms/app/partials/location/diocese.index.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/dms/app/partials/location/deanery.index.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/dms/app/partials/global/side-menu.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/Dropbox/MEDS/application/controllers/analytics.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/Dropbox/MEDS/assets/bower_components/octicons/svg/repo-forked.svg",
+		"/Applications/XAMPP/xamppfiles/htdocs/Dropbox/MEDS/assets/javascripts/core.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/Dropbox/MEDS/images/icons/circle_orange.png:com.dropbox.attributes",
+		"/Applications/XAMPP/xamppfiles/htdocs/Dropbox/MEDS/components.sql:com.dropbox.attributes",
+		"/Applications/XAMPP/xamppfiles/htdocs/essential/dbv/data/schema/facility_owners.sql",
+		"/Applications/XAMPP/xamppfiles/htdocs/essential/application/libraries/PHPExcel/Calculation/FormulaToken.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/essential/assets/stylesheets/foundation/icons/svgs/fi-torsos-male-female.svg",
+		"/Applications/XAMPP/xamppfiles/htdocs/essential/assets/sass/flat.scss",
+		"/Applications/XAMPP/xamppfiles/htdocs/essential/assets/javascripts/analytics.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/essential/application/modules/analytics/controllers/analytics.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/essential/application/models/Entities/AvailableEquipments.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/meds/app/directives.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/meds/index.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/meds/assets/sass/styles.scss",
+		"/Applications/XAMPP/xamppfiles/htdocs/meds_api/dbv/public/stylesheets/bootstrap-sass/templates/project/styles.scss",
+		"/Applications/XAMPP/xamppfiles/htdocs/Dropbox/MEDS/style/messagebox.css",
+		"/Applications/XAMPP/xamppfiles/htdocs/Dropbox/MEDS/assets/stylesheets/stylesheet.css",
+		"/Applications/XAMPP/xamppfiles/htdocs/meds/dist/styles.css",
+		"/Applications/XAMPP/xamppfiles/htdocs/Dropbox/MEDS/assets/bower_components/font-awesome/scss:com.dropbox.attributes",
+		"/Applications/XAMPP/xamppfiles/htdocs/Dropbox/MEDS/assets/bower_components/datatables/media/unit_testing/tests_onhold/1_dom/sScrollXY.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/Dropbox/MEDS/style:com.dropbox.attributes",
+		"/Applications/XAMPP/xamppfiles/htdocs/meds/app/partials/tests/dissolution/index.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/meds/app/routes.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/meds/app/partials/tests/dissolution/form.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/Dropbox/MEDS/assets/bower_components/animate.css/source/specials/rollOut.css",
+		"/Applications/XAMPP/xamppfiles/htdocs/meds/app/partials/tests/list.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/meds/app/partials/global/forms/side-menu.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/meds/app/partials/test-requests/list.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/meds/app/partials/test-requests/index.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/meds/Gruntfile.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/meds_api/application/config/database.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/meds/app/controllers/members.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/meds/libs/angular-smart-table/src/stTable.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/meds/node_modules/lodash/lang/isTypedArray.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/meds/app/partials/clients/list.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/meds/libs/ionicons/src/log-in.svg",
+		"/Applications/XAMPP/xamppfiles/htdocs/Dropbox/MEDS/license.txt",
+		"/Applications/XAMPP/xamppfiles/htdocs/meds/app/app.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/meds/app/partials/users/login.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/meds/app/partials/global/head.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/Dropbox/MEDS/assets/bower_components/filament-dialog/src/dialog-init.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/meds_api/dbv/DBV.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/Dropbox/MEDS/application/controllers/header.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/Dropbox/MEDS/highcharts/exporting-server/java/highcharts-export:com.dropbox.attributes",
+		"/Applications/XAMPP/xamppfiles/htdocs/Dropbox/MEDS/font/helvetica.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/meds_api/application/models/Entities/Users.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/meds/app/controllers/tests.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/meds/app/partials/tests/index.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/meds_api/application/modules/users/controllers/users.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/meds_api/application/modules/api/controllers/api.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/Dropbox/MEDS/datatables/examples/plug-ins/api.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/meds/libs/ionicons/src/android-pin.svg",
+		"/Applications/XAMPP/xamppfiles/htdocs/meds_api/user_guide/general/alternative_php.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/meds/app/controllers/users.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/Dropbox/MEDS/application/views/upload_success.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/Dropbox/MEDS/Icon",
+		"/Applications/XAMPP/xamppfiles/htdocs/meds/app/controllers/clients.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/meds_api/application/modules/tests/models/tests_model.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/meds_api/application/models/Entities/Subtests.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/meds_api/application/modules/tests/controllers/tests.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/meds/app/partials/clients/form.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/meds/libs/ionicons/css/ionicons.css",
+		"/Applications/XAMPP/xamppfiles/htdocs/meds/libs/font-awesome/css/font-awesome.css",
+		"/Applications/XAMPP/xamppfiles/htdocs/meds_api/.sass-cache/4086907e52df68745e0eb6ce810ea141ffb09d1a/semantic-ui.scssc",
+		"/Applications/XAMPP/xamppfiles/htdocs/Dropbox/MEDS/style/font-awesome.min.css",
+		"/Applications/XAMPP/xamppfiles/htdocs/Dropbox/MEDS/style/forms.css",
+		"/Applications/XAMPP/xamppfiles/htdocs/meds/node_modules/lodash/lang/isObject.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/meds/libs/ionicons/src/android-phone-portrait.svg",
+		"/Applications/XAMPP/xamppfiles/htdocs/meds_api/vendor/autoload.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/meds/node_modules/lodash/internal/metaMap.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/meds_api/application/libraries/Doctrine/ORM/Mapping/MappingException.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/meds/node_modules/socket.io/Makefile",
+		"/Applications/XAMPP/xamppfiles/htdocs/meds/node_modules/lodash/internal/charsLeftIndex.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/meds_api/user_guide/general/creating_libraries.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/meds_api/composer.json",
+		"/Applications/XAMPP/xamppfiles/htdocs/meds_api/application/modules/clients/controllers/clients.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/meds/app/partials/global/side-menu.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/meds_api/application/modules/clients/models/clients_model.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/meds/app/partials/clients/index.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/Dropbox/MEDS/style/style.css",
+		"/Applications/XAMPP/xamppfiles/htdocs/Dropbox/MEDS/assets/bower_components/animate.css/source/rotating_exits/rotateOutUpLeft.css"
+	],
+	"find":
+	{
+		"height": 38.0
+	},
+	"find_in_files":
+	{
+		"height": 244.0,
+		"where_history":
+		[
+			"<open files>",
+			"",
+			"/Applications/XAMPP/xamppfiles/htdocs/meds_api/application/models/Entities",
+			"<open files>",
+			"",
+			"<open files>",
+			"",
+			"<open files>",
+			"<open files>,<open folders>",
+			"<open files>",
+			"-*.sql",
+			"",
+			"<open files>",
+			"",
+			"<open files>",
+			"<opem files>",
+			"",
+			"<open files>",
+			"<open files>skroll",
+			"<open files>",
+			"",
+			"<open files>",
+			"",
+			"AllReportingRatio",
+			"<open files>",
+			"/Applications/XAMPP/xamppfiles/htdocs/mnh/application/controllers,/Applications/XAMPP/xamppfiles/htdocs/mnh/application/core",
+			"/Applications/XAMPP/xamppfiles/htdocs/mnh/application/controllers",
+			"",
+			"<open files>",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"x:",
+			"$icons-font-path",
+			".red",
+			"checkbox",
+			"check",
+			"style=\"height",
+			"s8",
+			"s4",
+			"color:$red",
+			"red",
+			"red_",
+			"select",
+			"label",
+			" controller: '',",
+			"controller: '',",
+			"message",
+			"<div class=\"image\">\n			<img class=\"responsive-img\" src=\"cool_pic.jpg\">\n		</div>",
+			"<div class=\"image\"></div>",
+			"first_name",
+			"small",
+			"<div class=\"b-header\">Buy a phone</div>",
+			"small",
+			"deanery",
+			"Deanery",
+			"deanery",
+			"Deanery",
+			"deanery",
+			"Deanery",
+			"archdiocese",
+			"Archidiocese",
+			"services",
+			"Services",
+			"services",
+			"href=\"\"",
+			"load_filter",
+			"load",
+			"select",
+			"option",
+			"export",
+			"><div text-angular",
+			"<td><div text-angular",
+			"colspan =\"4\"",
+			"colspan =\"2\"",
+			"colspan =\"6\"",
+			"colspan = \"6\"",
+			"colspan = \"4\"",
+			"colspan = \"2\"",
+			"colspan \"2\"",
+			"</textarea>",
+			"colspan =\"6\"",
+			"colspan=\"6\"",
+			"</select class=\"ui dropdown\">",
+			"<option select class=\"ui dropdown\"ed></option>",
+			"select",
+			"style=\"padding: 8px;background-color:#ffffff;border-bottom: dotted 1px #bfbfbf;border-top: dotted 1px #bfbfbf;color: #0000fb;\"",
+			"style=\"padding:8px;background-color:#ffffff;border-bottom: solid 1px #bfbfbf;border-top: dotted 1px #bfbfbf;\"",
+			"align=\"left\"",
+			"<td><input type = \"text\"",
+			"style= >",
+			"<td  >",
+			"<td",
+			"&nbsp",
+			"height=\"25px\"",
+			"<td",
+			"<td >",
+			"align=\"center\"",
+			"style=>",
+			"<td >",
+			"style=\"padding: 8px;\"",
+			"\"padding: 8px;background-color:#ffffff;border-bottom: solid 1px #bfbfbf;border-top: dotted 1px #bfbfbf;border-right: solid 1px #bfbfbf;\"",
+			"\"padding: 8px;background-color:#ffffff;border-right: solid 1px #bfbfbf;border-left: solid 1px #bfbfbf;border-bottom: solid 1px #bfbfbf;border-top: dotted 1px #bfbfbf;\"",
+			"\"padding: 8px;background-color:#ffffff;border-bottom: solid 1px #bfbfbf;border-top: dotted 1px #bfbfbf;color:#0000fb;\"",
+			"\"padding: 8px;background-color:#ffffff;border-bottom: solid 1px #bfbfbf;border-top: dotted 1px #bfbfbf;color: #0000fb;\"",
+			"\"padding: 12px;background-color:#ffffff;border-bottom: solid 1px #bfbfbf;border-top: solid 1px #bfbfbf;\"",
+			"\"padding: 8px;background-color:#ffffff;border-bottom: dotted 1px #bfbfbf;border-top: solid 1px #bfbfbf;color: #0000fb;\"",
+			"\"padding: 8px;background-color:#ffffff;border-bottom: dotted 1px #bfbfbf;border-top: dotted 1px #bfbfbf;\"",
+			"\"padding: 8px;background-color:#ffffff;border-bottom: solid 1px #bfbfbf;border-top: dotted 1px #bfbfbf;\"",
+			"<textarea",
+			"mce",
+			"style=\"padding:4px;color:#0000ff;border-left:solid 1px #bfbfbf;border-top:solid 1px #bfbfbf;border-right:solid 1px #bfbfbf;border-bottom:solid 1px #bfbfbf;text-align:center;background-color:#ffffff;\"",
+			"style=\"padding:4px;border-bottom:solid 1px #bfbfbf;border-left:solid 1px #bfbfbf;border-right:solid 1px #bfbfbf;border-top:solid 1px #bfbfbf;text-align:left;background-color:#ffffff;\"",
+			"colspan=\"2\" height=\"25px\" style=\"padding:4px;border-bottom:solid 1px #bfbfbf;border-left:solid 1px #bfbfbf;border-right:solid 1px #bfbfbf;border-top:solid 1px #bfbfbf;text-align:left;background-color:#ffffff;\"",
+			"format",
+			"bower_components",
+			"list.html",
+			"clients",
+			"Client",
+			"client",
+			"ORM\\",
+			"userProfile",
+			"role",
+			"email",
+			"lname",
+			"fname",
+			"userProfile",
+			"member",
+			"mail",
+			"map",
+			"UsersRestangular",
+			"ClientsRestangular",
+			"users",
+			"User",
+			"members",
+			"Member",
+			"UsersRestangular",
+			"MembersRestangular",
+			"Member",
+			"User",
+			"user",
+			"users",
+			" u",
+			"Users",
+			"users",
+			"Users",
+			"item",
+			"menu",
+			"Tests",
+			"tests",
+			"Tests",
+			"users",
+			"Users",
+			"users",
+			"Users",
+			"session",
+			"person",
+			"></input>",
+			"member",
+			"members"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			" colspan=\"6\"><div text-angular",
+			"<td colspan=\"6\"><div text-angular",
+			"",
+			"</select>",
+			"<option> Empty Set</option>",
+			"select class=\"ui dropdown\"",
+			"",
+			"<td class=\"ui input\"><input type = \"text\"",
+			">",
+			"<td>",
+			"",
+			"<td>",
+			"",
+			"<td>",
+			"",
+			"<div text-angular ng-model=\"htmlVariable\"></div>",
+			"",
+			"/>",
+			"",
+			"member.",
+			"load_filter",
+			"div",
+			"return false",
+			"return true",
+			"return false",
+			"return true",
+			"$response",
+			" return false",
+			" return true",
+			" return 'false'",
+			" return 'true'",
+			"echo ",
+			"echo $this->response",
+			"return false",
+			"return true",
+			"",
+			"$eqCode",
+			"eqCode",
+			"EqCode",
+			"echo 'false'",
+			"echo 'true'",
+			"1em",
+			"",
+			"export->generate",
+			"getStoredData",
+			"indicator",
+			"getStoredData",
+			"size=\"50\"",
+			"",
+			"<b>Recommended Treatment</b><table style=\"font-size:10px !important\">",
+			"<b>Recommended Treatment</b><table>",
+			"Recommended Treatment</th>",
+			"",
+			".form-container .actual-form",
+			"$this->template->mnch",
+			"",
+			"$this->survey_form",
+			"return $this->combined_form;",
+			"No Data",
+			"analytics",
+			"analytics_model",
+			"$my-grey",
+			"analytics",
+			"this->data_model",
+			"survey",
+			"this",
+			"result",
+			"$this->data_model->getQuestionName",
+			"analytics_model",
+			"data",
+			"analytics",
+			"?>assets/javascripts/",
+			"Minimize",
+			"base_url+'",
+			"base_url+\"",
+			"<span class=\"show-collapse\"><span class=\"txt\">Click to Expand</span><i class=\"fa fa-chevron-right\"></i></span>",
+			"<span class=\"show-collapse\">Click to Expand<i class=\"fa fa-chevron-right\"></i></span>",
+			"<span class=\"show-collapse\">Click to Expand<i></i></span>",
+			"<span class=\"show-collapse\">Click to Expand</span><i></i>",
+			"</span><span class=\"sizer\">Click to Enlarge</span></h6>",
+			"<h6><i class=\"fa fa-bar-chart-o\"></i><span class=\"graph-title\">",
+			"getResourcesLocation",
+			"getResourceLocation",
+			"",
+			"medium-graph",
+			"semi-large-graph",
+			"class=\"small-graph\"",
+			"class=\"standard-graph\"",
+			"class=\"small-graph\"",
+			"<span class=\"sizer\"><i class=\"fa fa-expand\"></i><i class=\"fa fa-compress\" style=\"display:none\"></i></span></h6>",
+			"<span class=\"sizer\"><i class=\"fa fa-expand\"><i class=\"fa fa-compress\" style=\"display:none\"></i></span></h6>",
+			"portlet sm box",
+			"sm",
+			"class=\"analytics_row section\"",
+			"class=\"analytics_row section\" data-start=\"padding-top:0\" data--100-top=\"padding-top:5%\"",
+			"class=\"analytics_row section\" data-start=\"padding-top:0\" data-100-top=\"padding-top:5%\"",
+			"class=\"analytics_row survey\" data-start=\"padding-top:0\" data-100-top=\"padding-top:5%\"",
+			"class=\"analytics_row\" data-start=\"padding-top:0\" data-100-top=\"padding-top:5%\"",
+			"href=\"\"",
+			"class=\"analytics_row section\" data-menu-offset=\"-100\"",
+			"class=\"analytics_row section\" data-start=\"padding:0\" data-50-top=\"padding-top:100px\"",
+			"$this ->",
+			"'/'+survey_category",
+			"/'+survey_category",
+			"(indicators.indicator_code = il.indicator_code AND indicators.indicator_for = indicatorfor)",
+			"il.li_response!='' AND",
+			"JOIN indicators ON (indicators.indicator_code = il.indicator_code AND indicators.indicator_for = indicatorfor",
+			"GROUP BY lq.question_code , lq.lq_response\nORDER BY lq.question_code ASC;\n",
+			"FROM\n    log_questions lq\n        JOIN\n    questions q ON (lq.question_code = q.question_code\n        AND question_for = questionfor)\nWHERE\n    lq.lq_response != ''",
+			"FROM\n    log_questions lq\n        JOIN\n    questions q ON (lq.question_code = q.question_code\n        AND question_for = 'hiv')\nWHERE\n    lq.lq_response != ''",
+			" q.question_code,\n    q.question_name,\n    count(lq_response),\n    lq.lq_response as response",
+			"getIndicatorStatistics(",
+			",SUM(ea.ae_non_functional) AS total_non_functional, e.eq_name as equipment_name",
+			"ea.ae_location AS location, e.eq_name as equipment_name",
+			" equipment,ea.ae_availability AS frequency, e.eq_name as equipment_name",
+			"",
+			"FROM available_equipments ea JOIN equipments e ON (ea.eq_code=e.eq_code AND e.eq_for=equipmentfor)",
+			"baseline",
+			"<input name=\"indicatorassessorResponse_' . $counter . '\" id=\"indicatorassessorResponse_' . $counter . '\" value=\"Yes\" type=\"radio\" class=\"cloned\"><span>Yes</span> <input value=\"No\" name=\"indicatorassessorResponse_' . $counter . '\" id=\"indicatorassessorResponse_' . $counter . '\" type=\"radio\" class=\"cloned\"><span>No</span> ",
+			"<input id=\"indicatorhcwResponse_' . $counter . '\" name=\"indicatorhcwResponse_' . $counter . '\" value=\"Yes\" type=\"radio\" class=\"cloned\"><span>Yes</span>  <input value=\"No\" id=\"indicatorhcwResponse_' . $counter . '\" name=\"indicatorhcwResponse_' . $counter . '\"  type=\"radio\" class=\"cloned\"><span>No</span>",
+			"",
+			"<span>No</span> <input",
+			"<td><span>No</span> <input",
+			"<td><span>Yes</span> <input",
+			"class=\"cloned\"",
+			"type=\"text\" class=\"cloned\"",
+			"type=\"radio\" class=\"cloned\"",
+			"fa fa-"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/private/var/www/buymore_coin/public/app/controllers/expenditure.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3458,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2130,
+								2130
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 418.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/private/var/www/buymore_coin/public/app/partials/expenditure/expenditure-spread.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 136,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								106,
+								106
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/private/var/www/buymore_coin/public/app/partials/savings/saving-options.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1883,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/private/var/www/buymore_coin/public/app/partials/expenditure/expenditure-category.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 135,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								105,
+								105
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/private/var/www/buymore_coin/public/app/partials/expenditure/expenditure-list.html",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 171,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/private/var/www/buymore_coin/public/app/partials/expenditure/expenditure-category-time.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 136,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								106,
+								106
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/private/var/www/buymore_coin/public/app/partials/expenditure/expenditure-pie.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 183,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								135,
+								135
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 36.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 100.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 100.0
+	},
+	"pinned_build_system": "",
+	"project": "buymore.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"options.h",
+				"public/app/partials/savings/saving-options.html"
+			],
+			[
+				"app.js",
+				"public/app/app.js"
+			],
+			[
+				"landin.php",
+				"resources/views/landing.php"
+			],
+			[
+				"sav",
+				"public/app/controllers/savings.js"
+			],
+			[
+				".scss",
+				"resources/assets/sass/styles.scss"
+			],
+			[
+				"routes",
+				"public/app/routes.js"
+			],
+			[
+				"expe",
+				"public/app/controllers/expenditure.js"
+			],
+			[
+				"footer",
+				"public/app/partials/directives/footer.html"
+			],
+			[
+				"expend",
+				"public/app/partials/expenditure/index.html"
+			],
+			[
+				"scr",
+				"bpa/js/script.js"
+			],
+			[
+				"db",
+				"userCake/models/db-settings.php"
+			],
+			[
+				"database",
+				"connect/database.class.php"
+			],
+			[
+				"ana",
+				"application/controllers/analytics.php"
+			],
+			[
+				"core.js",
+				"assets/javascripts/core.js"
+			],
+			[
+				"form_ha",
+				"application/modules/survey/controllers/form_handler.php"
+			],
+			[
+				"analyt",
+				"application/modules/analytics/controllers/analytics.php"
+			],
+			[
+				"styles.scss",
+				"meds/assets/sass/styles.scss"
+			],
+			[
+				"styles",
+				"meds/assets/sass/styles.scss"
+			],
+			[
+				"mem",
+				"meds/app/controllers/members.js"
+			],
+			[
+				"rou",
+				"meds/app/routes.js"
+			],
+			[
+				"list",
+				"meds/app/partials/tests/list.html"
+			],
+			[
+				"dire",
+				"meds/app/directives.js"
+			],
+			[
+				"routes.js",
+				"meds/app/routes.js"
+			],
+			[
+				"head.",
+				"meds/app/partials/global/head.html"
+			],
+			[
+				"api.php",
+				"meds_api/application/modules/api/controllers/api.php"
+			],
+			[
+				"users.php",
+				"meds_api/application/modules/users/controllers/users.php"
+			],
+			[
+				"subtest",
+				"meds_api/application/models/Entities/Subtests.php"
+			],
+			[
+				"fa",
+				"meds/libs/font-awesome/css/font-awesome.css"
+			],
+			[
+				"ion",
+				"meds/libs/ionicons/css/ionicons.css"
+			],
+			[
+				"members",
+				"meds/app/controllers/members.js"
+			],
+			[
+				"clients.js",
+				"meds/app/controllers/clients.js"
+			],
+			[
+				"styles.",
+				"meds/assets/sass/styles.scss"
+			],
+			[
+				"ionicon",
+				"meds/libs/ionicons/css/ionicons.css"
+			],
+			[
+				"ionic",
+				"meds/libs/ionicons/css/ionicons.css"
+			],
+			[
+				"users.js",
+				"meds/app/controllers/users.js"
+			],
+			[
+				"direc",
+				"app/assets/javascripts/directives.js"
+			],
+			[
+				"memb",
+				"assets/javascripts/controllers/members.js"
+			],
+			[
+				"dashboard",
+				"application/views/analytics/dashboard.php"
+			],
+			[
+				"core",
+				"assets/javascripts/core.js"
+			],
+			[
+				"anal",
+				"application/controllers/analytics.php"
+			],
+			[
+				"lock",
+				"partials/users/lock-screen.html"
+			],
+			[
+				"scss",
+				"assets/sass/styles.scss"
+			],
+			[
+				"nalyt",
+				"application/models/analytics_model.php"
+			],
+			[
+				"dash",
+				"application/views/analytics/dashboard.php"
+			],
+			[
+				"direct",
+				"assets/javascripts/directives.js"
+			],
+			[
+				"sty",
+				"assets/sass/styles.scss"
+			],
+			[
+				"index",
+				"index.html"
+			],
+			[
+				"app.",
+				"assets/javascripts/app.js"
+			],
+			[
+				"route.js",
+				"assets/javascripts/routes.js"
+			],
+			[
+				"members.js",
+				"assets/javascripts/members.js"
+			],
+			[
+				"route",
+				"assets/javascripts/routes.js"
+			],
+			[
+				"member_m",
+				"application/models/members_model.php"
+			],
+			[
+				"head.php",
+				"application/views/analytics/head.php"
+			],
+			[
+				"header",
+				"application/views/analytics/header.php"
+			],
+			[
+				"styles.sc",
+				"assets/sass/styles.scss"
+			],
+			[
+				"footr",
+				"application/views/analytics/footer.php"
+			],
+			[
+				"analytics",
+				"assets/javascripts/analytics.js"
+			],
+			[
+				"mym",
+				"application/core/MY_Model.php"
+			],
+			[
+				"commo",
+				"application/modules/template/views/mnh/analytics/content_visual_charts_commodity_availability.php"
+			],
+			[
+				"application_head",
+				"application/modules/template/views/system_head.php"
+			],
+			[
+				"myc",
+				"application/core/MY_Controller.php"
+			],
+			[
+				"uplo",
+				"application/modules/upload/controllers/upload.php"
+			],
+			[
+				"export",
+				"application/modules/export/controllers/export.php"
+			],
+			[
+				"excel_",
+				"application/modules/export/controllers/excel_handler.php"
+			],
+			[
+				"admin",
+				"application/modules/admin/controllers/admin.php"
+			],
+			[
+				"hcw_h",
+				"application/modules/data_handler/controllers/hcw_h.php"
+			],
+			[
+				"output.php",
+				"application/modules/admin/views/output.php"
+			],
+			[
+				"availabler",
+				"application/models/Entities/AvailableResources.php"
+			],
+			[
+				"form_hand",
+				"application/modules/survey/controllers/form_handler.php"
+			],
+			[
+				"survey",
+				"application/modules/survey/controllers/survey.php"
+			],
+			[
+				"mymodel",
+				"application/core/MY_Model.php"
+			],
+			[
+				"c_load",
+				"application/modules/survey/controllers/c_load.php"
+			],
+			[
+				"mnh",
+				"application/models/m_mnh_survey.php"
+			],
+			[
+				"survey.php",
+				"application/modules/survey/controllers/survey.php"
+			],
+			[
+				"survey.js",
+				"application/survey.js"
+			],
+			[
+				"generate",
+				"application/modules/survey/controllers/generate.php"
+			],
+			[
+				"mcomplete",
+				"application/modules/survey/models/m_complete_survey.php"
+			],
+			[
+				"availablere",
+				"application/models/Entities/AvailableResources.php"
+			],
+			[
+				"ava",
+				"application/models/Entities/AvailableEquipments.php"
+			],
+			[
+				"complete",
+				"application/modules/survey/models/m_complete_survey.php"
+			],
+			[
+				"analytic",
+				"assets/javascripts/analytics.js"
+			],
+			[
+				"modals.php",
+				"application/modules/template/views/mnh/segments/modals.php"
+			],
+			[
+				"outp",
+				"application/modules/admin/views/output.php"
+			],
+			[
+				"my",
+				"application/core/MY_Controller.php"
+			],
+			[
+				"analytics_model",
+				"application/modules/analytics/models/analytics_model.php"
+			],
+			[
+				"v_ana",
+				"application/modules/template/views/mnh/pages/v_analytics.php"
+			],
+			[
+				"flat.scss",
+				"assets/sass/flat.scss"
+			],
+			[
+				"analytics.j",
+				"assets/javascripts/analytics.js"
+			],
+			[
+				"analytrics.js",
+				"assets/bower_components/datatables/media/unit_testing/tests_onhold/6_delayed_rendering/asStripClasses.js"
+			],
+			[
+				"analytics.php",
+				"application/modules/analytics/controllers/analytics.php"
+			],
+			[
+				"nav-pu",
+				"application/modules/template/views/mnh/segments/nav-public.php"
+			],
+			[
+				"myco",
+				"application/core/MY_Controller.php"
+			],
+			[
+				"data_model",
+				"application/modules/data_handler/models/data_model.php"
+			],
+			[
+				"login.php",
+				"application/modules/admin/views/login.php"
+			],
+			[
+				"upload",
+				"application/modules/upload/controllers/upload.php"
+			],
+			[
+				"equipment.php",
+				"application/modules/data_handler/controllers/equipment.php"
+			],
+			[
+				"mymo",
+				"application/core/MY_Model.php"
+			],
+			[
+				"navpub",
+				"application/modules/template/views/mnh/segments/nav-public.php"
+			],
+			[
+				"login",
+				"application/modules/admin/views/login.php"
+			],
+			[
+				"usertypes",
+				"application/models/Entities/UserTypes.php"
+			],
+			[
+				"userr",
+				"application/models/Entities/UserRoles.php"
+			],
+			[
+				"users",
+				"application/models/Entities/Users.php"
+			],
+			[
+				"contactslist",
+				"application/models/Entities/ContactsList.php"
+			],
+			[
+				"data_mod",
+				"application/modules/auth/models/data_model.php"
+			],
+			[
+				"auth",
+				"application/modules/auth/controllers/auth.php"
+			],
+			[
+				"userty",
+				"application/models/Entities/UserTypes.php"
+			],
+			[
+				"top-",
+				"application/modules/template/views/mnh/segments/top-public.php"
+			],
+			[
+				"navp",
+				"application/modules/template/views/mnh/segments/nav-public.php"
+			],
+			[
+				"admin.php",
+				"application/modules/admin/controllers/admin.php"
+			],
+			[
+				"hcwl",
+				"application/models/Entities/HcwList.php"
+			],
+			[
+				"auth.php",
+				"application/modules/auth/controllers/auth.php"
+			],
+			[
+				"modal",
+				"application/modules/template/views/modals.php"
+			],
+			[
+				"analytics.js",
+				"assets/javascripts/analytics.js"
+			],
+			[
+				"analytics_m",
+				"application/modules/analytics/models/analytics_model.php"
+			],
+			[
+				"data",
+				"mnh/application/config/database.php"
+			],
+			[
+				"gene",
+				"essential/application/modules/survey/controllers/generate.php"
+			],
+			[
+				"mnhs",
+				"mnh/application/models/m_mnh_survey.php"
+			],
+			[
+				"cload",
+				"mnh/application/controllers/c_load.php"
+			],
+			[
+				"survey.p",
+				"essential/application/modules/survey/controllers/survey.php"
+			],
+			[
+				"form_",
+				"essential/application/modules/survey/controllers/form_handler.php"
+			],
+			[
+				"form",
+				"mnh/system/helpers/form_helper.php"
+			],
+			[
+				"mymod",
+				"mnh/application/core/MY_Model.php"
+			],
+			[
+				"m_com",
+				"essential/application/modules/survey/models/m_complete_survey.php"
+			],
+			[
+				"vsurvey",
+				"essential/application/modules/template/views/mnh/pages/v_survey_main.php"
+			],
+			[
+				"survey_man",
+				"essential/application/modules/survey/views/v_survey_main.php"
+			],
+			[
+				"flat",
+				"essential/assets/sass/flat.scss"
+			],
+			[
+				"fla",
+				"mnh/assets/sass/flat.scss"
+			],
+			[
+				"rout",
+				"essential/application/config/routes.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 330.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
