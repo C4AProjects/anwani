@@ -5877,16 +5877,8 @@ table.dataTable.no-footer {
     margin: 0px auto 0px auto;
     padding: 0;
     text-decoration: none;
-    -moz-background-size: 345px 92px;
-    -o-background-size: 345px 92px;
-    background-size: 345px 92px;
-    background-color: transparent;
     min-height: 92px;
     width: auto;
-    background-image: url("../images/login-logo.png");
-    background-position: center top;
-    background-repeat: no-repeat;
-    text-indent: -9999px;
     outline: 0;
     overflow: hidden;
     display: block;

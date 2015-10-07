@@ -4631,22 +4631,26 @@ app.controller('MapCtrl', ['$scope', function ($scope) {
     $stateProvider.state('app', {
         templateUrl: '../admin-app/partials/app.html'
       })
-      .state('app.dashboard', {
-        url: '/dashboard',
-        templateUrl: '../admin-app/partials/app_dashboard.html'
-        //resolve: {
-        //  deps: ['$ocLazyLoad',
-        //    function($ocLazyLoad) {
-        //      return $ocLazyLoad.load('chart.js').then(
-        //        function() {
-        //          return $ocLazyLoad.load(
-        //            'js/controllers/dashboard.js');
-        //        }
-        //      );
-        //    }
-        //  ]
-        //}
-      });
+        .state('app.dashboard', {
+          url: '/dashboard',
+          templateUrl: '../admin-app/partials/app_dashboard.html'
+          //resolve: {
+          //  deps: ['$ocLazyLoad',
+          //    function($ocLazyLoad) {
+          //      return $ocLazyLoad.load('chart.js').then(
+          //        function() {
+          //          return $ocLazyLoad.load(
+          //            'js/controllers/dashboard.js');
+          //        }
+          //      );
+          //    }
+          //  ]
+          //}
+        })
+        .state('login', {
+          url: '/login',
+          templateUrl: '../admin-app/partials/ui-login.html'
+        });
   }
 ])
 ;// A RESTful factory for retreiving mails from 'mails.json'
