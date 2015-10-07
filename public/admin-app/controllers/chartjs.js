@@ -1,19 +1,19 @@
 (function() {
     'use strict';
 
-    /*  var app = angular.module('examples', ['chart.js', 'ui.bootstrap']);*/
+    /*  var app = angular.app.'examples', ['chart.js', 'ui.bootstrap']);*/
 
-    app.config(function(ChartJsProvider) {
-        // Configure all charts
-        ChartJsProvider.setOptions({
-            colours: ['#FF6E40', '#FBC02E', '#673AB7', '#66bd78', '#f05050'],
-            responsive: true
-        });
-        // Configure all doughnut charts
-        ChartJsProvider.setOptions('Doughnut', {
-            animateScale: true
-        });
-    });
+    //app.config(function(ChartJsProvider) {
+    //    // Configure all charts
+    //    ChartJsProvider.setOptions({
+    //        colours: ['#FF6E40', '#FBC02E', '#673AB7', '#66bd78', '#f05050'],
+    //        responsive: true
+    //    });
+    //    // Configure all doughnut charts
+    //    ChartJsProvider.setOptions('Doughnut', {
+    //        animateScale: true
+    //    });
+    //});
 
     app.controller('MenuCtrl', function($scope) {
         $scope.isCollapsed = true;

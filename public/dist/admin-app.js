@@ -1,21 +1,7 @@
-var app =  angular.module('app')
-  .config(
-    [        '$controllerProvider', '$compileProvider', '$filterProvider', '$provide',
-    function ($controllerProvider,   $compileProvider,   $filterProvider,   $provide) {
-        
-        // lazy controller, directive and service
-        app.controller = $controllerProvider.register;
-        app.directive  = $compileProvider.directive;
-        app.filter     = $filterProvider.register;
-        app.factory    = $provide.factory;
-        app.service    = $provide.service;
-        app.constant   = $provide.constant;
-        app.value      = $provide.value;
-    }
-  ]);;'use strict';
+'use strict';
 
 // Declare app level module which depends on views, and components
-angular.module('app', [
+var app = angular.module('admin', [
   'ngAnimate',
   //    'ngCookies',
   //    'ngResource',
@@ -32,79 +18,88 @@ angular.module('app', [
   'angular-inview',
   'angular-loading-bar'
 ]);
+
+app.config(
+  ['$controllerProvider', '$compileProvider', '$filterProvider', '$provide',
+    function($controllerProvider, $compileProvider, $filterProvider, $provide) {
+
+      // lazy controller, directive and service
+      app.controller = $controllerProvider.register;
+      app.directive = $compileProvider.directive;
+      app.filter = $filterProvider.register;
+      app.factory = $provide.factory;
+      app.service = $provide.service;
+      app.constant = $provide.constant;
+      app.value = $provide.value;
+    }
+  ]);
 ;// lazyload config
 
-angular.module('app')
-  /**
-   * jQuery plugin config use ui-jq directive , config the js and css files that required
-   * key: function name of the jQuery plugin
-   * value: array of the css js file located
-   */
-  .constant('JQ_CONFIG', {
-    easyPieChart: [
-      'libs/jquery.easy-pie-chart/dist/jquery.easypiechart.fill.js'
-    ],
-    plot: ['libs/flot/jquery.flot.js',
-      'libs/flot/jquery.flot.pie.js',
-      'libs/flot/jquery.flot.resize.js',
-      'libs/flot.tooltip/js/jquery.flot.tooltip.js',
-      'libs/flot.orderbars/js/jquery.flot.orderBars.js',
-      'libs/flot-spline/js/jquery.flot.spline.js'
-    ],
-    knob: ['libs/jquery-knob/dist/jquery.knob.min.js',
-      'js/jq/chart-knobs.js'
-    ],
-    isotobe: ['js/uport_isotobe.js',
-      'js/uport_isotobe_script.js'
-    ],
-    dataTable: [
-      'libs/datatables/media/js/jquery.dataTables.min.js',
-      'libs/plugins/integration/bootstrap/3/dataTables.bootstrap.js',
-      'libs/plugins/integration/bootstrap/3/dataTables.bootstrap.css'
-    ],
-    footable: ['libs/footable/dist/footable.all.min.js',
-      'libs/footable/css/footable.core.css'
-    ],
-    fullcalendar: ['libs/moment/moment.js',
-      'libs/fullcalendar/dist/fullcalendar.min.js',
-      'libs/fullcalendar/dist/fullcalendar.css',
-      'libs/fullcalendar/dist/fullcalendar.theme.css'
-    ],
-    vectorMap: [
-      'libs/bower-jvectormap/jquery-jvectormap-1.2.2.min.js',
-      'libs/bower-jvectormap/jquery-jvectormap-world-mill-en.js',
-      'libs/bower-jvectormap/jquery-jvectormap-us-aea-en.js',
-      'libs/bower-jvectormap/jquery-jvectormap-1.2.2.css'
-    ],
-    sortable: ['libs/html5sortable/jquery.sortable.js'],
-    nestable: ['libs/nestable/jquery.nestable.js'],
-    moment: ['libs/moment/moment.js'],
-    daterangepicker: ['libs/moment/moment.js',
-      'libs/bootstrap-daterangepicker/daterangepicker.js',
-      'libs/bootstrap-daterangepicker/daterangepicker-bs3.css'
-    ],
-    tagsinput: [
-      'libs/bootstrap-tagsinput/dist/bootstrap-tagsinput.js',
-      'libs/bootstrap-tagsinput/dist/bootstrap-tagsinput.css'
-    ],
-    jqueryui: ['libs/jquery-ui/ui/minified/jquery-ui.min.js',
-      'libs/jquery-ui/themes/smoothness/jquery-ui.css',
-      'js/controllers/ui.slider.js'
-    ],
-    TouchSpin: [
-      'libs/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js',
-      'libs/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css'
-    ],
-    chosen: ['libs/chosen/chosen.jquery.min.js',
-      'libs/bootstrap-chosen/bootstrap-chosen.css'
-    ],
-    wysiwyg: ['libs/bootstrap-wysiwyg/bootstrap-wysiwyg.js',
-      'libs/bootstrap-wysiwyg/external/jquery.hotkeys.js'
-    ],
-    sparkline: [
-      'libs/jquery.sparkline/dist/jquery.sparkline.retina.js'
-    ]
-  })
+app.constant('JQ_CONFIG', {
+  easyPieChart: [
+    'libs/jquery.easy-pie-chart/dist/jquery.easypiechart.fill.js'
+  ],
+  plot: ['libs/flot/jquery.flot.js',
+    'libs/flot/jquery.flot.pie.js',
+    'libs/flot/jquery.flot.resize.js',
+    'libs/flot.tooltip/js/jquery.flot.tooltip.js',
+    'libs/flot.orderbars/js/jquery.flot.orderBars.js',
+    'libs/flot-spline/js/jquery.flot.spline.js'
+  ],
+  knob: ['libs/jquery-knob/dist/jquery.knob.min.js',
+    'js/jq/chart-knobs.js'
+  ],
+  isotobe: ['js/uport_isotobe.js',
+    'js/uport_isotobe_script.js'
+  ],
+  dataTable: [
+    'libs/datatables/media/js/jquery.dataTables.min.js',
+    'libs/plugins/integration/bootstrap/3/dataTables.bootstrap.js',
+    'libs/plugins/integration/bootstrap/3/dataTables.bootstrap.css'
+  ],
+  footable: ['libs/footable/dist/footable.all.min.js',
+    'libs/footable/css/footable.core.css'
+  ],
+  fullcalendar: ['libs/moment/moment.js',
+    'libs/fullcalendar/dist/fullcalendar.min.js',
+    'libs/fullcalendar/dist/fullcalendar.css',
+    'libs/fullcalendar/dist/fullcalendar.theme.css'
+  ],
+  vectorMap: [
+    'libs/bower-jvectormap/jquery-jvectormap-1.2.2.min.js',
+    'libs/bower-jvectormap/jquery-jvectormap-world-mill-en.js',
+    'libs/bower-jvectormap/jquery-jvectormap-us-aea-en.js',
+    'libs/bower-jvectormap/jquery-jvectormap-1.2.2.css'
+  ],
+  sortable: ['libs/html5sortable/jquery.sortable.js'],
+  nestable: ['libs/nestable/jquery.nestable.js'],
+  moment: ['libs/moment/moment.js'],
+  daterangepicker: ['libs/moment/moment.js',
+    'libs/bootstrap-daterangepicker/daterangepicker.js',
+    'libs/bootstrap-daterangepicker/daterangepicker-bs3.css'
+  ],
+  tagsinput: [
+    'libs/bootstrap-tagsinput/dist/bootstrap-tagsinput.js',
+    'libs/bootstrap-tagsinput/dist/bootstrap-tagsinput.css'
+  ],
+  jqueryui: ['libs/jquery-ui/ui/minified/jquery-ui.min.js',
+    'libs/jquery-ui/themes/smoothness/jquery-ui.css',
+    'js/controllers/ui.slider.js'
+  ],
+  TouchSpin: [
+    'libs/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js',
+    'libs/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css'
+  ],
+  chosen: ['libs/chosen/chosen.jquery.min.js',
+    'libs/bootstrap-chosen/bootstrap-chosen.css'
+  ],
+  wysiwyg: ['libs/bootstrap-wysiwyg/bootstrap-wysiwyg.js',
+    'libs/bootstrap-wysiwyg/external/jquery.hotkeys.js'
+  ],
+  sparkline: [
+    'libs/jquery.sparkline/dist/jquery.sparkline.retina.js'
+  ]
+})
 
 // oclazyload config
 .config(['$ocLazyLoadProvider', function($ocLazyLoadProvider) {
@@ -218,76 +213,77 @@ angular.module('app')
 }]);
 ;'use strict';
 
-angular.module('app')
-  .controller('AppCtrl', ['$scope', 
-    function($scope) {
+app.controller('AppCtrl', ['$scope',
+  function($scope) {
 
 
-      $scope.app = {
-        name: 'Slant Admin - Angular',
-        version: '1.0.0',
-        color: {
-          primary: '#673AB7',
-          orange: '#FF6E40',
-          info:    '#26C6DA',
-          success: '#46be8a',
-          warning: '#fdb45d',
-          danger:  '#F44336',
-          secondary:'#a9a9a9',
-          text:'#767676'
-        },
-        settings: {
-          menuProfile: true,
-          menuFolded: false,
-          chatFolded: true,
-          layoutBoxed: false,
-          searchFocus: false,
-          pagetitle: 'Slant \\ AngularJS',
-        }
+    $scope.app = {
+      name: 'Slant Admin - Angular',
+      version: '1.0.0',
+      color: {
+        primary: '#673AB7',
+        orange: '#FF6E40',
+        info: '#26C6DA',
+        success: '#46be8a',
+        warning: '#fdb45d',
+        danger: '#F44336',
+        secondary: '#a9a9a9',
+        text: '#767676'
+      },
+      settings: {
+        menuProfile: true,
+        menuFolded: false,
+        chatFolded: true,
+        layoutBoxed: false,
+        searchFocus: false,
+        pagetitle: 'Slant \\ AngularJS',
       }
+    }
 
-    $scope.menuChatToggle = function(type,value) {
-        if (type == "menu" && !value) {
-            $scope.app.settings.chatFolded = true;
-        }
-        if (type == "chat" && !value) {
-            $scope.app.settings.menuFolded = true;
-        }
+    $scope.menuChatToggle = function(type, value) {
+      if (type == "menu" && !value) {
+        $scope.app.settings.chatFolded = true;
+      }
+      if (type == "chat" && !value) {
+        $scope.app.settings.menuFolded = true;
+      }
     }
 
 
-$scope.changeMenuHeight = function() {
-          //console.log($scope.settings.menuProfile);
-          if($scope.app.settings.menuFolded == true){
-              var navHeight = angular.element("#main-content section.wrapper .content-wrapper").innerHeight() + 90;              
-            } else {
-              var navHeight = $(window).innerHeight() - 60;
-            }
-            //console.log(navHeight);
-            angular.element("#main-menu-wrapper").height(navHeight);
-        }
+    $scope.changeMenuHeight = function() {
+      //console.log($scope.settings.menuProfile);
+      if ($scope.app.settings.menuFolded == true) {
+        var navHeight = angular.element(
+            "#main-content section.wrapper .content-wrapper").innerHeight() +
+          90;
+      } else {
+        var navHeight = $(window).innerHeight() - 60;
+      }
+      //console.log(navHeight);
+      angular.element("#main-menu-wrapper").height(navHeight);
+    }
 
-  $scope.$watch('app.settings.menuFolded', function() {
+    $scope.$watch('app.settings.menuFolded', function() {
+      $scope.changeMenuHeight();
+    });
+
+
+    $scope.$on('$viewContentLoaded', function(next, current) {
+      angular.element(document).ready(function() {
         $scope.changeMenuHeight();
-     });
+      });
+    });
 
-
-  $scope.$on('$viewContentLoaded', function(next, current) { 
-          angular.element(document).ready(function() {
-            $scope.changeMenuHeight();
-          });
-   });
-
- $scope.ElementInView = function(inview, event, addclass, removeclass) {
+    $scope.ElementInView = function(inview, event, addclass, removeclass) {
 
       var id = event.inViewTarget.id;
       /*console.log(event);  */
-      if(inview && id != ""){
-          if(addclass != ""){
-              $("#"+id).addClass(addclass);
-            } else {
-              $("#"+id).removeClass(removeclass);
-            }
+      if (inview && id != "") {
+        if (addclass != "") {
+          $("#" + id).addClass(addclass);
+        } else {
+          $("#" + id).removeClass(removeclass);
+        }
       }
       return false;
     }
@@ -306,783 +302,8 @@ $scope.changeMenuHeight = function() {
 
 
 
-  }]);
-;'use strict';
-
-/**
- * Config for the router
- */
-angular.module('app')
-  .config(
-    ['$stateProvider', '$urlRouterProvider', 'JQ_CONFIG',
-      function($stateProvider, $urlRouterProvider, JQ_CONFIG) {
-
-        $urlRouterProvider
-          .otherwise('/app/dashboard');
-        $stateProvider
-          .state('app', {
-            abstract: true,
-            url: '/app',
-            templateUrl: 'app/partials/admin/app.html'
-          })
-          .state('app.dashboard', {
-            url: '/dashboard',
-            templateUrl: 'app/partials/admin/app_dashboard.html',
-            resolve: {
-              deps: ['$ocLazyLoad',
-                function($ocLazyLoad) {
-                  return $ocLazyLoad.load('chart.js').then(
-                      function() {
-                        return $ocLazyLoad.load(
-                          'js/controllers/dashboard.js');
-                      }
-                    )
-                    /*.then(
-                                                          function(){
-                                                              return $ocLazyLoad.load('js/controllers/messages-widget.js');
-                                                          }
-                                                      ).then(
-                                                          function(){
-                                                              return $ocLazyLoad.load('js/directives/ui-todowidget.js');
-                                                          }
-                                                      )*/
-                  ;
-                }
-              ]
-            }
-          })
-          /*                    .state('app.widgets', {
-                                  url: '/widgets',
-                                  templateUrl: 'partials/widgets.html',
-                                  resolve: {
-                                      deps: ['$ocLazyLoad',
-                                          function($ocLazyLoad) {
-                                              return $ocLazyLoad.load(['countTo',
-                                                  'js/controllers/countto.js', 'js/controllers/vectormap.js', 'js/directives/ui-todowidget.js', 'js/controllers/messages-widget.js'
-                                              ]);
-                                          }
-                                      ]
-                                  }
-                              })*/
-          .state('app.searchapp', {
-            url: '/searchapp',
-            templateUrl: 'partials/searchapp.html',
-          })
-          .state('access', {
-            url: '/access',
-            template: '<div ui-view class=""></div>'
-          })
-          .state('access.login', {
-            url: '/login',
-            templateUrl: 'app/partials/admin/ui-login.html',
-            resolve: {
-              deps: ['uiLoad',
-                function(uiLoad) {
-                  return uiLoad.load(['js/controllers/login.js',
-                    'libs/styles/font-awesome.css'
-                  ]);
-                }
-              ]
-            }
-          })
-          .state('access.register', {
-            url: '/register',
-            templateUrl: 'partials/ui-register.html',
-            resolve: {
-              deps: ['uiLoad',
-                function(uiLoad) {
-                  return uiLoad.load(['js/controllers/register.js',
-                    '../bower_components/font-awesome/css/font-awesome.css'
-                  ]);
-                }
-              ]
-            }
-          })
-          .state('access.forgotpwd', {
-            url: '/forgotpwd',
-            templateUrl: 'partials/ui-forgotpwd.html',
-          })
-          .state('access.404', {
-            url: '/404',
-            templateUrl: 'partials/ui-404.html',
-          })
-          .state('access.500', {
-            url: '/500',
-            templateUrl: 'partials/ui-500.html'
-          })
-          .state('access.lockscreen', {
-            url: '/lockscreen',
-            templateUrl: 'partials/ui-lockscreen.html'
-          })
-
-
-
-        .state('app.ui', {
-            url: '/ui',
-            template: '<div ui-view class=""></div>'
-          })
-          .state('app.ui.typography', {
-            url: '/typography',
-            templateUrl: 'partials/ui-typography.html'
-          })
-          .state('app.ui.accordion', {
-            url: '/accordion',
-            templateUrl: 'partials/ui-accordion.html',
-            resolve: {
-              deps: ['uiLoad',
-                function(uiLoad) {
-                  return uiLoad.load([
-                    '../bower_components/font-awesome/css/font-awesome.css'
-                  ]);
-                }
-              ]
-            }
-          })
-          .state('app.ui.progress', {
-            url: '/progress',
-            templateUrl: 'partials/ui-progress.html'
-          })
-          .state('app.ui.icons', {
-            url: '/icons',
-            templateUrl: 'partials/ui-icons.html'
-          })
-          .state('app.ui.materialicons', {
-            url: '/material-icons',
-            templateUrl: 'partials/ui-icons-material.html'
-          })
-          .state('app.ui.faicons', {
-            url: '/fontawesome-icons',
-            templateUrl: 'partials/ui-icons-fa.html'
-          })
-          .state('app.ui.glyphicons', {
-            url: '/glyph-icons',
-            templateUrl: 'partials/ui-icons-glyph.html'
-          })
-          .state('app.ui.buttons', {
-            url: '/buttons',
-            templateUrl: 'partials/ui-buttons.html',
-            resolve: {
-              deps: ['uiLoad',
-                function(uiLoad) {
-                  return uiLoad.load([
-                    '../bower_components/font-awesome/css/font-awesome.css'
-                  ]);
-                }
-              ]
-            }
-          })
-          .state('app.ui.modals', {
-            url: '/modals',
-            templateUrl: 'partials/ui-modals.html'
-          })
-          .state('app.ui.notifications', {
-            url: '/notifications',
-            templateUrl: 'partials/ui-notifications.html',
-            resolve: {
-              deps: ['$ocLazyLoad',
-                function($ocLazyLoad) {
-                  return $ocLazyLoad.load('cgNotify').then(
-                    function() {
-                      return $ocLazyLoad.load('js/controllers/notify.js');
-                    }
-                  );
-                }
-              ]
-            }
-          })
-          .state('app.ui.tooltips', {
-            url: '/tooltips',
-            templateUrl: 'partials/ui-tooltips.html'
-          })
-          .state('app.ui.sortable', {
-            url: '/sortable',
-            templateUrl: 'partials/ui-sortable.html'
-          })
-          /*.state('app.ui.navbars', {
-              url: '/navbars',
-              templateUrl: 'partials/ui-navbars.html'
-          })*/
-          /*.state('app.ui.extra', {
-              url: '/extra',
-              templateUrl: 'partials/ui-extra.html'
-          })*/
-          .state('app.ui.pagination', {
-            url: '/pagination',
-            templateUrl: 'partials/ui-pagination.html'
-          })
-          .state('app.ui.breadcrumb', {
-            url: '/breadcrumb',
-            templateUrl: 'partials/ui-breadcrumb.html',
-            resolve: {
-              deps: ['uiLoad',
-                function(uiLoad) {
-                  return uiLoad.load([
-                    '../bower_components/font-awesome/css/font-awesome.css'
-                  ]);
-                }
-              ]
-            }
-          })
-          .state('app.ui.carousel', {
-            url: '/carousel',
-            templateUrl: 'partials/ui-carousel.html'
-          })
-          .state('app.ui.panels', {
-            url: '/panels',
-            templateUrl: 'partials/ui-panels.html'
-          })
-          .state('app.ui.grids', {
-            url: '/grids',
-            templateUrl: 'partials/ui-grids.html'
-          })
-          .state('app.ui.tiles', {
-            url: '/tiles',
-            templateUrl: 'partials/ui-tiles.html',
-            resolve: {
-              deps: ['$ocLazyLoad',
-                function($ocLazyLoad) {
-                  return $ocLazyLoad.load('countTo').then(
-                    function() {
-                      return $ocLazyLoad.load('js/controllers/countto.js');
-                    }
-                  ).then(
-                    function() {
-                      return $ocLazyLoad.load(
-                        '../bower_components/font-awesome/css/font-awesome.css'
-                      );
-                    }
-                  );
-                }
-              ]
-            }
-          })
-          .state('app.form', {
-            url: '/form',
-            template: '<div ui-view class=""></div>'
-          })
-
-        .state('app.form.elements', {
-            url: '/elements',
-            templateUrl: 'partials/form-elements.html',
-            resolve: {
-              deps: ['uiLoad',
-                function(uiLoad) {
-                  return uiLoad.load([
-                    '../bower_components/font-awesome/css/font-awesome.css'
-                  ]);
-                }
-              ]
-            }
-          })
-          .state('app.form.premade', {
-            url: '/premade',
-            templateUrl: 'partials/form-premade.html',
-            resolve: {
-              deps: ['uiLoad',
-                function(uiLoad) {
-                  return uiLoad.load([
-                    '../bower_components/font-awesome/css/font-awesome.css'
-                  ]);
-                }
-              ]
-            }
-          })
-          .state('app.form.components', {
-            url: '/components',
-            templateUrl: 'partials/form-components.html',
-            resolve: {
-              deps: ['$ocLazyLoad',
-                function($ocLazyLoad) {
-                  return $ocLazyLoad.load('colorpicker.module').then(
-                    function() {
-                      return $ocLazyLoad.load(
-                        'js/controllers/colorpicker.js');
-                    }
-                  ).then(
-                    function() {
-                      return $ocLazyLoad.load(
-                        '../bower_components/font-awesome/css/font-awesome.css'
-                      );
-                    }
-                  );
-                }
-              ]
-            }
-          })
-          .state('app.form.wizard', {
-            url: '/wizard',
-            templateUrl: 'partials/form-wizard.html',
-            resolve: {
-              deps: ['uiLoad',
-                function(uiLoad) {
-                  return uiLoad.load([
-                    '../bower_components/font-awesome/css/font-awesome.css'
-                  ]);
-                }
-              ]
-            }
-          })
-          .state('app.form.validation', {
-            url: '/validation',
-            templateUrl: 'partials/form-validation.html',
-            resolve: {
-              deps: ['uiLoad',
-                function(uiLoad) {
-                  return uiLoad.load('js/controllers/form-validation.js');
-                }
-              ]
-            }
-          })
-          .state('app.form.fileupload', {
-            url: '/fileupload',
-            templateUrl: 'partials/form-fileupload.html',
-            resolve: {
-              deps: ['$ocLazyLoad',
-                function($ocLazyLoad) {
-                  return $ocLazyLoad.load('angularFileUpload').then(
-                    function() {
-                      return $ocLazyLoad.load(
-                        'js/controllers/file-upload.js');
-                    }
-                  );
-                }
-              ]
-            }
-          })
-          .state('app.form.slider', {
-            url: '/slider',
-            templateUrl: 'partials/form-slider.html',
-            controller: 'FormSliderCtrl',
-            resolve: {
-              deps: ['$ocLazyLoad',
-                function($ocLazyLoad) {
-                  return $ocLazyLoad.load('vr.directives.slider').then(
-                    function() {
-                      return $ocLazyLoad.load(
-                        'js/controllers/form-slider.js');
-                    }
-                  );
-                }
-              ]
-            }
-          })
-          .state('app.form.editable', {
-            url: '/editable',
-            templateUrl: 'partials/form-editable.html',
-            controller: 'FormXeditableCtrl',
-            resolve: {
-              deps: ['$ocLazyLoad',
-                function($ocLazyLoad) {
-                  return $ocLazyLoad.load('xeditable').then(
-                    function() {
-                      return $ocLazyLoad.load(
-                        'js/controllers/form-xeditable.js');
-                    }
-                  );
-                }
-              ]
-            }
-          })
-          .state('app.form.editors', {
-            url: '/editors',
-            templateUrl: 'partials/form-editors.html',
-            resolve: {
-              deps: ['uiLoad',
-                function(uiLoad) {
-                  return uiLoad.load([
-                    '../bower_components/font-awesome/css/font-awesome.css'
-                  ]);
-                }
-              ]
-            }
-            /*,
-                                    controller: 'FormEditorCtrl',
-                                    resolve:  {
-                                        deps: ['$ocLazyLoad',
-                                          function( $ocLazyLoad ){
-                                            return $ocLazyLoad.load('textAngular').then(
-                                                function(){
-                                                    return $ocLazyLoad.load('js/controllers/form-editor.js');
-                                                }
-                                            );
-                                        }]
-                                    }*/
-          })
-          .state('app.form.masks', {
-            url: '/masks',
-            templateUrl: 'partials/form-masks.html'
-          })
-          .state('app.ui.calendar', {
-            url: '/calendar',
-            templateUrl: 'partials/ui-calendar.html',
-            resolve: {
-              deps: ['$ocLazyLoad', 'uiLoad',
-                function($ocLazyLoad, uiLoad) {
-                  return uiLoad.load(
-                    JQ_CONFIG.fullcalendar.concat(
-                      'js/controllers/calendar.js')
-                  ).then(
-                    function() {
-                      return $ocLazyLoad.load('ui.calendar');
-                    }
-                  )
-                }
-              ]
-            }
-          })
-          .state('app.ui.pricing', {
-            url: '/pricing',
-            templateUrl: 'partials/ui-pricing.html'
-          })
-          .state('app.ui.profile', {
-            url: '/profile',
-            templateUrl: 'partials/ui-profile.html',
-            resolve: {
-              deps: ['uiLoad',
-                function(uiLoad) {
-                  return uiLoad.load([
-                    '../bower_components/font-awesome/css/font-awesome.css'
-                  ]);
-                }
-              ]
-            }
-          })
-          .state('app.ui.timeline', {
-            url: '/timeline',
-            templateUrl: 'partials/ui-timeline.html'
-          })
-          .state('app.ui.invoice', {
-            url: '/invoice',
-            templateUrl: 'partials/ui-invoice.html'
-          })
-          .state('app.ui.members', {
-            url: '/members',
-            templateUrl: 'partials/ui-members.html',
-            resolve: {
-              deps: ['uiLoad',
-                function(uiLoad) {
-                  return uiLoad.load(['js/controllers/members.js',
-                    '../bower_components/font-awesome/css/font-awesome.css'
-                  ]);
-                }
-              ]
-            }
-
-          })
-          .state('app.ui.search', {
-            url: '/search',
-            templateUrl: 'partials/ui-search.html',
-            resolve: {
-              deps: ['$ocLazyLoad',
-                function($ocLazyLoad) {
-                  return $ocLazyLoad.load(['js/filters/search-startfrom.js',
-                    'js/controllers/search.js',
-                    'js/directives/ui-searchtabs.js',
-                    '../bower_components/font-awesome/css/font-awesome.css'
-                  ]);
-                }
-              ]
-            }
-
-          })
-          .state('app.ui.blogs', {
-            url: '/blogs',
-            templateUrl: 'partials/ui-blogs.html',
-            resolve: {
-              deps: ['$ocLazyLoad',
-                function($ocLazyLoad) {
-                  return $ocLazyLoad.load(['js/filters/blogs-startfrom.js',
-                    'js/controllers/blogs.js',
-                    '../bower_components/font-awesome/css/font-awesome.css'
-                  ]);
-                }
-              ]
-            }
-          })
-          .state('app.ui.blogview', {
-            url: '/blog/{blogId:[0-9]{1,4}}',
-            templateUrl: 'partials/ui-blog-item.html',
-            resolve: {
-              deps: ['$ocLazyLoad',
-                function($ocLazyLoad) {
-                  return $ocLazyLoad.load([
-                    '../bower_components/font-awesome/css/font-awesome.css'
-                  ]);
-                }
-              ]
-            }
-          })
-          .state('app.ui.imagecrop', {
-            url: '/imagecrop',
-            templateUrl: 'partials/ui-imagecrop.html',
-            resolve: {
-              deps: ['$ocLazyLoad',
-                function($ocLazyLoad) {
-                  return $ocLazyLoad.load('ngImgCrop').then(
-                    function() {
-                      return $ocLazyLoad.load(
-                        'js/controllers/imagecrop.js');
-                    }
-                  );
-                }
-              ]
-            }
-          })
-          /* .state('app.ui.faq', {
-               url: '/faq',
-               templateUrl: 'partials/ui-faq.html',
-               resolve: {
-                   deps: ['$ocLazyLoad',
-                       function($ocLazyLoad) {
-                           return $ocLazyLoad.load(['js/controllers/faq.js']);
-                       }
-                   ]
-               }
-           })*/
-          .state('app.mail', {
-            abstract: true,
-            url: '/mail',
-            //template: '<div ui-view class=""></div>',
-            templateUrl: 'partials/mail.html',
-            // use resolve to load other dependences
-            resolve: {
-              deps: ['uiLoad',
-                function(uiLoad) {
-                  return uiLoad.load([
-                    '../bower_components/font-awesome/css/font-awesome.css',
-                    'js/controllers/mail.js',
-                    'js/services/mail-service.js',
-                    JQ_CONFIG.moment
-                  ]);
-                }
-              ]
-            }
-          })
-          .state('app.mail.list', {
-            url: '/{fold}',
-            templateUrl: 'partials/mail-list.html'
-          })
-          .state('app.mail.compose', {
-            url: '/compose',
-            templateUrl: 'partials/mail-compose.html'
-          })
-          .state('app.mail.view', {
-            url: '/{mailId:[0-9]{1,4}}',
-            templateUrl: 'partials/mail-view.html'
-          })
-          .state('app.charts', {
-            url: '/charts',
-            template: '<div ui-view class=""></div>',
-          })
-          .state('app.charts.morris', {
-            url: '/morris',
-            templateUrl: 'partials/charts-morris.html',
-            resolve: {
-              deps: ['$ocLazyLoad',
-                function($ocLazyLoad) {
-                  return $ocLazyLoad.load('ngMorris').then(
-                    function() {
-                      return $ocLazyLoad.load('js/controllers/morris.js');
-                    }
-                  );
-                }
-              ]
-            }
-
-          })
-          .state('app.charts.chartjs', {
-            url: '/chartjs',
-            templateUrl: 'partials/charts-chartjs.html',
-            resolve: {
-              deps: ['$ocLazyLoad',
-                function($ocLazyLoad) {
-                  return $ocLazyLoad.load('chart.js').then(
-                    function() {
-                      return $ocLazyLoad.load('js/controllers/chartjs.js');
-                    }
-                  );
-                }
-              ]
-            }
-          })
-          .state('app.charts.flot', {
-            url: '/flot',
-            templateUrl: 'partials/charts-flot.html',
-            resolve: {
-              deps: ['$ocLazyLoad',
-                function($ocLazyLoad) {
-                  return $ocLazyLoad.load(['js/controllers/flot-chart.js']);
-                }
-              ]
-            }
-          })
-          .state('app.charts.sparkline', {
-            url: '/sparkline',
-            templateUrl: 'partials/charts-sparkline.html'
-
-          })
-          .state('app.charts.easypiechart', {
-            url: '/easypiechart',
-            templateUrl: 'partials/charts-easypiechart.html'
-
-          })
-          .state('app.charts.rickshaw', {
-            url: '/rickshaw',
-            templateUrl: 'partials/charts-rickshaw.html',
-            resolve: {
-              deps: ['$ocLazyLoad',
-                function($ocLazyLoad) {
-                  return $ocLazyLoad.load([
-                    '../bower_components/d3/d3.min.js',
-                    'angular-rickshaw'
-                  ], {
-                    serie: true
-                  }).then(
-                    function() {
-                      return $ocLazyLoad.load(
-                        'js/controllers/rickshaw.js');
-                    }
-                  );
-                }
-              ]
-            }
-          })
-          .state('app.tables', {
-            url: '/tables',
-            template: '<div ui-view class=""></div>'
-          })
-          .state('app.tables.basic', {
-            url: '/basic',
-            templateUrl: 'partials/tables-basic.html'
-          })
-          .state('app.tables.data', {
-            url: '/data',
-            templateUrl: 'partials/tables-data.html'
-          })
-          .state('app.tables.footable', {
-            url: '/footable',
-            templateUrl: 'partials/tables-footable.html'
-          })
-          .state('app.tables.nggrid', {
-            url: '/nggrid',
-            templateUrl: 'partials/tables-nggrid.html',
-            resolve: {
-              deps: ['$ocLazyLoad',
-                function($ocLazyLoad) {
-                  return $ocLazyLoad.load('ngGrid').then(
-                    function() {
-                      return $ocLazyLoad.load(
-                        'js/controllers/table-nggrid.js');
-                    }
-                  );
-                }
-              ]
-            }
-          })
-          .state('app.tables.uigrid', {
-            url: '/uigrid',
-            templateUrl: 'partials/tables-uigrid.html',
-            resolve: {
-              deps: ['$ocLazyLoad',
-                function($ocLazyLoad) {
-                  return $ocLazyLoad.load('ui.grid').then(
-                    function() {
-                      return $ocLazyLoad.load(
-                        'js/controllers/table-uigrid.js');
-                    }
-                  );
-                }
-              ]
-            }
-          })
-          .state('app.tables.editable', {
-            url: '/editable',
-            templateUrl: 'partials/tables-editable.html',
-            controller: 'FormXeditableCtrl',
-            resolve: {
-              deps: ['$ocLazyLoad',
-                function($ocLazyLoad) {
-                  return $ocLazyLoad.load('xeditable').then(
-                    function() {
-                      return $ocLazyLoad.load(
-                        'js/controllers/form-xeditable.js');
-                    }
-                  );
-                }
-              ]
-            }
-          })
-          .state('app.tables.smart', {
-            url: '/smart',
-            templateUrl: 'partials/table-smart.html',
-            resolve: {
-              deps: ['$ocLazyLoad',
-                function($ocLazyLoad) {
-                  return $ocLazyLoad.load('smart-table').then(
-                    function() {
-                      return $ocLazyLoad.load(
-                        'js/controllers/table-smart.js');
-                    }
-                  );
-                }
-              ]
-            }
-          })
-
-        .state('app.layout', {
-            url: '/layout',
-            template: '<div ui-view class=""></div>'
-          })
-          .state('app.layout.default', {
-            url: '/default',
-            templateUrl: 'partials/layout-default.html'
-          })
-          .state('app.layout.collapsed', {
-            url: '/collapsed',
-            templateUrl: 'partials/layout-collapsed.html'
-          })
-          .state('app.layout.chat', {
-            url: '/chat',
-            templateUrl: 'partials/layout-chat.html'
-          })
-          .state('app.layout.boxed', {
-            url: '/boxed',
-            templateUrl: 'partials/layout-boxed.html'
-          })
-          .state('app.ui.vectormaps', {
-            url: '/vectormaps',
-            templateUrl: 'partials/ui-vectormaps.html',
-            resolve: {
-              deps: ['$ocLazyLoad',
-                function($ocLazyLoad) {
-                  return $ocLazyLoad.load('js/controllers/vectormap.js');
-                }
-              ]
-            }
-          })
-          .state('app.ui.googlemapfull', {
-            url: '/googlemapfull',
-            templateUrl: 'partials/ui-googlemapfull.html',
-            resolve: {
-              deps: ['uiLoad',
-                function(uiLoad) {
-                  return uiLoad.load([
-                    'js/map/load-google-maps.js',
-                    'js/map/ui-map.js',
-                    'js/map/map.js'
-                  ]).then(
-                    function() {
-                      return loadGoogleMaps();
-                    }
-                  );
-                }
-              ]
-            }
-
-          })
-      }
-    ]
-  );
+  }
+]);
 ;app.controller('BlogPageCtrl', ['$scope', 'filterFilter', function ($scope, filterFilter) {
 	$scope.items = [
 	{
@@ -1999,19 +1220,19 @@ app.controller('FullcalendarCtrl', ['$scope', function($scope) {
 ;(function() {
     'use strict';
 
-    /*  var app = angular.module('examples', ['chart.js', 'ui.bootstrap']);*/
+    /*  var app = angular.app.'examples', ['chart.js', 'ui.bootstrap']);*/
 
-    app.config(function(ChartJsProvider) {
-        // Configure all charts
-        ChartJsProvider.setOptions({
-            colours: ['#FF6E40', '#FBC02E', '#673AB7', '#66bd78', '#f05050'],
-            responsive: true
-        });
-        // Configure all doughnut charts
-        ChartJsProvider.setOptions('Doughnut', {
-            animateScale: true
-        });
-    });
+    //app.config(function(ChartJsProvider) {
+    //    // Configure all charts
+    //    ChartJsProvider.setOptions({
+    //        colours: ['#FF6E40', '#FBC02E', '#673AB7', '#66bd78', '#f05050'],
+    //        responsive: true
+    //    });
+    //    // Configure all doughnut charts
+    //    ChartJsProvider.setOptions('Doughnut', {
+    //        animateScale: true
+    //    });
+    //});
 
     app.controller('MenuCtrl', function($scope) {
         $scope.isCollapsed = true;
@@ -2374,251 +1595,325 @@ app.controller('CounttoCtrl', function($scope){
 
 ;    'use strict';
 
-    /*  var app = angular.module('examples', ['chart.js', 'ui.bootstrap']);*/
+    /*  var app = angular.app.'examples', ['chart.js', 'ui.bootstrap']);*/
 
-    app.config(function(ChartJsProvider) {
-        // Configure all charts
-        ChartJsProvider.setOptions({
-            colours: ['#FF6E40', '#FBC02E', '#673AB7', '#66bd78', '#f05050'],
-            responsive: true
-        });
-        // Configure all doughnut charts
-        ChartJsProvider.setOptions('Doughnut', {
-            animateScale: true
-        });
-    });
+     //app.config(function(ChartJsProvider) {
+     //    // Configure all charts
+     //    ChartJsProvider.setOptions({
+     //        colours: ['#FF6E40', '#FBC02E', '#673AB7', '#66bd78', '#f05050'],
+     //        responsive: true
+     //    });
+     //    // Configure all doughnut charts
+     //    ChartJsProvider.setOptions('Doughnut', {
+     //        animateScale: true
+     //    });
+     //});
 
-    app.controller('DashboardLineCtrl', ['$scope', '$timeout', function($scope, $timeout) {
-        $scope.labels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'];
-        $scope.series = ['Page Views', 'Visitors'];
-        $scope.data = [
-            [23, 10, 13, 24, 12, 21, 19, 10, 24],
-            [7, 13, 8, 10, 18, 11, 17, 9, 17]
-        ];
-        $scope.onClick = function(points, evt) {
-            console.log(points, evt);
-        };
-        $scope.onHover = function(points) {
-            if (points.length > 0) {
-                console.log('Point', points[0].value);
-            } else {
-                console.log('No point');
-            }
-        };
-        $scope.colours = [{ // grey
-                fillColor: "rgba(255,110,64,1)",
-                strokeColor: "rgba(255,110,64,1)",
-                pointColor: "rgba(255,110,64,1)",
-                pointStrokeColor: "#fff",
-                pointHighlightFill: "#fff",
-                pointHighlightStroke: "rgba(255,110,64,1)"
-        }, { // dark grey
-                fillColor: "rgba(103,58,183,1)",
-                strokeColor: "rgba(103,58,183,1.0)",
-                pointColor: "rgba(103,58,183,1.0)",
-                pointStrokeColor: "#fff",
-                pointHighlightFill: "#fff",
-                pointHighlightStroke: "rgba(103,58,183,1.0)"
-        }];
+    app.controller('DashboardLineCtrl', ['$scope', '$timeout', function($scope,
+      $timeout) {
+      $scope.labels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul',
+        'Aug', 'Sep'
+      ];
+      $scope.series = ['Page Views', 'Visitors'];
+      $scope.data = [
+        [23, 10, 13, 24, 12, 21, 19, 10, 24],
+        [7, 13, 8, 10, 18, 11, 17, 9, 17]
+      ];
+      $scope.onClick = function(points, evt) {
+        console.log(points, evt);
+      };
+      $scope.onHover = function(points) {
+        if (points.length > 0) {
+          console.log('Point', points[0].value);
+        } else {
+          console.log('No point');
+        }
+      };
+      $scope.colours = [{ // grey
+        fillColor: "rgba(255,110,64,1)",
+        strokeColor: "rgba(255,110,64,1)",
+        pointColor: "rgba(255,110,64,1)",
+        pointStrokeColor: "#fff",
+        pointHighlightFill: "#fff",
+        pointHighlightStroke: "rgba(255,110,64,1)"
+      }, { // dark grey
+        fillColor: "rgba(103,58,183,1)",
+        strokeColor: "rgba(103,58,183,1.0)",
+        pointColor: "rgba(103,58,183,1.0)",
+        pointStrokeColor: "#fff",
+        pointHighlightFill: "#fff",
+        pointHighlightStroke: "rgba(103,58,183,1.0)"
+      }];
 
-         $scope.options = {
-                scaleShowVerticalLines: false,
-                scaleShowLabels: true,
-                scaleLineWidth: 1,
-                scaleLineColor: "rgba(0,0,0,0.1)",
-                scaleShowHorizontalLines: false,
-                scaleGridLineWidth : 1,
-                scaleShowGridLines : false,
-                scaleGridLineColor : "rgba(0,0,0,0)",
-                pointDotRadius : 5,
-                pointHitDetectionRadius : 10,
+      $scope.options = {
+        scaleShowVerticalLines: false,
+        scaleShowLabels: true,
+        scaleLineWidth: 1,
+        scaleLineColor: "rgba(0,0,0,0.1)",
+        scaleShowHorizontalLines: false,
+        scaleGridLineWidth: 1,
+        scaleShowGridLines: false,
+        scaleGridLineColor: "rgba(0,0,0,0)",
+        pointDotRadius: 5,
+        pointHitDetectionRadius: 10,
 
-            };
+      };
 
 
     }]);
 
-    app.controller('DashboardBarCtrl', ['$scope', '$timeout', function($scope, $timeout) {
-        $scope.options = {
-            scaleShowVerticalLines: false
-        };
-        $scope.labels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'];
-        $scope.series = ['Page Views', 'Visitors'];
-        $scope.data = [
-            [23, 12, 16, 28, 10, 21, 19, 12, 24],
-            [7, 13, 8, 10, 18, 11, 17, 9, 17]
-        ];
-        $scope.colours = [{ // grey
-                fillColor: "rgba(255,110,64,1)",
-                strokeColor: "rgba(255,110,64,1)",
-                highlightFill: "rgba(255,110,64,1)",
-                highlightStroke: "rgba(255,110,64,1)"
-        }, { // dark grey
-                fillColor: "rgba(103,58,183,1.0)",
-                strokeColor: "rgba(103,58,183,1)",
-                highlightFill: "rgba(103,58,183,1)",
-                highlightStroke: "rgba(103,58,183,1.0)"
-        }];
+    app.controller('DashboardBarCtrl', ['$scope', '$timeout', function($scope,
+      $timeout) {
+      $scope.options = {
+        scaleShowVerticalLines: false
+      };
+      $scope.labels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul',
+        'Aug', 'Sep'
+      ];
+      $scope.series = ['Page Views', 'Visitors'];
+      $scope.data = [
+        [23, 12, 16, 28, 10, 21, 19, 12, 24],
+        [7, 13, 8, 10, 18, 11, 17, 9, 17]
+      ];
+      $scope.colours = [{ // grey
+        fillColor: "rgba(255,110,64,1)",
+        strokeColor: "rgba(255,110,64,1)",
+        highlightFill: "rgba(255,110,64,1)",
+        highlightStroke: "rgba(255,110,64,1)"
+      }, { // dark grey
+        fillColor: "rgba(103,58,183,1.0)",
+        strokeColor: "rgba(103,58,183,1)",
+        highlightFill: "rgba(103,58,183,1)",
+        highlightStroke: "rgba(103,58,183,1.0)"
+      }];
 
-         $scope.options = {
-                scaleShowVerticalLines: false,
-                scaleShowLabels: true,
-                scaleLineWidth: 1,
-                scaleLineColor: "rgba(0,0,0,0.1)",
-                scaleShowHorizontalLines: false,
-                scaleGridLineWidth : 1,
-                scaleShowGridLines : false,
-                scaleGridLineColor : "rgba(0,0,0,0)",
-                pointDotRadius : 5,
-                pointHitDetectionRadius : 10,
+      $scope.options = {
+        scaleShowVerticalLines: false,
+        scaleShowLabels: true,
+        scaleLineWidth: 1,
+        scaleLineColor: "rgba(0,0,0,0.1)",
+        scaleShowHorizontalLines: false,
+        scaleGridLineWidth: 1,
+        scaleShowGridLines: false,
+        scaleGridLineColor: "rgba(0,0,0,0)",
+        pointDotRadius: 5,
+        pointHitDetectionRadius: 10,
 
-            };
+      };
 
 
     }]);
 
     app.controller('DashboardPolarAreaCtrl', function($scope) {
-        $scope.labels = ['Download Sales', 'In-Store Sales', 'Mail Sales', 'Telesales', 'Corporate Sales'];
-        $scope.data = [300, 500, 100, 40, 120];
-        $scope.colours = [{ // grey
-                fillColor: "rgba(255,110,64,1)",
-                strokeColor: "rgba(255,110,64,1)",
-                highlightFill: "rgba(255,110,64,1)",
-                highlightStroke: "rgba(255,110,64,1)"
-        }, { // dark grey
-                fillColor: "rgba(103,58,183,1.0)",
-                strokeColor: "rgba(103,58,183,1)",
-                highlightFill: "rgba(103,58,183,1)",
-                highlightStroke: "rgba(103,58,183,1.0)"
-        }, { // dark grey
-                fillColor: "rgba(253,216,53,1.0)",
-                strokeColor: "rgba(253,216,53,1)",
-                highlightFill: "rgba(253,216,53,1)",
-                highlightStroke: "rgba(253,216,53,1.0)"
-        }, { // dark grey
-                fillColor: "rgba(76,175,80,1.0)",
-                strokeColor: "rgba(76,175,80,1)",
-                highlightFill: "rgba(76,175,80,1)",
-                highlightStroke: "rgba(76,175,80,1.0)"
-        }, { // dark grey
-                fillColor: "rgba(244,67,54,1.0)",
-                strokeColor: "rgba(244,67,54,1)",
-                highlightFill: "rgba(244,67,54,1)",
-                highlightStroke: "rgba(244,67,54,1.0)"
-        }];
+      $scope.labels = ['Download Sales', 'In-Store Sales', 'Mail Sales',
+        'Telesales', 'Corporate Sales'
+      ];
+      $scope.data = [300, 500, 100, 40, 120];
+      $scope.colours = [{ // grey
+        fillColor: "rgba(255,110,64,1)",
+        strokeColor: "rgba(255,110,64,1)",
+        highlightFill: "rgba(255,110,64,1)",
+        highlightStroke: "rgba(255,110,64,1)"
+      }, { // dark grey
+        fillColor: "rgba(103,58,183,1.0)",
+        strokeColor: "rgba(103,58,183,1)",
+        highlightFill: "rgba(103,58,183,1)",
+        highlightStroke: "rgba(103,58,183,1.0)"
+      }, { // dark grey
+        fillColor: "rgba(253,216,53,1.0)",
+        strokeColor: "rgba(253,216,53,1)",
+        highlightFill: "rgba(253,216,53,1)",
+        highlightStroke: "rgba(253,216,53,1.0)"
+      }, { // dark grey
+        fillColor: "rgba(76,175,80,1.0)",
+        strokeColor: "rgba(76,175,80,1)",
+        highlightFill: "rgba(76,175,80,1)",
+        highlightStroke: "rgba(76,175,80,1.0)"
+      }, { // dark grey
+        fillColor: "rgba(244,67,54,1.0)",
+        strokeColor: "rgba(244,67,54,1)",
+        highlightFill: "rgba(244,67,54,1)",
+        highlightStroke: "rgba(244,67,54,1.0)"
+      }];
 
 
 
-         $scope.options = {
-                scaleShowVerticalLines: false,
-                scaleShowLabels: true,
-                scaleLineWidth: 1,
-                scaleLineColor: "rgba(0,0,0,0.1)",
-                scaleShowHorizontalLines: false,
-                scaleGridLineWidth : 1,
-                scaleShowGridLines : false,
-                scaleGridLineColor : "rgba(0,0,0,0)",
-                pointDotRadius : 5,
-                pointHitDetectionRadius : 10,
+      $scope.options = {
+        scaleShowVerticalLines: false,
+        scaleShowLabels: true,
+        scaleLineWidth: 1,
+        scaleLineColor: "rgba(0,0,0,0.1)",
+        scaleShowHorizontalLines: false,
+        scaleGridLineWidth: 1,
+        scaleShowGridLines: false,
+        scaleGridLineColor: "rgba(0,0,0,0)",
+        pointDotRadius: 5,
+        pointHitDetectionRadius: 10,
 
-            };
+      };
 
     });
 
     app.controller('DashboardRadarCtrl', function($scope) {
-        $scope.labels = ['Finance', 'Marketing', 'Hosting', 'Designing', 'Coding', 'Networking', 'Pricing'];
+      $scope.labels = ['Finance', 'Marketing', 'Hosting', 'Designing',
+        'Coding', 'Networking', 'Pricing'
+      ];
 
-        $scope.data = [
-            [65, 59, 90, 81, 56, 55, 40],
-            [28, 48, 40, 19, 96, 27, 100]
-        ];
+      $scope.data = [
+        [65, 59, 90, 81, 56, 55, 40],
+        [28, 48, 40, 19, 96, 27, 100]
+      ];
 
-        $scope.onClick = function(points, evt) {
-            console.log(points, evt);
-        };
-        $scope.colours = [{ // grey
-                fillColor: "rgba(255,110,64,0.9)",
-                strokeColor: "rgba(255,110,64,1)",
-                pointColor: "rgba(255,110,64,1)",
-                pointStrokeColor: "#fff",
-                pointHighlightFill: "#fff",
-                pointHighlightStroke: "rgba(255,110,64,1)"
-        }, { // dark grey
-                fillColor: "rgba(103,58,183,0.9)",
-                strokeColor: "rgba(103,58,183,1.0)",
-                pointColor: "rgba(103,58,183,1.0)",
-                pointStrokeColor: "#fff",
-                pointHighlightFill: "#fff",
-                pointHighlightStroke: "rgba(103,58,183,1.0)"
-        }];
+      $scope.onClick = function(points, evt) {
+        console.log(points, evt);
+      };
+      $scope.colours = [{ // grey
+        fillColor: "rgba(255,110,64,0.9)",
+        strokeColor: "rgba(255,110,64,1)",
+        pointColor: "rgba(255,110,64,1)",
+        pointStrokeColor: "#fff",
+        pointHighlightFill: "#fff",
+        pointHighlightStroke: "rgba(255,110,64,1)"
+      }, { // dark grey
+        fillColor: "rgba(103,58,183,0.9)",
+        strokeColor: "rgba(103,58,183,1.0)",
+        pointColor: "rgba(103,58,183,1.0)",
+        pointStrokeColor: "#fff",
+        pointHighlightFill: "#fff",
+        pointHighlightStroke: "rgba(103,58,183,1.0)"
+      }];
 
 
 
-         $scope.options = {
-                scaleShowVerticalLines: false,
-                scaleShowLabels: false,
-                scaleLineWidth: 1,
-                scaleLineColor: "rgba(0,0,0,0.1)",
-                scaleShowHorizontalLines: false,
-                scaleGridLineWidth : 1,
-                scaleShowGridLines : false,
-                scaleGridLineColor : "rgba(0,0,0,0)",
-                pointDotRadius : 5,
-                pointHitDetectionRadius : 10,
+      $scope.options = {
+        scaleShowVerticalLines: false,
+        scaleShowLabels: false,
+        scaleLineWidth: 1,
+        scaleLineColor: "rgba(0,0,0,0.1)",
+        scaleShowHorizontalLines: false,
+        scaleGridLineWidth: 1,
+        scaleShowGridLines: false,
+        scaleGridLineColor: "rgba(0,0,0,0)",
+        pointDotRadius: 5,
+        pointHitDetectionRadius: 10,
 
-            };
+      };
     });
 
 
     function getRandomValue(data) {
-        var l = data.length,
-            previous = l ? data[l - 1] : 50;
-        var y = previous + Math.random() * 10 - 5;
-        return y < 0 ? 0 : y > 100 ? 100 : y;
+      var l = data.length,
+        previous = l ? data[l - 1] : 50;
+      var y = previous + Math.random() * 10 - 5;
+      return y < 0 ? 0 : y > 100 ? 100 : y;
     }
 
-// jVectorMap controller
-app.controller('JVectorMapDemoCtrl', ['$scope', function($scope) {
-    $scope.world_markers = [
-      {latLng: [41.90, 12.45], name: 'Vatican City'},
-      {latLng: [43.73, 7.41], name: 'Monaco'},
-      {latLng: [-0.52, 166.93], name: 'Nauru'},
-      {latLng: [-8.51, 179.21], name: 'Tuvalu'},
-      {latLng: [43.93, 12.46], name: 'San Marino'},
-      {latLng: [47.14, 9.52], name: 'Liechtenstein'},
-      {latLng: [7.11, 171.06], name: 'Marshall Islands'},
-      {latLng: [17.3, -62.73], name: 'Saint Kitts and Nevis'},
-      {latLng: [3.2, 73.22], name: 'Maldives'},
-      {latLng: [35.88, 14.5], name: 'Malta'},
-      {latLng: [12.05, -61.75], name: 'Grenada'},
-      {latLng: [13.16, -61.23], name: 'Saint Vincent and the Grenadines'},
-      {latLng: [13.16, -59.55], name: 'Barbados'},
-      {latLng: [17.11, -61.85], name: 'Antigua and Barbuda'},
-      {latLng: [-4.61, 55.45], name: 'Seychelles'},
-      {latLng: [7.35, 134.46], name: 'Palau'},
-      {latLng: [42.5, 1.51], name: 'Andorra'},
-      {latLng: [14.01, -60.98], name: 'Saint Lucia'},
-      {latLng: [6.91, 158.18], name: 'Federated States of Micronesia'},
-      {latLng: [1.3, 103.8], name: 'Singapore'},
-      {latLng: [1.46, 173.03], name: 'Kiribati'},
-      {latLng: [-21.13, -175.2], name: 'Tonga'},
-      {latLng: [15.3, -61.38], name: 'Dominica'},
-      {latLng: [-20.2, 57.5], name: 'Mauritius'},
-      {latLng: [26.02, 50.55], name: 'Bahrain'},
-      {latLng: [0.33, 6.73], name: 'São Tomé and Príncipe'}
-    ];
+    // jVectorMap controller
+    app.controller('JVectorMapDemoCtrl', ['$scope', function($scope) {
+      $scope.world_markers = [{
+        latLng: [41.90, 12.45],
+        name: 'Vatican City'
+      }, {
+        latLng: [43.73, 7.41],
+        name: 'Monaco'
+      }, {
+        latLng: [-0.52, 166.93],
+        name: 'Nauru'
+      }, {
+        latLng: [-8.51, 179.21],
+        name: 'Tuvalu'
+      }, {
+        latLng: [43.93, 12.46],
+        name: 'San Marino'
+      }, {
+        latLng: [47.14, 9.52],
+        name: 'Liechtenstein'
+      }, {
+        latLng: [7.11, 171.06],
+        name: 'Marshall Islands'
+      }, {
+        latLng: [17.3, -62.73],
+        name: 'Saint Kitts and Nevis'
+      }, {
+        latLng: [3.2, 73.22],
+        name: 'Maldives'
+      }, {
+        latLng: [35.88, 14.5],
+        name: 'Malta'
+      }, {
+        latLng: [12.05, -61.75],
+        name: 'Grenada'
+      }, {
+        latLng: [13.16, -61.23],
+        name: 'Saint Vincent and the Grenadines'
+      }, {
+        latLng: [13.16, -59.55],
+        name: 'Barbados'
+      }, {
+        latLng: [17.11, -61.85],
+        name: 'Antigua and Barbuda'
+      }, {
+        latLng: [-4.61, 55.45],
+        name: 'Seychelles'
+      }, {
+        latLng: [7.35, 134.46],
+        name: 'Palau'
+      }, {
+        latLng: [42.5, 1.51],
+        name: 'Andorra'
+      }, {
+        latLng: [14.01, -60.98],
+        name: 'Saint Lucia'
+      }, {
+        latLng: [6.91, 158.18],
+        name: 'Federated States of Micronesia'
+      }, {
+        latLng: [1.3, 103.8],
+        name: 'Singapore'
+      }, {
+        latLng: [1.46, 173.03],
+        name: 'Kiribati'
+      }, {
+        latLng: [-21.13, -175.2],
+        name: 'Tonga'
+      }, {
+        latLng: [15.3, -61.38],
+        name: 'Dominica'
+      }, {
+        latLng: [-20.2, 57.5],
+        name: 'Mauritius'
+      }, {
+        latLng: [26.02, 50.55],
+        name: 'Bahrain'
+      }, {
+        latLng: [0.33, 6.73],
+        name: 'São Tomé and Príncipe'
+      }];
 
-    $scope.usa_markers = [
-      {latLng: [40.71, -74.00], name: 'New York'},
-      {latLng: [34.05, -118.24], name: 'Los Angeles'},
-      {latLng: [41.87, -87.62], name: 'Chicago'},
-      {latLng: [29.76, -95.36], name: 'Houston'},
-      {latLng: [39.95, -75.16], name: 'Philadelphia'},
-      {latLng: [38.90, -77.03], name: 'Washington'},
-      {latLng: [37.36, -122.03], name: 'Silicon Valley'}
-    ];
-  }])
-;;app.controller('FAQCtrl', ['$scope', function ($scope) {
+      $scope.usa_markers = [{
+        latLng: [40.71, -74.00],
+        name: 'New York'
+      }, {
+        latLng: [34.05, -118.24],
+        name: 'Los Angeles'
+      }, {
+        latLng: [41.87, -87.62],
+        name: 'Chicago'
+      }, {
+        latLng: [29.76, -95.36],
+        name: 'Houston'
+      }, {
+        latLng: [39.95, -75.16],
+        name: 'Philadelphia'
+      }, {
+        latLng: [38.90, -77.03],
+        name: 'Washington'
+      }, {
+        latLng: [37.36, -122.03],
+        name: 'Silicon Valley'
+      }];
+    }]);
+;app.controller('FAQCtrl', ['$scope', function ($scope) {
 	$scope.general = [
 	{
 		"title": "What is Graphic Design?",
@@ -2955,51 +2250,92 @@ app.controller('LoginFormController', ['$scope', '$http', '$state', function($sc
     };
   }])
 ;;app.controller('MailCtrl', ['$scope', function($scope) {
-  $scope.folds = [
-    {name: 'Inbox', filter:'', icon:'fa-inbox', badge:'primary', count: '6'},
-    {name: 'Sent', filter:'sent', icon:'fa-send-o', badge: '', count: ''},
-    {name: 'Important', filter:'important', icon:'fa-star-o', badge: '', count: ''},
-    {name: 'Draft', filter:'draft', icon:'fa-edit', badge:'orange', count: '2'},
-    {name: 'Trash', filter:'trash', icon:'fa-trash-o', badge: '', count: ''}
-  ];
+  $scope.folds = [{
+    name: 'Inbox',
+    filter: '',
+    icon: 'fa-inbox',
+    badge: 'primary',
+    count: '6'
+  }, {
+    name: 'Sent',
+    filter: 'sent',
+    icon: 'fa-send-o',
+    badge: '',
+    count: ''
+  }, {
+    name: 'Important',
+    filter: 'important',
+    icon: 'fa-star-o',
+    badge: '',
+    count: ''
+  }, {
+    name: 'Draft',
+    filter: 'draft',
+    icon: 'fa-edit',
+    badge: 'orange',
+    count: '2'
+  }, {
+    name: 'Trash',
+    filter: 'trash',
+    icon: 'fa-trash-o',
+    badge: '',
+    count: ''
+  }];
 
-  $scope.labels = [
-    {name: 'Urgent', filter:'urgent', color:'danger'},
-    {name: 'Market', filter:'market', color:'warning'},
-    {name: 'Family', filter:'family', color:'success'},
-    {name: 'Work', filter:'work', color:'info'}
-  ];
+  $scope.labels = [{
+    name: 'Urgent',
+    filter: 'urgent',
+    color: 'danger'
+  }, {
+    name: 'Market',
+    filter: 'market',
+    color: 'warning'
+  }, {
+    name: 'Family',
+    filter: 'family',
+    color: 'success'
+  }, {
+    name: 'Work',
+    filter: 'work',
+    color: 'info'
+  }];
 
-  $scope.addLabel = function(){
-    $scope.labels.push(
-      {
-        name: $scope.newLabel.name,
-        filter: angular.lowercase($scope.newLabel.name),
-        color: 'secondary'
-      }
-    );
+  $scope.addLabel = function() {
+    $scope.labels.push({
+      name: $scope.newLabel.name,
+      filter: angular.lowercase($scope.newLabel.name),
+      color: 'secondary'
+    });
     $scope.newLabel.name = '';
   }
 
   $scope.labelClass = function(label) {
-    if(angular.lowercase(label) === 'urgent'){ return 'danger'; }
-    else if(angular.lowercase(label) === 'market'){ return 'primary'; }
-    else if(angular.lowercase(label) === 'family'){ return 'success'; }
-    else if(angular.lowercase(label) === 'work'){ return 'orange'; }
-    else{ return 'secondary'; }
+    if (angular.lowercase(label) === 'urgent') {
+      return 'danger';
+    } else if (angular.lowercase(label) === 'market') {
+      return 'primary';
+    } else if (angular.lowercase(label) === 'family') {
+      return 'success';
+    } else if (angular.lowercase(label) === 'work') {
+      return 'orange';
+    } else {
+      return 'secondary';
+    }
   };
 
 }]);
 
-app.controller('MailListCtrl', ['$scope', 'mails', '$stateParams', function($scope, mails, $stateParams) {
+app.controller('MailListCtrl', ['$scope', 'mails', '$stateParams', function(
+  $scope, mails, $stateParams) {
   $scope.fold = $stateParams.fold;
-  mails.all().then(function(mails){
+  mails.all().then(function(mails) {
     $scope.mails = mails;
   });
 }]);
 
-app.controller('MailDetailCtrl', ['$scope', 'mails', '$stateParams', function($scope, mails, $stateParams) {
-  mails.get($stateParams.mailId).then(function(mail){
+app.controller('MailDetailCtrl', ['$scope', 'mails', '$stateParams', function(
+  $scope, mails, $stateParams) {
+  mails.get($stateParams.mailId).then(function(mail) {
     $scope.mail = mail;
   })
 }]);
@@ -3010,18 +2346,26 @@ app.controller('MailNewCtrl', ['$scope', function($scope) {
     subject: '',
     content: ''
   }
-  $scope.tolist = [
-    {name: 'James', email:'james@gmail.com'},
-    {name: 'Luoris Kiso', email:'luoris.kiso@hotmail.com'},
-    {name: 'Lucy Yokes', email:'lucy.yokes@gmail.com'}
-  ];
+  $scope.tolist = [{
+    name: 'James',
+    email: 'james@gmail.com'
+  }, {
+    name: 'Luoris Kiso',
+    email: 'luoris.kiso@hotmail.com'
+  }, {
+    name: 'Lucy Yokes',
+    email: 'lucy.yokes@gmail.com'
+  }];
 }]);
 
-angular.module('app').directive('labelColor', function(){
-  return function(scope, $el, attrs){
-    $el.css({'color': attrs.color});
+app.directive('labelColor', function() {
+  return function(scope, $el, attrs) {
+    $el.css({
+      'color': attrs.color
+    });
   }
-});;app.controller('MembersCtrl', ['$scope', '$http',
+});
+;app.controller('MembersCtrl', ['$scope', '$http',
   function ($scope, $http) {
     $http.get('data/members.json').success(function(data) {
       $scope.members = data;
@@ -3029,7 +2373,7 @@ angular.module('app').directive('labelColor', function(){
   }]);
 ;app.controller('MessagesWidgetCtrl', ['$scope', '$http',
   function ($scope, $http) {
-    $http.get('data/messages.json').success(function(data) {
+    $http.get('../data/messages.json').success(function(data) {
       $scope.messages = data;
     });
   }]);
@@ -4127,7 +3471,7 @@ $scope.myData3 = [{name: "Moroni", age: 50},
 }]);
 ;app.controller('MessagesDropDownCtrl', ['$scope', '$http',
   function ($scope, $http) {
-    $http.get('data/messages.json').success(function(data) {
+    $http.get('../data/messages.json').success(function(data) {
       $scope.messages = data;
     });
   }]);
@@ -4136,7 +3480,7 @@ $scope.myData3 = [{name: "Moroni", age: 50},
 
 app.controller('NotificationsDropDownCtrl', ['$scope', '$http',
   function ($scope, $http) {
-    $http.get('data/notifications.json').success(function(data) {
+    $http.get('../data/notifications.json').success(function(data) {
       $scope.notifications = data;
     });
   }]);;jQuery(function($) {
@@ -4390,123 +3734,120 @@ app.controller('JVectorMapDemoCtrl', ['$scope', function($scope) {
       {latLng: [37.36, -122.03], name: 'Silicon Valley'}
     ];
   }])
-;;angular.module('app')
-  .directive('setNgAnimate', ['$animate', function ($animate) {
-    return {
-        link: function ($scope, $element, $attrs) {
-            $scope.$watch( function() {
-                return $scope.$eval($attrs.setNgAnimate, $scope);
-            }, function(valnew, valold){
-                $animate.enabled(!!valnew, $element);
-            });
-        }
-    };
-  }]);;/* ------------------------------
+;;app.directive('setNgAnimate', ['$animate', function($animate) {
+  return {
+    link: function($scope, $element, $attrs) {
+      $scope.$watch(function() {
+        return $scope.$eval($attrs.setNgAnimate, $scope);
+      }, function(valnew, valold) {
+        $animate.enabled(!!valnew, $element);
+      });
+    }
+  };
+}]);
+;/* ------------------------------
    ui.bootstrap tooltip directive
 --------------------------------*/
 
-angular.module('app')
-  .directive('uiTooltip', ['$timeout', function($timeout) {
-    return {
-      restrict: 'AC',
-      link: function(scope, el, attr) {
+app.directive('uiTooltip', ['$timeout', function($timeout) {
+  return {
+    restrict: 'AC',
+    link: function(scope, el, attr) {
 
-        el.on('mouseenter', '[tooltip]', function(e) {
-          //console.log("tooltip triggered");
-          var _this = $(this);
-          var id = angular.element(_this).attr('tooltip-class');
-          $(this).next(".tooltip").addClass(id);
-        });
+      el.on('mouseenter', '[tooltip]', function(e) {
+        //console.log("tooltip triggered");
+        var _this = $(this);
+        var id = angular.element(_this).attr('tooltip-class');
+        $(this).next(".tooltip").addClass(id);
+      });
 
-      }
-    };
-  }]);
-
+    }
+  };
+}]);
 
 
-  /* ------------------------------
+
+/* ------------------------------
    ui.bootstrap popover directive
 --------------------------------*/
 
-angular.module('app')
-  .directive('uiPopover', ['$timeout', function($timeout) {
-    return {
-      restrict: 'AC',
-      link: function(scope, el, attr) {
+app.directive('uiPopover', ['$timeout', function($timeout) {
+  return {
+    restrict: 'AC',
+    link: function(scope, el, attr) {
 
-        el.on('mouseenter', '[popover]', function(e) {
-          //console.log("tooltip triggered");
-          var _this = $(this);
-          var id = angular.element(_this).attr('popover-class');
-          $(this).next(".popover").addClass(id);
-        });
+      el.on('mouseenter', '[popover]', function(e) {
+        //console.log("tooltip triggered");
+        var _this = $(this);
+        var id = angular.element(_this).attr('popover-class');
+        $(this).next(".popover").addClass(id);
+      });
 
-      }
-    };
-  }]);
+    }
+  };
+}]);
 
 
-  /* ------------------------------
+/* ------------------------------
    ui.bootstrap breadcrumb auto hidden directive
 --------------------------------*/
 
-angular.module('app')
-  .directive('uiBreadcrumbAutoHidden', ['$timeout', function($timeout) {
-    return {
-      restrict: 'AC',
-      link: function(scope, el, attr) {
+app.directive('uiBreadcrumbAutoHidden', ['$timeout', function($timeout) {
+  return {
+    restrict: 'AC',
+    link: function(scope, el, attr) {
 
-        el.on('mouseenter', '.breadcrumb.auto-hidden a', function(e) {
+      el.on('mouseenter', '.breadcrumb.auto-hidden a', function(e) {
+        var _this = $(this);
+        $(this).removeClass("collapsed");
+      });
+
+      el.on('mouseleave', '.breadcrumb.auto-hidden a', function(e) {
+        var _this = $(this);
+        $(this).addClass("collapsed");
+      });
+
+    }
+  };
+}]);
+;app.directive('uiChatwindow', ['$timeout', function($timeout) {
+  return {
+    restrict: 'AC',
+    link: function(scope, el, attr) {
+
+      el.on('click', '.user-row', function(e) {
+        var _this = $(this);
+        $(".chaton").show() && e.preventDefault();
+      });
+
+      el.on('click', '.closewindow', function(e) {
+        var _this = $(this);
+        $(".chaton").hide() && e.preventDefault();
+      });
+
+
+      el.on('keypress', '.wid-add-task input', function(e) {
+        if (e.keyCode == 13) {
           var _this = $(this);
-          $(this).removeClass("collapsed");
-        });
-
-        el.on('mouseleave', '.breadcrumb.auto-hidden a', function(e) {
-          var _this = $(this);
-          $(this).addClass("collapsed");
-        });
-
-      }
-    };
-  }]);
-
-
-;angular.module('app')
-  .directive('uiChatwindow', ['$timeout', function($timeout) {
-    return {
-      restrict: 'AC',
-      link: function(scope, el, attr) {
-      
-        el.on('click', '.user-row', function(e) {
-            var _this = $(this);
-            $(".chaton").show() && e.preventDefault();
-        });
-
-        el.on('click', '.closewindow', function(e) {
-            var _this = $(this);
-            $(".chaton").hide() && e.preventDefault();
-        });
-
-
-        el.on('keypress', '.wid-add-task input', function(e) {
-            if (e.keyCode == 13) {
-                var _this = $(this);
-                var msg = _this.val();
-                var msg = '<li><label class="icheck icheck-white form-label "><input type="checkbox" value=""><i></i> ' + msg + '</label></li>';
-                _this.parent().parent().find(".wid-all-tasks ul").append(msg);
-                _this.val("");
-                _this.focus();
-                console.log("entered");            
-            }
-        });
+          var msg = _this.val();
+          var msg =
+            '<li><label class="icheck icheck-white form-label "><input type="checkbox" value=""><i></i> ' +
+            msg + '</label></li>';
+          _this.parent().parent().find(".wid-all-tasks ul").append(
+            msg);
+          _this.val("");
+          _this.focus();
+          console.log("entered");
+        }
+      });
 
 
 
+    }
 
-      }
-
-    };
-  }]);;'use strict';
+  };
+}]);
+;'use strict';
 
 /**
  * 0.1.1
@@ -4525,28 +3866,32 @@ angular.module('app')
  * @example <input ui-jq="datepicker" ui-options="{showOn:'click'},secondParameter,thirdParameter" ui-refresh="iChange">
  */
 angular.module('ui.jq', ['ui.load']).
-  value('uiJqConfig', {}).
-  directive('uiJq', ['uiJqConfig', 'JQ_CONFIG', 'uiLoad', '$timeout', function uiJqInjectingFunction(uiJqConfig, JQ_CONFIG, uiLoad, $timeout) {
+value('uiJqConfig', {}).
+directive('uiJq', ['uiJqConfig', 'JQ_CONFIG', 'uiLoad', '$timeout', function uiJqInjectingFunction(
+  uiJqConfig, JQ_CONFIG, uiLoad, $timeout) {
 
   return {
     restrict: 'A',
     compile: function uiJqCompilingFunction(tElm, tAttrs) {
 
       if (!angular.isFunction(tElm[tAttrs.uiJq]) && !JQ_CONFIG[tAttrs.uiJq]) {
-        throw new Error('ui-jq: The "' + tAttrs.uiJq + '" function does not exist');
+        throw new Error('ui-jq: The "' + tAttrs.uiJq +
+          '" function does not exist');
       }
       var options = uiJqConfig && uiJqConfig[tAttrs.uiJq];
 
       return function uiJqLinkingFunction(scope, elm, attrs) {
 
-        function getOptions(){
+        function getOptions() {
           var linkOptions = [];
 
           // If ui-options are passed, merge (or override) them onto global defaults and pass to the jQuery method
           if (attrs.uiOptions) {
             linkOptions = scope.$eval('[' + attrs.uiOptions + ']');
-            if (angular.isObject(options) && angular.isObject(linkOptions[0])) {
-              linkOptions[0] = angular.extend({}, options, linkOptions[0]);
+            if (angular.isObject(options) && angular.isObject(
+                linkOptions[0])) {
+              linkOptions[0] = angular.extend({}, options,
+                linkOptions[0]);
             }
           } else if (options) {
             linkOptions = [options];
@@ -4568,7 +3913,7 @@ angular.module('ui.jq', ['ui.load']).
           }, 0, false);
         }
 
-        function refresh(){
+        function refresh() {
           // If ui-refresh is used, re-fire the the method upon every change
           if (attrs.uiRefresh) {
             scope.$watch(attrs.uiRefresh, function() {
@@ -4577,12 +3922,12 @@ angular.module('ui.jq', ['ui.load']).
           }
         }
 
-        if ( JQ_CONFIG[attrs.uiJq] ) {
+        if (JQ_CONFIG[attrs.uiJq]) {
           uiLoad.load(JQ_CONFIG[attrs.uiJq]).then(function() {
             callPlugin();
             refresh();
           }).catch(function() {
-            
+
           });
         } else {
           callPlugin();
@@ -4591,253 +3936,255 @@ angular.module('ui.jq', ['ui.load']).
       };
     }
   };
-}]);;angular.module('app')
-  .directive('uiModule', ['MODULE_CONFIG','uiLoad', '$compile', function(MODULE_CONFIG, uiLoad, $compile) {
-    return {
-      restrict: 'A',
-      compile: function (el, attrs) {
-        var contents = el.contents().clone();
-        return function(scope, el, attrs){
-          el.contents().remove();
-          uiLoad.load(MODULE_CONFIG[attrs.uiModule])
-          .then(function(){
+}]);
+;app.directive('uiModule', ['MODULE_CONFIG', 'uiLoad', '$compile', function(
+  MODULE_CONFIG, uiLoad, $compile) {
+  return {
+    restrict: 'A',
+    compile: function(el, attrs) {
+      var contents = el.contents().clone();
+      return function(scope, el, attrs) {
+        el.contents().remove();
+        uiLoad.load(MODULE_CONFIG[attrs.uiModule])
+          .then(function() {
             $compile(contents)(scope, function(clonedElement, scope) {
               el.append(clonedElement);
             });
           });
-        }
       }
-    };
-  }]);;angular.module('app')
-  .directive('uiNav', ['$timeout', function($timeout) {
-    return {
-      restrict: 'AC',
-      link: function(scope, el, attr) {
+    }
+  };
+}]);
+;app.directive('uiNav', ['$timeout', function($timeout) {
+  return {
+    restrict: 'AC',
+    link: function(scope, el, attr) {
 
-        var _window = $(window), 
-        _mb = 768, 
-        wrap = $('.app-aside'), 
-        next, 
+      var _window = $(window),
+        _mb = 768,
+        wrap = $('.app-aside'),
+        next,
         backdrop = '.dropdown-backdrop';
-        // unfolded
-        el.on('click', 'a', function(e) {
-          console.log("hi");
-          //next && next.trigger('mouseleave.wraplist');
-          var _this = $(this);
-          _this.parent().siblings( ".active" ).toggleClass('active');
-          _this.parent().toggleClass('active');
-          _this.next().is('ul') && _this.find(".arrow").toggleClass("open");
+      // unfolded
+      el.on('click', 'a', function(e) {
+        console.log("hi");
+        //next && next.trigger('mouseleave.wraplist');
+        var _this = $(this);
+        _this.parent().siblings(".active").toggleClass('active');
+        _this.parent().toggleClass('active');
+        _this.next().is('ul') && _this.find(".arrow").toggleClass(
+          "open");
 
-          if(_this.next().is('ul') && _this.find(".arrow").html() == "keyboard_arrow_right"){
-              _this.find(".arrow").html("keyboard_arrow_down") &&  e.preventDefault();
-          } else {
-              _this.find(".arrow").html("keyboard_arrow_right") &&  e.preventDefault();
-          }
+        if (_this.next().is('ul') && _this.find(".arrow").html() ==
+          "keyboard_arrow_right") {
+          _this.find(".arrow").html("keyboard_arrow_down") && e.preventDefault();
+        } else {
+          _this.find(".arrow").html("keyboard_arrow_right") && e.preventDefault();
+        }
 
-          // mobile
-          //_this.next().is('ul') || ( ( _window.width() < _mb ) && $('.app-aside').removeClass('show off-screen') );
-        });
+        // mobile
+        //_this.next().is('ul') || ( ( _window.width() < _mb ) && $('.app-aside').removeClass('show off-screen') );
+      });
 
-      }
-    };
-  }]);;/* ------------------------------
+    }
+  };
+}]);
+;/* ------------------------------
    ui search page tabs
 --------------------------------*/
 
-angular.module('app')
-  .directive('uiSearchtabs', ['$timeout', function($timeout) {
-    return {
-      restrict: 'AC',
-      link: function(scope, el, attr) {
+app.directive('uiSearchtabs', ['$timeout', function($timeout) {
+  return {
+    restrict: 'AC',
+    link: function(scope, el, attr) {
 
-        el.on('click', '.search_data .nav-tabs li a', function(e) {
-          $(".search_data .nav-tabs li a").removeClass("active");
-          $(this).addClass("active");
-        });
+      el.on('click', '.search_data .nav-tabs li a', function(e) {
+        $(".search_data .nav-tabs li a").removeClass("active");
+        $(this).addClass("active");
+      });
 
-      }
-    };
-  }]);
-
-;angular.module('app')
-    .directive('uiSectionbox', ['$timeout', function($timeout) {
-        return {
-            restrict: 'AC',
-            link: function(scope, el, attr) {
-
-                el.on('click', '.box header .actions i.box_toggle', function(e) {
-                    var _this = $(this);
-                    var txt = _this.html();
-                    if(txt == "expand_more"){
-                        _this.html("expand_less") && e.preventDefault();
-                    } else if(txt == "expand_less"){
-                        _this.html("expand_more") && e.preventDefault();
-                    }
-                    _this.parent().parent().parent().toggleClass("collapsed");
-                });
-
-                el.on('click', '.box header .actions i.box_close', function(e) {
-                    var _this = $(this);
-                    _this.parent().parent().parent().addClass("hide").hide() && e.preventDefault();
-                });
-
-                angular.element(document).ready(function() {});
-            }
-
-        };
-    }]);
-
-
-
-angular.module('app').directive('menuheight', ['$timeout', function($window) {
-    return function(scope, element, attrs) {
-        var w = angular.element($window);
-        var changeNavHeight = function() {
-          //console.log($scope.settings.menuProfile);
-            if (angular.element(".page-sidebar.collapseit").length || angular.element(".page-sidebar.chat_shift").length) {
-              var navHeight = angular.element("#main-content section.wrapper .content-wrapper").innerHeight() + 90;              
-            } else {
-              var navHeight = $(window).innerHeight() - 60;
-              //console.log("hi1 "+navHeight);
-            }
-            //console.log("hi "+navHeight);
-            element.height(navHeight);
-        };
-        w.bind('resize', function() {
-            changeNavHeight();
-        });
-        changeNavHeight();
     }
+  };
+}]);
+;app.directive('uiSectionbox', ['$timeout', function($timeout) {
+  return {
+    restrict: 'AC',
+    link: function(scope, el, attr) {
+
+      el.on('click', '.box header .actions i.box_toggle', function(e) {
+        var _this = $(this);
+        var txt = _this.html();
+        if (txt == "expand_more") {
+          _this.html("expand_less") && e.preventDefault();
+        } else if (txt == "expand_less") {
+          _this.html("expand_more") && e.preventDefault();
+        }
+        _this.parent().parent().parent().toggleClass("collapsed");
+      });
+
+      el.on('click', '.box header .actions i.box_close', function(e) {
+        var _this = $(this);
+        _this.parent().parent().parent().addClass("hide").hide() &&
+          e.preventDefault();
+      });
+
+      angular.element(document).ready(function() {});
+    }
+
+  };
 }]);
 
-angular.module('app')
-    .directive('searchgroup', ['$timeout', function($timeout) {
-        return {
-            restrict: 'AC',
-            link: function(scope, el, attr) {
-
-                el.on('focus', 'input.form-control', function(e) {
-                    var _this = $(this);
-                    _this.parent().parent().parent().addClass("focus");
-                });
-                el.on('blur', 'input.form-control', function(e) {
-                    var _this = $(this);
-                    _this.parent().parent().parent().removeClass("focus");
-                });
-
-                el.on('click', '.input-focus', function(e) {
-                    var _this = $(this);
-                    _this.parent().find(".form-control").focus();
-                    _this.parent().parent().addClass("focus");
-                });
 
 
-            }
-
-        };
-    }]);
-
-
-angular.module('app')
-    .directive('inputgroup', ['$timeout', function($timeout) {
-        return {
-            restrict: 'AC',
-            link: function(scope, el, attr) {
-
-                el.on('focus', 'input.form-control', function(e) {
-                    var _this = $(this);
-                    _this.parent().addClass("focus");
-                });
-                el.on('blur', 'input.form-control', function(e) {
-                    var _this = $(this);
-                    _this.parent().removeClass("focus");
-                });
-
-                el.on('click', '.input-group-addon', function(e) {
-                    var _this = $(this);
-                    _this.parent().find(".form-control").focus();
-                    _this.parent().addClass("focus");
-                });
-
-
-            }
-
-        };
-    }]);
-
-
-angular.module('app')
-    .directive('chatapifocus', ['$timeout', function($timeout) {
-        return {
-            restrict: 'AC',
-            link: function(scope, el, attr) {
-
-                el.on('focus', 'input.form-control', function(e) {
-                    var _this = $(this);
-                    _this.parent().find("i").addClass("primary");
-                });
-                el.on('blur', 'input.form-control', function(e) {
-                    var _this = $(this);
-                    _this.parent().find("i").removeClass("primary");
-                });
-
-                el.on('click', 'i', function(e) {
-                    var _this = $(this);
-                    _this.parent().find(".form-control").focus();
-                    _this.addClass("primary");
-                });
-
-
-            }
-
-        };
-    }]);
-
-
-angular.module('app')
-    .directive('verticalrhythm', ['$timeout', function($timeout) {
-        return {
-            restrict: 'AC',
-            link: function(scope, el, attr) {
-
-                el.on('click', 'i', function(e) {
-                    var _this = $(this);
-                    _this.parent().toggleClass("vertical-test-on");
-                });
-            }
-
-        };
-    }]);
-
-;angular.module('app')
-  .directive('uiTodowidget', ['$timeout', function($timeout) {
-    return {
-      restrict: 'AC',
-      link: function(scope, el, attr) {
-      
-        el.on('change', '.icheck input', function(e) {
-            var _this = $(this);
-            _this.parent().parent().toggleClass("checked") && e.preventDefault();
-        });
-
-        el.on('keypress', '.wid-add-task input', function(e) {
-            if (e.keyCode == 13) {
-                var _this = $(this);
-                var msg = _this.val();
-                var msg = '<li><label class="icheck icheck-white form-label "><input type="checkbox" value=""><i></i> ' + msg + '</label></li>';
-                _this.parent().parent().find(".wid-all-tasks ul").append(msg);
-                _this.val("");
-                _this.focus();
-            }
-        });
-
-
-
-
+app.directive('menuheight', ['$timeout', function($window) {
+  return function(scope, element, attrs) {
+    var w = angular.element($window);
+    var changeNavHeight = function() {
+      //console.log($scope.settings.menuProfile);
+      if (angular.element(".page-sidebar.collapseit").length ||
+        angular.element(".page-sidebar.chat_shift").length) {
+        var navHeight = angular.element(
+            "#main-content section.wrapper .content-wrapper").innerHeight() +
+          90;
+      } else {
+        var navHeight = $(window).innerHeight() - 60;
+        //console.log("hi1 "+navHeight);
       }
-
+      //console.log("hi "+navHeight);
+      element.height(navHeight);
     };
-  }]);;app.filter('startBlogFrom', function () {
+    w.bind('resize', function() {
+      changeNavHeight();
+    });
+    changeNavHeight();
+  }
+}]);
+
+app.directive('searchgroup', ['$timeout', function($timeout) {
+  return {
+    restrict: 'AC',
+    link: function(scope, el, attr) {
+
+      el.on('focus', 'input.form-control', function(e) {
+        var _this = $(this);
+        _this.parent().parent().parent().addClass("focus");
+      });
+      el.on('blur', 'input.form-control', function(e) {
+        var _this = $(this);
+        _this.parent().parent().parent().removeClass("focus");
+      });
+
+      el.on('click', '.input-focus', function(e) {
+        var _this = $(this);
+        _this.parent().find(".form-control").focus();
+        _this.parent().parent().addClass("focus");
+      });
+
+
+    }
+
+  };
+}]);
+
+
+app.directive('inputgroup', ['$timeout', function($timeout) {
+  return {
+    restrict: 'AC',
+    link: function(scope, el, attr) {
+
+      el.on('focus', 'input.form-control', function(e) {
+        var _this = $(this);
+        _this.parent().addClass("focus");
+      });
+      el.on('blur', 'input.form-control', function(e) {
+        var _this = $(this);
+        _this.parent().removeClass("focus");
+      });
+
+      el.on('click', '.input-group-addon', function(e) {
+        var _this = $(this);
+        _this.parent().find(".form-control").focus();
+        _this.parent().addClass("focus");
+      });
+
+
+    }
+
+  };
+}]);
+
+
+app.directive('chatapifocus', ['$timeout', function($timeout) {
+  return {
+    restrict: 'AC',
+    link: function(scope, el, attr) {
+
+      el.on('focus', 'input.form-control', function(e) {
+        var _this = $(this);
+        _this.parent().find("i").addClass("primary");
+      });
+      el.on('blur', 'input.form-control', function(e) {
+        var _this = $(this);
+        _this.parent().find("i").removeClass("primary");
+      });
+
+      el.on('click', 'i', function(e) {
+        var _this = $(this);
+        _this.parent().find(".form-control").focus();
+        _this.addClass("primary");
+      });
+
+
+    }
+
+  };
+}]);
+
+
+app.directive('verticalrhythm', ['$timeout', function($timeout) {
+  return {
+    restrict: 'AC',
+    link: function(scope, el, attr) {
+
+      el.on('click', 'i', function(e) {
+        var _this = $(this);
+        _this.parent().toggleClass("vertical-test-on");
+      });
+    }
+
+  };
+}]);
+;app.directive('uiTodowidget', ['$timeout', function($timeout) {
+  return {
+    restrict: 'AC',
+    link: function(scope, el, attr) {
+
+      el.on('change', '.icheck input', function(e) {
+        var _this = $(this);
+        _this.parent().parent().toggleClass("checked") && e.preventDefault();
+      });
+
+      el.on('keypress', '.wid-add-task input', function(e) {
+        if (e.keyCode == 13) {
+          var _this = $(this);
+          var msg = _this.val();
+          var msg =
+            '<li><label class="icheck icheck-white form-label "><input type="checkbox" value=""><i></i> ' +
+            msg + '</label></li>';
+          _this.parent().parent().find(".wid-all-tasks ul").append(
+            msg);
+          _this.val("");
+          _this.focus();
+        }
+      });
+
+
+
+    }
+
+  };
+}]);
+;app.filter('startBlogFrom', function () {
 	return function (input, start) {
 		if (input) {
 			start = +start;
@@ -4848,13 +4195,13 @@ angular.module('app')
 });;'use strict';
 
 /* Filters */
-// need load the moment.js to use this filter. 
-angular.module('app')
-  .filter('fromNow', function() {
-    return function(date) {
-      return moment(date).fromNow();
-    }
-  });;app.filter('startSearchFrom', function () {
+// need load the moment.js to use this filter.
+app.filter('fromNow', function() {
+  return function(date) {
+    return moment(date).fromNow();
+  }
+});
+;app.filter('startSearchFrom', function () {
 	return function (input, start) {
 		if (input) {
 			start = +start;
@@ -5260,6 +4607,50 @@ app.controller('MapCtrl', ['$scope', function ($scope) {
     'click dblclick');
 
 })();
+;app.config(['$stateProvider', '$urlRouterProvider', 'JQ_CONFIG',
+  function($stateProvider, $urlRouterProvider, JQ_CONFIG) {
+
+    // For any unmatched url, redirect to /state1
+    /**
+     * Default Route
+     * @param  {[type]} "/account/expenditure" [description]
+     * @return {[type]}                        [description]
+     */
+    $urlRouterProvider.otherwise("/dashboard");
+
+    // Now set up the states
+    /**
+     * [state description]
+     * @param  {[type]} 'test'       [description]
+     * @param  {[type]} {                                                            url: '/test' [description]
+     * @param  {[type]} views:       {                                                                          '':           {        controller: 'publicCtrl' [description]
+     * @param  {[type]} templateUrl: 'app/partials/public/index.html' [description]
+     * @param  {[type]} }                                                            }            }             [description]
+     * @return {[type]}              [description]
+     */
+    $stateProvider.state('app', {
+        abstract: true,
+        url: '/app',
+        templateUrl: '../admin-app/partials/app.html'
+      })
+      .state('app.dashboard', {
+        url: '/dashboard',
+        templateUrl: '../admin-app/partials/app_dashboard.html'
+        //resolve: {
+        //  deps: ['$ocLazyLoad',
+        //    function($ocLazyLoad) {
+        //      return $ocLazyLoad.load('chart.js').then(
+        //        function() {
+        //          return $ocLazyLoad.load(
+        //            'js/controllers/dashboard.js');
+        //        }
+        //      );
+        //    }
+        //  ]
+        //}
+      });
+  }
+])
 ;// A RESTful factory for retreiving mails from 'mails.json'
 app.factory('mails', ['$http', function ($http) {
   var path = 'data/mail/mails.json';
@@ -5285,13 +4676,14 @@ app.factory('mails', ['$http', function ($http) {
 /**
  * 0.1.1
  * Deferred load js/css file, used for ui-jq.js and Lazy Loading.
- * 
+ *
  * @ flatfull.com All Rights Reserved.
  * Author url: http://themeforest.net/user/flatfull
  */
 
 angular.module('ui.load', [])
-	.service('uiLoad', ['$document', '$q', '$timeout', function ($document, $q, $timeout) {
+	.service('uiLoad', ['$document', '$q', '$timeout', function($document, $q,
+		$timeout) {
 
 		var loaded = [];
 		var promise = false;
@@ -5302,19 +4694,20 @@ angular.module('ui.load', [])
 		 * @param srcs array, script or css
 		 * @returns {*} Promise that will be resolved once the sources has been loaded.
 		 */
-		this.load = function (srcs) {
+		this.load = function(srcs) {
 			srcs = angular.isArray(srcs) ? srcs : srcs.split(/\s+/);
 			var self = this;
-			if(!promise){
+			if (!promise) {
 				promise = deferred.promise;
 			}
-      angular.forEach(srcs, function(src) {
-      	promise = promise.then( function(){
-      		return src.indexOf('.css') >=0 ? self.loadCSS(src) : self.loadScript(src);
-      	} );
-      });
-      deferred.resolve();
-      return promise;
+			angular.forEach(srcs, function(src) {
+				promise = promise.then(function() {
+					return src.indexOf('.css') >= 0 ? self.loadCSS(src) : self.loadScript(
+						src);
+				});
+			});
+			deferred.resolve();
+			return promise;
 		}
 
 		/**
@@ -5322,19 +4715,19 @@ angular.module('ui.load', [])
 		 * @param src The url of the script to load dynamically
 		 * @returns {*} Promise that will be resolved once the script has been loaded.
 		 */
-		this.loadScript = function (src) {
-			if(loaded[src]) return loaded[src].promise;
+		this.loadScript = function(src) {
+			if (loaded[src]) return loaded[src].promise;
 
 			var deferred = $q.defer();
 			var script = $document[0].createElement('script');
 			script.src = src;
-			script.onload = function (e) {
-				$timeout(function () {
+			script.onload = function(e) {
+				$timeout(function() {
 					deferred.resolve(e);
 				});
 			};
-			script.onerror = function (e) {
-				$timeout(function () {
+			script.onerror = function(e) {
+				$timeout(function() {
 					deferred.reject(e);
 				});
 			};
@@ -5349,21 +4742,21 @@ angular.module('ui.load', [])
 		 * @param href The url of the CSS to load dynamically
 		 * @returns {*} Promise that will be resolved once the CSS file has been loaded.
 		 */
-		this.loadCSS = function (href) {
-			if(loaded[href]) return loaded[href].promise;
+		this.loadCSS = function(href) {
+			if (loaded[href]) return loaded[href].promise;
 
 			var deferred = $q.defer();
 			var style = $document[0].createElement('link');
 			style.rel = 'stylesheet';
 			style.type = 'text/css';
 			style.href = href;
-			style.onload = function (e) {
-				$timeout(function () {
+			style.onload = function(e) {
+				$timeout(function() {
 					deferred.resolve(e);
 				});
 			};
-			style.onerror = function (e) {
-				$timeout(function () {
+			style.onerror = function(e) {
+				$timeout(function() {
 					deferred.reject(e);
 				});
 			};
@@ -5372,7 +4765,8 @@ angular.module('ui.load', [])
 
 			return deferred.promise;
 		};
-}]);;angular.module('templates-dist', ['../public/app/partials/account/index.html', '../public/app/partials/account/login.html', '../public/app/partials/home/about.html', '../public/app/partials/home/banner.html', '../public/app/partials/home/features.html', '../public/app/partials/home/footer.html', '../public/app/partials/home/header.html', '../public/app/partials/home/index.html', '../public/app/partials/home/partners.html', '../public/app/partials/home/sub-header.html', '../public/app/partials/test/index.html']);
+	}]);
+;angular.module('templates-dist', ['../public/app/partials/account/index.html', '../public/app/partials/account/login.html', '../public/app/partials/home/about.html', '../public/app/partials/home/banner.html', '../public/app/partials/home/features.html', '../public/app/partials/home/footer.html', '../public/app/partials/home/header.html', '../public/app/partials/home/index.html', '../public/app/partials/home/partners.html', '../public/app/partials/home/sub-header.html', '../public/app/partials/test/index.html']);
 
 angular.module("../public/app/partials/account/index.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("../public/app/partials/account/index.html",

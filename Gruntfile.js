@@ -78,7 +78,8 @@ module.exports = function(grunt) {
 
     watch: {
       dev: {
-        files: ['Gruntfile.js', 'public/app/**/*.js', '**/*.html',
+        files: ['Gruntfile.js', 'public/app/**/*.js',
+          'public/admin-app/**/*.js', '**/*.html',
           'resources/assets/sass/*.scss'
         ],
         tasks: ['html2js:dist', 'sass', 'concat',

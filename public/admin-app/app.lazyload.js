@@ -1,76 +1,70 @@
 // lazyload config
 
-angular.module('app')
-  /**
-   * jQuery plugin config use ui-jq directive , config the js and css files that required
-   * key: function name of the jQuery plugin
-   * value: array of the css js file located
-   */
-  .constant('JQ_CONFIG', {
-    easyPieChart: [
-      'libs/jquery.easy-pie-chart/dist/jquery.easypiechart.fill.js'
-    ],
-    plot: ['libs/flot/jquery.flot.js',
-      'libs/flot/jquery.flot.pie.js',
-      'libs/flot/jquery.flot.resize.js',
-      'libs/flot.tooltip/js/jquery.flot.tooltip.js',
-      'libs/flot.orderbars/js/jquery.flot.orderBars.js',
-      'libs/flot-spline/js/jquery.flot.spline.js'
-    ],
-    knob: ['libs/jquery-knob/dist/jquery.knob.min.js',
-      'js/jq/chart-knobs.js'
-    ],
-    isotobe: ['js/uport_isotobe.js',
-      'js/uport_isotobe_script.js'
-    ],
-    dataTable: [
-      'libs/datatables/media/js/jquery.dataTables.min.js',
-      'libs/plugins/integration/bootstrap/3/dataTables.bootstrap.js',
-      'libs/plugins/integration/bootstrap/3/dataTables.bootstrap.css'
-    ],
-    footable: ['libs/footable/dist/footable.all.min.js',
-      'libs/footable/css/footable.core.css'
-    ],
-    fullcalendar: ['libs/moment/moment.js',
-      'libs/fullcalendar/dist/fullcalendar.min.js',
-      'libs/fullcalendar/dist/fullcalendar.css',
-      'libs/fullcalendar/dist/fullcalendar.theme.css'
-    ],
-    vectorMap: [
-      'libs/bower-jvectormap/jquery-jvectormap-1.2.2.min.js',
-      'libs/bower-jvectormap/jquery-jvectormap-world-mill-en.js',
-      'libs/bower-jvectormap/jquery-jvectormap-us-aea-en.js',
-      'libs/bower-jvectormap/jquery-jvectormap-1.2.2.css'
-    ],
-    sortable: ['libs/html5sortable/jquery.sortable.js'],
-    nestable: ['libs/nestable/jquery.nestable.js'],
-    moment: ['libs/moment/moment.js'],
-    daterangepicker: ['libs/moment/moment.js',
-      'libs/bootstrap-daterangepicker/daterangepicker.js',
-      'libs/bootstrap-daterangepicker/daterangepicker-bs3.css'
-    ],
-    tagsinput: [
-      'libs/bootstrap-tagsinput/dist/bootstrap-tagsinput.js',
-      'libs/bootstrap-tagsinput/dist/bootstrap-tagsinput.css'
-    ],
-    jqueryui: ['libs/jquery-ui/ui/minified/jquery-ui.min.js',
-      'libs/jquery-ui/themes/smoothness/jquery-ui.css',
-      'js/controllers/ui.slider.js'
-    ],
-    TouchSpin: [
-      'libs/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js',
-      'libs/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css'
-    ],
-    chosen: ['libs/chosen/chosen.jquery.min.js',
-      'libs/bootstrap-chosen/bootstrap-chosen.css'
-    ],
-    wysiwyg: ['libs/bootstrap-wysiwyg/bootstrap-wysiwyg.js',
-      'libs/bootstrap-wysiwyg/external/jquery.hotkeys.js'
-    ],
-    sparkline: [
-      'libs/jquery.sparkline/dist/jquery.sparkline.retina.js'
-    ]
-  })
+app.constant('JQ_CONFIG', {
+  easyPieChart: [
+    'libs/jquery.easy-pie-chart/dist/jquery.easypiechart.fill.js'
+  ],
+  plot: ['libs/flot/jquery.flot.js',
+    'libs/flot/jquery.flot.pie.js',
+    'libs/flot/jquery.flot.resize.js',
+    'libs/flot.tooltip/js/jquery.flot.tooltip.js',
+    'libs/flot.orderbars/js/jquery.flot.orderBars.js',
+    'libs/flot-spline/js/jquery.flot.spline.js'
+  ],
+  knob: ['libs/jquery-knob/dist/jquery.knob.min.js',
+    'js/jq/chart-knobs.js'
+  ],
+  isotobe: ['js/uport_isotobe.js',
+    'js/uport_isotobe_script.js'
+  ],
+  dataTable: [
+    'libs/datatables/media/js/jquery.dataTables.min.js',
+    'libs/plugins/integration/bootstrap/3/dataTables.bootstrap.js',
+    'libs/plugins/integration/bootstrap/3/dataTables.bootstrap.css'
+  ],
+  footable: ['libs/footable/dist/footable.all.min.js',
+    'libs/footable/css/footable.core.css'
+  ],
+  fullcalendar: ['libs/moment/moment.js',
+    'libs/fullcalendar/dist/fullcalendar.min.js',
+    'libs/fullcalendar/dist/fullcalendar.css',
+    'libs/fullcalendar/dist/fullcalendar.theme.css'
+  ],
+  vectorMap: [
+    'libs/bower-jvectormap/jquery-jvectormap-1.2.2.min.js',
+    'libs/bower-jvectormap/jquery-jvectormap-world-mill-en.js',
+    'libs/bower-jvectormap/jquery-jvectormap-us-aea-en.js',
+    'libs/bower-jvectormap/jquery-jvectormap-1.2.2.css'
+  ],
+  sortable: ['libs/html5sortable/jquery.sortable.js'],
+  nestable: ['libs/nestable/jquery.nestable.js'],
+  moment: ['libs/moment/moment.js'],
+  daterangepicker: ['libs/moment/moment.js',
+    'libs/bootstrap-daterangepicker/daterangepicker.js',
+    'libs/bootstrap-daterangepicker/daterangepicker-bs3.css'
+  ],
+  tagsinput: [
+    'libs/bootstrap-tagsinput/dist/bootstrap-tagsinput.js',
+    'libs/bootstrap-tagsinput/dist/bootstrap-tagsinput.css'
+  ],
+  jqueryui: ['libs/jquery-ui/ui/minified/jquery-ui.min.js',
+    'libs/jquery-ui/themes/smoothness/jquery-ui.css',
+    'js/controllers/ui.slider.js'
+  ],
+  TouchSpin: [
+    'libs/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js',
+    'libs/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css'
+  ],
+  chosen: ['libs/chosen/chosen.jquery.min.js',
+    'libs/bootstrap-chosen/bootstrap-chosen.css'
+  ],
+  wysiwyg: ['libs/bootstrap-wysiwyg/bootstrap-wysiwyg.js',
+    'libs/bootstrap-wysiwyg/external/jquery.hotkeys.js'
+  ],
+  sparkline: [
+    'libs/jquery.sparkline/dist/jquery.sparkline.retina.js'
+  ]
+})
 
 // oclazyload config
 .config(['$ocLazyLoadProvider', function($ocLazyLoadProvider) {

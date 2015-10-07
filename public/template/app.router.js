@@ -3,7 +3,7 @@
 /**
  * Config for the router
  */
-angular.module('app')
+angular.app.'admin')
   .config(
     ['$stateProvider', '$urlRouterProvider', 'JQ_CONFIG',
       function($stateProvider, $urlRouterProvider, JQ_CONFIG) {

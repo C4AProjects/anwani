@@ -1,4 +1,4 @@
-var app = angular.module("buymore", ['ui.router','restangular','smart-table','chart.js','textAngular','angularMoment','ui.bootstrap']);
+var app = angular.app."buymore", ['ui.router','restangular','smart-table','chart.js','textAngular','angularMoment','ui.bootstrap']);
 
 app.config(function(RestangularProvider) {
   RestangularProvider.setBaseUrl('http://new.buymore.co.ke');
@@ -215,9 +215,9 @@ return {
             }
 
         });
-});;angular.module('templates-dist', ['../ng_app/partials/admin/filter.html', '../ng_app/partials/admin/header.html', '../ng_app/partials/admin/index.html', '../ng_app/partials/admin/user-banner.html', '../ng_app/partials/directives/footer.html', '../ng_app/partials/directives/head.html', '../ng_app/partials/expenditure/expenditure-category-time.html', '../ng_app/partials/expenditure/expenditure-category.html', '../ng_app/partials/expenditure/expenditure-feed.html', '../ng_app/partials/expenditure/expenditure-list.html', '../ng_app/partials/expenditure/expenditure-pie.html', '../ng_app/partials/expenditure/expenditure-spread.html', '../ng_app/partials/expenditure/index.html', '../ng_app/partials/pages/about.html', '../ng_app/partials/pages/benefits.html', '../ng_app/partials/pages/how.html', '../ng_app/partials/pages/requirements.html', '../ng_app/partials/pages/signup_form.html', '../ng_app/partials/pages/testimonials.html', '../ng_app/partials/public/header.html', '../ng_app/partials/public/home.html']);
+});;angular.app.'templates-dist', ['../ng_app/partials/admin/filter.html', '../ng_app/partials/admin/header.html', '../ng_app/partials/admin/index.html', '../ng_app/partials/admin/user-banner.html', '../ng_app/partials/directives/footer.html', '../ng_app/partials/directives/head.html', '../ng_app/partials/expenditure/expenditure-category-time.html', '../ng_app/partials/expenditure/expenditure-category.html', '../ng_app/partials/expenditure/expenditure-feed.html', '../ng_app/partials/expenditure/expenditure-list.html', '../ng_app/partials/expenditure/expenditure-pie.html', '../ng_app/partials/expenditure/expenditure-spread.html', '../ng_app/partials/expenditure/index.html', '../ng_app/partials/pages/about.html', '../ng_app/partials/pages/benefits.html', '../ng_app/partials/pages/how.html', '../ng_app/partials/pages/requirements.html', '../ng_app/partials/pages/signup_form.html', '../ng_app/partials/pages/testimonials.html', '../ng_app/partials/public/header.html', '../ng_app/partials/public/home.html']);
 
-angular.module("../ng_app/partials/admin/filter.html", []).run(["$templateCache", function($templateCache) {
+angular.app."../ng_app/partials/admin/filter.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("../ng_app/partials/admin/filter.html",
     "<nav>\n" +
     "    <div class=\"nav-wrapper\">\n" +
@@ -231,7 +231,7 @@ angular.module("../ng_app/partials/admin/filter.html", []).run(["$templateCache"
     "  </nav>");
 }]);
 
-angular.module("../ng_app/partials/admin/header.html", []).run(["$templateCache", function($templateCache) {
+angular.app."../ng_app/partials/admin/header.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("../ng_app/partials/admin/header.html",
     "<nav id='main'>\n" +
     "    <div class=\"nav-wrapper\">\n" +
@@ -263,7 +263,7 @@ angular.module("../ng_app/partials/admin/header.html", []).run(["$templateCache"
     "  </script>");
 }]);
 
-angular.module("../ng_app/partials/admin/index.html", []).run(["$templateCache", function($templateCache) {
+angular.app."../ng_app/partials/admin/index.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("../ng_app/partials/admin/index.html",
     "<div ui-view=\"user-banner\"></div>\n" +
     "<div ui-view=\"header\"></div>\n" +
@@ -271,7 +271,7 @@ angular.module("../ng_app/partials/admin/index.html", []).run(["$templateCache",
     "<div ui-view></div>");
 }]);
 
-angular.module("../ng_app/partials/admin/user-banner.html", []).run(["$templateCache", function($templateCache) {
+angular.app."../ng_app/partials/admin/user-banner.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("../ng_app/partials/admin/user-banner.html",
     "<div class=\"row\">\n" +
     "	<div class=\"col m3\">\n" +
@@ -298,7 +298,7 @@ angular.module("../ng_app/partials/admin/user-banner.html", []).run(["$templateC
     "</div>");
 }]);
 
-angular.module("../ng_app/partials/directives/footer.html", []).run(["$templateCache", function($templateCache) {
+angular.app."../ng_app/partials/directives/footer.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("../ng_app/partials/directives/footer.html",
     "<nav class=\"navbar navbar-default footer\">\n" +
     "    <div class=\"container-fluid\">\n" +
@@ -333,12 +333,12 @@ angular.module("../ng_app/partials/directives/footer.html", []).run(["$templateC
     "");
 }]);
 
-angular.module("../ng_app/partials/directives/head.html", []).run(["$templateCache", function($templateCache) {
+angular.app."../ng_app/partials/directives/head.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("../ng_app/partials/directives/head.html",
     "");
 }]);
 
-angular.module("../ng_app/partials/expenditure/expenditure-category-time.html", []).run(["$templateCache", function($templateCache) {
+angular.app."../ng_app/partials/expenditure/expenditure-category-time.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("../ng_app/partials/expenditure/expenditure-category-time.html",
     "<div class=\"card\">\n" +
     "            <div class=\"card-content\">\n" +
@@ -348,7 +348,7 @@ angular.module("../ng_app/partials/expenditure/expenditure-category-time.html", 
     "  </div>");
 }]);
 
-angular.module("../ng_app/partials/expenditure/expenditure-category.html", []).run(["$templateCache", function($templateCache) {
+angular.app."../ng_app/partials/expenditure/expenditure-category.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("../ng_app/partials/expenditure/expenditure-category.html",
     "<div class=\"card\">\n" +
     "            <div class=\"card-content\">\n" +
@@ -358,7 +358,7 @@ angular.module("../ng_app/partials/expenditure/expenditure-category.html", []).r
     "  </div>");
 }]);
 
-angular.module("../ng_app/partials/expenditure/expenditure-feed.html", []).run(["$templateCache", function($templateCache) {
+angular.app."../ng_app/partials/expenditure/expenditure-feed.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("../ng_app/partials/expenditure/expenditure-feed.html",
     "<ul class=\"small\">\n" +
     "	<li ng-repeat=\"item in feed\">\n" +
@@ -367,7 +367,7 @@ angular.module("../ng_app/partials/expenditure/expenditure-feed.html", []).run([
     "</ul>");
 }]);
 
-angular.module("../ng_app/partials/expenditure/expenditure-list.html", []).run(["$templateCache", function($templateCache) {
+angular.app."../ng_app/partials/expenditure/expenditure-list.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("../ng_app/partials/expenditure/expenditure-list.html",
     "<ul class=\"small\">\n" +
     "	<li ng-repeat=\"item in items\">\n" +
@@ -376,7 +376,7 @@ angular.module("../ng_app/partials/expenditure/expenditure-list.html", []).run([
     "</ul>");
 }]);
 
-angular.module("../ng_app/partials/expenditure/expenditure-pie.html", []).run(["$templateCache", function($templateCache) {
+angular.app."../ng_app/partials/expenditure/expenditure-pie.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("../ng_app/partials/expenditure/expenditure-pie.html",
     "<div class=\"card small\">\n" +
     "            <div class=\"card-content\">\n" +
@@ -385,7 +385,7 @@ angular.module("../ng_app/partials/expenditure/expenditure-pie.html", []).run(["
     "          </div>");
 }]);
 
-angular.module("../ng_app/partials/expenditure/expenditure-spread.html", []).run(["$templateCache", function($templateCache) {
+angular.app."../ng_app/partials/expenditure/expenditure-spread.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("../ng_app/partials/expenditure/expenditure-spread.html",
     "<div class=\"card\">\n" +
     "            <div class=\"card-content\">\n" +
@@ -395,7 +395,7 @@ angular.module("../ng_app/partials/expenditure/expenditure-spread.html", []).run
     "  </div>");
 }]);
 
-angular.module("../ng_app/partials/expenditure/index.html", []).run(["$templateCache", function($templateCache) {
+angular.app."../ng_app/partials/expenditure/index.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("../ng_app/partials/expenditure/index.html",
     "<div class=\"row inner\">\n" +
     "<h5>How You Spent Your Money</h5>\n" +
@@ -434,7 +434,7 @@ angular.module("../ng_app/partials/expenditure/index.html", []).run(["$templateC
     "");
 }]);
 
-angular.module("../ng_app/partials/pages/about.html", []).run(["$templateCache", function($templateCache) {
+angular.app."../ng_app/partials/pages/about.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("../ng_app/partials/pages/about.html",
     "<section>\n" +
     "    <carousel interval=\"2000\">\n" +
@@ -448,7 +448,7 @@ angular.module("../ng_app/partials/pages/about.html", []).run(["$templateCache",
     "</section>");
 }]);
 
-angular.module("../ng_app/partials/pages/benefits.html", []).run(["$templateCache", function($templateCache) {
+angular.app."../ng_app/partials/pages/benefits.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("../ng_app/partials/pages/benefits.html",
     "<section class=\"full-page\" id=\"benefits\">\n" +
     "        <section class=\"row\" >\n" +
@@ -472,7 +472,7 @@ angular.module("../ng_app/partials/pages/benefits.html", []).run(["$templateCach
     "");
 }]);
 
-angular.module("../ng_app/partials/pages/how.html", []).run(["$templateCache", function($templateCache) {
+angular.app."../ng_app/partials/pages/how.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("../ng_app/partials/pages/how.html",
     "<section class=\"full-page\" id=\"how\">\n" +
     "        <section class=\"row\">\n" +
@@ -503,7 +503,7 @@ angular.module("../ng_app/partials/pages/how.html", []).run(["$templateCache", f
     "");
 }]);
 
-angular.module("../ng_app/partials/pages/requirements.html", []).run(["$templateCache", function($templateCache) {
+angular.app."../ng_app/partials/pages/requirements.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("../ng_app/partials/pages/requirements.html",
     "<section class=\"full-page\" id=\"requirements\">\n" +
     "    <section class=\"row\">\n" +
@@ -520,7 +520,7 @@ angular.module("../ng_app/partials/pages/requirements.html", []).run(["$template
     "");
 }]);
 
-angular.module("../ng_app/partials/pages/signup_form.html", []).run(["$templateCache", function($templateCache) {
+angular.app."../ng_app/partials/pages/signup_form.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("../ng_app/partials/pages/signup_form.html",
     "<div class=\"modal\" tabindex=\"-1\" role=\"dialog\" aria-hidden=\"true\">\n" +
     "    <div class=\"modal-dialog\">\n" +
@@ -547,12 +547,12 @@ angular.module("../ng_app/partials/pages/signup_form.html", []).run(["$templateC
     "");
 }]);
 
-angular.module("../ng_app/partials/pages/testimonials.html", []).run(["$templateCache", function($templateCache) {
+angular.app."../ng_app/partials/pages/testimonials.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("../ng_app/partials/pages/testimonials.html",
     "");
 }]);
 
-angular.module("../ng_app/partials/public/header.html", []).run(["$templateCache", function($templateCache) {
+angular.app."../ng_app/partials/public/header.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("../ng_app/partials/public/header.html",
     "<nav class=\"navbar navbar-default\">\n" +
     "    <div class=\"container-fluid\">\n" +
@@ -614,7 +614,7 @@ angular.module("../ng_app/partials/public/header.html", []).run(["$templateCache
     "");
 }]);
 
-angular.module("../ng_app/partials/public/home.html", []).run(["$templateCache", function($templateCache) {
+angular.app."../ng_app/partials/public/home.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("../ng_app/partials/public/home.html",
     "<header ui-view=\"header\"></header>\n" +
     "<div ui-view=\"about\" class=\"content red\"></div>\n" +
