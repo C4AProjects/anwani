@@ -4651,7 +4651,7 @@ app.controller('MapCtrl', ['$scope', function ($scope) {
           url: '/login',
           templateUrl: '../admin-app/partials/ui-login.html'
         })
-        state('access',{
+        .state('access',{
 
         })
         .state('access.register', {
