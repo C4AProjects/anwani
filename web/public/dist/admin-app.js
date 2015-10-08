@@ -4647,6 +4647,10 @@ app.controller('MapCtrl', ['$scope', function ($scope) {
           //  ]
           //}
         })
+        .state('app.profile', {
+            url: '/profile',
+            templateUrl: '../admin-app/partials/ui-profile.html'
+        })
         .state('login', {
           url: '/login',
           templateUrl: '../admin-app/partials/ui-login.html'

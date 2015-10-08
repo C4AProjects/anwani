@@ -1809,12 +1809,16 @@ a:focus {
 .profile-info.ng-hide-add {
     display: none !important;
 }
+.profile-info:hover{
+    cursor:hand;
+}
 
 .page-sidebar .profile-info {
     background: transparent;
     padding-top: 30px;
     display: inline-block;
     vertical-align: top;
+    cursor: pointer;
 }
 
 .page-sidebar .profile-image,

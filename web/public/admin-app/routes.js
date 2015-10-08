@@ -38,6 +38,10 @@ app.config(['$stateProvider', '$urlRouterProvider', 'JQ_CONFIG',
           //  ]
           //}
         })
+        .state('app.profile', {
+            url: '/profile',
+            templateUrl: '../admin-app/partials/ui-profile.html'
+        })
         .state('login', {
           url: '/login',
           templateUrl: '../admin-app/partials/ui-login.html'
