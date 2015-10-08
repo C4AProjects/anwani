@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="78455709-2407-4658-a7ed-72ed64f9459a" name="Default" comment="Ignoring Idea Folder">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/public/dist/admin-app.js" afterPath="$PROJECT_DIR$/web/public/dist/admin-app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/public/dist/app.js" afterPath="$PROJECT_DIR$/web/public/dist/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/tmp/partials.js" afterPath="$PROJECT_DIR$/web/tmp/partials.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/public/admin-app/routes.js" afterPath="$PROJECT_DIR$/web/public/admin-app/routes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/public/admin-app/partials/ui-login.html" afterPath="$PROJECT_DIR$/web/public/admin-app/partials/ui-login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/public/admin-app/partials/ui-register.html" afterPath="$PROJECT_DIR$/web/public/admin-app/partials/ui-register.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="anwani.iws" />
@@ -42,14 +36,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ui-login.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ui-login.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/public/admin-app/partials/ui-login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8035714">
+            <state vertical-scroll-proportion="-15.0">
               <caret line="24" column="16" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
               <folding>
                 <element signature="n#style#0;n#img#0;n#a#0;n#h1#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.3529412">
+              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -92,10 +96,10 @@
         <option value="$PROJECT_DIR$/web/public/css/app.css" />
         <option value="$PROJECT_DIR$/web/Procfile" />
         <option value="$PROJECT_DIR$/web/public/app/partials/home/header.html" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/web/public/admin-app/partials/ui-register.html" />
         <option value="$PROJECT_DIR$/web/public/admin-app/routes.js" />
         <option value="$PROJECT_DIR$/web/public/admin-app/partials/ui-login.html" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -415,7 +419,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FullScreen" value="true" />
-    <property name="SearchEverywhereHistoryKey" value="routes&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/routes.js&#10;ui-re&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/ui-register.html&#10;ui-login&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/ui-login.html&#10;styles.scss&#9;FILE&#9;file:///var/www/anwani/web/resources/assets/sass/styles.scss&#10;header&#9;FILE&#9;file:///var/www/anwani/web/public/app/partials/home/header.html&#10;app.css&#9;FILE&#9;file:///var/www/anwani/web/public/css/app.css" />
+    <property name="SearchEverywhereHistoryKey" value="git&#9;FILE&#9;file:///var/www/anwani/.gitignore&#10;routes&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/routes.js&#10;ui-re&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/ui-register.html&#10;ui-login&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/ui-login.html&#10;styles.scss&#9;FILE&#9;file:///var/www/anwani/web/resources/assets/sass/styles.scss&#10;header&#9;FILE&#9;file:///var/www/anwani/web/public/app/partials/home/header.html&#10;app.css&#9;FILE&#9;file:///var/www/anwani/web/public/css/app.css" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="recentsLimit" value="5" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
@@ -698,7 +702,7 @@
       <workItem from="1444252566191" duration="69000" />
       <workItem from="1444252654984" duration="1258000" />
       <workItem from="1444277695637" duration="1065000" />
-      <workItem from="1444302143182" duration="927000" />
+      <workItem from="1444302143182" duration="1085000" />
     </task>
     <task id="LOCAL-00001" summary="Ignoring Idea Folder">
       <created>1444252266846</created>
@@ -710,7 +714,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6994000" />
+    <option name="totallyTimeSpent" value="7152000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -852,6 +856,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -887,6 +892,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -915,6 +921,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -992,13 +999,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16997167">
-          <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/resources/assets/sass/bourbon/_bourbon.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1034,11 +1034,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/public/admin-app/partials/ui-login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8035714">
+        <state vertical-scroll-proportion="-15.0">
           <caret line="24" column="16" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
           <folding>
             <element signature="n#style#0;n#img#0;n#a#0;n#h1#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3529412">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
