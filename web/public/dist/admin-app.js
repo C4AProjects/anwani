@@ -4650,7 +4650,19 @@ app.controller('MapCtrl', ['$scope', function ($scope) {
         .state('login', {
           url: '/login',
           templateUrl: '../admin-app/partials/ui-login.html'
-        });
+        })
+        state('access',{
+
+        })
+        .state('access.register', {
+          url: '/register',
+          templateUrl: '../admin-app/partials/ui-register.html'
+        })
+        .state('access.forgot', {
+          url: '/forgot',
+          templateUrl: '../admin-app/partials/ui-forgotpwd.html'
+        })
+    ;
   }
 ])
 ;// A RESTful factory for retreiving mails from 'mails.json'
@@ -4977,7 +4989,7 @@ angular.module("../public/app/partials/home/header.html", []).run(["$templateCac
     "    <li bs-scrollspy du-scrollspy du-smooth-scroll href=\"#home\" data-target=\"#home\"><a style=\"text-transform:uppercase !important\" translate>header.links.one</a></li>\n" +
     "    <li bs-scrollspy du-scrollspy du-smooth-scroll href=\"#about\" data-target=\"#about\"><a style=\"text-transform:uppercase !important\" translate>header.links.two</a></li>\n" +
     "    <li bs-scrollspy du-scrollspy du-smooth-scroll href=\"#features\" data-target=\"#features\"><a style=\"text-transform:uppercase !important\" translate>header.links.three</a></li>\n" +
-    "    <li style=\"padding:10px 15px;margin-left:100px\"><button href=\"\" class=\"btn btn-warning btn-sm\" translate>header.links.four</button></li>\n" +
+    "    <li><a href=\"admin/#/login\" class=\"btn btn-warning btn-sm\" style=\"margin-top:10px;padding:5px;\" translate>header.links.four</a></li>\n" +
     "  </ul>\n" +
     "\n" +
     "</div>\n" +

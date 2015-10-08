@@ -41,6 +41,18 @@ app.config(['$stateProvider', '$urlRouterProvider', 'JQ_CONFIG',
         .state('login', {
           url: '/login',
           templateUrl: '../admin-app/partials/ui-login.html'
-        });
+        })
+        state('access',{
+
+        })
+        .state('access.register', {
+          url: '/register',
+          templateUrl: '../admin-app/partials/ui-register.html'
+        })
+        .state('access.forgot', {
+          url: '/forgot',
+          templateUrl: '../admin-app/partials/ui-forgotpwd.html'
+        })
+    ;
   }
 ])
