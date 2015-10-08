@@ -1809,12 +1809,16 @@ a:focus {
 .profile-info.ng-hide-add {
     display: none !important;
 }
+.profile-info:hover{
+    cursor:hand;
+}
 
 .page-sidebar .profile-info {
     background: transparent;
     padding-top: 30px;
     display: inline-block;
     vertical-align: top;
+    cursor: pointer;
 }
 
 .page-sidebar .profile-image,
@@ -9390,21 +9394,20 @@ border-left: 3px solid transparent;
     Logo
 ----------------------------------------------------------*/
 
-.page-topbar .logo-area {
-    background-image: url('../images/anwani_logo.png');
-    background-repeat: no-repeat;
+.page-topbar .logo-area img {
+padding:20px 0 0 30px;
+    width:150px;
+
 }
 
 .page-topbar.sidebar_shift .logo-area {
-    background-image: url('../images/logo-folded.png');
-    background-repeat: no-repeat;
-    background-position: right top;
+    padding:10px 0 0 20px;
+    width:50px;
 }
 
 .page-topbar.chat_shift .logo-area {
-    background-image: url('../images/logo-folded.png');
-    background-repeat: no-repeat;
-    background-position: right top;
+    padding:10px 0 0 20px;
+    width:50px;
 }
 
 
