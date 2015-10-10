@@ -56,7 +56,7 @@ module.exports = function authorizeAccess(opts) {
         return next(new Error('bad_credentials: Access Token provided is unverified '));
       }
 
-      req._user = token.user;
+      req._user = token.user || token.subscriber || null;
 
       next();
     });
