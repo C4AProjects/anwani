@@ -12,8 +12,9 @@ var tempLocationPic = 'http://icons.iconarchive.com/icons/paomedia/small-n-flat/
 
 var AddressSchema = new Schema({
   user:           { type: Schema.Types.ObjectId, ref: 'User' },
-  short_virtual_code:   { type: String },
-  long_virtual_code:    { type: String },
+  short_plus_code:    { type: String },
+  long_plus_code:     { type: String },
+  virtual_code:       { type: String },
   location_pic:   { type: String , default: tempLocationPic },
   latitude:       { type: Number },
   longitude:      { type: Number },
@@ -21,6 +22,7 @@ var AddressSchema = new Schema({
   city:           { type: String },
   country:        { type: String },
   archived:       { type: Boolean, default: false },
+  shared:         { type: Boolean, default: false },
   date_created:   Date,
   last_modified:  Date
 });
@@ -53,8 +55,8 @@ AddressSchema.pre('save', function preSaveMiddleware(next) {
  */
 AddressSchema.statics.whitelist = {
   _id: 1,
-  short_virtual_code:   1,
-  long_virtual_code:   1,
+  short_plus_code:   1,
+  long_plus_code:   1,
   location_pic:   1,
   latitude:       1,
   longitude:      1,
@@ -63,7 +65,9 @@ AddressSchema.statics.whitelist = {
   country:        1,
   user:           1,
   archived:       1,
-  date_created:   1
+  date_created:   1,
+  shared:         1,
+  virtual_code: 1
 };
 
 
