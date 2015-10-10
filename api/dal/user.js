@@ -13,7 +13,8 @@ var Address   = require('../models/address');
 var returnFields = User.whitelist;
 var population = [{
   path: 'addresses',
-  select: Address.whitelist
+  select: Address.whitelist,
+  match: { archived: false }
 }];
 
 /**
@@ -120,12 +121,19 @@ exports.update = function update(query, updates,  cb) {
     select: returnFields
   };
 
-  updates.$set = updates.$set || {};
+  var data = {};
 
-  updates.$set.last_modified = now;
+  data.$set = updates.$set || {};
+
+  data.$set.last_modified = now;
+
+  (Object.keys(updates)).forEach(function (key) {
+    data[key] = updates[key];
+  });
+
 
   User
-    .findOneAndUpdate(query, updates, opts)
+    .findOneAndUpdate(query, data, opts)
     .populate(population)
     .exec(function updateUser(err, user) {
       if(err) {
