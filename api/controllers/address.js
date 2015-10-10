@@ -2,6 +2,7 @@
  * Load Module Dependencies.
  */
 var EventEmitter = require('events').EventEmitter;
+var crypto = require('crypto');
 
 var debug = require('debug')('anwani-api:address-controller');
 var async = require('async');
@@ -16,10 +17,33 @@ var User         = require('../dal/user');
 var UserModel    = require('../models/user');
 var olc          = require('../lib/olc');
 
+function createVirtualCode(cb) {
+  crypto.randomBytes(config.VIRTUAL_CODE_LENGTH, function (err, buf) {
+    if(err) {
+      err.message = 'Problem creating virtual code';
+      return cb(err);
+    }
+
+    buf = buf.toString('hex').toUpperCase();
+
+    var query = { virtual_code: buf };
+
+    Address.get(query, function (err, address) {
+      if(err) {
+        return cb(err);
+      }
+
+      if(address._id) {
+        createVirtualCode(cb);
+      } else {
+        cb(null, buf);
+      }
+    });
+  });
+}
+
 /**
- * Create a address.
- *
- * @desc create a address and add them to the database
+ * Create a new address
  *
  * @param {Object} req HTTP Request Object
  * @param {Object} res HTTP Response Object
@@ -28,9 +52,16 @@ var olc          = require('../lib/olc');
 exports.create = function createAddress(req, res, next) {
   debug('create address');
 
+  if(!req._user) {
+    return next(CustomError({
+      name: 'AUTHORIZATION_ERROR',
+      message: 'Your are not logged in'
+    }));
+  }
 
   // Begin workflow
   var workflow = new EventEmitter();
+  var body  = req.body;
 
   // validating address data
   // cant trust anyone
@@ -44,39 +75,31 @@ exports.create = function createAddress(req, res, next) {
       }));
     }
 
-    workflow.emit('createAddress');
+    workflow.emit('createVirtualCode');
+  });
+
+  workflow.on('createVirtualCode', function () {
+    createVirtualCode(function (err, code) {
+      if(err) {
+        return done(CustomError({
+          name: 'ADDRESS_CREATION_ERROR',
+          message: err.message,
+          status: 500
+        }));
+      }
+
+
+      body.virtual_code = code;
+
+      workflow.emit('createAddress');
+    });
   });
 
   workflow.on('createAddress', function createAddress() {
-    var body = req.body;
-    var userInfo = {
-      first_name   : body.first_name || '',
-      last_name    : body.last_name || '',
-      other_name   : body.other_name || '',
-      password     : body.password || '',
-      phone_number : body.phone_number || ''
-    };
-    var addressInfo = {
-      location_pic       : body.location_pic,
-      short_virtual_code : body.short_virtual_code,
-      long_virtual_code  : body.long_virtual_code,
-      latitude           : body.latitude,
-      longitude          : body.longitude,
-      street_address     : body.street_address,
-      city               : body.city,
-      country            : body.country
-    };
 
     async.waterfall([
-      function createOrRetrieveUser(done) {
-        if(!userInfo.phone_number) {
-          return done(CustomError({
-            name: 'ADDRESS_CREATION_ERROR',
-            message: 'Please provide a phone_number for your account'
-          }));
-        }
-
-        UserModel.findOne({ phone_number: body.phone_number }, function (err, user) {
+      function retrieveUser(done) {
+        User.get({ _id: body.user }, function (err, user) {
           if(err) {
             return done(CustomError({
               name: 'ADDRESS_CREATION_ERROR',
@@ -85,65 +108,14 @@ exports.create = function createAddress(req, res, next) {
             }));
           }
 
-          if(user && user.phone_number && !user.archived) {
-            return done(null, user);
-          }
-
-
-          if(!userInfo.password) {
+          if(!user._id) {
             return done(CustomError({
               name: 'ADDRESS_CREATION_ERROR',
-              message: 'Please provide a pin for your account'
+              message: 'user - ' + body.user + ' does not exist'
             }));
           }
 
-          if(user && user.archived) {
-            UserModel.hashPasswd(userInfo.password, function (err, hash) {
-              if(err) {
-                return done(CustomError({
-                  name: 'ADDRESS_CREATION_ERROR',
-                  message: err.message,
-                  status: 500
-                }));
-              }
-
-
-              var update = {
-                $set: { password: hash, archived: false }
-              };
-              var query = {
-                _id: user._id
-              };
-
-              User.update(query, update, function cb(err, user) {
-                if(err) {
-                  return next(CustomError({
-                    name: 'SERVER_ERROR',
-                    message: err.message,
-                    status: 500
-                  }));
-                }
-
-                return done(null, user);
-
-              });
-
-            });
-
-           } else {
-             User.create(userInfo, function(err, doc) {
-               if(err) {
-                 return done(CustomError({
-                   name: 'ADDRESS_CREATION_ERROR',
-                   message: err.message,
-                   status: 500
-                 }));
-               }
-
-               return done(null, doc);
-             });
-
-           }
+          return done(null, user);
 
         });
       },
@@ -159,40 +131,76 @@ exports.create = function createAddress(req, res, next) {
         }
       },
       function createAddress(user, done) {
-        addressInfo.user = user._id;
+        Address.create(body, done);
+      },
+      function updateAddress(data, done) {
+        var address = data.address;
 
-        Address.create(addressInfo, function (err, data) {
-          if(err) {
-            return done(CustomError({
-              name: 'ADDRESS_CREATION_ERROR',
-              message: err.message,
-              status: 500
-            }));
-          }
+        if(!data.isNew) {
+          if(address.archived) {
+            var query = {
+              _id: address._id
+            };
+            var updates = {
+              archived: false
+            };
 
-          var address = data.address;
-
-          if(!data.isNew) {
-            return done(null, address);
-
-          } else {
-            var update = { $push: { addresses: address._id } };
-
-            User.update({ _id: address.user }, update, function (err) {
+            Address.update(query, updates, function (err, addr) {
               if(err) {
-                return done(CustomError({
-                  name: 'ADDRESS_CREATION_ERROR',
-                  message: err.message,
-                  status: 500
-                }));
+                return done(err);
               }
 
-              return done(null, address);
+              return done(null, addr, data.isNew);
 
             });
-          }
+          } else {
+            return done(null, address, data.isNew);
 
-        });
+          }
+        } else {
+          return done(null, address, data.isNew);
+
+        }
+      },
+      function updateUser(address, isNew, done) {
+        if(isNew) {
+          var update = { $push: { addresses: address._id } };
+
+          User.update({ _id: address.user }, update, function (err) {
+            if(err) {
+              return done(err);
+            }
+
+            return done(null, _.omit(address , 'archived' ));
+
+          });
+        } else {
+          UserModel.findById(address.user, function (err, user) {
+            if(err) {
+              return done(err);
+            }
+
+            var isPresent = user.addresses.some(function(addr) {
+              return address._id.toString() === addr.toString();
+            });
+
+            console.log(isPresent);
+            if(isPresent) {
+              return done(null, _.omit(address , 'archived' ));
+            } else {
+              var update = { $push: { addresses: address._id } };
+
+              User.update({ _id: address.user }, update, function (err) {
+                if(err) {
+                  return done(err);
+                }
+
+                return done(null, _.omit(address , 'archived' ));
+
+              });
+            }
+          });
+        }
       }
     ], function (err, address) {
       if(err) {
@@ -206,6 +214,7 @@ exports.create = function createAddress(req, res, next) {
 
   workflow.emit('validate');
 };
+
 
 /**
  * Get a single address.
@@ -338,7 +347,7 @@ exports.delete = function deleteAddress(req, res, next) {
 exports.fetchAll = function fetchAllAddresss(req, res, next) {
   debug('get a collection of addresss');
 
-  if(!req._user || (req._user.realm !== 'admin')) {
+  if(!req._user || (req._user.role !== 'admin')) {
     return next(CustomError({
       name: 'AUTHORIZATION_ERROR',
       message: 'Your are not logged in or you are not an administrator'
@@ -363,116 +372,6 @@ exports.fetchAll = function fetchAllAddresss(req, res, next) {
   });
 };
 
-/**
- * Create a new address
- *
- * @param {Object} req HTTP Request Object
- * @param {Object} res HTTP Response Object
- * @param {Function} next Middleware dispatcher
- */
-exports.createNew = function createAddress(req, res, next) {
-  debug('create address');
-
-  if(!req._user) {
-    return next(CustomError({
-      name: 'AUTHORIZATION_ERROR',
-      message: 'Your are not logged in'
-    }));
-  }
-
-  // Begin workflow
-  var workflow = new EventEmitter();
-
-  // validating address data
-  // cant trust anyone
-  workflow.on('validate', function validateAddress() {
-    var errs = req.validationErrors();
-
-    if(errs) {
-      return next(CustomError({
-        name: 'ADDRESS_CREATION_ERROR',
-        message: errs.message
-      }));
-    }
-
-    workflow.emit('createAddress');
-  });
-
-  workflow.on('createAddress', function createAddress() {
-    var body = req.body;
-
-    async.waterfall([
-      function retrieveUser(done) {
-        User.get({ _id: body.user }, function (err, user) {
-          if(err) {
-            return done(CustomError({
-              name: 'ADDRESS_CREATION_ERROR',
-              message: err.message,
-              status: 500
-            }));
-          }
-
-          return done(null, user);
-
-        });
-      },
-      function maxAddressesReached(user, done) {
-        if(user.addresses.length > config.MAX_ADDRESSES) {
-          return done(CustomError({
-            name: 'ADDRESS_CREATION_ERROR',
-            message: 'Max Number of addresses reached'
-          }));
-        } else {
-          return done(null, user);
-        }
-      },
-      function createAddress(done) {
-
-        Address.create(body, function (err, data) {
-          if(err) {
-            return done(CustomError({
-              name: 'ADDRESS_CREATION_ERROR',
-              message: err.message,
-              status: 500
-            }));
-          }
-
-          var address = data.address;
-
-          if(!data.isNew) {
-            return done(null, address);
-
-          } else {
-            var update = { $push: { addresses: address._id } };
-
-            User.update({ _id: address.user }, update, function (err) {
-              if(err) {
-                return done(CustomError({
-                  name: 'ADDRESS_CREATION_ERROR',
-                  message: err.message,
-                  status: 500
-                }));
-              }
-
-              return done(null, address);
-
-            });
-          }
-
-        });
-      }
-    ], function (err, address) {
-      if(err) {
-        return next(err);
-      }
-
-      res.status(201).json(address);
-    });
-
-  });
-
-  workflow.emit('validate');
-};
 
 
 /**
@@ -505,6 +404,7 @@ exports.archive = function archiveAddress(req, res, next) {
         status: 500
       }));
     }
+
 
     if(!address._id) {
       return next(CustomError({

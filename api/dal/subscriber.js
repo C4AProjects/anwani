@@ -1,62 +1,57 @@
-// Access Layer for User Data.
+// Access Layer for Subscriber Data.
 
 /**
  * Load Module Dependencies.
  */
-var debug   = require('debug')('anwani-api:dal-user');
+var debug   = require('debug')('anwani-api:dal-subscriber');
 var moment  = require('moment');
 var _       = require('lodash');
 
-var User      = require('../models/user');
-var Address   = require('../models/address');
+var Subscriber      = require('../models/subscriber');
 
-var returnFields = User.whitelist;
-var population = [{
-  path: 'addresses',
-  select: Address.whitelist,
-  match: { archived: false }
-}];
+var returnFields = Subscriber.whitelist;
+var population = [];
 
 /**
- * create a new user.
+ * create a new subscriber.
  *
- * @desc  creates a new user and saves them
+ * @desc  creates a new subscriber and saves them
  *        in the database
  *
- * @param {Object}  userData  Data for the user to create
+ * @param {Object}  subscriberData  Data for the subscriber to create
  * @param {Function} cb       Callback for once saving is complete
  */
-exports.create = function create(userData, cb) {
-  debug('creating a new user');
+exports.create = function create(subscriberData, cb) {
+  debug('creating a new subscriber');
 
-  var searchQuery = { phone_number: userData.phone_number };
+  var searchQuery = { email: subscriberData.email };
 
-  // Make sure user does not exist
-  User.findOne(searchQuery, function userExists(err, isPresent) {
+  // Make sure subscriber does not exist
+  Subscriber.findOne(searchQuery, function subscriberExists(err, isPresent) {
     if(err) {
       return cb(err);
     }
 
     if(isPresent) {
-      return cb(new Error('User Already exists'));
+      return cb(new Error('Subscriber Already exists'));
     }
 
 
-    // Create user if is new.
-    var userModel  = new User(userData);
+    // Create subscriber if is new.
+    var subscriberModel  = new Subscriber(subscriberData);
 
-    userModel.save(function saveUser(err, data) {
+    subscriberModel.save(function saveSubscriber(err, data) {
       if (err) {
         return cb(err);
       }
 
 
-      exports.get({ _id: data._id }, function (err, user) {
+      exports.get({ _id: data._id }, function (err, subscriber) {
         if(err) {
           return cb(err);
         }
 
-        cb(null, user);
+        cb(null, subscriber);
 
       });
 
@@ -67,35 +62,35 @@ exports.create = function create(userData, cb) {
 };
 
 /**
- * delete a user
+ * delete a subscriber
  *
- * @desc  delete data of the user with the given
+ * @desc  delete data of the subscriber with the given
  *        id
  *
  * @param {Object}  query   Query Object
  * @param {Function} cb Callback for once delete is complete
  */
 exports.delete = function deleteItem(query, cb) {
-  debug('deleting user: ', query);
+  debug('deleting subscriber: ', query);
 
-  User
+  Subscriber
     .findOne(query, returnFields)
     .populate(population)
-    .exec(function deleteUser(err, user) {
+    .exec(function deleteSubscriber(err, subscriber) {
       if (err) {
         return cb(err);
       }
 
-      if(!user) {
+      if(!subscriber) {
         return cb(null, {});
       }
 
-      user.remove(function(err) {
+      subscriber.remove(function(err) {
         if(err) {
           return cb(err);
         }
 
-        cb(null, user);
+        cb(null, subscriber);
 
       });
 
@@ -103,9 +98,9 @@ exports.delete = function deleteItem(query, cb) {
 };
 
 /**
- * update a user
+ * update a subscriber
  *
- * @desc  update data of the user with the given
+ * @desc  update data of the subscriber with the given
  *        id
  *
  * @param {Object} query Query object
@@ -113,7 +108,7 @@ exports.delete = function deleteItem(query, cb) {
  * @param {Function} cb Callback for once update is complete
  */
 exports.update = function update(query, updates,  cb) {
-  debug('updating user: ', query);
+  debug('updating subscriber: ', query);
 
   var now = moment().toISOString();
   var opts = {
@@ -123,70 +118,65 @@ exports.update = function update(query, updates,  cb) {
 
   var data = {};
 
-  data.$set = updates.$set || {};
+  data.$set = updates;
 
   data.$set.last_modified = now;
 
-  (Object.keys(updates)).forEach(function (key) {
-    data[key] = updates[key];
-  });
-
-
-  User
+  Subscriber
     .findOneAndUpdate(query, data, opts)
     .populate(population)
-    .exec(function updateUser(err, user) {
+    .exec(function updateSubscriber(err, subscriber) {
       if(err) {
         return cb(err);
       }
 
-      cb(null, user || {});
+      cb(null, subscriber || {});
     });
 };
 
 /**
- * get a user.
+ * get a subscriber.
  *
- * @desc get a user with the given id from db
+ * @desc get a subscriber with the given id from db
  *
  * @param {Object} query Query Object
  * @param {Function} cb Callback for once fetch is complete
  */
 exports.get = function get(query, cb) {
-  debug('getting user ', query);
+  debug('getting subscriber ', query);
 
-  User
+  Subscriber
     .findOne(query, returnFields)
     .populate(population)
-    .exec(function(err, user) {
+    .exec(function(err, subscriber) {
       if(err) {
         return cb(err);
       }
 
-      cb(null, user || {});
+      cb(null, subscriber || {});
     });
 };
 
 /**
- * get a collection of users
+ * get a collection of subscribers
  *
- * @desc get a collection of users from db
+ * @desc get a collection of subscribers from db
  *
  * @param {Object} query Query Object
  * @param {Function} cb Callback for once fetch is complete
  */
 exports.getCollection = function getCollection(query, qs, cb) {
-  debug('fetching a collection of users');
+  debug('fetching a collection of subscribers');
 
-  User
+  Subscriber
     .find(query, returnFields)
     .populate(population)
-    .exec(function (err, users) {
+    .exec(function (err, subscribers) {
       if(err) {
         return cb(err);
       }
 
-      cb(null, users);
+      cb(null, subscribers);
     });
 
 };
@@ -195,5 +185,6 @@ exports.getCollection = function getCollection(query, qs, cb) {
  * Hash password
  */
 exports.hashPasswd = function hashPasswd(passwd, cb) {
-  User.hashPasswd(passwd, cb);
+  Subscriber.hashPasswd(passwd, cb);
 };
+

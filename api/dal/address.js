@@ -31,7 +31,7 @@ exports.create = function create(addressData, cb) {
   var searchQuery = {
     longitude : addressData.longitude,
     latitude  : addressData.latitude,
-    user      : addressData.user
+    user:   addressData.user
   };
 
   Address.findOne(searchQuery, function (err, isMatch) {

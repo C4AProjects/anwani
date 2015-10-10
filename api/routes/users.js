@@ -29,25 +29,32 @@ var router  = express.Router();
  * @apiDescription Create a new user
  *
  * @apiParam {String} phone_number Phone number
- * @apiParam {String} password Password
+ * @apiParam {String} password Password/Pin
  * @apiParam {String} first_name first name
  * @apiParam {String} last_name last name
  * @apiParam {String} other_name other names
+ * @apiParam {Object} security_pass security question and answer
+ * @apiParam {String} security_pass.question security question
+ * @apiParam {Object} security_pass.answer security answer
  *
  * @apiParamExample Request Example:
  *  {
  *    "phone_number": "254711223344",
- *    "password": "password",
+ *    "password": "pin",
  *    "last_name": "smith",
  *    "first_name": "john",
- *    "other_name": "cole"
+ *    "other_name": "cole",
+ *    "security_pass": {
+ *      "question": "what was your first ever nickname",
+ *      "answer": "none"
+ *    }
  *  }
  *
  * @apiSuccess {String} _id user id
  * @apiSuccess {String} first_name first name
  * @apiSuccess {String} last_name last name
  * @apiSuccess {String} other_name other names
- * @apiSuccess {Array} addresses addresses
+ * @apiSuccess {Array}  addresses addresses
  *
  * @apiSuccessExample Response Example:
  *  {
@@ -268,6 +275,33 @@ router.delete('/:id', userController.delete);
  *
  */
 router.get('/:id/addresses', userController.fetchUserAddresses);
+
+/**
+ * @api {put} /users/password/update Update user password/pin
+ * @apiVersion 1.0.0
+ * @apiName UpdatePassword
+ * @apiGroup Company
+ *
+ * @apiDescription Update password of a given user.
+ *
+ * @apiParam {String} security_question_answer security question answer
+ * @apiParam {String} phone_number phone number
+ * @apiParam {String} new_password new password/pin
+ *
+ * @apiParamExample Request Example:
+ * {
+ *    "security_answer" : "john doey",
+ *    "phone_number" : "0713510521"
+ *    "new_password": "2654"
+ * }
+ *
+ * @apiSuccessExample Response Example:
+ *  {
+ *    "updated": true
+ *  }
+ */
+router.post('/password/update', userController.updatePassword);
+
 
 // Expose User Router
 module.exports = router;
