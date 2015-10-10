@@ -1,5 +1,4 @@
-/**
- * Load Module Dependencies
+/** * Load Module Dependencies
  */
 var http  = require('http');
 var path = require('path');
