@@ -12,6 +12,7 @@ var TokenSchema = new Schema({
   value:          { type: String },
   revoked:        { type: Boolean, default: true },
   user:           { type: Schema.Types.ObjectId, ref: 'User' },
+  subscriber:        { type: Schema.Types.ObjectId, ref: 'Subscriber' },
   date_created:   Date,
   last_modified:  Date
 });
@@ -44,7 +45,8 @@ TokenSchema.statics.whitelist = {
   _id: 1,
   value: 1,
   revoked: 1,
-  user: 1
+  user: 1,
+  subscriber: 1
 };
 
 
