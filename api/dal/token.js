@@ -9,11 +9,15 @@ var _       = require('lodash');
 
 var Token = require('../models/token');
 var User  = require('../models/user');
+var Subscriber  = require('../models/subscriber');
 
 var returnFields = Token.whitelist;
 var population = [{
   path: 'user',
   select: User.whitelist
+}, {
+  path: 'subscriber',
+  select: Subscriber.whitelist
 }];
 
 /**
@@ -28,8 +32,16 @@ var population = [{
 exports.create = function create(tokenData, cb) {
   debug('creating a new token');
 
+  var query;
+
+  if(tokenData.user) {
+    query = { user: tokenData.user };
+  } else {
+    query = { subscriber: tokenData.subscriber };
+  }
+
   // Make sure token does not exist
-  Token.findOne({ user: tokenData.user }, function tokenExists(err, isPresent) {
+  Token.findOne(query, function tokenExists(err, isPresent) {
     if(err) {
       return cb(err);
     }
