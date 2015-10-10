@@ -1,43 +1,717 @@
 define({ "api": [
   {
+    "type": "put",
+    "url": "/companies/:id/subscriptions?config=<enable|disable>",
+    "title": "Configure Company Subscription",
+    "version": "1.0.0",
+    "name": "ConfigureSubscription",
+    "group": "Company",
+    "description": "<p>Configure subscription of a company. Use config values <code>enable</code> or <code>disable</code>.</p> ",
+    "success": {
+      "examples": [
+        {
+          "title": "Response Example:",
+          "content": "{\n  \"subscription\": \"enabled\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "routes/companies.js",
+    "groupTitle": "Company"
+  },
+  {
+    "type": "delete",
+    "url": "/companies/:id",
+    "title": "Delete Company",
     "version": "1.0.0",
     "name": "Delete",
-    "group": "Token",
-    "description": "<p>Delete a token with the given id</p> ",
-    "type": "",
-    "url": "",
-    "filename": "routes/tokens.js",
-    "groupTitle": "Token"
+    "group": "Company",
+    "description": "<p>Delete a company with the given id</p> ",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "name",
+            "description": "<p>name of the company</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "address",
+            "description": "<p>company address</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "email",
+            "description": "<p>email address</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "website",
+            "description": "<p>company website</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "password",
+            "description": "<p>secret password</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "logo",
+            "description": "<p>company logo</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "_id",
+            "description": "<p>company id</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Response Example:",
+          "content": "{\n  \"_id\" : \"556e1174a8952c9521286a60\",\n  \"email\": \"company@email.com\",\n  \"name\": \"Jumia Online Shop\",\n  \"website\": \"http://www.jumia.co.ke\",\n  \"address\": \"Moi Avenue, Top House\",\n  \"logo\": \"logo_url\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "routes/companies.js",
+    "groupTitle": "Company"
   },
   {
+    "type": "get",
+    "url": "/companies",
+    "title": "Get companies collection",
     "version": "1.0.0",
     "name": "FetchAll",
-    "group": "Token",
-    "description": "<p>Get a collection of tokens</p> ",
-    "type": "",
-    "url": "",
-    "filename": "routes/tokens.js",
-    "groupTitle": "Token"
+    "group": "Company",
+    "description": "<p>Get a collection of companies</p> ",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "name",
+            "description": "<p>name of the company</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "address",
+            "description": "<p>company address</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "email",
+            "description": "<p>email address</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "website",
+            "description": "<p>company website</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "password",
+            "description": "<p>secret password</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "logo",
+            "description": "<p>company logo</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "_id",
+            "description": "<p>company id</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Response Example:",
+          "content": "[{\n  \"_id\" : \"556e1174a8952c9521286a60\",\n  \"email\": \"company@email.com\",\n  \"name\": \"Jumia Online Shop\",\n  \"website\": \"http://www.jumia.co.ke\",\n  \"address\": \"Moi Avenue, Top House\",\n  \"logo\": \"logo_url\"\n}]",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "routes/companies.js",
+    "groupTitle": "Company"
   },
   {
+    "type": "get",
+    "url": "/companies/:id",
+    "title": "Get Company",
     "version": "1.0.0",
     "name": "Get",
-    "group": "Token",
-    "description": "<p>Get a token with the given id</p> ",
-    "type": "",
-    "url": "",
-    "filename": "routes/tokens.js",
-    "groupTitle": "Token"
+    "group": "Company",
+    "description": "<p>Get a company with the given id</p> ",
+    "filename": "routes/companies.js",
+    "groupTitle": "Company"
   },
   {
+    "type": "post",
+    "url": "/companies/login",
+    "title": "Login a company",
+    "version": "1.0.0",
+    "name": "Login",
+    "group": "Company",
+    "description": "<p>Log in a company. The request returns a token used to authentication of the company on subsequent requests. The token is placed as an HTTP header ie <code>Authorization: Bearer &lt;Token-here&gt;</code> otherwise requests are rejected.</p> ",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "email",
+            "description": "<p>company email address</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "password",
+            "description": "<p>Password/Pin</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request Example:",
+          "content": "{\n  \"email\": \"company@email.com\",\n  \"password\": \"password\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "token",
+            "description": "<p>auth token</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>Object</p> ",
+            "optional": false,
+            "field": "company",
+            "description": "<p>company info</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "company._id",
+            "description": "<p>company id</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "company.first_name",
+            "description": "<p>first name</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "company.last_name",
+            "description": "<p>last name</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "company.other_name",
+            "description": "<p>other names</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "company.phone_number",
+            "description": "<p>phone number</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>Array</p> ",
+            "optional": false,
+            "field": "company.addresses",
+            "description": "<p>addresses</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Response Example:",
+          "content": "{\n  \"token\" : \"ylHUMaVrS0dpcO/+nT+6aAVVGcRJzu=\",\n  \"company\": {\n    \"_id\" : \"556e1174a8952c9521286a60\",\n    \"email\": \"company@email.com\",\n    \"name\": \"Jumia Online Shop\",\n    \"website\": \"http://www.jumia.co.ke\",\n    \"address\": \"Moi Avenue, Top House\",\n    \"logo\": \"logo_url\"\n  }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "routes/companies.js",
+    "groupTitle": "Company"
+  },
+  {
+    "type": "post",
+    "url": "/companies/logout",
+    "title": "Logout a company",
+    "version": "1.0.0",
+    "name": "Logout",
+    "group": "Company",
+    "description": "<p>Invalidate a companies token</p> ",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "<p>Boolean</p> ",
+            "optional": false,
+            "field": "logged_out",
+            "description": "<p>message</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Response Example:",
+          "content": "{\n  \"logged_out\" : true\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "routes/companies.js",
+    "groupTitle": "Company"
+  },
+  {
+    "type": "post",
+    "url": "/companies/signup",
+    "title": "Create a company",
+    "version": "1.0.0",
+    "name": "Signup",
+    "group": "Company",
+    "description": "<p>Create a new company. This Content should be submitted as <code>multipart/form-data</code>.</p> ",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "name",
+            "description": "<p>name of the company</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "address",
+            "description": "<p>company address</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "email",
+            "description": "<p>email address</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "website",
+            "description": "<p>company website</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "password",
+            "description": "<p>secret password</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "logo",
+            "description": "<p>company logo</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request Example, should be submitted as```multipart/form-data```.",
+          "content": "{\n  \"email\": \"company@email.com\",\n  \"password\": \"password\",\n  \"name\": \"Jumia Online Shop\",\n  \"website\": \"http://www.jumia.co.ke\",\n  \"address\": \"Moi Avenue, Top House\",\n  \"logo\": \"<LOGO_DATA>\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "name",
+            "description": "<p>name of the company</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "address",
+            "description": "<p>company address</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "email",
+            "description": "<p>email address</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "website",
+            "description": "<p>company website</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "password",
+            "description": "<p>secret password</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "logo",
+            "description": "<p>company logo</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "_id",
+            "description": "<p>company id</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Response Example:",
+          "content": "{\n  \"_id\" : \"556e1174a8952c9521286a60\",\n  \"email\": \"company@email.com\",\n  \"name\": \"Jumia Online Shop\",\n  \"website\": \"http://www.jumia.co.ke\",\n  \"address\": \"Moi Avenue, Top House\",\n  \"logo\": \"logo_url\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "routes/companies.js",
+    "groupTitle": "Company"
+  },
+  {
+    "type": "put",
+    "url": "/companies/:id",
+    "title": "Update Company",
     "version": "1.0.0",
     "name": "Update",
-    "group": "Token",
-    "description": "<p>Update a token with the given id</p> ",
-    "type": "",
-    "url": "",
-    "filename": "routes/tokens.js",
-    "groupTitle": "Token"
+    "group": "Company",
+    "description": "<p>Update a company with the given id</p> ",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "name",
+            "description": "<p>name of the company</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "address",
+            "description": "<p>company address</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "email",
+            "description": "<p>email address</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "website",
+            "description": "<p>company website</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "password",
+            "description": "<p>secret password</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "logo",
+            "description": "<p>company logo</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "_id",
+            "description": "<p>company id</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Response Example:",
+          "content": "{\n  \"_id\" : \"556e1174a8952c9521286a60\",\n  \"email\": \"company@email.com\",\n  \"name\": \"Jumia Online Shop\",\n  \"website\": \"http://www.jumia.co.ke\",\n  \"address\": \"Moi Avenue, Top House\",\n  \"logo\": \"logo_url\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "routes/companies.js",
+    "groupTitle": "Company"
+  },
+  {
+    "type": "put",
+    "url": "/companies/:id/logos",
+    "title": "Update companies logos",
+    "version": "1.0.0",
+    "name": "UpdateLogo",
+    "group": "Company",
+    "description": "<p>Update a logo of a given company. This should be submitted as <code>multipart/form-data</code> data format.</p> ",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "logo",
+            "description": "<p>new logo buffer</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request Example(submitted as ```multipart/form-data```):",
+          "content": "{\n   \"logo\": \"<LOGO_BUFFER>\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Response Example:",
+          "content": "{\n  \"updated\": true\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "routes/companies.js",
+    "groupTitle": "Company"
+  },
+  {
+    "type": "put",
+    "url": "/companies/:id/passwords",
+    "title": "Update companies password",
+    "version": "1.0.0",
+    "name": "UpdatePassword",
+    "group": "Company",
+    "description": "<p>Update password of a given company.</p> ",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "password",
+            "description": "<p>new password</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request Example:",
+          "content": "{\n   \"new_password\" : \"newpassword\"\n   \"old_password\" : \"oldpassword\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Response Example:",
+          "content": "{\n  \"updated\": true\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "routes/companies.js",
+    "groupTitle": "Company"
+  },
+  {
+    "type": "put",
+    "url": "/users/:id/passwords",
+    "title": "Update user password/pin",
+    "version": "1.0.0",
+    "name": "UpdatePassword",
+    "group": "Company",
+    "description": "<p>Update password of a given user.</p> ",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "security_question_answer",
+            "description": "<p>security question answer</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "new_password",
+            "description": ""
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request Example:",
+          "content": "{\n   \"security_answer\" : \"john doey\",\n   \"new_password\" : 4567\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Response Example:",
+          "content": "{\n  \"updated\": true\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "routes/users.js",
+    "groupTitle": "Company"
+  },
+  {
+    "type": "put",
+    "url": "/companies/:id/plans",
+    "title": "Update companies subscription plans",
+    "version": "1.0.0",
+    "name": "UpdateSubscriptionPlan",
+    "group": "Company",
+    "description": "<p>Update subscription of a given company</p> ",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "plan",
+            "description": "<p>subscription plan</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request Example:",
+          "content": "{\n   \"plan\" : \"pro\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Response Example:",
+          "content": "{\n  \"updated\": true\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "routes/companies.js",
+    "groupTitle": "Company"
+  },
+  {
+    "type": "post",
+    "url": "/companies/verify/:token",
+    "title": "Verify a user/company",
+    "version": "1.0.0",
+    "name": "Verify",
+    "group": "Company",
+    "description": "<p>Verify a user/company</p> ",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "<p>Boolean</p> ",
+            "optional": false,
+            "field": "verified",
+            "description": "<p>verified or not</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Response Example:",
+          "content": "{\n  \"verified\" : true\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "routes/companies.js",
+    "groupTitle": "Company"
   },
   {
     "type": "delete",
@@ -500,13 +1174,34 @@ define({ "api": [
             "optional": false,
             "field": "other_name",
             "description": "<p>other names</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>Object</p> ",
+            "optional": false,
+            "field": "security_pass",
+            "description": "<p>security question and answer</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "security_pass.question",
+            "description": "<p>security question</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>Object</p> ",
+            "optional": false,
+            "field": "security_pass.answer",
+            "description": "<p>security answer</p> "
           }
         ]
       },
       "examples": [
         {
           "title": "Request Example:",
-          "content": "{\n  \"phone_number\": \"254711223344\",\n  \"password\": \"password\",\n  \"last_name\": \"smith\",\n  \"first_name\": \"john\",\n  \"other_name\": \"cole\"\n}",
+          "content": "{\n  \"phone_number\": \"254711223344\",\n  \"password\": \"password\",\n  \"last_name\": \"smith\",\n  \"first_name\": \"john\",\n  \"other_name\": \"cole\",\n  \"security_pass\": {\n    \"question\": \"what was your first ever nickname\",\n    \"answer\": \"none\"\n  }\n}",
           "type": "json"
         }
       ]
