@@ -11,6 +11,7 @@ var paginator = require('mongoose-paginate');
 var bcrypt    = require('bcrypt');
 
 var config    = require('../config');
+var hashSecurityAnswer = require('../lib/utils').hashSecurityAnswer;
 
 var Schema = mongoose.Schema;
 
@@ -20,9 +21,15 @@ var UserSchema = new Schema({
   other_name:   { type: String },
   password:     { type: String },
   last_login:   { type: Date },
-  realm:        { type: String, default: 'user' },
+  role:         { type: String, default: 'user' },
+  realm:        { type: String, default: 'consumer' },
+  email:        { type: String, unique: true },
   archived:     { type: Boolean, default: false },
   phone_number: { type: String, unique: true },
+  security_pass: {
+    question: { type: String },
+    answer:   { type: String }
+  },
   addresses:    [{ type: Schema.Types.ObjectId, ref: 'Address' }],
   date_created: Date,
   last_modified:Date
@@ -39,7 +46,7 @@ UserSchema.statics.whitelist = {
   other_name: 1,
   last_login: 1,
   addresses: 1,
-  realm: 1
+  email: 1
 };
 
 // add mongoose-troop middleware to support pagination
@@ -69,6 +76,7 @@ UserSchema.methods.verifyPassword = function verifyPassword(passwd, cb) {
 UserSchema.pre('save', function preSave(next) {
   var model = this;
 
+  // Hash Password
   UserSchema.statics.hashPasswd(model.password, function(err, hash) {
     if(err) {
       return next(err);
@@ -82,7 +90,17 @@ UserSchema.pre('save', function preSave(next) {
     model.date_created = now;
     model.last_modified = now;
 
-    next();
+    // Hash Security question
+    hashSecurityAnswer(model.security_pass.answer, function (err, hashed) {
+      if(err) {
+        return next(err);
+      }
+
+      model.security_pass.answer = hashed;
+
+      next();
+    });
+
   });
 
 });
