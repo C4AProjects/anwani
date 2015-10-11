@@ -16,12 +16,13 @@ var app = angular.module('admin', [
   'oc.lazyLoad',
   'perfect_scrollbar',
   'angular-inview',
-  'angular-loading-bar'
+  'angular-loading-bar',
+  'LocalStorageModule'
 ]);
 
 app.config(
-  ['$controllerProvider', '$compileProvider', '$filterProvider', '$provide',
-    function($controllerProvider, $compileProvider, $filterProvider, $provide) {
+    ['$controllerProvider', '$compileProvider', '$filterProvider', '$provide', '$httpProvider',
+      function ($controllerProvider, $compileProvider, $filterProvider, $provide, $httpProvider) {
 
       // lazy controller, directive and service
       app.controller = $controllerProvider.register;
@@ -31,6 +32,13 @@ app.config(
       app.service = $provide.service;
       app.constant = $provide.constant;
       app.value = $provide.value;
+
+
+        $httpProvider.defaults.useXDomain = true;
+        $httpProvider.defaults.withCredentials = true;
+        delete $httpProvider.defaults.headers.common["X-Requested-With"];
+        $httpProvider.defaults.headers.common["Accept"] = "application/json";
+        $httpProvider.defaults.headers.common["Content-Type"] = "application/json";
     }
   ]);
 ;// lazyload config
@@ -2230,23 +2238,29 @@ app.controller('FormValidationCtrl', ['$scope', function($scope) {
 }]);;'use strict';
 
 /* Controllers */
-  // signin controller
-app.controller('LoginFormController', ['$scope', '$http', '$state', function($scope, $http, $state) {
-    $scope.user = {};
-    $scope.authError = null;
-    $scope.login = function() {
-      $scope.authError = null;
+// signin controller
+app.controller('LoginFormController', ['$scope', '$http', '$state', 'localStorageService', '$rootScope',
+  function (scope, http, state, localStorageService, rootScope) {
+    scope.user = {};
+    scope.authError = null;
+    scope.login = function () {
+      scope.authError = null;
       // Try to login
-      $http.post('data/login.json', {email: $scope.user.email, password: $scope.user.password})
-      .then(function(response) {
-        if ( !response.data.user ) {
-          $scope.authError = 'Email or Password not right';
-        }else{
-          $state.go('app.dashboard');
-        }
-      }, function(x) {
-        $scope.authError = 'Server Error';
-      });
+      http.post('http://anwaniapi.mybluemix.net/users/login', scope.user)
+          .then(function (response) {
+            console.log(response.data);
+            if (!response.data.user) {
+              scope.authError = 'Phone Number or Password not right';
+            } else {
+              rootScope.user = response.user;
+              localStorageService.set('user', response.user);
+              rootScope.token = response.token;
+              localStorageService.set('token', response.token);
+              state.go('app.dashboard');
+            }
+          }, function (x) {
+            scope.authError = 'Server Error';
+          });
     };
   }])
 ;;app.controller('MailCtrl', ['$scope', function($scope) {
@@ -2435,21 +2449,23 @@ app.controller('NotifyCtrl', function($scope,notify){
 });;'use strict';
 
 // signup controller
-app.controller('RegisterFormController', ['$scope', '$http', '$state', function($scope, $http, $state) {
-    $scope.user = {};
-    $scope.authError = null;
-    $scope.register = function() {
-      $scope.authError = null;
+app.controller('RegisterFormController', ['$scope', '$http', '$state', 'localStorageService', '$rootScope',
+  function (scope, http, state, localStorageService, rootScope) {
+    scope.user = {};
+    scope.authError = null;
+    scope.register = function () {
+      scope.authError = null;
       // Try to create
-      $http.post('data/register.json', {name: $scope.user.name, email: $scope.user.email, password: $scope.user.password})
+      http.post('http://anwaniapi.mybluemix.net/users/signup', scope.user)
       .then(function(response) {
         if ( !response.data.user ) {
-          $scope.authError = response;
+          scope.authError = response;
         }else{
-          $state.go('app.dashboard');
+          rootScope.newUser = response.user;
+          state.go('app.dashboard');
         }
       }, function(x) {
-        $scope.authError = 'Server Error';
+            scope.authError = 'Server Error';
       });
     };
   }])
