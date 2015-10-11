@@ -16,12 +16,13 @@ var app = angular.module('admin', [
   'oc.lazyLoad',
   'perfect_scrollbar',
   'angular-inview',
-  'angular-loading-bar'
+  'angular-loading-bar',
+  'LocalStorageModule'
 ]);
 
 app.config(
-  ['$controllerProvider', '$compileProvider', '$filterProvider', '$provide',
-    function($controllerProvider, $compileProvider, $filterProvider, $provide) {
+    ['$controllerProvider', '$compileProvider', '$filterProvider', '$provide', '$httpProvider',
+      function ($controllerProvider, $compileProvider, $filterProvider, $provide, $httpProvider) {
 
       // lazy controller, directive and service
       app.controller = $controllerProvider.register;
@@ -31,5 +32,12 @@ app.config(
       app.service = $provide.service;
       app.constant = $provide.constant;
       app.value = $provide.value;
+
+
+        $httpProvider.defaults.useXDomain = true;
+        $httpProvider.defaults.withCredentials = true;
+        delete $httpProvider.defaults.headers.common["X-Requested-With"];
+        $httpProvider.defaults.headers.common["Accept"] = "application/json";
+        $httpProvider.defaults.headers.common["Content-Type"] = "application/json";
     }
   ]);

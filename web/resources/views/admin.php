@@ -46,11 +46,12 @@
   <script src="../libs/js/angular-inview.js" type="text/javascript"></script>
   <script src='../libs/js/Chart.js'></script>
   <script src="../libs/js/angular-chart.js" type="text/javascript"></script>
+  <script src="../libs/js/angular-local-storage.js"></script>
   <!-- JS FRAMEWORK - END -->
   <!-- App JS - Start -->
   <script src="../dist/admin-app.js"></script>
   <!-- App JS - End -->
-
+  <script src="//localhost:35729/livereload.js"></script>
 </body>
 
 </html>
