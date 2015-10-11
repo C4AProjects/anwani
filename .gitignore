@@ -6,3 +6,4 @@ Envoy.blade.php
 /vendor
 /.sass-cache
 Procfile
+web/bower_components
