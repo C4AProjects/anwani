@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="78455709-2407-4658-a7ed-72ed64f9459a" name="Default" comment="User Views">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/public/admin-app/partials/address-view.html" afterPath="$PROJECT_DIR$/web/public/admin-app/partials/address-view.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/resources/views/admin.php" afterPath="$PROJECT_DIR$/web/resources/views/admin.php" />
+    <list default="true" id="78455709-2407-4658-a7ed-72ed64f9459a" name="Default" comment="Theming">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/public/css/app.css" afterPath="$PROJECT_DIR$/web/public/css/app.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/public/admin-app/app.js" afterPath="$PROJECT_DIR$/web/public/admin-app/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/public/admin-app/partials/components/topbar.html" afterPath="$PROJECT_DIR$/web/public/admin-app/partials/components/topbar.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/public/admin-app/partials/users-view.html" afterPath="$PROJECT_DIR$/web/public/admin-app/partials/users-view.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/public/admin-app/partials/app_dashboard.html" afterPath="$PROJECT_DIR$/web/public/admin-app/partials/app_dashboard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/public/admin-app/partials/ui-forgotpwd.html" afterPath="$PROJECT_DIR$/web/public/admin-app/partials/ui-forgotpwd.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/public/admin-app/partials/ui-login.html" afterPath="$PROJECT_DIR$/web/public/admin-app/partials/ui-login.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/public/admin-app/partials/ui-register.html" afterPath="$PROJECT_DIR$/web/public/admin-app/partials/ui-register.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="anwani.iws" />
@@ -34,8 +33,8 @@
       <file leaf-file-name="app.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/public/css/app.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.259259">
-              <caret line="5621" column="20" selection-start-line="5621" selection-start-column="20" selection-end-line="5621" selection-end-column="20" />
+            <state vertical-scroll-proportion="-6.4444447">
+              <caret line="6030" column="33" selection-start-line="6030" selection-start-column="33" selection-end-line="6030" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -51,14 +50,58 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="users-view.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="users-view.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/public/admin-app/partials/users-view.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.27459955">
-              <caret line="8" column="48" selection-start-line="8" selection-start-column="48" selection-end-line="8" selection-end-column="48" />
+            <state vertical-scroll-proportion="-14.375">
+              <caret line="23" column="27" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
               <folding>
                 <element signature="n#style#0;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#section#0;n#div#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ui-login.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/public/admin-app/partials/ui-login.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-2.5">
+              <caret line="4" column="53" selection-start-line="4" selection-start-column="53" selection-end-line="4" selection-end-column="53" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ui-register.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/public/admin-app/partials/ui-register.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.75">
+              <caret line="6" column="21" selection-start-line="4" selection-start-column="12" selection-end-line="6" selection-end-column="21" />
+              <folding>
+                <element signature="n#style#0;n#img#0;n#a#0;n#h1#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ui-forgotpwd.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/public/admin-app/partials/ui-forgotpwd.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-9.375">
+              <caret line="15" column="103" selection-start-line="15" selection-start-column="103" selection-end-line="15" selection-end-column="103" />
+              <folding>
+                <element signature="n#style#0;n#img#0;n#a#0;n#h1#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app_dashboard.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/public/admin-app/partials/app_dashboard.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.75514877">
+              <caret line="22" column="54" selection-start-line="22" selection-start-column="54" selection-end-line="22" selection-end-column="54" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -120,21 +163,22 @@
         <option value="$PROJECT_DIR$/web/public/admin-app/controllers/addresses.js" />
         <option value="$PROJECT_DIR$/web/public/admin-app/partials/address-add.html" />
         <option value="$PROJECT_DIR$/web/public/admin-app/controllers/register.js" />
-        <option value="$PROJECT_DIR$/web/public/admin-app/partials/ui-register.html" />
-        <option value="$PROJECT_DIR$/web/public/admin-app/partials/ui-login.html" />
         <option value="$PROJECT_DIR$/web/public/admin-app/controllers/login.js" />
         <option value="$PROJECT_DIR$/web/public/admin-app/partials/components/leftbar.html" />
         <option value="$PROJECT_DIR$/web/public/admin-app/partials/ui-profile.html" />
-        <option value="$PROJECT_DIR$/web/public/admin-app/partials/app_dashboard.html" />
         <option value="$PROJECT_DIR$/web/public/admin-app/partials/users.html" />
         <option value="$PROJECT_DIR$/web/public/admin-app/routes.js" />
         <option value="$PROJECT_DIR$/web/public/admin-app/partials/components/nav.html" />
         <option value="$PROJECT_DIR$/web/public/admin-app/app.js" />
         <option value="$PROJECT_DIR$/web/resources/views/admin.php" />
         <option value="$PROJECT_DIR$/web/public/admin-app/partials/components/topbar.html" />
-        <option value="$PROJECT_DIR$/web/public/css/app.css" />
         <option value="$PROJECT_DIR$/web/public/admin-app/partials/address-view.html" />
         <option value="$PROJECT_DIR$/web/public/admin-app/partials/users-view.html" />
+        <option value="$PROJECT_DIR$/web/public/css/app.css" />
+        <option value="$PROJECT_DIR$/web/public/admin-app/partials/ui-login.html" />
+        <option value="$PROJECT_DIR$/web/public/admin-app/partials/ui-register.html" />
+        <option value="$PROJECT_DIR$/web/public/admin-app/partials/ui-forgotpwd.html" />
+        <option value="$PROJECT_DIR$/web/public/admin-app/partials/app_dashboard.html" />
       </list>
     </option>
   </component>
@@ -342,125 +386,29 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="anwani" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="anwani" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="admin-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="anwani" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="anwani" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bower_components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="anwani" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="anwani" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bower_components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="angular-ui-router" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="anwani" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="anwani" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bower_components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="angular-ui-router" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="anwani" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="anwani" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bower_components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="angular-ui-router" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="release" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="anwani" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="anwani" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bower_components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="angular-ui-router" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="api" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -473,7 +421,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FullScreen" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="view&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/users-view.html&#10;topbar&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/components/topbar.html&#10;app.cs&#9;FILE&#9;file:///var/www/anwani/web/public/css/app.css&#10;app&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/app.js&#10;index&#9;FILE&#9;file:///var/www/anwani/web/resources/views/index.php&#10;admin&#9;FILE&#9;file:///var/www/anwani/web/resources/views/admin.php&#10;app.css&#9;FILE&#9;file:///var/www/anwani/web/public/css/app.css&#10;addre&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/address-view.html&#10;app.js&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/app.js&#10;nav&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/components/nav.html&#10;routes&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/routes.js&#10;profile&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/ui-profile.html&#10;topb&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/components/topbar.html&#10;app.&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/app.js&#10;left&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/components/leftbar.html&#10;dash&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/app_dashboard.html&#10;ui-lo&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/ui-login.html&#10;login&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/controllers/login.js&#10;ui-regis&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/ui-register.html&#10;regi&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/ui-register.html&#10;dashboard&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/app_dashboard.html&#10;re&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/controllers/register.js&#10;ui-re&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/ui-register.html&#10;header&#9;FILE&#9;file:///var/www/anwani/web/public/app/partials/home/header.html&#10;ui-pro&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/ui-profile.html&#10;gitignore&#9;FILE&#9;file:///var/www/anwani/.gitignore&#10;gitign&#9;FILE&#9;file:///var/www/anwani/.gitignore&#10;register&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/controllers/register.js&#10;admin.p&#9;FILE&#9;file:///var/www/anwani/web/resources/views/admin.php&#10;index.php&#9;FILE&#9;file:///var/www/anwani/web/resources/views/index.php&#10;login.js&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/controllers/login.js&#10;ui-&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/ui-register.html&#10;leftbar&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/components/leftbar.html&#10;rou&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/routes.js&#10;ui-pr&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/ui-profile.html&#10;app.html&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/app.html&#10;nav.ht&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/components/nav.html&#10;dashb&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/app_dashboard.html&#10;git&#9;FILE&#9;file:///var/www/anwani/.gitignore&#10;ui-login&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/ui-login.html&#10;styles.scss&#9;FILE&#9;file:///var/www/anwani/web/resources/assets/sass/styles.scss" />
+    <property name="SearchEverywhereHistoryKey" value="da&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/app_dashboard.html&#10;forg&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/ui-forgotpwd.html&#10;regist&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/ui-register.html&#10;login&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/ui-login.html&#10;view&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/users-view.html&#10;topbar&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/components/topbar.html&#10;app.cs&#9;FILE&#9;file:///var/www/anwani/web/public/css/app.css&#10;app&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/app.js&#10;index&#9;FILE&#9;file:///var/www/anwani/web/resources/views/index.php&#10;admin&#9;FILE&#9;file:///var/www/anwani/web/resources/views/admin.php&#10;app.css&#9;FILE&#9;file:///var/www/anwani/web/public/css/app.css&#10;addre&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/address-view.html&#10;app.js&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/app.js&#10;nav&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/components/nav.html&#10;routes&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/routes.js&#10;profile&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/ui-profile.html&#10;topb&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/components/topbar.html&#10;app.&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/app.js&#10;left&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/components/leftbar.html&#10;dash&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/app_dashboard.html&#10;ui-lo&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/ui-login.html&#10;ui-regis&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/ui-register.html&#10;regi&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/ui-register.html&#10;dashboard&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/app_dashboard.html&#10;re&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/controllers/register.js&#10;ui-re&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/ui-register.html&#10;header&#9;FILE&#9;file:///var/www/anwani/web/public/app/partials/home/header.html&#10;ui-pro&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/ui-profile.html&#10;gitignore&#9;FILE&#9;file:///var/www/anwani/.gitignore&#10;gitign&#9;FILE&#9;file:///var/www/anwani/.gitignore&#10;register&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/controllers/register.js&#10;admin.p&#9;FILE&#9;file:///var/www/anwani/web/resources/views/admin.php&#10;index.php&#9;FILE&#9;file:///var/www/anwani/web/resources/views/index.php&#10;login.js&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/controllers/login.js&#10;ui-&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/ui-register.html&#10;leftbar&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/components/leftbar.html&#10;rou&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/routes.js&#10;ui-pr&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/ui-profile.html&#10;app.html&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/app.html&#10;nav.ht&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/components/nav.html&#10;dashb&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/app_dashboard.html&#10;git&#9;FILE&#9;file:///var/www/anwani/.gitignore&#10;ui-login&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/ui-login.html&#10;styles.scss&#9;FILE&#9;file:///var/www/anwani/web/resources/assets/sass/styles.scss" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="recentsLimit" value="5" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
@@ -762,7 +710,7 @@
       <workItem from="1444277695637" duration="1065000" />
       <workItem from="1444302143182" duration="4566000" />
       <workItem from="1444319902759" duration="483000" />
-      <workItem from="1444579654229" duration="22355000" />
+      <workItem from="1444579654229" duration="22879000" />
     </task>
     <task id="LOCAL-00001" summary="Ignoring Idea Folder">
       <created>1444252266846</created>
@@ -836,15 +784,21 @@
       <option name="project" value="LOCAL" />
       <updated>1444677328725</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Theming">
+      <created>1444679158412</created>
+      <option name="number" value="00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1444679158412</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33471000" />
+    <option name="totallyTimeSpent" value="33995000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -855,7 +809,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3989071" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33013698" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33013698" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33835617" sideWeight="0.4875" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -898,7 +852,8 @@
     <MESSAGE value="Clearing Local Storage" />
     <MESSAGE value="Pulling Existing Addresses" />
     <MESSAGE value="User Views" />
-    <option name="LAST_COMMIT_MESSAGE" value="User Views" />
+    <MESSAGE value="Theming" />
+    <option name="LAST_COMMIT_MESSAGE" value="Theming" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -910,20 +865,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/app/Console/Kernel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/public/app/partials/home/header.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Procfile">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1162,28 +1103,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/public/admin-app/partials/ui-register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.25">
-          <caret line="50" column="31" selection-start-line="50" selection-start-column="31" selection-end-line="50" selection-end-column="31" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#a#0;n#h1#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/public/admin-app/controllers/register.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/public/admin-app/partials/ui-login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37757438">
-          <caret line="14" column="93" selection-start-line="14" selection-start-column="93" selection-end-line="14" selection-end-column="93" />
           <folding />
         </state>
       </provider>
@@ -1211,14 +1134,6 @@
           <folding>
             <element signature="n#style#0;n#a#0;n#p#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/public/admin-app/partials/app_dashboard.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.0">
-          <caret line="16" column="41" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1286,14 +1201,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/public/css/app.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.259259">
-          <caret line="5621" column="20" selection-start-line="5621" selection-start-column="20" selection-end-line="5621" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/public/admin-app/partials/address-view.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.0">
@@ -1302,13 +1209,62 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/public/images/city_banner.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/public/css/app.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.4444447">
+          <caret line="6030" column="33" selection-start-line="6030" selection-start-column="33" selection-end-line="6030" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/public/admin-app/partials/users-view.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27459955">
-          <caret line="8" column="48" selection-start-line="8" selection-start-column="48" selection-end-line="8" selection-end-column="48" />
+        <state vertical-scroll-proportion="-14.375">
+          <caret line="23" column="27" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
           <folding>
             <element signature="n#style#0;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#section#0;n#div#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/public/admin-app/partials/ui-login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.5">
+          <caret line="4" column="53" selection-start-line="4" selection-start-column="53" selection-end-line="4" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/public/admin-app/partials/ui-register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.75">
+          <caret line="6" column="21" selection-start-line="4" selection-start-column="12" selection-end-line="6" selection-end-column="21" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#a#0;n#h1#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/public/admin-app/partials/ui-forgotpwd.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.375">
+          <caret line="15" column="103" selection-start-line="15" selection-start-column="103" selection-end-line="15" selection-end-column="103" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#a#0;n#h1#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/public/admin-app/partials/app_dashboard.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.75514877">
+          <caret line="22" column="54" selection-start-line="22" selection-start-column="54" selection-end-line="22" selection-end-column="54" />
+          <folding />
         </state>
       </provider>
     </entry>

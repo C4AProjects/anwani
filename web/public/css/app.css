@@ -6027,8 +6027,7 @@ form.black input:active {
 }
 
 body .login_page {
-    background-color: #673AB7;
-    background-image: url('../images/bg3.png');
+    background-image: url('../images/city_banner.png');
     background-attachment: fixed;
     background-size: cover;
     height: 100%;
