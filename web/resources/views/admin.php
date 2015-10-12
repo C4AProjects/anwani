@@ -47,6 +47,7 @@
   <script src='../libs/js/Chart.js'></script>
   <script src="../libs/js/angular-chart.js" type="text/javascript"></script>
   <script src="../libs/js/angular-local-storage.js"></script>
+  <script src="../libs/js/smart-table.min.js"></script>
   <!-- JS FRAMEWORK - END -->
   <!-- App JS - Start -->
   <script src="../dist/admin-app.js"></script>

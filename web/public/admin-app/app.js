@@ -17,7 +17,8 @@ var app = angular.module('admin', [
   'perfect_scrollbar',
   'angular-inview',
   'angular-loading-bar',
-  'LocalStorageModule'
+  'LocalStorageModule',
+  'smart-table'
 ]);
 
 app.config(
@@ -40,7 +41,18 @@ app.run(
       function (localStorageService, rootScope,http) {
         var user = localStorageService.get('user');
         var token = localStorageService.get('token');
-        rootScope.addresses = [];
+        rootScope.addresses = [{
+          "_id" : "556e1174a8952c9521286a60",
+          user: "556e1174a8952c9521286a60",
+          short_virtual_code: "MP7H+E2",
+          long_virtual_code: "6EAEMMP7H+E2",
+          location_pic: "/media/a8952c9521286a60.jpeg",
+          latitude: 4.567889,
+          longitude: -12.098,
+          street_address: "",
+          city: "nairobi",
+          country: "kenya"
+        }];
         rootScope.addresses_shared = [];
         if (user && token) {
           rootScope.user = user;
