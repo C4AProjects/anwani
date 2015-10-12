@@ -5,13 +5,13 @@
     <div ui-sref="app.profile" class="profile-info" ng-show="app.settings.menuProfile">
         <div class="profile-image col-md-12 col-sm-12 col-xs-12 text-center">
             <a ui-sref="app.ui.profile">
-                <img src="../data/profile/profile.png" class="img-responsive">
+                <img ng-src="{{user.logo}}" class="img-responsive">
                 <span class="profile-status available"></span>
             </a>
         </div>
         <div class="profile-details col-md-12 col-sm-12 col-xs-12">
             <h3>
-                <a><span ng-bind="user.first_name"></span> <span ng-bind="user.last_name"></span></a>
+                <a><span ng-bind="user.name"></span></a>
 
                     <!-- Available statuses: online, idle, busy, away and offline -->
                 </h3>

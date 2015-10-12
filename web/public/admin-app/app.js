@@ -39,8 +39,12 @@ app.config(
 app.run(
     ['localStorageService', '$rootScope','$http','$state',
       function (localStorageService, rootScope,http,state) {
+
+
+rootScope.users=[];
         var user = localStorageService.get('user');
         var token = localStorageService.get('token');
+        rootScope.subscriber = false;
         rootScope.addresses = [{
           "_id" : "556e1174a8952c9521286a60",
           user: "556e1174a8952c9521286a60",
@@ -79,6 +83,25 @@ app.run(
           localStorageService.remove('token');
           state.go('login');
 
+        };
+        rootScope.user={
+          "name":"ZUKU",
+          "website":"www.zuku.co.ke",
+          "address":"Nairobi",
+          "email":"info@zuku.co.ke",
+          "logo":"http://vividfeatures.com/wp-content/uploads/2013/08/zuku.jpg",
+          "role":"subscriber"
+        };
+        if(rootScope.user.role="subscriber"){
+          rootScope.subscriber=true;
         }
+
+        rootScope.state = state;
+        //console.log(rootScope.state.$current);
+        //if(rootScope.state.$current.url.source.search('/new')<0
+        //        &&
+        //        rootScope.user.role!="admin"){
+        //  state.go('login');
+        //}
       }
     ]);

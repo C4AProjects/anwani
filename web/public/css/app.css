@@ -1819,6 +1819,7 @@ a:focus {
     display: inline-block;
     vertical-align: top;
     cursor: pointer;
+    width:100%;
 }
 
 .page-sidebar .profile-image,
@@ -5371,6 +5372,7 @@ fieldset[disabled] .btn {
 .table>tfoot>tr>td {
     border-color: #E0E0E0;
     padding: 12px 15px 11px 15px;
+    cursor:pointer;
 }
 
 .table>thead>tr>th,

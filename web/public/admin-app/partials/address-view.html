@@ -5,7 +5,9 @@
                 <table class="table table-striped" st-table="displayedCollection" st-safe-src="addresses">
                     <thead>
                     <tr style="background:transparent">
-                        <th colspan="3"></th>
+                        <th colspan="3">
+                            <span ng-bind="addresses.length"></span>  Records
+                        </th>
                         <th colspan="2" class="search">
                             <input placeholder="Search for Address..." st-search="" type="search" class="form-control">
                         </th>
