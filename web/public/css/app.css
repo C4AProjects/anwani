@@ -5864,19 +5864,23 @@ table.dataTable.no-footer {
     Login and Registration Page - Transparent Background Style
 ------------------------------------------------------------------*/
 
-.loginpage {
+  .loginform{
     padding: 70px 50px 80px 50px;
     background-color: rgba(0, 0, 0, 0.5);
     margin-top: 5%;
 }
+form{
+    padding: 70px 50px 80px 50px;
+    margin-top: 5%;
+}
 
 @media (min-width: 992px) and (max-width: 1199px) {
-    .loginpage {
+      {
         padding: 0 90px;
     }
 }
 
-.loginpage h1 a {
+form h1 a {
     height: 92px;
     margin: 0px auto 0px auto;
     padding: 0;
@@ -5888,7 +5892,7 @@ table.dataTable.no-footer {
     display: block;
 }
 
-.loginpage form {
+form {
     margin-top: 30px;
     margin-bottom: 15px;
     margin-left: 0;
@@ -5902,7 +5906,7 @@ table.dataTable.no-footer {
     background-color: transparent;
 }
 
-.loginpage form .forgetmenot {
+form .forgetmenot {
     width: 100%;
     display: block;
     margin: 12px 0 11px 0!important;
@@ -5911,13 +5915,13 @@ table.dataTable.no-footer {
     margin-bottom: 0px;
 }
 
-.loginpage form p.submit {
+ form p.submit {
     display: inline-block;
     width: 100%;
     margin-top: 15px;
 }
 
-.loginpage label {
+ label {
     font-size: 14px;
     line-height: 23px;
     width: 100%;
@@ -5925,9 +5929,9 @@ table.dataTable.no-footer {
     font-weight: 500;
 }
 
-.loginpage form .input,
-.loginpage form input[type=checkbox],
-.loginpage input[type=text] {
+ form .input,
+ form input[type=checkbox],
+ input[type=text] {
     -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .1);
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .1);
     -moz-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .1);
@@ -5936,9 +5940,15 @@ table.dataTable.no-footer {
     /* text-shadow: 1px 1px 1px rgba(200,200,200,.1); */
     font-weight: 500;
 }
-
-.loginpage form .input,
-.loginpage input[type=text] {
+form.black input,
+form.black input:hover,
+form.black input:active {
+    border-color:#37474F;
+    box-shadow: none;
+    color:#37474F;
+}
+ form .input,
+ input[type=text] {
     font-size: 19px;
     width: 100%;
     padding: 9px;
@@ -5948,60 +5958,60 @@ table.dataTable.no-footer {
     border-bottom: 2px solid rgba(255, 255, 255, 0.7);
 }
 
-.loginpage form .input,
-.loginpage form input[type=checkbox],
-.loginpage input[type=text] {
+ form .input,
+ form input[type=checkbox],
+ input[type=text] {
     color: #ffffff;
     background: transparent;
     font-weight: 500;
 }
 
-.loginpage #nav a,
-.loginpage a {
+ #nav a,
+ a {
     color: rgba(255, 255, 255, 0.8);
     font-size: 16px;
 }
 
-.loginpage #nav a:hover,
-.loginpage a:hover,
-.loginpage #nav a:active,
-.loginpage a:active {
+ #nav a:hover,
+ a:hover,
+ #nav a:active,
+ a:active {
     color: rgba(255, 255, 255, 1);
 }
 
-.loginpage,
-.loginpage form label,
-.loginpage form,
-.loginpage .message {
+ ,
+  form label,
+  form,
+  .message {
     color: rgba(255, 255, 255, 1);
 }
 
-.loginpage form .input,
-.loginpage form input[type=checkbox],
-.loginpage input[type=text] {
+  form .input,
+  form input[type=checkbox],
+  input[type=text] {
     background-color: transparent;
     outline: none;
     padding-left: 0px;
 }
 
-.loginpage form .input:hover,
-.loginpage form input[type=checkbox]:hover,
-.loginpage input[type=text]:hover,
-.loginpage form .input:focus,
-.loginpage form input[type=checkbox]:focus,
-.loginpage input[type=text]:focus {
+  form .input:hover,
+  form input[type=checkbox]:hover,
+  input[type=text]:hover,
+  form .input:focus,
+  form input[type=checkbox]:focus,
+  input[type=text]:focus {
     background-color: transparent;
     outline: none;
     border-bottom: 2px solid rgba(255, 255, 255, 1);
 }
 
-.loginpage #login_error,
-.loginpage .message {}
+  #login_error,
+  .message {}
 
-.loginpage .message,
-.loginpage .message a,
-.loginpage #login_error,
-.loginpage #login_error a {
+  .message,
+  .message a,
+  #login_error,
+  #login_error a {
     margin-bottom: 20px;
     background-color: transparent;
     color: #cccccc;

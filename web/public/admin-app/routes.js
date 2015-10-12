@@ -57,6 +57,14 @@ app.config(['$stateProvider', '$urlRouterProvider', 'JQ_CONFIG',
           url: '/forgot',
           templateUrl: '../admin-app/partials/ui-forgotpwd.html'
         })
+        .state('app.address', {
+          url:'/address',
+          templateUrl:'../admin-app/partials/address.html'
+        })
+        .state('app.address.new', {
+          url: '/new',
+          templateUrl: '../admin-app/partials/address-add.html'
+        })
     ;
   }
 ]);
