@@ -1,0 +1,52 @@
+<div class='content-wrapper' ng-init="app.settings.pagetitle = 'View Address'; ">
+    <section class="box nobox margin-top-15 margin-bottom-0">
+        <div class="content-body">
+            <div class="col-md-12 col-sm-12 col-xs-12 padding-right-30 padding-left-20">
+                <table class="table table-striped" st-table="displayedCollection" st-safe-src="addresses">
+                    <thead>
+                    <tr style="background:transparent">
+                        <th colspan="3"></th>
+                        <th colspan="2" class="search">
+                            <input placeholder="Search for Address..." st-search="" type="search" class="form-control">
+                        </th>
+                    </tr>
+                    <tr>
+
+                        <th st-sort="short_virtual_code">Short Virtual Code</th>
+                        <th st-sort="long_virtual_code">Long Virtual Code</th>
+                        <th st-sort="city">City</th>
+                        <th st-sort="country">Country</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="address in displayedCollection">
+                        <td ng-bind="address.short_virtual_code"></td>
+                        <td ng-bind="address.long_virtual_code"></td>
+                        <td ng-bind="address.city"></td>
+                        <td ng-bind="address.country"></td>
+                        <td>
+                            <button class="btn btn-xs btn-danger" ng-click="edit()"><i class="typcn typcn-edit"></i>Edit</button>
+                            <button class="btn btn-xs btn-primary" ng-click="view(address)"><i class="typcn typcn-eye"></i>View</button>
+                        </td>
+                    </tr>
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <th st-sort="short_virtual_code">Short Virtual Code</th>
+                        <th st-sort="long_virtual_code">Long Virtual Code</th>
+                        <th st-sort="city">City</th>
+                        <th st-sort="country">Country</th>
+                        <th>Actions</th>
+                    </tr>
+                    <tr>
+                        <td colspan="5" class="text-center navs">
+                            <div st-pagination="" st-items-by-page="itemsByPage" st-displayed-pages="7"></div>
+                        </td>
+                    </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </section>
+</div>

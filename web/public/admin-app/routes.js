@@ -49,14 +49,26 @@ app.config(['$stateProvider', '$urlRouterProvider', 'JQ_CONFIG',
         .state('access',{
 
         })
-        .state('access.register', {
+        .state('register', {
           url: '/register',
           templateUrl: '../admin-app/partials/ui-register.html'
         })
-        .state('access.forgot', {
+        .state('forgot', {
           url: '/forgot',
           templateUrl: '../admin-app/partials/ui-forgotpwd.html'
         })
+        .state('app.address', {
+          url:'/address',
+          templateUrl:'../admin-app/partials/address.html'
+        })
+        .state('app.address.new', {
+          url: '/new',
+          templateUrl: '../admin-app/partials/address-add.html'
+        })
+        .state('app.address.view', {
+          url: '/view',
+          templateUrl: '../admin-app/partials/address-view.html'
+        })
     ;
   }
-])
+]);
