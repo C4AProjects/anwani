@@ -24,24 +24,26 @@ app.config(
     ['$controllerProvider', '$compileProvider', '$filterProvider', '$provide',
       function ($controllerProvider, $compileProvider, $filterProvider, $provide) {
 
-      // lazy controller, directive and service
-      app.controller = $controllerProvider.register;
-      app.directive = $compileProvider.directive;
-      app.filter = $filterProvider.register;
-      app.factory = $provide.factory;
-      app.service = $provide.service;
-      app.constant = $provide.constant;
-      app.value = $provide.value;
-    }
-  ]);
+        // lazy controller, directive and service
+        app.controller = $controllerProvider.register;
+        app.directive = $compileProvider.directive;
+        app.filter = $filterProvider.register;
+        app.factory = $provide.factory;
+        app.service = $provide.service;
+        app.constant = $provide.constant;
+        app.value = $provide.value;
+      }
+    ]);
 
 app.run(
-    ['localStorageService', '$rootScope',
-      function (localStorageService, rootScope) {
+    ['localStorageService', '$rootScope','$http',
+      function (localStorageService, rootScope,http) {
         var user = localStorageService.get('user');
-        if (user) {
+        var token = localStorageService.get('token');
+        if (user && token) {
           rootScope.user = user;
-          console.log(user);
+          rootScope.token = token;
+          http.defaults.headers.post = { 'Authorization' : 'Bearer '+localStorageService.get('token') }
         }
       }
     ]);

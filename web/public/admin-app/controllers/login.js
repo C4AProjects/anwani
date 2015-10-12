@@ -11,7 +11,6 @@ app.controller('LoginFormController', ['$scope', '$http', '$state', 'localStorag
             // Try to login
             http.post('http://anwaniapi.mybluemix.net/users/login', scope.user)
                 .then(function (response) {
-                    console.log(response.data);
                     if (!response.data.user) {
                         scope.authError = 'Phone Number or Password not right';
                     } else {

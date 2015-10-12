@@ -7,18 +7,18 @@ app.controller('RegisterFormController', ['$scope', '$http', '$state', 'localSto
         scope.authError = null;
         scope.register = function () {
             scope.authError = null;
-      // Try to create
+            // Try to create
             http.post('http://anwaniapi.mybluemix.net/users/signup', scope.user)
-      .then(function(response) {
+                .then(function(response) {
                     if (!response.data) {
-            scope.authError = response;
-        }else{
+                        scope.authError = response;
+                    }else{
                         rootScope.newUser = response.data;
-            state.go('app.dashboard');
-        }
-      }, function(x) {
+                        state.go('app.dashboard');
+                    }
+                }, function(x) {
                     scope.authError = 'Server Error';
-      });
-    };
-  }])
- ;
+                });
+        };
+    }])
+;
