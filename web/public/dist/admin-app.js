@@ -17,31 +17,71 @@ var app = angular.module('admin', [
   'perfect_scrollbar',
   'angular-inview',
   'angular-loading-bar',
-  'LocalStorageModule'
+  'LocalStorageModule',
+  'smart-table'
 ]);
 
 app.config(
-    ['$controllerProvider', '$compileProvider', '$filterProvider', '$provide', '$httpProvider',
-      function ($controllerProvider, $compileProvider, $filterProvider, $provide, $httpProvider) {
+    ['$controllerProvider', '$compileProvider', '$filterProvider', '$provide',
+      function ($controllerProvider, $compileProvider, $filterProvider, $provide) {
 
-      // lazy controller, directive and service
-      app.controller = $controllerProvider.register;
-      app.directive = $compileProvider.directive;
-      app.filter = $filterProvider.register;
-      app.factory = $provide.factory;
-      app.service = $provide.service;
-      app.constant = $provide.constant;
-      app.value = $provide.value;
+        // lazy controller, directive and service
+        app.controller = $controllerProvider.register;
+        app.directive = $compileProvider.directive;
+        app.filter = $filterProvider.register;
+        app.factory = $provide.factory;
+        app.service = $provide.service;
+        app.constant = $provide.constant;
+        app.value = $provide.value;
+      }
+    ]);
 
+app.run(
+    ['localStorageService', '$rootScope','$http','$state',
+      function (localStorageService, rootScope,http,state) {
+        var user = localStorageService.get('user');
+        var token = localStorageService.get('token');
+        rootScope.addresses = [{
+          "_id" : "556e1174a8952c9521286a60",
+          user: "556e1174a8952c9521286a60",
+          short_virtual_code: "MP7H+E2",
+          long_virtual_code: "6EAEMMP7H+E2",
+          location_pic: "/media/a8952c9521286a60.jpeg",
+          latitude: 4.567889,
+          longitude: -12.098,
+          street_address: "",
+          city: "nairobi",
+          country: "kenya"
+        },
+          {
+            "_id" : "556e1174a8952c9521286a60",
+            user: "556e1174a8952c9521286a60",
+            short_virtual_code: "MP7H+E2",
+            long_virtual_code: "6EAEMMP7H+E2",
+            location_pic: "/media/a8952c9521286a60.jpeg",
+            latitude: 4.567889,
+            longitude: -12.098,
+            street_address: "",
+            city: "nakuru",
+            country: "kenya"
+          }];
+        rootScope.addresses_shared = [];
+        if (user && token) {
+          rootScope.user = user;
+          rootScope.token = token;
+          http.defaults.headers.post = { 'Authorization' : 'Bearer '+localStorageService.get('token') };
+          http.defaults.headers.get = { 'Authorization' : 'Bearer '+localStorageService.get('token') }
+        }
 
-        $httpProvider.defaults.useXDomain = true;
-        $httpProvider.defaults.withCredentials = true;
-        delete $httpProvider.defaults.headers.common["X-Requested-With"];
-        $httpProvider.defaults.headers.common["Accept"] = "application/json";
-        $httpProvider.defaults.headers.common["Content-Type"] = "application/json";
-    }
-  ]);
-;// lazyload config
+        rootScope.logout = function logout()
+        {
+          localStorageService.remove('user');
+          localStorageService.remove('token');
+          state.go('login');
+
+        }
+      }
+    ]);;// lazyload config
 
 app.constant('JQ_CONFIG', {
   easyPieChart: [
@@ -312,7 +352,23 @@ app.controller('AppCtrl', ['$scope',
 
   }
 ]);
-;app.controller('BlogPageCtrl', ['$scope', 'filterFilter', function ($scope, filterFilter) {
+;app.controller('AddressesCtrl', ['$scope', 'filterFilter','$http','$rootScope',
+    function (scope, filterFilter,http,rootScope) {
+
+        scope.add = function add(){
+            http.post('http://anwaniapi.mybluemix.net/addresses/create',scope.address).then(function(result){
+                console.log(result);
+            });
+        };
+        scope.view = function view(){
+            http.get('http://anwaniapi.mybluemix.net/users/'+rootScope.user._id+'/addresses',
+                scope.address).then(function(result){
+                    console.log(result);
+            });
+        };
+scope.view();
+
+}]);;app.controller('BlogPageCtrl', ['$scope', 'filterFilter', function ($scope, filterFilter) {
 	$scope.items = [
 	{
 		"id": 1,
@@ -2248,14 +2304,13 @@ app.controller('LoginFormController', ['$scope', '$http', '$state', 'localStorag
             // Try to login
             http.post('http://anwaniapi.mybluemix.net/users/login', scope.user)
                 .then(function (response) {
-                    console.log(response.data);
                     if (!response.data.user) {
                         scope.authError = 'Phone Number or Password not right';
                     } else {
-                        rootScope.user = response.user;
-                        localStorageService.set('user', response.user);
-                        rootScope.token = response.token;
-                        localStorageService.set('token', response.token);
+                        rootScope.user = response.data.user;
+                        localStorageService.set('user', response.data.user);
+                        rootScope.token = response.data.token;
+                        localStorageService.set('token', response.data.token);
                         state.go('app.dashboard');
                     }
                 }, function (x) {
@@ -2455,21 +2510,21 @@ app.controller('RegisterFormController', ['$scope', '$http', '$state', 'localSto
         scope.authError = null;
         scope.register = function () {
             scope.authError = null;
-      // Try to create
+            // Try to create
             http.post('http://anwaniapi.mybluemix.net/users/signup', scope.user)
-      .then(function(response) {
-        if ( !response.data.user ) {
-            scope.authError = response;
-        }else{
-            rootScope.newUser = response.user;
-            state.go('app.dashboard');
-        }
-      }, function(x) {
+                .then(function(response) {
+                    if (!response.data) {
+                        scope.authError = response;
+                    }else{
+                        rootScope.newUser = response.data;
+                        state.go('app.dashboard');
+                    }
+                }, function(x) {
                     scope.authError = 'Server Error';
-      });
-    };
-  }])
- ;;/**
+                });
+        };
+    }])
+;;/**
  */
 
 'use strict';
@@ -4674,17 +4729,30 @@ app.controller('MapCtrl', ['$scope', function ($scope) {
         .state('access',{
 
         })
-        .state('access.register', {
+        .state('register', {
           url: '/register',
           templateUrl: '../admin-app/partials/ui-register.html'
         })
-        .state('access.forgot', {
+        .state('forgot', {
           url: '/forgot',
           templateUrl: '../admin-app/partials/ui-forgotpwd.html'
         })
+        .state('app.address', {
+          url:'/address',
+          controller:'AddressesCtrl',
+          templateUrl:'../admin-app/partials/address.html'
+        })
+        .state('app.address.new', {
+          url: '/new',
+          templateUrl: '../admin-app/partials/address-add.html'
+        })
+        .state('app.address.view', {
+          url: '/view',
+          templateUrl: '../admin-app/partials/address-view.html'
+        })
     ;
   }
-])
+]);
 ;// A RESTful factory for retreiving mails from 'mails.json'
 app.factory('mails', ['$http', function ($http) {
   var path = 'data/mail/mails.json';

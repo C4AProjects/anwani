@@ -59,6 +59,7 @@ app.config(['$stateProvider', '$urlRouterProvider', 'JQ_CONFIG',
         })
         .state('app.address', {
           url:'/address',
+          controller:'AddressesCtrl',
           templateUrl:'../admin-app/partials/address.html'
         })
         .state('app.address.new', {
