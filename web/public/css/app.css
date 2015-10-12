@@ -9411,8 +9411,15 @@ padding:20px 0 0 30px;
 }
 
 .page-topbar.sidebar_shift .logo-area {
-    padding:10px 0 0 20px;
-    width:50px;
+    display:none;
+}
+.page-topbar.sidebar_shift .logo-area-small {
+    padding:5px;
+    width:60px;
+    background:##37474F;
+    display: block !important;
+    float: left;
+    height: 60px;
 }
 
 .page-topbar.chat_shift .logo-area {
