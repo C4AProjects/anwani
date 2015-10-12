@@ -2,7 +2,7 @@
     <section class="box nobox margin-top-15 margin-bottom-0">
         <div class="content-body">
             <div class="col-md-12 col-sm-12 col-xs-12 padding-right-30 padding-left-20">
-                <table class="table table-striped" st-table="displayedCollection" st-safe-src="addresses">
+                <table ng-if="admin" class="table table-striped" st-table="displayedCollection" st-safe-src="addresses">
                     <thead>
                     <tr style="background:transparent">
                         <th colspan="3">
@@ -48,6 +48,9 @@
                     </tr>
                     </tfoot>
                 </table>
+                <h3 style="text-align: center" ng-if="!admin">
+                  You are not autorized to view this information.
+                </h3>
             </div>
         </div>
     </section>

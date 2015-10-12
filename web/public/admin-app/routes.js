@@ -78,6 +78,11 @@ app.config(['$stateProvider', '$urlRouterProvider', 'JQ_CONFIG',
           url: '/view',
           templateUrl: '../admin-app/partials/users-view.html'
         })
+        .state('app.map', {
+          url: '/map',
+          controller:"MapsCtrl",
+          templateUrl: '../admin-app/partials/ui-map.html'
+        })
     ;
   }
 ]);

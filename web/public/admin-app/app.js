@@ -18,7 +18,9 @@ var app = angular.module('admin', [
     'angular-inview',
     'angular-loading-bar',
     'LocalStorageModule',
-    'smart-table'
+    'smart-table',
+    'permission',
+    'uiGmapgoogle-maps'
 ]);
 
 app.config(
@@ -51,8 +53,8 @@ app.run(
                 short_virtual_code: "MP7H+E2",
                 long_virtual_code: "6EAEMMP7H+E2",
                 location_pic: "/media/a8952c9521286a60.jpeg",
-                latitude: 4.567889,
-                longitude: -12.098,
+                latitude: -0.3000,
+                longitude: 36.0667,
                 street_address: "",
                 city: "nairobi",
                 country: "kenya"
@@ -63,8 +65,8 @@ app.run(
                     short_virtual_code: "MP7H+E2",
                     long_virtual_code: "6EAEMMP7H+E2",
                     location_pic: "/media/a8952c9521286a60.jpeg",
-                    latitude: 4.567889,
-                    longitude: -12.098,
+                    latitude: -0.7202,
+                    longitude: 36.4285,
                     street_address: "",
                     city: "nakuru",
                     country: "kenya"

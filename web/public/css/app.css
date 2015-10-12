@@ -11339,3 +11339,5 @@ fieldset[disabled] .icheck input + i:before {
     top: 8px !important;
     right: 6px !important;
 }
+
+.angular-google-map-container { height: 400px; }
