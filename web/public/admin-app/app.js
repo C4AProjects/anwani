@@ -37,8 +37,8 @@ app.config(
     ]);
 
 app.run(
-    ['localStorageService', '$rootScope','$http',
-      function (localStorageService, rootScope,http) {
+    ['localStorageService', '$rootScope','$http','$state',
+      function (localStorageService, rootScope,http,state) {
         var user = localStorageService.get('user');
         var token = localStorageService.get('token');
         rootScope.addresses = [{
@@ -70,6 +70,14 @@ app.run(
           rootScope.user = user;
           rootScope.token = token;
           http.defaults.headers.post = { 'Authorization' : 'Bearer '+localStorageService.get('token') }
+        }
+
+        rootScope.logout = function logout()
+        {
+          localStorageService.remove('user');
+          localStorageService.remove('token');
+          state.go('login');
+
         }
       }
     ]);
