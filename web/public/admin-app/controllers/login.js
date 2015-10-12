@@ -15,10 +15,10 @@ app.controller('LoginFormController', ['$scope', '$http', '$state', 'localStorag
                     if (!response.data.user) {
                         scope.authError = 'Phone Number or Password not right';
                     } else {
-                        rootScope.user = response.user;
-                        localStorageService.set('user', response.user);
-                        rootScope.token = response.token;
-                        localStorageService.set('token', response.token);
+                        rootScope.user = response.data.user;
+                        localStorageService.set('user', response.data.user);
+                        rootScope.token = response.data.token;
+                        localStorageService.set('token', response.data.token);
                         state.go('app.dashboard');
                     }
                 }, function (x) {

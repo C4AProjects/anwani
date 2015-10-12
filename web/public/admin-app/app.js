@@ -21,8 +21,8 @@ var app = angular.module('admin', [
 ]);
 
 app.config(
-    ['$controllerProvider', '$compileProvider', '$filterProvider', '$provide', '$httpProvider',
-      function ($controllerProvider, $compileProvider, $filterProvider, $provide, $httpProvider) {
+    ['$controllerProvider', '$compileProvider', '$filterProvider', '$provide',
+      function ($controllerProvider, $compileProvider, $filterProvider, $provide) {
 
       // lazy controller, directive and service
       app.controller = $controllerProvider.register;
@@ -32,12 +32,16 @@ app.config(
       app.service = $provide.service;
       app.constant = $provide.constant;
       app.value = $provide.value;
-
-
-        $httpProvider.defaults.useXDomain = true;
-        $httpProvider.defaults.withCredentials = true;
-        delete $httpProvider.defaults.headers.common["X-Requested-With"];
-        $httpProvider.defaults.headers.common["Accept"] = "application/json";
-        $httpProvider.defaults.headers.common["Content-Type"] = "application/json";
     }
   ]);
+
+app.run(
+    ['localStorageService', '$rootScope',
+      function (localStorageService, rootScope) {
+        var user = localStorageService.get('user');
+        if (user) {
+          rootScope.user = user;
+          console.log(user);
+        }
+      }
+    ]);

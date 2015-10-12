@@ -10,10 +10,10 @@ app.controller('RegisterFormController', ['$scope', '$http', '$state', 'localSto
       // Try to create
             http.post('http://anwaniapi.mybluemix.net/users/signup', scope.user)
       .then(function(response) {
-        if ( !response.data.user ) {
+                    if (!response.data) {
             scope.authError = response;
         }else{
-            rootScope.newUser = response.user;
+                        rootScope.newUser = response.data;
             state.go('app.dashboard');
         }
       }, function(x) {
