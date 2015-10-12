@@ -5864,14 +5864,13 @@ table.dataTable.no-footer {
     Login and Registration Page - Transparent Background Style
 ------------------------------------------------------------------*/
 
-  .loginform{
+.loginpage{
     padding: 70px 50px 80px 50px;
     background-color: rgba(0, 0, 0, 0.5);
     margin-top: 5%;
 }
-form{
-    padding: 70px 50px 80px 50px;
-    margin-top: 5%;
+.loginpage form{
+    padding:0;
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {

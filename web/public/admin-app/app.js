@@ -52,7 +52,19 @@ app.run(
           street_address: "",
           city: "nairobi",
           country: "kenya"
-        }];
+        },
+          {
+            "_id" : "556e1174a8952c9521286a60",
+            user: "556e1174a8952c9521286a60",
+            short_virtual_code: "MP7H+E2",
+            long_virtual_code: "6EAEMMP7H+E2",
+            location_pic: "/media/a8952c9521286a60.jpeg",
+            latitude: 4.567889,
+            longitude: -12.098,
+            street_address: "",
+            city: "nakuru",
+            country: "kenya"
+          }];
         rootScope.addresses_shared = [];
         if (user && token) {
           rootScope.user = user;
