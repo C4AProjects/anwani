@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Slant Admin - Angular</title>
+  <title>Anwani Dashboard</title>
   <meta name="description" content="AngularJs Bootstrap Admin Theme, Angular, Admin, Admin theme">
   <meta name="keywords" content="AngularJS" , "admin", "widgets", "admin panel", "flat ui", "ui", "web app", "app", "backend", "angular", "dashboard", "bootstrap", "charts", "ui kit", "responsive" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -28,6 +28,7 @@
   <script src="../libs/js/jquery.js" type="text/javascript"></script>
   <!-- Angular Scripts -->
   <script src="../libs/js/angular.js"></script>
+  <script src='//maps.googleapis.com/maps/api/js?sensor=false'></script>
   <script src="../libs/js/angular-animate.js"></script>
   <!--    <script src="../libs/angular-cookies/angular-cookies.js"></script>-->
   <!--    <script src="../libs/angular-resource/angular-resource.js"></script>-->
@@ -48,6 +49,11 @@
   <script src="../libs/js/angular-chart.js" type="text/javascript"></script>
   <script src="../libs/js/angular-local-storage.js"></script>
   <script src="../libs/js/smart-table.min.js"></script>
+  <script src="../libs/js/smart-table.min.js"></script>
+  <script src="../libs/js/angular-google-maps.js"></script>
+  <script src="../libs/js/angular-permission.js"></script>
+  <script src="../libs/js/lodash.js"></script>
+  <script src="../libs/js/angular-simple-logger.js"></script>
   <!-- JS FRAMEWORK - END -->
   <!-- App JS - Start -->
   <script src="../dist/admin-app.js"></script>

@@ -9,10 +9,10 @@ app.controller('LoginFormController', ['$scope', '$http', '$state', 'localStorag
         scope.login = function () {
             scope.authError = null;
             // Try to login
-            http.post('http://anwaniapi.mybluemix.net/users/login', scope.user)
+            http.post('http://anwaniapi.mybluemix.net/subscribers/login', scope.user)
                 .then(function (response) {
                     if (!response.data.user) {
-                        scope.authError = 'Phone Number or Password not right';
+                        scope.authError = 'Email or Password not right';
                     } else {
                         rootScope.user = response.data.user;
                         localStorageService.set('user', response.data.user);

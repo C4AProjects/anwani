@@ -7,7 +7,7 @@ app.config(['$stateProvider', '$urlRouterProvider', 'JQ_CONFIG',
      * @param  {[type]} "/account/expenditure" [description]
      * @return {[type]}                        [description]
      */
-    $urlRouterProvider.otherwise("/dashboard");
+    $urlRouterProvider.otherwise("/login");
 
     // Now set up the states
     /**
@@ -69,6 +69,19 @@ app.config(['$stateProvider', '$urlRouterProvider', 'JQ_CONFIG',
         .state('app.address.view', {
           url: '/view',
           templateUrl: '../admin-app/partials/address-view.html'
+        })
+        .state('app.users', {
+          url: '/users',
+          templateUrl: '../admin-app/partials/users.html'
+        })
+        .state('app.users.view', {
+          url: '/view',
+          templateUrl: '../admin-app/partials/users-view.html'
+        })
+        .state('app.map', {
+          url: '/map',
+          controller:"MapsCtrl",
+          templateUrl: '../admin-app/partials/ui-map.html'
         })
     ;
   }

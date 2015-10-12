@@ -3,71 +3,54 @@
         <div id="register"
              class="login loginpage col-lg-offset-2 col-lg-8 col-md-offset-2 col-md-8 col-sm-offset-3 col-sm-6 col-xs-offset-2 col-xs-8">
             <h1><a href="#" title="Sign In Page" tabindex="-1">
-                <img src="../images/anwani_logo.png" alt="" class="img-responsive" style="width:30%;margin:auto">
+                <img src="../images/anwani_logo_white.png" alt="" class="img-responsive" style="width:30%;margin:auto">
             </a></h1>
 
-            <form name="form" class="form-validation">
+            <form name="form" class="">
                 <div class="text-danger wrapper text-center" ng-show="authError">
                     {{authError}}
                 </div>
                 <div class="col-md-6">
                     <p>
 
-                        <input type="text" name="name" class="input" ng-model="user.first_name" placeholder="First Name"
-                               required/>
-                    </p>
-
-                </div>
-                <div class="col-md-6">
-                    <p>
-                        <input type="text" name="name" class="input" ng-model="user.last_name" placeholder="Last Name"
-                               required/>
+                        <input type="text" class="input" ng-model="user.name"
+                               placeholder="Name"
+                               />
                     </p>
                 </div>
                 <div class="col-md-6">
                     <p>
 
-                        <input type="text" name="name" class="input" ng-model="user.other_names"
-                               placeholder="Other Names"
-                               required/>
+                        <input type="text" class="input" ng-model="user.website" placeholder="Website"
+                               />
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <p>
+                        <input type="text" class="input" ng-model="user.address" placeholder="Address"
+                               />
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <p>
+                        <input type="text" class="input" ng-model="user.email" placeholder="Email"
+                               />
                     </p>
                 </div>
                 <div class="col-md-6">
                     <p>
 
-                        <input type="email" name="log" class="input" ng-model="user.email" placeholder="Email"
-                               required/>
+                        <input type="password" name="log" class="input" ng-model="user.password" placeholder="Password"
+                               />
                     </p>
                 </div>
                 <div class="col-md-6">
                     <p>
-
-                        <input type="text" name="name" class="input" ng-model="user.phone_number"
-                               placeholder="Phone Number"
-                               required/>
+                        <input type="file" name="name" class="input" ng-model="user.logo"
+                               placeholder="Logo"
+                               />
                     </p>
                 </div>
-                <div class="col-md-6">
-                    <p>
-                        <input type="password" name="pwd" id="user_pass" class="input" ng-model="user.password"
-                               placeholder="Password" required/>
-                    </p>
-                </div>
-                <div class="col-md-6">
-                    <p>
-                        <input type="password" name="pwd" id="user_pass" class="input"
-                               ng-model="user.security_pass.question" placeholder="Security Question" required/>
-                    </p>
-                </div>
-                <div class="col-md-6">
-                    <p>
-
-                        <input type="password" name="pwd" id="user_pass" class="input"
-                               ng-model="user.security_pass.answer"
-                               placeholder="Security Answer" required/>
-                    </p>
-                </div>
-
 
                 <p class="forgetmenot">
                     <label class="icheck icheck-white" for="rememberme">
@@ -76,10 +59,9 @@
                     </label>
                 </p>
 
-
                 <p class="submit">
                     <button type="submit" name="wp-submit" id="wp-submit" class="btn btn-orange btn-block"
-                            ng-click="register()" ng-disabled='form.$invalid'>Sign Up
+                            ng-click="registerSubscriber()" ng-disabled='form.$invalid'>Sign Up
                     </button>
                 </p>
             </form>

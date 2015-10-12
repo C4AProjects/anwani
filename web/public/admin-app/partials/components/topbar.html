@@ -1,6 +1,9 @@
 <!-- START TOPBAR -->
-<div class='logo-area'>
-    <img class="img-responsive" src="../images/anwani_logo.png" alt="">
+<div class='logo-area' >
+    <img ui-sref="app.dashboard" class="img-responsive" src="../images/anwani_logo.png" alt="">
+</div>
+<div class='logo-area-small' style="display:none">
+    <img style="padding-top: 5px" ui-sref="app.dashboard" class="img-responsive" src="../images/anwani_logo_small.png" alt="">
 </div>
 <div class='quick-area'>
     <div class='pull-left slantit'>
@@ -121,7 +124,7 @@
             
             <li class="dropdown profile tab" dropdown>
                 <a href class="dropdown-toggle toggle" dropdown-toggle>
-                    <img src="../data/profile/profile.png" alt="user-image" class="img-circle img-inline">
+                    <img ng-src="{{user.logo}}" alt="user-image" class="img-circle img-inline">
                     <span class="profile-status available"></span>
                         <!-- <span class='hidden-sm hidden-md hidden-xs'>John Carter </span>  -->
                         <!-- <i class="material-icons hidden-md hidden-sm hidden-xs">expand_more</i> -->

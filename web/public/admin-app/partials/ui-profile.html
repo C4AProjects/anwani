@@ -6,7 +6,7 @@
                     <div class="col-md-3 col-sm-4 col-xs-12 padding-right-0">
                         <div class=" uprofile-wrapper">
                             <div class="uprofile-image">
-                                <img src="../data/profile/profile.png" class="img-responsive">
+                                <img ng-src="{{user.logo}}" class="img-responsive">
                             </div>
                             <div class="uprofile-name">
                                 <h3>
@@ -16,8 +16,12 @@
                                     <span class="uprofile-status online"></span>
                                 </h3>
                                 <!--<p class="uprofile-title">Web Developer</p>-->
-                                <p class="text-light profile-text">Hello, I am <span ng-bind="user.first_name">.</p>
-                                <p class="margin-top-30">
+                                <div class="text-light profile-text">
+                                    <p><span ng-bind="user.name"></span></p>
+                                    <p><a style="color:#333" ng-href="{{user.website}}" ng-bind="user.website"></a></p>
+                                    <p><span ng-bind="user.address"></span></p>
+                                </div>
+                                <p class="">
                                     <a href="#" class="btn btn-default btn-md text-light"><i class="fa fa-dribbble icon-xs"></i></a>
                                     <a href="#" class="btn btn-default btn-md text-light"><i class="fa fa-google-plus icon-xs"></i></a>
                                     <a href="#" class="btn btn-default btn-md text-light"><i class="fa fa-twitter icon-xs"></i></a>
@@ -25,7 +29,7 @@
                                 </p>
                                 <br>
                                 <a class="btn btn-md btn-default" style='width:150px;'>Follow</a>
-                                <div class="margin-top-30">
+                                <div >
                                     <div class="col-xs-4 bg-white">
                                         <strong class="uprofile-count">760</strong>
                                         <span>Follower</span>
