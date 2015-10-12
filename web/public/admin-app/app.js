@@ -40,6 +40,8 @@ app.run(
       function (localStorageService, rootScope,http) {
         var user = localStorageService.get('user');
         var token = localStorageService.get('token');
+        rootScope.addresses = [];
+        rootScope.addresses_shared = [];
         if (user && token) {
           rootScope.user = user;
           rootScope.token = token;

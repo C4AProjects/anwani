@@ -18,88 +18,88 @@
         <div></div>
     </div>
     <div class="pull-left" style='z-index:1;position:relative;'>
-        <ul class="info-menu right-links list-inline list-unstyled">
-            <li class="dropdown tab hidden-gxs hidden-xs " dropdown>
-                <a href class="dropdown-toggle toggle" dropdown-toggle>
-                    <i class="material-icons">email</i>
-                    <span class="badge badge-primary">7</span>
-                </a>
-                <ul class="dropdown-menu  messages animated fadeIn">
-                    <li ng-controller="MessagesDropDownCtrl" class="list">
-                        <perfect-scrollbar wheel-propagation="true" suppress-scroll-x="true" min-scrollbar-length="20" class='ps-scrollbar'>
-                            <ul class="dropdown-menu-list list-unstyled">
-                                <li class="{{message.read ? 'read' : 'unread'}} status-{{message.status}}" ng-repeat="message in messages">
-                                    <a href="javascript:">
-                                        <div class="user-img">
-                                            <img ng-src="{{message.avatar}}" alt="user-image" class="img-circle img-inline">
-                                        </div>
-                                        <div>
-                                            <span class="name">
-                                                    <h4>{{message.name}}</h4>
-                                                    <span class="time small">{{message.time}}</span>
-                                            <span class="profile-status {{message.status}} pull-right"></span>
-                                            </span>
-                                            <span class="desc small">
-                                                    {{message.description}}
-                                                </span>
-                                        </div>
-                                    </a>
-                                </li>
-                            </ul>
-                        </perfect-scrollbar>
-                    </li>
-                    <li class="external">
-                        <a href="javascript:">
-                            <span>Read All Messages</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <li class="dropdown tab hidden-gxs hidden-xs " dropdown>
-                <a href class="dropdown-toggle toggle" dropdown-toggle>
-                    <i class="material-icons">notifications</i>
-                    <span class="badge badge-orange">3</span>
-                </a>
-                <ul class="dropdown-menu  notifications animated fadeIn">
-                    <li class="total">
-                        <span class="small">
-                                You have <strong>3</strong> new notifications.
-                                <a href="javascript:" class="pull-right">Mark all as Read</a>
-                            </span>
-                    </li>
-                    <li ng-controller="NotificationsDropDownCtrl" class="list">
-                        <perfect-scrollbar wheel-propagation="true" suppress-scroll-x="true" min-scrollbar-length="20" class='ps-scrollbar'>
-                            <ul class="dropdown-menu-list list-unstyled">
-                                <li class="{{notification.read ? 'read' : 'unread'}} {{notification.status}}" ng-repeat="notification in notifications">
-                                    <!-- available: success, warning, info, error -->
-                                    <a href="javascript:">
-                                        <div class="notice-icon">
-                                            <i class="material-icons">{{notification.statusicon}}</i>
-                                        </div>
-                                        <div>
-                                            <span class="name">
-                                                    <h4>{{notification.message}}</h4>
-                                                    <span class="time small">{{notification.time}}</span>
-                                            </span>
-                                        </div>
-                                    </a>
-                                </li>
-                            </ul>
-                        </perfect-scrollbar>
-                    </li>
-                    <li class="external">
-                        <a href="javascript:">
-                            <span>Read All Notifications</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <li class="menu-profile-toggle tab hidden-sm hidden-xs ">
-                <a href class="profile_toggle" ng-click="app.settings.menuProfile = !app.settings.menuProfile ">
-                    <i class="material-icons">person</i>
-                </a>
-            </li>
-        </ul>
+        <!--<ul class="info-menu right-links list-inline list-unstyled">-->
+            <!--<li class="dropdown tab hidden-gxs hidden-xs " dropdown>-->
+                <!--<a href class="dropdown-toggle toggle" dropdown-toggle>-->
+                    <!--<i class="material-icons">email</i>-->
+                    <!--<span class="badge badge-primary">7</span>-->
+                <!--</a>-->
+                <!--<ul class="dropdown-menu  messages animated fadeIn">-->
+                    <!--<li ng-controller="MessagesDropDownCtrl" class="list">-->
+                        <!--<perfect-scrollbar wheel-propagation="true" suppress-scroll-x="true" min-scrollbar-length="20" class='ps-scrollbar'>-->
+                            <!--<ul class="dropdown-menu-list list-unstyled">-->
+                                <!--<li class="{{message.read ? 'read' : 'unread'}} status-{{message.status}}" ng-repeat="message in messages">-->
+                                    <!--<a href="javascript:">-->
+                                        <!--<div class="user-img">-->
+                                            <!--<img ng-src="{{message.avatar}}" alt="user-image" class="img-circle img-inline">-->
+                                        <!--</div>-->
+                                        <!--<div>-->
+                                            <!--<span class="name">-->
+                                                    <!--<h4>{{message.name}}</h4>-->
+                                                    <!--<span class="time small">{{message.time}}</span>-->
+                                            <!--<span class="profile-status {{message.status}} pull-right"></span>-->
+                                            <!--</span>-->
+                                            <!--<span class="desc small">-->
+                                                    <!--{{message.description}}-->
+                                                <!--</span>-->
+                                        <!--</div>-->
+                                    <!--</a>-->
+                                <!--</li>-->
+                            <!--</ul>-->
+                        <!--</perfect-scrollbar>-->
+                    <!--</li>-->
+                    <!--<li class="external">-->
+                        <!--<a href="javascript:">-->
+                            <!--<span>Read All Messages</span>-->
+                        <!--</a>-->
+                    <!--</li>-->
+                <!--</ul>-->
+            <!--</li>-->
+            <!--<li class="dropdown tab hidden-gxs hidden-xs " dropdown>-->
+                <!--<a href class="dropdown-toggle toggle" dropdown-toggle>-->
+                    <!--<i class="material-icons">notifications</i>-->
+                    <!--<span class="badge badge-orange">3</span>-->
+                <!--</a>-->
+                <!--<ul class="dropdown-menu  notifications animated fadeIn">-->
+                    <!--<li class="total">-->
+                        <!--<span class="small">-->
+                                <!--You have <strong>3</strong> new notifications.-->
+                                <!--<a href="javascript:" class="pull-right">Mark all as Read</a>-->
+                            <!--</span>-->
+                    <!--</li>-->
+                    <!--<li ng-controller="NotificationsDropDownCtrl" class="list">-->
+                        <!--<perfect-scrollbar wheel-propagation="true" suppress-scroll-x="true" min-scrollbar-length="20" class='ps-scrollbar'>-->
+                            <!--<ul class="dropdown-menu-list list-unstyled">-->
+                                <!--<li class="{{notification.read ? 'read' : 'unread'}} {{notification.status}}" ng-repeat="notification in notifications">-->
+                                    <!--&lt;!&ndash; available: success, warning, info, error &ndash;&gt;-->
+                                    <!--<a href="javascript:">-->
+                                        <!--<div class="notice-icon">-->
+                                            <!--<i class="material-icons">{{notification.statusicon}}</i>-->
+                                        <!--</div>-->
+                                        <!--<div>-->
+                                            <!--<span class="name">-->
+                                                    <!--<h4>{{notification.message}}</h4>-->
+                                                    <!--<span class="time small">{{notification.time}}</span>-->
+                                            <!--</span>-->
+                                        <!--</div>-->
+                                    <!--</a>-->
+                                <!--</li>-->
+                            <!--</ul>-->
+                        <!--</perfect-scrollbar>-->
+                    <!--</li>-->
+                    <!--<li class="external">-->
+                        <!--<a href="javascript:">-->
+                            <!--<span>Read All Notifications</span>-->
+                        <!--</a>-->
+                    <!--</li>-->
+                <!--</ul>-->
+            <!--</li>-->
+            <!--<li class="menu-profile-toggle tab hidden-sm hidden-xs ">-->
+                <!--<a href class="profile_toggle" ng-click="app.settings.menuProfile = !app.settings.menuProfile ">-->
+                    <!--<i class="material-icons">person</i>-->
+                <!--</a>-->
+            <!--</li>-->
+        <!--</ul>-->
     </div>
     <div class='pull-left searchbar'>
         <ul class="info-menu right-links list-inline list-unstyled">

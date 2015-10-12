@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="78455709-2407-4658-a7ed-72ed64f9459a" name="Default" comment="Login and Registration Working">
+    <list default="true" id="78455709-2407-4658-a7ed-72ed64f9459a" name="Default" comment="Putting Token in all Requests">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/public/admin-app/app.js" afterPath="$PROJECT_DIR$/web/public/admin-app/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/public/admin-app/controllers/login.js" afterPath="$PROJECT_DIR$/web/public/admin-app/controllers/login.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/public/admin-app/controllers/register.js" afterPath="$PROJECT_DIR$/web/public/admin-app/controllers/register.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/public/admin-app/partials/app_dashboard.html" afterPath="$PROJECT_DIR$/web/public/admin-app/partials/app_dashboard.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/public/admin-app/partials/components/topbar.html" afterPath="$PROJECT_DIR$/web/public/admin-app/partials/components/topbar.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/public/admin-app/partials/ui-login.html" afterPath="$PROJECT_DIR$/web/public/admin-app/partials/ui-login.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="anwani.iws" />
@@ -50,11 +48,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="nav.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/public/admin-app/partials/components/nav.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-12.5">
+              <caret line="20" column="57" selection-start-line="20" selection-start-column="57" selection-end-line="20" selection-end-column="57" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/public/admin-app/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.23644252">
-              <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="44" column="28" selection-start-line="44" selection-start-column="28" selection-end-line="44" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app_dashboard.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/public/admin-app/partials/app_dashboard.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.75514877">
+              <caret line="49" column="26" selection-start-line="27" selection-start-column="20" selection-end-line="49" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -95,8 +113,8 @@
       <file leaf-file-name="topbar.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/public/admin-app/partials/components/topbar.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.1666666">
-              <caret line="135" column="40" selection-start-line="135" selection-start-column="40" selection-end-line="135" selection-end-column="40" />
+            <state vertical-scroll-proportion="22.416666">
+              <caret line="101" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="101" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -144,9 +162,10 @@
         <option value="$PROJECT_DIR$/web/public/admin-app/partials/ui-register.html" />
         <option value="$PROJECT_DIR$/web/public/admin-app/controllers/register.js" />
         <option value="$PROJECT_DIR$/web/public/admin-app/partials/ui-login.html" />
-        <option value="$PROJECT_DIR$/web/public/admin-app/partials/components/topbar.html" />
         <option value="$PROJECT_DIR$/web/public/admin-app/controllers/login.js" />
         <option value="$PROJECT_DIR$/web/public/admin-app/app.js" />
+        <option value="$PROJECT_DIR$/web/public/admin-app/partials/components/topbar.html" />
+        <option value="$PROJECT_DIR$/web/public/admin-app/partials/app_dashboard.html" />
       </list>
     </option>
   </component>
@@ -345,7 +364,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FullScreen" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="topbar&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/components/topbar.html&#10;re&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/controllers/register.js&#10;ui-lo&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/ui-login.html&#10;ui-re&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/ui-register.html&#10;header&#9;FILE&#9;file:///var/www/anwani/web/public/app/partials/home/header.html&#10;routes&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/routes.js&#10;ui-pro&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/ui-profile.html&#10;login&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/controllers/login.js&#10;app.js&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/app.js&#10;left&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/components/leftbar.html&#10;app&#9;FILE&#9;file:///var/www/anwani/web/public/dist/admin-app.js&#10;gitignore&#9;FILE&#9;file:///var/www/anwani/.gitignore&#10;gitign&#9;FILE&#9;file:///var/www/anwani/.gitignore&#10;admin&#9;FILE&#9;file:///var/www/anwani/web/resources/views/admin.php&#10;register&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/controllers/register.js&#10;admin.p&#9;FILE&#9;file:///var/www/anwani/web/resources/views/admin.php&#10;index.php&#9;FILE&#9;file:///var/www/anwani/web/resources/views/index.php&#10;login.js&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/controllers/login.js&#10;ui-&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/ui-register.html&#10;leftbar&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/components/leftbar.html&#10;rou&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/routes.js&#10;ui-pr&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/ui-profile.html&#10;app.html&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/app.html&#10;nav&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/components/nav.html&#10;app.css&#9;FILE&#9;file:///var/www/anwani/web/public/css/app.css&#10;nav.ht&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/components/nav.html&#10;dashb&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/app_dashboard.html&#10;git&#9;FILE&#9;file:///var/www/anwani/.gitignore&#10;ui-login&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/ui-login.html&#10;styles.scss&#9;FILE&#9;file:///var/www/anwani/web/resources/assets/sass/styles.scss" />
+    <property name="SearchEverywhereHistoryKey" value="nav&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/components/nav.html&#10;dashboard&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/app_dashboard.html&#10;topbar&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/components/topbar.html&#10;re&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/controllers/register.js&#10;ui-lo&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/ui-login.html&#10;ui-re&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/ui-register.html&#10;header&#9;FILE&#9;file:///var/www/anwani/web/public/app/partials/home/header.html&#10;routes&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/routes.js&#10;ui-pro&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/ui-profile.html&#10;login&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/controllers/login.js&#10;app.js&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/app.js&#10;left&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/components/leftbar.html&#10;app&#9;FILE&#9;file:///var/www/anwani/web/public/dist/admin-app.js&#10;gitignore&#9;FILE&#9;file:///var/www/anwani/.gitignore&#10;gitign&#9;FILE&#9;file:///var/www/anwani/.gitignore&#10;admin&#9;FILE&#9;file:///var/www/anwani/web/resources/views/admin.php&#10;register&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/controllers/register.js&#10;admin.p&#9;FILE&#9;file:///var/www/anwani/web/resources/views/admin.php&#10;index.php&#9;FILE&#9;file:///var/www/anwani/web/resources/views/index.php&#10;login.js&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/controllers/login.js&#10;ui-&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/ui-register.html&#10;leftbar&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/components/leftbar.html&#10;rou&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/routes.js&#10;ui-pr&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/ui-profile.html&#10;app.html&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/app.html&#10;app.css&#9;FILE&#9;file:///var/www/anwani/web/public/css/app.css&#10;nav.ht&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/components/nav.html&#10;dashb&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/app_dashboard.html&#10;git&#9;FILE&#9;file:///var/www/anwani/.gitignore&#10;ui-login&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/ui-login.html&#10;styles.scss&#9;FILE&#9;file:///var/www/anwani/web/resources/assets/sass/styles.scss" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="recentsLimit" value="5" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
@@ -633,7 +652,7 @@
       <workItem from="1444277695637" duration="1065000" />
       <workItem from="1444302143182" duration="4566000" />
       <workItem from="1444319902759" duration="483000" />
-      <workItem from="1444579654229" duration="6856000" />
+      <workItem from="1444579654229" duration="8398000" />
     </task>
     <task id="LOCAL-00001" summary="Ignoring Idea Folder">
       <created>1444252266846</created>
@@ -659,11 +678,17 @@
       <option name="project" value="LOCAL" />
       <updated>1444623861347</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Putting Token in all Requests">
+      <created>1444626510861</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1444626510861</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17972000" />
+    <option name="totallyTimeSpent" value="19514000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -708,14 +733,14 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <MESSAGE value="Adding Local Storage and User API Calls" />
     <MESSAGE value="Ignoring Idea Folder" />
     <MESSAGE value="Login and Registration Working" />
-    <option name="LAST_COMMIT_MESSAGE" value="Login and Registration Working" />
+    <MESSAGE value="Putting Token in all Requests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Putting Token in all Requests" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
-    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
-    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -922,25 +947,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/public/admin-app/partials/app_dashboard.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.234375">
-          <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/resources/assets/sass/styles.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/public/admin-app/partials/components/nav.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="57" selection-start-line="20" selection-start-column="57" selection-end-line="20" selection-end-column="57" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1038,14 +1048,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/public/admin-app/partials/components/leftbar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.75">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/public/admin-app/partials/ui-login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-8.75">
@@ -1066,14 +1068,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0778032">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/public/admin-app/partials/components/topbar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.1666666">
-          <caret line="135" column="40" selection-start-line="135" selection-start-column="40" selection-end-line="135" selection-end-column="40" />
           <folding />
         </state>
       </provider>
@@ -1104,10 +1098,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/public/admin-app/partials/components/leftbar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.75">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/public/admin-app/partials/components/nav.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.5">
+          <caret line="20" column="57" selection-start-line="20" selection-start-column="57" selection-end-line="20" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/public/admin-app/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.23644252">
-          <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="44" column="28" selection-start-line="44" selection-start-column="28" selection-end-line="44" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/public/admin-app/partials/components/topbar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="22.416666">
+          <caret line="101" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="101" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/public/admin-app/partials/app_dashboard.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.75514877">
+          <caret line="49" column="26" selection-start-line="27" selection-start-column="20" selection-end-line="49" selection-end-column="26" />
           <folding />
         </state>
       </provider>
