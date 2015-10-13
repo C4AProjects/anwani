@@ -5,17 +5,17 @@ var EventEmitter = require('events').EventEmitter;
 var crypto  = require('crypto');
 var fs = require('fs');
 
-var debug  = require('debug')('anwani-api:subscriber-controller');
-var async  = require('async');
-var moment = require('moment');
-var _     = require('lodash');
+var debug      = require('debug')('anwani-api:subscriber-controller');
+var async      = require('async');
+var moment     = require('moment');
+var _          = require('lodash');
 var nodemailer = require('nodemailer');
 
 var Subscriber      = require('../dal/subscriber');
-var Token        = require('../dal/token');
+var Token           = require('../dal/token');
 var SubscriberModel = require('../models/subscriber');
-var config       = require('../config');
-var CustomError  = require('../lib/custom-error');
+var config          = require('../config');
+var CustomError     = require('../lib/custom-error');
 
 
 var emailTemplate = fs.readFileSync('./config/email_template.html').toString();
@@ -68,7 +68,7 @@ exports.create = function createSubscriber(req, res, next) {
 
     if(errs) {
       return next(CustomError({
-        name: 'subscriber_CREATION_ERROR',
+        name: 'SUBSCRIBER_CREATION_ERROR',
         message: errs.message
       }));
     }
@@ -77,18 +77,26 @@ exports.create = function createSubscriber(req, res, next) {
   });
 
   workflow.on('createSubscriber', function createSubscriber() {
+    var verificationLink;
+
 
     body.verification_token = createVerificationToken();
+
+    verificationLink  = config.API_URL + '/subscribers/verify/' + body.verification_token;
+
+    body.verification_link = verificationLink;
+    body.verified = true;
 
     Subscriber.create(body, function (err, subscriber) {
       if(err) {
         return next(CustomError({
-          name: 'subscriber_CREATION_ERROR',
+          name: 'SUBSCRIBER_CREATION_ERROR',
           message: err.message
         }));
       }
 
-      workflow.emit('sendEmail', subscriber);
+      //workflow.emit('sendEmail', subscriber);
+      workflow.emit('completeRegistration', subscriber);
 
     });
 
@@ -96,16 +104,14 @@ exports.create = function createSubscriber(req, res, next) {
   });
 
   workflow.on('sendEmail', function (subscriber) {
-    var verificationLink;
     var logoUrl;
     var emailBody;
     var mailOptions;
 
-    verificationLink  = config.API_URL + '/subscribers/verify/' + body.verification_token;
     logoUrl           = config.API_URL + '/assets/anwani_logo.png';
     emailBody = emailTemplate
                 .replace('{{name}}', subscriber.name)
-                .replace(/\{\{verification_url\}\}/g, verificationLink)
+                .replace(/\{\{verification_url\}\}/g, body.verification_link)
                 .replace('{{logo_url}}', logoUrl);
     mailOptions = {
       from: 'Anwani Team ✔ <tonimut7@gmail.com>',
@@ -114,12 +120,10 @@ exports.create = function createSubscriber(req, res, next) {
       html: emailBody
     };
 
-    console.log(verificationLink);
-
     transport.sendMail(mailOptions, function (err, response) {
       if(err) {
         return next(CustomError({
-          name: 'subscriber_CREATION_ERROR',
+          name: 'SUBSCRIBER_CREATION_ERROR',
           message: err.message
         }));
       }
@@ -148,13 +152,6 @@ exports.create = function createSubscriber(req, res, next) {
  */
 exports.fetchOne = function fetchOneSubscriber(req, res, next) {
   debug('fetch subscriber:' + req.params.id);
-
-  if(!req._user) {
-    return next(CustomError({
-      name: 'AUTHORIZATION_ERROR',
-      message: 'Your are not logged in'
-    }));
-  }
 
   var query = {
     _id: req.params.id
@@ -185,13 +182,6 @@ exports.fetchOne = function fetchOneSubscriber(req, res, next) {
  */
 exports.update = function updateSubscriber(req, res, next) {
   debug('updating subscriber:'+ req.params.id);
-
-  if(!req._user) {
-    return next(CustomError({
-      name: 'AUTHORIZATION_ERROR',
-      message: 'Your are not logged in'
-    }));
-  }
 
   var query = {
     _id: req.params.id
@@ -256,13 +246,6 @@ exports.update = function updateSubscriber(req, res, next) {
 exports.delete = function deleteSubscriber(req, res, next) {
   debug('deleting subscriber:' + req.params.id);
 
-  if(!req._user) {
-    return next(CustomError({
-      name: 'AUTHORIZATION_ERROR',
-      message: 'Your are not logged in'
-    }));
-  }
-
   var query = {
     _id: req.params.id
   };
@@ -320,19 +303,17 @@ exports.delete = function deleteSubscriber(req, res, next) {
 exports.fetchAll = function fetchAllsubscribers(req, res, next) {
   debug('get a collection of subscribers');
 
-  if(!req._user || (req._user.role !== 'admin')) {
-    return next(CustomError({
-      name: 'AUTHORIZATION_ERROR',
-      message: 'Access Denied, only admins allowed'
-    }));
-  }
+  var page   = req.query.page || 1;
+  var limit  = req.query.per_page || 10;
 
-  var query = {};
-  var qs = {
-    populate: true
+  var opts = {
+    page: page,
+    limit: limit,
+    sort: { }
   };
+  var query = {};
 
-  Subscriber.getCollection(query, qs, function cb(err, subscribers) {
+  Subscriber.getCollection(query, opts, function cb(err, subscribers) {
     if(err) {
       return next(CustomError({
         name: 'SERVER_ERROR',
@@ -345,7 +326,6 @@ exports.fetchAll = function fetchAllsubscribers(req, res, next) {
   });
 };
 
-
 /**
  * Configure subscription for a subscriber
  *
@@ -357,13 +337,6 @@ exports.fetchAll = function fetchAllsubscribers(req, res, next) {
  */
 exports.updateSubscription = function updateSubscription(req, res, next) {
   debug('Config subscription for ' + req.params.id);
-
-  if(!req._user || (req._user.role !== 'admin')) {
-    return next(CustomError({
-      name: 'AUTHORIZATION_ERROR',
-      message: 'You are not authorized for this action'
-    }));
-  }
 
   var qs = req.query;
   var isCorrect = qs.config ?
@@ -422,13 +395,6 @@ exports.updateSubscription = function updateSubscription(req, res, next) {
 exports.updateLogo = function updateLogo(req, res, next) {
   debug('updating subscriber logo:'+ req.params.id);
 
-  if(!req._user) {
-    return next(CustomError({
-      name: 'AUTHORIZATION_ERROR',
-      message: 'Your are not logged in'
-    }));
-  }
-
   var body = req.body;
   var update = {
     logo: body.logo
@@ -471,13 +437,6 @@ exports.updateLogo = function updateLogo(req, res, next) {
  */
 exports.updatePassword = function updatePassword(req, res, next) {
   debug('updating password for ' + req._user._id);
-
-  if(!req._user) {
-    return next(CustomError({
-      name: 'AUTHORIZATION_ERROR',
-      message: 'Your are not logged in'
-    }));
-  }
 
   var body = req.body;
   var query = {
@@ -599,13 +558,6 @@ exports.updatePassword = function updatePassword(req, res, next) {
  */
 exports.updateSubscriptionPlan = function updateSubscriptionPlan(req, res, next) {
   debug('updating subscriber subscription plan:'+ req.params.id);
-
-  if(!req._user || (req._user.role !== 'admin')) {
-    return next(CustomError({
-      name: 'AUTHORIZATION_ERROR',
-      message: 'You are not authorized for this action'
-    }));
-  }
 
   var body = req.body;
   var update = {

@@ -17,6 +17,7 @@ var debug    = require('debug')('anwani-api:user-router');
 
 var userController  = require('../controllers/user');
 var authController  = require('../controllers/auth');
+var accessControl        = require('../controllers/auth').accessControl;
 
 var router  = express.Router();
 
@@ -156,7 +157,7 @@ router.post('/logout', authController.logout);
  *    "addresses" : []
  *  }
  */
-router.get('/:id', userController.fetchOne);
+router.get('/:id', accessControl(['consumer', 'admin']), userController.fetchOne);
 
 /**
  * @api {put} /users/:id Update User
@@ -183,16 +184,17 @@ router.get('/:id', userController.fetchOne);
  *    "addresses" : []
  *  }
  */
-router.put('/:id', userController.update);
+router.put('/:id', accessControl(['consumer', 'admin']), userController.update);
 
 /**
- * @api {get} /users Get users collection
+ * @api {get} /users?page=<RESULTS_PAGE>&per_page=<RESULTS_PER_PAGE> Get users collection
  * @apiVersion 1.0.0
  * @apiName FetchAll
  * @apiGroup User
  *
- * @apiDescription Get a collection of users
- *
+ * @apiDescription Get a collection of users. The endpoint has pagination
+ * out of the box. Use these params to query with pagination: `page=<RESULTS_PAGE`
+ * and `per_page=<RESULTS_PER_PAGE>`.
  *
  * @apiSuccess {String} _id user id
  * @apiSuccess {String} first_name first name
@@ -202,17 +204,20 @@ router.put('/:id', userController.update);
  * @apiSuccess {String} phone_number phone number
  *
  * @apiSuccessExample Response Example:
- *  [{
- *    "_id" : "556e1174a8952c9521286a60",
- *    "last_name": "smith",
- *    "first_name": "john",
- *    "other_name": "cole",
- *    "phone_number": "254711223344",
- *    "addresses" : []
- *  }]
- *
+ *  {
+ *    "total_pages": 1,
+ *    "total_docs_count": 0,
+ *    "docs": [{
+ *      "_id" : "556e1174a8952c9521286a60",
+ *      "last_name": "smith",
+ *      "first_name": "john",
+ *      "other_name": "cole",
+ *      "phone_number": "254711223344",
+ *      "addresses" : []
+ *    }]
+ *  }
  */
-router.get('/', userController.fetchAll);
+router.get('/', accessControl(['admin']), userController.fetchAll);
 
 /**
  * @api {delete} /users/:id Delete User
@@ -240,7 +245,7 @@ router.get('/', userController.fetchAll);
  *  }
  *
  */
-router.delete('/:id', userController.delete);
+router.delete('/:id', accessControl(['consumer', 'admin']), userController.delete);
 
 /**
  * @api {get} /users/:id/addresses Get user's address collection
@@ -263,8 +268,9 @@ router.delete('/:id', userController.delete);
  *  [{
  *    "_id" : "556e1174a8952c9521286a60",
  *    user: "556e1174a8952c9521286a60",
- *    short_virtual_code: "MP7H+E2",
- *    long_virtual_code: "6EAEMMP7H+E2",
+ *    short_plus_code: "MP7H+E2",
+ *    long_plus_code: "6E9AEFMP7H+E2FH",
+ *    virtual_code: "BB35E24B",
  *    location_pic: "/media/a8952c9521286a60.jpeg",
  *    latitude: 4.567889,
  *    longitude: -12.098,
@@ -274,13 +280,13 @@ router.delete('/:id', userController.delete);
  *  }]
  *
  */
-router.get('/:id/addresses', userController.fetchUserAddresses);
+router.get('/:id/addresses', accessControl(['consumer', 'admin']), userController.fetchUserAddresses);
 
 /**
  * @api {put} /users/password/update Update user password/pin
  * @apiVersion 1.0.0
  * @apiName UpdatePassword
- * @apiGroup Company
+ * @apiGroup User
  *
  * @apiDescription Update password of a given user.
  *

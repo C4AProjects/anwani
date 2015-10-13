@@ -1,4 +1,5 @@
-/** * Load Module Dependencies
+/**
+ * Load Module Dependencies
  */
 var http  = require('http');
 var path = require('path');
@@ -10,15 +11,14 @@ var validator  = require('express-validator');
 var bodyParser = require('body-parser');
 var cors       = require('cors');
 
-var config = require('./config');
-var utils  = require('./lib');
-var authorize = require('./lib/authorize');
-var multipart = require('./lib/multipart');
+var config          = require('./config');
+var utils           = require('./lib');
+var authorize       = require('./lib/authorize');
+var multipart       = require('./lib/multipart');
 var storeMediaFiles = require('./lib/store-media');
-var routes = require('./routes');
+var routes          = require('./routes');
 
 var app = express();
-var port = config.HTTP_PORT;
 var server;
 
 // connect to mongoDB
@@ -27,7 +27,7 @@ mongoose.connection.on('error', utils.mongoError);
 
 // Service Settings
 app.disable('x-powered-by');
-app.set('port', config.HTTP_PORT);
+app.set('port', config.PORT);
 
 // PRODUCTION Environment settings
 if(config.NODE_ENV === 'production'){
@@ -40,6 +40,7 @@ if(config.NODE_ENV === 'production'){
 
 app.use('/documentation', express.static(path.join(__dirname, 'documentation')));
 app.use('/media', express.static(path.join(__dirname, 'media')));
+app.use('/assets', express.static(path.join(__dirname, 'assets')));
 
 app.use(authorize().unless( { path: config.OPEN_ENDPOINTS } ));
 app.use(cors({
@@ -83,7 +84,6 @@ if (config.ENV === 'development') {
       error: {
         status: status,
         type: err.name,
-        stack: err.stack,
         message: err.message
       }
     });
@@ -114,9 +114,8 @@ server = http.createServer(app);
 /**
  * Listen on provided port, on all network interfaces.
  */
-
-server.listen(port);
-server.on('error', utils.onError(port));
+server.listen(config.PORT, config.HOST);
+server.on('error', utils.onError(config.PORT));
 server.on('listening', utils.onListening(server));
 
 module.exports = app;

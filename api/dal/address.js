@@ -173,19 +173,29 @@ exports.get = function get(query, cb) {
 exports.getCollection = function getCollection(query, qs, cb) {
   debug('fetching a collection of addresses ', query);
 
-  var flow = Address.find(query, returnFields);
+  var opts = {
+    columns:  returnFields,
+    sortBy:   qs.sort || {},
+    populate: population,
+    page:     qs.page,
+    limit:    qs.limit
+  };
 
-  if(qs.populate) {
-    flow.populate(population);
-  }
 
-    flow
-    .exec(function (err, addresses) {
-      if(err) {
-        return cb(err);
-      }
+  Address.paginate(query, opts, function (err, docs, page, count) {
+    if(err) {
+      return cb(err);
+    }
 
-      cb(null, addresses);
-    });
+
+    var data = {
+      total_pages: page,
+      total_docs_count: count,
+      docs: docs
+    };
+
+    cb(null, data);
+
+  });
 
 };

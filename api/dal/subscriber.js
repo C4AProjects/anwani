@@ -118,7 +118,7 @@ exports.update = function update(query, updates,  cb) {
 
   var data = {};
 
-  data.$set = updates;
+  data.$set = updates.$set || {};
 
   data.$set.last_modified = now;
 
@@ -168,16 +168,30 @@ exports.get = function get(query, cb) {
 exports.getCollection = function getCollection(query, qs, cb) {
   debug('fetching a collection of subscribers');
 
-  Subscriber
-    .find(query, returnFields)
-    .populate(population)
-    .exec(function (err, subscribers) {
-      if(err) {
-        return cb(err);
-      }
+  var opts = {
+    columns:  returnFields,
+    sortBy:   qs.sort || {},
+    populate: population,
+    page:     qs.page,
+    limit:    qs.limit
+  };
 
-      cb(null, subscribers);
-    });
+
+  Subscriber.paginate(query, opts, function (err, docs, page, count) {
+    if(err) {
+      return cb(err);
+    }
+
+
+    var data = {
+      total_pages: page,
+      total_docs_count: count,
+      docs: docs
+    };
+
+    cb(null, data);
+
+  });
 
 };
 

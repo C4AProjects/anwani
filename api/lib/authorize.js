@@ -6,6 +6,7 @@ var _      = require('lodash');
 var unless = require('express-unless');
 
 var config = require('../config');
+var CustomError = require('./custom-error');
 
 var Token = require('../dal/token');
 
@@ -32,10 +33,16 @@ module.exports = function authorizeAccess(opts) {
         if (/^Bearer$/i.test(scheme)) {
           accessToken = credentials;
         } else {
-          return next(new Error('credentials_bad_scheme: Format is Authorization: Bearer [token]'));
+          return next(CustomError({
+            name: 'CREDENTIALS_SCHEME_ERROR',
+            message: 'Format is Authorization: Bearer [token]'
+          }));
         }
       } else {
-        return next(new Error('credentials_bad_format: Format is Authorization: Bearer [token]' ));
+        return next(CustomError({
+          name: 'CREDENTIALS_FORMAT_ERROR',
+          message: 'Format is Authorization: Bearer [token]'
+        }));
       }
 
     } else if (req.query && req.query['access-token']) {
@@ -44,7 +51,10 @@ module.exports = function authorizeAccess(opts) {
     }
 
     if (!accessToken) {
-      return next(new Error('credentials_required: No authorization token was found'));
+      return next(CustomError({
+        name: 'CREDENTIALS_REQUIREMENT_ERROR',
+        message: 'No authorization token was found'
+      }));
     }
 
     Token.get({ value: accessToken }, function (err, token) {
@@ -53,7 +63,10 @@ module.exports = function authorizeAccess(opts) {
       }
 
       if(!token) {
-        return next(new Error('bad_credentials: Access Token provided is unverified '));
+        return next(CustomError({
+          name: 'CREDENTIALS_REQUIREMENT_ERROR',
+          message: 'Access Token provided is invalid'
+        }));
       }
 
       req._user = token.user || token.subscriber || null;

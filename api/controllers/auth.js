@@ -378,19 +378,8 @@ exports.subscriberLogin = function loginSubscriber(req, res, next) {
       return next(err);
     }
 
-    var fields = [
-      '_id',
-      'phone_number',
-      'last_login',
-      'date_created',
-      'email',
-      'name',
-      'website',
-      'address'
-    ];
-
     var response = {
-      subscriber: _.pick(info.subscriber, fields),
+      subscriber: info.subscriber,
       token: info.token
     };
 
@@ -528,4 +517,49 @@ exports.logoutSubscriber = function logoutSubscriber(req, res, next) {
       logged_out: true
     });
   });
+};
+
+
+exports.accessControl = function accessControl(roles, action) {
+  action = action || 'ALLOW';
+
+  return function (req, res, next) {
+    var user = req._user;
+
+    if(!user) {
+      return next(CustomError({
+        name: 'AUTHORIZATION_ERROR',
+        message: 'Please Login or register to continue'
+      }));
+    }
+
+    var userRole  = user.role;
+    var userRealm = user.realm;
+    var allowed   = false;
+
+    roles = Array.isArray(roles) ? roles: [roles];
+
+    roles.forEach(function(role) {
+      switch(role) {
+        case '*':
+        case userRole:
+        case userRealm:
+          allowed = true;
+          break;
+      }
+
+    });
+
+    if(!allowed) {
+      return next(CustomError({
+        name: 'AUTHORIZATION_ERROR',
+        message: 'You are not authorized for this action'
+      }));
+
+    } else {
+      return next();
+
+    }
+
+  };
 };

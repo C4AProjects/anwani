@@ -52,13 +52,6 @@ function createVirtualCode(cb) {
 exports.create = function createAddress(req, res, next) {
   debug('create address');
 
-  if(!req._user) {
-    return next(CustomError({
-      name: 'AUTHORIZATION_ERROR',
-      message: 'Your are not logged in'
-    }));
-  }
-
   // Begin workflow
   var workflow = new EventEmitter();
   var body  = req.body;
@@ -184,7 +177,6 @@ exports.create = function createAddress(req, res, next) {
               return address._id.toString() === addr.toString();
             });
 
-            console.log(isPresent);
             if(isPresent) {
               return done(null, _.omit(address , 'archived' ));
             } else {
@@ -228,13 +220,6 @@ exports.create = function createAddress(req, res, next) {
 exports.fetchOne = function fetchOneAddress(req, res, next) {
   debug('fetch address:' + req.params.id);
 
-  if(!req._user) {
-    return next(CustomError({
-      name: 'AUTHORIZATION_ERROR',
-      message: 'Your are not logged in'
-    }));
-  }
-
   var query = {
     _id: req.params.id,
     archived: false
@@ -265,13 +250,6 @@ exports.fetchOne = function fetchOneAddress(req, res, next) {
  */
 exports.update = function updateAddress(req, res, next) {
   debug('updating address:'+ req.params.id);
-
-  if(!req._user) {
-    return next(CustomError({
-      name: 'AUTHORIZATION_ERROR',
-      message: 'Your are not logged in'
-    }));
-  }
 
   var query = {
     _id: req.params.id
@@ -311,13 +289,6 @@ exports.update = function updateAddress(req, res, next) {
 exports.delete = function deleteAddress(req, res, next) {
   debug('deleting address:' + req.params.id);
 
-  if(!req._user) {
-    return next(CustomError({
-      name: 'AUTHORIZATION_ERROR',
-      message: 'Your are not logged in'
-    }));
-  }
-
   var query = {
     _id: req.params.id
   };
@@ -347,19 +318,18 @@ exports.delete = function deleteAddress(req, res, next) {
 exports.fetchAll = function fetchAllAddresss(req, res, next) {
   debug('get a collection of addresss');
 
-  if(!req._user || (req._user.role !== 'admin')) {
-    return next(CustomError({
-      name: 'AUTHORIZATION_ERROR',
-      message: 'Your are not logged in or you are not an administrator'
-    }));
-  }
+  // retrieve pagination query params
+  var page   = req.query.page || 1;
+  var limit  = req.query.per_page || 10;
 
-  var query = {};
-  var qs = {
-    populate: true
+  var opts = {
+    page: page,
+    limit: limit,
+    sort: {}
   };
+  var query = {};
 
-  Address.getCollection(query, qs, function cb(err, addresss) {
+  Address.getCollection(query, opts, function cb(err, addresses) {
     if(err) {
       return next(CustomError({
         name: 'SERVER_ERROR',
@@ -368,7 +338,7 @@ exports.fetchAll = function fetchAllAddresss(req, res, next) {
       }));
     }
 
-    res.json(addresss);
+    res.json(addresses);
   });
 };
 
@@ -379,13 +349,6 @@ exports.fetchAll = function fetchAllAddresss(req, res, next) {
  */
 exports.archive = function archiveAddress(req, res, next) {
   debug('archive address: ' + req.params.id);
-
-  if(!req._user) {
-    return next(CustomError({
-      name: 'AUTHORIZATION_ERROR',
-      message: 'Your are not logged in'
-    }));
-  }
 
   var query = {
     _id: req.params.id
