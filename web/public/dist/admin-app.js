@@ -44,7 +44,7 @@ app.run(
 
 
 
-            var subscriber = localStorageService.get('subscriber');
+            var user = localStorageService.get('user');
             var token = localStorageService.get('token');
 
             rootScope.addresses = [{
@@ -72,8 +72,8 @@ app.run(
                     country: "kenya"
                 }];
             rootScope.addresses_shared = [];
-            if (subscriber && token) {
-                rootScope.subscriber = subscriber;
+            if (user && token) {
+                rootScope.user = user;
                 rootScope.token = token;
                 http.defaults.headers.post = { 'Authorization' : 'Bearer '+localStorageService.get('token') };
                 http.defaults.headers.get = { 'Authorization' : 'Bearer '+localStorageService.get('token') }
@@ -81,14 +81,24 @@ app.run(
 
             rootScope.logout = function logout()
             {
-                localStorageService.remove('subscriber');
+                localStorageService.remove('user');
                 localStorageService.remove('token');
                 state.go('login');
-                rootScope.subscriber={};
+                rootScope.user={};
 
             };
-
-
+            if(rootScope.user){
+                if (rootScope.user.role) {
+                    if (rootScope.user.role == "subscriber") {
+                        rootScope._subscriber = true;
+                        rootScope._admin = false;
+                    }
+                    else if (rootScope.user.role == "admin") {
+                        rootScope._admin = true;
+                        rootScope._subscriber = false;
+                    }
+                }
+            }
 
 
             rootScope.state = state;
@@ -2316,39 +2326,43 @@ app.controller('FormValidationCtrl', ['$scope', function($scope) {
 app.controller('LoginFormController', ['$scope', '$http', '$state', 'localStorageService', '$rootScope',
     function (scope, http, state, localStorageService, rootScope) {
         scope.subscriber = {};
-        rootScope.subscriber = false;
-        rootScope.admin = false;
+        rootScope._subscriber = false;
+        rootScope._admin = false;
         scope.authError = null;
         scope.login = function () {
             scope.authError = null;
             // Try to login
             http.post('http://anwani-devapi.c4asolution.com/subscribers/login', scope.subscriber)
-                .then(function (response) {
+                .then(function successCallback(response) {
                     if (!response.data.subscriber) {
                         scope.authError = 'Email or Password not right';
                     } else {
-                        console.log(response.data.subscriber);
-                        rootScope.subscriber = response.data.subscriber;
-                        localStorageService.set('subscriber', response.data.subscriber);
+                        //console.log(response.data.subscriber);
+                        // User Object
+                        rootScope.user = response.data.subscriber;
+                        localStorageService.set('user', response.data.subscriber);
+
+                        // Token Object
                         rootScope.token = response.data.token;
                         localStorageService.set('token', response.data.token);
 
 
-                        if (rootScope.subscriber.role) {
-                            if (rootScope.subscriber.role == "subscriber") {
-                                rootScope.subscriber = true;
-                                rootScope.admin = false;
+                        if (rootScope.user.role) {
+                            if (rootScope.user.role == "subscriber") {
+                                rootScope._subscriber = true;
+                                rootScope._admin = false;
                             }
-                            else if (rootScope.subscriber.role == "admin") {
-                                rootScope.admin = true;
-                                rootScope.subscriber = false;
+                            else if (rootScope.user.role == "admin") {
+                                rootScope._admin = true;
+                                rootScope._subscriber = false;
                             }
                         }
                         state.go('app.dashboard');
                     }
-                }, function (x) {
+                }, function errorCallback(x) {
                     scope.authError = 'Server Error';
                 });
+
     };
     }])
 ;;app.controller('MailCtrl', ['$scope', function($scope) {

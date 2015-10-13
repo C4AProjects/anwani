@@ -7,7 +7,7 @@
             <span class="title">Dashboard</span>
         </a>
     </li>
-    <li ng-if="admin">
+    <li ng-if="_admin">
         <a href="javascript:">
             <i class="material-icons">account_balance</i>
             <span class="title">Subscribers</span>
@@ -23,14 +23,14 @@
 
         </ul>
     </li>
-    <li ng-if="admin || subscriber">
+    <li ng-if="_admin || _subscriber">
         <a href="javascript:">
             <i class="material-icons">person</i>
             <span class="title">Users</span>
             <span class="arrow material-icons">keyboard_arrow_right</span>
         </a>
         <ul class="wraplist wraplist-sub sub-menu dk" >
-            <li ng-if="admin" ui-sref-active="active">
+            <li ng-if="_admin" ui-sref-active="active">
                 <a ui-sref="app.users.new">Add User</a>
             </li>
             <li ui-sref-active="active">
@@ -39,14 +39,14 @@
 
         </ul>
     </li>
-    <li ng-if="admin">
+    <li ng-if="_admin">
         <a href="javascript:">
             <i class="material-icons">place</i>
             <span class="title">Addresses</span>
             <span class="arrow material-icons">keyboard_arrow_right</span>
         </a>
         <ul class="wraplist wraplist-sub sub-menu dk" >
-            <li ng-if="admin" ui-sref-active="active">
+            <li ng-if="_admin" ui-sref-active="active">
                 <a ui-sref="app.address.new">Add Address</a>
             </li>
             <li  ui-sref-active="active">

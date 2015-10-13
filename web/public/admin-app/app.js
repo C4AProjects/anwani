@@ -44,7 +44,7 @@ app.run(
 
 
 
-            var subscriber = localStorageService.get('subscriber');
+            var user = localStorageService.get('user');
             var token = localStorageService.get('token');
 
             rootScope.addresses = [{
@@ -72,8 +72,8 @@ app.run(
                     country: "kenya"
                 }];
             rootScope.addresses_shared = [];
-            if (subscriber && token) {
-                rootScope.subscriber = subscriber;
+            if (user && token) {
+                rootScope.user = user;
                 rootScope.token = token;
                 http.defaults.headers.post = { 'Authorization' : 'Bearer '+localStorageService.get('token') };
                 http.defaults.headers.get = { 'Authorization' : 'Bearer '+localStorageService.get('token') }
@@ -81,14 +81,24 @@ app.run(
 
             rootScope.logout = function logout()
             {
-                localStorageService.remove('subscriber');
+                localStorageService.remove('user');
                 localStorageService.remove('token');
                 state.go('login');
-                rootScope.subscriber={};
+                rootScope.user={};
 
             };
-
-
+            if(rootScope.user){
+                if (rootScope.user.role) {
+                    if (rootScope.user.role == "subscriber") {
+                        rootScope._subscriber = true;
+                        rootScope._admin = false;
+                    }
+                    else if (rootScope.user.role == "admin") {
+                        rootScope._admin = true;
+                        rootScope._subscriber = false;
+                    }
+                }
+            }
 
 
             rootScope.state = state;
