@@ -3,7 +3,7 @@
 // signup controller
 app.controller('RegisterFormController', ['$scope', '$http', '$state', 'localStorageService', '$rootScope',
     function (scope, http, state, localStorageService, rootScope) {
-        scope.user = {};
+        scope.subscriber = {};
         scope.authError = null;
 
         /**
@@ -12,13 +12,13 @@ app.controller('RegisterFormController', ['$scope', '$http', '$state', 'localSto
         scope.register = function () {
             scope.authError = null;
             // Try to create
-            http.post('http://anwaniapi.mybluemix.net/users/signup', scope.user)
+            http.post('http://anwani-devapi.c4asolution.com/subscribers/signup', scope.subscriber)
                 .then(function(response) {
                     if (!response.data) {
                         scope.authError = response;
                     }else{
                         rootScope.newUser = response.data;
-                        state.go('app.dashboard');
+                        state.go('welcome');
                     }
                 }, function(x) {
                     scope.authError = 'Server Error';
@@ -30,13 +30,13 @@ app.controller('RegisterFormController', ['$scope', '$http', '$state', 'localSto
          */
         scope.registerSubscriber = function registerSubscriber(){
 
-            http.post('http://anwaniapi.mybluemix.net/subscribers/signup', scope.user)
+            http.post('http://anwani-devapi.c4asolution.com/subscribers/signup', scope.subscriber)
                 .then(function(response) {
                     if (!response.data) {
                         scope.authError = response;
                     }else{
                         rootScope.newUser = response.data;
-                        state.go('app.dashboard');
+                        state.go('welcome');
                     }
                 }, function(x) {
                     scope.authError = 'Server Error';
