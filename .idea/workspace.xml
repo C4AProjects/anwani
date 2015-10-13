@@ -1,15 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="78455709-2407-4658-a7ed-72ed64f9459a" name="Default" comment="Using Small Logo">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/public/admin-app/controllers/map.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/public/admin-app/partials/ui-map.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/public/admin-app/partials/address-view.html" afterPath="$PROJECT_DIR$/web/public/admin-app/partials/address-view.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/resources/views/admin.php" afterPath="$PROJECT_DIR$/web/resources/views/admin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/public/css/app.css" afterPath="$PROJECT_DIR$/web/public/css/app.css" />
+    <list default="true" id="78455709-2407-4658-a7ed-72ed64f9459a" name="Default" comment="Ignoring Idea Folder">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/public/admin-app/app.js" afterPath="$PROJECT_DIR$/web/public/admin-app/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/public/admin-app/routes.js" afterPath="$PROJECT_DIR$/web/public/admin-app/routes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="anwani.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,31 +25,85 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/public/admin-app/app.js">
+      <file leaf-file-name="styles.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/resources/assets/sass/styles.scss">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="68" column="38" selection-start-line="68" selection-start-column="38" selection-end-line="68" selection-end-column="38" />
+              <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="map.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/public/admin-app/controllers/map.js">
+      <file leaf-file-name="ui-login.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/public/admin-app/partials/ui-login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.03253796">
-              <caret line="1" column="76" selection-start-line="1" selection-start-column="76" selection-end-line="1" selection-end-column="76" />
+            <state vertical-scroll-proportion="-5.625">
+              <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+              <folding>
+                <element signature="n#style#0;n#img#0;n#a#0;n#h1#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Procfile" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Procfile">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ui-map.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/public/admin-app/partials/ui-map.html">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/public/app/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.5">
-              <caret line="4" column="64" selection-start-line="4" selection-start-column="64" selection-end-line="4" selection-end-column="64" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin-app.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/public/dist/admin-app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/public/admin-app/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.15889831">
+              <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ui-register.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/public/admin-app/partials/ui-register.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="4" column="41" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="41" />
+              <folding>
+                <element signature="n#style#0;n#img#0;n#a#0;n#h1#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routes.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/public/admin-app/routes.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -67,11 +114,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GithubProjectSettings">
-    <option name="CREATE_PULL_REQUEST_DEFAULT_BRANCH" value="master" />
-    <option name="CREATE_PULL_REQUEST_DEFAULT_REPO_USER" value="C4AProjects" />
-    <option name="CREATE_PULL_REQUEST_DEFAULT_REPO_NAME" value="anwani" />
-  </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
       <projects_view />
@@ -80,33 +122,14 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/web/public/css/app.css" />
         <option value="$PROJECT_DIR$/web/Procfile" />
         <option value="$PROJECT_DIR$/web/public/app/partials/home/header.html" />
-        <option value="$PROJECT_DIR$/web/public/admin-app/partials/app.html" />
-        <option value="$PROJECT_DIR$/web/resources/views/index.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/web/public/admin-app/partials/address.html" />
-        <option value="$PROJECT_DIR$/web/public/admin-app/controllers/addresses.js" />
-        <option value="$PROJECT_DIR$/web/public/admin-app/partials/address-add.html" />
-        <option value="$PROJECT_DIR$/web/public/admin-app/controllers/register.js" />
-        <option value="$PROJECT_DIR$/web/public/admin-app/controllers/login.js" />
-        <option value="$PROJECT_DIR$/web/public/admin-app/partials/components/leftbar.html" />
-        <option value="$PROJECT_DIR$/web/public/admin-app/partials/ui-profile.html" />
-        <option value="$PROJECT_DIR$/web/public/admin-app/partials/users.html" />
-        <option value="$PROJECT_DIR$/web/public/admin-app/partials/components/nav.html" />
-        <option value="$PROJECT_DIR$/web/public/admin-app/partials/users-view.html" />
-        <option value="$PROJECT_DIR$/web/public/admin-app/partials/ui-login.html" />
         <option value="$PROJECT_DIR$/web/public/admin-app/partials/ui-register.html" />
-        <option value="$PROJECT_DIR$/web/public/admin-app/partials/ui-forgotpwd.html" />
-        <option value="$PROJECT_DIR$/web/public/admin-app/partials/app_dashboard.html" />
-        <option value="$PROJECT_DIR$/web/public/admin-app/partials/components/topbar.html" />
-        <option value="$PROJECT_DIR$/web/public/admin-app/partials/address-view.html" />
-        <option value="$PROJECT_DIR$/web/resources/views/admin.php" />
         <option value="$PROJECT_DIR$/web/public/admin-app/routes.js" />
-        <option value="$PROJECT_DIR$/web/public/css/app.css" />
-        <option value="$PROJECT_DIR$/web/public/admin-app/partials/ui-map.html" />
+        <option value="$PROJECT_DIR$/web/public/admin-app/partials/ui-login.html" />
         <option value="$PROJECT_DIR$/web/public/admin-app/app.js" />
-        <option value="$PROJECT_DIR$/web/public/admin-app/controllers/map.js" />
       </list>
     </option>
   </component>
@@ -132,47 +155,6 @@
     <option name="width" value="1280" />
     <option name="height" value="800" />
   </component>
-  <component name="ProjectInspectionProfilesVisibleTreeState">
-    <entry key="Project Default">
-      <profile-state>
-        <expanded-state>
-          <State>
-            <id />
-          </State>
-          <State>
-            <id>Android Lint</id>
-          </State>
-          <State>
-            <id>GeneralPHP</id>
-          </State>
-          <State>
-            <id>Internationalization issues</id>
-          </State>
-          <State>
-            <id>JPA issues</id>
-          </State>
-          <State>
-            <id>Java</id>
-          </State>
-          <State>
-            <id>Java language level issuesJava</id>
-          </State>
-          <State>
-            <id>Java language level migration aidsJava</id>
-          </State>
-          <State>
-            <id>Language Injection</id>
-          </State>
-          <State>
-            <id>Modularization issuesJava</id>
-          </State>
-          <State>
-            <id>PHP</id>
-          </State>
-        </expanded-state>
-      </profile-state>
-    </entry>
-  </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
@@ -180,7 +162,7 @@
     <OptionsSetting value="true" id="Update" />
     <OptionsSetting value="true" id="Status" />
     <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="2" id="Add" />
+    <ConfirmationsSetting value="0" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
@@ -196,8 +178,12 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
+      <pane id="Scope">
+        <subPane subId="Tests" />
+      </pane>
+      <pane id="PackagesPane">
+        <subPane />
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -216,129 +202,19 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="anwani" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="anwani" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="anwani" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="anwani" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="anwani" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="anwani" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="anwani" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="anwani" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="partials" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="anwani" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="anwani" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="FullScreen" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="map&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/controllers/map.js&#10;app&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/app.js&#10;admin&#9;FILE&#9;file:///var/www/anwani/web/resources/views/admin.php&#10;rou&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/routes.js&#10;address&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/address-view.html&#10;topb&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/components/topbar.html&#10;da&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/app_dashboard.html&#10;forg&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/ui-forgotpwd.html&#10;regist&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/ui-register.html&#10;login&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/ui-login.html&#10;view&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/users-view.html&#10;topbar&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/components/topbar.html&#10;app.cs&#9;FILE&#9;file:///var/www/anwani/web/public/css/app.css&#10;index&#9;FILE&#9;file:///var/www/anwani/web/resources/views/index.php&#10;app.css&#9;FILE&#9;file:///var/www/anwani/web/public/css/app.css&#10;addre&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/address-view.html&#10;app.js&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/app.js&#10;nav&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/components/nav.html&#10;routes&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/routes.js&#10;profile&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/ui-profile.html&#10;app.&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/app.js&#10;left&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/components/leftbar.html&#10;dash&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/app_dashboard.html&#10;ui-lo&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/ui-login.html&#10;ui-regis&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/ui-register.html&#10;regi&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/ui-register.html&#10;dashboard&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/app_dashboard.html&#10;re&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/controllers/register.js&#10;ui-re&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/ui-register.html&#10;header&#9;FILE&#9;file:///var/www/anwani/web/public/app/partials/home/header.html&#10;ui-pro&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/ui-profile.html&#10;gitignore&#9;FILE&#9;file:///var/www/anwani/.gitignore&#10;gitign&#9;FILE&#9;file:///var/www/anwani/.gitignore&#10;register&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/controllers/register.js&#10;admin.p&#9;FILE&#9;file:///var/www/anwani/web/resources/views/admin.php&#10;index.php&#9;FILE&#9;file:///var/www/anwani/web/resources/views/index.php&#10;login.js&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/controllers/login.js&#10;ui-&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/ui-register.html&#10;leftbar&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/components/leftbar.html&#10;ui-pr&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/ui-profile.html&#10;app.html&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/app.html&#10;nav.ht&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/components/nav.html&#10;dashb&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/app_dashboard.html&#10;git&#9;FILE&#9;file:///var/www/anwani/.gitignore&#10;ui-login&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/ui-login.html&#10;styles.scss&#9;FILE&#9;file:///var/www/anwani/web/resources/assets/sass/styles.scss" />
+    <property name="FullScreen" value="true" />
+    <property name="SearchEverywhereHistoryKey" value="app.js&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/app.js&#10;admin-app&#9;FILE&#9;file:///var/www/anwani/web/public/dist/admin-app.js&#10;routes&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/routes.js&#10;ui-re&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/ui-register.html&#10;ui-login&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/ui-login.html&#10;styles.scss&#9;FILE&#9;file:///var/www/anwani/web/resources/assets/sass/styles.scss&#10;header&#9;FILE&#9;file:///var/www/anwani/web/public/app/partials/home/header.html&#10;app.css&#9;FILE&#9;file:///var/www/anwani/web/public/css/app.css" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="recentsLimit" value="5" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
-    <property name="com.intellij.ide.scratch.NewScratchFileAction" value="HTML" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -618,9 +494,8 @@
       <workItem from="1444252566191" duration="69000" />
       <workItem from="1444252654984" duration="1258000" />
       <workItem from="1444277695637" duration="1065000" />
-      <workItem from="1444302143182" duration="4566000" />
-      <workItem from="1444319902759" duration="483000" />
-      <workItem from="1444579654229" duration="26281000" />
+      <workItem from="1444302143182" duration="927000" />
+      <workItem from="1444729307374" duration="1279000" />
     </task>
     <task id="LOCAL-00001" summary="Ignoring Idea Folder">
       <created>1444252266846</created>
@@ -628,95 +503,11 @@
       <option name="project" value="LOCAL" />
       <updated>1444252266846</updated>
     </task>
-    <task id="LOCAL-00002" summary="Adding Local Storage and User API Calls">
-      <created>1444582692032</created>
-      <option name="number" value="00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1444582692032</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Ignoring Idea Folder">
-      <created>1444582985109</created>
-      <option name="number" value="00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1444582985109</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Login and Registration Working">
-      <created>1444623861347</created>
-      <option name="number" value="00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1444623861347</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Putting Token in all Requests">
-      <created>1444626510861</created>
-      <option name="number" value="00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1444626510861</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Commenting Out Bloat Sections">
-      <created>1444629783695</created>
-      <option name="number" value="00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1444629783695</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Adding an Address">
-      <created>1444632431821</created>
-      <option name="number" value="00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1444632431821</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Viewing an Address">
-      <created>1444635268334</created>
-      <option name="number" value="00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1444635268334</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Cleaning Up Forms">
-      <created>1444635958562</created>
-      <option name="number" value="00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1444635958562</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Clearing Local Storage">
-      <created>1444637589904</created>
-      <option name="number" value="00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1444637589904</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Pulling Existing Addresses">
-      <created>1444642823693</created>
-      <option name="number" value="00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1444642823693</updated>
-    </task>
-    <task id="LOCAL-00012" summary="User Views">
-      <created>1444677328725</created>
-      <option name="number" value="00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1444677328725</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Theming">
-      <created>1444679158412</created>
-      <option name="number" value="00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1444679158412</updated>
-    </task>
-    <task id="LOCAL-00014" summary="Found White Logo">
-      <created>1444679749272</created>
-      <option name="number" value="00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1444679749272</updated>
-    </task>
-    <task id="LOCAL-00015" summary="Using Small Logo">
-      <created>1444681095105</created>
-      <option name="number" value="00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1444681095106</updated>
-    </task>
-    <option name="localTasksCounter" value="16" />
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37397000" />
+    <option name="totallyTimeSpent" value="8273000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -725,26 +516,27 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Bitbucket Issues" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3187251" sideWeight="0.5125" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3989071" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33013698" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329235" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33835617" sideWeight="0.4875" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3169399" sideWeight="0.4875" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24071082" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Dynamic Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -761,24 +553,12 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
-    <MESSAGE value="Adding Local Storage and User API Calls" />
     <MESSAGE value="Ignoring Idea Folder" />
-    <MESSAGE value="Login and Registration Working" />
-    <MESSAGE value="Putting Token in all Requests" />
-    <MESSAGE value="Commenting Out Bloat Sections" />
-    <MESSAGE value="Adding an Address" />
-    <MESSAGE value="Viewing an Address" />
-    <MESSAGE value="Cleaning Up Forms" />
-    <MESSAGE value="Clearing Local Storage" />
-    <MESSAGE value="Pulling Existing Addresses" />
-    <MESSAGE value="User Views" />
-    <MESSAGE value="Theming" />
-    <MESSAGE value="Found White Logo" />
-    <MESSAGE value="Using Small Logo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Using Small Logo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ignoring Idea Folder" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -789,6 +569,169 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/web/resources/assets/sass/styles.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/public/admin-app/partials/ui-login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#a#0;n#h1#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/public/admin-app/partials/ui-register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="41" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="41" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#a#0;n#h1#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/public/admin-app/routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/resources/assets/sass/styles.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/public/admin-app/partials/ui-login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#a#0;n#h1#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/public/admin-app/partials/ui-register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="41" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="41" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#a#0;n#h1#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/public/admin-app/routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/app/Http/Controllers/Controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/app/Http/Controllers/AdminController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/app/Http/Controllers/TestController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/public/app/partials/home/header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="24" column="100" selection-start-line="24" selection-start-column="100" selection-end-line="24" selection-end-column="100" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Procfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.bp-config/options.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/app/Console/Kernel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/public/app/partials/home/header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Procfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.bp-config/options.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/public/css/app.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.41484717">
+          <caret line="5880" column="16" selection-start-line="5880" selection-start-column="16" selection-end-line="5880" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/idea.jar!/resources/html5-schema/html5/web-forms.rnc">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.79587626">
@@ -804,14 +747,6 @@
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/.gitignore_global">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Procfile">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -832,6 +767,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/public/app/partials/home/header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.824295">
@@ -847,13 +789,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/app/Console/Kernel.php">
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
-      </provider>
-      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/app/Http/Controllers/AdminController.php">
@@ -870,6 +812,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.16997167">
+          <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/resources/assets/sass/bourbon/_bourbon.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -881,81 +830,39 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/public/admin-app/partials/app.html">
+    <entry file="file://$PROJECT_DIR$/web/public/admin-app/routes.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="116" selection-start-line="17" selection-start-column="116" selection-end-line="17" selection-end-column="116" />
+          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/bower_components/angular-ui-router/src/viewDirective.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8898305">
-          <caret line="73" column="5" selection-start-line="73" selection-start-column="5" selection-end-line="73" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/idea.jar!/resources/html5-schema/html5/common.rnc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
-          <caret line="122" column="18" selection-start-line="122" selection-start-column="18" selection-end-line="122" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/public/index.php">
+    <entry file="file://$PROJECT_DIR$/web/public/admin-app/partials/ui-register.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <caret line="4" column="41" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="41" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#a#0;n#h1#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/web/public/admin-app/partials/ui-login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36474165">
-          <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
-          <folding />
+        <state vertical-scroll-proportion="-5.625">
+          <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#a#0;n#h1#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/public/dist/admin-app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2233" column="8" selection-start-line="2233" selection-start-column="8" selection-end-line="2233" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/models/user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4945055">
-          <caret line="17" column="2" selection-start-line="17" selection-start-column="2" selection-end-line="17" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/public/app/partials/home/header.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0778032">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/public/admin-app/partials/address.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="20" selection-start-line="0" selection-start-column="20" selection-end-line="0" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch">
+    <entry file="file://$PROJECT_DIR$/Procfile">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -966,320 +873,26 @@
     <entry file="file://$PROJECT_DIR$/web/public/app/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="77" selection-start-line="0" selection-start-column="64" selection-end-line="0" selection-end-column="77" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/public/admin-app/controllers/blogs.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="91" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="91" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/public/admin-app/controllers/addresses.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.097613886">
-          <caret line="3" column="35" selection-start-line="3" selection-start-column="35" selection-end-line="3" selection-end-column="35" />
-          <folding>
-            <marker date="1444642820000" expanded="true" signature="-1:-1" placeholder="[...]" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/idea.jar!/resources/html5-schema/html5/web-forms2.rnc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33188722">
-          <caret line="71" column="18" selection-start-line="71" selection-start-column="18" selection-end-line="71" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/public/admin-app/partials/address-add.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.5">
-          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/public/admin-app/controllers/register.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/public/admin-app/controllers/login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="65" selection-start-line="11" selection-start-column="65" selection-end-line="11" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/public/admin-app/partials/components/leftbar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.0">
-          <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/public/admin-app/partials/ui-profile.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.5">
-          <caret line="20" column="60" selection-start-line="20" selection-start-column="60" selection-end-line="20" selection-end-column="60" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#p#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/public/admin-app/partials/users.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="14" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/bower_components/angular-ui-router/api/angular-ui-router.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45560747">
-          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/public/admin-app/partials/components/nav.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30394432">
-          <caret line="41" column="20" selection-start-line="41" selection-start-column="20" selection-end-line="41" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/resources/views/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.125">
-          <caret line="29" column="27" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/public/images/city_banner.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/public/admin-app/partials/ui-login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.5">
-          <caret line="4" column="53" selection-start-line="4" selection-start-column="53" selection-end-line="4" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/public/admin-app/partials/ui-register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.75">
-          <caret line="6" column="21" selection-start-line="4" selection-start-column="12" selection-end-line="6" selection-end-column="21" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#a#0;n#h1#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/public/admin-app/partials/ui-forgotpwd.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.375">
-          <caret line="15" column="103" selection-start-line="15" selection-start-column="103" selection-end-line="15" selection-end-column="103" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#a#0;n#h1#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/public/admin-app/partials/app_dashboard.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.75">
-          <caret line="22" column="54" selection-start-line="22" selection-start-column="54" selection-end-line="22" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/public/admin-app/partials/users-view.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.375">
-          <caret line="23" column="27" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
-          <folding>
-            <element signature="n#style#0;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#section#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/idea.jar!/resources/html5-schema/html5/block.rnc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33188722">
-          <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/public/css/app.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.296296">
-          <caret line="11342" column="48" selection-start-line="11342" selection-start-column="48" selection-end-line="11342" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/public/admin-app/partials/address-view.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.875">
-          <caret line="3" column="88" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="88" />
-          <folding>
-            <element signature="n#style#0;n#h3#0;n#div#0;n#div#0;n#section#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/public/admin-app/partials/components/topbar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.125">
           <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/public/admin-app/routes.js">
+    <entry file="file://$PROJECT_DIR$/web/public/dist/admin-app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="60" column="25" selection-start-line="60" selection-start-column="25" selection-end-line="60" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/resources/views/admin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.1794872">
-          <caret line="56" column="29" selection-start-line="56" selection-start-column="29" selection-end-line="56" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/public/admin-app/partials/ui-map.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.5">
-          <caret line="4" column="64" selection-start-line="4" selection-start-column="64" selection-end-line="4" selection-end-column="64" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/public/admin-app/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="68" column="38" selection-start-line="68" selection-start-column="38" selection-end-line="68" selection-end-column="38" />
+        <state vertical-scroll-proportion="0.15889831">
+          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/public/admin-app/controllers/map.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.03253796">
-          <caret line="1" column="76" selection-start-line="1" selection-start-column="76" selection-end-line="1" selection-end-column="76" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor />
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <last-edited>No facets are configured</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <last-edited>anwani</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-                <option value="0.6" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectJDKs.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
   </component>
 </project>

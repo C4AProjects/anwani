@@ -86,17 +86,22 @@ app.run(
                 state.go('login');
 
             };
-            rootScope.user={
-                "name":"ZUKU",
-                "website":"www.zuku.co.ke",
-                "address":"Nairobi",
-                "email":"info@zuku.co.ke",
-                "logo":"http://vividfeatures.com/wp-content/uploads/2013/08/zuku.jpg",
-                "role":"subscriber"
-            };
-            if(rootScope.user.role="subscriber"){
-                rootScope.subscriber=true;
+            //rootScope.user={
+            //    "name":"ZUKU",
+            //    "website":"www.zuku.co.ke",
+            //    "address":"Nairobi",
+            //    "email":"info@zuku.co.ke",
+            //    "logo":"http://vividfeatures.com/wp-content/uploads/2013/08/zuku.jpg",
+            //    "role":"subscriber"
+            //};
+          if(rootScope.user) {
+            if (rootScope.user.role) {
+              if (rootScope.user.role = "subscriber") {
+                rootScope.subscriber = true;
+              }
             }
+          }
+
 
             rootScope.state = state;
             //console.log(rootScope.state.$current);
