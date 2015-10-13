@@ -10,7 +10,7 @@ var appEnv  = cfenv.getAppEnv();
 
 var MONGO_SERVICE  = appEnv.getService('mongodb01') || {};
 var MONGO_SERVICE_INFO = MONGO_SERVICE.credentials || {};
-var PORT          = appEnv.port || 5050;
+var PORT          = env.PORT || 5050;
 var HOST          = appEnv.bind || 'localhost';
 var API_URL       = HOST + ':' + PORT;
 var MONGODB_URL   = MONGO_SERVICE_INFO.url || 'mongodb://127.0.0.1:27017/anwani';
