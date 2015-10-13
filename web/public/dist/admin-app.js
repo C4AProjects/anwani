@@ -43,13 +43,13 @@ app.run(
         function (localStorageService, rootScope,http,state) {
 
 
-            rootScope.users=[];
+
             var user = localStorageService.get('user');
             var token = localStorageService.get('token');
-            rootScope.subscriber = false;
+
             rootScope.addresses = [{
                 "_id" : "556e1174a8952c9521286a60",
-                user: "556e1174a8952c9521286a60",
+                subscriber: "556e1174a8952c9521286a60",
                 short_virtual_code: "MP7H+E2",
                 long_virtual_code: "6EAEMMP7H+E2",
                 location_pic: "/media/a8952c9521286a60.jpeg",
@@ -61,7 +61,7 @@ app.run(
             },
                 {
                     "_id" : "556e1174a8952c9521286a60",
-                    user: "556e1174a8952c9521286a60",
+                    subscriber: "556e1174a8952c9521286a60",
                     short_virtual_code: "MP7H+E2",
                     long_virtual_code: "6EAEMMP7H+E2",
                     location_pic: "/media/a8952c9521286a60.jpeg",
@@ -84,30 +84,28 @@ app.run(
                 localStorageService.remove('user');
                 localStorageService.remove('token');
                 state.go('login');
+                rootScope.user={};
 
             };
-            //rootScope.user={
-            //    "name":"ZUKU",
-            //    "website":"www.zuku.co.ke",
-            //    "address":"Nairobi",
-            //    "email":"info@zuku.co.ke",
-            //    "logo":"http://vividfeatures.com/wp-content/uploads/2013/08/zuku.jpg",
-            //    "role":"subscriber"
-            //};
-          if(rootScope.user) {
-            if (rootScope.user.role) {
-              if (rootScope.user.role = "subscriber") {
-                rootScope.subscriber = true;
-              }
+            if(rootScope.user){
+                if (rootScope.user.role) {
+                    if (rootScope.user.role == "subscriber") {
+                        rootScope._subscriber = true;
+                        rootScope._admin = false;
+                    }
+                    else if (rootScope.user.role == "admin") {
+                        rootScope._admin = true;
+                        rootScope._subscriber = false;
+                    }
+                }
             }
-          }
 
 
             rootScope.state = state;
             //console.log(rootScope.state.$current);
             //if(rootScope.state.$current.url.source.search('/new')<0
             //        &&
-            //        rootScope.user.role!="admin"){
+            //        rootScope.subscriber.role!="admin"){
             //  state.go('login');
             //}
         }
@@ -2327,25 +2325,44 @@ app.controller('FormValidationCtrl', ['$scope', function($scope) {
 // signin controller
 app.controller('LoginFormController', ['$scope', '$http', '$state', 'localStorageService', '$rootScope',
     function (scope, http, state, localStorageService, rootScope) {
-        scope.user = {};
+        scope.subscriber = {};
+        rootScope._subscriber = false;
+        rootScope._admin = false;
         scope.authError = null;
         scope.login = function () {
             scope.authError = null;
             // Try to login
-            http.post('http://anwaniapi.mybluemix.net/subscribers/login', scope.user)
-                .then(function (response) {
-                    if (!response.data.user) {
+            http.post('http://anwani-devapi.c4asolution.com/subscribers/login', scope.subscriber)
+                .then(function successCallback(response) {
+                    if (!response.data.subscriber) {
                         scope.authError = 'Email or Password not right';
                     } else {
-                        rootScope.user = response.data.user;
-                        localStorageService.set('user', response.data.user);
+                        //console.log(response.data.subscriber);
+                        // User Object
+                        rootScope.user = response.data.subscriber;
+                        localStorageService.set('user', response.data.subscriber);
+
+                        // Token Object
                         rootScope.token = response.data.token;
                         localStorageService.set('token', response.data.token);
+
+
+                        if (rootScope.user.role) {
+                            if (rootScope.user.role == "subscriber") {
+                                rootScope._subscriber = true;
+                                rootScope._admin = false;
+                            }
+                            else if (rootScope.user.role == "admin") {
+                                rootScope._admin = true;
+                                rootScope._subscriber = false;
+                            }
+                        }
                         state.go('app.dashboard');
                     }
-                }, function (x) {
+                }, function errorCallback(x) {
                     scope.authError = 'Server Error';
                 });
+
     };
     }])
 ;;app.controller('MailCtrl', ['$scope', function($scope) {
@@ -2548,7 +2565,7 @@ app.controller('NotifyCtrl', function($scope,notify){
 // signup controller
 app.controller('RegisterFormController', ['$scope', '$http', '$state', 'localStorageService', '$rootScope',
     function (scope, http, state, localStorageService, rootScope) {
-        scope.user = {};
+        scope.subscriber = {};
         scope.authError = null;
 
         /**
@@ -2557,13 +2574,13 @@ app.controller('RegisterFormController', ['$scope', '$http', '$state', 'localSto
         scope.register = function () {
             scope.authError = null;
             // Try to create
-            http.post('http://anwaniapi.mybluemix.net/users/signup', scope.user)
+            http.post('http://anwani-devapi.c4asolution.com/subscribers/signup', scope.subscriber)
                 .then(function(response) {
                     if (!response.data) {
                         scope.authError = response;
                     }else{
                         rootScope.newUser = response.data;
-                        state.go('app.dashboard');
+                        state.go('welcome');
                     }
                 }, function(x) {
                     scope.authError = 'Server Error';
@@ -2575,13 +2592,13 @@ app.controller('RegisterFormController', ['$scope', '$http', '$state', 'localSto
          */
         scope.registerSubscriber = function registerSubscriber(){
 
-            http.post('http://anwaniapi.mybluemix.net/subscribers/signup', scope.user)
+            http.post('http://anwani-devapi.c4asolution.com/subscribers/signup', scope.subscriber)
                 .then(function(response) {
                     if (!response.data) {
                         scope.authError = response;
                     }else{
                         rootScope.newUser = response.data;
-                        state.go('app.dashboard');
+                        state.go('welcome');
                     }
                 }, function(x) {
                     scope.authError = 'Server Error';
@@ -4785,6 +4802,10 @@ app.controller('MapCtrl', ['$scope', function ($scope) {
         .state('app.profile', {
             url: '/profile',
             templateUrl: '../admin-app/partials/ui-profile.html'
+        })
+        .state('welcome', {
+          url: '/welcome',
+          templateUrl: '../admin-app/partials/welcome.html'
         })
         .state('login', {
           url: '/login',

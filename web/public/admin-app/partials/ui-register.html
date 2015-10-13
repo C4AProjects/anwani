@@ -13,45 +13,51 @@
                 <div class="col-md-6">
                     <p>
 
-                        <input type="text" class="input" ng-model="user.name"
+                        <input type="text" class="input" ng-model="subscriber.name"
                                placeholder="Name"
                                />
                     </p>
                 </div>
                 <div class="col-md-6">
                     <p>
+                        <input type="text" class="input" ng-model="subscriber.address" placeholder="Address"
+                               />
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <p>
+                        <input type="text" class="input" ng-model="subscriber.phone_number" placeholder="Phone Number"
+                                />
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <p>
+                        <input type="text" class="input" ng-model="subscriber.email" placeholder="Email"
+                               />
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <p>
 
-                        <input type="text" class="input" ng-model="user.website" placeholder="Website"
+                        <input type="password" name="log" class="input" ng-model="subscriber.password" placeholder="Password"
                                />
                     </p>
                 </div>
                 <div class="col-md-6">
                     <p>
-                        <input type="text" class="input" ng-model="user.address" placeholder="Address"
-                               />
-                    </p>
-                </div>
-                <div class="col-md-6">
-                    <p>
-                        <input type="text" class="input" ng-model="user.email" placeholder="Email"
-                               />
-                    </p>
-                </div>
-                <div class="col-md-6">
-                    <p>
-
-                        <input type="password" name="log" class="input" ng-model="user.password" placeholder="Password"
-                               />
-                    </p>
-                </div>
-                <div class="col-md-6">
-                    <p>
-                        <input type="file" name="name" class="input" ng-model="user.logo"
+                        <input type="file" name="name" class="input" ng-model="subscriber.logo"
                                placeholder="Logo"
                                />
                     </p>
                 </div>
 
+                <div class="col-md-12">
+                    <p>
+
+                        <input type="text" class="input" ng-model="subscriber.website" placeholder="Website"
+                                />
+                    </p>
+                </div>
                 <p class="forgetmenot">
                     <label class="icheck icheck-white" for="rememberme">
                         <input type="checkbox" value="forever" name="rememberme" checked id="rememberme">

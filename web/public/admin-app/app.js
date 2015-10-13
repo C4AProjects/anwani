@@ -43,13 +43,13 @@ app.run(
         function (localStorageService, rootScope,http,state) {
 
 
-            rootScope.users=[];
+
             var user = localStorageService.get('user');
             var token = localStorageService.get('token');
-            rootScope.subscriber = false;
+
             rootScope.addresses = [{
                 "_id" : "556e1174a8952c9521286a60",
-                user: "556e1174a8952c9521286a60",
+                subscriber: "556e1174a8952c9521286a60",
                 short_virtual_code: "MP7H+E2",
                 long_virtual_code: "6EAEMMP7H+E2",
                 location_pic: "/media/a8952c9521286a60.jpeg",
@@ -61,7 +61,7 @@ app.run(
             },
                 {
                     "_id" : "556e1174a8952c9521286a60",
-                    user: "556e1174a8952c9521286a60",
+                    subscriber: "556e1174a8952c9521286a60",
                     short_virtual_code: "MP7H+E2",
                     long_virtual_code: "6EAEMMP7H+E2",
                     location_pic: "/media/a8952c9521286a60.jpeg",
@@ -84,30 +84,28 @@ app.run(
                 localStorageService.remove('user');
                 localStorageService.remove('token');
                 state.go('login');
+                rootScope.user={};
 
             };
-            //rootScope.user={
-            //    "name":"ZUKU",
-            //    "website":"www.zuku.co.ke",
-            //    "address":"Nairobi",
-            //    "email":"info@zuku.co.ke",
-            //    "logo":"http://vividfeatures.com/wp-content/uploads/2013/08/zuku.jpg",
-            //    "role":"subscriber"
-            //};
-          if(rootScope.user) {
-            if (rootScope.user.role) {
-              if (rootScope.user.role = "subscriber") {
-                rootScope.subscriber = true;
-              }
+            if(rootScope.user){
+                if (rootScope.user.role) {
+                    if (rootScope.user.role == "subscriber") {
+                        rootScope._subscriber = true;
+                        rootScope._admin = false;
+                    }
+                    else if (rootScope.user.role == "admin") {
+                        rootScope._admin = true;
+                        rootScope._subscriber = false;
+                    }
+                }
             }
-          }
 
 
             rootScope.state = state;
             //console.log(rootScope.state.$current);
             //if(rootScope.state.$current.url.source.search('/new')<0
             //        &&
-            //        rootScope.user.role!="admin"){
+            //        rootScope.subscriber.role!="admin"){
             //  state.go('login');
             //}
         }

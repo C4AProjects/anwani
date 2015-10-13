@@ -42,6 +42,10 @@ app.config(['$stateProvider', '$urlRouterProvider', 'JQ_CONFIG',
             url: '/profile',
             templateUrl: '../admin-app/partials/ui-profile.html'
         })
+        .state('welcome', {
+          url: '/welcome',
+          templateUrl: '../admin-app/partials/welcome.html'
+        })
         .state('login', {
           url: '/login',
           templateUrl: '../admin-app/partials/ui-login.html'

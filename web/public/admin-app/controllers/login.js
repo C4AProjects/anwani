@@ -4,25 +4,44 @@
 // signin controller
 app.controller('LoginFormController', ['$scope', '$http', '$state', 'localStorageService', '$rootScope',
     function (scope, http, state, localStorageService, rootScope) {
-        scope.user = {};
+        scope.subscriber = {};
+        rootScope._subscriber = false;
+        rootScope._admin = false;
         scope.authError = null;
         scope.login = function () {
             scope.authError = null;
             // Try to login
-            http.post('http://anwaniapi.mybluemix.net/subscribers/login', scope.user)
-                .then(function (response) {
-                    if (!response.data.user) {
+            http.post('http://anwani-devapi.c4asolution.com/subscribers/login', scope.subscriber)
+                .then(function successCallback(response) {
+                    if (!response.data.subscriber) {
                         scope.authError = 'Email or Password not right';
                     } else {
-                        rootScope.user = response.data.user;
-                        localStorageService.set('user', response.data.user);
+                        //console.log(response.data.subscriber);
+                        // User Object
+                        rootScope.user = response.data.subscriber;
+                        localStorageService.set('user', response.data.subscriber);
+
+                        // Token Object
                         rootScope.token = response.data.token;
                         localStorageService.set('token', response.data.token);
+
+
+                        if (rootScope.user.role) {
+                            if (rootScope.user.role == "subscriber") {
+                                rootScope._subscriber = true;
+                                rootScope._admin = false;
+                            }
+                            else if (rootScope.user.role == "admin") {
+                                rootScope._admin = true;
+                                rootScope._subscriber = false;
+                            }
+                        }
                         state.go('app.dashboard');
                     }
-                }, function (x) {
+                }, function errorCallback(x) {
                     scope.authError = 'Server Error';
                 });
+
     };
     }])
 ;
