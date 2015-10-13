@@ -114,7 +114,7 @@ server = http.createServer(app);
 /**
  * Listen on provided port, on all network interfaces.
  */
-server.listen(config.PORT, config.HOST);
+server.listen(config.PORT);
 server.on('error', utils.onError(config.PORT));
 server.on('listening', utils.onListening(server));
 
