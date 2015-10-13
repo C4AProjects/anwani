@@ -1,5 +1,4 @@
-/**
- * Load Module dependencies.
+/** * Load Module dependencies.
  */
 var path = require('path');
 
@@ -56,7 +55,7 @@ module.exports = {
     '/',
   ],
   MEDIA: {
-    FILE_SIZE: 2 * 1024, // 1MB,
+    FILE_SIZE: 2 * 1024 * 1024, // 1MB,
     URL: API_URL + '/media/',
     FILES_FOLDER: path.resolve(process.cwd(), './media') + '/'
   },
