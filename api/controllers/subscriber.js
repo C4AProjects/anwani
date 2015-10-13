@@ -190,46 +190,28 @@ exports.update = function updateSubscriber(req, res, next) {
   var update;
 
   if(body.password) {
-    Subscriber.hashPasswd(body.password, function (err, hash) {
-
-      body.password = hash;
-
-      update = {
-        $set: body
-      };
-
-      Subscriber.update(query, update, function cb(err, subscriber) {
-        if(err) {
-          return next(CustomError({
-            name: 'SERVER_ERROR',
-            message: err.message,
-            status: 500
-          }));
-        }
-
-        res.json(subscriber || {});
-
-      });
-    });
-  } else {
-
-    update = {
-      $set: body
-    };
-
-    Subscriber.update(query, update, function cb(err, subscriber) {
-      if(err) {
-        return next(CustomError({
-          name: 'SERVER_ERROR',
-          message: err.message,
-          status: 500
-        }));
-      }
-
-      res.json(subscriber || {});
-
-    });
+    return next(CustomError({
+      name: 'SUBSCRIBER_UPDATE_ERROR',
+      message: 'Please use /subscribers/:id/password to update passwords instead'
+    }));
   }
+
+  update = {
+    $set: body
+  };
+
+  Subscriber.update(query, update, function cb(err, subscriber) {
+    if(err) {
+      return next(CustomError({
+        name: 'SERVER_ERROR',
+        message: err.message,
+        status: 500
+      }));
+    }
+
+    res.json(subscriber || {});
+
+  });
 
 };
 
@@ -397,7 +379,9 @@ exports.updateLogo = function updateLogo(req, res, next) {
 
   var body = req.body;
   var update = {
-    logo: body.logo
+    $set: {
+      logo: body.logo
+    }
   };
   var query = {
     _id: req.params.id
@@ -505,7 +489,9 @@ exports.updatePassword = function updatePassword(req, res, next) {
         }
 
         var update = {
-          password: hash
+          $set: {
+            password: hash
+          }
         };
 
         done(null, update);
@@ -561,7 +547,9 @@ exports.updateSubscriptionPlan = function updateSubscriptionPlan(req, res, next)
 
   var body = req.body;
   var update = {
-    subscription_plan: body.plan
+    $set: {
+      subscription_plan: body.plan
+    }
   };
   var query = {
     _id: req.params.id

@@ -135,7 +135,9 @@ exports.create = function createAddress(req, res, next) {
               _id: address._id
             };
             var updates = {
-              archived: false
+              $set: {
+                archived: false
+              }
             };
 
             Address.update(query, updates, function (err, addr) {
