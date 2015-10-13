@@ -419,7 +419,7 @@ exports.updateLogo = function updateLogo(req, res, next) {
       }));
     }
 
-    res.json({ updated: true });
+    res.json({ logo: subscriber.logo});
 
   });
 
