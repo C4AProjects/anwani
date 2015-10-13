@@ -46,8 +46,7 @@ app.run(
 
             var subscriber = localStorageService.get('subscriber');
             var token = localStorageService.get('token');
-            rootScope.subscriber = false;
-            rootScope.admin = false;
+
             rootScope.addresses = [{
                 "_id" : "556e1174a8952c9521286a60",
                 subscriber: "556e1174a8952c9521286a60",
@@ -85,17 +84,11 @@ app.run(
                 localStorageService.remove('subscriber');
                 localStorageService.remove('token');
                 state.go('login');
+                rootScope.subscriber={};
 
             };
 
-            if (rootScope.subscriber.role) {
-                if (rootScope.subscriber.role == "subscriber") {
-                    rootScope.subscriber = true;
-                }
-                else if (rootScope.subscriber.role == "admin") {
-                    rootScope.admin = true;
-                }
-            }
+
 
 
             rootScope.state = state;

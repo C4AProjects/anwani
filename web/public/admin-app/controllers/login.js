@@ -5,6 +5,8 @@
 app.controller('LoginFormController', ['$scope', '$http', '$state', 'localStorageService', '$rootScope',
     function (scope, http, state, localStorageService, rootScope) {
         scope.subscriber = {};
+        rootScope.subscriber = false;
+        rootScope.admin = false;
         scope.authError = null;
         scope.login = function () {
             scope.authError = null;
@@ -19,6 +21,18 @@ app.controller('LoginFormController', ['$scope', '$http', '$state', 'localStorag
                         localStorageService.set('subscriber', response.data.subscriber);
                         rootScope.token = response.data.token;
                         localStorageService.set('token', response.data.token);
+
+
+                        if (rootScope.subscriber.role) {
+                            if (rootScope.subscriber.role == "subscriber") {
+                                rootScope.subscriber = true;
+                                rootScope.admin = false;
+                            }
+                            else if (rootScope.subscriber.role == "admin") {
+                                rootScope.admin = true;
+                                rootScope.subscriber = false;
+                            }
+                        }
                         state.go('app.dashboard');
                     }
                 }, function (x) {

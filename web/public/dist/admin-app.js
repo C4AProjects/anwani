@@ -46,8 +46,7 @@ app.run(
 
             var subscriber = localStorageService.get('subscriber');
             var token = localStorageService.get('token');
-            rootScope.subscriber = false;
-            rootScope.admin = false;
+
             rootScope.addresses = [{
                 "_id" : "556e1174a8952c9521286a60",
                 subscriber: "556e1174a8952c9521286a60",
@@ -85,17 +84,11 @@ app.run(
                 localStorageService.remove('subscriber');
                 localStorageService.remove('token');
                 state.go('login');
+                rootScope.subscriber={};
 
             };
 
-            if (rootScope.subscriber.role) {
-                if (rootScope.subscriber.role == "subscriber") {
-                    rootScope.subscriber = true;
-                }
-                else if (rootScope.subscriber.role == "admin") {
-                    rootScope.admin = true;
-                }
-            }
+
 
 
             rootScope.state = state;
@@ -2323,6 +2316,8 @@ app.controller('FormValidationCtrl', ['$scope', function($scope) {
 app.controller('LoginFormController', ['$scope', '$http', '$state', 'localStorageService', '$rootScope',
     function (scope, http, state, localStorageService, rootScope) {
         scope.subscriber = {};
+        rootScope.subscriber = false;
+        rootScope.admin = false;
         scope.authError = null;
         scope.login = function () {
             scope.authError = null;
@@ -2337,6 +2332,18 @@ app.controller('LoginFormController', ['$scope', '$http', '$state', 'localStorag
                         localStorageService.set('subscriber', response.data.subscriber);
                         rootScope.token = response.data.token;
                         localStorageService.set('token', response.data.token);
+
+
+                        if (rootScope.subscriber.role) {
+                            if (rootScope.subscriber.role == "subscriber") {
+                                rootScope.subscriber = true;
+                                rootScope.admin = false;
+                            }
+                            else if (rootScope.subscriber.role == "admin") {
+                                rootScope.admin = true;
+                                rootScope.subscriber = false;
+                            }
+                        }
                         state.go('app.dashboard');
                     }
                 }, function (x) {
