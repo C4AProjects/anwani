@@ -21,8 +21,8 @@ var UserSchema = new Schema({
   other_name:   { type: String },
   password:     { type: String },
   last_login:   { type: Date },
-  role:         { type: String, default: 'user' },
-  realm:        { type: String, default: 'consumer' },
+  realm:        { type: String, default: 'user' },
+  role:         { type: String, default: 'consumer' },
   email:        { type: String, unique: true },
   archived:     { type: Boolean, default: false },
   phone_number: { type: String, unique: true },
@@ -46,6 +46,7 @@ UserSchema.statics.whitelist = {
   other_name: 1,
   last_login: 1,
   addresses: 1,
+  role:   1,
   email: 1
 };
 

@@ -1,60 +1,6 @@
 define({ "api": [
   {
     "type": "put",
-    "url": "/users/password/update",
-    "title": "Update user password/pin",
-    "version": "1.0.0",
-    "name": "UpdatePassword",
-    "group": "Company",
-    "description": "<p>Update password of a given user.</p> ",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "optional": false,
-            "field": "security_question_answer",
-            "description": "<p>security question answer</p> "
-          },
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "optional": false,
-            "field": "phone_number",
-            "description": "<p>phone number</p> "
-          },
-          {
-            "group": "Parameter",
-            "type": "<p>String</p> ",
-            "optional": false,
-            "field": "new_password",
-            "description": "<p>new password/pin</p> "
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "Request Example:",
-          "content": "{\n   \"security_answer\" : \"john doey\",\n   \"phone_number\" : \"0713510521\"\n   \"new_password\": \"2654\"\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "success": {
-      "examples": [
-        {
-          "title": "Response Example:",
-          "content": "{\n  \"updated\": true\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "filename": "routes/users.js",
-    "groupTitle": "Company"
-  },
-  {
-    "type": "put",
     "url": "/subscribers/:id/subscription?config=<enable|disable>",
     "title": "Configure Subscriber Subscription",
     "version": "1.0.0",
@@ -130,6 +76,13 @@ define({ "api": [
             "group": "Success 200",
             "type": "<p>String</p> ",
             "optional": false,
+            "field": "phone_number",
+            "description": "<p>phone number in international format</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
             "field": "_id",
             "description": "<p>subscriber id</p> "
           }
@@ -138,7 +91,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Response Example:",
-          "content": "{\n  \"_id\" : \"556e1174a8952c9521286a60\",\n  \"email\": \"subscriber@email.com\",\n  \"name\": \"Jumia Online Shop\",\n  \"website\": \"http://www.jumia.co.ke\",\n  \"address\": \"Moi Avenue, Top House\",\n  \"logo\": \"logo_url\"\n}",
+          "content": "{\n  \"_id\" : \"556e1174a8952c9521286a60\",\n  \"email\": \"subscriber@email.com\",\n  \"name\": \"Jumia Online Shop\",\n  \"phone_number\": \"254713510521\",\n  \"website\": \"http://www.jumia.co.ke\",\n  \"address\": \"Moi Avenue, Top House\",\n  \"logo\": \"logo_url\"\n}",
           "type": "json"
         }
       ]
@@ -148,12 +101,12 @@ define({ "api": [
   },
   {
     "type": "get",
-    "url": "/subscribers",
+    "url": "/subscribers?page=<RESULTS_PAGE>&per_page=<RESULTS_PER_PAGE>",
     "title": "Get subscribers collection",
     "version": "1.0.0",
     "name": "FetchAll",
     "group": "Subscriber",
-    "description": "<p>Get a collection of subscribers</p> ",
+    "description": "<p>Get a collection of subscribers. The endpoint has pagination out of the box. Use these params to query with pagination: <code>page=&lt;RESULTS_PAGE</code> and <code>per_page=&lt;RESULTS_PER_PAGE&gt;</code>.</p> ",
     "success": {
       "fields": {
         "Success 200": [
@@ -203,6 +156,13 @@ define({ "api": [
             "group": "Success 200",
             "type": "<p>String</p> ",
             "optional": false,
+            "field": "phone_number",
+            "description": "<p>phone number in international format</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
             "field": "_id",
             "description": "<p>subscriber id</p> "
           }
@@ -211,7 +171,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Response Example:",
-          "content": "[{\n  \"_id\" : \"556e1174a8952c9521286a60\",\n  \"email\": \"subscriber@email.com\",\n  \"name\": \"Jumia Online Shop\",\n  \"website\": \"http://www.jumia.co.ke\",\n  \"address\": \"Moi Avenue, Top House\",\n  \"logo\": \"logo_url\"\n}]",
+          "content": "{\n  \"total_pages\": 1,\n  \"total_docs_count\": 0,\n  \"docs\": [{\n    \"_id\" : \"556e1174a8952c9521286a60\",\n    \"email\": \"subscriber@email.com\",\n    \"name\": \"Jumia Online Shop\",\n    \"website\": \"http://www.jumia.co.ke\",\n    \"address\": \"Moi Avenue, Top House\",\n    \"phone_number\": \"254713510521\",\n    \"logo\": \"logo_url\"\n  }]\n}",
           "type": "json"
         }
       ]
@@ -418,6 +378,13 @@ define({ "api": [
             "group": "Parameter",
             "type": "<p>String</p> ",
             "optional": false,
+            "field": "phone_number",
+            "description": "<p>phone number in international format</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
             "field": "logo",
             "description": "<p>subscriber logo</p> "
           }
@@ -426,7 +393,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request Example, should be submitted as```multipart/form-data```.",
-          "content": "{\n  \"email\": \"subscriber@email.com\",\n  \"password\": \"password\",\n  \"name\": \"Jumia Online Shop\",\n  \"website\": \"http://www.jumia.co.ke\",\n  \"address\": \"Moi Avenue, Top House\",\n  \"logo\": \"<LOGO_DATA>\"\n}",
+          "content": "{\n  \"email\": \"subscriber@email.com\",\n  \"password\": \"password\",\n  \"name\": \"Jumia Online Shop\",\n  \"website\": \"http://www.jumia.co.ke\",\n  \"address\": \"Moi Avenue, Top House\",\n  \"phone_number\": \"254713510521\",\n  \"logo\": \"<LOGO_DATA>\"\n}",
           "type": "json"
         }
       ]
@@ -546,6 +513,13 @@ define({ "api": [
             "group": "Success 200",
             "type": "<p>String</p> ",
             "optional": false,
+            "field": "phone_number",
+            "description": "<p>phone number in international format</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
             "field": "logo",
             "description": "<p>subscriber logo</p> "
           },
@@ -561,7 +535,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Response Example:",
-          "content": "{\n  \"_id\" : \"556e1174a8952c9521286a60\",\n  \"email\": \"subscriber@email.com\",\n  \"name\": \"Jumia Online Shop\",\n  \"website\": \"http://www.jumia.co.ke\",\n  \"address\": \"Moi Avenue, Top House\",\n  \"logo\": \"logo_url\"\n}",
+          "content": "{\n  \"_id\" : \"556e1174a8952c9521286a60\",\n  \"email\": \"subscriber@email.com\",\n  \"name\": \"Jumia Online Shop\",\n  \"website\": \"http://www.jumia.co.ke\",\n  \"address\": \"Moi Avenue, Top House\",\n  \"phone_number\": \"254713510521\",\n  \"logo\": \"logo_url\"\n}",
           "type": "json"
         }
       ]
@@ -788,12 +762,12 @@ define({ "api": [
   },
   {
     "type": "get",
-    "url": "/users",
+    "url": "/users?page=<RESULTS_PAGE>&per_page=<RESULTS_PER_PAGE>",
     "title": "Get users collection",
     "version": "1.0.0",
     "name": "FetchAll",
     "group": "User",
-    "description": "<p>Get a collection of users</p> ",
+    "description": "<p>Get a collection of users. The endpoint has pagination out of the box. Use these params to query with pagination: <code>page=&lt;RESULTS_PAGE</code> and <code>per_page=&lt;RESULTS_PER_PAGE&gt;</code>.</p> ",
     "success": {
       "fields": {
         "Success 200": [
@@ -844,7 +818,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Response Example:",
-          "content": "[{\n  \"_id\" : \"556e1174a8952c9521286a60\",\n  \"last_name\": \"smith\",\n  \"first_name\": \"john\",\n  \"other_name\": \"cole\",\n  \"phone_number\": \"254711223344\",\n  \"addresses\" : []\n}]",
+          "content": "{\n  \"total_pages\": 1,\n  \"total_docs_count\": 0,\n  \"docs\": [{\n    \"_id\" : \"556e1174a8952c9521286a60\",\n    \"last_name\": \"smith\",\n    \"first_name\": \"john\",\n    \"other_name\": \"cole\",\n    \"phone_number\": \"254711223344\",\n    \"addresses\" : []\n  }]\n}",
           "type": "json"
         }
       ]
@@ -924,7 +898,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Response Example:",
-          "content": "[{\n  \"_id\" : \"556e1174a8952c9521286a60\",\n  user: \"556e1174a8952c9521286a60\",\n  short_virtual_code: \"MP7H+E2\",\n  long_virtual_code: \"6EAEMMP7H+E2\",\n  location_pic: \"/media/a8952c9521286a60.jpeg\",\n  latitude: 4.567889,\n  longitude: -12.098,\n  street_address: \"\",\n  city: \"nairobi\",\n  country: \"kenya\"\n}]",
+          "content": "[{\n  \"_id\" : \"556e1174a8952c9521286a60\",\n  user: \"556e1174a8952c9521286a60\",\n  short_plus_code: \"MP7H+E2\",\n  long_plus_code: \"6E9AEFMP7H+E2FH\",\n  virtual_code: \"BB35E24B\",\n  location_pic: \"/media/a8952c9521286a60.jpeg\",\n  latitude: 4.567889,\n  longitude: -12.098,\n  street_address: \"\",\n  city: \"nairobi\",\n  country: \"kenya\"\n}]",
           "type": "json"
         }
       ]
@@ -1332,6 +1306,60 @@ define({ "api": [
   },
   {
     "type": "put",
+    "url": "/users/password/update",
+    "title": "Update user password/pin",
+    "version": "1.0.0",
+    "name": "UpdatePassword",
+    "group": "User",
+    "description": "<p>Update password of a given user.</p> ",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "security_question_answer",
+            "description": "<p>security question answer</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "phone_number",
+            "description": "<p>phone number</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "new_password",
+            "description": "<p>new password/pin</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request Example:",
+          "content": "{\n   \"security_answer\" : \"john doey\",\n   \"phone_number\" : \"0713510521\"\n   \"new_password\": \"2654\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Response Example:",
+          "content": "{\n  \"updated\": true\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "routes/users.js",
+    "groupTitle": "User"
+  },
+  {
+    "type": "put",
     "url": "/addresses/:id/archive",
     "title": "Archive an address",
     "version": "1.0.0",
@@ -1359,14 +1387,14 @@ define({ "api": [
             "group": "Success 200",
             "type": "<p>String</p> ",
             "optional": false,
-            "field": "long_virtual_code",
+            "field": "long_plus_code",
             "description": "<p>long virtual code</p> "
           },
           {
             "group": "Success 200",
             "type": "<p>String</p> ",
             "optional": false,
-            "field": "short_virtual_code",
+            "field": "short_plus_code",
             "description": "<p>short virtual code</p> "
           },
           {
@@ -1375,6 +1403,13 @@ define({ "api": [
             "optional": false,
             "field": "location_pic",
             "description": "<p>location photo</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "virtual_code",
+            "description": "<p>masking code for the plus code</p> "
           },
           {
             "group": "Success 200",
@@ -1416,7 +1451,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Response Example:",
-          "content": "{\n  \"_id\" : \"556e1174a8952c9521286a60\",\n  user: \"556e1174a8952c9521286a60\",\n  short_virtual_code: \"MP7H+E2\",\n  long_virtual_code: \"6E9AEFMP7H+E2FH\",\n  location_pic: \"/media/a8952c9521286a60.jpeg\",\n  latitude: 4.567889,\n  longitude: -12.098,\n  street_address: \"\",\n  city: \"nairobi\",\n  country: \"kenya\"\n}",
+          "content": "{\n  \"_id\" : \"556e1174a8952c9521286a60\",\n  user: \"556e1174a8952c9521286a60\",\n  short_plus_code: \"MP7H+E2\",\n  long_plus_code: \"6E9AEFMP7H+E2FH\",\n  location_pic: \"/media/a8952c9521286a60.jpeg\",\n  virtual_code: \"BB35E24B\",\n  latitude: 4.567889,\n  longitude: -12.098,\n  street_address: \"\",\n  city: \"nairobi\",\n  country: \"kenya\"\n}",
           "type": "json"
         }
       ]
@@ -1467,15 +1502,15 @@ define({ "api": [
             "group": "Parameter",
             "type": "<p>String</p> ",
             "optional": false,
-            "field": "long_virtual_code",
-            "description": "<p>long virtual code</p> "
+            "field": "long_plus_code",
+            "description": "<p>long plus code</p> "
           },
           {
             "group": "Parameter",
             "type": "<p>String</p> ",
             "optional": false,
-            "field": "short_virtual_code",
-            "description": "<p>short virtual code</p> "
+            "field": "short_plus_code",
+            "description": "<p>short plus code</p> "
           },
           {
             "group": "Parameter",
@@ -1503,7 +1538,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request Example",
-          "content": "(this is not json data but listing of request fields, all fields should be placed\nas part of the multipart/form-data data):\n{\n     \"user\" : \"556e1174a8952c9521286a60\",\n     location_pic: \"image file\"\n     short_virtual_code: \"MP7H+E2\",\n     long_virtual_code: \"6E9AEFMP7H+E2FH\",\n     latitude: 4.567889,\n     longitude: -12.098,\n     street_address: \"\",\n     city: \"nairobi\",\n     country: \"kenya\"\n}",
+          "content": "(this is not json data but listing of request fields, all fields should be placed\nas part of the multipart/form-data data):\n{\n     \"user\" : \"556e1174a8952c9521286a60\",\n     location_pic: \"image file\"\n     short_plus_code: \"MP7H+E2\",\n     long_plus_code: \"6E9AEFMP7H+E2FH\",\n     latitude: 4.567889,\n     longitude: -12.098,\n     street_address: \"\",\n     city: \"nairobi\",\n     country: \"kenya\"\n}",
           "type": "json"
         }
       ]
@@ -1529,14 +1564,14 @@ define({ "api": [
             "group": "Success 200",
             "type": "<p>String</p> ",
             "optional": false,
-            "field": "long_virtual_code",
+            "field": "long_plus_code",
             "description": "<p>long virtual code</p> "
           },
           {
             "group": "Success 200",
             "type": "<p>String</p> ",
             "optional": false,
-            "field": "short_virtual_code",
+            "field": "short_plus_code",
             "description": "<p>short virtual code</p> "
           },
           {
@@ -1571,6 +1606,13 @@ define({ "api": [
             "group": "Success 200",
             "type": "<p>String</p> ",
             "optional": false,
+            "field": "virtual_code",
+            "description": "<p>masking code for the plus code</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
             "field": "city",
             "description": "<p>city name</p> "
           },
@@ -1586,7 +1628,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Response Example:",
-          "content": "{\n  \"_id\" : \"556e1174a8952c9521286a60\",\n  user: \"556e1174a8952c9521286a60\",\n  short_virtual_code: \"MP7H+E2\",\n  long_virtual_code: \"6E9AEFMP7H+E2FH\",\n  location_pic: \"/media/a8952c9521286a60.jpeg\",\n  latitude: 4.567889,\n  longitude: -12.098,\n  street_address: \"\",\n  city: \"nairobi\",\n  country: \"kenya\"\n}",
+          "content": "{\n  \"_id\" : \"556e1174a8952c9521286a60\",\n  user: \"556e1174a8952c9521286a60\",\n  short_plus_code: \"MP7H+E2\",\n  long_plus_code: \"6E9AEFMP7H+E2FH\",\n  virtual_code: \"BB35E24B\",\n  location_pic: \"/media/a8952c9521286a60.jpeg\",\n  latitude: 4.567889,\n  longitude: -12.098,\n  street_address: \"\",\n  city: \"nairobi\",\n  country: \"kenya\"\n}",
           "type": "json"
         }
       ]
@@ -1623,14 +1665,14 @@ define({ "api": [
             "group": "Success 200",
             "type": "<p>String</p> ",
             "optional": false,
-            "field": "long_virtual_code",
+            "field": "long_plus_code",
             "description": "<p>long virtual code</p> "
           },
           {
             "group": "Success 200",
             "type": "<p>String</p> ",
             "optional": false,
-            "field": "short_virtual_code",
+            "field": "short_plus_code",
             "description": "<p>short virtual code</p> "
           },
           {
@@ -1674,13 +1716,20 @@ define({ "api": [
             "optional": false,
             "field": "country",
             "description": "<p>country name</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "virtual_code",
+            "description": "<p>masking code for the plus code</p> "
           }
         ]
       },
       "examples": [
         {
           "title": "Response Example:",
-          "content": "{\n  \"_id\" : \"556e1174a8952c9521286a60\",\n  user: \"556e1174a8952c9521286a60\",\n  short_virtual_code: \"MP7H+E2\",\n  long_virtual_code: \"6E9AEFMP7H+E2FH\",\n  location_pic: \"/media/a8952c9521286a60.jpeg\",\n  latitude: 4.567889,\n  longitude: -12.098,\n  street_address: \"\",\n  city: \"nairobi\",\n  country: \"kenya\"\n}",
+          "content": "{\n  \"_id\" : \"556e1174a8952c9521286a60\",\n  user: \"556e1174a8952c9521286a60\",\n  short_plus_code: \"MP7H+E2\",\n  virtual_code: \"BB35E24B\",\n  long_plus_code: \"6E9AEFMP7H+E2FH\",\n  location_pic: \"/media/a8952c9521286a60.jpeg\",\n  latitude: 4.567889,\n  longitude: -12.098,\n  street_address: \"\",\n  city: \"nairobi\",\n  country: \"kenya\"\n}",
           "type": "json"
         }
       ]
@@ -1690,12 +1739,12 @@ define({ "api": [
   },
   {
     "type": "get",
-    "url": "/addresses",
+    "url": "/addresses?page=<RESULTS_PAGE>&per_page=<RESULTS_PER_PAGE>",
     "title": "Get addresses collection",
     "version": "1.0.0",
     "name": "FetchAll",
     "group": "address",
-    "description": "<p>Get a collection of addresses</p> ",
+    "description": "<p>Get a collection of addresses. The endpoint has pagination out of the box. Use these params to query with pagination: <code>page=&lt;RESULTS_PAGE</code> and <code>per_page=&lt;RESULTS_PER_PAGE&gt;</code>.</p> ",
     "success": {
       "fields": {
         "Success 200": [
@@ -1717,14 +1766,14 @@ define({ "api": [
             "group": "Success 200",
             "type": "<p>String</p> ",
             "optional": false,
-            "field": "long_virtual_code",
+            "field": "long_plus_code",
             "description": "<p>long virtual code</p> "
           },
           {
             "group": "Success 200",
             "type": "<p>String</p> ",
             "optional": false,
-            "field": "short_virtual_code",
+            "field": "short_plus_code",
             "description": "<p>short virtual code</p> "
           },
           {
@@ -1768,13 +1817,20 @@ define({ "api": [
             "optional": false,
             "field": "country",
             "description": "<p>country name</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "virtual_code",
+            "description": "<p>masking code for the plus code</p> "
           }
         ]
       },
       "examples": [
         {
           "title": "Response Example:",
-          "content": "[{\n  \"_id\" : \"556e1174a8952c9521286a60\",\n  user: \"556e1174a8952c9521286a60\",\n  short_virtual_code: \"MP7H+E2\",\n  long_virtual_code: \"6E9AEFMP7H+E2FH\",\n  location_pic: \"/media/a8952c9521286a60.jpeg\",\n  latitude: 4.567889,\n  longitude: -12.098,\n  street_address: \"\",\n  city: \"nairobi\",\n  country: \"kenya\"\n}]",
+          "content": "{\n  \"total_pages\": 1,\n  \"total_docs_count\": 0,\n  \"docs\": [{\n     \"_id\" : \"556e1174a8952c9521286a60\",\n    user: \"556e1174a8952c9521286a60\",\n    short_plus_code: \"MP7H+E2\",\n    long_plus_code: \"6E9AEFMP7H+E2FH\",\n    virtual_code: \"BB35E24B\",\n    location_pic: \"/media/a8952c9521286a60.jpeg\",\n    latitude: 4.567889,\n    longitude: -12.098,\n    street_address: \"\",\n    city: \"nairobi\",\n    country: \"kenya\"\n  }]\n}",
           "type": "json"
         }
       ]
@@ -1811,14 +1867,14 @@ define({ "api": [
             "group": "Success 200",
             "type": "<p>String</p> ",
             "optional": false,
-            "field": "long_virtual_code",
+            "field": "long_plus_code",
             "description": "<p>long virtual code</p> "
           },
           {
             "group": "Success 200",
             "type": "<p>String</p> ",
             "optional": false,
-            "field": "short_virtual_code",
+            "field": "short_plus_code",
             "description": "<p>short virtual code</p> "
           },
           {
@@ -1862,13 +1918,20 @@ define({ "api": [
             "optional": false,
             "field": "country",
             "description": "<p>country name</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "virtual_code",
+            "description": "<p>masking code for the plus code</p> "
           }
         ]
       },
       "examples": [
         {
           "title": "Response Example:",
-          "content": "{\n  \"_id\" : \"556e1174a8952c9521286a60\",\n  user: \"556e1174a8952c9521286a60\",\n  short_virtual_code: \"MP7H+E2\",\n  long_virtual_code: \"6E9AEFMP7H+E2FH\",\n  location_pic: \"/media/a8952c9521286a60.jpeg\",\n  latitude: 4.567889,\n  longitude: -12.098,\n  street_address: \"\",\n  city: \"nairobi\",\n  country: \"kenya\"\n}",
+          "content": "{\n  \"_id\" : \"556e1174a8952c9521286a60\",\n  user: \"556e1174a8952c9521286a60\",\n  short_plus_code: \"MP7H+E2\",\n  virtual_code: \"BB35E24B\",\n  long_plus_code: \"6E9AEFMP7H+E2FH\",\n  location_pic: \"/media/a8952c9521286a60.jpeg\",\n  latitude: 4.567889,\n  longitude: -12.098,\n  street_address: \"\",\n  city: \"nairobi\",\n  country: \"kenya\"\n}",
           "type": "json"
         }
       ]
@@ -1905,14 +1968,14 @@ define({ "api": [
             "group": "Success 200",
             "type": "<p>String</p> ",
             "optional": false,
-            "field": "long_virtual_code",
+            "field": "long_plus_code",
             "description": "<p>long virtual code</p> "
           },
           {
             "group": "Success 200",
             "type": "<p>String</p> ",
             "optional": false,
-            "field": "short_virtual_code",
+            "field": "short_plus_code",
             "description": "<p>short virtual code</p> "
           },
           {
@@ -1956,13 +2019,20 @@ define({ "api": [
             "optional": false,
             "field": "country",
             "description": "<p>country name</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "virtual_code",
+            "description": "<p>masking code for the plus code</p> "
           }
         ]
       },
       "examples": [
         {
           "title": "Response Example:",
-          "content": "{\n  \"_id\" : \"556e1174a8952c9521286a60\",\n  user: \"556e1174a8952c9521286a60\",\n  short_virtual_code: \"MP7H+E2\",\n  long_virtual_code: \"6E9AEFMP7H+E2FH\",\n  location_pic: \"/media/a8952c9521286a60.jpeg\",\n  latitude: 4.567889,\n  longitude: -12.098,\n  street_address: \"\",\n  city: \"nairobi\",\n  country: \"kenya\"\n}",
+          "content": "{\n  \"_id\" : \"556e1174a8952c9521286a60\",\n  user: \"556e1174a8952c9521286a60\",\n  short_plus_code: \"MP7H+E2\",\n  long_plus_code: \"6E9AEFMP7H+E2FH\",\n  location_pic: \"/media/a8952c9521286a60.jpeg\",\n  latitude: 4.567889,\n  virtual_code: \"BB35E24B\",\n  longitude: -12.098,\n  street_address: \"\",\n  city: \"nairobi\",\n  country: \"kenya\"\n}",
           "type": "json"
         }
       ]

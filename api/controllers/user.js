@@ -4,18 +4,19 @@
  */
 var EventEmitter = require('events').EventEmitter;
 
-var debug  = require('debug')('anwani-api:user-controller');
-var async  = require('async');
-var moment = require('moment');
-var _     = require('lodash');
+var debug   = require('debug')('anwani-api:user-controller');
+var async   = require('async');
+var moment  = require('moment');
+var _       = require('lodash');
 var emquery = require('emquery');
 
-var Address   = require('../dal/address');
-var User      = require('../dal/user');
-var Token     = require('../dal/token');
-var UserModel = require('../models/user');
-var config    = require('../config');
-var CustomError = require('../lib/custom-error');
+var Address            = require('../dal/address');
+var AddressModel       = require('../models/address');
+var User               = require('../dal/user');
+var Token              = require('../dal/token');
+var UserModel          = require('../models/user');
+var config             = require('../config');
+var CustomError        = require('../lib/custom-error');
 var hashSecurityAnswer = require('../lib/utils').hashSecurityAnswer;
 
 /**
@@ -83,13 +84,6 @@ exports.create = function createUser(req, res, next) {
 exports.fetchOne = function fetchOneUser(req, res, next) {
   debug('fetch user:' + req.params.id);
 
-  if(!req._user) {
-    return next(CustomError({
-      name: 'AUTHORIZATION_ERROR',
-      message: 'Your are not logged in'
-    }));
-  }
-
   var query = {
     _id: req.params.id
   };
@@ -119,13 +113,6 @@ exports.fetchOne = function fetchOneUser(req, res, next) {
  */
 exports.update = function updateUser(req, res, next) {
   debug('updating user:'+ req.params.id);
-
-  if(!req._user) {
-    return next(CustomError({
-      name: 'AUTHORIZATION_ERROR',
-      message: 'Your are not logged in'
-    }));
-  }
 
   var query = {
     _id: req.params.id
@@ -164,13 +151,6 @@ exports.update = function updateUser(req, res, next) {
  */
 exports.delete = function deleteUser(req, res, next) {
   debug('deleting user:' + req.params.id);
-
-  if(!req._user) {
-    return next(CustomError({
-      name: 'AUTHORIZATION_ERROR',
-      message: 'Your are not logged in'
-    }));
-  }
 
   var query = {
     _id: req.params.id
@@ -229,19 +209,18 @@ exports.delete = function deleteUser(req, res, next) {
 exports.fetchAll = function fetchAllUsers(req, res, next) {
   debug('get a collection of users');
 
-  if(!req._user || (req._user.role !== 'admin')) {
-    return next(CustomError({
-      name: 'AUTHORIZATION_ERROR',
-      message: 'Access Denied, only admins allowed'
-    }));
-  }
+  // retrieve pagination query params
+  var page   = req.query.page || 1;
+  var limit  = req.query.per_page || 10;
 
-  var query = {};
-  var qs = {
-    populate: true
+  var opts = {
+    page: page,
+    limit: limit,
+    sort: { }
   };
+  var query = {};
 
-  User.getCollection(query, qs, function cb(err, users) {
+  User.getCollection(query, opts, function cb(err, users) {
     if(err) {
       return next(CustomError({
         name: 'SERVER_ERROR',
@@ -266,22 +245,12 @@ exports.fetchAll = function fetchAllUsers(req, res, next) {
 exports.fetchUserAddresses = function fetchAllUserAddresses(req, res, next) {
   debug('get a collection of user addresses');
 
-  if(!req._user) {
-    return next(CustomError({
-      name: 'AUTHORIZATION_ERROR',
-      message: 'Your are not logged in'
-    }));
-  }
-
   var query = {
-    user: req.params.id,
+    user:     req.params.id,
     archived: false
   };
-  var qs = {
-    populate: false
-  };
 
-  Address.getCollection(query, qs, function cb(err, addresses) {
+  AddressModel.find(query, qs, function cb(err, addresses) {
     if(err) {
       return next(CustomError({
         name: 'SERVER_ERROR',

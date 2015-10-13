@@ -21,17 +21,18 @@ var SubscriberSchema = new Schema({
   logo:         { type: String },
   password:     { type: String },
   last_login:   { type: Date },
-  phone_number: { type: String,   unique: true },
-  email:        { type: String,   unique: true },
+  phone_number: { type: String,  },
+  email:        { type: String,  },
   realm:        { type: String,   default: 'user' },
   role:         { type: String,   default: 'subscriber' },
   archived:     { type: Boolean,  default: false },
   verified:     { type: Boolean,  default: false },
   verification_token: { type: String },
+  verification_link:  { type: String },
   subscription_plan:  { type: String,   default: 'basic' },
   subscription_on:    { type: Boolean,  default: false },
-  date_created: Date,
-  last_modified:Date
+  date_created:       { type: Date },
+  last_modified:      { type: Date }
 });
 
 /**
@@ -49,6 +50,7 @@ SubscriberSchema.statics.whitelist = {
   verified: 1,
   subscription_plan: 1,
   subscription_on: 1,
+  role: 1,
   date_created: 1
 };
 

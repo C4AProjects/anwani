@@ -15,8 +15,9 @@
 var express  = require('express');
 var debug    = require('debug')('anwani-api:subscriber-router');
 
-var subscriberController  = require('../controllers/subscriber');
-var authController  = require('../controllers/auth');
+var subscriberController = require('../controllers/subscriber');
+var authController       = require('../controllers/auth');
+var accessControl        = require('../controllers/auth').accessControl;
 
 var router  = express.Router();
 
@@ -34,6 +35,7 @@ var router  = express.Router();
  * @apiParam {String} email email address
  * @apiParam {String} website subscriber website
  * @apiParam {String} password secret password
+ * @apiParam {String} phone_number phone number in international format
  * @apiParam {String} logo subscriber logo
  *
  * @apiParamExample Request Example, should be submitted as```multipart/form-data```.
@@ -43,6 +45,7 @@ var router  = express.Router();
  *    "name": "Jumia Online Shop",
  *    "website": "http://www.jumia.co.ke",
  *    "address": "Moi Avenue, Top House",
+ *    "phone_number": "254713510521",
  *    "logo": "<LOGO_DATA>"
  *  }
  *
@@ -156,7 +159,7 @@ router.get('/verify/:token', authController.verify);
  * @apiDescription Get a subscriber with the given id
  *
  */
-router.get('/:id', subscriberController.fetchOne);
+router.get('/:id', accessControl(['subscriber', 'admin']), subscriberController.fetchOne);
 
 /**
  * @api {put} /subscribers/:id Update Subscriber
@@ -171,6 +174,7 @@ router.get('/:id', subscriberController.fetchOne);
  * @apiSuccess {String} email email address
  * @apiSuccess {String} website subscriber website
  * @apiSuccess {String} password secret password
+ * @apiSuccess {String} phone_number phone number in international format
  * @apiSuccess {String} logo subscriber logo
  * @apiSuccess {String} _id subscriber id
  *
@@ -181,19 +185,22 @@ router.get('/:id', subscriberController.fetchOne);
  *    "name": "Jumia Online Shop",
  *    "website": "http://www.jumia.co.ke",
  *    "address": "Moi Avenue, Top House",
+ *    "phone_number": "254713510521",
  *    "logo": "logo_url"
  *  }
  *
  */
-router.put('/:id', subscriberController.update);
+router.put('/:id', accessControl(['subscriber', 'admin']), subscriberController.update);
 
 /**
- * @api {get} /subscribers Get subscribers collection
+ * @api {get} /subscribers?page=<RESULTS_PAGE>&per_page=<RESULTS_PER_PAGE> Get subscribers collection
  * @apiVersion 1.0.0
  * @apiName FetchAll
  * @apiGroup Subscriber
  *
- * @apiDescription Get a collection of subscribers
+ * @apiDescription Get a collection of subscribers. The endpoint has pagination
+ * out of the box. Use these params to query with pagination: `page=<RESULTS_PAGE`
+ * and `per_page=<RESULTS_PER_PAGE>`.
  *
  * @apiSuccess {String} name name of the subscriber
  * @apiSuccess {String} address subscriber address
@@ -201,20 +208,26 @@ router.put('/:id', subscriberController.update);
  * @apiSuccess {String} website subscriber website
  * @apiSuccess {String} password secret password
  * @apiSuccess {String} logo subscriber logo
+ * @apiSuccess {String} phone_number phone number in international format
  * @apiSuccess {String} _id subscriber id
  *
  * @apiSuccessExample Response Example:
- *  [{
- *    "_id" : "556e1174a8952c9521286a60",
- *    "email": "subscriber@email.com",
- *    "name": "Jumia Online Shop",
- *    "website": "http://www.jumia.co.ke",
- *    "address": "Moi Avenue, Top House",
- *    "logo": "logo_url"
- *  }]
+ *  {
+ *    "total_pages": 1,
+ *    "total_docs_count": 0,
+ *    "docs": [{
+ *      "_id" : "556e1174a8952c9521286a60",
+ *      "email": "subscriber@email.com",
+ *      "name": "Jumia Online Shop",
+ *      "website": "http://www.jumia.co.ke",
+ *      "address": "Moi Avenue, Top House",
+ *      "phone_number": "254713510521",
+ *      "logo": "logo_url"
+ *    }]
+ *  }
  *
  */
-router.get('/', subscriberController.fetchAll);
+router.get('/', accessControl('admin'), subscriberController.fetchAll);
 
 /**
  * @api {delete} /subscribers/:id Delete Subscriber
@@ -230,6 +243,7 @@ router.get('/', subscriberController.fetchAll);
  * @apiSuccess {String} website subscriber website
  * @apiSuccess {String} password secret password
  * @apiSuccess {String} logo subscriber logo
+ * @apiSuccess {String} phone_number phone number in international format
  * @apiSuccess {String} _id subscriber id
  *
  * @apiSuccessExample Response Example:
@@ -237,13 +251,14 @@ router.get('/', subscriberController.fetchAll);
  *    "_id" : "556e1174a8952c9521286a60",
  *    "email": "subscriber@email.com",
  *    "name": "Jumia Online Shop",
+ *    "phone_number": "254713510521",
  *    "website": "http://www.jumia.co.ke",
  *    "address": "Moi Avenue, Top House",
  *    "logo": "logo_url"
  *  }
  *
  */
-router.delete('/:id', subscriberController.delete);
+router.delete('/:id', accessControl('admin'), subscriberController.delete);
 
 /**
  * @api {put} /subscribers/:id/subscription?config=<enable|disable> Configure Subscriber Subscription
@@ -258,8 +273,7 @@ router.delete('/:id', subscriberController.delete);
  *    "subscription": "enabled"
  *  }
  */
-router.put('/:id/subscription', subscriberController.updateSubscription);
-
+router.put('/:id/subscription', accessControl('admin'), subscriberController.updateSubscription);
 
 /**
  * @api {put} /subscribers/:id/plans Update subscribers subscription plans
@@ -281,7 +295,7 @@ router.put('/:id/subscription', subscriberController.updateSubscription);
  *    "updated": true
  *  }
  */
-router.put('/:id/plans', subscriberController.updateSubscriptionPlan);
+router.put('/:id/plans', accessControl(['subscriber', 'admin']), subscriberController.updateSubscriptionPlan);
 
 /**
  * @api {put} /subscribers/:id/logos Update subscribers logos
@@ -304,7 +318,7 @@ router.put('/:id/plans', subscriberController.updateSubscriptionPlan);
  *    "updated": true
  *  }
  */
-router.put('/:id/logos', subscriberController.updateLogo);
+router.put('/:id/logos', accessControl(['subscriber', 'admin']), subscriberController.updateLogo);
 
 /**
  * @api {post} /subscribers/password/update Update subscribers password
@@ -327,7 +341,7 @@ router.put('/:id/logos', subscriberController.updateLogo);
  *    "updated": true
  *  }
  */
-router.put('/password/update', subscriberController.updatePassword);
+router.put('/password/update', accessControl(['subscriber', 'admin']), subscriberController.updatePassword);
 
 // Expose Subscriber Router
 module.exports = router;

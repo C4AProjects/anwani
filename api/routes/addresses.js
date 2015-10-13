@@ -16,6 +16,7 @@ var express  = require('express');
 var debug    = require('debug')('anwani-api:address-router');
 
 var addressController  = require('../controllers/address');
+var accessControl        = require('../controllers/auth').accessControl;
 
 var router  = express.Router();
 
@@ -31,8 +32,8 @@ var router  = express.Router();
  * @apiParam {String} location_pic location photo
  * @apiParam {Number} latitude latitude coordinate
  * @apiParam {Number} longitude longitude coordinate
- * @apiParam {String} long_virtual_code long virtual code
- * @apiParam {String} short_virtual_code short virtual code
+ * @apiParam {String} long_plus_code long plus code
+ * @apiParam {String} short_plus_code short plus code
  * @apiParam {String} street_address street address
  * @apiParam {String} city city name
  * @apiParam {String} country country name
@@ -43,8 +44,8 @@ var router  = express.Router();
  * {
  *      "user" : "556e1174a8952c9521286a60",
  *      location_pic: "image file"
- *      short_virtual_code: "MP7H+E2",
- *      long_virtual_code: "6E9AEFMP7H+E2FH",
+ *      short_plus_code: "MP7H+E2",
+ *      long_plus_code: "6E9AEFMP7H+E2FH",
  *      latitude: 4.567889,
  *      longitude: -12.098,
  *      street_address: "",
@@ -54,12 +55,13 @@ var router  = express.Router();
  *
  * @apiSuccess {String} _id address id
  * @apiSuccess {String} user user id
- * @apiSuccess {String} long_virtual_code long virtual code
- * @apiSuccess {String} short_virtual_code short virtual code
+ * @apiSuccess {String} long_plus_code long virtual code
+ * @apiSuccess {String} short_plus_code short virtual code
  * @apiSuccess {String} location_pic location photo
  * @apiSuccess {Number} latitude latitude coordinate
  * @apiSuccess {Number} longitude longitude coordinate
  * @apiSuccess {String} street_address street address
+ * @apiSuccess {String} virtual_code masking code for the plus code
  * @apiSuccess {String} city city name
  * @apiSuccess {String} country country name
  *
@@ -67,8 +69,9 @@ var router  = express.Router();
  *  {
  *    "_id" : "556e1174a8952c9521286a60",
  *    user: "556e1174a8952c9521286a60",
- *    short_virtual_code: "MP7H+E2",
- *    long_virtual_code: "6E9AEFMP7H+E2FH",
+ *    short_plus_code: "MP7H+E2",
+ *    long_plus_code: "6E9AEFMP7H+E2FH",
+ *    virtual_code: "BB35E24B",
  *    location_pic: "/media/a8952c9521286a60.jpeg",
  *    latitude: 4.567889,
  *    longitude: -12.098,
@@ -78,7 +81,7 @@ var router  = express.Router();
  *  }
  *
  */
-router.post('/create', addressController.create);
+router.post('/create', accessControl(['*']), addressController.create);
 
 
 /**
@@ -91,21 +94,23 @@ router.post('/create', addressController.create);
  *
  * @apiSuccess {String} _id address id
  * @apiSuccess {String} user user id
- * @apiSuccess {String} long_virtual_code long virtual code
- * @apiSuccess {String} short_virtual_code short virtual code
+ * @apiSuccess {String} long_plus_code long virtual code
+ * @apiSuccess {String} short_plus_code short virtual code
  * @apiSuccess {String} location_pic location photo
  * @apiSuccess {Number} latitude latitude coordinate
  * @apiSuccess {Number} longitude longitude coordinate
  * @apiSuccess {String} street_address street address
  * @apiSuccess {String} city city name
  * @apiSuccess {String} country country name
+ * @apiSuccess {String} virtual_code masking code for the plus code
  *
  * @apiSuccessExample Response Example:
  *  {
  *    "_id" : "556e1174a8952c9521286a60",
  *    user: "556e1174a8952c9521286a60",
- *    short_virtual_code: "MP7H+E2",
- *    long_virtual_code: "6E9AEFMP7H+E2FH",
+ *    short_plus_code: "MP7H+E2",
+ *    virtual_code: "BB35E24B",
+ *    long_plus_code: "6E9AEFMP7H+E2FH",
  *    location_pic: "/media/a8952c9521286a60.jpeg",
  *    latitude: 4.567889,
  *    longitude: -12.098,
@@ -114,7 +119,7 @@ router.post('/create', addressController.create);
  *    country: "kenya"
  *  }
  */
-router.get('/:id', addressController.fetchOne);
+router.get('/:id', accessControl(['*']), addressController.fetchOne);
 
 /**
  * @api {put} /addresses/:id Update address
@@ -126,66 +131,76 @@ router.get('/:id', addressController.fetchOne);
  *
  * @apiSuccess {String} _id address id
  * @apiSuccess {String} user user id
- * @apiSuccess {String} long_virtual_code long virtual code
- * @apiSuccess {String} short_virtual_code short virtual code
+ * @apiSuccess {String} long_plus_code long virtual code
+ * @apiSuccess {String} short_plus_code short virtual code
  * @apiSuccess {String} location_pic location photo
  * @apiSuccess {Number} latitude latitude coordinate
  * @apiSuccess {Number} longitude longitude coordinate
  * @apiSuccess {String} street_address street address
  * @apiSuccess {String} city city name
  * @apiSuccess {String} country country name
+ * @apiSuccess {String} virtual_code masking code for the plus code
  *
  * @apiSuccessExample Response Example:
  *  {
  *    "_id" : "556e1174a8952c9521286a60",
  *    user: "556e1174a8952c9521286a60",
- *    short_virtual_code: "MP7H+E2",
- *    long_virtual_code: "6E9AEFMP7H+E2FH",
+ *    short_plus_code: "MP7H+E2",
+ *    long_plus_code: "6E9AEFMP7H+E2FH",
  *    location_pic: "/media/a8952c9521286a60.jpeg",
  *    latitude: 4.567889,
+ *    virtual_code: "BB35E24B",
  *    longitude: -12.098,
  *    street_address: "",
  *    city: "nairobi",
  *    country: "kenya"
  *  }
  */
-router.put('/:id', addressController.update);
+router.put('/:id', accessControl(['*']), addressController.update);
 
 /**
- * @api {get} /addresses Get addresses collection
+ * @api {get} /addresses?page=<RESULTS_PAGE>&per_page=<RESULTS_PER_PAGE> Get addresses collection
  * @apiVersion 1.0.0
  * @apiName FetchAll
  * @apiGroup address
  *
- * @apiDescription Get a collection of addresses
+ * @apiDescription Get a collection of addresses. The endpoint has pagination
+ * out of the box. Use these params to query with pagination: `page=<RESULTS_PAGE`
+ * and `per_page=<RESULTS_PER_PAGE>`.
  *
  * @apiSuccess {String} _id address id
  * @apiSuccess {String} user user id
- * @apiSuccess {String} long_virtual_code long virtual code
- * @apiSuccess {String} short_virtual_code short virtual code
+ * @apiSuccess {String} long_plus_code long virtual code
+ * @apiSuccess {String} short_plus_code short virtual code
  * @apiSuccess {String} location_pic location photo
  * @apiSuccess {Number} latitude latitude coordinate
  * @apiSuccess {Number} longitude longitude coordinate
  * @apiSuccess {String} street_address street address
  * @apiSuccess {String} city city name
  * @apiSuccess {String} country country name
+ * @apiSuccess {String} virtual_code masking code for the plus code
  *
  * @apiSuccessExample Response Example:
- *  [{
- *    "_id" : "556e1174a8952c9521286a60",
- *    user: "556e1174a8952c9521286a60",
- *    short_virtual_code: "MP7H+E2",
- *    long_virtual_code: "6E9AEFMP7H+E2FH",
- *    location_pic: "/media/a8952c9521286a60.jpeg",
- *    latitude: 4.567889,
- *    longitude: -12.098,
- *    street_address: "",
- *    city: "nairobi",
- *    country: "kenya"
- *  }]
+ *  {
+ *    "total_pages": 1,
+ *    "total_docs_count": 0,
+ *    "docs": [{
+ *       "_id" : "556e1174a8952c9521286a60",
+ *      user: "556e1174a8952c9521286a60",
+ *      short_plus_code: "MP7H+E2",
+ *      long_plus_code: "6E9AEFMP7H+E2FH",
+ *      virtual_code: "BB35E24B",
+ *      location_pic: "/media/a8952c9521286a60.jpeg",
+ *      latitude: 4.567889,
+ *      longitude: -12.098,
+ *      street_address: "",
+ *      city: "nairobi",
+ *      country: "kenya"
+ *    }]
+ *  }
  *
  */
-router.get('/', addressController.fetchAll);
+router.get('/', accessControl(['subscriber', 'admin']), addressController.fetchAll);
 
 /**
  * @api {delete} /addresses/:id Delete address
@@ -197,21 +212,23 @@ router.get('/', addressController.fetchAll);
  *
  * @apiSuccess {String} _id address id
  * @apiSuccess {String} user user id
- * @apiSuccess {String} long_virtual_code long virtual code
- * @apiSuccess {String} short_virtual_code short virtual code
+ * @apiSuccess {String} long_plus_code long virtual code
+ * @apiSuccess {String} short_plus_code short virtual code
  * @apiSuccess {String} location_pic location photo
  * @apiSuccess {Number} latitude latitude coordinate
  * @apiSuccess {Number} longitude longitude coordinate
  * @apiSuccess {String} street_address street address
  * @apiSuccess {String} city city name
  * @apiSuccess {String} country country name
+ * @apiSuccess {String} virtual_code masking code for the plus code
  *
  * @apiSuccessExample Response Example:
  *  {
  *    "_id" : "556e1174a8952c9521286a60",
  *    user: "556e1174a8952c9521286a60",
- *    short_virtual_code: "MP7H+E2",
- *    long_virtual_code: "6E9AEFMP7H+E2FH",
+ *    short_plus_code: "MP7H+E2",
+ *    virtual_code: "BB35E24B",
+ *    long_plus_code: "6E9AEFMP7H+E2FH",
  *    location_pic: "/media/a8952c9521286a60.jpeg",
  *    latitude: 4.567889,
  *    longitude: -12.098,
@@ -221,7 +238,7 @@ router.get('/', addressController.fetchAll);
  *  }
  *
  */
-router.delete('/:id', addressController.delete);
+router.delete('/:id', accessControl(['*']), addressController.delete);
 
 /**
  * @api {put} /addresses/:id/archive Archive an address
@@ -233,9 +250,10 @@ router.delete('/:id', addressController.delete);
  *
  * @apiSuccess {String} _id address id
  * @apiSuccess {String} user user id
- * @apiSuccess {String} long_virtual_code long virtual code
- * @apiSuccess {String} short_virtual_code short virtual code
+ * @apiSuccess {String} long_plus_code long virtual code
+ * @apiSuccess {String} short_plus_code short virtual code
  * @apiSuccess {String} location_pic location photo
+ * @apiSuccess {String} virtual_code masking code for the plus code
  * @apiSuccess {Number} latitude latitude coordinate
  * @apiSuccess {Number} longitude longitude coordinate
  * @apiSuccess {String} street_address street address
@@ -246,9 +264,10 @@ router.delete('/:id', addressController.delete);
  *  {
  *    "_id" : "556e1174a8952c9521286a60",
  *    user: "556e1174a8952c9521286a60",
- *    short_virtual_code: "MP7H+E2",
- *    long_virtual_code: "6E9AEFMP7H+E2FH",
+ *    short_plus_code: "MP7H+E2",
+ *    long_plus_code: "6E9AEFMP7H+E2FH",
  *    location_pic: "/media/a8952c9521286a60.jpeg",
+ *    virtual_code: "BB35E24B",
  *    latitude: 4.567889,
  *    longitude: -12.098,
  *    street_address: "",
@@ -256,7 +275,7 @@ router.delete('/:id', addressController.delete);
  *    country: "kenya"
  *  }
  */
-router.put('/:id/archive', addressController.archive);
+router.put('/:id/archive', accessControl(['*']), addressController.archive);
 
 // Expose address Router
 module.exports = router;

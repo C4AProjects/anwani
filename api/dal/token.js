@@ -14,10 +14,10 @@ var Subscriber  = require('../models/subscriber');
 var returnFields = Token.whitelist;
 var population = [{
   path: 'user',
-  select: User.whitelist
+  select: { _id: 1, realm: 1, role: 1, archived: 1 }
 }, {
   path: 'subscriber',
-  select: Subscriber.whitelist
+  select: { _id: 1, realm: 1, role: 1, archived: 1 , verified: 1 }
 }];
 
 /**

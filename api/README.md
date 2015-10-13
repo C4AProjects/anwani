@@ -1,1 +1,5 @@
-# Anwani API
+# Anwani API.
+
+## License.
+
+ANWANI.

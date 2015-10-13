@@ -1,18 +1,32 @@
-/** * Load Module dependencies.  */ var path = require('path');
+/**
+ * Load Module dependencies.
+ */
+var path = require('path');
 
-var env = process.env;
-var API_URL = 'http://anwani-devapi.c4asolution.com/';
+var cfenv = require('cfenv');
+
+var env     = process.env;
+var appEnv  = cfenv.getAppEnv();
+
+var MONGO_SERVICE  = appEnv.getService('mongodb01') || {};
+var MONGO_SERVICE_INFO = MONGO_SERVICE.credentials || {};
+var PORT          = appEnv.port || 5050;
+var HOST          = appEnv.bind || 'localhost';
+var API_URL       = HOST + ':' + PORT;
+var MONGODB_URL   = MONGO_SERVICE_INFO.url || 'mongodb://127.0.0.1:27017/anwani';
 
 module.exports = {
 
-  API_URL: env.API_URL || API_URL,
+  API_URL: API_URL,
 
   ENV: env.NODE_ENV || 'development',
 
-  HTTP_PORT: env.PORT || 5050,
+  PORT: PORT,
+
+  HOST: HOST,
 
   // MongoDB URL
-  MONGODB_URL: env.MONGODB_URL || 'mongodb://127.0.0.1:27017/anwani',
+  MONGODB_URL: MONGODB_URL,
 
   SALT_FACTOR: 12,
 
@@ -37,7 +51,7 @@ module.exports = {
   ],
   MEDIA: {
     FILE_SIZE: 2 * 1024, // 1MB,
-    URL: API_URL + 'media/',
+    URL: API_URL + '/media/',
     FILES_FOLDER: path.resolve(process.cwd(), './media') + '/'
   },
 

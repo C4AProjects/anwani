@@ -178,16 +178,30 @@ exports.get = function get(query, cb) {
 exports.getCollection = function getCollection(query, qs, cb) {
   debug('fetching a collection of users');
 
-  User
-    .find(query, returnFields)
-    .populate(population)
-    .exec(function (err, users) {
-      if(err) {
-        return cb(err);
-      }
+  var opts = {
+    columns:  returnFields,
+    sortBy:   qs.sort || {},
+    populate: population,
+    page:     qs.page,
+    limit:    qs.limit
+  };
 
-      cb(null, users);
-    });
+
+  User.paginate(query, opts, function (err, docs, page, count) {
+    if(err) {
+      return cb(err);
+    }
+
+
+    var data = {
+      total_pages: page,
+      total_docs_count: count,
+      docs: docs
+    };
+
+    cb(null, data);
+
+  });
 
 };
 
