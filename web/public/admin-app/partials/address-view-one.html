@@ -1,0 +1,36 @@
+<div class='content-wrapper' ng-init="app.settings.pagetitle = 'View Single Address'; ">
+    <section class="box nobox margin-top-15 margin-bottom-0">
+        <div class="content-body">
+            <div class="col-md-12 col-sm-12 col-xs-12 padding-right-30 padding-left-20">
+                <form  action="" class="col-md-6 black form-validation">
+                    <div class="col-md-6">
+                        <label for="">Masked Code</label>
+                        <input type="text" ng-if="_admin|| _subscriber" ng-model="address.masked_code"/>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="">Short Virtual Code</label>
+                        <input type="text"  ng-if="_admin" ng-model="address.short_virtual_code"/>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="">Long Virtual Code</label>
+                        <input type="text"  ng-if="_admin" ng-model="address.long_virtual_code"/>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="">Country</label>
+                        <input type="text" ng-model="address.country"/>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="">City</label>
+                        <input type="text" ng-model="address.city"/>
+                    </div>
+
+
+                </form>
+                <div ui-view="map" class="col-md-6"></div>
+                <button class="btn btn-info btn-block" ui-sref="app.address.view">
+                    <i class="material-icons">arrow_back</i>Back to Addresses
+                </button>
+            </div>
+        </div>
+    </section>
+</div>

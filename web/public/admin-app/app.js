@@ -46,7 +46,8 @@ app.run(
 
             var user = localStorageService.get('user');
             var token = localStorageService.get('token');
-
+            rootScope.users=[];
+            rootScope.subscribers=[];
             rootScope.addresses = [{
                 "_id" : "556e1174a8952c9521286a60",
                 subscriber: "556e1174a8952c9521286a60",
@@ -56,7 +57,7 @@ app.run(
                 latitude: -0.3000,
                 longitude: 36.0667,
                 street_address: "",
-                city: "nairobi",
+                city: "nakuru",
                 country: "kenya"
             },
                 {
@@ -68,7 +69,7 @@ app.run(
                     latitude: -0.7202,
                     longitude: 36.4285,
                     street_address: "",
-                    city: "nakuru",
+                    city: "naivasha",
                     country: "kenya"
                 }];
             rootScope.addresses_shared = [];
