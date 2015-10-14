@@ -38,6 +38,9 @@ if(config.NODE_ENV === 'production'){
 
 // Documentation resource
 
+app.use('/documentation', express.static(path.join(__dirname, 'documentation')));
+app.use('/media', express.static(path.join(__dirname, 'media')));
+app.use('/assets', express.static(path.join(__dirname, 'assets')));
 
 app.use(cors({
   origin: '*',
@@ -59,9 +62,6 @@ app.use(multipart({
 app.use(storeMediaFiles());
 app.use(validator());
 
-app.use('/documentation', express.static(path.join(__dirname, 'documentation')));
-app.use('/media', express.static(path.join(__dirname, 'media')));
-app.use('/assets', express.static(path.join(__dirname, 'assets')));
 
 // Init routes
 routes(app);
