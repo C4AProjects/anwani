@@ -74,9 +74,27 @@ app.config(['$stateProvider', '$urlRouterProvider', 'JQ_CONFIG',
           url: '/view',
           templateUrl: '../admin-app/partials/address-view.html'
         })
+        .state('app.subscriber', {
+          url:'/subscriber',
+          controller:'SubscribersCtrl',
+          templateUrl:'../admin-app/partials/subscriber.html'
+        })
+        .state('app.subscriber.new', {
+          url: '/new',
+          templateUrl: '../admin-app/partials/subscriber-add.html'
+        })
+        .state('app.subscriber.view', {
+          url: '/view',
+          templateUrl: '../admin-app/partials/subscriber-view.html'
+        })
         .state('app.users', {
           url: '/users',
+          controller:'UsersCtrl',
           templateUrl: '../admin-app/partials/users.html'
+        })
+        .state('app.users.new', {
+          url: '/add',
+          templateUrl: '../admin-app/partials/users-add.html'
         })
         .state('app.users.view', {
           url: '/view',

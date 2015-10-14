@@ -3154,7 +3154,26 @@ app.controller('RickshawCtrl', ['$scope', '$interval', function($scope, $interva
 		$scope.noOfPages = Math.ceil($scope.totalItems / $scope.entryLimit);
 		$scope.currentPage = 1;
 	}, true);
-}]);;app.controller('ngGridDemoCtrl', ['$scope', '$http', function($scope, $http) {
+}]);;app.controller('SubscribersCtrl', ['$scope', 'filterFilter','$http','$rootScope',
+    function (scope, filterFilter,http,rootScope) {
+
+
+        get_subscribers();
+        scope.add = function add(){
+            http.post('http://anwaniapi.mybluemix.net/subscriber/signup',scope.subscriber).then(function(result){
+                console.log(result);
+            });
+        };
+
+        function get_subscribers(){
+            http.get('http://anwaniapi.mybluemix.net/subscribers?page=1&per_page=10'
+            ).then(function(result){
+                    scope.subscribers = result.data;
+                    console.log(result);
+                });
+        };
+
+    }]);;app.controller('ngGridDemoCtrl', ['$scope', '$http', function($scope, $http) {
     $scope.filterOptions = {
         filterText: "",
         useExternalFilter: true
@@ -3843,7 +3862,26 @@ app.controller('NotificationsDropDownCtrl', ['$scope', '$http',
     });
 
 });
-;'use strict';
+;app.controller('UsersCtrl', ['$scope', 'filterFilter','$http','$rootScope',
+    function (scope, filterFilter,http,rootScope) {
+
+        get_users();
+        
+        scope.add = function add(){
+            http.post('http://anwaniapi.mybluemix.net/user/signup',scope.user).then(function(result){
+                console.log(result);
+            });
+        };
+
+        function get_users(){
+            http.get('http://anwaniapi.mybluemix.net/users?page=1&per_page=10'
+            ).then(function(result){
+                    scope.users = result.data;
+                    console.log(result);
+                });
+        };
+
+    }]);;'use strict';
 
 // jVectorMap controller
 app.controller('JVectorMapDemoCtrl', ['$scope', function($scope) {
@@ -4835,9 +4873,27 @@ app.controller('MapCtrl', ['$scope', function ($scope) {
           url: '/view',
           templateUrl: '../admin-app/partials/address-view.html'
         })
+        .state('app.subscriber', {
+          url:'/subscriber',
+          controller:'SubscribersCtrl',
+          templateUrl:'../admin-app/partials/subscriber.html'
+        })
+        .state('app.subscriber.new', {
+          url: '/new',
+          templateUrl: '../admin-app/partials/subscriber-add.html'
+        })
+        .state('app.subscriber.view', {
+          url: '/view',
+          templateUrl: '../admin-app/partials/subscriber-view.html'
+        })
         .state('app.users', {
           url: '/users',
+          controller:'UsersCtrl',
           templateUrl: '../admin-app/partials/users.html'
+        })
+        .state('app.users.new', {
+          url: '/add',
+          templateUrl: '../admin-app/partials/users-add.html'
         })
         .state('app.users.view', {
           url: '/view',
