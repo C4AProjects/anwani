@@ -38,16 +38,13 @@ if(config.NODE_ENV === 'production'){
 
 // Documentation resource
 
-app.use('/documentation', express.static(path.join(__dirname, 'documentation')));
-app.use('/media', express.static(path.join(__dirname, 'media')));
-app.use('/assets', express.static(path.join(__dirname, 'assets')));
 
-app.use(authorize().unless( { path: config.OPEN_ENDPOINTS } ));
 app.use(cors({
   origin: '*',
   methods: 'GET,POST,PUT,DELETE,OPTIONS',
   allowedHeaders: 'Origin,X-Requested-With,Content-Type,Accept,Authorization'
 }));
+app.use(authorize().unless( { path: config.OPEN_ENDPOINTS } ));
 app.use(bodyParser.urlencoded({
   extended: true
 }));
@@ -61,6 +58,10 @@ app.use(multipart({
 }));
 app.use(storeMediaFiles());
 app.use(validator());
+
+app.use('/documentation', express.static(path.join(__dirname, 'documentation')));
+app.use('/media', express.static(path.join(__dirname, 'media')));
+app.use('/assets', express.static(path.join(__dirname, 'assets')));
 
 // Init routes
 routes(app);
