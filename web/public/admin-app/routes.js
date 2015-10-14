@@ -20,8 +20,8 @@ app.config(['$stateProvider', '$urlRouterProvider', 'JQ_CONFIG',
      * @return {[type]}              [description]
      */
     $stateProvider.state('app', {
-        templateUrl: '../admin-app/partials/app.html'
-      })
+      templateUrl: '../admin-app/partials/app.html'
+    })
         .state('app.dashboard', {
           url: '/dashboard',
           templateUrl: '../admin-app/partials/app_dashboard.html'
@@ -39,8 +39,8 @@ app.config(['$stateProvider', '$urlRouterProvider', 'JQ_CONFIG',
           //}
         })
         .state('app.profile', {
-            url: '/profile',
-            templateUrl: '../admin-app/partials/ui-profile.html'
+          url: '/profile',
+          templateUrl: '../admin-app/partials/ui-profile.html'
         })
         .state('welcome', {
           url: '/welcome',
@@ -74,6 +74,18 @@ app.config(['$stateProvider', '$urlRouterProvider', 'JQ_CONFIG',
           url: '/view',
           templateUrl: '../admin-app/partials/address-view.html'
         })
+        .state('app.address.one', {
+          url: '/one',
+          views:{
+            '':{
+              templateUrl: '../admin-app/partials/address-view-one.html'
+            },
+            'map@app.address.one':{
+              controller:'MapsCtrl',
+              templateUrl: '../admin-app/partials/ui-map.html'
+            }
+          }
+        })
         .state('app.subscriber', {
           url:'/subscriber',
           controller:'SubscribersCtrl',
@@ -86,6 +98,14 @@ app.config(['$stateProvider', '$urlRouterProvider', 'JQ_CONFIG',
         .state('app.subscriber.view', {
           url: '/view',
           templateUrl: '../admin-app/partials/subscriber-view.html'
+        })
+        .state('app.subscriber.one', {
+          url: '/one',
+          views:{
+            '':{
+              templateUrl: '../admin-app/partials/subscriber-view-one.html'
+            }
+          }
         })
         .state('app.users', {
           url: '/users',

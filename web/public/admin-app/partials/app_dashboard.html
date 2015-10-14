@@ -2,7 +2,7 @@
     <section class="box nobox margin-top-15 margin-bottom-0">
         <div class="content-body">
             <div class="col-md-12 col-sm-12 col-xs-12 padding-right-30 padding-left-20">
-                <div ng-if="admin" class="col-lg-3 col-md-6 col-sm-6 col-xs-12 padding-right-0 padding-left-0">
+                <div ng-if="_admin" class="col-lg-3 col-md-6 col-sm-6 col-xs-12 padding-right-0 padding-left-0">
                     <div class="r4_counter wid-stats db_box">
                         <div class='stats-data'>
                             
@@ -14,13 +14,35 @@
                         </div>
                     </div>
                 </div>
-                <div ng-if="admin || subscriber" class="col-lg-3 col-md-6 col-sm-6 col-xs-12 padding-right-0 padding-left-0">
+                <div ng-if="_admin || _subscriber" class="col-lg-3 col-md-6 col-sm-6 col-xs-12 padding-right-0 padding-left-0">
                     <div class="r4_counter wid-stats db_box">
                         <div class='stats-data'>
                             <i class="material-icons icon-primary pull-left">share</i>
                             <div class="stats">
                                 <h3 ng-bind="addresses_shared.length"></h3>
                                 <span>Shared</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div ng-if="_admin" class="col-lg-3 col-md-6 col-sm-6 col-xs-12 padding-right-0 padding-left-0">
+                    <div class="r4_counter wid-stats db_box">
+                        <div class='stats-data'>
+                            <i class="material-icons icon-primary pull-left">person</i>
+                            <div class="stats">
+                                <h3 ng-bind="users.length"></h3>
+                                <span>Users</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div ng-if="_admin" class="col-lg-3 col-md-6 col-sm-6 col-xs-12 padding-right-0 padding-left-0">
+                    <div class="r4_counter wid-stats db_box">
+                        <div class='stats-data'>
+                            <i class="material-icons icon-primary pull-left">account_balance</i>
+                            <div class="stats">
+                                <h3 ng-bind="subscribers.length"></h3>
+                                <span>Subscribers</span>
                             </div>
                         </div>
                     </div>

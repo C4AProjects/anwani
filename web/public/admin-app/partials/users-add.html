@@ -20,8 +20,6 @@
                             <input  class="input" ng-model="user.password" type="password" placeholder="Password">
                         </div>
                     </div>
-
-
                     <div class="row">
                         <div class="col-md-6">
                             <input  class="input" ng-model="user.security_pass.question" type="text" placeholder="Security Question">
@@ -32,7 +30,7 @@
                     </div>
 
                     <p class="submit">
-                        <button type="submit" name="wp-submit" id="wp-submit" class="btn btn-orange btn-block"
+                        <button name="wp-submit" id="wp-submit" class="btn btn-orange btn-block"
                                 ng-click="add()" ng-disabled='form.$invalid'>Add User
                         </button>
                     </p>

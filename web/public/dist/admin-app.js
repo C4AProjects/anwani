@@ -46,7 +46,8 @@ app.run(
 
             var user = localStorageService.get('user');
             var token = localStorageService.get('token');
-
+            rootScope.users=[];
+            rootScope.subscribers=[];
             rootScope.addresses = [{
                 "_id" : "556e1174a8952c9521286a60",
                 subscriber: "556e1174a8952c9521286a60",
@@ -56,7 +57,7 @@ app.run(
                 latitude: -0.3000,
                 longitude: 36.0667,
                 street_address: "",
-                city: "nairobi",
+                city: "nakuru",
                 country: "kenya"
             },
                 {
@@ -68,7 +69,7 @@ app.run(
                     latitude: -0.7202,
                     longitude: 36.4285,
                     street_address: "",
-                    city: "nakuru",
+                    city: "naivasha",
                     country: "kenya"
                 }];
             rootScope.addresses_shared = [];
@@ -380,21 +381,24 @@ app.controller('AppCtrl', ['$scope',
 
   }
 ]);
-;app.controller('AddressesCtrl', ['$scope', 'filterFilter','$http','$rootScope',
-    function (scope, filterFilter,http,rootScope) {
-
+;app.controller('AddressesCtrl', ['$scope', 'filterFilter','$http','$rootScope','$state',
+    function (scope, filterFilter,http,rootScope,state) {
+        get_addresses();
         scope.add = function add(){
             http.post('http://anwaniapi.mybluemix.net/addresses/create',scope.address).then(function(result){
                 console.log(result);
             });
         };
-        scope.view = function view(){
+        function get_addresses(){
             http.get('http://anwaniapi.mybluemix.net/users/'+rootScope.user._id+'/addresses',
                 scope.address).then(function(result){
                     console.log(result);
-            });
+                });
         };
-scope.view();
+        scope.view = function view(address){
+            rootScope.address=address;
+            state.go('app.address.one');
+        };
 
 }]);;app.controller('BlogPageCtrl', ['$scope', 'filterFilter', function ($scope, filterFilter) {
 	$scope.items = [
@@ -3154,8 +3158,8 @@ app.controller('RickshawCtrl', ['$scope', '$interval', function($scope, $interva
 		$scope.noOfPages = Math.ceil($scope.totalItems / $scope.entryLimit);
 		$scope.currentPage = 1;
 	}, true);
-}]);;app.controller('SubscribersCtrl', ['$scope', 'filterFilter','$http','$rootScope',
-    function (scope, filterFilter,http,rootScope) {
+}]);;app.controller('SubscribersCtrl', ['$scope', 'filterFilter','$http','$rootScope','$state',
+    function (scope, filterFilter,http,rootScope,state) {
 
 
         get_subscribers();
@@ -3171,6 +3175,11 @@ app.controller('RickshawCtrl', ['$scope', '$interval', function($scope, $interva
                     scope.subscribers = result.data;
                     console.log(result);
                 });
+        };
+
+        scope.view = function view(subscriber){
+            rootScope.subscriber=subscriber;
+            state.go('app.subscriber.one');
         };
 
     }]);;app.controller('ngGridDemoCtrl', ['$scope', '$http', function($scope, $http) {
@@ -4819,8 +4828,8 @@ app.controller('MapCtrl', ['$scope', function ($scope) {
      * @return {[type]}              [description]
      */
     $stateProvider.state('app', {
-        templateUrl: '../admin-app/partials/app.html'
-      })
+      templateUrl: '../admin-app/partials/app.html'
+    })
         .state('app.dashboard', {
           url: '/dashboard',
           templateUrl: '../admin-app/partials/app_dashboard.html'
@@ -4838,8 +4847,8 @@ app.controller('MapCtrl', ['$scope', function ($scope) {
           //}
         })
         .state('app.profile', {
-            url: '/profile',
-            templateUrl: '../admin-app/partials/ui-profile.html'
+          url: '/profile',
+          templateUrl: '../admin-app/partials/ui-profile.html'
         })
         .state('welcome', {
           url: '/welcome',
@@ -4873,6 +4882,18 @@ app.controller('MapCtrl', ['$scope', function ($scope) {
           url: '/view',
           templateUrl: '../admin-app/partials/address-view.html'
         })
+        .state('app.address.one', {
+          url: '/one',
+          views:{
+            '':{
+              templateUrl: '../admin-app/partials/address-view-one.html'
+            },
+            'map@app.address.one':{
+              controller:'MapsCtrl',
+              templateUrl: '../admin-app/partials/ui-map.html'
+            }
+          }
+        })
         .state('app.subscriber', {
           url:'/subscriber',
           controller:'SubscribersCtrl',
@@ -4885,6 +4906,14 @@ app.controller('MapCtrl', ['$scope', function ($scope) {
         .state('app.subscriber.view', {
           url: '/view',
           templateUrl: '../admin-app/partials/subscriber-view.html'
+        })
+        .state('app.subscriber.one', {
+          url: '/one',
+          views:{
+            '':{
+              templateUrl: '../admin-app/partials/subscriber-view-one.html'
+            }
+          }
         })
         .state('app.users', {
           url: '/users',

@@ -1,5 +1,5 @@
-app.controller('SubscribersCtrl', ['$scope', 'filterFilter','$http','$rootScope',
-    function (scope, filterFilter,http,rootScope) {
+app.controller('SubscribersCtrl', ['$scope', 'filterFilter','$http','$rootScope','$state',
+    function (scope, filterFilter,http,rootScope,state) {
 
 
         get_subscribers();
@@ -15,6 +15,11 @@ app.controller('SubscribersCtrl', ['$scope', 'filterFilter','$http','$rootScope'
                     scope.subscribers = result.data;
                     console.log(result);
                 });
+        };
+
+        scope.view = function view(subscriber){
+            rootScope.subscriber=subscriber;
+            state.go('app.subscriber.one');
         };
 
     }]);
