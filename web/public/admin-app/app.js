@@ -22,7 +22,9 @@ var app = angular.module('admin', [
     'permission',
     'uiGmapgoogle-maps'
 ]);
-
+app.config(function($httpProvider){
+        delete $httpProvider.defaults.headers.common['X-Requested-With'];
+    });
 app.config(
     ['$controllerProvider', '$compileProvider', '$filterProvider', '$provide',
         function ($controllerProvider, $compileProvider, $filterProvider, $provide) {
@@ -41,7 +43,6 @@ app.config(
 app.run(
     ['localStorageService', '$rootScope','$http','$state',
         function (localStorageService, rootScope,http,state) {
-
 
 
             var user = localStorageService.get('user');
@@ -73,12 +74,14 @@ app.run(
                     country: "kenya"
                 }];
             rootScope.addresses_shared = [];
+
             if (user && token) {
                 rootScope.user = user;
                 rootScope.token = token;
                 http.defaults.headers.post = { 'Authorization' : 'Bearer '+localStorageService.get('token') };
                 http.defaults.headers.get = { 'Authorization' : 'Bearer '+localStorageService.get('token') }
             }
+
 
             rootScope.logout = function logout()
             {
@@ -89,6 +92,7 @@ app.run(
 
             };
             if(rootScope.user){
+                //console.log(rootScope.user);
                 if (rootScope.user.role) {
                     if (rootScope.user.role == "subscriber") {
                         rootScope._subscriber = true;

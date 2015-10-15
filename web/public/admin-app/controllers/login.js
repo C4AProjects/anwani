@@ -25,6 +25,8 @@ app.controller('LoginFormController', ['$scope', '$http', '$state', 'localStorag
                         rootScope.token = response.data.token;
                         localStorageService.set('token', response.data.token);
 
+                        http.defaults.headers.post = { 'Authorization' : 'Bearer '+localStorageService.get('token') };
+                        http.defaults.headers.get = { 'Authorization' : 'Bearer '+localStorageService.get('token') }
 
                         if (rootScope.user.role) {
                             if (rootScope.user.role == "subscriber") {
