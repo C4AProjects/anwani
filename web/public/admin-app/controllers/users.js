@@ -1,20 +1,26 @@
-app.controller('UsersCtrl', ['$scope', 'filterFilter','$http','$rootScope',
-    function (scope, filterFilter,http,rootScope) {
+app.controller('UsersCtrl', ['$scope', 'filterFilter','$http','$rootScope','$state',
+    function (scope, filterFilter,http,rootScope,state) {
 
-        get_users();
-        
         scope.add = function add(){
-            http.post('http://anwaniapi.mybluemix.net/user/signup',scope.user).then(function(result){
+            http.post('http://anwani-devapi.c4asolution.com/users/signup',scope.user).then(function(result){
                 console.log(result);
             });
         };
-
-        function get_users(){
-            http.get('http://anwaniapi.mybluemix.net/users?page=1&per_page=10'
-            ).then(function(result){
-                    scope.users = result.data;
-                    console.log(result);
-                });
+        scope.view = function view(user){
+            rootScope.chosenUser=user;
+            state.go('app.users.one');
         };
-
     }]);
+
+/**
+ * Get Subscribers on RUN
+ */
+app.run(['$http','$rootScope',function(http,rootScope){
+    get_users();
+    function get_users(){
+        http.get('http://anwani-devapi.c4asolution.com/users?page=1&per_page=10'
+        ).then(function(result){
+                rootScope.users = result.data.docs;
+            });
+    };
+}]);

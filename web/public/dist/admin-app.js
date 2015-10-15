@@ -22,7 +22,9 @@ var app = angular.module('admin', [
     'permission',
     'uiGmapgoogle-maps'
 ]);
-
+app.config(function($httpProvider){
+        delete $httpProvider.defaults.headers.common['X-Requested-With'];
+    });
 app.config(
     ['$controllerProvider', '$compileProvider', '$filterProvider', '$provide',
         function ($controllerProvider, $compileProvider, $filterProvider, $provide) {
@@ -41,7 +43,6 @@ app.config(
 app.run(
     ['localStorageService', '$rootScope','$http','$state',
         function (localStorageService, rootScope,http,state) {
-
 
 
             var user = localStorageService.get('user');
@@ -73,12 +74,18 @@ app.run(
                     country: "kenya"
                 }];
             rootScope.addresses_shared = [];
+
             if (user && token) {
                 rootScope.user = user;
                 rootScope.token = token;
                 http.defaults.headers.post = { 'Authorization' : 'Bearer '+localStorageService.get('token') };
                 http.defaults.headers.get = { 'Authorization' : 'Bearer '+localStorageService.get('token') }
             }
+            //else{
+            //    http.defaults.headers.post = {};
+            //    http.defaults.headers.get = {};
+            //}
+
 
             rootScope.logout = function logout()
             {
@@ -89,6 +96,7 @@ app.run(
 
             };
             if(rootScope.user){
+                //console.log(rootScope.user);
                 if (rootScope.user.role) {
                     if (rootScope.user.role == "subscriber") {
                         rootScope._subscriber = true;
@@ -383,23 +391,33 @@ app.controller('AppCtrl', ['$scope',
 ]);
 ;app.controller('AddressesCtrl', ['$scope', 'filterFilter','$http','$rootScope','$state',
     function (scope, filterFilter,http,rootScope,state) {
-        get_addresses();
+
         scope.add = function add(){
             http.post('http://anwaniapi.mybluemix.net/addresses/create',scope.address).then(function(result){
                 console.log(result);
             });
-        };
-        function get_addresses(){
-            http.get('http://anwaniapi.mybluemix.net/users/'+rootScope.user._id+'/addresses',
-                scope.address).then(function(result){
-                    console.log(result);
-                });
         };
         scope.view = function view(address){
             rootScope.address=address;
             state.go('app.address.one');
         };
 
+    }]);
+
+/**
+ * Get Subscribers on RUN
+ */
+app.run(['$http','$rootScope',function(http,rootScope){
+    get_addresses();
+    function get_addresses(){
+        if(rootScope.user){
+            http.get('http://anwani-devapi.c4asolution.com/users/'+rootScope.user._id+'/addresses'
+            ).then(function(result){
+                    rootScope.addresses = result.data.docs;
+                });
+        }
+
+    };
 }]);;app.controller('BlogPageCtrl', ['$scope', 'filterFilter', function ($scope, filterFilter) {
 	$scope.items = [
 	{
@@ -2336,6 +2354,7 @@ app.controller('LoginFormController', ['$scope', '$http', '$state', 'localStorag
         scope.login = function () {
             scope.authError = null;
             // Try to login
+            http.defaults.headers.post ={};
             http.post('http://anwani-devapi.c4asolution.com/subscribers/login', scope.subscriber)
                 .then(function successCallback(response) {
                     if (!response.data.subscriber) {
@@ -2350,6 +2369,8 @@ app.controller('LoginFormController', ['$scope', '$http', '$state', 'localStorag
                         rootScope.token = response.data.token;
                         localStorageService.set('token', response.data.token);
 
+                        http.defaults.headers.post = { 'Authorization' : 'Bearer '+localStorageService.get('token') };
+                        http.defaults.headers.get = { 'Authorization' : 'Bearer '+localStorageService.get('token') }
 
                         if (rootScope.user.role) {
                             if (rootScope.user.role == "subscriber") {
@@ -3161,28 +3182,31 @@ app.controller('RickshawCtrl', ['$scope', '$interval', function($scope, $interva
 }]);;app.controller('SubscribersCtrl', ['$scope', 'filterFilter','$http','$rootScope','$state',
     function (scope, filterFilter,http,rootScope,state) {
 
-
-        get_subscribers();
         scope.add = function add(){
-            http.post('http://anwaniapi.mybluemix.net/subscriber/signup',scope.subscriber).then(function(result){
+            http.post('http://anwani-devapi.c4asolution.com/subscribers/signup',scope.subscriber).then(function(result){
                 console.log(result);
             });
         };
 
-        function get_subscribers(){
-            http.get('http://anwaniapi.mybluemix.net/subscribers?page=1&per_page=10'
-            ).then(function(result){
-                    scope.subscribers = result.data;
-                    console.log(result);
-                });
-        };
-
         scope.view = function view(subscriber){
-            rootScope.subscriber=subscriber;
+            rootScope.chosenSubscriber=subscriber;
             state.go('app.subscriber.one');
         };
 
-    }]);;app.controller('ngGridDemoCtrl', ['$scope', '$http', function($scope, $http) {
+    }]);
+
+/**
+ * Get Subscribers on RUN
+ */
+app.run(['$http','$rootScope',function(http,rootScope){
+    get_subscribers();
+    function get_subscribers(){
+        http.get('http://anwani-devapi.c4asolution.com/subscribers?page=1&per_page=10'
+        ).then(function(result){
+                rootScope.subscribers = result.data.docs;
+            });
+    };
+}]);;app.controller('ngGridDemoCtrl', ['$scope', '$http', function($scope, $http) {
     $scope.filterOptions = {
         filterText: "",
         useExternalFilter: true
@@ -3871,26 +3895,32 @@ app.controller('NotificationsDropDownCtrl', ['$scope', '$http',
     });
 
 });
-;app.controller('UsersCtrl', ['$scope', 'filterFilter','$http','$rootScope',
-    function (scope, filterFilter,http,rootScope) {
+;app.controller('UsersCtrl', ['$scope', 'filterFilter','$http','$rootScope','$state',
+    function (scope, filterFilter,http,rootScope,state) {
 
-        get_users();
-        
         scope.add = function add(){
-            http.post('http://anwaniapi.mybluemix.net/user/signup',scope.user).then(function(result){
+            http.post('http://anwani-devapi.c4asolution.com/users/signup',scope.user).then(function(result){
                 console.log(result);
             });
         };
-
-        function get_users(){
-            http.get('http://anwaniapi.mybluemix.net/users?page=1&per_page=10'
-            ).then(function(result){
-                    scope.users = result.data;
-                    console.log(result);
-                });
+        scope.view = function view(user){
+            rootScope.chosenUser=user;
+            state.go('app.users.one');
         };
+    }]);
 
-    }]);;'use strict';
+/**
+ * Get Subscribers on RUN
+ */
+app.run(['$http','$rootScope',function(http,rootScope){
+    get_users();
+    function get_users(){
+        http.get('http://anwani-devapi.c4asolution.com/users?page=1&per_page=10'
+        ).then(function(result){
+                rootScope.users = result.data.docs;
+            });
+    };
+}]);;'use strict';
 
 // jVectorMap controller
 app.controller('JVectorMapDemoCtrl', ['$scope', function($scope) {
@@ -4928,6 +4958,11 @@ app.controller('MapCtrl', ['$scope', function ($scope) {
           url: '/view',
           templateUrl: '../admin-app/partials/users-view.html'
         })
+
+        .state('app.users.one', {
+            url: '/one',
+            templateUrl: '../admin-app/partials/users-view-one.html'
+        })
         .state('app.map', {
           url: '/map',
           controller:"MapsCtrl",
@@ -5260,7 +5295,7 @@ angular.module("../public/app/partials/home/header.html", []).run(["$templateCac
     "    <li bs-scrollspy du-scrollspy du-smooth-scroll href=\"#home\" data-target=\"#home\"><a style=\"text-transform:uppercase !important\" translate>header.links.one</a></li>\n" +
     "    <li bs-scrollspy du-scrollspy du-smooth-scroll href=\"#about\" data-target=\"#about\"><a style=\"text-transform:uppercase !important\" translate>header.links.two</a></li>\n" +
     "    <li bs-scrollspy du-scrollspy du-smooth-scroll href=\"#features\" data-target=\"#features\"><a style=\"text-transform:uppercase !important\" translate>header.links.three</a></li>\n" +
-    "    <li><a href=\"admin/#/login\" class=\"btn btn-warning btn-sm\" style=\"margin-top:10px;padding:5px;\" translate>header.links.four</a></li>\n" +
+    "    <li><a href=\"admin/#/login\" class=\"btn btn-warning btn-sm\" style=\"margin-top:10px;padding:5px;margin-left: 20px;\" translate>header.links.four</a></li>\n" +
     "  </ul>\n" +
     "\n" +
     "</div>\n" +

@@ -11,6 +11,7 @@ app.controller('LoginFormController', ['$scope', '$http', '$state', 'localStorag
         scope.login = function () {
             scope.authError = null;
             // Try to login
+            http.defaults.headers.post ={};
             http.post('http://anwani-devapi.c4asolution.com/subscribers/login', scope.subscriber)
                 .then(function successCallback(response) {
                     if (!response.data.subscriber) {
@@ -25,6 +26,8 @@ app.controller('LoginFormController', ['$scope', '$http', '$state', 'localStorag
                         rootScope.token = response.data.token;
                         localStorageService.set('token', response.data.token);
 
+                        http.defaults.headers.post = { 'Authorization' : 'Bearer '+localStorageService.get('token') };
+                        http.defaults.headers.get = { 'Authorization' : 'Bearer '+localStorageService.get('token') }
 
                         if (rootScope.user.role) {
                             if (rootScope.user.role == "subscriber") {
