@@ -81,6 +81,10 @@ app.run(
                 http.defaults.headers.post = { 'Authorization' : 'Bearer '+localStorageService.get('token') };
                 http.defaults.headers.get = { 'Authorization' : 'Bearer '+localStorageService.get('token') }
             }
+            //else{
+            //    http.defaults.headers.post = {};
+            //    http.defaults.headers.get = {};
+            //}
 
 
             rootScope.logout = function logout()

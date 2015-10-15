@@ -81,6 +81,10 @@ app.run(
                 http.defaults.headers.post = { 'Authorization' : 'Bearer '+localStorageService.get('token') };
                 http.defaults.headers.get = { 'Authorization' : 'Bearer '+localStorageService.get('token') }
             }
+            //else{
+            //    http.defaults.headers.post = {};
+            //    http.defaults.headers.get = {};
+            //}
 
 
             rootScope.logout = function logout()
@@ -398,7 +402,7 @@ app.controller('AppCtrl', ['$scope',
             state.go('app.address.one');
         };
 
-}]);
+    }]);
 
 /**
  * Get Subscribers on RUN
@@ -406,10 +410,13 @@ app.controller('AppCtrl', ['$scope',
 app.run(['$http','$rootScope',function(http,rootScope){
     get_addresses();
     function get_addresses(){
-        http.get('http://anwani-devapi.c4asolution.com/users/'+rootScope.user._id+'/addresses'
-        ).then(function(result){
-                rootScope.addresses = result.data.docs;
-            });
+        if(rootScope.user){
+            http.get('http://anwani-devapi.c4asolution.com/users/'+rootScope.user._id+'/addresses'
+            ).then(function(result){
+                    rootScope.addresses = result.data.docs;
+                });
+        }
+
     };
 }]);;app.controller('BlogPageCtrl', ['$scope', 'filterFilter', function ($scope, filterFilter) {
 	$scope.items = [
@@ -2347,6 +2354,7 @@ app.controller('LoginFormController', ['$scope', '$http', '$state', 'localStorag
         scope.login = function () {
             scope.authError = null;
             // Try to login
+            http.defaults.headers.post ={};
             http.post('http://anwani-devapi.c4asolution.com/subscribers/login', scope.subscriber)
                 .then(function successCallback(response) {
                     if (!response.data.subscriber) {
