@@ -75,11 +75,10 @@ app.run(
                 }];
             rootScope.addresses_shared = [];
 
-            if (user && token) {
-                rootScope.user = user;
-                rootScope.token = token;
-                http.defaults.headers.post = { 'Authorization' : 'Bearer '+localStorageService.get('token') };
-                http.defaults.headers.get = { 'Authorization' : 'Bearer '+localStorageService.get('token') }
+            if (!rootScope.user && !rootScope.token) {
+
+                http.defaults.headers.post = { "Content-Type": "application/json;charset=utf-8"};
+                http.defaults.headers.get = { "Content-Type": "application/json;charset=utf-8"};
             }
             //else{
             //    http.defaults.headers.post = {};
@@ -93,6 +92,8 @@ app.run(
                 localStorageService.remove('token');
                 state.go('login');
                 rootScope.user={};
+                http.defaults.headers.post = { "Content-Type": "application/json;charset=utf-8"};
+                http.defaults.headers.get = { "Content-Type": "application/json;charset=utf-8"};
 
             };
             if(rootScope.user){
@@ -2354,7 +2355,8 @@ app.controller('LoginFormController', ['$scope', '$http', '$state', 'localStorag
         scope.login = function () {
             scope.authError = null;
             // Try to login
-            http.defaults.headers.post ={};
+            //http.defaults.headers.post ={};
+            console.log(http.defaults.headers);
             http.post('http://anwani-devapi.c4asolution.com/subscribers/login', scope.subscriber)
                 .then(function successCallback(response) {
                     if (!response.data.subscriber) {
