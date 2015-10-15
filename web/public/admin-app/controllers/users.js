@@ -18,9 +18,12 @@ app.controller('UsersCtrl', ['$scope', 'filterFilter','$http','$rootScope','$sta
 app.run(['$http','$rootScope',function(http,rootScope){
     get_users();
     function get_users(){
-        http.get('http://anwani-devapi.c4asolution.com/users?page=1&per_page=10'
-        ).then(function(result){
-                rootScope.users = result.data.docs;
-            });
+        if(rootScope.user){
+            http.get('http://anwani-devapi.c4asolution.com/users?page=1&per_page=10'
+            ).then(function(result){
+                    rootScope.users = result.data.docs;
+                });
+        }
+
     };
 }]);

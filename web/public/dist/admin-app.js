@@ -80,6 +80,12 @@ app.run(
                 http.defaults.headers.post = { "Content-Type": "application/json;charset=utf-8"};
                 http.defaults.headers.get = { "Content-Type": "application/json;charset=utf-8"};
             }
+            if(user && token){
+                rootScope.user = user;
+                rootScope.token = token;
+                http.defaults.headers.post = { 'Authorization' : 'Bearer '+localStorageService.get('token') };
+                http.defaults.headers.get = { 'Authorization' : 'Bearer '+localStorageService.get('token') }
+            }
             //else{
             //    http.defaults.headers.post = {};
             //    http.defaults.headers.get = {};
@@ -3917,10 +3923,13 @@ app.controller('NotificationsDropDownCtrl', ['$scope', '$http',
 app.run(['$http','$rootScope',function(http,rootScope){
     get_users();
     function get_users(){
-        http.get('http://anwani-devapi.c4asolution.com/users?page=1&per_page=10'
-        ).then(function(result){
-                rootScope.users = result.data.docs;
-            });
+        if(rootScope.user){
+            http.get('http://anwani-devapi.c4asolution.com/users?page=1&per_page=10'
+            ).then(function(result){
+                    rootScope.users = result.data.docs;
+                });
+        }
+
     };
 }]);;'use strict';
 
