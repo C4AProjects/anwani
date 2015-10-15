@@ -11,7 +11,8 @@ app.controller('LoginFormController', ['$scope', '$http', '$state', 'localStorag
         scope.login = function () {
             scope.authError = null;
             // Try to login
-            http.defaults.headers.post ={};
+            //http.defaults.headers.post ={};
+            console.log(http.defaults.headers);
             http.post('http://anwani-devapi.c4asolution.com/subscribers/login', scope.subscriber)
                 .then(function successCallback(response) {
                     if (!response.data.subscriber) {
