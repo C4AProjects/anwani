@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="78455709-2407-4658-a7ed-72ed64f9459a" name="Default" comment="Ignoring Idea Folder">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/public/admin-app/controllers/addresses.js" afterPath="$PROJECT_DIR$/web/public/admin-app/controllers/addresses.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/public/dist/admin-app.js" afterPath="$PROJECT_DIR$/web/public/dist/admin-app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/public/admin-app/app.js" afterPath="$PROJECT_DIR$/web/public/admin-app/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/public/admin-app/controllers/login.js" afterPath="$PROJECT_DIR$/web/public/admin-app/controllers/login.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/public/dist/app.js" afterPath="$PROJECT_DIR$/web/public/dist/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/public/app/partials/home/header.html" afterPath="$PROJECT_DIR$/web/public/app/partials/home/header.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/tmp/partials.js" afterPath="$PROJECT_DIR$/web/tmp/partials.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="anwani.iws" />
@@ -39,14 +39,32 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/public/admin-app/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.57528406">
-              <caret line="83" column="12" selection-start-line="83" selection-start-column="14" selection-end-line="86" selection-end-column="15" />
-              <folding>
-                <marker date="1444891245000" expanded="true" signature="2961:3079" placeholder="{...}" />
-              </folding>
+            <state vertical-scroll-proportion="0.0">
+              <caret line="70" column="39" selection-start-line="70" selection-start-column="39" selection-end-line="70" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="styles.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/resources/assets/sass/styles.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="62.5">
+              <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="header.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/public/app/partials/home/header.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.8035714">
+              <caret line="24" column="98" selection-start-line="24" selection-start-column="98" selection-end-line="24" selection-end-column="98" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -74,7 +92,7 @@
       <file leaf-file-name="users-view-one.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/public/admin-app/partials/users-view-one.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-19.375">
+            <state vertical-scroll-proportion="0.0">
               <caret line="31" column="38" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
               <folding />
             </state>
@@ -84,7 +102,7 @@
       <file leaf-file-name="users-view.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/public/admin-app/partials/users-view.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="7.5">
+            <state vertical-scroll-proportion="0.0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
@@ -94,18 +112,8 @@
       <file leaf-file-name="users-add.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/public/admin-app/partials/users-add.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.5">
-              <caret line="28" column="30" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="subscriber.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/public/admin-app/controllers/subscriber.js">
-          <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="12" column="10" selection-start-line="9" selection-start-column="8" selection-end-line="12" selection-end-column="10" />
+              <caret line="28" column="30" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -116,16 +124,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="subscriber-view-one.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/public/admin-app/partials/subscriber-view-one.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.7375">
-              <caret line="57" column="24" selection-start-line="53" selection-start-column="20" selection-end-line="57" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -146,7 +144,6 @@
       <list>
         <option value="$PROJECT_DIR$/web/public/css/app.css" />
         <option value="$PROJECT_DIR$/web/Procfile" />
-        <option value="$PROJECT_DIR$/web/public/app/partials/home/header.html" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/web/public/admin-app/partials/ui-login.html" />
         <option value="$PROJECT_DIR$/web/public/admin-app/partials/subscriber.html" />
@@ -172,6 +169,7 @@
         <option value="$PROJECT_DIR$/web/public/admin-app/controllers/addresses.js" />
         <option value="$PROJECT_DIR$/web/public/admin-app/controllers/login.js" />
         <option value="$PROJECT_DIR$/web/public/admin-app/app.js" />
+        <option value="$PROJECT_DIR$/web/public/app/partials/home/header.html" />
       </list>
     </option>
   </component>
@@ -220,7 +218,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="PackagesPane">
         <subPane />
       </pane>
@@ -327,13 +324,14 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FullScreen" value="true" />
-    <property name="SearchEverywhereHistoryKey" value="log&#9;FILE&#9;file:///private/var/www/anwani/web/public/admin-app/controllers/login.js&#10;address&#9;FILE&#9;file:///private/var/www/anwani/web/public/admin-app/controllers/addresses.js&#10;app.js&#9;FILE&#9;file:///private/var/www/anwani/web/public/dist/admin-app.js&#10;dash&#9;FILE&#9;file:///private/var/www/anwani/web/public/admin-app/partials/app_dashboard.html&#10;users&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/controllers/users.js&#10;login&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/controllers/login.js&#10;subscriber&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/controllers/subscriber.js&#10;map.js&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/controllers/map.js&#10;app.css&#9;FILE&#9;file:///var/www/anwani/web/public/css/app.css&#10;address.js&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/controllers/addresses.js&#10;routes&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/routes.js&#10;address-vi&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/address-view.html&#10;dashboard&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/app_dashboard.html&#10;user.js&#9;FILE&#9;file:///var/www/anwani/api/controllers/user.js&#10;nav&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/components/nav.html&#10;routes.js&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/routes.js&#10;register&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/ui-register.html&#10;ad&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/address-add.html&#10;ui-pro&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/ui-profile.html&#10;regi&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/controllers/register.js&#10;left&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/components/leftbar.html&#10;ui-lo&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/ui-login.html&#10;re&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/controllers/register.js&#10;ui-re&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/ui-register.html&#10;profile.ht&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/ui-profile.html&#10;leftbar&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/components/leftbar.html&#10;nav.ht&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/components/nav.html&#10;logi&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/controllers/login.js&#10;register.j&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/controllers/register.js&#10;admin-app&#9;FILE&#9;file:///var/www/anwani/web/public/dist/admin-app.js&#10;ui-login&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/ui-login.html&#10;styles.scss&#9;FILE&#9;file:///var/www/anwani/web/resources/assets/sass/styles.scss&#10;header&#9;FILE&#9;file:///var/www/anwani/web/public/app/partials/home/header.html" />
+    <property name="SearchEverywhereHistoryKey" value="header&#9;FILE&#9;file:///private/var/www/anwani/web/public/app/partials/home/header.html&#10;styles.scss&#9;FILE&#9;file:///private/var/www/anwani/web/resources/assets/sass/styles.scss&#10;log&#9;FILE&#9;file:///private/var/www/anwani/web/public/admin-app/controllers/login.js&#10;address&#9;FILE&#9;file:///private/var/www/anwani/web/public/admin-app/controllers/addresses.js&#10;app.js&#9;FILE&#9;file:///private/var/www/anwani/web/public/dist/admin-app.js&#10;dash&#9;FILE&#9;file:///private/var/www/anwani/web/public/admin-app/partials/app_dashboard.html&#10;users&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/controllers/users.js&#10;login&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/controllers/login.js&#10;subscriber&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/controllers/subscriber.js&#10;map.js&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/controllers/map.js&#10;app.css&#9;FILE&#9;file:///var/www/anwani/web/public/css/app.css&#10;address.js&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/controllers/addresses.js&#10;routes&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/routes.js&#10;address-vi&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/address-view.html&#10;dashboard&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/app_dashboard.html&#10;user.js&#9;FILE&#9;file:///var/www/anwani/api/controllers/user.js&#10;nav&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/components/nav.html&#10;routes.js&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/routes.js&#10;register&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/ui-register.html&#10;ad&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/address-add.html&#10;ui-pro&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/ui-profile.html&#10;regi&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/controllers/register.js&#10;left&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/components/leftbar.html&#10;ui-lo&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/ui-login.html&#10;re&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/controllers/register.js&#10;ui-re&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/ui-register.html&#10;profile.ht&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/ui-profile.html&#10;leftbar&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/components/leftbar.html&#10;nav.ht&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/components/nav.html&#10;logi&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/controllers/login.js&#10;register.j&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/controllers/register.js&#10;admin-app&#9;FILE&#9;file:///var/www/anwani/web/public/dist/admin-app.js&#10;ui-login&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/ui-login.html" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="recentsLimit" value="5" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
@@ -621,7 +619,8 @@
       <workItem from="1444729307374" duration="1279000" />
       <workItem from="1444736693417" duration="9910000" />
       <workItem from="1444815595660" duration="931000" />
-      <workItem from="1444885126435" duration="2950000" />
+      <workItem from="1444885126435" duration="3058000" />
+      <workItem from="1444901058791" duration="110000" />
     </task>
     <task id="LOCAL-00001" summary="Ignoring Idea Folder">
       <created>1444252266846</created>
@@ -633,11 +632,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22064000" />
+    <option name="totallyTimeSpent" value="22282000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -647,8 +646,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329235" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3169399" sideWeight="0.4875" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3169399" sideWeight="0.4875" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28109854" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -656,14 +654,15 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Dynamic Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -767,13 +766,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/public/app/partials/home/header.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.824295">
@@ -789,13 +781,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/app/Console/Kernel.php">
-      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
+      </provider>
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/app/Http/Controllers/AdminController.php">
@@ -823,13 +815,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/resources/assets/sass/styles.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -1005,24 +990,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.234375">
           <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
-          <folding>
-            <marker date="1444891038000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444891038000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444891038000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444891038000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444891038000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444891038000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444891038000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444891038000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444891038000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444891038000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444891038000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444891038000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444891038000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444891038000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444891038000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1444891038000" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1036,7 +1003,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/public/admin-app/partials/subscriber-view-one.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.7375">
+        <state vertical-scroll-proportion="0.0">
           <caret line="57" column="24" selection-start-line="53" selection-start-column="20" selection-end-line="57" selection-end-column="24" />
           <folding />
         </state>
@@ -1044,7 +1011,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/public/admin-app/partials/users-view-one.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-19.375">
+        <state vertical-scroll-proportion="0.0">
           <caret line="31" column="38" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
           <folding />
         </state>
@@ -1052,7 +1019,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/public/admin-app/partials/users-view.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="7.5">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
@@ -1060,7 +1027,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/public/admin-app/partials/users-add.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.5">
+        <state vertical-scroll-proportion="0.0">
           <caret line="28" column="30" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
           <folding />
         </state>
@@ -1100,11 +1067,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/public/admin-app/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.57528406">
-          <caret line="83" column="12" selection-start-line="83" selection-start-column="14" selection-end-line="86" selection-end-column="15" />
-          <folding>
-            <marker date="1444891245000" expanded="true" signature="2961:3079" placeholder="{...}" />
-          </folding>
+        <state vertical-scroll-proportion="0.0">
+          <caret line="70" column="39" selection-start-line="70" selection-start-column="39" selection-end-line="70" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/resources/assets/sass/styles.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="62.5">
+          <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/public/app/partials/home/header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8035714">
+          <caret line="24" column="98" selection-start-line="24" selection-start-column="98" selection-end-line="24" selection-end-column="98" />
+          <folding />
         </state>
       </provider>
     </entry>
