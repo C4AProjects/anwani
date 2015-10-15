@@ -80,6 +80,12 @@ app.run(
                 http.defaults.headers.post = { "Content-Type": "application/json;charset=utf-8"};
                 http.defaults.headers.get = { "Content-Type": "application/json;charset=utf-8"};
             }
+            if(user && token){
+                rootScope.user = user;
+                rootScope.token = token;
+                http.defaults.headers.post = { 'Authorization' : 'Bearer '+localStorageService.get('token') };
+                http.defaults.headers.get = { 'Authorization' : 'Bearer '+localStorageService.get('token') }
+            }
             //else{
             //    http.defaults.headers.post = {};
             //    http.defaults.headers.get = {};
