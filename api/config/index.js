@@ -69,7 +69,7 @@ module.exports = {
 
   SMTP: {
     SERVICE: 'Gmail',
-    USER: 'tonimut7@gmail.com',
-    PASS: 'centantsonnigh'
+    USER: env.SMTP_USER,
+    PASS: env.SMTP_PASS
   }
 };
