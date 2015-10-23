@@ -401,3 +401,101 @@ exports.archive = function archiveAddress(req, res, next) {
   });
 
 };
+
+
+/**
+ * Search for an address by:
+ * - phone_number
+ * - virtual_code
+ * - user
+ * - city
+ * - country
+ * - street_address
+ * - latitude
+ * - longitude
+ *
+ *  addresses/search?phone_number=7575742742
+ */
+exports.search = function (req, res, next) {
+  debug('Perform search');
+
+  var qs           = req.query;
+  var keys         = Object.keys(qs);
+  var query        = {};
+  var returnFields = AddressModel.whitelist;
+  var population   = [{
+    path: 'user',
+    select: UserModel.whitelist
+  }];
+  var opts = {};
+  var isUser = false;
+
+  opts.limit = config.PLANS[req._user.subscription_plan.toUpperCase()];
+
+  if(!keys.length) {
+    return next(CustomError({
+      name: 'ADDRESS_SEARCH_ERROR',
+      message: 'Please provide a search query and value'
+    }));
+  }
+
+  keys.forEach(function (key) {
+    switch(key) {
+      case 'phone_number':
+      case 'last_name':
+      case 'first_name':
+      case 'other_name':
+        isUser = true;
+        break;
+    }
+
+    query[key] = qs[key];
+
+  });
+
+  if(isUser) {
+    User.get(query, function (err, user) {
+      if(err) {
+        return next(CustomError({
+          name: 'SERVER_ERROR',
+          message: err.message
+        }));
+      }
+
+      if(!user._id) {
+        return res.json([]);
+      } else {
+        AddressModel
+          .find({ user: user._id, shared: true } , returnFields, opts)
+          .populate(population)
+          .exec(function (err, docs) {
+            if(err) {
+              return next(CustomError({
+                name: 'SERVER_ERROR',
+                message: err.message
+              }));
+            }
+
+            res.json(docs);
+          });
+      }
+    });
+  } else {
+    query.shared = true;
+
+    AddressModel
+      .find(query, returnFields, opts)
+      .populate(population)
+      .exec(function (err, docs) {
+        if(err) {
+          return next(CustomError({
+            name: 'SERVER_ERROR',
+            message: err.message
+          }));
+        }
+
+        res.json(docs);
+      });
+  }
+
+};

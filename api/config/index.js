@@ -7,18 +7,18 @@ var cfenv = require('cfenv');
 var env     = process.env;
 //var appEnv  = cfenv.getAppEnv();
 
-//var MONGO_SERVICE  = appEnv.getService('mongodb01') || {};
-//var MONGO_SERVICE_INFO = MONGO_SERVICE.credentials || {};
+//var MONGO_SERVICE       = appEnv.getService('mongodb01') || {};
+//var MONGO_SERVICE_INFO  = MONGO_SERVICE.credentials || {};
 //var PORT          = env.PORT || 5050;
 //var HOST          = appEnv.bind || 'localhost';
 //var API_URL       = HOST + ':' + PORT;
 //var MONGODB_URL   = MONGO_SERVICE_INFO.url || 'mongodb://127.0.0.1:27017/anwani';
 
-var PORT = env.PORT || 5050;
-var API_URL = 'http://anwani-devapi.c4asolution.com';
+var PORT        = env.PORT || 5050;
+var API_URL     = 'http://anwani-devapi.c4asolution.com';
 var MONGODB_URL = env.MONGODB_URL || 'mongodb://127.0.0.1:27017/anwani';
-var NODE_ENV = env.NODE_ENV || 'development';
-var HOST = 'localhost';
+var NODE_ENV    = env.NODE_ENV || 'development';
+var HOST        = 'localhost';
 
 module.exports = {
 
@@ -71,5 +71,11 @@ module.exports = {
     SERVICE: 'Gmail',
     USER: env.SMTP_USER,
     PASS: env.SMTP_PASS
+  },
+
+  PLANS: {
+    BASIC: 100,
+    PRO: 1000,
+    PREMIUM: 10000
   }
 };

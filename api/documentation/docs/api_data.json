@@ -1940,6 +1940,107 @@
     "groupTitle": "address"
   },
   {
+    "type": "get",
+    "url": "/addresses/search?<QUERY_TYPE>=<QUERY_VALUE>",
+    "title": "Search for addresses",
+    "version": "1.0.0",
+    "name": "Search",
+    "group": "address",
+    "description": "<p>Search for addresses. The following list contains list query types that can be used:</p> <ul> <li>phone_number: user phone number</li> <li>first_name: user first name</li> <li>last_name: user last name</li> <li>other_name: user other name</li> <li>virtual_code: virtual/masked code</li> <li>latitude: latitude</li> <li>longitude: longitude</li> <li>street_address: street address</li> <li>city: city</li> <li>country: country</li> </ul> ",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "_id",
+            "description": "<p>address id</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "user",
+            "description": "<p>user id</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "long_plus_code",
+            "description": "<p>long virtual code</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "short_plus_code",
+            "description": "<p>short virtual code</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "location_pic",
+            "description": "<p>location photo</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>Number</p> ",
+            "optional": false,
+            "field": "latitude",
+            "description": "<p>latitude coordinate</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>Number</p> ",
+            "optional": false,
+            "field": "longitude",
+            "description": "<p>longitude coordinate</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "street_address",
+            "description": "<p>street address</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "city",
+            "description": "<p>city name</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "country",
+            "description": "<p>country name</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "virtual_code",
+            "description": "<p>masking code for the plus code</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Response Example:",
+          "content": "[{\n  \"_id\" : \"556e1174a8952c9521286a60\",\n  user: \"556e1174a8952c9521286a60\",\n  short_plus_code: \"MP7H+E2\",\n  long_plus_code: \"6E9AEFMP7H+E2FH\",\n  virtual_code: \"BB35E24B\",\n  location_pic: \"/media/a8952c9521286a60.jpeg\",\n  latitude: 4.567889,\n  longitude: -12.098,\n  street_address: \"\",\n  city: \"nairobi\",\n  country: \"kenya\"\n}]",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "routes/addresses.js",
+    "groupTitle": "address"
+  },
+  {
     "type": "put",
     "url": "/addresses/:id",
     "title": "Update address",
