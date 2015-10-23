@@ -1319,8 +1319,15 @@ define({ "api": [
             "group": "Parameter",
             "type": "<p>String</p> ",
             "optional": false,
-            "field": "security_question_answer",
+            "field": "security_answer",
             "description": "<p>security question answer</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "security_question",
+            "description": "<p>security question</p> "
           },
           {
             "group": "Parameter",
@@ -1341,7 +1348,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request Example:",
-          "content": "{\n   \"security_answer\" : \"john doey\",\n   \"phone_number\" : \"0713510521\"\n   \"new_password\": \"2654\"\n}",
+          "content": "{\n   \"security_question\": \"What was you first ever nickname\",\n   \"security_answer\" : \"john doey\",\n   \"phone_number\" : \"0713510521\"\n   \"new_password\": \"2654\"\n}",
           "type": "json"
         }
       ]
