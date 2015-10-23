@@ -17,7 +17,7 @@ var population = [{
   select: { _id: 1, realm: 1, role: 1, archived: 1 }
 }, {
   path: 'subscriber',
-  select: { _id: 1, realm: 1, role: 1, archived: 1 , verified: 1 }
+  select: { _id: 1, realm: 1, role: 1, archived: 1 , verified: 1, subscription_plan: 1, subscription_on: 1 }
 }];
 
 /**

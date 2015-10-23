@@ -15,10 +15,59 @@
 var express  = require('express');
 var debug    = require('debug')('anwani-api:address-router');
 
-var addressController  = require('../controllers/address');
-var accessControl        = require('../controllers/auth').accessControl;
+var addressController = require('../controllers/address');
+var accessControl     = require('../controllers/auth').accessControl;
 
 var router  = express.Router();
+
+/**
+ * @api {get} /addresses/search?<QUERY_TYPE>=<QUERY_VALUE> Search for addresses
+ * @apiVersion 1.0.0
+ * @apiName Search
+ * @apiGroup address
+ *
+ * @apiDescription Search for addresses. The following list contains list query types
+ * that can be used:
+ * - phone_number: user phone number
+ * - first_name: user first name
+ * - last_name: user last name
+ * - other_name: user other name
+ * - virtual_code: virtual/masked code
+ * - latitude: latitude
+ * - longitude: longitude
+ * - street_address: street address
+ * - city: city
+ * - country: country
+ *
+ * @apiSuccess {String} _id address id
+ * @apiSuccess {String} user user id
+ * @apiSuccess {String} long_plus_code long virtual code
+ * @apiSuccess {String} short_plus_code short virtual code
+ * @apiSuccess {String} location_pic location photo
+ * @apiSuccess {Number} latitude latitude coordinate
+ * @apiSuccess {Number} longitude longitude coordinate
+ * @apiSuccess {String} street_address street address
+ * @apiSuccess {String} city city name
+ * @apiSuccess {String} country country name
+ * @apiSuccess {String} virtual_code masking code for the plus code
+ *
+ * @apiSuccessExample Response Example:
+ *  [{
+ *    "_id" : "556e1174a8952c9521286a60",
+ *    user: "556e1174a8952c9521286a60",
+ *    short_plus_code: "MP7H+E2",
+ *    long_plus_code: "6E9AEFMP7H+E2FH",
+ *    virtual_code: "BB35E24B",
+ *    location_pic: "/media/a8952c9521286a60.jpeg",
+ *    latitude: 4.567889,
+ *    longitude: -12.098,
+ *    street_address: "",
+ *    city: "nairobi",
+ *    country: "kenya"
+ *  }]
+ *
+ */
+router.get('/search', accessControl(['*']), addressController.search);
 
 /**
  * @api {post} /addresses/create Create Address

@@ -23,7 +23,7 @@ var UserSchema = new Schema({
   last_login:   { type: Date },
   realm:        { type: String, default: 'user' },
   role:         { type: String, default: 'consumer' },
-  email:        { type: String, unique: true },
+  email:        { type: String  },
   archived:     { type: Boolean, default: false },
   phone_number: { type: String, unique: true },
   security_pass: {
