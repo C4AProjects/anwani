@@ -276,11 +276,12 @@ exports.updatePassword = function updatePassword(req, res, next) {
   debug('updating password for ' + req.body.phone_number);
 
   var body = req.body;
+  var keys = Object.keys(body);
 
-  if(!body.phone_number && !body.security_answer && !body.new_password) {
+  if(keys.length < 4) {
     return next(CustomError({
       name: 'PASSWORD_UPDATE_ERROR',
-      message: 'Phone number, New password/pin and Security Question Answer not provided'
+      message: 'Phone number, New password/pin and Security Question/Answer Combo not provided'
     }));
   }
 
@@ -305,6 +306,13 @@ exports.updatePassword = function updatePassword(req, res, next) {
             message: 'Id(' + id + ') is not recognized'
           }));
 
+        }
+
+        if(body.security_question !== user.security_pass.question) {
+          return done(CustomError({
+            name: 'PASSWORD_UPDATE_ERROR',
+            message: 'Security questions dont match'
+          }));
         }
 
         done(null, user);

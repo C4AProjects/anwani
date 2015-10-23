@@ -290,12 +290,14 @@ router.get('/:id/addresses', accessControl(['consumer', 'admin']), userControlle
  *
  * @apiDescription Update password of a given user.
  *
- * @apiParam {String} security_question_answer security question answer
+ * @apiParam {String} security_answer security question answer
+ * @apiParam {String} security_question security question
  * @apiParam {String} phone_number phone number
  * @apiParam {String} new_password new password/pin
  *
  * @apiParamExample Request Example:
  * {
+ *    "security_question": "What was you first ever nickname",
  *    "security_answer" : "john doey",
  *    "phone_number" : "0713510521"
  *    "new_password": "2654"
