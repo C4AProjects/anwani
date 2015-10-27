@@ -2,7 +2,7 @@ app.controller('AddressesCtrl', ['$scope', 'filterFilter','$http','$rootScope','
     function (scope, filterFilter,http,rootScope,state) {
 
         scope.add = function add(){
-            http.post('http://anwaniapi.mybluemix.net/addresses/create',scope.address).then(function(result){
+            http.post('http://anwani-devapi.c4asolution.com/addresses/create',scope.address).then(function(result){
                 console.log(result);
             });
         };
@@ -10,6 +10,20 @@ app.controller('AddressesCtrl', ['$scope', 'filterFilter','$http','$rootScope','
             rootScope.address=address;
             state.go('app.address.one');
         };
+        scope.search = function search(){
+            var criteria,category,search_string={};
+            category = scope.search.category;
+
+            search_string=scope.search.string;
+
+            criteria={
+                category:search_string
+            };
+            http.get('http://anwani-devapi.c4asolution.com/addresses/search',{params:criteria})
+                .then(function(result){
+               scope.results = result.data;
+            });
+        }
 
     }]);
 

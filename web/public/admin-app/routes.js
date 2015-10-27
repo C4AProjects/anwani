@@ -24,7 +24,15 @@ app.config(['$stateProvider', '$urlRouterProvider', 'JQ_CONFIG',
     })
         .state('app.dashboard', {
           url: '/dashboard',
-          templateUrl: '../admin-app/partials/app_dashboard.html'
+            views:{
+                '':{
+                    templateUrl: '../admin-app/partials/app_dashboard.html'
+                },
+                'address-search@app.dashboard':{
+                    controller:'AddressesCtrl',
+                    templateUrl: '../admin-app/partials/addresses/card.html'
+                }
+            }
           //resolve: {
           //  deps: ['$ocLazyLoad',
           //    function($ocLazyLoad) {
