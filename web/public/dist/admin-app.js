@@ -4873,7 +4873,14 @@ app.controller('MapCtrl', ['$scope', function ($scope) {
     })
         .state('app.dashboard', {
           url: '/dashboard',
-          templateUrl: '../admin-app/partials/app_dashboard.html'
+            views:{
+                '':{
+                    templateUrl: '../admin-app/partials/app_dashboard.html'
+                },
+                'address-search@app.dashboard':{
+                    templateUrl: '../admin-app/partials/addresses/card.html'
+                }
+            }
           //resolve: {
           //  deps: ['$ocLazyLoad',
           //    function($ocLazyLoad) {
