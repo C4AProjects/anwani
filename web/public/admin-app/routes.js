@@ -29,6 +29,7 @@ app.config(['$stateProvider', '$urlRouterProvider', 'JQ_CONFIG',
                     templateUrl: '../admin-app/partials/app_dashboard.html'
                 },
                 'address-search@app.dashboard':{
+                    controller:'AddressesCtrl',
                     templateUrl: '../admin-app/partials/addresses/card.html'
                 }
             }

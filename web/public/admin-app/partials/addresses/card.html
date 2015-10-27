@@ -12,7 +12,7 @@
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <form action="" class="black form-inline" style="padding-top:0">
                         <div class="form-group col-md-3">
-                            <select class="form-control dropdown" name="" id="" ng-model="search_criteria" style="width:100%">
+                            <select class="form-control dropdown" name="" id="" ng-model="search.criteria" style="width:100%">
                                 <option value="">Choose Criteria</option>
                                 <option value="phone_number">Phone Number</option>
                                 <option value="first_name">First Name</option>
@@ -27,14 +27,22 @@
                             </select>
                         </div>
                         <div class="form-group col-md-7">
-                            <input type="text" class="form-control" placeholder="Search..." style="width:100%">
+                            <input ng-model="search.string" type="text" class="form-control" placeholder="Search..." style="width:100%">
                         </div>
                         <div class="col-md-2">
-                            <button class="btn btn-info">
+                            <button class="btn btn-info" ng-click="search()">
                                 <div style="vertical-align: middle" class="material-icons">search</div>  Search
                             </button>
                         </div>
                     </form>
+                    <div ng-if="results">
+                        <table ng-if="results.length>0">
+
+                        </table>
+                        <p ng-if="results.length==0">
+                            No Results Found
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
