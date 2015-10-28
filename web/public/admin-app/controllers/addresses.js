@@ -42,7 +42,6 @@ app.run(['$http','$rootScope',function(http,rootScope){
                     }
                 }
             ).then(function(result){
-                    console.log( result.data.docs)
                     rootScope.addresses = result.data.docs;
                 });
         }

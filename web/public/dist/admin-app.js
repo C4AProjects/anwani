@@ -459,7 +459,6 @@ app.run(['$http','$rootScope',function(http,rootScope){
                     }
                 }
             ).then(function(result){
-                    console.log( result.data.docs)
                     rootScope.addresses = result.data.docs;
                 });
         }
@@ -1695,9 +1694,9 @@ app.controller('FullcalendarCtrl', ['$scope', function($scope) {
 })();
 ;app.controller('ChatCtrl', ['$scope', '$http',
   function ($scope, $http) {
-    $http.get('data/chat-users.json').success(function(data) {
-      $scope.users = data;
-    });
+    //$http.get('data/chat-users.json').success(function(data) {
+    //  $scope.users = data;
+    //});
   }]);
 ;'use strict';
 
