@@ -23,7 +23,7 @@
 </head>
 
 <body ng-controller="AppCtrl" class="{{app.settings.layoutBoxed ? 'boxed' : ''}}">
-  <div ui-view></div>
+  <div ui-view class="row" style="margin:0 !important"></div>
   <!-- JS FRAMEWORK - START -->
   <script src="../libs/js/jquery.js" type="text/javascript"></script>
   <!-- Angular Scripts -->

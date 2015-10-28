@@ -31,14 +31,15 @@ app.controller('AddressesCtrl', ['$scope', 'filterFilter','$http','$rootScope','
  * Get Subscribers on RUN
  */
 app.run(['$http','$rootScope',function(http,rootScope){
-    get_addresses();
-    function get_addresses(){
-        if(rootScope.user){
-            http.get('http://anwani-devapi.c4asolution.com/users/'+rootScope.user._id+'/addresses'
-            ).then(function(result){
-                    rootScope.addresses = result.data.docs;
-                });
-        }
-
-    };
+    //get_addresses();
+    //function get_addresses(){
+    //    if(rootScope.user){
+    //
+    //        http.get('http://anwani-devapi.c4asolution.com/users/'+rootScope.user._id+'/addresses'
+    //        ).then(function(result){
+    //                rootScope.addresses = result.data.docs;
+    //            });
+    //    }
+    //
+    //};
 }]);

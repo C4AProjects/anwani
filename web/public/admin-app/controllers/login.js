@@ -2,8 +2,8 @@
 
 /* Controllers */
 // signin controller
-app.controller('LoginFormController', ['$scope', '$http', '$state', 'localStorageService', '$rootScope',
-    function (scope, http, state, localStorageService, rootScope) {
+app.controller('LoginFormController', ['$scope', '$http', '$state', 'localStorageService', '$rootScope','Permission',
+    function (scope, http, state, localStorageService, rootScope,Permission) {
         scope.subscriber = {};
         rootScope._subscriber = false;
         rootScope._admin = false;
@@ -11,8 +11,6 @@ app.controller('LoginFormController', ['$scope', '$http', '$state', 'localStorag
         scope.login = function () {
             scope.authError = null;
             // Try to login
-            //http.defaults.headers.post ={};
-            console.log(http.defaults.headers);
             http.post('http://anwani-devapi.c4asolution.com/subscribers/login', scope.subscriber)
                 .then(function successCallback(response) {
                     if (!response.data.subscriber) {
