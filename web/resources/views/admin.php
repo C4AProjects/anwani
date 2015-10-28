@@ -53,6 +53,8 @@
   <script src="../libs/js/angular-google-maps.js"></script>
   <script src="../libs/js/angular-permission.js"></script>
   <script src="../libs/js/lodash.js"></script>
+  <script src="../libs/js/moment.js"></script>
+  <script src="../libs/js/angular-moment.js"></script>
   <script src="../libs/js/angular-simple-logger.js"></script>
   <!-- JS FRAMEWORK - END -->
   <!-- App JS - Start -->

@@ -18,7 +18,9 @@ app.controller('SubscribersCtrl', ['$scope', 'filterFilter','$http','$rootScope'
  * Get Subscribers on RUN
  */
 app.run(['$http','$rootScope',function(http,rootScope){
-    get_subscribers();
+    if(rootScope.user) {
+        get_subscribers();
+    }
     function get_subscribers(){
         http.get('http://anwani-devapi.c4asolution.com/subscribers?page=1&per_page=10'
         ).then(function(result){

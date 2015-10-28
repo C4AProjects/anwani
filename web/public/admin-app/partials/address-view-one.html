@@ -7,13 +7,21 @@
                         <label for="">Masked Code</label>
                         <input type="text" ng-if="_admin|| _subscriber" ng-model="address.masked_code"/>
                     </div>
-                    <div class="col-md-6">
+                    <div ng-if="_admin"  class="col-md-6">
                         <label for="">Short Virtual Code</label>
-                        <input type="text"  ng-if="_admin" ng-model="address.short_virtual_code"/>
+                        <input type="text" ng-model="address.short_virtual_code"/>
                     </div>
-                    <div class="col-md-6">
+                    <div ng-if="_admin"  class="col-md-6">
                         <label for="">Long Virtual Code</label>
-                        <input type="text"  ng-if="_admin" ng-model="address.long_virtual_code"/>
+                        <input type="text"  ng-model="address.long_virtual_code"/>
+                    </div>
+                    <div ng-if="_admin"  class="col-md-6">
+                        <label for="">Latitude</label>
+                        <input type="text"  ng-model="address.latitude"/>
+                    </div>
+                    <div ng-if="_admin"  class="col-md-6">
+                        <label for="">Longitude</label>
+                        <input type="text"  ng-model="address.longitude"/>
                     </div>
                     <div class="col-md-6">
                         <label for="">Country</label>
