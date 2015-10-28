@@ -41,8 +41,8 @@ app.config(
     ]);
 
 app.run(
-    ['localStorageService', '$rootScope','$http','$state',
-        function (localStorageService, rootScope,http,state) {
+    ['localStorageService', '$rootScope','$http','$state','Permission',
+        function (localStorageService, rootScope,http,state,Permission) {
 
 
             var user = localStorageService.get('user');
@@ -86,10 +86,6 @@ app.run(
                 http.defaults.headers.post = { 'Authorization' : 'Bearer '+localStorageService.get('token') };
                 http.defaults.headers.get = { 'Authorization' : 'Bearer '+localStorageService.get('token') }
             }
-            //else{
-            //    http.defaults.headers.post = {};
-            //    http.defaults.headers.get = {};
-            //}
 
 
             rootScope.logout = function logout()
@@ -97,7 +93,7 @@ app.run(
                 localStorageService.remove('user');
                 localStorageService.remove('token');
                 state.go('login');
-                rootScope.user={};
+                rootScope.user=null;
                 http.defaults.headers.post = { "Content-Type": "application/json;charset=utf-8"};
                 http.defaults.headers.get = { "Content-Type": "application/json;charset=utf-8"};
 
@@ -108,6 +104,7 @@ app.run(
                     if (rootScope.user.role == "subscriber") {
                         rootScope._subscriber = true;
                         rootScope._admin = false;
+
                     }
                     else if (rootScope.user.role == "admin") {
                         rootScope._admin = true;
@@ -116,7 +113,28 @@ app.run(
                 }
             }
 
-
+            Permission.defineRole('subscriber', function (stateParams) {
+                // If the returned value is *truthy* then the user has the role, otherwise they don't
+                if(rootScope.user){
+                    if (rootScope.user.role == "subscriber"){
+                        return true
+                    }
+                }
+                else{
+                    return false
+                }
+            })
+                .defineRole('admin', function (stateParams) {
+                    // If the returned value is *truthy* then the user has the role, otherwise they don't
+                    if(rootScope.user){
+                        if (rootScope.user.role == "admin"){
+                            return true
+                        }
+                    }
+                    else{
+                        return false
+                    }
+                });
             rootScope.state = state;
             //console.log(rootScope.state.$current);
             //if(rootScope.state.$current.url.source.search('/new')<0
