@@ -207,7 +207,7 @@ exports.getUsersCollection = function getUsersCollection(id, cb) {
     archived: false
   };
 
-  AddressModel
+  Address
     .find(query, returnFields)
     .populate(population)
     .exec(function cb(err, addresses) {
