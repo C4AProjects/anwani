@@ -13,9 +13,8 @@ app.controller('AddressesCtrl', ['$scope', 'filterFilter','$http','$rootScope','
         scope.search = function search(){
             var criteria,category,search_string={};
             category = scope.search_data.category;
-criteria={};
+            criteria={};
             search_string=scope.search_data.string;
-console.log(scope.search_data.category);
             criteria[category]=search_string;
 
             http.get('http://anwani-devapi.c4asolution.com/addresses/search',{params:criteria})
