@@ -1458,7 +1458,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Response Example:",
-          "content": "{\n  \"_id\" : \"556e1174a8952c9521286a60\",\n  user: \"556e1174a8952c9521286a60\",\n  short_plus_code: \"MP7H+E2\",\n  long_plus_code: \"6E9AEFMP7H+E2FH\",\n  location_pic: \"/media/a8952c9521286a60.jpeg\",\n  virtual_code: \"BB35E24B\",\n  latitude: 4.567889,\n  longitude: -12.098,\n  street_address: \"\",\n  city: \"nairobi\",\n  country: \"kenya\"\n}",
+          "content": "{\n  \"_id\" : \"556e1174a8952c9521286a60\",\n  user: \"556e1174a8952c9521286a60\",\n  short_plus_code: \"MP7H+E2\",\n  long_plus_code: \"6E9AEFMP7H+E2FH\",\n  location_pic: \"/media/a8952c9521286a60.jpeg\",\n  virtual_code: \"BB35E24B\",\n  latitude: 4.567889,\n  longitude: -12.098,\n  street_address: \"\",\n  city: \"nairobi\",\n  country: \"kenya\",\n  shared: false\n}",
           "type": "json"
         }
       ]
@@ -1635,7 +1635,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Response Example:",
-          "content": "{\n  \"_id\" : \"556e1174a8952c9521286a60\",\n  user: \"556e1174a8952c9521286a60\",\n  short_plus_code: \"MP7H+E2\",\n  long_plus_code: \"6E9AEFMP7H+E2FH\",\n  virtual_code: \"BB35E24B\",\n  location_pic: \"/media/a8952c9521286a60.jpeg\",\n  latitude: 4.567889,\n  longitude: -12.098,\n  street_address: \"\",\n  city: \"nairobi\",\n  country: \"kenya\"\n}",
+          "content": "{\n  \"_id\" : \"556e1174a8952c9521286a60\",\n  user: \"556e1174a8952c9521286a60\",\n  short_plus_code: \"MP7H+E2\",\n  long_plus_code: \"6E9AEFMP7H+E2FH\",\n  virtual_code: \"BB35E24B\",\n  location_pic: \"/media/a8952c9521286a60.jpeg\",\n  latitude: 4.567889,\n  longitude: -12.098,\n  street_address: \"\",\n  city: \"nairobi\",\n  country: \"kenya\",\n  shared: false\n}",
           "type": "json"
         }
       ]
@@ -1736,7 +1736,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Response Example:",
-          "content": "{\n  \"_id\" : \"556e1174a8952c9521286a60\",\n  user: \"556e1174a8952c9521286a60\",\n  short_plus_code: \"MP7H+E2\",\n  virtual_code: \"BB35E24B\",\n  long_plus_code: \"6E9AEFMP7H+E2FH\",\n  location_pic: \"/media/a8952c9521286a60.jpeg\",\n  latitude: 4.567889,\n  longitude: -12.098,\n  street_address: \"\",\n  city: \"nairobi\",\n  country: \"kenya\"\n}",
+          "content": "{\n  \"_id\" : \"556e1174a8952c9521286a60\",\n  user: \"556e1174a8952c9521286a60\",\n  short_plus_code: \"MP7H+E2\",\n  virtual_code: \"BB35E24B\",\n  long_plus_code: \"6E9AEFMP7H+E2FH\",\n  location_pic: \"/media/a8952c9521286a60.jpeg\",\n  latitude: 4.567889,\n  longitude: -12.098,\n  street_address: \"\",\n  city: \"nairobi\",\n  country: \"kenya\",\n  shared: false\n}",
           "type": "json"
         }
       ]
@@ -1837,7 +1837,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Response Example:",
-          "content": "{\n  \"total_pages\": 1,\n  \"total_docs_count\": 0,\n  \"docs\": [{\n     \"_id\" : \"556e1174a8952c9521286a60\",\n    user: \"556e1174a8952c9521286a60\",\n    short_plus_code: \"MP7H+E2\",\n    long_plus_code: \"6E9AEFMP7H+E2FH\",\n    virtual_code: \"BB35E24B\",\n    location_pic: \"/media/a8952c9521286a60.jpeg\",\n    latitude: 4.567889,\n    longitude: -12.098,\n    street_address: \"\",\n    city: \"nairobi\",\n    country: \"kenya\"\n  }]\n}",
+          "content": "{\n  \"total_pages\": 1,\n  \"total_docs_count\": 0,\n  \"docs\": [{\n     \"_id\" : \"556e1174a8952c9521286a60\",\n    user: \"556e1174a8952c9521286a60\",\n    short_plus_code: \"MP7H+E2\",\n    long_plus_code: \"6E9AEFMP7H+E2FH\",\n    virtual_code: \"BB35E24B\",\n    location_pic: \"/media/a8952c9521286a60.jpeg\",\n    latitude: 4.567889,\n    longitude: -12.098,\n    street_address: \"\",\n    city: \"nairobi\",\n    country: \"kenya\",\n    shared: false\n  }]\n}",
           "type": "json"
         }
       ]
@@ -1938,7 +1938,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Response Example:",
-          "content": "{\n  \"_id\" : \"556e1174a8952c9521286a60\",\n  user: \"556e1174a8952c9521286a60\",\n  short_plus_code: \"MP7H+E2\",\n  virtual_code: \"BB35E24B\",\n  long_plus_code: \"6E9AEFMP7H+E2FH\",\n  location_pic: \"/media/a8952c9521286a60.jpeg\",\n  latitude: 4.567889,\n  longitude: -12.098,\n  street_address: \"\",\n  city: \"nairobi\",\n  country: \"kenya\"\n}",
+          "content": "{\n  \"_id\" : \"556e1174a8952c9521286a60\",\n  user: \"556e1174a8952c9521286a60\",\n  short_plus_code: \"MP7H+E2\",\n  virtual_code: \"BB35E24B\",\n  long_plus_code: \"6E9AEFMP7H+E2FH\",\n  location_pic: \"/media/a8952c9521286a60.jpeg\",\n  latitude: 4.567889,\n  longitude: -12.098,\n  street_address: \"\",\n  city: \"nairobi\",\n  country: \"kenya\",\n  shared: false\n}",
           "type": "json"
         }
       ]
@@ -2039,7 +2039,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Response Example:",
-          "content": "[{\n  \"_id\" : \"556e1174a8952c9521286a60\",\n  user: \"556e1174a8952c9521286a60\",\n  short_plus_code: \"MP7H+E2\",\n  long_plus_code: \"6E9AEFMP7H+E2FH\",\n  virtual_code: \"BB35E24B\",\n  location_pic: \"/media/a8952c9521286a60.jpeg\",\n  latitude: 4.567889,\n  longitude: -12.098,\n  street_address: \"\",\n  city: \"nairobi\",\n  country: \"kenya\"\n}]",
+          "content": "[{\n  \"_id\" : \"556e1174a8952c9521286a60\",\n  user: \"556e1174a8952c9521286a60\",\n  short_plus_code: \"MP7H+E2\",\n  long_plus_code: \"6E9AEFMP7H+E2FH\",\n  virtual_code: \"BB35E24B\",\n  location_pic: \"/media/a8952c9521286a60.jpeg\",\n  latitude: 4.567889,\n  longitude: -12.098,\n  street_address: \"\",\n  city: \"nairobi\",\n  country: \"kenya\",\n  shared: true\n}]",
           "type": "json"
         }
       ]
@@ -2140,7 +2140,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Response Example:",
-          "content": "{\n  \"_id\" : \"556e1174a8952c9521286a60\",\n  user: \"556e1174a8952c9521286a60\",\n  short_plus_code: \"MP7H+E2\",\n  long_plus_code: \"6E9AEFMP7H+E2FH\",\n  location_pic: \"/media/a8952c9521286a60.jpeg\",\n  latitude: 4.567889,\n  virtual_code: \"BB35E24B\",\n  longitude: -12.098,\n  street_address: \"\",\n  city: \"nairobi\",\n  country: \"kenya\"\n}",
+          "content": "{\n  \"_id\" : \"556e1174a8952c9521286a60\",\n  user: \"556e1174a8952c9521286a60\",\n  short_plus_code: \"MP7H+E2\",\n  long_plus_code: \"6E9AEFMP7H+E2FH\",\n  location_pic: \"/media/a8952c9521286a60.jpeg\",\n  latitude: 4.567889,\n  virtual_code: \"BB35E24B\",\n  longitude: -12.098,\n  street_address: \"\",\n  city: \"nairobi\",\n  country: \"kenya\",\n  shared: false\n}",
           "type": "json"
         }
       ]
