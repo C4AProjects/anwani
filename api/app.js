@@ -27,6 +27,7 @@ mongoose.connection.on('error', utils.mongoError);
 
 // Service Settings
 app.disable('x-powered-by');
+app.disable('etag');
 app.set('port', config.PORT);
 
 // PRODUCTION Environment settings
