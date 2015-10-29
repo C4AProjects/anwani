@@ -10,10 +10,10 @@ var _       = require('lodash');
 var Address = require('../models/address');
 var User  = require('../models/user');
 
-var returnfields = address.whitelist;
+var returnfields = Address.whitelist;
 var population = [{
   path: 'user',
-  select: user.whitelist
+  select: User.whitelist
 }];
 
 /**
