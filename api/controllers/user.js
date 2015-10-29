@@ -245,12 +245,7 @@ exports.fetchAll = function fetchAllUsers(req, res, next) {
 exports.fetchUserAddresses = function fetchAllUserAddresses(req, res, next) {
   debug('get a collection of user addresses');
 
-  var query = {
-    user:     req.params.id,
-    archived: false
-  };
-
-  AddressModel.find(query, qs, function cb(err, addresses) {
+  Address.getUsersCollection(req.id, function (err, addresses) {
     if(err) {
       return next(CustomError({
         name: 'SERVER_ERROR',
