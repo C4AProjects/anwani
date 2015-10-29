@@ -39,11 +39,41 @@ app.controller('LoginFormController', ['$scope', '$http', '$state', 'localStorag
                             }
                         }
                         state.go('app.dashboard');
+                        get_addresses();
+                        get_users();
+                        get_subscribers();
                     }
                 }, function errorCallback(x) {
-                    scope.authError = 'Server Error';
+                    scope.authError = x.data.error.message;
                 });
 
-    };
+        };
+
+        function get_users(){
+                http.get('http://anwani-devapi.c4asolution.com/users?page=1&per_page=10'
+                ).then(function(result){
+                        rootScope.users = result.data.docs;
+                    });
+
+        };
+        function get_addresses(){
+                http.get('http://anwani-devapi.c4asolution.com/addresses',
+                    {
+                        params:{
+                            page:1,
+                            per_page:10
+                        }
+                    }
+                ).then(function(result){
+                        rootScope.addresses = result.data.docs;
+                    });
+
+        };
+        function get_subscribers(){
+            http.get('http://anwani-devapi.c4asolution.com/subscribers?page=1&per_page=10'
+            ).then(function(result){
+                    rootScope.subscribers = result.data.docs;
+                });
+        };
     }])
 ;

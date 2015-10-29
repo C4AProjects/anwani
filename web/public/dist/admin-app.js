@@ -430,9 +430,8 @@ app.controller('AppCtrl', ['$scope',
         scope.search = function search(){
             var criteria,category,search_string={};
             category = scope.search_data.category;
-criteria={};
+            criteria={};
             search_string=scope.search_data.string;
-console.log(scope.search_data.category);
             criteria[category]=search_string;
 
             http.get('http://anwani-devapi.c4asolution.com/addresses/search',{params:criteria})
@@ -2426,12 +2425,42 @@ app.controller('LoginFormController', ['$scope', '$http', '$state', 'localStorag
                             }
                         }
                         state.go('app.dashboard');
+                        get_addresses();
+                        get_users();
+                        get_subscribers();
                     }
                 }, function errorCallback(x) {
-                    scope.authError = 'Server Error';
+                    scope.authError = x.data.error.message;
                 });
 
-    };
+        };
+
+        function get_users(){
+                http.get('http://anwani-devapi.c4asolution.com/users?page=1&per_page=10'
+                ).then(function(result){
+                        rootScope.users = result.data.docs;
+                    });
+
+        };
+        function get_addresses(){
+                http.get('http://anwani-devapi.c4asolution.com/addresses',
+                    {
+                        params:{
+                            page:1,
+                            per_page:10
+                        }
+                    }
+                ).then(function(result){
+                        rootScope.addresses = result.data.docs;
+                    });
+
+        };
+        function get_subscribers(){
+            http.get('http://anwani-devapi.c4asolution.com/subscribers?page=1&per_page=10'
+            ).then(function(result){
+                    rootScope.subscribers = result.data.docs;
+                });
+        };
     }])
 ;;app.controller('MailCtrl', ['$scope', function($scope) {
   $scope.folds = [{
