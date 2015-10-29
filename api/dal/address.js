@@ -210,7 +210,7 @@ exports.getUsersCollection = function getUsersCollection(id, cb) {
   Address
     .find(query, returnFields)
     .populate(population)
-    .exec(function cb(err, addresses) {
+    .exec(function (err, addresses) {
       if(err) {
         return cb(err);
       }
