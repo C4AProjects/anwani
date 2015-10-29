@@ -245,7 +245,7 @@ exports.fetchAll = function fetchAllUsers(req, res, next) {
 exports.fetchUserAddresses = function fetchAllUserAddresses(req, res, next) {
   debug('get a collection of user addresses');
 
-  Address.getUsersCollection(req.id, function (err, addresses) {
+  Address.getUsersCollection(req.params.id, function (err, addresses) {
     if(err) {
       return next(CustomError({
         name: 'SERVER_ERROR',
