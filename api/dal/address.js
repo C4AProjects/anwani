@@ -10,7 +10,7 @@ var _       = require('lodash');
 var Address = require('../models/address');
 var User  = require('../models/user');
 
-var returnfields = Address.whitelist;
+var returnFields = Address.whitelist;
 var population = [{
   path: 'user',
   select: User.whitelist
@@ -209,7 +209,7 @@ exports.getUsersCollection = function getUsersCollection(id, cb) {
 
   AddressModel
     .find(query, returnFields)
-    .population(populate)
+    .populate(population)
     .exec(function cb(err, addresses) {
       if(err) {
         return cb(err);
