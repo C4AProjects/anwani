@@ -10,10 +10,10 @@ var _       = require('lodash');
 var Address = require('../models/address');
 var User  = require('../models/user');
 
-var returnFields = Address.whitelist;
+var returnfields = address.whitelist;
 var population = [{
   path: 'user',
-  select: User.whitelist
+  select: user.whitelist
 }];
 
 /**
@@ -198,4 +198,23 @@ exports.getCollection = function getCollection(query, qs, cb) {
 
   });
 
+};
+
+
+exports.getUsersCollection = function getUsersCollection(id, cb) {
+  var query = {
+    user:     id,
+    archived: false
+  };
+
+  AddressModel
+    .find(query, returnFields)
+    .population(populate)
+    .exec(function cb(err, addresses) {
+      if(err) {
+        return cb(err);
+      }
+
+      cb(null, addresses);
+    });
 };
