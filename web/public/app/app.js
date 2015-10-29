@@ -30,10 +30,10 @@ app.run(['$http', '$rootScope', 'snSkrollr', function(
   $rootScope.menu = [];
   snSkrollr.init();
   $rootScope.languages = [{
-    'label': 'en_US',
+    'label': 'English',
     'value': 'en_US'
   }, {
-    'label': 'fre_FRE',
+    'label': 'Francais',
     'value': 'fre_FRE'
   }];
 

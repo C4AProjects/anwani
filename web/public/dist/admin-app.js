@@ -5373,7 +5373,7 @@ angular.module("../public/app/partials/home/header.html", []).run(["$templateCac
     "    <form action=\"\"class=\"navbar-form navbar-right\">\n" +
     "      <label for=\"\" translate>header.lang</label>\n" +
     "      <select class=\"form-control\" name=\"\" id=\"\" ng-model=\"lang\" ng-change=\"toggleLanguage(lang)\"\n" +
-    "        ng-options=\"lang.label as lang.label for lang in languages\">\n" +
+    "        ng-options=\"lang.value as lang.label for lang in languages\">\n" +
     "      </select>\n" +
     "    </form>\n" +
     "  <ul class=\"nav navbar-nav navbar-right\" >\n" +
