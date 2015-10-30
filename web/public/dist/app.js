@@ -206,8 +206,9 @@ angular.module("../public/app/partials/home/about.html", []).run(["$templateCach
     "      </div>\n" +
     "      <div class=\"col-md-offset-8 centered col-md-4 slighted-above\">\n" +
     "        <span class='black-text' translate>about.first.featured</span>\n" +
-    "        <img src=\"images/techcrunch.png\" alt=\"\">\n" +
-    "        <img src=\"images/techmoran.png\" alt=\"\">\n" +
+    "        <img  class=\"col-xs-4 col-xs-offset-4\" src=\"images/coders.png\" alt=\"\">\n" +
+    "        <!--<img src=\"images/techcrunch.png\" alt=\"\">-->\n" +
+    "        <!--<img src=\"images/techmoran.png\" alt=\"\">-->\n" +
     "      </div>\n" +
     "      <div class=\"col-md-offset-4 col-md-4\">\n" +
     "        <h3 style=\"color:black !important\" class=\"centered\" translate>about.first.title</h3>\n" +
@@ -256,7 +257,7 @@ angular.module("../public/app/partials/home/banner.html", []).run(["$templateCac
     "      >\n" +
     "        <h5 class=\"white-text hidden-xs hidden-sm\" style=\"margin-bottom:0.2em\" translate>banner.col_2.title</h5>\n" +
     "        <p class=\"white-text hidden-xs hidden-sm\" translate>banner.col_2.description</p>\n" +
-    "        <button class=\"btn btn-default btn-large btn-blue hidden-xs hidden-sm\" translate>banner.col_2.button</button> <span class=\"white-text hidden-xs hidden-sm\" translate>banner.col_2.option</span>\n" +
+    "        <!--<button class=\"btn btn-default btn-large btn-blue hidden-xs hidden-sm\" translate>banner.col_2.button</button> <span class=\"white-text hidden-xs hidden-sm\" translate>banner.col_2.option</span>-->\n" +
     "        <img src=\"images/google.png\" class=\"img-responsive play\" alt=\"\">\n" +
     "      </div>\n" +
     "      <div class=\"col-md-4 right\">\n" +
@@ -388,7 +389,18 @@ angular.module("../public/app/partials/home/index.html", []).run(["$templateCach
     "<div ui-view=\"partners\"></div>\n" +
     "<div ui-view=\"sub-header\"></div>\n" +
     "<div ui-view=\"footer\"></div>\n" +
-    "");
+    "<script>\n" +
+    "    $(document).ready(function(){\n" +
+    "        adjustHeights('nav a');\n" +
+    "        function adjustHeights(elem) {\n" +
+    "            var fontstep = 2;\n" +
+    "            if ($(elem).height()>$(elem).parent().height() || $(elem).width()>$(elem).parent().width()) {\n" +
+    "                $(elem).css('font-size',(($(elem).css('font-size').substr(0,2)-fontstep)) + 'px').css('line-height',(($(elem).css('font-size').substr(0,2))) + 'px');\n" +
+    "                adjustHeights(elem);\n" +
+    "            }\n" +
+    "        }\n" +
+    "    })\n" +
+    "</script>");
 }]);
 
 angular.module("../public/app/partials/home/partners.html", []).run(["$templateCache", function($templateCache) {
@@ -398,9 +410,9 @@ angular.module("../public/app/partials/home/partners.html", []).run(["$templateC
     "    <h4 class=\"gray-text centered\" translate>partners</h4>\n" +
     "    <div class=\"seperator\"></div>\n" +
     "    <div class=\"col-md-4 col-md-offset-4 row images\">\n" +
-    "    <img class=\"col-xs-4\" src=\"images/unhcr.png\" alt=\"\">\n" +
-    "    <img class=\"col-xs-4\" src=\"images/coders.png\" alt=\"\">\n" +
-    "    <img class=\"col-xs-4\" src=\"images/techmoran.png\" alt=\"\">\n" +
+    "    <!--<img class=\"col-xs-4\" src=\"images/unhcr.png\" alt=\"\">-->\n" +
+    "    <img class=\"col-xs-4 col-xs-offset-4\" src=\"images/coders.png\" alt=\"\">\n" +
+    "    <!--<img class=\"col-xs-4\" src=\"images/techmoran.png\" alt=\"\">-->\n" +
     "    </div>\n" +
     "  </div>\n" +
     "</div>\n" +
