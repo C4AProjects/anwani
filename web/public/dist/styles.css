@@ -5912,12 +5912,11 @@ img.play {
   .about .col-md-4.centered {
     margin: 2em 0 !important; }
   .about .slighted-above {
-    margin: 0;
+    margin-top: 0;
     min-height: 3em; }
     .about .slighted-above img {
       padding: 0 2%;
-      width: 40%;
-      margin: auto; }
+      width: 40%; }
   .about span.black-text {
     display: block;
     text-align: center; }
