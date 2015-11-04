@@ -437,7 +437,7 @@ angular.module("../public/app/partials/home/partners.html", []).run(["$templateC
 angular.module("../public/app/partials/home/sub-header.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("../public/app/partials/home/sub-header.html",
     "<div class=\"row\">\n" +
-    "  <nav id=\"sub\" class=\"col-md-4 col-md-offset-4\">\n" +
+    "  <nav id=\"sub\" class=\"col-md-6 col-md-offset-3\">\n" +
     "    <ul class=\"nav navbar-nav row\" style=\"width:100%\">\n" +
     "      <li class=\"col-xs-4\" bs-scrollspy du-scrollspy du-smooth-scroll href=\"#home\" data-target=\"#home\"><a class=\"centered\" translate>header.links.one</a></li>\n" +
     "      <li class=\"col-xs-4\" bs-scrollspy du-scrollspy du-smooth-scroll href=\"#about\" data-target=\"#about\"><a class=\"centered\" translate>header.links.two</a></li>\n" +

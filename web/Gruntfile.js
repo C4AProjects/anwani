@@ -175,9 +175,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-reload');
   grunt.loadNpmTasks('grunt-jsdoc-ng');
-
-  grunt.registerTask('dev', ['connect:server', 'watch:dev']);
   grunt.registerTask('doc', ['jsdoc-ng']);
+  grunt.registerTask('dev', ['connect:server', 'watch:dev']);
+
   grunt.registerTask('test', ['bower', 'jshint', 'karma:continuous']);
   grunt.registerTask('minified', ['bower', 'connect:server', 'watch:min']);
   grunt.registerTask('package', ['bower', 'html2js:dist', 'concat:dist',
