@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="admin" class="no-js {{app.settings.layoutBoxed ? 'boxed' : ''}}">
+<html lang="en" ng-app="AdminApp" class="no-js {{app.settings.layoutBoxed ? 'boxed' : ''}}">
 
 <head>
   <meta charset="utf-8">
@@ -54,6 +54,7 @@
   <script src="../libs/js/angular-permission.js"></script>
   <script src="../libs/js/lodash.js"></script>
   <script src="../libs/js/moment.js"></script>
+  <script src="../libs/js/mask.js"></script>
   <script src="../libs/js/angular-moment.js"></script>
   <script src="../libs/js/angular-simple-logger.js"></script>
   <!-- JS FRAMEWORK - END -->

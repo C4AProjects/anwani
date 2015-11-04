@@ -1,11 +1,20 @@
+/**
+ * @ngdoc config $stateProvider
+ * @memberof ClientApp
+ * @name stateProvider
+ * @param $stateProvider
+ * @param $urlRouterProvider
+ * @param JQ_CONFIG
+ */
 app.config(['$stateProvider', '$urlRouterProvider', 'JQ_CONFIG',
     function($stateProvider, $urlRouterProvider, JQ_CONFIG) {
 
         // For any unmatched url, redirect to /state1
         /**
-         * Default Route
-         * @param  {[type]} "/account/expenditure" [description]
-         * @return {[type]}                        [description]
+         * @memberof stateProvider
+         * @name urlRouterProvider
+         * @param  /login {string} default route
+         * @return {[type]}
          */
         $urlRouterProvider.otherwise("/login");
 

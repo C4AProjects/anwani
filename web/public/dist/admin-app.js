@@ -1,7 +1,26 @@
 'use strict';
 
-// Declare app level module which depends on views, and components
-var app = angular.module('admin', [
+/**
+ * @ngdoc app AdminApp
+ * @name AnwaniAdmin
+ * @param ngAnimate {package}
+ * @param ngTouch {package}
+ * @param ui.router {package}
+ * @param ui.bootstrap {package}
+ * @param ui.load {package}
+ * @param ui.jq {package}
+ * @param oc.lazyload {package}
+ * @param perfect_scrollbar {package}
+ * @param angular-inview {package}
+ * @param angular-loading-bar {package}
+ * @param LocalStorageModule {package}
+ * @param smart-table {package}
+ * @param permission {package}
+ * @param uiGmapgoogle-maps {package}
+ * @param ui.mask {package}
+ * @param angularMoment {package}
+ */
+var app = angular.module('AdminApp', [
     'ngAnimate',
     //    'ngCookies',
     //    'ngResource',
@@ -21,6 +40,7 @@ var app = angular.module('admin', [
     'smart-table',
     'permission',
     'uiGmapgoogle-maps',
+    'ui.mask',
     'angularMoment'
 ]);
 app.config(function($httpProvider){
@@ -50,30 +70,6 @@ app.run(
             var token = localStorageService.get('token');
             rootScope.users=[];
             rootScope.subscribers=[];
-            //rootScope.addresses = [{
-            //    "_id" : "556e1174a8952c9521286a60",
-            //    subscriber: "556e1174a8952c9521286a60",
-            //    short_virtual_code: "MP7H+E2",
-            //    long_virtual_code: "6EAEMMP7H+E2",
-            //    location_pic: "/media/a8952c9521286a60.jpeg",
-            //    latitude: -0.3000,
-            //    longitude: 36.0667,
-            //    street_address: "",
-            //    city: "nakuru",
-            //    country: "kenya"
-            //},
-            //    {
-            //        "_id" : "556e1174a8952c9521286a60",
-            //        subscriber: "556e1174a8952c9521286a60",
-            //        short_virtual_code: "MP7H+E2",
-            //        long_virtual_code: "6EAEMMP7H+E2",
-            //        location_pic: "/media/a8952c9521286a60.jpeg",
-            //        latitude: -0.7202,
-            //        longitude: 36.4285,
-            //        street_address: "",
-            //        city: "naivasha",
-            //        country: "kenya"
-            //    }];
             rootScope.addresses_shared = [];
 
             if (!rootScope.user && !rootScope.token) {
@@ -137,15 +133,8 @@ app.run(
                     }
                 });
             rootScope.state = state;
-            //console.log(rootScope.state.$current);
-            //if(rootScope.state.$current.url.source.search('/new')<0
-            //        &&
-            //        rootScope.subscriber.role!="admin"){
-            //  state.go('login');
-            //}
         }
-    ]);;// lazyload config
-
+    ]);// lazyload config
 app.constant('JQ_CONFIG', {
   easyPieChart: [
     'libs/jquery.easy-pie-chart/dist/jquery.easypiechart.fill.js'
@@ -322,8 +311,7 @@ app.constant('JQ_CONFIG', {
     ]
   });
 }]);
-;'use strict';
-
+'use strict';
 app.controller('AppCtrl', ['$scope',
   function($scope) {
 
@@ -349,7 +337,7 @@ app.controller('AppCtrl', ['$scope',
         searchFocus: false,
         pagetitle: 'Slant \\ AngularJS',
       }
-    }
+    };
 
     $scope.menuChatToggle = function(type, value) {
       if (type == "menu" && !value) {
@@ -358,7 +346,7 @@ app.controller('AppCtrl', ['$scope',
       if (type == "chat" && !value) {
         $scope.app.settings.menuFolded = true;
       }
-    }
+    };
 
 
     $scope.changeMenuHeight = function() {
@@ -372,7 +360,7 @@ app.controller('AppCtrl', ['$scope',
       }
       //console.log(navHeight);
       angular.element("#main-menu-wrapper").height(navHeight);
-    }
+    };
 
     $scope.$watch('app.settings.menuFolded', function() {
       $scope.changeMenuHeight();
@@ -397,15 +385,14 @@ app.controller('AppCtrl', ['$scope',
         }
       }
       return false;
-    }
+    };
 
 
     $scope.testLines = [];
     for (var i = 20; i >= 0; i--) {
       $scope.testLines.push(i);
-    };
-
-    $scope.lineInView = function(index, inview, inviewpart, event) {
+    }
+      $scope.lineInView = function(index, inview, inviewpart, event) {
       /*console.log(inview+" "+index+" "+inviewpart+" "+event);    */
       /*console.log(event.inViewTarget.id);  */
       return false;
@@ -415,18 +402,48 @@ app.controller('AppCtrl', ['$scope',
 
   }
 ]);
-;app.controller('AddressesCtrl', ['$scope', 'filterFilter','$http','$rootScope','$state',
+/**
+ * @ngdoc controller
+ * @name AddressesCtrl
+ * @memberof AdminApp
+ * @param $scope {service} controller scope
+ * @param $filterFilter {service}
+ * @param $http {service} Angular HTTP Request Service
+ * @param $rootScope {service} Angular Root Scope Service
+ * @param $state {service} UI Router State Service
+ */
+app.controller('AddressesCtrl', ['$scope', 'filterFilter','$http','$rootScope','$state',
     function (scope, filterFilter,http,rootScope,state) {
-
+        /**
+         * Add an address
+         * @memberof AddressesCtrl
+         * @function add
+         */
         scope.add = function add(){
+            /**
+             * @memberof add
+             * @param scope.address {object}
+             *
+             */
             http.post('http://anwani-devapi.c4asolution.com/addresses/create',scope.address).then(function(result){
                 console.log(result);
             });
         };
+        /**
+         * View an address
+         * @memberof AddressesCtrl
+         * @function view
+         * @param address {object}  Instance of an Address parsed from the table
+         */
         scope.view = function view(address){
             rootScope.address=address;
             state.go('app.address.one');
         };
+        /**
+         * Search for an Address
+         * @memberof AddressesCtrl
+         * @function search
+         */
         scope.search = function search(){
             var criteria,category,search_string={};
             category = scope.search_data.category;
@@ -443,7 +460,11 @@ app.controller('AppCtrl', ['$scope',
     }]);
 
 /**
- * Get Subscribers on RUN
+ * @ngdoc runtime
+ * @name AddressesCtrlRuntime
+ * @memberof AdminApp
+ * @param $http {service}
+ * @param $rootScope {service}
  */
 app.run(['$http','$rootScope',function(http,rootScope){
     get_addresses();
@@ -460,9 +481,10 @@ app.run(['$http','$rootScope',function(http,rootScope){
                     rootScope.addresses = result.data.docs;
                 });
         }
-    };
-}]);;app.controller('BlogPageCtrl', ['$scope', 'filterFilter', function ($scope, filterFilter) {
-	$scope.items = [
+    }
+}]);
+app.controller('BlogPageCtrl', ['$scope', 'filterFilter', function ($scope, filterFilter) {
+    $scope.items = [
 	{
 		"id": 1,
 		"title": "What is Graphic Design?",
@@ -851,8 +873,8 @@ app.run(['$http','$rootScope',function(http,rootScope){
 		$scope.noOfPages = Math.ceil($scope.totalItems / $scope.entryLimit);
 		$scope.currentPage = 1;
 	}, true);
-}]);;'use strict';
-
+}]);
+'use strict';
 /* Controllers */
 
   // bootstrap controller
@@ -1172,7 +1194,7 @@ app.controller('DatepickerDemoCtrl', ['$scope', function($scope) {
 $scope.dtpick = {
         opened: false,
         opened2: false
-      }
+      };
 
   $scope.open = function($event,type) {
     $event.preventDefault();
@@ -1252,7 +1274,8 @@ $scope.dtpick = {
     $scope.clear = function() {
       $scope.mytime = null;
     };
-  }]);;/**
+  }]);
+/**
  * calendarDemoApp - 0.1.3
  */
 
@@ -1328,7 +1351,7 @@ app.controller('FullcalendarCtrl', ['$scope', function($scope) {
         $scope.overlay.addClass('top').find('.arrow').removeClass('pull-up').addClass('pull-down')
       }
       (wrap.find('.fc-overlay').length == 0) && wrap.append( $scope.overlay );
-    }
+    };
 
     /* config object */
     $scope.uiConfig = {
@@ -1374,7 +1397,7 @@ app.controller('FullcalendarCtrl', ['$scope', function($scope) {
     $scope.eventSources = [$scope.events];
 }]);
 /* EOF */
-;(function() {
+(function () {
     'use strict';
 
     /*  var app = angular.app.'examples', ['chart.js', 'ui.bootstrap']);*/
@@ -1696,8 +1719,7 @@ app.controller('FullcalendarCtrl', ['$scope', function($scope) {
     //  $scope.users = data;
     //});
   }]);
-;'use strict';
-
+'use strict';
 app.controller('ColorPickerCtrl', [
     '$scope',
     function ($scope) {
@@ -1750,9 +1772,8 @@ app.controller('CounttoCtrl', function($scope){
     	$scope.countFrom_flickr = 0;
 });
 
-;    'use strict';
-
-    /*  var app = angular.app.'examples', ['chart.js', 'ui.bootstrap']);*/
+'use strict';
+/*  var app = angular.app.'examples', ['chart.js', 'ui.bootstrap']);*/
 
      //app.config(function(ChartJsProvider) {
      //    // Configure all charts
@@ -2070,8 +2091,8 @@ app.controller('CounttoCtrl', function($scope){
         name: 'Silicon Valley'
       }];
     }]);
-;app.controller('FAQCtrl', ['$scope', function ($scope) {
-	$scope.general = [
+app.controller('FAQCtrl', ['$scope', function ($scope) {
+    $scope.general = [
 	{
 		"title": "What is Graphic Design?",
 		"answer": "Distinguishing by comparing/creating differences. Some ways of creating contrast among elements in the design include using contrasting colors, sizes, shapes, locations, or relationships.",
@@ -2125,7 +2146,8 @@ app.controller('CounttoCtrl', function($scope){
 
 
 
-}]);;app.controller('FileUploadCtrl', ['$scope', 'FileUploader', function($scope, FileUploader) {
+}]);
+app.controller('FileUploadCtrl', ['$scope', 'FileUploader', function ($scope, FileUploader) {
     var uploader = $scope.uploader = new FileUploader({
         url: 'js/controllers/upload.php'
     });
@@ -2176,8 +2198,8 @@ app.controller('CounttoCtrl', function($scope){
     };
 
     console.info('uploader', uploader);
-}]);;'use strict';
-
+}]);
+'use strict';
 /* Controllers */
 
 app.controller('FlotChartCtrl', ['$scope', function($scope) {
@@ -2203,11 +2225,12 @@ app.controller('FlotChartCtrl', ['$scope', function($scope) {
     ];
 
 
-  }]);;app.controller('FormEditorCtrl', function($scope, $http, $timeout, $ocLazyLoad) {
-  $scope.htmlVariable = '<h3>Try me!</h3><p>textAngular is a super cool WYSIWYG Text Editor directive for AngularJS</p><p><b>Features:</b></p><ol><li>Automatic Seamless Two-Way-Binding</li><li style="color: blue;">Super Easy <b>Theming</b> Options</li><li>Simple Editor Instance Creation</li><li>Safely Parses Html for Custom Toolbar Icons</li><li>Doesn&apos;t Use an iFrame</li><li>Works with Firefox, Chrome, and IE8+</li></ol><p><b>Code at GitHub:</b> <a href="https://github.com/fraywing/textAngular">Here</a> </p>';
-});;app.controller('FormSliderCtrl', function($scope) {
-
-		$scope.scopes = [];
+}]);
+app.controller('FormEditorCtrl', function ($scope, $http, $timeout, $ocLazyLoad) {
+    $scope.htmlVariable = '<h3>Try me!</h3><p>textAngular is a super cool WYSIWYG Text Editor directive for AngularJS</p><p><b>Features:</b></p><ol><li>Automatic Seamless Two-Way-Binding</li><li style="color: blue;">Super Easy <b>Theming</b> Options</li><li>Simple Editor Instance Creation</li><li>Safely Parses Html for Custom Toolbar Icons</li><li>Doesn&apos;t Use an iFrame</li><li>Works with Firefox, Chrome, and IE8+</li></ol><p><b>Code at GitHub:</b> <a href="https://github.com/fraywing/textAngular">Here</a> </p>';
+});
+app.controller('FormSliderCtrl', function ($scope) {
+    $scope.scopes = [];
 		    $scope.value = 5;
 		    $scope.values = {
 			    low : 4,
@@ -2247,8 +2270,8 @@ app.controller('FlotChartCtrl', ['$scope', function($scope) {
 
 
 
-});;'use strict';
-
+});
+'use strict';
 /* Controllers */
 
   // Form controller
@@ -2258,8 +2281,8 @@ app.controller('FormValidationCtrl', ['$scope', function($scope) {
       return blacklist.indexOf(value) === -1;
     }
 }]);
-;app.controller('FormXeditableCtrl', ['$scope', '$filter', '$http', 'editableOptions', 'editableThemes', 
-  function($scope, $filter, $http, editableOptions, editableThemes){
+app.controller('FormXeditableCtrl', ['$scope', '$filter', '$http', 'editableOptions', 'editableThemes',
+    function($scope, $filter, $http, editableOptions, editableThemes){
     editableThemes.bs3.inputClass = 'input-sm';
     editableThemes.bs3.buttonsClass = 'btn-sm';
     editableOptions.theme = 'bs3';
@@ -2368,7 +2391,7 @@ app.controller('FormValidationCtrl', ['$scope', function($scope) {
     };
 
 }]);
-;app.controller('ImgCropCtrl', ['$scope', function($scope) {
+app.controller('ImgCropCtrl', ['$scope', function ($scope) {
     $scope.myImage='';
     $scope.myCroppedImage='';
     $scope.cropType="circle";
@@ -2384,11 +2407,21 @@ app.controller('FormValidationCtrl', ['$scope', function($scope) {
       reader.readAsDataURL(file);
     };
     angular.element(document.querySelector('#fileInput')).on('change',handleFileSelect);
-}]);;'use strict';
-
-/* Controllers */
-// signin controller
-app.controller('LoginFormController', ['$scope', '$http', '$state', 'localStorageService', '$rootScope','Permission',
+}]);
+'use strict';
+/**
+ * @ngdoc controller
+ * @name LoginCtrl
+ * @memberof AdminApp
+ * @param $scope {service} controller scope
+ * @param $http {service} Angular HTTP Request Service
+ * @param $state {service} UI Router State Service
+ * @param localStorageService {service} Stores Data in Local Storage / Sessions on the Browser
+ * @param $rootScope {service} Angular Root Scope Service
+ * @param Permission {service} Sets Access Permissions based on the user type
+ *
+ */
+app.controller('LoginCtrl', ['$scope', '$http', '$state', 'localStorageService', '$rootScope','Permission',
     function (scope, http, state, localStorageService, rootScope,Permission) {
         scope.subscriber = {};
         rootScope._subscriber = false;
@@ -2412,7 +2445,7 @@ app.controller('LoginFormController', ['$scope', '$http', '$state', 'localStorag
                         localStorageService.set('token', response.data.token);
 
                         http.defaults.headers.post = { 'Authorization' : 'Bearer '+localStorageService.get('token') };
-                        http.defaults.headers.get = { 'Authorization' : 'Bearer '+localStorageService.get('token') }
+                        http.defaults.headers.get = { 'Authorization' : 'Bearer '+localStorageService.get('token') };
 
                         if (rootScope.user.role) {
                             if (rootScope.user.role == "subscriber") {
@@ -2441,7 +2474,7 @@ app.controller('LoginFormController', ['$scope', '$http', '$state', 'localStorag
                         rootScope.users = result.data.docs;
                     });
 
-        };
+        }
         function get_addresses(){
                 http.get('http://anwani-devapi.c4asolution.com/addresses',
                     {
@@ -2454,16 +2487,17 @@ app.controller('LoginFormController', ['$scope', '$http', '$state', 'localStorag
                         rootScope.addresses = result.data.docs;
                     });
 
-        };
+        }
         function get_subscribers(){
             http.get('http://anwani-devapi.c4asolution.com/subscribers?page=1&per_page=10'
             ).then(function(result){
                     rootScope.subscribers = result.data.docs;
                 });
-        };
+        }
     }])
-;;app.controller('MailCtrl', ['$scope', function($scope) {
-  $scope.folds = [{
+;
+app.controller('MailCtrl', ['$scope', function ($scope) {
+    $scope.folds = [{
     name: 'Inbox',
     filter: '',
     icon: 'fa-inbox',
@@ -2520,7 +2554,7 @@ app.controller('LoginFormController', ['$scope', '$http', '$state', 'localStorag
       color: 'secondary'
     });
     $scope.newLabel.name = '';
-  }
+  };
 
   $scope.labelClass = function(label) {
     if (angular.lowercase(label) === 'urgent') {
@@ -2558,7 +2592,7 @@ app.controller('MailNewCtrl', ['$scope', function($scope) {
     to: '',
     subject: '',
     content: ''
-  }
+  };
   $scope.tolist = [{
     name: 'James',
     email: 'james@gmail.com'
@@ -2578,7 +2612,7 @@ app.directive('labelColor', function() {
     });
   }
 });
-;app.controller('MapsCtrl',['$scope',function(scope){
+app.controller('MapsCtrl', ['$scope', function (scope) {
     scope.map = {
         center:
         {
@@ -2590,21 +2624,20 @@ app.directive('labelColor', function() {
 }]);
 
 
-;app.controller('MembersCtrl', ['$scope', '$http',
-  function ($scope, $http) {
+app.controller('MembersCtrl', ['$scope', '$http',
+    function ($scope, $http) {
     $http.get('data/members.json').success(function(data) {
       $scope.members = data;
     });
   }]);
-;app.controller('MessagesWidgetCtrl', ['$scope', '$http',
-  function ($scope, $http) {
+app.controller('MessagesWidgetCtrl', ['$scope', '$http',
+    function ($scope, $http) {
     $http.get('../data/messages.json').success(function(data) {
       $scope.messages = data;
     });
   }]);
 
-;'use strict';
-
+'use strict';
 app.controller('MorrisCtrl', function($scope){
   $scope.barData = [
         { y: "2009", a: 175,  b: 165, c: 160, d: 140},
@@ -2613,8 +2646,8 @@ app.controller('MorrisCtrl', function($scope){
         { y: "2012", a: 60, b: 190, c: 60, d: 190 }
     ];
 
-});;'use strict';
-
+});
+'use strict';
 app.controller('NotifyCtrl', function($scope,notify){
 
     $scope.msg = 'Hello! This is a sample message!';
@@ -2657,8 +2690,8 @@ app.controller('NotifyCtrl', function($scope,notify){
     $scope.clickedLink = function(){
         notify('You clicked a link!');
     };
-});;'use strict';
-
+});
+'use strict';
 // signup controller
 app.controller('RegisterFormController', ['$scope', '$http', '$state', 'localStorageService', '$rootScope',
     function (scope, http, state, localStorageService, rootScope) {
@@ -2702,7 +2735,8 @@ app.controller('RegisterFormController', ['$scope', '$http', '$state', 'localSto
                 });
         }
     }])
-;;/**
+;
+/**
  */
 
 'use strict';
@@ -3011,8 +3045,9 @@ app.controller('RickshawCtrl', ['$scope', '$interval', function($scope, $interva
                 $interval.cancel($scope['interval' + id]);
             }
         };
-    }]);;app.controller('SearchPageCtrl', ['$scope', 'filterFilter', function ($scope, filterFilter) {
-	$scope.items = [
+}]);
+app.controller('SearchPageCtrl', ['$scope', 'filterFilter', function ($scope, filterFilter) {
+    $scope.items = [
 	{
 		"title": "What is Graphic Design?",
 		"thumb": "data/search/1.png",
@@ -3251,7 +3286,8 @@ app.controller('RickshawCtrl', ['$scope', '$interval', function($scope, $interva
 		$scope.noOfPages = Math.ceil($scope.totalItems / $scope.entryLimit);
 		$scope.currentPage = 1;
 	}, true);
-}]);;app.controller('SubscribersCtrl', ['$scope', 'filterFilter','$http','$rootScope','$state',
+}]);
+app.controller('SubscribersCtrl', ['$scope', 'filterFilter', '$http', '$rootScope', '$state',
     function (scope, filterFilter,http,rootScope,state) {
 
         scope.add = function add(){
@@ -3279,8 +3315,9 @@ app.run(['$http','$rootScope',function(http,rootScope){
         ).then(function(result){
                 rootScope.subscribers = result.data.docs;
             });
-    };
-}]);;app.controller('ngGridDemoCtrl', ['$scope', '$http', function($scope, $http) {
+    }
+}]);
+app.controller('ngGridDemoCtrl', ['$scope', '$http', function ($scope, $http) {
     $scope.filterOptions = {
         filterText: "",
         useExternalFilter: true
@@ -3381,8 +3418,8 @@ $scope.myData3 = [{name: "Moroni", age: 50},
 
 
 }]);
-;app.controller('SmartTableCtrl', ['$scope', '$timeout', function($scope, $timeout) {
-  $scope.rowCollectionBasic = [
+app.controller('SmartTableCtrl', ['$scope', '$timeout', function ($scope, $timeout) {
+    $scope.rowCollectionBasic = [
       {firstName: 'Laurent', lastName: 'Renard', birthDate: new Date('1987-05-21'), balance: 102, email: 'whatever@gmail.com'},
       {firstName: 'Blandine', lastName: 'Faivre', birthDate: new Date('1987-04-25'), balance: -2323.22, email: 'oufblandou@gmail.com'},
       {firstName: 'Francoise', lastName: 'Frere', birthDate: new Date('1955-08-27'), balance: 42343, email: 'raymondef@gmail.com'}
@@ -3440,7 +3477,7 @@ $scope.myData3 = [{name: "Moroni", age: 50},
       if (index !== -1) {
           $scope.rowCollection.splice(index, 1);
       }
-  }
+  };
 
   //  pagination
   $scope.itemsByPage=10;
@@ -3459,7 +3496,7 @@ $scope.myData3 = [{name: "Moroni", age: 50},
     for (var j = 0; j < 20; j++) {
       $scope.rowCollectionPip.push(generateRandomItem(j));
     }
-  }
+  };
 
   $scope.callServer = function getData(tableState) {
       //here you could create a query string from tableState
@@ -3474,7 +3511,8 @@ $scope.myData3 = [{name: "Moroni", age: 50},
 
  $scope.getPage();
 
-}]);;app.controller('UiGridDemoCtrl', ['$scope', 'uiGridConstants', function($scope, uiGridConstants) {
+}]);
+app.controller('UiGridDemoCtrl', ['$scope', 'uiGridConstants', function ($scope, uiGridConstants) {
     $scope.gridOptionsSimple = {
         rowHeight: 36,
         data: [
@@ -3747,8 +3785,8 @@ $scope.myData3 = [{name: "Moroni", age: 50},
         ]
       };
 }]);
-;app.controller('MessagesDropDownCtrl', ['$scope', '$http',
-  function ($scope, $http) {
+app.controller('MessagesDropDownCtrl', ['$scope', '$http',
+    function ($scope, $http) {
     $http.get('../data/messages.json').success(function(data) {
       $scope.messages = data;
     });
@@ -3761,8 +3799,8 @@ app.controller('NotificationsDropDownCtrl', ['$scope', '$http',
     $http.get('../data/notifications.json').success(function(data) {
       $scope.notifications = data;
     });
-  }]);;jQuery(function($) {
-
+  }]);
+jQuery(function ($) {
     'use strict';
 
     var SLANT_SETTINGS = window.SLANT_SETTINGS || {};
@@ -3969,14 +4007,35 @@ app.controller('NotificationsDropDownCtrl', ['$scope', '$http',
     });
 
 });
-;app.controller('UsersCtrl', ['$scope', 'filterFilter','$http','$rootScope','$state',
+/**
+ * @ngdoc controller
+ * @name UsersCtrl
+ * @memberof AdminApp
+ * @param $scope {service} controller scope
+ * @param $filterFilter {service}
+ * @param $http {service} Angular HTTP Request Service
+ * @param $rootScope {service} Angular Root Scope Service
+ * @param $state {service} UI Router State Service
+ */
+app.controller('UsersCtrl', ['$scope', 'filterFilter','$http','$rootScope','$state',
     function (scope, filterFilter,http,rootScope,state) {
 
+        /**
+         * Add a user
+         * @memberof UsersCtrl
+         * @function add
+         */
         scope.add = function add(){
             http.post('http://anwani-devapi.c4asolution.com/users/signup',scope.user).then(function(result){
                 console.log(result);
             });
         };
+        /**
+         * View a user
+         * @memberof UsersCtrl
+         * @function view
+         * @param user {object}  Instance of a User parsed from the table
+         */
         scope.view = function view(user){
             rootScope.chosenUser=user;
             state.go('app.users.one');
@@ -3984,7 +4043,11 @@ app.controller('NotificationsDropDownCtrl', ['$scope', '$http',
     }]);
 
 /**
- * Get Subscribers on RUN
+ * @ngdoc runtime
+ * @name UsersCtrlRuntime
+ * @memberof AdminApp
+ * @param $http {service}
+ * @param $rootScope {service}
  */
 app.run(['$http','$rootScope',function(http,rootScope){
     get_users();
@@ -3996,9 +4059,9 @@ app.run(['$http','$rootScope',function(http,rootScope){
                 });
         }
 
-    };
-}]);;'use strict';
-
+    }
+}]);
+'use strict';
 // jVectorMap controller
 app.controller('JVectorMapDemoCtrl', ['$scope', function($scope) {
     $scope.world_markers = [
@@ -4040,8 +4103,9 @@ app.controller('JVectorMapDemoCtrl', ['$scope', function($scope) {
       {latLng: [37.36, -122.03], name: 'Silicon Valley'}
     ];
   }])
-;;app.directive('setNgAnimate', ['$animate', function($animate) {
-  return {
+;
+app.directive('setNgAnimate', ['$animate', function ($animate) {
+    return {
     link: function($scope, $element, $attrs) {
       $scope.$watch(function() {
         return $scope.$eval($attrs.setNgAnimate, $scope);
@@ -4051,8 +4115,8 @@ app.controller('JVectorMapDemoCtrl', ['$scope', function($scope) {
     }
   };
 }]);
-;/* ------------------------------
-   ui.bootstrap tooltip directive
+/* ------------------------------
+ ui.bootstrap tooltip directive
 --------------------------------*/
 
 app.directive('uiTooltip', ['$timeout', function($timeout) {
@@ -4116,8 +4180,8 @@ app.directive('uiBreadcrumbAutoHidden', ['$timeout', function($timeout) {
     }
   };
 }]);
-;app.directive('uiChatwindow', ['$timeout', function($timeout) {
-  return {
+app.directive('uiChatwindow', ['$timeout', function ($timeout) {
+    return {
     restrict: 'AC',
     link: function(scope, el, attr) {
 
@@ -4153,8 +4217,7 @@ app.directive('uiBreadcrumbAutoHidden', ['$timeout', function($timeout) {
 
   };
 }]);
-;'use strict';
-
+'use strict';
 /**
  * 0.1.1
  * General-purpose jQuery wrapper. Simply pass the plugin name as the expression.
@@ -4243,8 +4306,7 @@ directive('uiJq', ['uiJqConfig', 'JQ_CONFIG', 'uiLoad', '$timeout', function uiJ
     }
   };
 }]);
-;app.directive('uiModule', ['MODULE_CONFIG', 'uiLoad', '$compile', function(
-  MODULE_CONFIG, uiLoad, $compile) {
+app.directive('uiModule', ['MODULE_CONFIG', 'uiLoad', '$compile', function (MODULE_CONFIG, uiLoad, $compile) {
   return {
     restrict: 'A',
     compile: function(el, attrs) {
@@ -4261,8 +4323,8 @@ directive('uiJq', ['uiJqConfig', 'JQ_CONFIG', 'uiLoad', '$timeout', function uiJ
     }
   };
 }]);
-;app.directive('uiNav', ['$timeout', function($timeout) {
-  return {
+app.directive('uiNav', ['$timeout', function ($timeout) {
+    return {
     restrict: 'AC',
     link: function(scope, el, attr) {
 
@@ -4295,8 +4357,8 @@ directive('uiJq', ['uiJqConfig', 'JQ_CONFIG', 'uiLoad', '$timeout', function uiJ
     }
   };
 }]);
-;/* ------------------------------
-   ui search page tabs
+/* ------------------------------
+ ui search page tabs
 --------------------------------*/
 
 app.directive('uiSearchtabs', ['$timeout', function($timeout) {
@@ -4312,8 +4374,8 @@ app.directive('uiSearchtabs', ['$timeout', function($timeout) {
     }
   };
 }]);
-;app.directive('uiSectionbox', ['$timeout', function($timeout) {
-  return {
+app.directive('uiSectionbox', ['$timeout', function ($timeout) {
+    return {
     restrict: 'AC',
     link: function(scope, el, attr) {
 
@@ -4460,8 +4522,8 @@ app.directive('verticalrhythm', ['$timeout', function($timeout) {
 
   };
 }]);
-;app.directive('uiTodowidget', ['$timeout', function($timeout) {
-  return {
+app.directive('uiTodowidget', ['$timeout', function ($timeout) {
+    return {
     restrict: 'AC',
     link: function(scope, el, attr) {
 
@@ -4490,16 +4552,16 @@ app.directive('verticalrhythm', ['$timeout', function($timeout) {
 
   };
 }]);
-;app.filter('startBlogFrom', function () {
-	return function (input, start) {
+app.filter('startBlogFrom', function () {
+    return function (input, start) {
 		if (input) {
 			start = +start;
 			return input.slice(start);
 		}
 		return [];
 	};
-});;'use strict';
-
+});
+'use strict';
 /* Filters */
 // need load the moment.js to use this filter.
 app.filter('fromNow', function() {
@@ -4507,16 +4569,16 @@ app.filter('fromNow', function() {
     return moment(date).fromNow();
   }
 });
-;app.filter('startSearchFrom', function () {
-	return function (input, start) {
+app.filter('startSearchFrom', function () {
+    return function (input, start) {
 		if (input) {
 			start = +start;
 			return input.slice(start);
 		}
 		return [];
 	};
-});;jQuery(function($) {
-
+});
+jQuery(function ($) {
     'use strict';
 
     var SLANT_SETTINGS = window.SLANT_SETTINGS || {};
@@ -4662,7 +4724,7 @@ function knob_clock() {
     $h.val(h).trigger("change");
     setTimeout("knob_clock()", 1000);
 }
-;/*!
+/*!
  * JavaScript - loadGoogleMaps( version, apiKey, language )
  *
  * - Load Google Maps API using jQuery Deferred. 
@@ -4698,10 +4760,10 @@ var loadGoogleMaps = (function($) {
 			params = $.extend(
 			 {'sensor': false}
 			 , apiKey ? {"key": apiKey} : {}
-			 , language ? {"language": language} : {} 
-			);;
-		
-		//If google.maps exists, then Google Maps API was probably loaded with the <script> tag
+			 , language ? {"language": language} : {}
+
+);
+        //If google.maps exists, then Google Maps API was probably loaded with the <script> tag
 		if( window.google && google.maps ) {
 			
 			resolve();
@@ -4748,7 +4810,7 @@ var loadGoogleMaps = (function($) {
 	};
 	
 }(jQuery));
-;/* global console:false, google:false */
+/* global console:false, google:false */
 /*jshint unused:false */
 'use strict';
 
@@ -4785,8 +4847,8 @@ app.controller('MapCtrl', ['$scope', function ($scope) {
       marker.setPosition(new google.maps.LatLng(lat, lng));
     };
   }])
-;;'use strict';
-
+;
+'use strict';
 (function () {
   //Setup map events from a google map object to trigger on a given element too,
   //then we just use ui-event to catch events from an element
@@ -4913,14 +4975,23 @@ app.controller('MapCtrl', ['$scope', function ($scope) {
     'click dblclick');
 
 })();
-;app.config(['$stateProvider', '$urlRouterProvider', 'JQ_CONFIG',
+/**
+ * @ngdoc config $stateProvider
+ * @memberof ClientApp
+ * @name stateProvider
+ * @param $stateProvider
+ * @param $urlRouterProvider
+ * @param JQ_CONFIG
+ */
+app.config(['$stateProvider', '$urlRouterProvider', 'JQ_CONFIG',
     function($stateProvider, $urlRouterProvider, JQ_CONFIG) {
 
         // For any unmatched url, redirect to /state1
         /**
-         * Default Route
-         * @param  {[type]} "/account/expenditure" [description]
-         * @return {[type]}                        [description]
+         * @memberof stateProvider
+         * @name urlRouterProvider
+         * @param  /login {string} default route
+         * @return {[type]}
          */
         $urlRouterProvider.otherwise("/login");
 
@@ -5084,7 +5155,7 @@ app.controller('MapCtrl', ['$scope', function ($scope) {
         ;
     }
 ]);
-;// A RESTful factory for retreiving mails from 'mails.json'
+// A RESTful factory for retreiving mails from 'mails.json'
 app.factory('mails', ['$http', function ($http) {
   var path = 'data/mail/mails.json';
   var mails = $http.get(path).then(function (resp) {
@@ -5104,8 +5175,8 @@ app.factory('mails', ['$http', function ($http) {
     })
   };
   return factory;
-}]);;'use strict';
-
+}]);
+'use strict';
 /**
  * 0.1.1
  * Deferred load js/css file, used for ui-jq.js and Lazy Loading.
@@ -5141,7 +5212,7 @@ angular.module('ui.load', [])
 			});
 			deferred.resolve();
 			return promise;
-		}
+		};
 
 		/**
 		 * Dynamically loads the given script
@@ -5199,8 +5270,7 @@ angular.module('ui.load', [])
 			return deferred.promise;
 		};
 	}]);
-;angular.module('templates-dist', ['../public/app/partials/account/index.html', '../public/app/partials/account/login.html', '../public/app/partials/home/about.html', '../public/app/partials/home/banner.html', '../public/app/partials/home/features.html', '../public/app/partials/home/footer.html', '../public/app/partials/home/header.html', '../public/app/partials/home/index.html', '../public/app/partials/home/partners.html', '../public/app/partials/home/sub-header.html', '../public/app/partials/test/index.html']);
-
+angular.module('templates-dist', ['../public/app/partials/account/index.html', '../public/app/partials/account/login.html', '../public/app/partials/home/about.html', '../public/app/partials/home/banner.html', '../public/app/partials/home/features.html', '../public/app/partials/home/footer.html', '../public/app/partials/home/header.html', '../public/app/partials/home/index.html', '../public/app/partials/home/partners.html', '../public/app/partials/home/sub-header.html', '../public/app/partials/test/index.html']);
 angular.module("../public/app/partials/account/index.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("../public/app/partials/account/index.html",
     "");
