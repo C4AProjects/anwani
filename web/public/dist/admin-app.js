@@ -1,7 +1,26 @@
 'use strict';
 
-// Declare app level module which depends on views, and components
-var app = angular.module('admin', [
+/**
+ * @ngdoc app AdminApp
+ * @name AnwaniAdmin
+ * @param ngAnimate {package}
+ * @param ngTouch {package}
+ * @param ui.router {package}
+ * @param ui.bootstrap {package}
+ * @param ui.load {package}
+ * @param ui.jq {package}
+ * @param oc.lazyload {package}
+ * @param perfect_scrollbar {package}
+ * @param angular-inview {package}
+ * @param angular-loading-bar {package}
+ * @param LocalStorageModule {package}
+ * @param smart-table {package}
+ * @param permission {package}
+ * @param uiGmapgoogle-maps {package}
+ * @param ui.mask {package}
+ * @param angularMoment {package}
+ */
+var app = angular.module('AdminApp', [
     'ngAnimate',
     //    'ngCookies',
     //    'ngResource',
@@ -21,6 +40,7 @@ var app = angular.module('admin', [
     'smart-table',
     'permission',
     'uiGmapgoogle-maps',
+    'ui.mask',
     'angularMoment'
 ]);
 app.config(function($httpProvider){
@@ -50,30 +70,6 @@ app.run(
             var token = localStorageService.get('token');
             rootScope.users=[];
             rootScope.subscribers=[];
-            //rootScope.addresses = [{
-            //    "_id" : "556e1174a8952c9521286a60",
-            //    subscriber: "556e1174a8952c9521286a60",
-            //    short_virtual_code: "MP7H+E2",
-            //    long_virtual_code: "6EAEMMP7H+E2",
-            //    location_pic: "/media/a8952c9521286a60.jpeg",
-            //    latitude: -0.3000,
-            //    longitude: 36.0667,
-            //    street_address: "",
-            //    city: "nakuru",
-            //    country: "kenya"
-            //},
-            //    {
-            //        "_id" : "556e1174a8952c9521286a60",
-            //        subscriber: "556e1174a8952c9521286a60",
-            //        short_virtual_code: "MP7H+E2",
-            //        long_virtual_code: "6EAEMMP7H+E2",
-            //        location_pic: "/media/a8952c9521286a60.jpeg",
-            //        latitude: -0.7202,
-            //        longitude: 36.4285,
-            //        street_address: "",
-            //        city: "naivasha",
-            //        country: "kenya"
-            //    }];
             rootScope.addresses_shared = [];
 
             if (!rootScope.user && !rootScope.token) {
@@ -137,12 +133,6 @@ app.run(
                     }
                 });
             rootScope.state = state;
-            //console.log(rootScope.state.$current);
-            //if(rootScope.state.$current.url.source.search('/new')<0
-            //        &&
-            //        rootScope.subscriber.role!="admin"){
-            //  state.go('login');
-            //}
         }
     ]);;// lazyload config
 
@@ -415,18 +405,48 @@ app.controller('AppCtrl', ['$scope',
 
   }
 ]);
-;app.controller('AddressesCtrl', ['$scope', 'filterFilter','$http','$rootScope','$state',
+;/**
+ * @ngdoc controller
+ * @name AddressesCtrl
+ * @memberof AdminApp
+ * @param $scope {service} controller scope
+ * @param $filterFilter {service}
+ * @param $http {service} Angular HTTP Request Service
+ * @param $rootScope {service} Angular Root Scope Service
+ * @param $state {service} UI Router State Service
+ */
+app.controller('AddressesCtrl', ['$scope', 'filterFilter','$http','$rootScope','$state',
     function (scope, filterFilter,http,rootScope,state) {
-
+        /**
+         * Add an address
+         * @memberof AddressesCtrl
+         * @function add
+         */
         scope.add = function add(){
+            /**
+             * @memberof add
+             * @param scope.address {object}
+             *
+             */
             http.post('http://anwani-devapi.c4asolution.com/addresses/create',scope.address).then(function(result){
                 console.log(result);
             });
         };
+        /**
+         * View an address
+         * @memberof AddressesCtrl
+         * @function view
+         * @param address {object}  Instance of an Address parsed from the table
+         */
         scope.view = function view(address){
             rootScope.address=address;
             state.go('app.address.one');
         };
+        /**
+         * Search for an Address
+         * @memberof AddressesCtrl
+         * @function search
+         */
         scope.search = function search(){
             var criteria,category,search_string={};
             category = scope.search_data.category;
@@ -443,7 +463,11 @@ app.controller('AppCtrl', ['$scope',
     }]);
 
 /**
- * Get Subscribers on RUN
+ * @ngdoc runtime
+ * @name AddressesCtrlRuntime
+ * @memberof AdminApp
+ * @param $http {service}
+ * @param $rootScope {service}
  */
 app.run(['$http','$rootScope',function(http,rootScope){
     get_addresses();
@@ -460,7 +484,7 @@ app.run(['$http','$rootScope',function(http,rootScope){
                     rootScope.addresses = result.data.docs;
                 });
         }
-    };
+    }
 }]);;app.controller('BlogPageCtrl', ['$scope', 'filterFilter', function ($scope, filterFilter) {
 	$scope.items = [
 	{
@@ -2386,9 +2410,19 @@ app.controller('FormValidationCtrl', ['$scope', function($scope) {
     angular.element(document.querySelector('#fileInput')).on('change',handleFileSelect);
 }]);;'use strict';
 
-/* Controllers */
-// signin controller
-app.controller('LoginFormController', ['$scope', '$http', '$state', 'localStorageService', '$rootScope','Permission',
+/**
+ * @ngdoc controller
+ * @name LoginCtrl
+ * @memberof AdminApp
+ * @param $scope {service} controller scope
+ * @param $http {service} Angular HTTP Request Service
+ * @param $state {service} UI Router State Service
+ * @param localStorageService {service} Stores Data in Local Storage / Sessions on the Browser
+ * @param $rootScope {service} Angular Root Scope Service
+ * @param Permission {service} Sets Access Permissions based on the user type
+ *
+ */
+app.controller('LoginCtrl', ['$scope', '$http', '$state', 'localStorageService', '$rootScope','Permission',
     function (scope, http, state, localStorageService, rootScope,Permission) {
         scope.subscriber = {};
         rootScope._subscriber = false;
@@ -2412,7 +2446,7 @@ app.controller('LoginFormController', ['$scope', '$http', '$state', 'localStorag
                         localStorageService.set('token', response.data.token);
 
                         http.defaults.headers.post = { 'Authorization' : 'Bearer '+localStorageService.get('token') };
-                        http.defaults.headers.get = { 'Authorization' : 'Bearer '+localStorageService.get('token') }
+                        http.defaults.headers.get = { 'Authorization' : 'Bearer '+localStorageService.get('token') };
 
                         if (rootScope.user.role) {
                             if (rootScope.user.role == "subscriber") {
@@ -2441,7 +2475,7 @@ app.controller('LoginFormController', ['$scope', '$http', '$state', 'localStorag
                         rootScope.users = result.data.docs;
                     });
 
-        };
+        }
         function get_addresses(){
                 http.get('http://anwani-devapi.c4asolution.com/addresses',
                     {
@@ -2454,13 +2488,13 @@ app.controller('LoginFormController', ['$scope', '$http', '$state', 'localStorag
                         rootScope.addresses = result.data.docs;
                     });
 
-        };
+        }
         function get_subscribers(){
             http.get('http://anwani-devapi.c4asolution.com/subscribers?page=1&per_page=10'
             ).then(function(result){
                     rootScope.subscribers = result.data.docs;
                 });
-        };
+        }
     }])
 ;;app.controller('MailCtrl', ['$scope', function($scope) {
   $scope.folds = [{
@@ -3969,14 +4003,35 @@ app.controller('NotificationsDropDownCtrl', ['$scope', '$http',
     });
 
 });
-;app.controller('UsersCtrl', ['$scope', 'filterFilter','$http','$rootScope','$state',
+;/**
+ * @ngdoc controller
+ * @name UsersCtrl
+ * @memberof AdminApp
+ * @param $scope {service} controller scope
+ * @param $filterFilter {service}
+ * @param $http {service} Angular HTTP Request Service
+ * @param $rootScope {service} Angular Root Scope Service
+ * @param $state {service} UI Router State Service
+ */
+app.controller('UsersCtrl', ['$scope', 'filterFilter','$http','$rootScope','$state',
     function (scope, filterFilter,http,rootScope,state) {
 
+        /**
+         * Add a user
+         * @memberof UsersCtrl
+         * @function add
+         */
         scope.add = function add(){
             http.post('http://anwani-devapi.c4asolution.com/users/signup',scope.user).then(function(result){
                 console.log(result);
             });
         };
+        /**
+         * View a user
+         * @memberof UsersCtrl
+         * @function view
+         * @param user {object}  Instance of a User parsed from the table
+         */
         scope.view = function view(user){
             rootScope.chosenUser=user;
             state.go('app.users.one');
@@ -3984,7 +4039,11 @@ app.controller('NotificationsDropDownCtrl', ['$scope', '$http',
     }]);
 
 /**
- * Get Subscribers on RUN
+ * @ngdoc runtime
+ * @name UsersCtrlRuntime
+ * @memberof AdminApp
+ * @param $http {service}
+ * @param $rootScope {service}
  */
 app.run(['$http','$rootScope',function(http,rootScope){
     get_users();
@@ -3996,7 +4055,7 @@ app.run(['$http','$rootScope',function(http,rootScope){
                 });
         }
 
-    };
+    }
 }]);;'use strict';
 
 // jVectorMap controller
@@ -4913,14 +4972,23 @@ app.controller('MapCtrl', ['$scope', function ($scope) {
     'click dblclick');
 
 })();
-;app.config(['$stateProvider', '$urlRouterProvider', 'JQ_CONFIG',
+;/**
+ * @ngdoc config $stateProvider
+ * @memberof ClientApp
+ * @name stateProvider
+ * @param $stateProvider
+ * @param $urlRouterProvider
+ * @param JQ_CONFIG
+ */
+app.config(['$stateProvider', '$urlRouterProvider', 'JQ_CONFIG',
     function($stateProvider, $urlRouterProvider, JQ_CONFIG) {
 
         // For any unmatched url, redirect to /state1
         /**
-         * Default Route
-         * @param  {[type]} "/account/expenditure" [description]
-         * @return {[type]}                        [description]
+         * @memberof stateProvider
+         * @name urlRouterProvider
+         * @param  /login {string} default route
+         * @return {[type]}
          */
         $urlRouterProvider.otherwise("/login");
 
@@ -5460,7 +5528,7 @@ angular.module("../public/app/partials/home/partners.html", []).run(["$templateC
 angular.module("../public/app/partials/home/sub-header.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("../public/app/partials/home/sub-header.html",
     "<div class=\"row\">\n" +
-    "  <nav id=\"sub\" class=\"col-md-4 col-md-offset-4\">\n" +
+    "  <nav id=\"sub\" class=\"col-md-6 col-md-offset-3\">\n" +
     "    <ul class=\"nav navbar-nav row\" style=\"width:100%\">\n" +
     "      <li class=\"col-xs-4\" bs-scrollspy du-scrollspy du-smooth-scroll href=\"#home\" data-target=\"#home\"><a class=\"centered\" translate>header.links.one</a></li>\n" +
     "      <li class=\"col-xs-4\" bs-scrollspy du-scrollspy du-smooth-scroll href=\"#about\" data-target=\"#about\"><a class=\"centered\" translate>header.links.two</a></li>\n" +

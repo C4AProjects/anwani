@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-## Laravel PHP Framework
+## Anwani Web Running on Laravel PHP Framework
 
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
 [![Total Downloads](https://poser.pugx.org/laravel/framework/downloads.svg)](https://packagist.org/packages/laravel/framework)
@@ -22,6 +21,4 @@ Thank you for considering contributing to the Laravel framework! The contributio
 ### License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
-=======
-# anwani web
->>>>>>> c8397636f57865f56fe40deb6803711e622f4d2a
+

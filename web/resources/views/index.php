@@ -1,4 +1,4 @@
-<html ng-app='anwani'>
+<html ng-app='ClientApp'>
 
 <!-- Head -->
 <head>

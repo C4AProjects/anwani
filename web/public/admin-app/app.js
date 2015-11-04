@@ -1,7 +1,26 @@
 'use strict';
 
-// Declare app level module which depends on views, and components
-var app = angular.module('admin', [
+/**
+ * @ngdoc app AdminApp
+ * @name AnwaniAdmin
+ * @param ngAnimate {package}
+ * @param ngTouch {package}
+ * @param ui.router {package}
+ * @param ui.bootstrap {package}
+ * @param ui.load {package}
+ * @param ui.jq {package}
+ * @param oc.lazyload {package}
+ * @param perfect_scrollbar {package}
+ * @param angular-inview {package}
+ * @param angular-loading-bar {package}
+ * @param LocalStorageModule {package}
+ * @param smart-table {package}
+ * @param permission {package}
+ * @param uiGmapgoogle-maps {package}
+ * @param ui.mask {package}
+ * @param angularMoment {package}
+ */
+var app = angular.module('AdminApp', [
     'ngAnimate',
     //    'ngCookies',
     //    'ngResource',
@@ -21,6 +40,7 @@ var app = angular.module('admin', [
     'smart-table',
     'permission',
     'uiGmapgoogle-maps',
+    'ui.mask',
     'angularMoment'
 ]);
 app.config(function($httpProvider){
@@ -50,30 +70,6 @@ app.run(
             var token = localStorageService.get('token');
             rootScope.users=[];
             rootScope.subscribers=[];
-            //rootScope.addresses = [{
-            //    "_id" : "556e1174a8952c9521286a60",
-            //    subscriber: "556e1174a8952c9521286a60",
-            //    short_virtual_code: "MP7H+E2",
-            //    long_virtual_code: "6EAEMMP7H+E2",
-            //    location_pic: "/media/a8952c9521286a60.jpeg",
-            //    latitude: -0.3000,
-            //    longitude: 36.0667,
-            //    street_address: "",
-            //    city: "nakuru",
-            //    country: "kenya"
-            //},
-            //    {
-            //        "_id" : "556e1174a8952c9521286a60",
-            //        subscriber: "556e1174a8952c9521286a60",
-            //        short_virtual_code: "MP7H+E2",
-            //        long_virtual_code: "6EAEMMP7H+E2",
-            //        location_pic: "/media/a8952c9521286a60.jpeg",
-            //        latitude: -0.7202,
-            //        longitude: 36.4285,
-            //        street_address: "",
-            //        city: "naivasha",
-            //        country: "kenya"
-            //    }];
             rootScope.addresses_shared = [];
 
             if (!rootScope.user && !rootScope.token) {
@@ -137,11 +133,5 @@ app.run(
                     }
                 });
             rootScope.state = state;
-            //console.log(rootScope.state.$current);
-            //if(rootScope.state.$current.url.source.search('/new')<0
-            //        &&
-            //        rootScope.subscriber.role!="admin"){
-            //  state.go('login');
-            //}
         }
     ]);

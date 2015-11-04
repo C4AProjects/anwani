@@ -1,8 +1,18 @@
 'use strict';
 
-/* Controllers */
-// signin controller
-app.controller('LoginFormController', ['$scope', '$http', '$state', 'localStorageService', '$rootScope','Permission',
+/**
+ * @ngdoc controller
+ * @name LoginCtrl
+ * @memberof AdminApp
+ * @param $scope {service} controller scope
+ * @param $http {service} Angular HTTP Request Service
+ * @param $state {service} UI Router State Service
+ * @param localStorageService {service} Stores Data in Local Storage / Sessions on the Browser
+ * @param $rootScope {service} Angular Root Scope Service
+ * @param Permission {service} Sets Access Permissions based on the user type
+ *
+ */
+app.controller('LoginCtrl', ['$scope', '$http', '$state', 'localStorageService', '$rootScope','Permission',
     function (scope, http, state, localStorageService, rootScope,Permission) {
         scope.subscriber = {};
         rootScope._subscriber = false;
@@ -26,7 +36,7 @@ app.controller('LoginFormController', ['$scope', '$http', '$state', 'localStorag
                         localStorageService.set('token', response.data.token);
 
                         http.defaults.headers.post = { 'Authorization' : 'Bearer '+localStorageService.get('token') };
-                        http.defaults.headers.get = { 'Authorization' : 'Bearer '+localStorageService.get('token') }
+                        http.defaults.headers.get = { 'Authorization' : 'Bearer '+localStorageService.get('token') };
 
                         if (rootScope.user.role) {
                             if (rootScope.user.role == "subscriber") {
@@ -55,7 +65,7 @@ app.controller('LoginFormController', ['$scope', '$http', '$state', 'localStorag
                         rootScope.users = result.data.docs;
                     });
 
-        };
+        }
         function get_addresses(){
                 http.get('http://anwani-devapi.c4asolution.com/addresses',
                     {
@@ -68,12 +78,12 @@ app.controller('LoginFormController', ['$scope', '$http', '$state', 'localStorag
                         rootScope.addresses = result.data.docs;
                     });
 
-        };
+        }
         function get_subscribers(){
             http.get('http://anwani-devapi.c4asolution.com/subscribers?page=1&per_page=10'
             ).then(function(result){
                     rootScope.subscribers = result.data.docs;
                 });
-        };
+        }
     }])
 ;

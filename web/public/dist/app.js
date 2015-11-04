@@ -1,29 +1,44 @@
-var app = angular.module("anwani", ['ui.router', 'restangular', 'smart-table',
-  'chart.js', 'textAngular', 'angularMoment', 'ui.bootstrap',
-  'highcharts-ng', 'mgcrea.ngStrap.scrollspy',
-  'mgcrea.ngStrap.helpers.dimensions', 'duScroll', 'sn.skrollr',
-  'pascalprecht.translate', 'ngCookies', ['$translateProvider', function(
-    $translateProvider) {
-    $translateProvider.useStaticFilesLoader({
-      prefix: "/translations/",
-      suffix: '.json'
-    });
-    $translateProvider.preferredLanguage('en_US');
-    // $translateProvider.useCookieStorage();
-  }]
-]);
+/**
+ * @ngdoc app ClientApp
+ * @name AnwaniPublic
+ */
+//    TODO(Rufus): Complete all JsDocs for the Angular Code
+var app = angular.module("ClientApp",
+    ['ui.router',
+      'restangular',
+      'smart-table',
+      'chart.js',
+      'textAngular',
+      'angularMoment',
+      'ui.bootstrap',
+      'highcharts-ng',
+      'mgcrea.ngStrap.scrollspy',
+      'mgcrea.ngStrap.helpers.dimensions',
+      'duScroll', 'sn.skrollr',
+      'pascalprecht.translate',
+      'ngCookies',
+      ['$translateProvider', function(
+          $translateProvider) {
+        $translateProvider.useStaticFilesLoader({
+          prefix: "/translations/",
+          suffix: '.json'
+        });
+        $translateProvider.preferredLanguage('en_US');
+        // $translateProvider.useCookieStorage();
+      }]
+    ]);
 
-app.config(function(RestangularProvider) {
-  // RestangularProvider.setBaseUrl('http://new.buymore.co.ke');
-  //  RestangularProvider.setRequestSuffix('.json');
-  //  // register german translation table
 
-});
-
-
+/**
+ * @memberof ClientApp
+ * @name MainRuntime
+ * @param $http
+ * @param $rootScopr
+ * @param snSkrollr
+ */
 app.run(['$http', '$rootScope', 'snSkrollr', function(
-  $http, $rootScope,
-  snSkrollr) {
+    $http, $rootScope,
+    snSkrollr) {
   $rootScope.date = new Date();
   $rootScope.title = 'Anwani';
   $rootScope.messages = [];
@@ -422,7 +437,7 @@ angular.module("../public/app/partials/home/partners.html", []).run(["$templateC
 angular.module("../public/app/partials/home/sub-header.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("../public/app/partials/home/sub-header.html",
     "<div class=\"row\">\n" +
-    "  <nav id=\"sub\" class=\"col-md-4 col-md-offset-4\">\n" +
+    "  <nav id=\"sub\" class=\"col-md-6 col-md-offset-3\">\n" +
     "    <ul class=\"nav navbar-nav row\" style=\"width:100%\">\n" +
     "      <li class=\"col-xs-4\" bs-scrollspy du-scrollspy du-smooth-scroll href=\"#home\" data-target=\"#home\"><a class=\"centered\" translate>header.links.one</a></li>\n" +
     "      <li class=\"col-xs-4\" bs-scrollspy du-scrollspy du-smooth-scroll href=\"#about\" data-target=\"#about\"><a class=\"centered\" translate>header.links.two</a></li>\n" +

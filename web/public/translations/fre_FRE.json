@@ -4,7 +4,7 @@
     "links": {
       "one": "Accueil",
       "two": "A Propos",
-      "three": "Caracteristiques et fonctionnalit&eacute;s",
+      "three": "Caracteristiques",
       "four": "Se Connecter/S'Inscrire"
     },
     "lang": "Langage"
@@ -35,56 +35,56 @@
       "col_2": {
         "title": "Service de Livraison",
         "description": "L'Adresse peut &ecirc;tre fourni par l'utilisateur pour les fournisseurs de services, une compagnie d'&eacute;lectricit&eacute; par exemple pour &ecirc;tre en mesure de les servir plus efficacement, car ils trouveront l'adresse  facilement et  rapidement. " },
-        "col_3": {
-          "title": "L'autonomisation des citoyens",
-          "description": "En tant que citoyens, les utilisateurs peuvent utiliser Anwani pour participer &aacute; diverses activit&eacute;s, comme le vote et d'autres activit&eacute;s nationaux "   }
-      }
+      "col_3": {
+        "title": "L'autonomisation des citoyens",
+        "description": "En tant que citoyens, les utilisateurs peuvent utiliser Anwani pour participer &aacute; diverses activit&eacute;s, comme le vote et d'autres activit&eacute;s nationaux "   }
+    }
+  },
+  "features": {
+    "top": {
+      "title": "Anwani Features in detail",
+      "description": "Anwani is available in 3 versions for individual citizens, businesses and government."
     },
-    "features": {
-      "top": {
-        "title": "Caracteristiques de l'application Anwani en detail",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
-      },
-      "first": {
-        "col_1": {
-          "title": "Cr&eacute;er une addresse",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque quis eos hic. Accusantium, asperiores, hic! Consectetur repellat quos est recusandae modi expedita obcaecati beatae enim. Error esse deleniti possimus obcaecati."
-        },
-        "col_2": {
-          "title": "Voir les addresses existantes",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur voluptas rerum at quaerat placeat! Officia perspiciatis sint voluptates, minima eius sunt. A  dipisci nulla ut magnam illum et soluta optio autem."
-        },
-        "col_3": {
-          "title": "Gerer les Addresses",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, hic dignissimos eveniet amet quisquam ad dolorem   voluptates iste, dicta incidunt error dolore quas magnam rerum odit quis repellat cupiditate recusandae!"
-        }
-      },
-      "second": {
-        "col_1": {
-          "title": "Utilisateur et Addresse Partag&eacute;e",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit deleniti odio ab sint labore asperiores, culpa maiores esse cumque, ducimus rerum et provident quasi. Sint soluta ut reprehenderit, aspernatur libero."
-        },
-        "col_2": {
-          "title": "Ajouter la photo de la localit&eacute;",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, molestias saepe. Eum vero porro quia, facilis magnam eligendi ratione ipsa eveniet, accusantium aliquid laboriosam praesentium! Recusandae nisi necessitatibus alias voluptas."
-        },
-        "col_3": {
-          "title": "Addresse re�u",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum beatae sint, odio dicta neque, natus labore magni, dolore, nulla incidunt ducimus. Perferendis provident minima, nam consectetur quae aspernatur beatae fugiat!"
-        }
-      },
-      "tertiary": "* Lorem ipsum dolor sit amet, consectetur adipisicing elit."
-    },
-    "footer": {
+    "first": {
       "col_1": {
-        "description": "Se Connecter avec Anwani"
+        "title": "Create Address",
+        "description": "Seamlessly create an address for any of your residences or businesses."
       },
       "col_2": {
-        "description": "Recevoir l'application Anwani"
+        "title": "View Existing Address",
+        "description": "Any individual, business or government entity can view their own address or an address that has been shared with them."
       },
       "col_3": {
-        "description": "Tous droits reserv&eacute;s � Anwani App 2015"
+        "title": "Manage Address",
+        "description": "Any individual, business or government entity can manage their multiple addresses anytime on the fly and have it updated in the cloud instantaneously."
       }
     },
-    "partners": "Nos Partenaires"
-  }
+    "second": {
+      "col_1": {
+        "title": "User & Share Address",
+        "description": "Organizing an event? Have an eCommerce site and want to start door-to-door delivery? It's simple, share your address in our app!"
+      },
+      "col_2": {
+        "title": "Add Locational Photo",
+        "description": "Not only can you create an address but you also have the option to add a picture of your residence/business in seconds."
+      },
+      "col_3": {
+        "title": "Address Receipt",
+        "description": "Receive a digital receipt of your address creation and ensure no one else can duplicate or copy yours."
+      }
+    },
+    "tertiary": "* Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+  },
+  "footer": {
+    "col_1": {
+      "description": "Se Connecter avec Anwani"
+    },
+    "col_2": {
+      "description": "Recevoir l'application Anwani"
+    },
+    "col_3": {
+      "description": "Tous droits reserv&eacute;s � Anwani App 2015"
+    }
+  },
+  "partners": "Nos Partenaires"
+}
