@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="78455709-2407-4658-a7ed-72ed64f9459a" name="Default" comment="JS Docs Initiation">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/public/dist/admin-app.js" afterPath="$PROJECT_DIR$/web/public/dist/admin-app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/public/dist/app.js" afterPath="$PROJECT_DIR$/web/public/dist/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/public/app/partials/home/banner.html" afterPath="$PROJECT_DIR$/web/public/app/partials/home/banner.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/public/translations/en_US.json" afterPath="$PROJECT_DIR$/web/public/translations/en_US.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/public/app/partials/home/footer.html" afterPath="$PROJECT_DIR$/web/public/app/partials/home/footer.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/public/translations/fre_FRE.json" afterPath="$PROJECT_DIR$/web/public/translations/fre_FRE.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/tmp/partials.js" afterPath="$PROJECT_DIR$/web/tmp/partials.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="anwani.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,10 +26,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="fre_FRE.json" pinned="false" current-in-tab="true">
+      <file leaf-file-name="fre_FRE.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/public/translations/fre_FRE.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5895197">
+            <state vertical-scroll-proportion="-11.25">
               <caret line="75" column="189" selection-start-line="75" selection-start-column="189" selection-end-line="75" selection-end-column="189" />
               <folding />
             </state>
@@ -75,7 +69,7 @@
       <file leaf-file-name="features.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/public/app/partials/home/features.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.509804">
+            <state vertical-scroll-proportion="-13.235294">
               <caret line="45" column="53" selection-start-line="45" selection-start-column="49" selection-end-line="45" selection-end-column="53" />
               <folding />
             </state>
@@ -85,18 +79,18 @@
       <file leaf-file-name="banner.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/public/app/partials/home/banner.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.25">
-              <caret line="19" column="12" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
+            <state vertical-scroll-proportion="-9.375">
+              <caret line="16" column="10" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="100" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="footer.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="footer.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/public/app/partials/home/footer.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.75">
-              <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
+            <state vertical-scroll-proportion="0.29475984">
+              <caret line="9" column="97" selection-start-line="9" selection-start-column="97" selection-end-line="9" selection-end-column="97" />
               <folding />
             </state>
           </provider>
@@ -162,10 +156,10 @@
         <option value="$PROJECT_DIR$/web/Gruntfile.js" />
         <option value="$PROJECT_DIR$/web/public/app/app.js" />
         <option value="$PROJECT_DIR$/web/public/app/partials/home/sub-header.html" />
-        <option value="$PROJECT_DIR$/web/public/app/partials/home/banner.html" />
-        <option value="$PROJECT_DIR$/web/public/app/partials/home/footer.html" />
         <option value="$PROJECT_DIR$/web/public/translations/en_US.json" />
         <option value="$PROJECT_DIR$/web/public/translations/fre_FRE.json" />
+        <option value="$PROJECT_DIR$/web/public/app/partials/home/banner.html" />
+        <option value="$PROJECT_DIR$/web/public/app/partials/home/footer.html" />
       </list>
     </option>
   </component>
@@ -692,7 +686,7 @@
       <workItem from="1446433037272" duration="16000" />
       <workItem from="1446603508305" duration="9631000" />
       <workItem from="1446655743872" duration="1010000" />
-      <workItem from="1446664761188" duration="578000" />
+      <workItem from="1446664761188" duration="794000" />
     </task>
     <task id="LOCAL-00001" summary="Ignoring Idea Folder">
       <created>1444252266846</created>
@@ -710,7 +704,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50338000" />
+    <option name="totallyTimeSpent" value="50554000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1139,30 +1133,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/public/app/partials/home/banner.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.25">
-          <caret line="19" column="12" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/public/app/partials/home/footer.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.75">
-          <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/public/app/partials/home/features.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.509804">
-          <caret line="45" column="53" selection-start-line="45" selection-start-column="49" selection-end-line="45" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/public/translations/en_US.json">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.375">
@@ -1173,8 +1143,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/public/translations/fre_FRE.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5895197">
+        <state vertical-scroll-proportion="-11.25">
           <caret line="75" column="189" selection-start-line="75" selection-start-column="189" selection-end-line="75" selection-end-column="189" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/public/app/partials/home/features.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.235294">
+          <caret line="45" column="53" selection-start-line="45" selection-start-column="49" selection-end-line="45" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/public/app/partials/home/banner.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.375">
+          <caret line="16" column="10" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="100" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/public/app/partials/home/footer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.29475984">
+          <caret line="9" column="97" selection-start-line="9" selection-start-column="97" selection-end-line="9" selection-end-column="97" />
           <folding />
         </state>
       </provider>

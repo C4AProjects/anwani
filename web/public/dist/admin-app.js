@@ -5364,7 +5364,7 @@ angular.module("../public/app/partials/home/banner.html", []).run(["$templateCac
     "        <h5 class=\"white-text hidden-xs hidden-sm\" style=\"margin-bottom:0.2em\" translate>banner.col_2.title</h5>\n" +
     "        <p class=\"white-text hidden-xs hidden-sm\" translate>banner.col_2.description</p>\n" +
     "        <!--<button class=\"btn btn-default btn-large btn-blue hidden-xs hidden-sm\" translate>banner.col_2.button</button> <span class=\"white-text hidden-xs hidden-sm\" translate>banner.col_2.option</span>-->\n" +
-    "        <a href=\"https://play.google.com/store/apps/details?id=com.coders4africa.app.anwani\">\n" +
+    "        <a> <!--href=\"https://play.google.com/store/apps/details?id=com.coders4africa.app.anwani\"-->\n" +
     "          <img alt=\"Get it on Google Play\"\n" +
     "               src=\"https://developer.android.com/images/brand/en_generic_rgb_wo_45.png\" />\n" +
     "        </a>\n" +
@@ -5447,7 +5447,7 @@ angular.module("../public/app/partials/home/footer.html", []).run(["$templateCac
     "  </div>\n" +
     "  <div class=\"col-md-4 centered right\">\n" +
     "    <span class=\"gray-text\" translate>footer.col_2.description</span>\n" +
-    "    <a href=\"https://play.google.com/store/apps/details?id=com.coders4africa.app.anwani\">\n" +
+    "    <a > <!--href=\"https://play.google.com/store/apps/details?id=com.coders4africa.app.anwani\"-->\n" +
     "      <img alt=\"Get it on Google Play\"\n" +
     "           src=\"https://developer.android.com/images/brand/en_generic_rgb_wo_45.png\" />\n" +
     "    </a>\n" +
