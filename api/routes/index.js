@@ -21,7 +21,13 @@ module.exports = function initRoutes(app) {
   app.use('/_config/setup', setupController);
 
   app.get('/', function (req, res) {
-    res.redirect('/documentation');
+    res.json({
+      name: pkg.name,
+      description: pkg.description,
+      version: pkg.version,
+      docs: 'anwani-devapi.c4asolution.com/documentation',
+      uptime: process.uptime()
+    });
   });
 
   debug('routes loaded');
