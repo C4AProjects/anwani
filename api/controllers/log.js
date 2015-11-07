@@ -183,7 +183,7 @@ exports.fetchAll = function fetchAllLogs(req, res, next) {
   var opts = {
     page: page,
     limit: limit,
-    sort: {}
+    sort: { date_created: -1 }
   };
   var query = {};
 
@@ -233,7 +233,7 @@ exports.search = function search(req, res, next) {
   }
 
   LogModel
-    .find(query, LogModel.whitelist)
+    .find(query, LogModel.whitelist, { sort: { date_created: -1 } })
     .exec(function (err, logs) {
       if(err) {
         return next(CustomError({
