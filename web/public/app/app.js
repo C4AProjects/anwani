@@ -36,9 +36,9 @@ var app = angular.module("ClientApp",
  * @param $rootScopr
  * @param snSkrollr
  */
-app.run(['$http', '$rootScope', 'snSkrollr', function(
+app.run(['$http', '$rootScope', 'snSkrollr','$translate', function(
     $http, $rootScope,
-    snSkrollr) {
+    snSkrollr ,$translate) {
   $rootScope.date = new Date();
   $rootScope.title = 'Anwani';
   $rootScope.messages = [];
@@ -51,5 +51,7 @@ app.run(['$http', '$rootScope', 'snSkrollr', function(
     'label': 'Francais',
     'value': 'fre_FRE'
   }];
+
+    $rootScope.currentLanguage = $translate.proposedLanguage();
 
 }]);

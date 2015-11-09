@@ -42,7 +42,7 @@ angular.module("../public/app/partials/home/about.html", []).run(["$templateCach
     "        <a href='#' class='symbol' title='circlegoogleplus'></a>\n" +
     "      </div>\n" +
     "      <div class=\"col-md-offset-8 centered col-md-4 slighted-above\">\n" +
-    "        <span class='black-text' translate>about.first.featured</span>\n" +
+    "        <span style=\"display:block\" class='black-text' translate>about.first.featured</span>\n" +
     "        <img  class=\"col-xs-4 col-xs-offset-4\" src=\"images/coders.png\" alt=\"\">\n" +
     "        <!--<img src=\"images/techcrunch.png\" alt=\"\">-->\n" +
     "        <!--<img src=\"images/techmoran.png\" alt=\"\">-->\n" +
@@ -53,25 +53,56 @@ angular.module("../public/app/partials/home/about.html", []).run(["$templateCach
     "      </div>\n" +
     "\n" +
     "    </div>\n" +
+    "\n" +
+    "    <div style=\"padding:0 15%\" class=\"row\">\n" +
+    "\n" +
+    "      <div class=\"col-md-12\" ng-if=\"currentLanguage=='en_US'\" style=\"padding:20px 0\">\n" +
+    "        <iframe style=\"margin:0 auto\" width=\"100%\" height=\"50%\" src=\"https://www.youtube.com/embed/kVgkBnyOkfA\" frameborder=\"0\" allowfullscreen></iframe>\n" +
+    "      </div>\n" +
+    "      <div class=\"col-md-12\" ng-if=\"currentLanguage=='fre_FRE'\">\n" +
+    "        <iframe style=\"margin:0 auto\" width=\"100%\" height=\"50%\" src=\"https://www.youtube.com/embed/_a6k0b1E55s\" frameborder=\"0\" allowfullscreen></iframe>\n" +
+    "      </div>\n" +
     "    <div class=\"col-md-4\">\n" +
-    "      <div class=\"circled\"><i class=\"\"></i></div>\n" +
-    "      <img src=\"images/physical.png\" alt=\"\" class=\"img-responsive\" style=\"margin:auto\">\n" +
-    "      <h5 class=\"centered black-text\" translate>about.second.col_1.title</h5>\n" +
-    "      <p class='black-text' translate>about.second.col_1.description\n" +
-    "      </p>\n" +
+    "    <div class=\"circled\"><i class=\"\"></i></div>\n" +
+    "    <img src=\"images/Anwani Citizen.png\" alt=\"\" class=\"img-responsive\" style=\"margin:auto\">\n" +
+    "    <h5 class=\"centered black-text\" translate>about.second.col_1.title</h5>\n" +
+    "    <button class='btn btn-default col-md-6 col-md-offset-3' translate>about.second.col_1.description\n" +
+    "    </button>\n" +
     "    </div>\n" +
     "    <div class=\"col-md-4\">\n" +
-    "      <div class=\"circled\"><i class=\"\"></i></div>\n" +
-    "      <img src=\"images/service_delivery.png\" alt=\"\" class=\"img-responsive\" style=\"margin:auto\">\n" +
-    "      <h5 class=\"centered black-text\" translate>about.second.col_2.title</h5>\n" +
-    "      <p class='black-text' translate>about.second.col_2.description</p>\n" +
+    "    <div class=\"circled\"><i class=\"\"></i></div>\n" +
+    "    <img src=\"images/Anwani Biz.png\" alt=\"\" class=\"img-responsive\" style=\"margin:auto\">\n" +
+    "    <h5 class=\"centered black-text\" translate>about.second.col_2.title</h5>\n" +
+    "      <button class='btn btn-default col-md-6 col-md-offset-3' translate>about.second.col_2.description</button>\n" +
     "    </div>\n" +
     "    <div class=\"col-md-4\">\n" +
-    "      <div class=\"circled\"><i class=\"\"></i></div>\n" +
-    "      <img src=\"images/citizen_empowerment.png\" alt=\"\" class=\"img-responsive\" style=\"margin:auto\">\n" +
-    "      <h5 class=\"centered black-text\" translate>about.second.col_3.title</h5>\n" +
-    "      <p class='black-text' translate>about.second.col_3.description</p>\n" +
+    "    <div class=\"circled\"><i class=\"\"></i></div>\n" +
+    "    <img src=\"images/Anwani Gov.png\" alt=\"\" class=\"img-responsive\" style=\"margin:auto\">\n" +
+    "    <h5 class=\"centered black-text\" translate>about.second.col_3.title</h5>\n" +
+    "    <button class='btn btn-default col-md-6 col-md-offset-3' translate>about.second.col_3.description</button>\n" +
     "    </div>\n" +
+    "    </div>\n" +
+    "    <!--<div class=\"col-md-4\">-->\n" +
+    "      <!--<div class=\"circled\"><i class=\"\"></i></div>-->\n" +
+    "      <!--<img src=\"images/physical.png\" alt=\"\" class=\"img-responsive\" style=\"margin:auto\">-->\n" +
+    "      <!--<h5 class=\"centered black-text\" translate>about.second.col_1.title</h5>-->\n" +
+    "      <!--<p class='black-text' translate>about.second.col_1.description-->\n" +
+    "      <!--</p>-->\n" +
+    "    <!--</div>-->\n" +
+    "    <!--<div class=\"col-md-4\">-->\n" +
+    "      <!--<div class=\"circled\"><i class=\"\"></i></div>-->\n" +
+    "      <!--<img src=\"images/service_delivery.png\" alt=\"\" class=\"img-responsive\" style=\"margin:auto\">-->\n" +
+    "      <!--<h5 class=\"centered black-text\" translate>about.second.col_2.title</h5>-->\n" +
+    "      <!--<p class='black-text' translate>about.second.col_2.description</p>-->\n" +
+    "    <!--</div>-->\n" +
+    "    <!--<div class=\"col-md-4\">-->\n" +
+    "      <!--<div class=\"circled\"><i class=\"\"></i></div>-->\n" +
+    "      <!--<img src=\"images/citizen_empowerment.png\" alt=\"\" class=\"img-responsive\" style=\"margin:auto\">-->\n" +
+    "      <!--<h5 class=\"centered black-text\" translate>about.second.col_3.title</h5>-->\n" +
+    "      <!--<p class='black-text' translate>about.second.col_3.description</p>-->\n" +
+    "    <!--</div>-->\n" +
+    "\n" +
+    "\n" +
     "  </div>\n" +
     "</div>\n" +
     "");

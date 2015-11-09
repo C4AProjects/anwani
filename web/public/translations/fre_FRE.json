@@ -30,14 +30,17 @@
     },
     "second": {
       "col_1": {
-        "title": "Addresse physique pour tous",
-        "description": "Pour la premi&egrave;re fois, tous les citoyens africains, qu'ils soient en ville ou dans une cabane quelque part dans un village auront l'opportunit&eacute; d'avoir une adresse physique " },
+        "title": "Anwani Citizen",
+        "description": "Learn More"
+      },
       "col_2": {
-        "title": "Service de Livraison",
-        "description": "L'Adresse peut &ecirc;tre fourni par l'utilisateur pour les fournisseurs de services, une compagnie d'&eacute;lectricit&eacute; par exemple pour &ecirc;tre en mesure de les servir plus efficacement, car ils trouveront l'adresse  facilement et  rapidement. " },
+        "title": "Anwani Business",
+        "description": "Learn More"
+      },
       "col_3": {
-        "title": "L'autonomisation des citoyens",
-        "description": "En tant que citoyens, les utilisateurs peuvent utiliser Anwani pour participer &aacute; diverses activit&eacute;s, comme le vote et d'autres activit&eacute;s nationaux "   }
+        "title": "Anwani Business",
+        "description": "Learn More"
+      }
     }
   },
   "features": {

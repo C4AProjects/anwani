@@ -6,6 +6,8 @@ app.controller("homeCtrl", ['$scope', '$filter', '$timeout', '$state',
     scope.lang = 'en_US';
     scope.toggleLanguage = function toggleLanguage(item) {
       translate.use(item);
+      rootScope.currentLanguage=item;
+      console.log(rootScope.currentLanguage)
     };
   }
 ]);
