@@ -24,7 +24,7 @@ app.controller('UsersCtrl', ['$scope', 'filterFilter','$http','$rootScope','$sta
         /**
          * View a user
          * @memberof UsersCtrl
-         * @function view
+         * @function viewx
          * @param user {object}  Instance of a User parsed from the table
          */
         scope.view = function view(user){
