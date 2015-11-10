@@ -4029,8 +4029,9 @@ app.controller('UsersCtrl', ['$scope', 'filterFilter','$http','$rootScope','$sta
         /**
          * View a user
          * @memberof UsersCtrl
-         * @function viewx
+         * @function view
          * @param user {object}  Instance of a User parsed from the table
+         * @kind function
          */
         scope.view = function view(user){
             rootScope.chosenUser=user;
@@ -5328,7 +5329,7 @@ angular.module("../public/app/partials/home/about.html", []).run(["$templateCach
     "      <div class=\"col-md-12\" ng-if=\"currentLanguage=='en_US'\" style=\"padding:20px 0\">\n" +
     "        <iframe style=\"margin:0 auto\" width=\"100%\" height=\"50%\" src=\"https://www.youtube.com/embed/kVgkBnyOkfA\" frameborder=\"0\" allowfullscreen></iframe>\n" +
     "      </div>\n" +
-    "      <div class=\"col-md-12\" ng-if=\"currentLanguage=='fre_FRE'\">\n" +
+    "      <div class=\"col-md-12\" ng-if=\"currentLanguage=='fre_FRE'\" style=\"padding:20px 0\">\n" +
     "        <iframe style=\"margin:0 auto\" width=\"100%\" height=\"50%\" src=\"https://www.youtube.com/embed/_a6k0b1E55s\" frameborder=\"0\" allowfullscreen></iframe>\n" +
     "      </div>\n" +
     "    <div class=\"col-md-4\">\n" +
