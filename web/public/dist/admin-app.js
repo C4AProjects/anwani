@@ -5309,7 +5309,6 @@ angular.module("../public/app/partials/home/about.html", []).run(["$templateCach
     "        <span class=\"black-text\" translate>about.first.share</span>\n" +
     "        <a style=href='#' class='symbol' title='circlefacebook'></a>\n" +
     "        <a href='#' class='symbol' title='circletwitterbird'></a>\n" +
-    "        <a href='#' class='symbol' title='circlegoogleplus'></a>\n" +
     "      </div>\n" +
     "      <div class=\"col-md-offset-8 centered col-md-4 slighted-above\">\n" +
     "        <span style=\"display:block\" class='black-text' translate>about.first.featured</span>\n" +
