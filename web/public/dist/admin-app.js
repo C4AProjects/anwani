@@ -5483,7 +5483,6 @@ angular.module("../public/app/partials/home/footer.html", []).run(["$templateCac
     "    <span class=\"block gray-text\" translate>footer.col_1.description</span>\n" +
     "    <a href='#' class='symbol' title='circlefacebook'></a>\n" +
     "    <a href='#' class='symbol' title='circletwitterbird'></a>\n" +
-    "    <a href='#' class='symbol' title='circlegoogleplus'></a>\n" +
     "  </div>\n" +
     "  <div class=\"col-md-4 centered right\">\n" +
     "    <span class=\"gray-text\" translate>footer.col_2.description</span>\n" +
