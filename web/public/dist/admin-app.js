@@ -5318,7 +5318,7 @@ angular.module("../public/app/partials/home/about.html", []).run(["$templateCach
     "        <!--<img src=\"images/techmoran.png\" alt=\"\">-->\n" +
     "      </div>\n" +
     "      <div class=\"col-md-offset-4 col-md-4\">\n" +
-    "        <h3 style=\"color:black !important\" class=\"centered\" translate>about.first.title</h3>\n" +
+    "        <h3 style=\"color:black !important;margin-top:70px\" class=\"centered\" translate>about.first.title</h3>\n" +
     "        <p class=\"centered gray-text\" translate>about.first.description</p>\n" +
     "      </div>\n" +
     "\n" +
@@ -5336,20 +5336,29 @@ angular.module("../public/app/partials/home/about.html", []).run(["$templateCach
     "    <div class=\"circled\"><i class=\"\"></i></div>\n" +
     "    <img src=\"images/Anwani Citizen.png\" alt=\"\" class=\"img-responsive\" style=\"margin:auto\">\n" +
     "    <h5 class=\"centered black-text\" translate>about.second.col_1.title</h5>\n" +
-    "    <button class='btn btn-default col-md-6 col-md-offset-3' translate>about.second.col_1.description\n" +
-    "    </button>\n" +
+    "      <div  class='col-xs-6 col-xs-offset-3 col-md-8 col-md-offset-2' style=\"padding:0;margin-bottom:10px\">\n" +
+    "        <button class='btn btn-default' style=\"width:100%\" translate>about.second.col_1.description\n" +
+    "        </button>\n" +
+    "      </div>\n" +
+    "\n" +
     "    </div>\n" +
     "    <div class=\"col-md-4\">\n" +
     "    <div class=\"circled\"><i class=\"\"></i></div>\n" +
     "    <img src=\"images/Anwani Biz.png\" alt=\"\" class=\"img-responsive\" style=\"margin:auto\">\n" +
     "    <h5 class=\"centered black-text\" translate>about.second.col_2.title</h5>\n" +
-    "      <button class='btn btn-default col-md-6 col-md-offset-3' translate>about.second.col_2.description</button>\n" +
+    "      <div  class='col-xs-6 col-xs-offset-3 col-md-8 col-md-offset-2' style=\"padding:0;margin-bottom:10px\">\n" +
+    "        <button class='btn btn-default' style=\"width:100%\" translate>about.second.col_2.description\n" +
+    "        </button>\n" +
+    "      </div>\n" +
     "    </div>\n" +
     "    <div class=\"col-md-4\">\n" +
     "    <div class=\"circled\"><i class=\"\"></i></div>\n" +
     "    <img src=\"images/Anwani Gov.png\" alt=\"\" class=\"img-responsive\" style=\"margin:auto\">\n" +
     "    <h5 class=\"centered black-text\" translate>about.second.col_3.title</h5>\n" +
-    "    <button class='btn btn-default col-md-6 col-md-offset-3' translate>about.second.col_3.description</button>\n" +
+    "      <div  class='col-xs-6 col-xs-offset-3 col-md-8 col-md-offset-2' style=\"padding:0;margin-bottom:10px\">\n" +
+    "        <button class='btn btn-default' style=\"width:100%\" translate>about.second.col_3.description\n" +
+    "        </button>\n" +
+    "      </div>\n" +
     "    </div>\n" +
     "    </div>\n" +
     "    <!--<div class=\"col-md-4\">-->\n" +
@@ -5419,7 +5428,7 @@ angular.module("../public/app/partials/home/features.html", []).run(["$templateC
     "<div class=\"row gray padded translate features\">\n" +
     "  <div class=\"col-md-12\">\n" +
     "    <h3 class=\"centered\" translate>features.top.title</h3>\n" +
-    "    <h4 class=\"gray\" translate>features.top.description</h4>\n" +
+    "    <h4 style=\"margin-bottom:50px\" class=\"gray\" translate>features.top.description</h4>\n" +
     "  </div>\n" +
     "  <div class=\"col-md-4 \" style=\"padding-top:30px\">\n" +
     "    <div class=\"col-md-12\">\n" +
