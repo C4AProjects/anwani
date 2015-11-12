@@ -11,7 +11,7 @@
 	<link rel="stylesheet" href="libs/styles/angular-aside.css">
 	<link rel="stylesheet" href="libs/styles/angular-chart.css">
 	<link rel="stylesheet" href="libs/styles/leaflet.awesome-markers.css">
-	<!-- <link href='https://api.tiles.mapbox.com/mapbox.js/v2.2.1/mapbox.css' rel='stylesheet' /> -->
+	<!-- <link href='https:/api.tiles.mapbox.com/mapbox.js/v2.2.1/mapbox.css' rel='stylesheet' /> -->
 	<link rel="stylesheet" href="libs/styles/leaflet.css">
 	<script src="libs/js/jquery.js"></script>
 	<script src="libs/js/angular.js"></script>
@@ -27,6 +27,24 @@
 	<link rel="stylesheet" href="libs/styles/leaflet.label.css" />
 	<link rel="stylesheet" href="libs/styles/MarkerCluster.css" />
 	<link rel="stylesheet" href="libs/styles/MarkerCluster.Default.css" />
+
+	<link rel="apple-touch-icon" sizes="57x57" href="images/icons/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="images/icons/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="images/icons/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="images/icons/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="images/icons/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="images/icons/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="images/icons/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="images/icons/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="images/icons/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="images/icons/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="images/icons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="images/icons/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="images/icons/favicon-16x16.png">
+	<link rel="manifest" href="/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
 	<title ng-bind="title"></title>
 </head>
 <body style="height:auto !important">
@@ -77,7 +95,7 @@
 	<script src='libs/js/html5shiv.js'></script>
 	<![endif]-->
 	<script src="dist/app.js"></script>
-	<script src="//localhost:35729/livereload.js"></script>
+	<script src="/localhost:35729/livereload.js"></script>
 
 
 
