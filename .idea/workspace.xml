@@ -3,13 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="78455709-2407-4658-a7ed-72ed64f9459a" name="Default" comment="JS Docs Initiation">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/public/app/partials/home/about.html" afterPath="$PROJECT_DIR$/web/public/app/partials/home/about.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/public/app/partials/home/features.html" afterPath="$PROJECT_DIR$/web/public/app/partials/home/features.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/public/dist/admin-app.js" afterPath="$PROJECT_DIR$/web/public/dist/admin-app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/public/dist/app.js" afterPath="$PROJECT_DIR$/web/public/dist/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/public/translations/en_US.json" afterPath="$PROJECT_DIR$/web/public/translations/en_US.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/public/translations/fre_FRE.json" afterPath="$PROJECT_DIR$/web/public/translations/fre_FRE.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/tmp/partials.js" afterPath="$PROJECT_DIR$/web/tmp/partials.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/public/app/partials/home/header.html" afterPath="$PROJECT_DIR$/web/public/app/partials/home/header.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/resources/views/index.php" afterPath="$PROJECT_DIR$/web/resources/views/index.php" />
     </list>
     <ignored path="anwani.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,7 +30,7 @@
       <file leaf-file-name="fre_FRE.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/public/translations/fre_FRE.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.625">
+            <state vertical-scroll-proportion="0.0">
               <caret line="28" column="22" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="22" />
               <folding />
             </state>
@@ -72,11 +67,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="about.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="about.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/public/app/partials/home/about.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5889146">
-              <caret line="17" column="54" selection-start-line="17" selection-start-column="54" selection-end-line="17" selection-end-column="54" />
+            <state vertical-scroll-proportion="-5.0">
+              <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
               <folding>
                 <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#h3#0;n#div#2;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -102,9 +97,21 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/resources/views/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="77" column="16" selection-start-line="77" selection-start-column="16" selection-end-line="77" selection-end-column="16" />
+            <state vertical-scroll-proportion="-1.5">
+              <caret line="33" column="45" selection-start-line="33" selection-start-column="45" selection-end-line="33" selection-end-column="45" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="header.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/public/app/partials/home/header.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.7543478">
+              <caret line="25" column="7" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
+              <folding>
+                <marker date="1447346943000" expanded="false" signature="1580:1626" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -119,20 +126,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="manifest.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/manifest.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="en_US.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/public/translations/en_US.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.375">
+            <state vertical-scroll-proportion="0.0">
               <caret line="24" column="14" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
               <folding />
             </state>
@@ -142,7 +139,7 @@
       <file leaf-file-name="features.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/public/app/partials/home/features.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="5.0">
+            <state vertical-scroll-proportion="0.0">
               <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
               <folding>
                 <element signature="n#style#0;n#p#0;n#div#3;n#div#0;n#!!top" expanded="true" />
@@ -187,7 +184,6 @@
         <option value="$PROJECT_DIR$/web/public/admin-app/partials/address-view-one.html" />
         <option value="$PROJECT_DIR$/web/public/admin-app/controllers/chat.js" />
         <option value="$PROJECT_DIR$/web/Envoy.blade.php" />
-        <option value="$PROJECT_DIR$/web/public/app/partials/home/header.html" />
         <option value="$PROJECT_DIR$/web/public/admin-app/partials/addresses/card.html" />
         <option value="$PROJECT_DIR$/web/public/admin-app/partials/ui-map.html" />
         <option value="$PROJECT_DIR$/web/public/app/partials/home/partners.html" />
@@ -210,11 +206,12 @@
         <option value="$PROJECT_DIR$/web/public/app/app.js" />
         <option value="$PROJECT_DIR$/web/public/app/controllers/home.js" />
         <option value="$PROJECT_DIR$/web/public/admin-app/controllers/users.js" />
-        <option value="$PROJECT_DIR$/web/resources/views/index.php" />
         <option value="$PROJECT_DIR$/web/public/app/partials/home/features.html" />
         <option value="$PROJECT_DIR$/web/public/translations/en_US.json" />
         <option value="$PROJECT_DIR$/web/public/translations/fre_FRE.json" />
         <option value="$PROJECT_DIR$/web/public/app/partials/home/about.html" />
+        <option value="$PROJECT_DIR$/web/resources/views/index.php" />
+        <option value="$PROJECT_DIR$/web/public/app/partials/home/header.html" />
       </list>
     </option>
   </component>
@@ -263,7 +260,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -491,14 +488,14 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FullScreen" value="true" />
-    <property name="SearchEverywhereHistoryKey" value="fre&#9;FILE&#9;file:///private/var/www/anwani/web/public/translations/fre_FRE.json&#10;features&#9;FILE&#9;file:///private/var/www/anwani/web/public/app/partials/home/features.html&#10;fre_fre&#9;FILE&#9;file:///private/var/www/anwani/web/public/translations/fre_FRE.json&#10;index.php&#9;FILE&#9;file:///private/var/www/anwani/web/resources/views/index.php&#10;user&#9;FILE&#9;file:///private/var/www/anwani/web/public/admin-app/controllers/users.js&#10;ui-login&#9;FILE&#9;file:///private/var/www/anwani/web/public/admin-app/partials/ui-login.html&#10;Gr&#9;FILE&#9;file:///private/var/www/anwani/web/Gruntfile.js&#10;admin&#9;FILE&#9;file:///private/var/www/anwani/web/resources/views/admin.php&#10;index&#9;FILE&#9;file:///private/var/www/anwani/web/resources/views/index.php&#10;app.js&#9;FILE&#9;file:///private/var/www/anwani/web/public/app/app.js&#10;routes&#9;FILE&#9;file:///private/var/www/anwani/web/public/admin-app/routes.js&#10;read&#9;FILE&#9;file:///private/var/www/anwani/web/node_modules/bower/node_modules/fstream-ignore/test/read-file-order.js&#10;login&#9;FILE&#9;file:///private/var/www/anwani/web/public/admin-app/partials/ui-login.html&#10;ndex.php&#9;FILE&#9;file:///private/var/www/anwani/web/resources/views/index.php&#10;sty&#9;FILE&#9;file:///private/var/www/anwani/web/resources/assets/sass/styles.scss&#10;map&#9;FILE&#9;file:///private/var/www/anwani/web/public/admin-app/controllers/map.js&#10;sub&#9;FILE&#9;file:///private/var/www/anwani/web/public/admin-app/controllers/subscriber.js&#10;users&#9;FILE&#9;file:///private/var/www/anwani/web/public/admin-app/controllers/users.js&#10;log&#9;FILE&#9;file:///private/var/www/anwani/web/public/admin-app/controllers/login.js&#10;card&#9;FILE&#9;file:///private/var/www/anwani/web/public/admin-app/partials/addresses/card.html&#10;address&#9;FILE&#9;file:///private/var/www/anwani/web/public/admin-app/controllers/addresses.js&#10;address-&#9;FILE&#9;file:///private/var/www/anwani/web/public/admin-app/partials/address-view-one.html&#10;add&#9;FILE&#9;file:///private/var/www/anwani/web/public/admin-app/partials/address-view.html&#10;subsc&#9;FILE&#9;file:///private/var/www/anwani/web/public/admin-app/controllers/subscriber.js&#10;app.css&#9;FILE&#9;file:///private/var/www/anwani/web/public/css/app.css&#10;dash&#9;FILE&#9;file:///private/var/www/anwani/web/public/admin-app/partials/app_dashboard.html&#10;admin.p&#9;FILE&#9;file:///private/var/www/anwani/web/resources/views/admin.php&#10;nav&#9;FILE&#9;file:///private/var/www/anwani/web/public/admin-app/partials/components/nav.html&#10;left&#9;FILE&#9;file:///private/var/www/anwani/web/public/admin-app/partials/components/leftbar.html&#10;app&#9;FILE&#9;file:///private/var/www/anwani/web/public/admin-app/app.js&#10;header&#9;FILE&#9;file:///private/var/www/anwani/web/public/app/partials/home/header.html&#10;styles.scss&#9;FILE&#9;file:///private/var/www/anwani/web/resources/assets/sass/styles.scss&#10;subscriber&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/controllers/subscriber.js&#10;map.js&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/controllers/map.js&#10;address.js&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/controllers/addresses.js&#10;address-vi&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/address-view.html&#10;dashboard&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/app_dashboard.html&#10;user.js&#9;FILE&#9;file:///var/www/anwani/api/controllers/user.js&#10;routes.js&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/routes.js&#10;register&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/ui-register.html&#10;ad&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/address-add.html&#10;ui-pro&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/ui-profile.html&#10;regi&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/controllers/register.js&#10;ui-lo&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/ui-login.html&#10;re&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/controllers/register.js&#10;ui-re&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/ui-register.html&#10;profile.ht&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/ui-profile.html&#10;leftbar&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/components/leftbar.html&#10;nav.ht&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/components/nav.html&#10;logi&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/controllers/login.js" />
+    <property name="SearchEverywhereHistoryKey" value="header&#9;FILE&#9;file:///private/var/www/anwani/web/public/app/partials/home/header.html&#10;index.php&#9;FILE&#9;file:///private/var/www/anwani/web/resources/views/index.php&#10;fre&#9;FILE&#9;file:///private/var/www/anwani/web/public/translations/fre_FRE.json&#10;features&#9;FILE&#9;file:///private/var/www/anwani/web/public/app/partials/home/features.html&#10;fre_fre&#9;FILE&#9;file:///private/var/www/anwani/web/public/translations/fre_FRE.json&#10;user&#9;FILE&#9;file:///private/var/www/anwani/web/public/admin-app/controllers/users.js&#10;ui-login&#9;FILE&#9;file:///private/var/www/anwani/web/public/admin-app/partials/ui-login.html&#10;Gr&#9;FILE&#9;file:///private/var/www/anwani/web/Gruntfile.js&#10;admin&#9;FILE&#9;file:///private/var/www/anwani/web/resources/views/admin.php&#10;index&#9;FILE&#9;file:///private/var/www/anwani/web/resources/views/index.php&#10;app.js&#9;FILE&#9;file:///private/var/www/anwani/web/public/app/app.js&#10;routes&#9;FILE&#9;file:///private/var/www/anwani/web/public/admin-app/routes.js&#10;read&#9;FILE&#9;file:///private/var/www/anwani/web/node_modules/bower/node_modules/fstream-ignore/test/read-file-order.js&#10;login&#9;FILE&#9;file:///private/var/www/anwani/web/public/admin-app/partials/ui-login.html&#10;ndex.php&#9;FILE&#9;file:///private/var/www/anwani/web/resources/views/index.php&#10;sty&#9;FILE&#9;file:///private/var/www/anwani/web/resources/assets/sass/styles.scss&#10;map&#9;FILE&#9;file:///private/var/www/anwani/web/public/admin-app/controllers/map.js&#10;sub&#9;FILE&#9;file:///private/var/www/anwani/web/public/admin-app/controllers/subscriber.js&#10;users&#9;FILE&#9;file:///private/var/www/anwani/web/public/admin-app/controllers/users.js&#10;log&#9;FILE&#9;file:///private/var/www/anwani/web/public/admin-app/controllers/login.js&#10;card&#9;FILE&#9;file:///private/var/www/anwani/web/public/admin-app/partials/addresses/card.html&#10;address&#9;FILE&#9;file:///private/var/www/anwani/web/public/admin-app/controllers/addresses.js&#10;address-&#9;FILE&#9;file:///private/var/www/anwani/web/public/admin-app/partials/address-view-one.html&#10;add&#9;FILE&#9;file:///private/var/www/anwani/web/public/admin-app/partials/address-view.html&#10;subsc&#9;FILE&#9;file:///private/var/www/anwani/web/public/admin-app/controllers/subscriber.js&#10;app.css&#9;FILE&#9;file:///private/var/www/anwani/web/public/css/app.css&#10;dash&#9;FILE&#9;file:///private/var/www/anwani/web/public/admin-app/partials/app_dashboard.html&#10;admin.p&#9;FILE&#9;file:///private/var/www/anwani/web/resources/views/admin.php&#10;nav&#9;FILE&#9;file:///private/var/www/anwani/web/public/admin-app/partials/components/nav.html&#10;left&#9;FILE&#9;file:///private/var/www/anwani/web/public/admin-app/partials/components/leftbar.html&#10;app&#9;FILE&#9;file:///private/var/www/anwani/web/public/admin-app/app.js&#10;styles.scss&#9;FILE&#9;file:///private/var/www/anwani/web/resources/assets/sass/styles.scss&#10;subscriber&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/controllers/subscriber.js&#10;map.js&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/controllers/map.js&#10;address.js&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/controllers/addresses.js&#10;address-vi&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/address-view.html&#10;dashboard&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/app_dashboard.html&#10;user.js&#9;FILE&#9;file:///var/www/anwani/api/controllers/user.js&#10;routes.js&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/routes.js&#10;register&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/ui-register.html&#10;ad&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/address-add.html&#10;ui-pro&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/ui-profile.html&#10;regi&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/controllers/register.js&#10;ui-lo&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/ui-login.html&#10;re&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/controllers/register.js&#10;ui-re&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/ui-register.html&#10;profile.ht&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/ui-profile.html&#10;leftbar&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/components/leftbar.html&#10;nav.ht&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/partials/components/nav.html&#10;logi&#9;FILE&#9;file:///var/www/anwani/web/public/admin-app/controllers/login.js" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="recentsLimit" value="5" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
@@ -964,7 +961,8 @@
       <workItem from="1447097970878" duration="2318000" />
       <workItem from="1447130336372" duration="957000" />
       <workItem from="1447218837823" duration="297000" />
-      <workItem from="1447300638688" duration="854000" />
+      <workItem from="1447300638688" duration="1011000" />
+      <workItem from="1447346761364" duration="236000" />
     </task>
     <task id="LOCAL-00001" summary="Ignoring Idea Folder">
       <created>1444252266846</created>
@@ -982,7 +980,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59612000" />
+    <option name="totallyTimeSpent" value="60005000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1005,7 +1003,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="GitLabIntegration" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.76898223" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329235" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29863015" sideWeight="0.48465267" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29863015" sideWeight="0.48465267" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2197092" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1169,13 +1167,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.26213592">
           <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/public/app/partials/home/header.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.097087376">
-          <caret line="5" column="38" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
         </state>
       </provider>
     </entry>
@@ -1408,17 +1399,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/resources/views/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="77" column="16" selection-start-line="77" selection-start-column="16" selection-end-line="77" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/public/app/partials/home/features.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="5.0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
           <folding>
             <element signature="n#style#0;n#p#0;n#div#3;n#div#0;n#!!top" expanded="true" />
@@ -1428,7 +1411,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/public/translations/fre_FRE.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.625">
+        <state vertical-scroll-proportion="0.0">
           <caret line="28" column="22" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="22" />
           <folding />
         </state>
@@ -1436,7 +1419,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/public/translations/en_US.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.375">
+        <state vertical-scroll-proportion="0.0">
           <caret line="24" column="14" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
           <folding />
         </state>
@@ -1444,8 +1427,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/public/app/partials/home/about.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5889146">
-          <caret line="17" column="54" selection-start-line="17" selection-start-column="54" selection-end-line="17" selection-end-column="54" />
+        <state vertical-scroll-proportion="-5.0">
+          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
           <folding>
             <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#h3#0;n#div#2;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -1463,6 +1446,24 @@
             <element signature="n#style#0;n#img#0;n#div#4;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#4;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#button#0;n#div#1;n#div#4;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/resources/views/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.5">
+          <caret line="33" column="45" selection-start-line="33" selection-start-column="45" selection-end-line="33" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/public/app/partials/home/header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7543478">
+          <caret line="25" column="7" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
+          <folding>
+            <marker date="1447346943000" expanded="false" signature="1580:1626" placeholder="..." />
           </folding>
         </state>
       </provider>
