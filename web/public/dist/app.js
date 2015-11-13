@@ -4,31 +4,44 @@
  */
 //    TODO(Rufus): Complete all JsDocs for the Angular Code
 var app = angular.module("ClientApp",
-    ['ui.router',
-      'restangular',
-      'smart-table',
-      'chart.js',
-      'textAngular',
-      'angularMoment',
-      'ui.bootstrap',
-      'highcharts-ng',
-      'mgcrea.ngStrap.scrollspy',
-      'mgcrea.ngStrap.helpers.dimensions',
-      'duScroll', 'sn.skrollr',
-      'pascalprecht.translate',
-      'ngCookies',
-      ['$translateProvider', function(
-          $translateProvider) {
-        $translateProvider.useStaticFilesLoader({
-          prefix: "/translations/",
-          suffix: '.json'
-        });
-        $translateProvider.preferredLanguage('en_US');
-        // $translateProvider.useCookieStorage();
-      }]
+    [
+        'ui.router',
+        'restangular',
+        'smart-table',
+        'chart.js',
+        'textAngular',
+        'angularMoment',
+        'ui.bootstrap',
+        'highcharts-ng',
+        'mgcrea.ngStrap.scrollspy',
+        'mgcrea.ngStrap.helpers.dimensions',
+        'duScroll', 'sn.skrollr',
+        'pascalprecht.translate',
+        'ngCookies',
+        'angular-google-analytics',
+            ['$translateProvider', function(
+            $translateProvider) {
+            $translateProvider.useStaticFilesLoader({
+                prefix: "/translations/",
+                suffix: '.json'
+            });
+            $translateProvider.preferredLanguage('en_US');
+            // $translateProvider.useCookieStorage();
+        }]
     ]);
 
-
+/**
+ * @name GoogleAnalyticsConfig
+ * @memberof ClientApp
+ * @param AnalyticsProvider
+ */
+app.config(function (AnalyticsProvider) {
+    // Add configuration code as desired - see below
+    AnalyticsProvider
+        .setAccount('UA-69669161-2')
+        .setPageEvent('$stateChangeSuccess')
+        .setDomainName('none');
+});
 /**
  * @memberof ClientApp
  * @name MainRuntime
@@ -39,18 +52,18 @@ var app = angular.module("ClientApp",
 app.run(['$http', '$rootScope', 'snSkrollr','$translate', function(
     $http, $rootScope,
     snSkrollr ,$translate) {
-  $rootScope.date = new Date();
-  $rootScope.title = 'Anwani';
-  $rootScope.messages = [];
-  $rootScope.menu = [];
-  snSkrollr.init();
-  $rootScope.languages = [{
-    'label': 'English',
-    'value': 'en_US'
-  }, {
-    'label': 'Francais',
-    'value': 'fre_FRE'
-  }];
+    $rootScope.date = new Date();
+    $rootScope.title = 'Anwani';
+    $rootScope.messages = [];
+    $rootScope.menu = [];
+    snSkrollr.init();
+    $rootScope.languages = [{
+        'label': 'English',
+        'value': 'en_US'
+    }, {
+        'label': 'Francais',
+        'value': 'fre_FRE'
+    }];
 
     $rootScope.currentLanguage = $translate.proposedLanguage();
 
@@ -221,7 +234,6 @@ angular.module("../public/app/partials/home/about.html", []).run(["$templateCach
     "        <span class=\"black-text\" translate>about.first.share</span>\n" +
     "        <a style=href='#' class='symbol' title='circlefacebook'></a>\n" +
     "        <a href='#' class='symbol' title='circletwitterbird'></a>\n" +
-    "        <a href='#' class='symbol' title='circlegoogleplus'></a>\n" +
     "      </div>\n" +
     "      <div class=\"col-md-offset-8 centered col-md-4 slighted-above\">\n" +
     "        <span style=\"display:block\" class='black-text' translate>about.first.featured</span>\n" +
@@ -249,7 +261,7 @@ angular.module("../public/app/partials/home/about.html", []).run(["$templateCach
     "    <img src=\"images/Anwani Citizen.png\" alt=\"\" class=\"img-responsive\" style=\"margin:auto\">\n" +
     "    <h5 class=\"centered black-text\" translate>about.second.col_1.title</h5>\n" +
     "      <div  class='col-xs-6 col-xs-offset-3 col-md-8 col-md-offset-2' style=\"padding:0;margin-bottom:10px\">\n" +
-    "        <a href=\"mailto:contact@coders4africa.com\" class='btn btn-default' style=\"width:100%\" translate>about.second.col_1.description\n" +
+    "        <a href=\"mailto:contact@coders4africa.com?subject=Anwani Citizen\" class='btn btn-default' style=\"width:100%\" translate>about.second.col_1.description\n" +
     "        </a>\n" +
     "      </div>\n" +
     "\n" +
@@ -259,7 +271,7 @@ angular.module("../public/app/partials/home/about.html", []).run(["$templateCach
     "    <img src=\"images/Anwani Biz.png\" alt=\"\" class=\"img-responsive\" style=\"margin:auto\">\n" +
     "    <h5 class=\"centered black-text\" translate>about.second.col_2.title</h5>\n" +
     "      <div  class='col-xs-6 col-xs-offset-3 col-md-8 col-md-offset-2' style=\"padding:0;margin-bottom:10px\">\n" +
-    "        <a href=\"mailto:contact@coders4africa.com\" class='btn btn-default' style=\"width:100%\" translate>about.second.col_2.description\n" +
+    "        <a href=\"mailto:contact@coders4africa.com?subject=Anwani Business\" class='btn btn-default' style=\"width:100%\" translate>about.second.col_2.description\n" +
     "        </a>\n" +
     "      </div>\n" +
     "    </div>\n" +
@@ -268,7 +280,7 @@ angular.module("../public/app/partials/home/about.html", []).run(["$templateCach
     "    <img src=\"images/Anwani Gov.png\" alt=\"\" class=\"img-responsive\" style=\"margin:auto\">\n" +
     "    <h5 class=\"centered black-text\" translate>about.second.col_3.title</h5>\n" +
     "      <div  class='col-xs-6 col-xs-offset-3 col-md-8 col-md-offset-2' style=\"padding:0;margin-bottom:10px\">\n" +
-    "        <a href=\"mailto:contact@coders4africa.com\" class='btn btn-default' style=\"width:100%\" translate>about.second.col_3.description\n" +
+    "        <a href=\"mailto:contact@coders4africa.com?subject=Anwani Government\" class='btn btn-default' style=\"width:100%\" translate>about.second.col_3.description\n" +
     "        </a>\n" +
     "      </div>\n" +
     "    </div>\n" +
@@ -396,7 +408,6 @@ angular.module("../public/app/partials/home/footer.html", []).run(["$templateCac
     "    <span class=\"block gray-text\" translate>footer.col_1.description</span>\n" +
     "    <a href='#' class='symbol' title='circlefacebook'></a>\n" +
     "    <a href='#' class='symbol' title='circletwitterbird'></a>\n" +
-    "    <a href='#' class='symbol' title='circlegoogleplus'></a>\n" +
     "  </div>\n" +
     "  <div class=\"col-md-4 centered right\">\n" +
     "    <span class=\"gray-text\" translate>footer.col_2.description</span>\n" +
