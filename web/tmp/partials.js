@@ -66,7 +66,7 @@ angular.module("../public/app/partials/home/about.html", []).run(["$templateCach
     "    <img src=\"images/Anwani Citizen.png\" alt=\"\" class=\"img-responsive\" style=\"margin:auto\">\n" +
     "    <h5 class=\"centered black-text\" translate>about.second.col_1.title</h5>\n" +
     "      <div  class='col-xs-6 col-xs-offset-3 col-md-8 col-md-offset-2' style=\"padding:0;margin-bottom:10px\">\n" +
-    "        <a href=\"mailto:contact@coders4africa.com\" class='btn btn-default' style=\"width:100%\" translate>about.second.col_1.description\n" +
+    "        <a href=\"mailto:contact@coders4africa.com?subject=Anwani Citizen\" class='btn btn-default' style=\"width:100%\" translate>about.second.col_1.description\n" +
     "        </a>\n" +
     "      </div>\n" +
     "\n" +
@@ -76,7 +76,7 @@ angular.module("../public/app/partials/home/about.html", []).run(["$templateCach
     "    <img src=\"images/Anwani Biz.png\" alt=\"\" class=\"img-responsive\" style=\"margin:auto\">\n" +
     "    <h5 class=\"centered black-text\" translate>about.second.col_2.title</h5>\n" +
     "      <div  class='col-xs-6 col-xs-offset-3 col-md-8 col-md-offset-2' style=\"padding:0;margin-bottom:10px\">\n" +
-    "        <a href=\"mailto:contact@coders4africa.com\" class='btn btn-default' style=\"width:100%\" translate>about.second.col_2.description\n" +
+    "        <a href=\"mailto:contact@coders4africa.com?subject=Anwani Business\" class='btn btn-default' style=\"width:100%\" translate>about.second.col_2.description\n" +
     "        </a>\n" +
     "      </div>\n" +
     "    </div>\n" +
@@ -85,7 +85,7 @@ angular.module("../public/app/partials/home/about.html", []).run(["$templateCach
     "    <img src=\"images/Anwani Gov.png\" alt=\"\" class=\"img-responsive\" style=\"margin:auto\">\n" +
     "    <h5 class=\"centered black-text\" translate>about.second.col_3.title</h5>\n" +
     "      <div  class='col-xs-6 col-xs-offset-3 col-md-8 col-md-offset-2' style=\"padding:0;margin-bottom:10px\">\n" +
-    "        <a href=\"mailto:contact@coders4africa.com\" class='btn btn-default' style=\"width:100%\" translate>about.second.col_3.description\n" +
+    "        <a href=\"mailto:contact@coders4africa.com?subject=Anwani Government\" class='btn btn-default' style=\"width:100%\" translate>about.second.col_3.description\n" +
     "        </a>\n" +
     "      </div>\n" +
     "    </div>\n" +
