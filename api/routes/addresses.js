@@ -293,10 +293,10 @@ router.get('/', accessControl(['subscriber', 'admin']), addressController.fetchA
  *  }
  *
  */
-router.delete('/:id', accessControl(['*']), addressController.delete);
+router.delete('/:id', accessControl(['admin']), addressController.delete);
 
 /**
- * @api {put} /addresses/:id/archive Archive an address
+ * @api {post} /addresses/:id/archive Archive an address
  * @apiVersion 1.0.0
  * @apiName Archive
  * @apiGroup address
@@ -331,7 +331,7 @@ router.delete('/:id', accessControl(['*']), addressController.delete);
  *    shared: false
  *  }
  */
-router.put('/:id/archive', accessControl(['*']), addressController.archive);
+router.post('/:id/archive', accessControl(['*']), addressController.archive);
 
 // Expose address Router
 module.exports = router;
