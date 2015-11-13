@@ -200,21 +200,34 @@ exports.getCollection = function getCollection(query, qs, cb) {
 
 };
 
-
-exports.getUsersCollection = function getUsersCollection(id, cb) {
+exports.getUsersCollection = function getUsersCollection(id, service, cb) {
   var query = {
     user:     id,
     archived: false
   };
 
-  Address
-    .find(query, returnFields)
-    .populate(population)
-    .exec(function (err, addresses) {
-      if(err) {
-        return cb(err);
-      }
+  if(service === 'mobile') {
+    Address
+      .find(query, returnFields)
+      .exec(function (err, addresses) {
+        if(err) {
+          return cb(err);
+        }
 
-      cb(null, addresses);
-    });
+        cb(null, addresses);
+      });
+      return;
+  } else {
+    Address
+      .find(query, returnFields)
+      .populate(population)
+      .exec(function (err, addresses) {
+        if(err) {
+          return cb(err);
+        }
+
+        cb(null, addresses);
+      });
+      return;
+  }
 };
