@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="78455709-2407-4658-a7ed-72ed64f9459a" name="Default" comment="JS Docs Initiation">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/public/app/partials/home/about.html" afterPath="$PROJECT_DIR$/web/public/app/partials/home/about.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/public/app/partials/home/footer.html" afterPath="$PROJECT_DIR$/web/public/app/partials/home/footer.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/public/admin-app/partials/address-view-one.html" afterPath="$PROJECT_DIR$/web/public/admin-app/partials/address-view-one.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/public/dist/admin-app.js" afterPath="$PROJECT_DIR$/web/public/dist/admin-app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/public/dist/app.js" afterPath="$PROJECT_DIR$/web/public/dist/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/tmp/partials.js" afterPath="$PROJECT_DIR$/web/tmp/partials.js" />
@@ -30,61 +29,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/public/app/app.js">
+      <file leaf-file-name="address-view-one.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/public/admin-app/partials/address-view-one.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="about.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/public/app/partials/home/about.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.375">
-              <caret line="7" column="93" selection-start-line="6" selection-start-column="8" selection-end-line="7" selection-end-column="93" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sub-header.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/public/app/partials/home/sub-header.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.125">
-              <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="partners.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/public/app/partials/home/partners.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.25">
-              <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="footer.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/public/app/partials/home/footer.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.12987013">
-              <caret line="4" column="89" selection-start-line="4" selection-start-column="89" selection-end-line="4" selection-end-column="89" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="banner.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/public/app/partials/home/banner.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.0">
-              <caret line="16" column="93" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="93" />
+            <state vertical-scroll-proportion="0.5194805">
+              <caret line="31" column="40" selection-start-line="31" selection-start-column="40" selection-end-line="31" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -123,7 +72,6 @@
         <option value="$PROJECT_DIR$/web/bower.json" />
         <option value="$PROJECT_DIR$/web/composer.json" />
         <option value="$PROJECT_DIR$/web/public/admin-app/partials/address-view.html" />
-        <option value="$PROJECT_DIR$/web/public/admin-app/partials/address-view-one.html" />
         <option value="$PROJECT_DIR$/web/public/admin-app/controllers/chat.js" />
         <option value="$PROJECT_DIR$/web/public/admin-app/partials/addresses/card.html" />
         <option value="$PROJECT_DIR$/web/public/admin-app/partials/ui-map.html" />
@@ -154,6 +102,7 @@
         <option value="$PROJECT_DIR$/web/Envoy.blade.php" />
         <option value="$PROJECT_DIR$/web/public/app/partials/home/about.html" />
         <option value="$PROJECT_DIR$/web/public/app/partials/home/footer.html" />
+        <option value="$PROJECT_DIR$/web/public/admin-app/partials/address-view-one.html" />
       </list>
     </option>
   </component>
@@ -270,7 +219,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
+              <option name="myItemId" value="admin-app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -292,49 +241,19 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
+              <option name="myItemId" value="admin-app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="partials" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="anwani" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="anwani" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="partials" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="home" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -845,7 +764,8 @@
       <workItem from="1447300638688" duration="1011000" />
       <workItem from="1447346761364" duration="2922000" />
       <workItem from="1447409490313" duration="582000" />
-      <workItem from="1447446013481" duration="240000" />
+      <workItem from="1447446013481" duration="630000" />
+      <workItem from="1447542146462" duration="274000" />
     </task>
     <task id="LOCAL-00001" summary="Ignoring Idea Folder">
       <created>1444252266846</created>
@@ -863,7 +783,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63513000" />
+    <option name="totallyTimeSpent" value="64177000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -876,7 +796,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1015,13 +935,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.13452914">
           <caret line="26" column="16" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/public/admin-app/partials/address-view-one.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -1221,13 +1134,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/public/app/controllers/home.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="31" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/public/admin-app/controllers/users.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.27892563">
@@ -1291,7 +1197,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/public/app/partials/home/sub-header.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.125">
+        <state vertical-scroll-proportion="0.0">
           <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
           <folding />
         </state>
@@ -1299,7 +1205,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/public/app/partials/home/partners.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.25">
+        <state vertical-scroll-proportion="0.32467532">
           <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
           <folding />
         </state>
@@ -1307,7 +1213,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/public/app/partials/home/about.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.375">
+        <state vertical-scroll-proportion="0.0">
           <caret line="7" column="93" selection-start-line="6" selection-start-column="8" selection-end-line="7" selection-end-column="93" />
           <folding />
         </state>
@@ -1315,7 +1221,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/public/app/partials/home/banner.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.0">
+        <state vertical-scroll-proportion="0.5194805">
           <caret line="16" column="93" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="93" />
           <folding />
         </state>
@@ -1323,8 +1229,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/public/app/partials/home/footer.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12987013">
-          <caret line="4" column="89" selection-start-line="4" selection-start-column="89" selection-end-line="4" selection-end-column="89" />
+        <state vertical-scroll-proportion="0.48701298">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/public/app/controllers/home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.24691358">
+          <caret line="8" column="31" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/public/admin-app/partials/address-view-one.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5194805">
+          <caret line="31" column="40" selection-start-line="31" selection-start-column="40" selection-end-line="31" selection-end-column="40" />
           <folding />
         </state>
       </provider>
