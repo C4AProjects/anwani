@@ -406,8 +406,8 @@ angular.module("../public/app/partials/home/footer.html", []).run(["$templateCac
     "<footer class=\"row white\">\n" +
     "  <div class=\"col-md-4 centered\">\n" +
     "    <span class=\"block gray-text\" translate>footer.col_1.description</span>\n" +
-    "    <a style=href='#' class='symbol' title='circlefacebook' href=\"https://www.facebook.com/Anwani-937650086328395/\"></a>\n" +
-    "    <a href='#' class='symbol' title='circletwitterbird' href=\"https://twitter.com/appanwani\"></a>\n" +
+    "    <a class=\"symbol\" title='circlefacebook' href=\"https://www.facebook.com/Anwani-937650086328395/\"></a>\n" +
+    "    <a class=\"symbol\" title='circletwitterbird' href=\"https://twitter.com/appanwani\"></a>\n" +
     "  </div>\n" +
     "  <div class=\"col-md-4 centered right\">\n" +
     "    <span class=\"gray-text\" translate>footer.col_2.description</span>\n" +
