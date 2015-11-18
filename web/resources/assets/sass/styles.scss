@@ -42,14 +42,11 @@ a.symbol:before {
   margin-right: 0.3em;
   @extend .typl8-beta;
 }
-a.symbol[title='circlefacebook']:before{
+a.symbol.facebook{
   color:#3b5998 !important;
 }
-a.symbol[title='circletwitterbird']:before{
+a.symbol.twitter{
   color:#55acee !important;
-}
-a.symbol[title='circlegoogleplus']:before{
-  color:#dc4e41 !important;
 }
 a.symbol:hover{
   text-decoration: none;
@@ -220,6 +217,9 @@ div.white{
 footer{
   background: white !important;
   padding:2.5% 10%;
+}
+a.symbol{
+  font-size:2em;
 }
 a.rounded{
   padding:10px;
