@@ -78,6 +78,33 @@
     },
     "tertiary": "* The Anwani business and government APPs are not available in the Google playstore. Please contact <a href='mailto:contact@coders4africa.com'>contact@coders4africa.com</a> to get those APPs."
   },
+  "pricing":{
+    "header":{
+      "first":{
+        "one":"Citizen",
+        "two":"Business",
+        "three":"Government"
+      },
+      "second":{
+        "one":"Free",
+        "two":"$ 99/monthly",
+        "three":"Coverage"
+      },
+      "third":{
+        "one":"Perfect for individuals (personal use, plot/land allocation and records)",
+        "two":"Perfect for businesses (e-commerce,delivery, door-to-door marketing)",
+        "three":"Perfect for government entities (polling,census, security, data collection"
+      }
+    },
+    "body":{
+
+    },
+    "footer":{
+      "one":"TRY NOW",
+      "two":"TRY NOW",
+      "three":"CONTACT US"
+    }
+  },
   "footer": {
     "col_1": {
       "description": "Connect with Anwani"
