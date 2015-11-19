@@ -1,4 +1,4 @@
-angular.module('templates-dist', ['../public/app/partials/home/about.html', '../public/app/partials/home/banner.html', '../public/app/partials/home/features.html', '../public/app/partials/home/footer.html', '../public/app/partials/home/header.html', '../public/app/partials/home/index.html', '../public/app/partials/home/partners.html', '../public/app/partials/home/sub-header.html']);
+angular.module('templates-dist', ['../public/app/partials/home/about.html', '../public/app/partials/home/banner.html', '../public/app/partials/home/features.html', '../public/app/partials/home/footer.html', '../public/app/partials/home/header-clean.html', '../public/app/partials/home/header.html', '../public/app/partials/home/index.html', '../public/app/partials/home/partners.html', '../public/app/partials/home/pricing.html', '../public/app/partials/home/sub-header.html']);
 
 angular.module("../public/app/partials/home/about.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("../public/app/partials/home/about.html",
@@ -37,7 +37,8 @@ angular.module("../public/app/partials/home/about.html", []).run(["$templateCach
     "    <img src=\"images/Anwani Citizen.png\" alt=\"\" class=\"img-responsive\" style=\"margin:auto\">\n" +
     "    <h5 class=\"centered black-text\" translate>about.second.col_1.title</h5>\n" +
     "      <div  class='col-xs-6 col-xs-offset-3 col-md-8 col-md-offset-2' style=\"padding:0;margin-bottom:10px\">\n" +
-    "        <a href=\"mailto:contact@coders4africa.com?subject=Anwani Citizen\" class='btn btn-default' style=\"width:100%\" translate>about.second.col_1.description\n" +
+    "        <!--href=\"mailto:contact@coders4africa.com?subject=Anwani Citizen\"-->\n" +
+    "        <a  ui-sref=\"pricing\" class='btn btn-default' style=\"width:100%\" translate>about.second.col_1.description\n" +
     "        </a>\n" +
     "      </div>\n" +
     "\n" +
@@ -47,7 +48,8 @@ angular.module("../public/app/partials/home/about.html", []).run(["$templateCach
     "    <img src=\"images/Anwani Biz.png\" alt=\"\" class=\"img-responsive\" style=\"margin:auto\">\n" +
     "    <h5 class=\"centered black-text\" translate>about.second.col_2.title</h5>\n" +
     "      <div  class='col-xs-6 col-xs-offset-3 col-md-8 col-md-offset-2' style=\"padding:0;margin-bottom:10px\">\n" +
-    "        <a href=\"mailto:contact@coders4africa.com?subject=Anwani Business\" class='btn btn-default' style=\"width:100%\" translate>about.second.col_2.description\n" +
+    "        <!--href=\"mailto:contact@coders4africa.com?subject=Anwani Business\"-->\n" +
+    "        <a ui-sref=\"pricing\" class='btn btn-default' style=\"width:100%\" translate>about.second.col_2.description\n" +
     "        </a>\n" +
     "      </div>\n" +
     "    </div>\n" +
@@ -56,7 +58,8 @@ angular.module("../public/app/partials/home/about.html", []).run(["$templateCach
     "    <img src=\"images/Anwani Gov.png\" alt=\"\" class=\"img-responsive\" style=\"margin:auto\">\n" +
     "    <h5 class=\"centered black-text\" translate>about.second.col_3.title</h5>\n" +
     "      <div  class='col-xs-6 col-xs-offset-3 col-md-8 col-md-offset-2' style=\"padding:0;margin-bottom:10px\">\n" +
-    "        <a href=\"mailto:contact@coders4africa.com?subject=Anwani Government\" class='btn btn-default' style=\"width:100%\" translate>about.second.col_3.description\n" +
+    "        <!--href=\"mailto:contact@coders4africa.com?subject=Anwani Government\" -->\n" +
+    "        <a ui-sref=\"pricing\" class='btn btn-default' style=\"width:100%\" translate>about.second.col_3.description\n" +
     "        </a>\n" +
     "      </div>\n" +
     "    </div>\n" +
@@ -197,6 +200,38 @@ angular.module("../public/app/partials/home/footer.html", []).run(["$templateCac
     "");
 }]);
 
+angular.module("../public/app/partials/home/header-clean.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("../public/app/partials/home/header-clean.html",
+    "<nav id=\"main\">\n" +
+    "  <div class=\"container-fluid\">\n" +
+    "    <div class=\"navbar-header\">\n" +
+    "      <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#bs-example-navbar-collapse-1\" aria-expanded=\"false\">\n" +
+    "        <span class=\"sr-only\" translate>header.nav</span>\n" +
+    "        <span class=\"icon-bar\"></span>\n" +
+    "        <span class=\"icon-bar\"></span>\n" +
+    "        <span class=\"icon-bar\"></span>\n" +
+    "      </button>\n" +
+    "      <a class=\"navbar-brand\" ui-sref=\"home\">\n" +
+    "        <img src=\"images/anwani_logo.png\" style=\"width:100px\" class=\"img-responsive\" alt=\"\">\n" +
+    "      </a>\n" +
+    "    </div>\n" +
+    "  <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">\n" +
+    "    <form action=\"\"class=\"navbar-form navbar-right\">\n" +
+    "      <label for=\"\" translate>header.lang</label>\n" +
+    "      <select class=\"form-control\" name=\"\" id=\"\" ng-model=\"lang\" ng-change=\"toggleLanguage(lang)\"\n" +
+    "        ng-options=\"lang.value as lang.label for lang in languages\">\n" +
+    "      </select>\n" +
+    "    </form>\n" +
+    "  <ul class=\"nav navbar-nav navbar-right\" >\n" +
+    "    <li ui-sref=\"home\"><a style=\"text-transform:uppercase !important\" translate>header.links.one</a></li>\n" +
+    "  </ul>\n" +
+    "\n" +
+    "</div>\n" +
+    "</div>\n" +
+    "</nav>\n" +
+    "");
+}]);
+
 angular.module("../public/app/partials/home/header.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("../public/app/partials/home/header.html",
     "<nav id=\"main\">\n" +
@@ -269,6 +304,70 @@ angular.module("../public/app/partials/home/partners.html", []).run(["$templateC
     "  </div>\n" +
     "</div>\n" +
     "");
+}]);
+
+angular.module("../public/app/partials/home/pricing.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("../public/app/partials/home/pricing.html",
+    "<div ui-view=\"header\"></div>\n" +
+    "<div class=\"row padded\">\n" +
+    "    <div class=\"col-md-12 white padded\">\n" +
+    "        <div class=\"inner\">\n" +
+    "            <table class=\"features-table table\">\n" +
+    "                <thead>\n" +
+    "                <tr>\n" +
+    "                    <th></th>\n" +
+    "                    <th translate>pricing.header.first.one</th>\n" +
+    "                    <th translate>pricing.header.first.two</th>\n" +
+    "                    <th translate>pricing.header.first.three</th>\n" +
+    "                </tr>\n" +
+    "                <tr>\n" +
+    "                    <th></th>\n" +
+    "                    <th class=\"citizen\" translate>pricing.header.second.one</th>\n" +
+    "                    <th class=\"business\" translate>pricing.header.second.two</th>\n" +
+    "                    <th class=\"government\" translate>pricing.header.second.three</th>\n" +
+    "                </tr>\n" +
+    "                <tr>\n" +
+    "                    <th></th>\n" +
+    "                    <th translate>pricing.header.third.one</th>\n" +
+    "                    <th translate>pricing.header.third.two</th>\n" +
+    "                    <th translate>pricing.header.third.three</th>\n" +
+    "                </tr>\n" +
+    "                </thead>\n" +
+    "                <tbody>\n" +
+    "                <tr ng-repeat=\"feature in features\">\n" +
+    "                    <td style=\"text-align: left;width:25%\">\n" +
+    "                        <div ng-bind=\"feature.title\"></div>\n" +
+    "                        <div ng-bind=\"feature.subtitle\" class=\"gray-text\"></div>\n" +
+    "                    </td>\n" +
+    "                    <td valign=\"middle\">\n" +
+    "                        <i ng-if=\"feature.citizen\" class=\"ion-checkmark citizen\"></i>\n" +
+    "                    </td>\n" +
+    "                    <td>\n" +
+    "                        <i ng-if=\"feature.business\" class=\"ion-checkmark business\"></i>\n" +
+    "                    </td>\n" +
+    "                    <td>\n" +
+    "                        <i ng-if=\"feature.government\" class=\"ion-checkmark government\"></i>\n" +
+    "                    </td>\n" +
+    "                </tr>\n" +
+    "                </tbody>\n" +
+    "                <tfoot>\n" +
+    "                <td></td>\n" +
+    "                <td>\n" +
+    "                    <button class=\"btn btn-dark citizen\" translate>pricing.footer.one</button>\n" +
+    "                </td>\n" +
+    "                <td>\n" +
+    "                    <button class=\"btn btn-dark business\" translate>pricing.footer.two</button>\n" +
+    "                </td>\n" +
+    "                <td>\n" +
+    "                    <button class=\"btn btn-dark government\" translate>pricing.footer.three</button>\n" +
+    "                </td>\n" +
+    "                </tfoot>\n" +
+    "            </table>\n" +
+    "        </div>\n" +
+    "    </div>\n" +
+    "</div>\n" +
+    "<div ui-view=\"sub-header\"></div>\n" +
+    "<div ui-view=\"footer\"></div>");
 }]);
 
 angular.module("../public/app/partials/home/sub-header.html", []).run(["$templateCache", function($templateCache) {
