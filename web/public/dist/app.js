@@ -606,7 +606,7 @@ angular.module("../public/app/partials/home/partners.html", []).run(["$templateC
 
 angular.module("../public/app/partials/home/pricing.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("../public/app/partials/home/pricing.html",
-    "<div ui-view=\"header\"></div>\n" +
+    "<div ui-view=\"header\" autoscroll=\"true\"></div>\n" +
     "<div class=\"row padded\">\n" +
     "    <div class=\"col-md-12 white padded\">\n" +
     "        <div class=\"inner\">\n" +
