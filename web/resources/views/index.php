@@ -11,6 +11,7 @@
 	<link rel="stylesheet" href="libs/styles/angular-aside.css">
 	<link rel="stylesheet" href="libs/styles/angular-chart.css">
 	<link rel="stylesheet" href="libs/styles/leaflet.awesome-markers.css">
+	<link rel="stylesheet" href="libs/styles/retable.css">
 	<!-- <link href='https:/api.tiles.mapbox.com/mapbox.js/v2.2.1/mapbox.css' rel='stylesheet' /> -->
 	<link rel="stylesheet" href="libs/styles/leaflet.css">
 	<script src="libs/js/jquery.js"></script>
@@ -91,6 +92,7 @@
 	<script src='libs/js/rangy-selectionsaverestore.js'></script>
 	<script src='libs/js/scrollReveal.js'></script>
 	<script src='libs/js/Chart.StackedBar.js'></script>
+	<script src='libs/js/retable.js'></script>
 	<script src='libs/js/angular-google-analytics.js'></script>
 	<!--[if lt IE 9]>
 	<script src='libs/js/html5shiv.js'></script>
