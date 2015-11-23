@@ -230,18 +230,19 @@ a.rounded{
     color:white !important;
   }
 }
-button.citizen {
+.btn.citizen {
   background: #f4a704 !important;
 }
-button.business {
+.btn.business {
   background: #3cbed5 !important;
 }
-button.government {
+.btn.government {
   background: #354646 !important;
 }
 //Tables
 table{
   @extend .table;
+  @extend .table-responsive;
 }
 table.features-table{
   font-size:0.7em;

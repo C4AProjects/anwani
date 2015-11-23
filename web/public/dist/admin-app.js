@@ -5582,7 +5582,7 @@ angular.module("../public/app/partials/home/pricing.html", []).run(["$templateCa
     "<div class=\"row padded\">\n" +
     "    <div class=\"col-md-12 white padded\">\n" +
     "        <div class=\"inner\">\n" +
-    "            <table class=\"features-table table\">\n" +
+    "            <table class=\"features-table table retable\" data-retable-type=\"row\">\n" +
     "                <thead>\n" +
     "                <tr>\n" +
     "                    <th></th>\n" +
@@ -5623,13 +5623,13 @@ angular.module("../public/app/partials/home/pricing.html", []).run(["$templateCa
     "                <tfoot>\n" +
     "                <td></td>\n" +
     "                <td>\n" +
-    "                    <button class=\"btn btn-dark citizen\" translate>pricing.footer.one</button>\n" +
+    "                    <a class=\"btn btn-dark citizen\" translate>pricing.footer.one</a>\n" +
     "                </td>\n" +
     "                <td>\n" +
-    "                    <button class=\"btn btn-dark business\" translate>pricing.footer.two</button>\n" +
+    "                    <a href=\"mailto:contact@coders4africa.com?subject=Anwani Business\" class=\"btn btn-dark business\" translate>pricing.footer.two</a>\n" +
     "                </td>\n" +
     "                <td>\n" +
-    "                    <button class=\"btn btn-dark government\" translate>pricing.footer.three</button>\n" +
+    "                    <a href=\"mailto:contact@coders4africa.com?subject=Anwani Government\" class=\"btn btn-dark government\" translate>pricing.footer.three</a>\n" +
     "                </td>\n" +
     "                </tfoot>\n" +
     "            </table>\n" +
