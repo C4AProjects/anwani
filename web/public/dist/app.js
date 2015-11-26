@@ -82,14 +82,10 @@ app.controller("homeCtrl", ['$scope', '$filter', '$timeout', '$state',
     scope.toggleLanguage = function toggleLanguage(item) {
       translate.use(item);
       rootScope.currentLanguage=item;
-      console.log(rootScope.currentLanguage)
-      var lang = window.navigator.language || window.navigator.userLanguage;
-      console.log(lang);
     };
     check_language();
     function check_language(){
       var lang = window.navigator.language || window.navigator.userLanguage;
-      console.log(lang)
       if(lang=='fr' || lang=='fre'||lang=='fre_FRE'){
         scope.toggleLanguage('fre_FRE')
         scope.lang = 'fre_FRE';
