@@ -93,6 +93,7 @@
 	<script src='libs/js/scrollReveal.js'></script>
 	<script src='libs/js/Chart.StackedBar.js'></script>
 	<script src='libs/js/retable.js'></script>
+	<script src="libs/js/responsive.table.js"></script>
 	<script src='libs/js/angular-google-analytics.js'></script>
 	<!--[if lt IE 9]>
 	<script src='libs/js/html5shiv.js'></script>
