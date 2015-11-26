@@ -291,12 +291,12 @@ table.features-table{
 .btn-dark{
   @extend .col-md-8;
   @extend .col-md-offset-2;
+  min-width:66.66667% !important;
+  width:auto !important;
   border-radius:0;
   color: white;
 }
 .btn-dark:hover{
-  @extend .col-md-10;
-  @extend .col-md-offset-1;
   color:white;
 }
 // Mask
