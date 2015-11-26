@@ -39,7 +39,6 @@ $.ResponsiveHeader= function(element){
 };
 
 $.ResponsiveFooter= function(element){
-    //console.log($(element).html())
     var headers = [];
     function convert_table(element) {
 
@@ -53,6 +52,5 @@ $.ResponsiveFooter= function(element){
     }
 
     convert_table(element);
-    console.log(headers)
     return headers;
 };
