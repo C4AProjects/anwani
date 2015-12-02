@@ -46,6 +46,8 @@
 	<meta name="msapplication-TileColor" content="#ffffff">
 	<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
 	<meta name="theme-color" content="#ffffff">
+	<meta description="The APP that allows you to create a real address in less than a minute...">
+	<meta robots="index,follow">
 	<title ng-bind="title"></title>
 </head>
 <body style="height:auto !important">
