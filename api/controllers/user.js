@@ -321,7 +321,7 @@ exports.updatePassword = function updatePassword(req, res, next) {
           }));
         }
 
-        if(!user._id) {
+        if(!user) {
           return done(CustomError({
             name: 'PASSWORD_UPDATE_ERROR',
             message: 'Id(' + id + ') is not recognized'
