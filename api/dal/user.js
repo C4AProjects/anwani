@@ -6,6 +6,7 @@
 var debug   = require('debug')('anwani-api:dal-user');
 var moment  = require('moment');
 var _       = require('lodash');
+var async   = require('async');
 
 var User      = require('../models/user');
 var Address   = require('../models/address');
@@ -38,32 +39,97 @@ exports.create = function create(userData, cb) {
     }
 
     if(isPresent) {
-      return cb(new Error('User Already exists'));
-    }
-
-
-    // Create user if is new.
-    var userModel  = new User(userData);
-
-    userModel.save(function saveUser(err, data) {
-      if (err) {
-        return cb(err);
+      if(!isPresent.archived) {
+        return cb(new Error('User Already exists'));
+      } else {
+        return unarchiveUser(isPresent, userData, cb);
       }
 
+    } else {
+      // Create user if is new.
+      var userModel  = new User(userData);
 
-      exports.get({ _id: data._id }, function (err, user) {
-        if(err) {
+      userModel.save(function saveUser(err, data) {
+        if (err) {
           return cb(err);
         }
 
-        cb(null, user);
+
+        exports.get({ _id: data._id }, function (err, user) {
+          if(err) {
+            return cb(err);
+          }
+
+          cb(null, user);
+
+        });
 
       });
+    }
 
-    });
 
   });
 
+
+  function unarchiveUser(user, data, cb) {
+    async.waterfall([
+      function hashPassword(next) {
+        User.hashPasswd(data.password, next);
+      },
+      function hashSecurityAnswer(hash, next) {
+        User.hashSecurityAnswer(data.security_pass.answer, function (err, answerHashed) {
+          if(err) {
+            return next(err);
+          }
+
+          next(null, hash, answerHashed);
+        });
+      },
+      function updateArchivedUser(passwordHashed, answerHashed, next) {
+        var now = moment().toISOString();
+
+        var query = {
+          _id: user._id
+        };
+        var opts = {
+          'new': true,
+          select: returnFields
+        };
+        var update = {
+          $set: {
+            last_login: now,
+            last_modified: now,
+            password: passwordHashed,
+            archived: false,
+            first_name: data.first_name,
+            second_name: data.second_name,
+            other_name: data.other_name,
+            email: data.email,
+            'security_pass.question': data.security_pass.question,
+            'security_pass.answer': answerHashed
+          }
+        };
+
+        User
+          .findOneAndUpdate(query, update, opts)
+          .populate(population)
+          .exec(function updateUser(err, doc) {
+            if(err) {
+              return next(err);
+            }
+
+            next(null, doc);
+          });
+
+      }
+    ], function complete(err, user) {
+      if(err) {
+        return cb(err);
+      }
+
+      cb(null, user);
+    });
+  }
 };
 
 /**

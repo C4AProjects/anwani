@@ -20,7 +20,8 @@ var CustomError     = require('../lib/custom-error');
 
 var emailTemplate = fs.readFileSync('./config/email_template.html').toString();
 var transport = nodemailer.createTransport({
-  service: config.SMTP.SERVICE,
+  host: config.SMTP.SERVICE,
+  //port: config.SMTP.PORT,
   auth: {
     user: config.SMTP.USER,
     pass: config.SMTP.PASS
@@ -95,35 +96,35 @@ exports.create = function createSubscriber(req, res, next) {
         }));
       }
 
-      //workflow.emit('sendEmail', subscriber);
       workflow.emit('completeRegistration', subscriber);
+      //workflow.emit('sendVerificationEmail', subscriber);
 
     });
 
 
   });
 
-  workflow.on('sendEmail', function (subscriber) {
+  workflow.on('sendVerificationEmail', function (subscriber) {
     var logoUrl;
     var emailBody;
     var mailOptions;
 
-    logoUrl           = config.API_URL + '/assets/anwani_logo.png';
+    logoUrl   = config.API_URL + '/assets/anwani_logo.png';
     emailBody = emailTemplate
                 .replace('{{name}}', subscriber.name)
                 .replace(/\{\{verification_url\}\}/g, body.verification_link)
                 .replace('{{logo_url}}', logoUrl);
     mailOptions = {
-      from: 'Anwani Team ✔ <tonimut7@gmail.com>',
+      from: 'Anwani Team <contact@coders4africa.com>',
       to: subscriber.email,
-      subject: 'Email Verification ✔', // Subject line
+      subject: 'Account Verification', // Subject line
       html: emailBody
     };
 
     transport.sendMail(mailOptions, function (err, response) {
       if(err) {
         return next(CustomError({
-          name: 'SUBSCRIBER_CREATION_ERROR',
+          name: 'EMAIL_VERIFICATION_SENDING_ERROR',
           message: err.message
         }));
       }
@@ -232,22 +233,7 @@ exports.delete = function deleteSubscriber(req, res, next) {
     _id: req.params.id
   };
 
-  var update = {
-    $set: { archived: true, addresses: [] }
-  };
-  var subscriber  = req._user;
-  var now   = moment().toISOString();
-  var tokenQuery = {
-    subscriber: subscriber._id
-  };
-  var tokenUpdates = {
-    $set: {
-      value: 'EMPTY',
-      revoked: true
-    }
-  };
-
-  Subscriber.update(query, update, function cb(err, subscriber) {
+  Subscriber.delete(query, function cb(err, subscriber) {
     if(err) {
       return next(CustomError({
         name: 'SERVER_ERROR',
@@ -256,8 +242,18 @@ exports.delete = function deleteSubscriber(req, res, next) {
       }));
     }
 
+    if(!subscriber || !subscriber._id) {
+      return next(CustomError({
+        name: 'ACCOUNT_DELETION_ERROR',
+        message: 'Specified user doesnt not exist'
+      }));
+    }
 
-    Token.update(tokenQuery, tokenUpdates, function(err, token) {
+    var tokenQuery = {
+      subscriber: subscriber._id
+    };
+
+    Token.delete(tokenQuery, function (err, token) {
       if(err) {
         return next(CustomError({
           name: 'SERVER_ERROR',
@@ -268,7 +264,6 @@ exports.delete = function deleteSubscriber(req, res, next) {
 
       res.json(subscriber);
     });
-
   });
 
 };

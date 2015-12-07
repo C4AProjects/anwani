@@ -101,10 +101,10 @@ exports.create = function createAddress(req, res, next) {
             }));
           }
 
-          if(!user._id) {
+          if(!user || !user._id) {
             return done(CustomError({
               name: 'ADDRESS_CREATION_ERROR',
-              message: 'user - ' + body.user + ' does not exist'
+              message: 'user does not exist'
             }));
           }
 
@@ -355,9 +355,7 @@ exports.archive = function archiveAddress(req, res, next) {
   var query = {
     _id: req.params.id
   };
-  var update;
-
-  update = {
+  var update = {
     $set: { archived: true }
   };
 
@@ -371,10 +369,10 @@ exports.archive = function archiveAddress(req, res, next) {
     }
 
 
-    if(!address._id) {
+    if(!address || !address._id) {
       return next(CustomError({
         name: 'QUERY_ERROR',
-        message: 'Address(' + req.params.id + ') could not be found'
+        message: 'Address could not be found'
       }));
     }
 
@@ -462,7 +460,7 @@ exports.search = function (req, res, next) {
         }));
       }
 
-      if(!user._id) {
+      if(!user || !user._id) {
         return res.json([]);
       } else {
         AddressModel

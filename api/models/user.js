@@ -5,13 +5,14 @@
 /**
  * Load Module Dependencies.
  */
+var crypto = require('crypto');
+
 var mongoose  = require('mongoose');
 var moment    = require('moment');
 var paginator = require('mongoose-paginate');
 var bcrypt    = require('bcrypt');
 
-var config    = require('../config');
-var hashSecurityAnswer = require('../lib/utils').hashSecurityAnswer;
+var config = require('../config');
 
 var Schema = mongoose.Schema;
 
@@ -31,8 +32,8 @@ var UserSchema = new Schema({
     answer:   { type: String }
   },
   addresses:    [{ type: Schema.Types.ObjectId, ref: 'Address' }],
-  date_created: Date,
-  last_modified:Date
+  date_created:   Date,
+  last_modified:  Date
 });
 
 /**
@@ -92,7 +93,7 @@ UserSchema.pre('save', function preSave(next) {
     model.last_modified = now;
 
     // Hash Security question
-    hashSecurityAnswer(model.security_pass.answer, function (err, hashed) {
+    UserSchema.statics.hashSecurityAnswer(model.security_pass.answer, function (err, hashed) {
       if(err) {
         return next(err);
       }
@@ -105,6 +106,24 @@ UserSchema.pre('save', function preSave(next) {
   });
 
 });
+
+/**
+ * Hash Security Answer
+ */
+UserSchema.statics.hashSecurityAnswer = function (answer, cb) {
+  var salt = config.SECURITY_ANSWER_SALT;
+  var iterations = 512;
+  var keyLen = 48;
+  var digest = 'sha256';
+
+  crypto.pbkdf2(answer, salt, iterations, keyLen, digest, function (err, key) {
+    if(err) {
+      return cb(err);
+    }
+
+    cb(null, key.toString('base64'));
+  });
+};
 
 UserSchema.statics.hashPasswd = function (passwd, cb) {
   // Generate a salt factor
