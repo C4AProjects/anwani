@@ -11,13 +11,13 @@ var moment    = require('moment');
 var validator = require('validator');
 var _         = require('lodash');
 
-var User      = require('../dal/user');
-var UserModel = require('../models/user');
+var User            = require('../dal/user');
+var UserModel       = require('../models/user');
 var Subscriber      = require('../dal/subscriber');
 var SubscriberModel = require('../models/subscriber');
-var Token     = require('../dal/token');
-var config    = require('../config');
-var CustomError = require('../lib/custom-error');
+var Token           = require('../dal/token');
+var config          = require('../config');
+var CustomError     = require('../lib/custom-error');
 
 function createToken() {
   var sha256 = crypto.createHash('sha256');
@@ -474,7 +474,7 @@ exports.verify = function verify(req, res, next) {
         }));
       }
 
-      res.json({ verified: true });
+      res.redirect('http://anwani.co/admin');
     });
 
   });

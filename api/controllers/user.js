@@ -141,6 +141,10 @@ exports.update = function updateUser(req, res, next) {
 
 /**
  * Delete/Archive a single user.
+ * 1. Reset everything to default.
+ * 2. Set archived attribute to true.
+ * 3. Archive current addresses.
+ * 4. Remove Login Token.
  *
  * @desc Fetch a user with the given id from the database
  *       and delete their data
@@ -152,26 +156,64 @@ exports.update = function updateUser(req, res, next) {
 exports.delete = function deleteUser(req, res, next) {
   debug('deleting user:' + req.params.id);
 
-  var query = {
-    _id: req.params.id
-  };
-
-  var update = {
-    $set: { archived: true, addresses: [] }
-  };
-  var user  = req._user;
   var now   = moment().toISOString();
-  var tokenQuery = {
-    user: user._id
-  };
-  var tokenUpdates = {
-    $set: {
-      value: 'EMPTY',
-      revoked: true
-    }
-  };
+  var userID = req.params.id;
 
-  User.update(query, update, function cb(err, user) {
+  async.waterfall([
+    function getUser(done) {
+      User.get({ _id: userID }, done);
+    },
+    function archiveAddresses(user, done) {
+      async.each(user.addresses, function worker(address, cb) {
+        if(!address) {
+          return cb(null);
+        }
+        var query = {
+          _id: address._id
+        };
+        var update = {
+          $set: {
+            archived: true
+          }
+        };
+
+        Address.update(query, update, cb);
+      }, function (err) {
+        if(err) {
+          return done(err);
+        }
+
+        done(null, user);
+      });
+    },
+    function removeAuthToken(user, done){
+      var tokenQuery = {
+        user: user._id
+      };
+
+      Token.delete(tokenQuery, function(err, token) {
+        if(err) {
+          return done(err);
+        }
+
+        done(null, user);
+      });
+    },
+    function archiveUser(user, done) {
+      var query = {
+        _id: user._id
+      };
+      var update = {
+        $set: {
+          archived: true,
+          addresses: [],
+          last_login: (new Date()).toISOString(),
+        }
+      };
+
+      User.update(query, update, done);
+    }
+  ], function complete(err, user) {
     if(err) {
       return next(CustomError({
         name: 'SERVER_ERROR',
@@ -180,19 +222,7 @@ exports.delete = function deleteUser(req, res, next) {
       }));
     }
 
-
-    Token.update(tokenQuery, tokenUpdates, function(err, token) {
-      if(err) {
-        return next(CustomError({
-          name: 'SERVER_ERROR',
-          message: err.message,
-          status: 500
-        }));
-      }
-
-      res.json(user);
-    });
-
+    res.json(user);
   });
 
 };
@@ -324,7 +354,7 @@ exports.updatePassword = function updatePassword(req, res, next) {
         if(!user) {
           return done(CustomError({
             name: 'PASSWORD_UPDATE_ERROR',
-            message: 'Id(' + id + ') is not recognized'
+            message: 'User is not recognized'
           }));
 
         }

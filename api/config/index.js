@@ -57,9 +57,10 @@ module.exports = {
   },
 
   SMTP: {
-    SERVICE: 'Gmail',
-    USER: env.SMTP_USER,
-    PASS: env.SMTP_PASS
+    SERVICE: 'box795.bluehost.com',
+    PORT: 587,
+    USER: 'contact@coders4africa.com',
+    PASS: 'Hakili2010'
   },
 
   PLANS: {

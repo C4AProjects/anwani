@@ -4,10 +4,10 @@
 var EventEmitter = require('events').EventEmitter;
 var crypto = require('crypto');
 
-var debug = require('debug')('anwani-api:log-controller');
-var async = require('async');
+var debug  = require('debug')('anwani-api:log-controller');
+var async  = require('async');
 var moment = require('moment');
-var _     = require('lodash');
+var _      = require('lodash');
 
 var Log         = require('../dal/log');
 var LogModel    = require('../models/log');

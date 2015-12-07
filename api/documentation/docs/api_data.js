@@ -908,6 +908,86 @@ define({ "api": [
   },
   {
     "type": "get",
+    "url": "/users/:id/addresses/mobile",
+    "title": "Get user's address collection(Mobile)",
+    "version": "1.0.0",
+    "name": "FetchUserAddressesMobile",
+    "group": "User",
+    "description": "<p>Get a collection of user's addresses. For mobile devices</p> ",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "_id",
+            "description": "<p>address id</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "virtual_code",
+            "description": "<p>virtual code</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "location_pic",
+            "description": "<p>location photo</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>Number</p> ",
+            "optional": false,
+            "field": "latitude",
+            "description": "<p>latitude coordinate</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>Number</p> ",
+            "optional": false,
+            "field": "longitude",
+            "description": "<p>longitude coordinate</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "street_address",
+            "description": "<p>street address</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "city",
+            "description": "<p>city name</p> "
+          },
+          {
+            "group": "Success 200",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "country",
+            "description": "<p>country name</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Response Example:",
+          "content": "[{\n  \"_id\" : \"556e1174a8952c9521286a60\",\n  user: \"556e1174a8952c9521286a60\",\n  short_plus_code: \"MP7H+E2\",\n  long_plus_code: \"6E9AEFMP7H+E2FH\",\n  virtual_code: \"BB35E24B\",\n  location_pic: \"/media/a8952c9521286a60.jpeg\",\n  latitude: 4.567889,\n  longitude: -12.098,\n  street_address: \"\",\n  city: \"nairobi\",\n  country: \"kenya\"\n}]",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "routes/users.js",
+    "groupTitle": "User"
+  },
+  {
+    "type": "get",
     "url": "/users/:id",
     "title": "Get User",
     "version": "1.0.0",
@@ -1366,7 +1446,7 @@ define({ "api": [
     "groupTitle": "User"
   },
   {
-    "type": "put",
+    "type": "post",
     "url": "/addresses/:id/archive",
     "title": "Archive an address",
     "version": "1.0.0",
